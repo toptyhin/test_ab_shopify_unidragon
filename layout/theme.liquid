@@ -1,12 +1,13 @@
-{% comment %}ly_liquid_scripts_begin{% endcomment %}{% capture ly_liquid_content %}{% comment %}ly_liquid_scripts_end{% endcomment %}{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% comment %}ly_liquid_scripts_begin{% endcomment %}{% capture ly_liquid_content %}{% comment %}ly_liquid_scripts_end{% endcomment %}
 
 <!doctype html>
-<!--[if IE 9]> <html class="ie9 no-js" lang="{{ shop.locale }}"{% comment %}ly_dir_replace_for_[]_begin{% endcomment %}{% assign language = cart.attributes["language"] %}{% if language == nil %}{% assign language = shop.metafields["languages"]["default"] %}{% endif %}{% if shop.metafields.languages_dir[language] == 'rtl' %} dir="rtl" {% endif %}{% comment %}ly_dir_replace_end{% endcomment %}> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="{{ shop.locale }}"{% comment %}ly_dir_replace_for_[]_begin{% endcomment %}{% assign language = cart.attributes["language"] %}{% if language == nil %}{% assign language = shop.metafields["languages"]["default"] %}{% endif %}{% if shop.metafields.languages_dir[language] == 'rtl' %} dir="rtl" {% endif %}{% comment %}ly_dir_replace_end{% endcomment %}> <!--<![endif]-->
+<!--[if IE 9]> <html class="ie9 no-js" lang="{{ shop.locale }}"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="{{ shop.locale }}"> <!--<![endif]-->
 <head>
   
 {{"https://cozycountryredirect.addons.business/js/eggbox/5107/dtag/script.js?shop=unidragon.myshopify.com" | script_tag }}
 
+  <script src="https://www.googleoptimize.com/optimize.js?id=OPT-5RD9DVZ"></script>
   
 {% include 'booster-seo' %}
   <meta charset="utf-8">
@@ -17,6 +18,8 @@
   <meta name="email" content="{{ shop.email }}">
   <meta name="role" content="{{ theme.role }}">
   <meta name="cmsmagazine" content="bdcdc6de24aabdfc464a9d2d5d6b34ac" /> 
+  <!-- KV 15/02 -->
+  <meta name="google-site-verification" content="a4TAWTeb_JqFZ6hfN97VJ_UnJcM5d9ONGZ_qf7-S2JY" />
   
   <link rel="canonical" href="{{ canonical_url }}">
   {% comment %}
@@ -29,28 +32,28 @@
   {% endif %}
 
   {% capture seo_title %}
-    {{ langify_title }}
+    {{ page_title }}
     {% if current_tags %}
-      {%- assign meta_tags = current_tags | join: ', ' %} – {% comment %}ly_i18n_replace_for_[ 'general.meta.tags' | t: tags: meta_tags ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.meta.tags' | t: tags: meta_tags }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902406' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = meta_tags  %}{% assign ly_template = ly_template | replace: '[[tags]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+      {%- assign meta_tags = current_tags | join: ', ' %} – {{ 'general.meta.tags' | t: tags: meta_tags }}
     {% endif %}
     {% if current_page != 1 %}
-      – {% comment %}ly_i18n_replace_for_[ 'general.meta.page' | t: page: current_page ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.meta.page' | t: page: current_page }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902408' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = current_page  %}{% assign ly_template = ly_template | replace: '[[page]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+      – {{ 'general.meta.page' | t: page: current_page }}
     {% endif %}
-    {% unless langify_title contains langify_shop_name %}
-      – {{ langify_shop_name }}
+    {% unless page_title contains shop.name %}
+      – {{ shop.name }}
     {% endunless %}
   {% endcapture %}
   {% comment %}<title>{{ seo_title }}</title>{% endcomment %}
 
-  {% if langify_description %}
-    {% comment %}<meta name="description" content="{{ langify_description | escape }}">{% endcomment %}
+  {% if page_description %}
+    {% comment %}<meta name="description" content="{{ page_description | escape }}">{% endcomment %}
   {% endif %}
 
   {% include 'social-meta-tags' %}
  
 
-  {% comment %}ly_asset_replace_for_[ 'theme.scss.css' | asset_url | stylesheet_tag ]_begin{% endcomment %}{% assign ly_asset = 'theme.scss.css' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  | stylesheet_tag }}{% comment %}ly_asset_replace_end{% endcomment %}
-  {% comment %}ly_asset_replace_for_[ 'typo-color.scss.css' | asset_url | stylesheet_tag ]_begin{% endcomment %}{% assign ly_asset = 'typo-color.scss.css' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  | stylesheet_tag }}{% comment %}ly_asset_replace_end{% endcomment %}
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+
     {% include 'google-fonts' %}
   <script>
     var theme = {
@@ -70,7 +73,7 @@
 
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
   </script>
-    <!--[if (lte IE 9) ]>{% comment %}ly_asset_replace_for_[ 'match-media.min.js' | asset_url | script_tag ]_begin{% endcomment %}{% assign ly_asset = 'match-media.min.js' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  | script_tag }}{% comment %}ly_asset_replace_end{% endcomment %}<![endif]-->
+    <!--[if (lte IE 9) ]>{{ 'match-media.min.js' | asset_url | script_tag }}<![endif]-->
 
   {% if template.directory == 'customers' %}
     <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script><!--<![endif]-->
@@ -80,10 +83,10 @@
    var sv = {{ 'products.product.on_save_like_price' | t | json }};var x = {{ 'products.product.on_save' | t | json  }}; var y = {{ 'general.newsletter_form.confirmation' | t | json }};{% if settings.show_multiple_currencies %}var currency_dropdown = true;{% if settings.select_dropdown == 'auto_currency' %}var auto_curncy = true;{% else %}var auto_curncy = false;{% endif %}{% else %}var currency_dropdown = false;{% endif %}{% if settings.show_saved_amount %}{% if settings.show_discount_amount == 'percent_save' %}var precentprice = true;{% else %}var precentprice = false;{% endif %}{% endif %}
    var addToCartBtnLabel_1 = {{ 'products.product.add_to_cart' | t | json }},addedToCartBtnLabe_1 = {{ "products.product.Thanks_you" | t | json }},addingToCartBtnLabel_1 = {{ "products.product.adding" | t | json }},soldOutBtnLabel_1 = {{ "products.product.sold_out" | t | json }};{% if template == 'product' or template == 'index'%}var relatedupsellmodal = true;{% else %}var relatedupsellmodal = false;{% endif %}var added_to_cart = {{ 'cart.general.added_to_cart' | t | json }};var view_cart = {{ "cart.general.view_cart" | t | json }};var continue_shopping = {{ "cart.general.continue_shopping" | t | json }};var items_count_one = {{ 'layout.cart.items_count.one' | t | json }};var items_count_other = {{ 'layout.cart.items_count.other' | t | json }};var read_more = {{ "products.timer.readmore" | t | json}};var read_less = {{ "products.timer.readless" | t | json}};var eblstcky = false;var ebl_pay_but = false;var read_mor = false;var visitorcountr = false;var livestock = false;var progress_bar_random = false;var enable_defaul_variant = true;
   </script>
-  <!--[if (gt IE 9)|!(IE)]><!--><script src="{% comment %}ly_asset_replace_for_[ 'lazysizes.js' | asset_url ]_begin{% endcomment %}{% assign ly_asset = 'lazysizes.js' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}" async="async"></script><!--<![endif]-->
-  <!--[if lte IE 9]><script src="{% comment %}ly_asset_replace_for_[ 'lazysizes.min.js' | asset_url ]_begin{% endcomment %}{% assign ly_asset = 'lazysizes.min.js' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}"></script><![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script><!--<![endif]-->
+  <!--[if lte IE 9]><script src="{{ 'lazysizes.min.js' | asset_url }}"></script><![endif]-->
 
-  <!--[if lte IE 9]><!--><script src="{% comment %}ly_asset_replace_for_[ 'theme.js' | asset_url ]_begin{% endcomment %}{% assign ly_asset = 'theme.js' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}"></script><!--><![endif]-->
+  <!--[if lte IE 9]><!--><script src="{{ 'theme.js' | asset_url }}"></script><!--><![endif]-->
 
 
   <script>
@@ -94,13 +97,11 @@
   
   
   <!--  bootstrap js & css  -->
-  <script src="{% comment %}ly_asset_replace_for_[ 'bootstrap.min.js' | asset_url ]_begin{% endcomment %}{% assign ly_asset = 'bootstrap.min.js' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}"></script>
+  <script src="{{ 'bootstrap.min.js' | asset_url }}"></script>
   <script>var mainShopDomain='{{shop.permanent_domain}}';</script>
-  {% comment %}ly_asset_replace_for_[ 'shop.js' | asset_url | script_tag ]_begin{% endcomment %}{% assign ly_asset = 'shop.js' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  | script_tag }}{% comment %}ly_asset_replace_end{% endcomment %}
  
-  {% comment %}ly_asset_replace_for_[ 'fontawesome.css' | asset_url | stylesheet_tag ]_begin{% endcomment %}{% assign ly_asset = 'fontawesome.css' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  | stylesheet_tag }}{% comment %}ly_asset_replace_end{% endcomment %}
-  
   {{ content_for_header }}
+  
   <link href="https://fonts.googleapis.com/css?family=Anton|Arimo|Arvo|Baloo+Bhai|Baloo+Bhaina|Bitter|Bree+Serif|Cabin|Catamaran|David+Libre|Dosis|Droid+Sans|Droid+Serif|Ek+Mukta|Fjalla+One|Hind|Inconsolata|Indie+Flower|Lato|Libre+Baskerville|Lobster|Lora|Merriweather|Modak|Montserrat|Muli|Noto+Sans|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Narrow|PT+Serif|Pavanam|Playfair+Display|Poppins|Raleway|Roboto|Roboto+Condensed|Roboto+Slab|Slabo+27px|Source+Sans+Pro|Teko|Titillium+Web|Ubuntu|Yanone+Kaffeesatz|Yatra+One" rel="stylesheet">
 
   <style type="text/css"> .product-description + [data-readmore-toggle], .product-description[data-readmore]{display: block; width: 100%;margin-top: 15px;}.product-description[data-readmore]{transition: height 100ms;overflow-x: hidden !important;overflow: -webkit-paged-x;} .sale_wheel-three{display:none;}</style>
@@ -110,17 +111,11 @@
 {% include 'alireviews_core' %} 
  
 
-
-
-
-
-
-
-<!-- Different counters -->{% include 'yandex-metrica' %}<!-- /Different counters -->
-
-<!-- BeginConsistentCartAddon -->  <script>  {% if customer %}  Shopify.customer_logged_in = true ;  Shopify.customer_email = "{{ customer.email }}" ;  Shopify.log_uuids = true;  {% else %}  Shopify.customer_logged_in = false ;  Shopify.customer_email = "" ;  Shopify.log_uuids = true;  {% endif %}  </script>  <!-- EndConsistentCartAddon -->
     
   {{ 'custom.scss.css' | asset_url | stylesheet_tag }}
+  
+  
+
   
   <!-- Facebook Pixel Code -->
 <script>
@@ -138,10 +133,45 @@
   src="https://www.facebook.com/tr?id=651854269089781&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Facebook Pixel Code --> 
-  
-<script charset="UTF-8" src="//web.webpushs.com/js/push/74373b0626375d82fd6e53ee636daaa0_1.js" async></script> 
+{% comment %}<!-- ALK: remove web-push code -->{% endcomment %}  
+{% comment %}<!--<script charset="UTF-8" src="//web.webpushs.com/js/push/74373b0626375d82fd6e53ee636daaa0_1.js" async></script>-->{% endcomment %} 
  <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script> 
-</head>
+   
+  <!-- cpa flexlinks -->
+  <script>
+(function () {
+var clickRe = /(?:\d+FOF\d+)/i;
+var match = clickRe.exec(window.location.href);
+if (match && match.length > 0) window.localStorage.setItem('sid', match[0]);
+    })();</script>     
+  
+  
+  
+  
+  <!-- cpa TaboolaKV 17/02/21 -->
+<script type='text/javascript'>
+  window._tfa = window._tfa || [];
+  window._tfa.push({notify: 'event', name: 'page_view', id: 1366281});
+  !function (t, f, a, x) {
+         if (!document.getElementById(x)) {
+            t.async = 1;t.src = a;t.id=x;f.parentNode.insertBefore(t, f);
+         }
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  '//cdn.taboola.com/libtrc/unip/1366281/tfa.js',
+  'tb_tfa_script');
+</script>
+<noscript>
+  <img src='https://trc.taboola.com/1366281/log/3/unip?en=page_view'
+      width='0' height='0' style='display:none' />
+</noscript>
+<!-- End of Taboola Pixel Code -->
+
+ 
+{% include 'pagefly-header' %}
+
+<!-- BeginConsistentCartAddon -->  <script>  {% if customer %}  Shopify.customer_logged_in = true ;  Shopify.customer_email = "{{ customer.email }}" ;  Shopify.log_uuids = true;  {% else %}  Shopify.customer_logged_in = false ;  Shopify.customer_email = "" ;  Shopify.log_uuids = true;  {% endif %}  </script>  <!-- EndConsistentCartAddon -->
+</head> 
 
 <body class="template-{{ template | split: '.' | first }}">
   
@@ -149,10 +179,80 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKLBHMZ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
+<!-- cpa KV 08/02/21 Mgid Sensor --> 
+<script type="text/javascript"> (function() { var d = document, w = window; w.MgSensorData = w.MgSensorData || []; w.MgSensorData.push({ cid:605837, lng:"us", project: "a.mgid.com" }); var l = "a.mgid.com"; var n = d.getElementsByTagName("script")[0]; var s = d.createElement("script"); s.type = "text/javascript"; s.async = true; var dt = !Date.now?new Date().valueOf():Date.now(); s.src = "https://" + l + "/mgsensor.js?d=" + dt; n.parentNode.insertBefore(s, n); })(); 
+</script> 
+<!-- /Mgid Sensor -->
+  
+  <!-- DV 11/03/21 Snap Pixel Code -->
+<script type='text/javascript'>
+(function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function()
+{a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};
+a.queue=[];var s='script';r=t.createElement(s);r.async=!0;
+r.src=n;var u=t.getElementsByTagName(s)[0];
+u.parentNode.insertBefore(r,u);})(window,document,
+'https://sc-static.net/scevent.min.js');
+
+snaptr('init', '73549efc-970a-4621-a1ca-d2c80d3072fe');
+
+snaptr('track', 'PAGE_VIEW');
+
+</script>
+<!-- End Snap Pixel Code -->
+  
+<!-- DV 16/03/21 Tiktok Pixel Code -->
+  <script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+
+  ttq.load('C192DSRQIA5GK7IMVJIG');
+  ttq.load('C15RL3410GT3CK5VK8IG');
+  ttq.load('C1LB8THT0U322RQQ59R0');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- End Tiktok Pixel Code -->
+
+  
+
+<!-- DV 29/03/21 Outbrain Pixel Code -->
+<script data-obct type = "text/javascript">
+  /** DO NOT MODIFY THIS CODE**/
+  !function(_window, _document) {
+    var OB_ADV_ID = '00998ff1478ddc146bc99bd8088e22f656';
+    if (_window.obApi) {
+      var toArray = function(object) {
+        return Object.prototype.toString.call(object) === '[object Array]' ? object : [object];
+      };
+      _window.obApi.marketerId = toArray(_window.obApi.marketerId).concat(toArray(OB_ADV_ID));
+      return;
+    }
+    var api = _window.obApi = function() {
+      api.dispatch ? api.dispatch.apply(api, arguments) : api.queue.push(arguments);
+    };
+    api.version = '1.1';
+    api.loaded = true;
+    api.marketerId = OB_ADV_ID;
+    api.queue = [];
+    var tag = _document.createElement('script');
+    tag.async = true;
+    tag.src = '//amplify.outbrain.com/cp/obtp.js';
+    tag.type = 'text/javascript';
+    var script = _document.getElementsByTagName('script')[0];
+    script.parentNode.insertBefore(tag, script);
+  }(window, document);
+
+  obApi('track', 'PAGE_VIEW');
+</script>
+<!-- End Outbrain Pixel Code -->
+  
+
+
   
   <input type="hidden" id="product_key" value="{{ settings.product_key }}">
   <input type="hidden" id="permanent_domain" value="{{ shop.permanent_domain }}">
-  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{% comment %}ly_i18n_replace_for_[ 'general.accessibility.skip_to_content' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.accessibility.skip_to_content' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902409' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
+  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
   {% if settings.salepopup_position == 'top'%}
    {% include 'notification-popup' %}
   {% endif %}
@@ -162,18 +262,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <form class="search search-bar__form" action="/search" method="get" role="search">
           <button class="search-bar__submit search__submit btn--link" type="submit">
             {% include 'icon-search' %}
-            <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.search.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.search.submit' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902410' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+            <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
           </button>
           {% if settings.search_result == 'only_product'%}
           <input type="hidden" name="type" value="product">
           {% endif %}
-          <input class="search__input search-bar__input" type="input" name="q" value="{{ search.terms | escape }}" placeholder="{% comment %}ly_i18n_replace_for_[ 'general.search.placeholder' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.search.placeholder' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902411' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" aria-label="{% comment %}ly_i18n_replace_for_[ 'general.search.placeholder' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.search.placeholder' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902411' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+          <input class="search__input search-bar__input" type="input" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" aria-label="{{ 'general.search.placeholder' | t }}">
         </form>
       </div>
       <div class="search-bar__table-cell text-right">
         <button type="button" class="btn--link search-bar__close js-drawer-close">
           {% include 'icon-close' %}
-          <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.search.close' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.search.close' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902412' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+          <span class="icon__fallback-text">{{ 'general.search.close' | t }}</span>
         </button>
       </div>
     </div>
@@ -192,16 +292,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
 
   </div>
+  
+    {{ 'fontawesome.css' | asset_url | stylesheet_tag }}
+  
    <!-- Start discount popup -->  
   {% include 'discount_popup' %}    
   <!-- End discount popup -->
+  
+  {% comment %}Promo popup, 19.02.21 alexey{% endcomment %}
+  {% include 'promo-popup' %}
+  {% comment %} Promo popup ends here {% endcomment %}
+  
   {% if settings.salepopup_position == 'bottom'%} 
    {% include 'notification-popup' %}
   {% endif %}
-  {% comment %}ly_asset_replace_for_[ 'timer_all.scss' | asset_url | stylesheet_tag ]_begin{% endcomment %}{% assign ly_asset = 'timer_all.scss' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  | stylesheet_tag }}{% comment %}ly_asset_replace_end{% endcomment %}
-  {% comment %}ly_asset_replace_for_[ 'timer_new.scss' | asset_url | stylesheet_tag ]_begin{% endcomment %}{% assign ly_asset = 'timer_new.scss' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  | stylesheet_tag }}{% comment %}ly_asset_replace_end{% endcomment %}
+  {{ 'timer_all.scss' | asset_url | stylesheet_tag }}
+  {{ 'timer_new.scss' | asset_url | stylesheet_tag }}
 
-  
+  {{ 'shop.js' | asset_url | script_tag }}  
   
   {% include 'currencies' %}
 {% include 'ajaxify-cart' %}
@@ -211,9 +319,76 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- kv 23/12/20 move from header -->
     <link href="{% assign ly_asset = 'slick.css' %} {% include 'ly-asset' with ly_asset %}{{ ly_translation  }}"/>
-  <script type="text/javascript" src="{% assign ly_asset = 'slick.js' %} {% include 'ly-asset' with ly_asset %}{{ ly_translation  }}"></script>
+  <script type="text/javascript" src="{% assign ly_asset = 'slick.min.js' %} {% include 'ly-asset' with ly_asset %}{{ ly_translation  }}"></script>
 
- 
+ <!-- KV 03/03/21 Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','o5m45');
+twq('track','PageView');
+</script>
+<!-- End Twitter universal website tag code -->
+  
+   
+  <!-- cpa KV 08/02/21 revcontent (moved from header 09/03/21 -->
+  <script src="https://assets.revcontent.com/master/rev.js"></script>
 
+  
+  <!-- cpa indoleads KV 12/02/21 (moved from header 09/03/21 -->
+<script src="https://app.indoleads.com/js/platform/container_v2.min.js"></script>
+<script>
+    window.INDOLEADS_LIB = window.INDOLEADS_LIB || [];
+    window.INDOLEADS_LIB.push({
+        offer_id: 8154,
+        network: "https://app.indoleads.com"
+    });
+</script>
+  
+<!-- DV 16/04/21 chat2desk -->
+
+<![if IE]>
+<script async src='https://livechat.chat2desk.com/packs/ie11-supporting-2e8a7032d2ffc551aebd.js'></script>
+<![endif]>
+<script id='chat-24-widget-code' type="text/javascript">
+  !function (e) {
+    var t = {};
+    function n(c) { if (t[c]) return t[c].exports; var o = t[c] = {i: c, l: !1, exports: {}}; return e[c].call(o.exports, o, o.exports, n), o.l = !0, o.exports }
+    n.m = e, n.c = t, n.d = function (e, t, c) { n.o(e, t) || Object.defineProperty(e, t, {configurable: !1, enumerable: !0, get: c}) }, n.n = function (e) {
+      var t = e && e.__esModule ? function () { return e.default } : function () { return e  };
+      return n.d(t, "a", t), t
+    }, n.o = function (e, t) { return Object.prototype.hasOwnProperty.call(e, t) }, n.p = "/packs/", n(n.s = 0)
+  }([function (e, t) {
+    window.chat24WidgetCanRun = 1, window.chat24WidgetCanRun && function () {
+      window.chat24ID = "164fd01e36ba68b387608693cb0d1793", window.chat24io_lang = "en";
+      var e = "https://livechat.chat2desk.com", t = document.createElement("script");
+      t.type = "text/javascript", t.async = !0, fetch(e + "/packs/manifest.json?nocache=" + (new Date()).getTime()).then(function (e) {
+        return e.json()
+      }).then(function (n) {
+        t.src = e + n["widget.js"];
+        var c = document.getElementsByTagName("script")[0];
+        c ? c.parentNode.insertBefore(t, c) : document.documentElement.firstChild.appendChild(t);
+        var o = document.createElement("link");
+        o.href = e + n["widget.css"], o.rel = "stylesheet", o.id = "chat-24-io-stylesheet", o.type = "text/css", document.getElementById("chat-24-io-stylesheet") || document.getElementsByTagName("head")[0].appendChild(o)
+      })
+    }()
+  }]);
+</script>
+
+
+<!-- END chat2desk -->
+
+  <script async type='text/javascript' src='//asset.fwcdn1.com/js/storyblock.js'></script>  
+   <!--DV 10/03/21-->
+{{ 'jquery.fancybox.min.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'jquery.fancybox.min.js' | asset_url }}"></script>
+  
+<!-- DV 18/03/21 Shareasale -->
+<script src="https://www.dwin1.com/19038.js" type="text/javascript" defer="defer"></script>
+<!-- End Shareasale -->
+  
 <!-- langify-v2-scripts-begin -->{% comment %}ly_liquid_scripts_begin{% endcomment %}{% endcapture %}{% render 'ly-liquid-scripts' content: ly_liquid_content %}{% comment %}ly_liquid_scripts_end{% endcomment %}{% comment %}ly_core_scripts_begin{% endcomment %}{% render 'ly-core-scripts' %}{% comment %}ly_core_scripts_end{% endcomment %}{% comment %}ly_switcher_factory_begin{% endcomment %}{% render 'ly-switcher-factory' %}{% comment %}ly_switcher_factory_end{% endcomment %}<!-- langify-v2-scripts-end --></body>
 </html>
+
