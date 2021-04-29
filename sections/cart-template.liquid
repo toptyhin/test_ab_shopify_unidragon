@@ -208,7 +208,7 @@
               <p>You can easily turn your puzzle into a piece of interior decor. It will allow you to hang 6 Small puzzles, 3 Medium puzzles, or 3 King Size puzzles</p>
               <a href="https://www.youtube.com/watch?v=NCG1MPDUako" class="js-video-button" data-video-id="NCG1MPDUako">Watch the video</a>
               
-              <button id="upsell-button" class="upsell-description upsell-button medium-up--hide">{{ 'products.upsell.add_to_cart_button_text' | t }}</button>
+              <button class="upsell-description upsell-button medium-up--hide">{{ 'products.upsell.add_to_cart_button_text' | t }}</button>
             </div>
 
           </td>
@@ -222,7 +222,7 @@
 
           </td>
           <td class="text-right upsell small--hide" width="150px">
-            <button id="upsell-button" class="upsell-button">{{ 'products.upsell.add_to_cart_button_text' | t }}</button>
+            <button class="upsell-button">{{ 'products.upsell.add_to_cart_button_text' | t }}</button>
           </td>
         </tr>
 		{%- endif -%}
@@ -499,7 +499,7 @@
 
 
 <script>
-  $('#upsell-button').on('click',function(e){    
+  $('.upsell-button').on('click',function(e){    
     e.preventDefault();
     let formData = {
      'items': [{
