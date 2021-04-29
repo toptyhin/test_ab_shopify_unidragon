@@ -1,0 +1,110 @@
+<script>
+/*========== Ajaxify JS ===========*/
+Shopify.AjaxifyCart = function($) {
+    var _config = {
+            addToCartBtnLabel: addToCartBtnLabel_1,
+            addedToCartBtnLabel: addedToCartBtnLabe_1,
+            addingToCartBtnLabel: addingToCartBtnLabel_1,
+            soldOutBtnLabel: soldOutBtnLabel_1,
+            howLongTillBtnReturnsToNormal: 700,
+            cartCountSelector: ".cart-count, #CartCount span, #gocart p a, #cart .checkout em, .item-count",
+            cartTotalSelector: "#cart-price, #CartCost",
+            itemsManage: ".items_manage",
+            feedbackPosition: "nextButton",
+            addToCartBtnSelector: '[type="submit"]',
+            addToCartFormSelector: 'form[action*="/cart/add"]',
+            shopifyAjaxAddURL: "/cart/add.js",
+            shopifyAjaxCartURL: "/cart.js"
+        },
+        _showFeedback = function(t, e, o) {
+            $(".ajaxified-cart-feedback").remove();
+            var a = '<p class="ajaxified-cart-feedback ' + t + '">' + e + "</p>";
+            switch (_config.feedbackPosition) {
+                case "aboveForm":
+                    o.before(a);
+                    break;
+                case "belowForm":
+                    o.after(a);
+                    break;
+                case "nextButton":
+                default:
+                    o.find(_config.addToCartBtnSelector).after(a), $(".stiky_button").after(a)
+            }
+            $(".ajaxified-cart-feedback").fadeIn("fast").delay(4e3).fadeOut("slow");
+            _tfa.push({notify: 'event', name: 'add_to_cart', id: 1366281});
+        },
+        _setText = function(t, e) {
+            t.children().length ? t.children().each(function() {
+                "" !== $.trim($(this).text()) && $(this).text(e)
+            }) : t.val(e).text(e)
+        },
+        _init = function() {
+            $(document).ready(function() {
+                var data = continue_shopping;
+                var arr = data.split('|t');
+                var sap = ' ' + arr[0] + ' ';
+                if (data.indexOf('|t') != -1) {
+                    continue_shopping = arr[1]
+                } else {
+                    sap = ' '
+                };
+                $(_config.addToCartFormSelector).submit(function(e) {
+                    e.preventDefault();
+                    var $addToCartForm = $(this),
+                        $addToCartBtn = $addToCartForm.find(_config.addToCartBtnSelector),
+                        $addToCartBtn_stck = $(".stiky_button");
+                    _setText($addToCartBtn, _config.addingToCartBtnLabel), $addToCartBtn.addClass("disabled").prop("disabled", !0);
+                    var success_callback = function(t) {
+                            void 0 !== window.BOLD && void 0 !== window.BOLD.common && void 0 !== window.BOLD.common.cartDoctor && (t = window.BOLD.common.cartDoctor.fixItem(t)), $("#Quantity").val("1"), setTimeout(function() {
+                                $(".one-time").slick({
+                                    infinite: !0,
+                                    speed: 300,
+                                    slidesToShow: 1,
+                                    adaptiveHeight: !0,
+                                    prevArrow: ".thumbnails-slider__prev",
+                                    nextArrow: ".thumbnails-slider__next"
+                                })
+                            }, 2500), $(".close").on("click", function() {
+                                buyitnowaction && (window.location.href = "/cart")
+                            }), relatedupsellenable && custome_addcart(), relatedupsellmodal && related_poup(), $addToCartBtn.addClass("inverted"), _setText($addToCartBtn, _config.addedToCartBtnLabel), _showFeedback("success", '<i class="fa fa-check"></i>' + added_to_cart + ' <a href="/cart">' + view_cart + '</a>' + sap + '<a href="/collections/all">' + continue_shopping + "</a>.", $addToCartForm), window.setTimeout(function() {
+                                $addToCartBtn.prop("disabled", !1).removeClass("disabled").removeClass("inverted"), _setText($addToCartBtn, _config.addToCartBtnLabel)
+                            }, _config.howLongTillBtnReturnsToNormal), $.getJSON(_config.shopifyAjaxCartURL, function(t) {
+                                if (_config.cartCountSelector && $(_config.cartCountSelector).size()) {
+                                    var e = $(_config.cartCountSelector).html() || "0";
+                                    $(_config.cartCountSelector).html(e.replace(/[0-9]+/, t.item_count)).removeClass("hidden-count"), t.item_count <= 1 ? $(".items_manage").html(items_count_one) : $(".items_manage").html(items_count_other)
+                                }
+                                _config.cartTotalSelector && $(_config.cartTotalSelector).size() && ("undefined" != typeof Currency && Currency.moneyFormats, $(_config.cartTotalSelector).html(theme.Currency.formatMoney(t.total_price, theme.moneyFormat)), currency_dropdown && convertCurrencies())
+                            })
+                        },
+                        error_callback = function(XMLHttpRequest) {
+                            var response = eval("(" + XMLHttpRequest.responseText + ")");
+                            response = response.description, "All " === response.slice(0, 4) ? (_showFeedback("error", response.replace("All 1 ", "All "), $addToCartForm), $addToCartBtn.prop("disabled", !1), $addToCartBtn_stck.prop("disabled", !1), _setText($addToCartBtn, _config.soldOutBtnLabel), _setText($addToCartBtn_stck, _config.soldOutBtnLabel), $addToCartBtn.prop("disabled", !0), $addToCartBtn_stck.prop("disabled", !0)) : (_showFeedback("error", '<i class="fas fa-warning"></i>' + response, $addToCartForm), $addToCartBtn.prop("disabled", !1).removeClass("disabled"), _setText($addToCartBtn, _config.addToCartBtnLabel))
+                        };
+                    return "object" == typeof BOLD && BOLD.helpers && "function" == typeof BOLD.helpers.addItemFromForm ? BOLD.helpers.addItemFromForm($addToCartForm, success_callback, error_callback, {
+                        endpoint: "/cart/add.js"
+                    }) : $.ajax({
+                        url: _config.shopifyAjaxAddURL,
+                        dataType: "json",
+                        type: "post",
+                        data: $addToCartForm.serialize(),
+                        success: success_callback,
+                        error: error_callback
+                    }), !1
+                })
+            })
+        };
+    return {
+        init: function(t) {
+            t = t || {}, $.extend(_config, t), $(function() {
+                _init()
+            })
+        },
+        getConfig: function() {
+            return _config
+        }
+    }
+}(jQuery);
+Shopify.AjaxifyCart.init({
+    moneyFormat: "${{amount}}"
+});
+  </script>

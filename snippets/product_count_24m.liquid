@@ -1,0 +1,224 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% comment %}ly_asset_replace_for_[ 'jquery.countdownTimer_2hours_custom.js' | asset_url | script_tag ]_begin{% endcomment %}{% assign ly_asset = 'jquery.countdownTimer_2hours_custom.js' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  | script_tag }}{% comment %}ly_asset_replace_end{% endcomment %}
+
+<script>
+  function timer() {
+    var customizetheme = {{ settings.enable_timer_stg_custom }};
+    var time_minute={{ settings.enable_timer_stg_custom }}/60 ;
+    var time_hours = Math.floor( time_minute / 60);
+    var time_minutes = Math.floor(time_minute % 60); 
+
+    document.cookie = "cook=" + {{ settings.enable_timer_stg_custom }} + ',' + getCookie("cook");
+   // document.cookie = "cook=" + "";
+    var timevalue = getCookie("cook");
+    var remainingtime = timevalue.split(",");
+
+    if (remainingtime.length > 3){
+      var y = timevalue.split(',').slice(0,3).join(',');
+      document.cookie = "cook=" + y;
+      var timevalue_v = getCookie("cook");
+      var remainingtime_value = timevalue_v.split(",");    
+    }
+    var hours = getCookie("hours") == 'NaN' || getCookie("hours") == 'undefined' ? 00 : getCookie("hours");
+    var min = getCookie("minutes") == 'NaN' || getCookie("hours") == 'undefined' ? 00 : getCookie("minutes");
+    var second = getCookie("seconds") == 'NaN' || getCookie("hours") == 'undefined' ? 00 : getCookie("seconds");
+    
+    if (remainingtime.length > 3) {
+      if (remainingtime_value[0] == remainingtime_value[1]) { 
+        if(second == 0 && min == 0) {           
+          $(function() {
+            $('#hm_timer').countdowntimer({
+              hours : time_hours,
+              minutes :time_minutes,
+              seconds :00,
+              size : "lg"
+            });
+          });
+        }
+        else {
+          $(function() {            
+            $('#hm_timer').countdowntimer({
+              hours : hours,
+              minutes :min,
+              seconds :second,
+              size : "lg"
+            });
+          }); 
+        }
+      } 
+      if (remainingtime_value[0] != remainingtime_value[1] || (second == 0 && min == 0)) { 
+        $(function() {
+          $('#hm_timer').countdowntimer({
+            hours : time_hours,
+            minutes :time_minutes,
+            seconds :00,
+            size : "lg"
+          });
+        });
+        document.cookie = "hours=" + "";
+        document.cookie = "minutes=" + "";
+        document.cookie = "seconds=" + "";  
+      }
+    }    
+    else {
+      if (remainingtime[0] == remainingtime[1]) { 
+        if(second == 0 && min == 0) {
+          $(function() {
+            $('#hm_timer').countdowntimer({
+              hours : time_hours,
+              minutes :time_minutes,
+              seconds :00,
+              size : "lg"
+            });
+          });
+        }
+        else {
+          $(function() {
+            $('#hm_timer').countdowntimer({
+              hours : hours,
+              minutes :min,
+              seconds :second,
+              size : "lg"
+            });
+          }); 
+        }
+      } 
+      if (remainingtime[0] != remainingtime[1] || (second == 0 && min == 0)) {
+        $(function() {
+          $('#hm_timer').countdowntimer({
+            hours : time_hours,
+            minutes :time_minutes,
+            seconds :00,
+            size : "lg"
+          });
+        });
+        document.cookie = "hours=" + "";
+        document.cookie = "minutes=" + "";
+        document.cookie = "seconds=" + "";
+      }
+    }      
+  }
+  $(document).ready(function(e){
+    timer();
+  });
+
+ 
+</script>
+
+<table id="timertwohour">
+  <tr>
+    <td><span id="hm_timer"></span></td>
+  </tr>
+  <tr>
+    <td>
+      <span class="tm_lbl text-left">{% comment %}ly_i18n_replace_for_[ 'products.timer.hour' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.timer.hour' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902658' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+      <span class="tm_sap"> </span>
+      <span class="tm_lbl">{% comment %}ly_i18n_replace_for_[ 'products.timer.minute' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.timer.minute' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902659' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+      <span class="tm_sap"> </span>
+      <span class="tm_lbl text-right">{% comment %}ly_i18n_replace_for_[ 'products.timer.second' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.timer.second' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902660' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+    </td>
+  </tr>
+</table>
+
+<script>
+  function timer2(){
+    var time_minute={{ settings.enable_timer_stg_custom }}/60 ;
+
+    var time_hours = Math.floor( time_minute / 60);
+    var time_minutes = Math.floor(time_minute % 60);  
+
+     document.cookie = "cook=" + {{ settings.enable_timer_stg_custom }} + ',' + getCookie("cook");
+   // document.cookie = "cook=" + "";
+    var timevalue = getCookie("cook");
+    var remainingtime = timevalue.split(",");
+
+    if (remainingtime.length > 3){
+      var y = timevalue.split(',').slice(0,3).join(',');
+      document.cookie = "cook=" + y;
+      var timevalue_v = getCookie("cook");
+      var remainingtime_value = timevalue_v.split(",");    
+    }
+
+    var hours = getCookie("hours") == 'NaN' || getCookie("hours") == 'undefined' ? 00 : getCookie("hours");
+    var min = getCookie("minutes") == 'NaN' || getCookie("hours") == 'undefined' ? 00 : getCookie("minutes");
+    var second = getCookie("seconds") == 'NaN' || getCookie("hours") == 'undefined' ? 00 : getCookie("seconds");
+    if (remainingtime.length > 3) {
+      if (remainingtime_value[0] == remainingtime_value[1]) { 
+        if(second == 0 && min == 0) {           
+          $(function() {
+             $('#hm_timer1201').countdowntimer({
+              hours : time_hours,
+              minutes :time_minutes,
+              seconds :00,
+              size : "lg"
+            });
+          });
+        }
+        else {
+          $(function() {            
+             $('#hm_timer1201').countdowntimer({
+              hours : hours,
+              minutes :min,
+              seconds :second,
+              size : "lg"
+            });
+          }); 
+        }
+      } 
+      if (remainingtime_value[0] != remainingtime_value[1] || (second == 0 && min == 0)) { 
+        $(function() {
+           $('#hm_timer1201').countdowntimer({
+            hours : time_hours,
+            minutes :time_minutes,
+            seconds :00,
+            size : "lg"
+          });
+        });
+        document.cookie = "hours=" + "";
+        document.cookie = "minutes=" + "";
+        document.cookie = "seconds=" + "";  
+      }
+    }    
+    else {
+      if (remainingtime[0] == remainingtime[1]) { 
+        if(second == 0 && min == 0) {
+          $(function() {
+            $('#hm_timer1201').countdowntimer({
+              hours : time_hours,
+              minutes :time_minutes,
+              seconds :00,
+              size : "lg"
+            });
+          });
+        }
+        else {
+          $(function() {
+            $('#hm_timer1201').countdowntimer({
+              hours : hours,
+              minutes :min,
+              seconds :second,
+              size : "lg"
+            });
+          }); 
+        }
+      } 
+      if (remainingtime[0] != remainingtime[1] || (second == 0 && min == 0)) {
+        $(function() {
+           $('#hm_timer1201').countdowntimer({
+            hours : time_hours,
+            minutes :time_minutes,
+            seconds :00,
+            size : "lg"
+          });
+        });
+        document.cookie = "hours=" + "";
+        document.cookie = "minutes=" + "";
+        document.cookie = "seconds=" + "";
+      }
+    }
+  }
+  $(document).ready(function(e){
+    timer2();
+  });	
+
+</script>
+

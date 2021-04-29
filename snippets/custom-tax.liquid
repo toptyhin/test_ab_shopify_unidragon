@@ -1,0 +1,15 @@
+  {% if section.settings.heading-tax != blank %}
+        <div class="custom-tax">
+          {% if section.settings.heading-tax != blank %}
+          <p class="line">
+            {{ section.settings.heading-tax }}
+          </p>
+          {% endif %}
+          {% if section.settings.tax_title != blank %}<div class="accordion-tax"><span class="accordion-taxes">{{ section.settings.tax_title }}</span></div>{% endif %}
+          {% if section.settings.tax_sub_content != blank %}
+          <div class="panel">
+            <p>{{ section.settings.tax_sub_content }}</p>
+          </div>
+          {% endif %}
+        </div>
+        {% endif %}

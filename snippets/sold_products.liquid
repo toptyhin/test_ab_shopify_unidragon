@@ -1,0 +1,195 @@
+{% assign soldStock = shop.metafields.sa_productdata.sa_shopdata %}
+
+{% assign soldStockPosition = 0 %}
+{% if soldStock.soldapp_w_position %}
+  {% assign soldStockPosition = soldStock.soldapp_w_position %}
+{% endif %}
+
+{% assign assignProductType = 'all' %}
+{% if soldStock.soldapp_w_position %}
+  {% assign assignProductType = soldStock.assignProductType %}
+{% endif %}
+
+{% assign inStockSize = 17 %}
+{% assign inStockInline = true %}
+{% assign inStockLimitCount = 0 %}
+{% assign inStockDisplay = false %}
+{% assign inStockText = 'In Stock' %}
+{% assign inStockColor = '#000000' %}
+{% assign inStockLimitEnable = false %}
+
+{% assign stockSize = 17 %}
+{% assign stockText = 'Sold' %}
+{% assign stockDisplay = false %}
+{% assign stockType = 'variant' %}
+{% assign stockColor = '#000000' %}
+{% assign soldStockType = 'product' %}
+{% assign stockIcon = 'emoticon emoticon-fire' %}
+
+{% if soldStock.setting %}
+  {% assign soldStockSetting = soldStock.setting %}
+  {% if soldStockSetting.inStock %}
+    {% assign inStockSetting = soldStockSetting.inStock %}
+        {% if inStockSetting.display %}
+          {% assign inStockDisplay = inStockSetting.display %}
+        {% endif %}
+        {% if inStockSetting.size %}
+          {% assign inStockSize = inStockSetting.size %}
+        {% endif %}
+
+        {% assign inStockInline = false %}
+        {% if inStockSetting.inline %}
+          {% assign inStockInline = inStockSetting.inline %}
+        {% endif %}
+        {% if inStockSetting.text %}
+          {% assign inStockText = inStockSetting.text %}
+        {% endif %}
+        {% if inStockSetting.color %}
+          {% assign inStockColor = inStockSetting.color %}
+        {% endif %}
+        {% if inStockSetting.limit %}
+          {% assign inStockLimit = inStockSetting.limit %}
+            {% if inStockLimit.check %}
+                {% assign inStockLimitEnable = inStockLimit.check %}
+            {% endif %}
+            {% if inStockLimit.number %}
+                {% assign inStockLimitCount = inStockLimit.number %}
+            {% endif %}
+        {% endif %}
+  {% endif %}
+
+    {% if soldStockSetting.soldStock %}
+    {% assign stockSetting = soldStockSetting.soldStock %}
+        {% if stockSetting.display %}
+          {% assign stockDisplay = stockSetting.display %}
+        {% endif %}
+        {% if stockSetting.size %}
+          {% assign stockSize = stockSetting.size %}
+        {% endif %}
+        {% if stockSetting.type %}
+          {% assign stockType = stockSetting.type %}
+        {% endif %}
+        {% if stockSetting.text %}
+          {% assign stockText = stockSetting.text %}
+        {% endif %}
+        {% if stockSetting.color %}
+          {% assign stockColor = stockSetting.color %}
+        {% endif %}
+        {% if stockSetting.icon %}
+          {% assign stockIcon = stockSetting.icon %}
+        {% endif %}
+  {% endif %}
+{% endif %}
+
+{% assign productInStock = 0 %}
+{% assign productSoldCount = product.metafields.sa_productdata.sa_sold %}
+{% assign firstVariantID = product.variants.first.id %}
+
+<style>
+  .sold_mainbox{margin-bottom: 1rem;}
+  .sold_pro{color: {{ stockColor }};font-size: {{stockSize}}px;}
+  .pro-inventory{color: {{ inStockColor }};font-size: {{inStockSize}}px;}
+  .sold_mainbox .emoticon{vertical-align: top;}
+  .sold_mainbox .hide{display:none;}
+  .sold_mainbox .inline{display:inline;}
+  .sold_mainbox b{font-weight:bold;}
+  .sold_mainbox span.separator {margin: 0 0.5rem;}
+  label.sold.sold_pro, .sold_mainbox .pro-inventory {display: block;margin-bottom:5px;}
+  
+  {% if inStockInline == true %}
+    label.sold.sold_pro, .pro-inventory {display: inline;}
+  {% endif %}
+
+  .sold_sale_popup{position:fixed;width:336px;z-index:99999999;-webkit-box-shadow:1px 0 10px rgba(0,0,0,.4);-moz-box-shadow:1px 0 10px rgba(0,0,0,.4);box-shadow:1px 0 10px rgba(0,0,0,.4);-webkit-transition:all 1s ease;-moz-transition:all 1s ease;-ms-transition:all 1s ease;-o-transition:all 1s ease;display:flex;align-items:center;background:#fff;-webkit-opacity:0;-moz-opacity:0;opacity:0;pointer-events: none;}
+  .sold_sale_popup.sold_sale_popup_tl,.sold_sale_popup.sold_sale_popup_tr{top:20px;bottom:unset;-webkit-transform:translateY(-130%);-moz-transform:translateY(-130%);-ms-transform:translateY(-130%);-o-transform:translateY(-130%);transform:translateY(-130%)}
+  .sold_sale_popup.sold_sale_popup_tl{left:20px;right:unset}
+  .sold_sale_popup.sold_sale_popup_tr{right:20px;left:unset}
+  .sold_sale_popup.sold_sale_popup_bl,.sold_sale_popup.sold_sale_popup_br{top:unset;bottom:20px;-webkit-transform:translateY(100%);-moz-transform:translateY(100%);-ms-transform:translateY(100%);-o-transform:translateY(100%);transform:translateY(100%)}
+  .sold_sale_popup.sold_sale_popup_bl{left:20px;right:unset}
+  .sold_sale_popup.sold_sale_popup_br{right:20px;left:unset}
+  .sold_sale_popup.sold_sale_show{opacity:1;transform:translatey(0);pointer-events: auto;}
+  .sold_sale_popup .sold_sale_product_image{position:relative;float:left;width:76px!important;height:100%;padding:5px;border:0;line-height:0;margin:0;min-height:auto;align-items:center;justify-content:center;display:flex;display:-webkit-flex}
+  .sold_sale_popup .sold_sale_product_image img{height:100%;max-height:76px;max-width:100%}.sold_sale_popup .sold_sale_info{padding:6px 25px 6px 5px;width:calc(100% - 80px);flex-wrap:wrap;display:flex;display:-webkit-flex}
+  .sold_sale_popup .sold_sale_info .close-noti{position:absolute;width:15px;height:15px;top:8px;right:8px;cursor:pointer}.sold_sale_popup .sold_sale_info .close-noti svg{width:15px;height:15px;vertical-align:top}
+  .sold_sale_popup .sold_sale_info .noti-title{float:right;width:100%;margin:0 0 6px;line-height:1}
+  .sold_sale_popup .sold_sale_info .noti-title span{font-size:13px;line-height:normal;overflow:hidden;text-overflow:ellipsis;-webkit-box-orient:vertical;display:-webkit-box;-webkit-line-clamp:2;color:#55586c}
+  .sold_sale_popup .sold_sale_info .noti-body{margin:0 0 10px;float:right;width:100%;line-height:1}.sold_sale_popup .sold_sale_info .noti-body a{text-decoration:none;font-size:16px;line-height:normal;display:block;font-weight:700;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;color:#55586c}
+  .sold_sale_popup .sold_sale_info .noti-time{color:#55586c;font-size:12px;line-height:1;width:100%}
+  
+  @media only screen and (max-width: 480px) {
+    .sold_sale_popup {width: 320px;}
+  }
+  
+  @media only screen and (max-width: 359px) {
+    .sold_sale_popup {width: 290px;margin: 0 -5px;}
+  }
+</style>
+
+<div class="sold_sale_popup">
+    <div class="sold_sale_product_image"> 
+        <img src="https://soldstock.io/soldstockapp/admin/assets/image/dmmy.jpeg" alt = "Sales Popup" >
+    </div>
+    <div class="sold_sale_info">
+        <div class="close-noti" id="salsepop_close">
+            <svg viewBox="0 0 20 20">
+                <path xmlns="http://www.w3.org/2000/svg" d="M11.414 10l6.293-6.293a.999.999 0 1 0-1.414-1.414L10 8.586 3.707 2.293a.999.999 0 1 0-1.414 1.414L8.586 10l-6.293 6.293a.999.999 0 1 0 1.414 1.414L10 11.414l6.293 6.293a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L11.414 10z" fill="#82869e"/>
+            </svg>
+        </div>
+        <div class="noti-body">
+            <a href="javascript:void(0)">Dummy products title</a>
+        </div>
+        <div class="noti-title">
+            <span>Surat, Gujarat</span>
+        </div> 
+        <div class="noti-time"> 6 hours ago </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+  
+  var variantStock = {};
+  {% for variant in product.variants %}
+    variantStock['{{ variant.id }}'] = {};
+    {% if variant.inventory_management == "shopify" and variant.inventory_quantity > 0 %}
+      {% assign productInStock = productInStock | plus: variant.inventory_quantity %}
+      variantStock['{{ variant.id }}']['inventory'] = parseInt('{{ variant.inventory_quantity }}');
+    {% endif %}
+    variantStock['{{ variant.id }}']['sold'] = parseInt('{{ variant.metafields.sa_productdata.sa_sold }}');
+  {% endfor %}
+         
+  window.spSoldStockSetting = {
+    setting: {
+      soldStock: {
+        display: parseBool('{{ stockDisplay }}'),
+        type: '{{ stockType }}',
+        icon: '{{ stockIcon }}',
+        text: '{{ stockText }}',
+                size: parseInt('{{ stockSize }}'),
+                color: '{{ stockColor }}'
+      },
+      inStock: {
+        display: parseBool('{{ inStockDisplay }}'),
+        text: '{{ inStockText }}',
+        inline: parseBool('{{ inStockInline }}'),
+        limit: {
+          check: parseBool('{{inStockLimitEnable}}'),
+          number: parseInt('{{inStockLimitCount}}')
+        },
+                size: parseInt('{{ inStockSize }}'),
+                color: '{{ inStockColor }}'
+      }
+    },
+    productID: parseInt('{{ product.id }}'),
+    assignProductType: '{{ assignProductType }}',
+    productSoldCount: parseInt('{{ productSoldCount }}'),
+    productInStock: parseInt('{{ productInStock }}'),
+    firstVariantID: parseInt('{{ firstVariantID }}'),
+    variantStock: variantStock,
+    currentTemplate: '{{ template }}',
+    soldapp_w_position: parseInt('{{ soldStockPosition }}') 
+  };
+                     
+    window.spSalePopupSetting = JSON.parse('{{ shop.metafields.sa_sale_popup.sa_sale_popup | json }}');
+                     
+    function parseBool(str){return (str === 'true') ? true : false;}
+</script>

@@ -1,0 +1,51 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% comment %}ly_asset_replace_for_[ 'jquery.countdownTimer_2hours.js' | asset_url | script_tag ]_begin{% endcomment %}{% assign ly_asset = 'jquery.countdownTimer_2hours.js' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  | script_tag }}{% comment %}ly_asset_replace_end{% endcomment %}
+
+<script>
+  var myMinutevar=document.getElementById("myMinute").value;
+
+  var time_minute=myMinutevar/60 ;
+  //   alert(time_minute);
+  var hours = Math.floor( time_minute / 60);          
+  var minutes = Math.floor(time_minute % 60);     
+
+  $(function(){
+    $('#hm_timer').countdowntimer({
+      hours : hours,
+      minutes :minutes,
+      seconds :00,
+      size : "lg"
+    });
+  });
+</script>
+
+<table id="timertwohour">
+  <tr>
+    <td colspan="3"><span id="hm_timer"></span></td>
+  </tr>
+  <tr>
+    <td>
+      <span class="tm_lbl text-left">{% comment %}ly_i18n_replace_for_[ 'products.timer.hour' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.timer.hour' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902661' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+      <span class="tm_sap"> </span>
+      <span class="tm_lbl">{% comment %}ly_i18n_replace_for_[ 'products.timer.minute' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.timer.minute' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902662' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+      <span class="tm_sap"> </span>
+      <span class="tm_lbl text-right">{% comment %}ly_i18n_replace_for_[ 'products.timer.second' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.timer.second' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902663' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+    </td>
+  </tr>
+</table>
+
+
+<script>
+  var myMinutevar=document.getElementById("myMinute").value;
+  var time_minute=myMinutevar/60 ;
+  //   alert(time_minute);
+  var hours = Math.floor( time_minute / 60);          
+  var minutes = Math.floor(time_minute % 60);      
+  $(function(){
+    $('#hm_timer1201').countdowntimer({
+      hours : hours,
+      minutes :minutes,
+      seconds :00
+    });
+  });
+</script>

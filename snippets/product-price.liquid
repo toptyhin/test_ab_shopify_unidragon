@@ -1,0 +1,41 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<!-- snippet/product-price.liquid -->
+{% if product.title %}
+  {%- assign compare_at_price = product.compare_at_price -%}
+  {%- assign price = product.price -%}
+  {%- assign price_varies = product.price_varies -%}
+  {%- assign available = product.available -%}
+{% else %}
+  {%- assign compare_at_price = 1999 -%}
+  {%- assign price = 1999 -%}
+  {%- assign price_varies = false -%}
+  {%- assign available = true -%}
+{% endif %}
+
+{%- assign money_price = price | money -%}
+
+{% if compare_at_price > price %}
+  <span class="visually-hidden">{% comment %}ly_i18n_replace_for_[ 'products.product.regular_price' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.regular_price' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902648' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+{% comment%} 
+<s class="product-price__price">{{ compare_at_price | money }}</s>
+  <span class="product-price__price product-price__sale">
+    {{ money_price }}     
+  </span>
+{% endcomment %}
+<span class="compare">From </span><span class="product-price__price">{{ product.price_min | money }}</span>
+  {% if settings.show_saved_amount and settings.show_discount_amount == 'money_save' %}
+  <span class="salePrice sale-tag large"> 
+    {% assign sale = product.compare_at_price | minus:  product.price |  money %}
+    {% comment %}ly_i18n_replace_for_[ 'products.product.on_save_like_price' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.on_save_like_price' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902649' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %} {{sale}}
+  </span>
+
+  {% endif %}
+{% else %}
+
+  <span class="visually-hidden">{% comment %}ly_i18n_replace_for_[ 'products.product.regular_price' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.regular_price' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902648' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+{% comment %} 
+<span class="product-price__price">{{ money_price }}</span>
+{% endcomment %}
+<span class="compare">From </span><span class="product-price__price">{{ product.price_min | money }}</span>
+
+{% endif %}

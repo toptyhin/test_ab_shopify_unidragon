@@ -1,0 +1,117 @@
+{
+  "switcher": {
+    "version": "2.0.2",
+    "customCSS": "",
+    "languageDetection": true,
+    "languageDetectionDefault": "en",
+    "breakpoints": [
+      {
+        "key": 0,
+        "label": "0px",
+        "config": {
+          "type": "custom",
+          "corner": "top_left",
+          "position": "absolute",
+          "show_flags": false,
+          "show_label": true,
+          "show_custom_name": true,
+          "show_name": false,
+          "show_iso_code": false,
+          "round_icons": false,
+          "is_dark": false,
+          "is_transparent": false,
+          "arrow_size": 50,
+          "arrow_width": 2,
+          "arrow_filled": false,
+          "dropdown_open": false,
+          "h_space": 0,
+          "v_space": 0,
+          "text_color": "#000",
+          "arrow_color": "#000",
+          "bg_color": "#fff",
+          "fontsize": 14,
+          "switcherLabel": "show_custom_name",
+          "rectangle_icons": true,
+          "switcherIcons": "rectangle_icons"
+        }
+      },
+      {
+        "key": 749,
+        "label": "1000px",
+        "config": {
+          "type": "custom",
+          "corner": "top_left",
+          "position": "absolute",
+          "show_flags": true,
+          "show_label": true,
+          "show_custom_name": true,
+          "show_name": false,
+          "show_iso_code": false,
+          "round_icons": false,
+          "is_dark": false,
+          "is_transparent": false,
+          "arrow_size": 50,
+          "arrow_width": 2,
+          "arrow_filled": false,
+          "dropdown_open": false,
+          "h_space": 55,
+          "v_space": 32,
+          "text_color": "#000",
+          "arrow_color": "#000",
+          "bg_color": "#fff",
+          "fontsize": 14,
+          "switcherLabel": "show_custom_name",
+          "rectangle_icons": false,
+          "switcherIcons": "square_icons",
+          "square_icons": true
+        }
+      }
+    ],
+    "languages": [
+      {
+        "iso_code": "en",
+        "root_url": "\/",
+        "name": "English",
+        "primary": true,
+        "domain": false,
+        "published": true,
+        "custom_name": false
+      },
+      {
+        "iso_code": "es",
+        "root_url": "\/es",
+        "name": "Spanish",
+        "primary": false,
+        "domain": false,
+        "published": true,
+        "custom_name": false
+      },
+      {
+        "iso_code": "ar",
+        "root_url": "\/ar",
+        "name": "Arabic",
+        "primary": false,
+        "domain": false,
+        "custom_name": false,
+        "published": true
+      },
+      {
+        "iso_code": "pt-PT",
+        "root_url": "\/pt-PT",
+        "name": "Portuguese (Portugal)",
+        "primary": false,
+        "domain": false,
+        "published": true,
+        "custom_name": false
+      }
+    ]
+  },
+  "core": {
+    "debug": false,
+    "observe": true,
+    "observeLinks": true,
+    "observeImages": true,
+    "observeCustomContents": true,
+    "linksBlacklist": []
+  }
+}

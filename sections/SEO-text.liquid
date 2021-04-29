@@ -1,0 +1,98 @@
+
+<div class="page-width rich-text seo-text">
+  <div class="grid">
+    <div class="grid__item medium-up--one-third">
+      <style>
+        .storyblock {line-height: 1.2;margin-bottom: 10px;}
+      </style>
+      {%- render 'fw-storyblock', channel: 'unidragon_world' -%}
+    </div>
+    <div class="grid__item {% unless section.settings.full_width %} medium-up--two-thirds{% endunless %}">
+      {% if section.settings.section_title != blank %}
+        <div class="rich-text__heading--{{ section.settings.text_size }} text-center">
+          <h2 class="heading">{{ section.settings.section_title | escape }}</h2>
+        </div>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <div class="rich-text__text--{{ section.settings.text_size }} rte-setting text-center">{{ section.settings.text }}</div>
+      {% endif %}
+      {% if section.settings.more_text != blank %}
+        <div class="more-text rich-text__text--{{ section.settings.text_size }} rte-setting text-center">{{ section.settings.more_text }}</div>
+      {% endif %}
+       {% if section.settings.button_lavel != blank %}
+      <div class="seo-button btn_hero"><button id="more-text" class="btn hero__btn">{{ section.settings.button_lavel }}</button></div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#more-text").click(function(){
+    $(".more-text").show();
+    $("#more-text").hide();
+  });
+});
+</script>
+{% schema %}
+  {
+    "name": "SEO Text",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Wide display"
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Heading",
+        "default": "Talk about your brand"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+      },
+      {
+        "type": "richtext",
+        "id": "more_text",
+        "label": "More-Text"
+      },
+      {
+        "type": "text",
+        "id": "button_lavel",
+        "label": "Button Lavel"
+      },
+
+      {
+        "type": "select",
+        "id": "text_size",
+        "label": "Size",
+        "default": "medium",
+        "options": [
+          {
+            "label": "Small",
+            "value": "small"
+          },
+          {
+            "label": "Medium",
+            "value": "medium"
+          },
+          {
+            "label": "Large",
+            "value": "large"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "SEO Text",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}

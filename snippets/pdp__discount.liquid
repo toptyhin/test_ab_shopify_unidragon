@@ -1,0 +1,22 @@
+<div class="pdp_discount">
+  {% if section.settings.pdp_image != blank %}
+  <div class="pdp_img">
+    <img src="{{section.settings.pdp_image | img_url:'master'}}">
+  </div>
+  {% endif %}
+
+  <div class="discount_content">
+    {% if section.settings.pdp_title != blank %}
+    <div class="pdp_title">
+      <p>{{section.settings.pdp_title}}</p>
+    </div>
+    {% endif %}
+
+    {% if section.settings.pdp_sub_title != blank %}
+    <div class="pdp_subtitle">
+      <p>{{section.settings.pdp_sub_title}}</p>
+    </div>
+    {% endif %}
+  </div>
+
+</div>

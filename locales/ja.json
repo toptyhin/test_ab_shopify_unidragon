@@ -1,0 +1,1224 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_content": "コンテンツにスキップする",
+      "close_modal": "閉じる(esc)"
+    },
+    "meta": {
+      "tags": "タグ \"{{ tags }}\"",
+      "page": "ページ {{ page }}"
+    },
+    "404": {
+      "title": "ページが見つかりません",
+      "subtext": "お探しのページは存在しません。",
+      "link": "買い物を続ける"
+    },
+    "pagination": {
+      "previous": "前",
+      "next": "次",
+      "current_page": "ページ： {{ current }} \/ {{ total }}"
+    },
+    "password_page": {
+      "opening_soon": "間もなくオープンします",
+      "login_form_heading": "ストアのパスワードを入力してください",
+      "login_form_password_label": "パスワード",
+      "login_form_password_placeholder": "あなたのパスワード",
+      "login_form_submit": "入力する",
+      "signup_form_email_label": "メール",
+      "signup_form_success": "ストアがオープンする直前にメールでお知らせします！",
+      "admin_link_html": "あなたはストアのオーナーですか？<a href=\"\/admin\" class=\"text-link\">こちらからログインする<\/a>",
+      "password_link": "パスワードを入力してください",
+      "powered_by_shopify_html": "このお店は{{ shopify }}を使用しています"
+    },
+    "social": {
+      "share_on_facebook": "シェア",
+      "share_on_twitter": "ツイート",
+      "share_on_pinterest": "ピンする",
+      "alt_text": {
+        "share_on_facebook": "Facebookでシェアする",
+        "share_on_twitter": "Twitterに投稿する",
+        "share_on_pinterest": "Pinterestでピンする"
+      }
+    },
+    "search": {
+      "no_results_html": "\"{{ terms }}\"の検索に一致する商品はありませんでした。",
+      "results_with_count": {
+        "one": "\"{{ terms }}\"の検索結果{{ count }}件",
+        "other": "\"{{ terms }}\"の検索結果{{ count }}件"
+      },
+      "title": "サイトを検索する",
+      "placeholder": "検索する",
+      "submit": "送信",
+      "close": "検索を閉じる"
+    },
+    "newsletter_form": {
+      "newsletter_email": "メールマガジンに登録しましょう",
+      "email_placeholder": "メールアドレス",
+      "confirmation": "ご登録ありがとうございます",
+      "submit": "登録する",
+      "subscriber_first_name": "ファーストネーム",
+      "subscriber_last_name": "苗字",
+      "discount_submit": "割引を得る"
+    },
+    "filters": {
+      "show_more": "表示を増やす",
+      "show_less": "表示を減らす"
+    },
+    "copyright_credit": {
+      "designer_credits_html": "ブースターのテーマでデザインされています"
+    }
+  },
+  "sections": {
+    "slideshow": {
+      "next_slide": "次のスライド",
+      "previous_slide": "前のスライド",
+      "pause_slideshow": "スライドショーを止める",
+      "play_slideshow": "スライドショーを再生する",
+      "play_video": "動画を再生する",
+      "close_video": "動画を閉じる"
+    },
+    "map": {
+      "address_error": "住所を調べる際にエラーが発生しました",
+      "address_no_results": "その住所は見つかりませんでした",
+      "address_query_limit_html": "Google APIの使用量の制限を超えました。<a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">プレミアムプラン<\/a>へのアップグレードをご検討ください。",
+      "auth_error_html": "あなたのGoogle Mapsのアカウント認証で問題が発生しました。",
+      "get_directions": "道順を取得する"
+    }
+  },
+  "blogs": {
+    "article": {
+      "view_all": "すべてを見る",
+      "all_topics": "すべてのトピック",
+      "by_author": "by {{ author }}",
+      "posted_in": "カテゴリー : ",
+      "read_more": "続きを読む",
+      "back_to_blog": "{{ title }}に戻る"
+    },
+    "comments": {
+      "title": "コメントを残す",
+      "name": "名前",
+      "email": "メールアドレス",
+      "message": "メッセージ",
+      "post": "コメントを投稿する",
+      "moderated": "コメントは承認され次第、表示される前に承認される必要があります。",
+      "success_moderated": "コメントが投稿されました。コメントはすぐに表示されるようになります。",
+      "success": "コメントが投稿されました！ありがとうございます！",
+      "comments_with_count": {
+        "one": "{{ count }}件のコメント",
+        "other": "{{ count }}件のコメント"
+      }
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "ショッピングカート",
+      "note": "注文にメモを追加する",
+      "remove": "削除",
+      "subtotal": "小計",
+      "savings": "節約",
+      "shipping_at_checkout": "送料と税はチェックアウトの際に自動計算されます",
+      "update": "アップデート",
+      "checkout": "チェックアウト",
+      "empty": "カート内に商品がありません。",
+      "cookies_required": "カートを使うためにCookieを有効にする",
+      "edit": "編集",
+      "cancel": "キャンセル",
+      "continue_shopping": "買い物を続ける",
+      "cart_expire_text": "カートの有効期限は",
+      "currency_info_text1": "{{shop_name}}は{{shop_currency}}のすべての注文を処理します。あなたのカートの内容は、現在、",
+      "currency_info_text2": "最新の為替レートで{{shop_currency}}を使用してチェックアウトします。",
+      "secure_shopping_image_title": "安全なショッピング",
+      "payment_image_title": "私たちから購入する理由",
+      "close_cart": "カートを見る",
+      "added_to_cart": "カートに追加",
+      "view_cart": "かごの中身を見る",
+      "related_products": "関連製品",
+      "minutes_ago": "数分前",
+      "was": "ワシ",
+      "yousave": "保存します"
+    },
+    "label": {
+      "product": "商品名",
+      "price": "価格",
+      "quantity": "数量",
+      "total": "合計"
+    }
+  },
+  "collections": {
+    "general": {
+      "view_all": "すべてを見る",
+      "no_matches": "申し訳ございません。検索に一致する商品が見つかりませんでした。",
+      "items_with_count": {
+        "one": "{{ count }}個の商品",
+        "other": "{{ count }}個の商品"
+      },
+      "shop_now": "今すぐ購入"
+    },
+    "sorting": {
+      "title": "並び替え",
+      "featured": "オススメ",
+      "best_selling": "人気順",
+      "az": "アルファベット順, A-Z",
+      "za": "アルファベット順, Z-A",
+      "price_ascending": "価格の安い順",
+      "price_descending": "価格の高い順",
+      "date_descending": "新着順",
+      "date_ascending": "古い商品順"
+    },
+    "filters": {
+      "title_tags": "フィルター",
+      "all_tags": "すべての商品"
+    },
+    "tag": {
+      "free_text": "無料",
+      "sold_out_text": "完売"
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "名前",
+      "email": "Eメール",
+      "phone": "電話番号",
+      "message": "メッセージ",
+      "submit": "送信",
+      "post_success": "お問い合わせをいただき、ありがとうございます。内容を確認後、早急にご返信させて頂きます。"
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "私のアカウント",
+      "details": "アカウントの詳細",
+      "view_addresses": "住所を確認する",
+      "return": "アカウントの詳細に戻る"
+    },
+    "activate_account": {
+      "title": "アカウントを有効にする",
+      "subtext": "アカウントを有効にするためにパスワードを作成してください。",
+      "password": "パスワード",
+      "password_confirm": "パスワードを確認する",
+      "submit": "アカウントを有効にする",
+      "cancel": "招待を断る"
+    },
+    "addresses": {
+      "title": "あなたの住所",
+      "default": "標準設定",
+      "add_new": "新しい住所を追加する",
+      "edit_address": "住所を編集する",
+      "first_name": "名",
+      "last_name": "姓",
+      "company": "会社名",
+      "address1": "住所",
+      "address2": "住所",
+      "city": "市区町村",
+      "country": "国",
+      "province": "都道府県",
+      "zip": "郵便番号",
+      "phone": "電話番号",
+      "set_default": "この住所をデフォルトとして設定する",
+      "add": "住所を追加する",
+      "update": "住所をアップデートする",
+      "cancel": "キャンセル",
+      "edit": "編集",
+      "delete": "削除",
+      "delete_confirm": "この住所を削除してもよろしいですか？"
+    },
+    "login": {
+      "title": "ログイン",
+      "email": "メールアドレス",
+      "password": "パスワード",
+      "forgot_password": "パスワードをお忘れですか？",
+      "sign_in": "ログイン",
+      "guest_title": "ゲストとして購入",
+      "guest_continue": "続ける"
+    },
+    "orders": {
+      "title": "注文履歴",
+      "order_number": "注文",
+      "date": "日付",
+      "payment_status": "お支払い状況",
+      "fulfillment_status": "フルフィルメントの状況",
+      "total": "合計",
+      "none": "まだ注文を確定していません。"
+    },
+    "order": {
+      "title": "注文 {{ name }}",
+      "date": "注文の日付 {{ date }}",
+      "cancelled": "注文がキャンセルされた日付 {{ date }}",
+      "cancelled_reason": "理由: {{ reason }}",
+      "billing_address": "請求先住所",
+      "payment_status": "お支払いの状況",
+      "shipping_address": "配送先住所",
+      "fulfillment_status": "フルフィルメントの状況",
+      "discount": "ディスカウント",
+      "shipping": "送料",
+      "tax": "税",
+      "product": "商品",
+      "sku": "SKU",
+      "price": "価格",
+      "quantity": "個数",
+      "total": "合計",
+      "fulfilled_at": "フルフィルメントされた日付 {{ date }}",
+      "subtotal": "小計",
+      "track_shipment": "荷物を追跡"
+    },
+    "recover_password": {
+      "title": "パスワードをリセットする",
+      "email": "メールアドレス",
+      "submit": "送信する",
+      "cancel": "キャンセル",
+      "subtext": "パスワードをリセットするためのメールを送ります。",
+      "success": "パスワードをアップデートするためのメールを送信しました。"
+    },
+    "reset_password": {
+      "title": "アカウントのパスワードをリセットする",
+      "subtext": "{{ email }}の新しいパスワードを入力してください",
+      "password": "パスワード",
+      "password_confirm": "パスワードの確認",
+      "submit": "パスワードをリセットする"
+    },
+    "register": {
+      "title": "アカウントを作成する",
+      "first_name": "名",
+      "last_name": "姓",
+      "email": "メールアドレス",
+      "password": "パスワード",
+      "submit": "作成する"
+    }
+  },
+  "homepage": {
+    "onboarding": {
+      "product_title": "あなたの商品の名前",
+      "product_description": "このエリアはあなたの商品の詳細を記載するために使うことができます。お客様に商品についての情報を伝えましょう。色や材料、サイズ、どこで作られたのかなどの情報も追加しましょう。",
+      "collection_title": "コレクションの名前",
+      "blog_title": "記事のタイトル",
+      "blog_excerpt": "あなたはまだブログ記事を投稿していません。ブログは新商品情報やニュースなどの情報発信に使用することができます。Shopifyのブログを確認して、ストアとブログについてのインスピレーションとアドバイスをゲットしましょう。",
+      "blog_author": "筆者",
+      "no_content": "このセクションには現在コンテンツがございません。サイドバーを使ってコンテンツを追加しましょう。"
+    },
+    "sections": {
+      "frontpage_title": "表紙コレクション",
+      "featured_title": "おすすめ商品",
+      "news_title": "最新ニュース",
+      "more": "もっと"
+    }
+  },
+  "layout": {
+    "navigation": {
+      "search": "検索",
+      "toggle": "拡大\/縮小",
+      "expand": "拡大",
+      "collapse": "縮小",
+      "menu": "メニュー"
+    },
+    "cart": {
+      "title": "カート",
+      "items_count": {
+        "one": "個",
+        "other": "個"
+      }
+    },
+    "customer": {
+      "account": "アカウント",
+      "log_out": "ログアウト",
+      "log_in": "ログイン",
+      "create_account": "アカウントを作成する"
+    },
+    "footer": {
+      "social_platform": "{{ name }} on {{ platform }}",
+      "accepted_payments": "受け入れられた支払い",
+      "social_title": "フォローする"
+    }
+  },
+  "products": {
+    "product": {
+      "regular_price": "通常価格",
+      "sold_out": "売り切れ",
+      "unavailable": "お取り扱いできません",
+      "on_sale": "販売中",
+      "quantity": "個数",
+      "add_to_cart": "カートに追加する",
+      "back_to_collection": "{{ title }}に戻る",
+      "on_save": "% オフ",
+      "on_save_like_price": "セーブ",
+      "compare_at": "比較する",
+      "pick_a_text": "ピック",
+      "Thanks_you": "ありがとうございました",
+      "adding": "追加.....",
+      "on_buy": "購入",
+      "free_add_to_cart": "無料+配送",
+      "visitor_counter_text": "人々は現在この製品を見ています",
+      "badges_title": "安全なチェックアウトを保証",
+      "tags": "タグ",
+      "only_left_text_1": "のみ",
+      "only_left_text_2": "左",
+      "sale_end_text": "セールは1回終了タイマーはゼロに当たった！",
+      "deliiver_time_text_1": "推定配達時間",
+      "deliiver_time_text_2": "日々",
+      "sticky_timer_text": "価格は期限切れとなります："
+    },
+    "timer": {
+      "day": "デイ",
+      "hour": "時間",
+      "minute": "分",
+      "second": "秒",
+      "readmore": "続きを読む",
+      "readless": "もっと少なく"
+    },
+    "product_tab": {
+      "product_tab_1": "製品詳細",
+      "product_tab_2": "納期",
+      "product_tab_3": "サイズチャート"
+    },
+    "upsell": {
+      "heading": "あなたもこのように好きかもしれません",
+      "text_message": "購入したお客様",
+      "add_to_cart_button_text": "カートに追加",
+      "no_thanks": "結構です"
+    },
+    "related": {
+      "checkout": "チェックアウト",
+      "view_cart": "かごの中身を見る",
+      "continue_shoping_text": "ショップを続ける",
+      "continue_shopping_text": "ショッピングを続ける"
+    },
+    "dynamic_checkout_buttons": {
+      "add_to_cart_text_when_dynamic_checkout_buttons_enable": "カートに追加"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title_html": "{{ shop }}で利用可能な{{ value }}のギフトカードです！",
+      "subtext": "あなたのギフトカード",
+      "disabled": "無効",
+      "expired": "{{ expiry }}で有効期限が切れました",
+      "active": "{{ expiry }}で有効期限が切れます",
+      "redeem_html": "{{ value }}のギフトカードで商品を買うために、このコードをチェックアウトで使用する",
+      "shop_link": "買い物を始める",
+      "print": "このギフトカードを印刷する",
+      "remaining_html": "残り{{ balance }}使用可能です",
+      "add_to_apple_wallet": "Apple Walletに追加する"
+    }
+  },
+  "date_formats": {
+    "month_day_year": "%B %d, %Y"
+  },
+  "consistent_cart_addon": {
+    "merge_cart_text": "It seems you already have a cart from a previous session. Would you like to merge your previous cart with your current cart?"
+  },
+  "shopify": {
+    "checkout": {
+      "general": {
+        "page_title": "お支払い",
+        "skip_to_content": "スキップしてコンテンツに移動する",
+        "continue_button_label": "続ける",
+        "complete_purchase_button_label": "ご注文完了",
+        "authenticate_purchase_button_label": "支払いを認証",
+        "edit_link_label": "編集",
+        "all_rights_reserved": "不許複製 {{ shop_name }}",
+        "print_policies_link_label": "印刷",
+        "cart": "カート",
+        "close_modal_label": "閉じる",
+        "close_notice_label": "閉じる",
+        "continue_to_shipping_method": "配送方法に進む",
+        "continue_to_payment_method": "支払い方法に進む",
+        "continue_to_review": "ご注文の確認",
+        "back_to_cart": "カートに戻る",
+        "back_to_contact_information": "お客様情報に戻る",
+        "back_to_shipping_method": "配送方法に戻る",
+        "back_to_payment_method": "支払い方法に戻る",
+        "edit_shipping_address": "配送先住所の編集",
+        "edit_contact_information": "お客様情報を編集する",
+        "edit_shipping_method": "配送方法の編集",
+        "edit_payment_method": "支払い方法の編集",
+        "edit_billing_address": "請求先住所の編集",
+        "choose_shipping_method": "お支払い方法を選択してください",
+        "choose_payment_method": "お支払い方法を選択してください",
+        "choose_billing_address": "請求先住所を選択してください",
+        "contact_us_html": "さらに詳しくはお問い合わせください",
+        "autocomplete_title": "候補",
+        "autocomplete_single_item": "1 個利用可",
+        "autocomplete_multi_item": "{{number}} 個利用可",
+        "autocomplete_selection": "{{number}} 個 {{total}} 個中",
+        "autocomplete_close": "候補を閉じる",
+        "footer": "フッター",
+        "forwarding_indicator": {
+          "new_window": "新しいウィンドウで開く",
+          "external": "外部のウェブサイトに移動します。",
+          "external_and_new_window": "外部のウェブサイトを新しいウィンドウで開く"
+        },
+        "checkout_context": {
+          "step_one": "{{ shop_name }} - お支払い"
+        }
+      },
+      "contact": {
+        "title": "お客様情報",
+        "address_title": "住所",
+        "country_placeholder": "国",
+        "shipping_address_title": "配送先住所",
+        "contact_method_title": "連絡先情報",
+        "email_label": "Eメール",
+        "email_placeholder": "Eメール",
+        "email_or_phone_label": "Eメールまたは携帯電話",
+        "email_or_phone_placeholder": "Eメールまたは携帯電話",
+        "stored_addresses_label": "保存されている住所",
+        "new_address_label": "新しい住所…",
+        "first_name_label": "名",
+        "optional_first_name_label": "名 (任意)",
+        "first_name_placeholder": "名",
+        "optional_first_name_placeholder": "名 (任意)",
+        "last_name_label": "姓",
+        "last_name_placeholder": "姓",
+        "company_label": "会社",
+        "optional_company_label": "会社 (任意)",
+        "company_placeholder": "会社",
+        "optional_company_placeholder": "会社 (任意)",
+        "address1_label": "住所",
+        "address1_placeholder": "住所",
+        "address2_label": "アパート、部屋番号など。",
+        "optional_address2_label": "建物名、部屋番号など (任意)",
+        "address2_placeholder": "アパート、部屋番号など。",
+        "optional_address2_placeholder": "建物名、部屋番号など(任意)",
+        "city_label": "市区町村",
+        "city_placeholder": "市区町村",
+        "country_label": "国",
+        "country_code": "国名コード",
+        "province_label": "都道府県",
+        "province_placeholder": "都道府県",
+        "phone_label": "電話番号",
+        "optional_phone_label": "電話番号 (任意)",
+        "phone_placeholder": "電話番号",
+        "optional_phone_placeholder": "電話番号 (任意)",
+        "zip_code_placeholder": "郵便番号",
+        "postal_code_placeholder": "郵便番号",
+        "postcode_placeholder": "郵便番号",
+        "pincode_placeholder": "郵便番号"
+      },
+      "customer_account": {
+        "not_user_label": "{{ first_name }}ではありませんか？",
+        "have_an_account_label": "すでにこちらにアカウントをお持ちですか？",
+        "sign_in_link_label": "ログイン",
+        "sign_out_link_label": "ログアウト",
+        "save_my_information_label": "次回のためこの情報を保存する"
+      },
+      "stock": {
+        "page_title": "在庫問題",
+        "title": "在庫切れ",
+        "items_unavailable_notice": "在庫切れの商品が入っています。ショッピングカートが更新されました。",
+        "product_column_header": "商品",
+        "quantity_column_header": "数量",
+        "price_column_header": "価格",
+        "status_column_header": "状況",
+        "removed_from_cart_notice": "カートから消去されました",
+        "sold_out_label": "売り切れ",
+        "reduced_label": "残りわずか",
+        "reduced_with_quantity_label": "残りわずか {{ quantity_available }}",
+        "remove_from_cart_button_label": "カートから削除",
+        "continue_shopping_button_label": "続ける",
+        "go_back_to_cart_button_label": "カートに戻る"
+      },
+      "order_summary": {
+        "title": "ご注文概要",
+        "order_name_label": "ご注文 {{ name }}",
+        "shopping_cart_label": "ショッピングカート",
+        "discount_title": "割引",
+        "discount_label": "ディスカウントコード",
+        "discount_placeholder": "ディスカウントコード",
+        "gift_card_title": "ギフトカード",
+        "gift_card_label": "ギフトカード",
+        "gift_card_placeholder": "Gift card",
+        "gift_card_and_discount_title": "ギフトカードまたは割引コード",
+        "gift_card_and_discount_label": "ギフトカードまたは割引コード",
+        "gift_card_and_discount_placeholder": "ギフトカードまたは割引コード",
+        "show_discount_form_link_label": "割引コードをお持ちですか？こちらをクリックして入力してください",
+        "remove_gift_card_label": "ギフトカードを消去",
+        "remove_discount_label": "割引を消去",
+        "free_shipping_discount_label": "無料配送",
+        "apply_discount_button_label": "適用",
+        "applied_discount_message": "{{ amount }}が合計からディスカウントされました",
+        "discount_has_been_applied": "ディスカウントが適用されました",
+        "discount_has_been_removed": "ディスカウントが削除されました",
+        "gift_card_has_been_applied": "ギフトカードが適用されました",
+        "gift_card_has_been_removed": "ギフトカードが削除されました",
+        "discount_already_applied": "この注文にはディスカウントが適用されています。別のディスカウントを追加することはできません。",
+        "cart_does_not_meet_discount_requirements_notice": "<strong>{{ code }}<\/strong>ディスカウントコードは、カート内の商品に有効ではありません",
+        "discount_requires_customer_notice": "<strong>{{ code }}<\/strong>ディスカウントコードを適用するには配送情報を入力してください",
+        "customer_does_not_meet_discount_requirements_notice": "<strong>{{ code }}<\/strong>ディスカウントコードは現在ご利用いただけません",
+        "shipping_information_does_not_meet_discount_requirements_notice": "<strong>{{ code }}<\/strong>ディスカウントコードはお客様の配送先住所ではご利用いただけません",
+        "customer_already_used_once_per_customer_discount_notice": "<strong>{{ code }}<\/strong>割引コードは既に使用されています",
+        "subtotal_label": "小計",
+        "shipping_label": "配送",
+        "tip_label": "チップ",
+        "shipping_default_value": "次のステップで計算されます",
+        "shipping_pending_value": "—",
+        "shipping_pending_message": "まだ選択されていません",
+        "shipping_policy_link": "輸送費",
+        "taxes_label": "税",
+        "total_label": "合計",
+        "partial_total_label": "合計",
+        "free_total_label": "無料",
+        "paid_label": "有料",
+        "payment_due_label": "支払期日",
+        "vat_label_html": "{{ amount }}の税金を含む",
+        "discount_and_gift_card_savings_notice": "{{ discount_amount }}割引と{{ gift_card_amount }}のギフトカード後",
+        "discount_savings_notice": "{{ discount_amount }}割引後",
+        "gift_card_savings_notice": "{{ gift_card_amount }}ギフトカード後",
+        "cost_table_title": "実費集計",
+        "description_label": "詳細",
+        "price_label": "価格",
+        "quantity_label": "数量",
+        "product_image_label": "商品画像",
+        "scroll_order_summary": "さらに商品を見るにはスクロール",
+        "expand_order_summary": "注文概要・クーポン入力",
+        "collapse_order_summary": "注文概要を非表示",
+        "total_updated_label": "合計金額が更新されました:"
+      },
+      "shipping": {
+        "title": "配送方法",
+        "shipping_method_title": "配送方法",
+        "waiting_on_rate_notice": "利用可能な配送料を読み込んでいます",
+        "no_rates_for_cart_or_destination_notice": "お客様のカートまたは住所でご利用いただける配送方法がありません",
+        "no_rates_for_country_notice": "{{ country }}への配送は行っておりません。",
+        "no_rates_contact_notice": "詳細についてはお問い合わせください",
+        "free_rate_label": "無料",
+        "cheapest_rate_label": "最安",
+        "please_enter_your_shipping_information_notice": "配送情報を入力してください。",
+        "estimated_delivery_date_range": "{{ minimum }}から{{ maximum }}営業日",
+        "shipping_line_phone_label": "携帯電話番号(必須)",
+        "shipping_line_phone": "宅配業者が連絡のため、電話番号を使用する可能性があります。",
+        "shipping_rate_discounted_amount": "元値: {{ original_amount }}. 新価格: {{ amount }}",
+        "estimated_delivery_date": {
+          "one": "1営業日",
+          "other": "{{ count }}営業日"
+        },
+        "other_method": {
+          "zero": "利用可能な他の方法はありません",
+          "one": "利用可能な他の1つの方法",
+          "other": "{{ count }}個の他の方法が利用可能です"
+        }
+      },
+      "payment": {
+        "amazon_payments_label": "Amazon Pay",
+        "amazon_payments_login_hint": "Amazonへのログインが必要です。",
+        "amazon_payments_logout": "Amazon Payからログアウトする",
+        "title": "支払い方法",
+        "amount_left_to_pay_label": "支払期限:",
+        "discount_button_action_label": "ディスカウントコードを適用する",
+        "gift_card_code_label": "ギフトカードコード",
+        "apply_gift_card_button_label": "適用",
+        "gift_card_balance_label": "残高:",
+        "show_gift_card_form_link_label": "ギフトカードをお持ちですか？こちらをクリックして入力してください",
+        "supported_card_brands_more_label": "さらに",
+        "detected_card_brand": "検知されたカードのブランド : {brand}",
+        "card_number_label": "カード番号",
+        "card_number_placeholder": "カード番号",
+        "card_pay_with": "支払い方法:",
+        "card_security_notice": "すべての取引は安全であり、暗号化されています。",
+        "name_on_card_label": "カード所有者の名前",
+        "name_on_card_placeholder": "カード所有者の名前",
+        "card_expiry_month_label": "有効期限の月",
+        "card_expiry_month_placeholder": "月",
+        "card_expiry_year_label": "有効期限の年",
+        "card_expiry_year_placeholder": "年",
+        "card_expiry_label": "有効期限",
+        "card_expiry_short_label": "月\/年",
+        "card_expiry_long_label": "有効期限 (月\/年)",
+        "card_expiry_placeholder": "月\/年",
+        "card_verification_value_label": "CVV",
+        "card_verification_value_placeholder": "CVV",
+        "card_expiry_date_explanation": "カード有効期限の入力形式：月（二桁表示）\/西暦（下二桁）",
+        "card_verification_value_explanation": "カード裏面にある3桁のセキュリティコードです。 American Expressカードは前面にある4桁のコードです。",
+        "card_verification_value_explanation_amex": "カード前面にある4桁のコードです",
+        "card_verification_value_explanation_other": "カード裏面にある3桁のセキュリティコードです",
+        "card_start_month_label": "発行した月",
+        "card_start_month_placeholder": "月",
+        "card_start_year_label": "発行した年",
+        "card_start_year_placeholder": "年",
+        "card_start_label": "開始",
+        "card_start_long_label": "発行日(月\/年)",
+        "card_start_placeholder": "月\/年",
+        "card_issue_number_label": "発行番号",
+        "card_issue_number_placeholder": "発行番号",
+        "card_change_label": "変更",
+        "ends_with_label": "最後の数字：{{ last_digits }}",
+        "masked_digits_label": "•••• {{ last_digits }}",
+        "saved_by_payment_method": "{{ payment_method }} で保存しました",
+        "pay_with_payment_method": "{{ payment_method }} で支払う",
+        "same_billing_address_label": "配送先住所と同じ",
+        "different_billing_address_label": "違う請求先住所を使う",
+        "free_order_notice_html": "お客様のご注文は <strong>無料<\/strong>です。お支払いの必要はありません。",
+        "offsite_gateway_redirect_hint": "“{{ button_label }}”をクリック後、安全な決済のため {{ gateway_label }}にリダイレクトされます。",
+        "offsite_gateway_redirect_hint_multi_currency_html": "{{ gateway_label }} 合計 {{ total_shop_price }}",
+        "billing_address_title": "請求先住所",
+        "no_js_credit_card_fields_redirect_hint": "支払い情報を追加するためにリダイレクトされます。",
+        "card_fields_container_prefix": "フォームコンテナー：",
+        "card_fields_processing_error": "支払い処理中に問題が発生しました。別の決済方法を選択するか、後ほどもう一度お試しください。",
+        "technical_error": "技術的な問題が原因で、現在支払いを処理できません。数分後にもう一度お試しください。",
+        "no_method_error": "決済で問題が発生しました。注文を完了するには当社にご連絡ください。",
+        "not_configured_error": "支払いに問題がありました。注文を完了するためには当社にご連絡ください。",
+        "missing_credit_card_error": "カードの詳細を入力して決済を完了してください",
+        "generic_incorrect_card_info": "決済の詳細を確認できませんでした。カードの詳細を確認して、もう一度お試しください。",
+        "sofort_label": "Sofort",
+        "klarna_label": "Pay later",
+        "order_covered_by_gift_cards_notice": {
+          "one": "注文はギフトカードで支払われています。",
+          "other": "お客様のご注文はギフトカードで行われました。"
+        },
+        "card_fields_unavailable_html": {
+          "one": "クレジットカードとデビットカードでのお支払いは、現在ご利用いただけません。<br><a href=\"javascript:window.location.reload();\">このページを更新するか<\/a>再度お試しください。",
+          "other": "クレジットカードとデビットカードでのお支払いは、現在ご利用いただけません。<br><a href=\"javascript:window.location.reload();\">このページを更新するか<\/a>別の決済方法をお試しください。"
+        }
+      },
+      "payment_summary": {
+        "gift_card_current_balance_notice": "現在の残高　{{ amount }}",
+        "credit_card_expires_on_notice": "有効期限：{{ month }}\/{{ year }}",
+        "express_payment_gateway_label": "エクスプレス",
+        "manual_payment_gateway_label": "マニュアル",
+        "billing_address_title": "請求先住所",
+        "free_label": "無料"
+      },
+      "field_errors": {
+        "handle_phone_invalid": "有効な電話番号を入力してください",
+        "handle_email_invalid": "有効なメールアドレスを入力してください",
+        "email_invalid": "有効なメールアドレスを入力してください",
+        "email_or_phone_blank": "メールアドレスまたは携帯番号を入力してください",
+        "email_or_phone_invalid": "有効なメールアドレスまたは携帯番号を入力してください",
+        "address_first_name_blank": "名を入力してください",
+        "address_last_name_blank": "姓を入力してください",
+        "address_address1_blank": "住所を入力してください",
+        "address_address2_blank": "建物名、部屋番号などを入力してください",
+        "address_city_blank": "市区町村を入力してください",
+        "address_country_blank": "国を選択する",
+        "address_province_blank": "都道府県を選択してください",
+        "address_company_blank": "会社名を入力してください",
+        "address_phone_blank": "有効な電話番号を入力してください",
+        "address_zip_blank": "郵便番号を入力してください",
+        "address_zip_invalid_for_country": "{{ country }}の有効な郵便番号を入力してください",
+        "address_zip_invalid_for_country_and_province": "{{ country }}、{{ province }}の有効な郵便番号を入力してください",
+        "credit_card_name_blank": "カードに記載されている通りにお名前をご入力ください。",
+        "credit_card_name_invalid": "カードに記載されている通りにお名前をご入力ください。",
+        "credit_card_number_invalid": "有効なクレジットカード番号を入力してください",
+        "credit_card_expiry_invalid": "有効な有効期限を入力してください",
+        "credit_card_month_invalid": "有効な有効期限月を入力してください",
+        "credit_card_year_invalid": "有効な有効期限年を入力してください",
+        "credit_card_start_invalid": "有効な開始日を入力してください",
+        "credit_card_start_month_invalid": "有効な開始月を入力してください",
+        "credit_card_start_year_invalid": "有効な開始年を入力してください",
+        "credit_card_verification_value_blank": "CVVを入力してください",
+        "reduction_code_code_not_found": "このコードは有効なギフトカードまたは割引と一致しませんでした。正しく入力されましたか？",
+        "reduction_code_discount_not_found": "入力したコードと一致する割引が見つかりませんでした",
+        "reduction_code_gift_card_code_invalid": "コードが有効ではありません",
+        "reduction_code_gift_card_unusable": "ギフトカードが含まれている注文に、別のギフトカードを適応することは出来ません",
+        "shipping_line_phone_blank": "この配送方法を選択するには、携帯電話番号を入力しなければなりません。",
+        "shipping_line_phone_invalid": "この配送方法を選択するには、10桁の携帯電話番号を入力しなければなりません。",
+        "gift_card_already_applied": "このギフトカードはお客様のご注文に既に使用されています",
+        "gift_card_disabled": "このギフトカードはもうご利用頂けません",
+        "gift_card_expired": "このギフトカードの有効期限は切れています",
+        "gift_card_depleted": "このギフトカードには残金がないようです",
+        "gift_card_currency_mismatch": "{{ checkout_currency }}で購入されたギフトカードのみ、このご注文でご利用頂けます",
+        "payment_gateway_needs_paid_plan_error": "このチェックアウトを完了させるには、有料プランに加入している必要があります",
+        "payment_gateway_incompatible_with_multi_currency": "このチェックアウトを現地通貨で完了するには、クレジットカードで支払う必要があります。"
+      },
+      "payment_errors": {
+        "generic_error": "お支払い処理中にエラーが発生しました。もう一度お試しください。",
+        "rejected_transaction": "支払いプロバイダが取引を拒否しました。 もう一度お試しください。",
+        "credit_card_processing": "クレジットカードを処理中に技術的な問題が発生しました。数分後にもう一度お試しください。",
+        "order_total_changed": "お客様のご注文の合計金額が変更されました。ご注文を完了される前にご確認ください。",
+        "payment_processing": "支払いサービスで問題が発生しました。別の支払い方法を選択するか、後ほどもう一度お試しください。",
+        "paypal_zero_amount": "「{{ amount }} のご注文には、ペイパルをご利用いただくことはできません。ご注文が正確かどうかご確認いただいてからチェックアウトを続行してください。」",
+        "pay_later_failed": "Pay laterで支払い処理中にエラーが発生しました。別の決済方法を選択し、もう一度お試しください。"
+      },
+      "shipping_errors": {
+        "shipping_method": "カートが変更されたため、以前選択された送料をご利用できません。新しい送料オプションを選択してください。"
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "エクスプレスチェックアウト",
+        "or": "または"
+      },
+      "alternative_payment_method": {
+        "button_html": "チェクアウトの方法: {{ method }}",
+        "button_label": "チェクアウトの方法: {{ method }}"
+      },
+      "paypal": {
+        "button_html": "支払い方法：{{ logo }}"
+      },
+      "apple_pay": {
+        "button_html": "購入方法：{{ logo }}"
+      },
+      "processing": {
+        "redirecting_page_title": "リダイレクト中…",
+        "redirecting_title": "リダイレクト中…",
+        "redirecting_notice": "リダイレクトしますので少々お待ちください。",
+        "complete_your_purchase_title": "ご購入を完了",
+        "continue_to_payment_gateway_notice": "ペイメントゲートウェイに進み、支払い情報を入力してください。",
+        "continue_to_payment_gateway_button_label": "ペイメントゲートウェイに進む",
+        "complete_your_purchase_title_error": "支払い情報を正確に入力してください",
+        "continue_to_payment_gateway_notice_error": "支払い情報に不正確な情報があります。ペイメントゲートウェイに戻り、正しく入力してください。",
+        "continue_to_payment_gateway_button_label_error": "ペイメントゲートウェイに戻る",
+        "page_title": "ご注文を処理中",
+        "title": "注文処理中",
+        "your_order_has_been_received_title": "ご注文ありがとうございます。",
+        "you_will_receive_confirmation": "弊社はただ今、多くの注文を受けております。注文確定まで通常よりお時間をいただいています。注文確定次第メールまたはテキストにて通知がお客様に届きます。1時間以内に連絡が届かない場合は、ストアまでお知らせくださいませ。",
+        "wait": {
+          "short": "お客様のご注文は処理中です。",
+          "long": "ご注文が処理されるとEメールが送られます。現在多くの注文があります。",
+          "no_auto_refresh_html": "自動的にリダイレクトされない場合は {{ link }}。",
+          "refresh_this_page": "このページをリフレッシュしてください",
+          "medium": {
+            "one": "お客様の注文は現在処理中です。この処理にはおよそ1分かかります。",
+            "other": "お客様のご注文は処理中です。{{ count }}分程お待ちください。"
+          }
+        }
+      },
+      "payment_gateway": {
+        "credit_card_label": "クレジットカード",
+        "bank_deposit_label": "銀行振込",
+        "cash_on_delivery_label": "代引き",
+        "money_order_label": "郵便為替"
+      },
+      "thank_you": {
+        "title": "ご購入頂きありがとうございました！",
+        "confirmation_email_sent_text": "確認Eメールを次のアドレスに送信しました：{{ email }}",
+        "return_to_store_link_label": "買い物を続ける",
+        "print_link_label": "領収書を印刷",
+        "payment_information_title": "支払い情報",
+        "shipping_information_title": "配送情報",
+        "page_title": "ありがとうございます。{{ display_name }}様!",
+        "page_title_no_name": "ありがとうございます。お客様!",
+        "cancelled_page_title": "キャンセル済みのご注文",
+        "customer_information_title": "お客様情報",
+        "contact_information_title": "連絡先情報",
+        "billing_address_title": "請求先住所",
+        "shipping_address_title": "配送先住所",
+        "shipping_address_map_title": "Googleマップが以下の配送先にピンを立てて表示しています: {{ address }}",
+        "payment_method_title": "支払い方法",
+        "shipping_method_title": "配送方法",
+        "tracking_number": "追跡番号:",
+        "company_tracking_number": "{{ company }}の追跡番号:",
+        "estimated_arrival": "配達予定日:",
+        "re-order": "同じ商品を再注文する",
+        "confirmed": "確認済み",
+        "thank_you_title": "ご注文が確認されました",
+        "thank_you_description": "ご注文を受け取りました。現在準備中です。ご注文状況に関してはこちらのページをご覧ください。",
+        "thank_you_confirmed_order_with_email": "注文番号を含む確認メールがまもなく届きます。",
+        "thank_you_confirmed_order_with_phone": "注文番号を含む確認テキストがまもなく届きます。",
+        "thank_you_confirmed_order_with_email_and_phone": "注文番号を含む確認メールとテキストがまもなく届きます。",
+        "thank_you_confirmed_order_with_missing": "注文の確認を受け取るには、メールまたは電話でお問い合わせください。",
+        "order_status_confirmed_order_with_email": "注文が配送中になると、メールが届きます。",
+        "order_status_confirmed_order_with_phone": "注文が配送中になると、テキストが届きます。",
+        "order_status_confirmed_order_with_email_and_phone": "注文が配送中になると、メールとテキストが届きます。",
+        "order_status_updates_with_email": "配送と配達の最新情報をメールで取得します。",
+        "order_status_updates_with_phone": "配送と配達の最新情報をテキストで取得します。",
+        "order_status_updates_with_email_and_phone": "配送と配達の最新情報をメールとテキストで取得します。",
+        "order_status_updates_with_missing": "配送の最新情報を取得する方法を選択します。",
+        "confirmed_title": "発送が確認されました",
+        "confirmed_description": "ご注文を受け取りました。現在準備中です。配送状況に関してはこちらのページをご覧ください。",
+        "order_updates_title": "オーダーをアップデート",
+        "order_updates_description_html": "確認メールが {{ customer_contact }}に送信されました",
+        "order_updates_current_step_prefix": "現在のステップ:",
+        "order_updates_past_step_prefix": "完了したステップ:",
+        "order_updates_upcoming_step_prefix": "今後のステップ:",
+        "in_transit": "配達中",
+        "in_transit_title": "お客様の商品は配達中です",
+        "in_transit_description": "配送状況に関してはこちらのページをご覧ください。",
+        "in_transit_description_days": "お客様の商品は{{ number }} 日で到着します。",
+        "in_transit_description_today": "お客様の商品は今日配達予定です。",
+        "in_transit_description_tomorrow": "翌日には商品がお手元に届く予定です。",
+        "no_tracking_number": "この配達には追跡番号がありません。",
+        "out_for_delivery": "配達中",
+        "out_for_delivery_title": "お客様の商品は配達中です。",
+        "out_for_delivery_description_html": "お客様の商品は配送トラックにあります-今日到着予定です。2日経ってもまだ届かない場合は、{{ contact_us }}までご連絡ください。",
+        "attempted_delivery": "配達試行済み",
+        "attempted_delivery_title": "お客様の商品の配達を試みました",
+        "attempted_delivery_description_html": "お客様の商品の配達を試みましたが、お届けできませんでした。次の配送を手配するため{{ contact_us }}までご連絡ください。",
+        "delivered": "配達済み",
+        "delivered_title": "お客様の商品が配達されました",
+        "delivered_description_html": "入力された住所に商品をお届けしました。お受け取りにならなかった場合、あるいは何か問題がある場合は{{ contact_us }}までご連絡ください。",
+        "contact_us": "お問い合わせ",
+        "contact_us_lowercase": "お問い合わせ",
+        "contact_us_html": "何かお困りですか？{{ contact_us }}",
+        "updated_time": "{{ time_ago }}前に更新",
+        "failure": "配達失敗",
+        "failed_title": "お客様の商品を配達できませんでした",
+        "failed_contact_merchant": "{{ company }}によると、お客様の商品を予定通りに配達できませんでした。次の配送を手配するため{{ company }}までご連絡ください。",
+        "failed_contact_merchant_no_company": "お客様の商品を予定通りに配達できませんでした。次の配送を手配するため当社までご連絡ください。",
+        "non_shippable_title": "ご注文は完了しました",
+        "login_title": "すべての配送情報を見るにはログインしてください",
+        "login_description": "Eメールでお受け取りになった領収書にご注文番号が記載されてあります。",
+        "login_description_phone": "注文番号はSMSで送信されたレシートに記載されています。",
+        "login_not_customer_html": "{{ name }}ではありませんか？こちらをどうぞ{{ link }}",
+        "customer_information_hidden_fields_message": "ログインして、お客様のすべての情報を表示する",
+        "cancelled_title": "ご注文はキャンセルされました",
+        "cancelled_description": "お客様のご注文は{{ date }}日にキャンセルされました。何かご質問がございましたら、お気軽にお問い合わせください。",
+        "order_number_label": "ご注文番号",
+        "customer_validation_error": "メールまたは注文番号が無効です。",
+        "customer_validation_error_phone": "有効でない電話番号もしくは注文番号です。",
+        "login": "ログイン",
+        "unfulfilled_items_title": "発送準備中",
+        "unfulfilled_items_description": "現在これらの商品の発送準備中です。",
+        "opt_in_message_html": "{{ shopify_pay }} における、お客様情報の保存が完了しました。",
+        "order_updates_description_missing": "あなたは配送の更新情報を受け取っていません。",
+        "order_updates_description_email_html": "オーダー番号を{{ customer_contact }}にて次のメールアドレスにお送り致します。",
+        "order_updates_description_phone_html": "オーダー番号を{{ customer_contact }}にて次の電話番号にお送り致します。",
+        "order_updates_description_email_and_phone_html": "配送情報は{{ email }}と{{ phone }}に送られます。",
+        "order_updates_subscribe_to_email_notifications": "配送のアップデートをメールで受け取りましょう。",
+        "order_updates_subscribe_to_email_or_phone_notifications": "配送の最新情報をメールかテキストで受け取りましょう。",
+        "order_updates_subscribe_to_phone_notifications": "配送の最新情報をテキストで受け取りましょう。",
+        "order_updates_submit_subscription": "送信する",
+        "track_shipment": "配送状況を確認する",
+        "login_reorder_link_text": {
+          "one": "この商品も購入する",
+          "other": "これらの商品も購入する"
+        },
+        "marker": {
+          "current": "商品の現在地",
+          "shipping": "配送先住所"
+        },
+        "fulfillment": {
+          "fulfilled_table_title": "この発送での商品",
+          "unfulfilled_table_title": "発送準備中の商品",
+          "product_image_label": "商品画像",
+          "description_label": "説明",
+          "quantity_label": "数量"
+        },
+        "shopify_pay": {
+          "order_completed_html": "{{ shopify_pay }} で注文完了",
+          "learn_more_label": "Shopify Payについてもっと詳しく"
+        }
+      },
+      "review": {
+        "title": "ご注文の確認",
+        "checkout_as_guest": "ゲストとしてチェックアウトする",
+        "blocks": {
+          "contact_method_title": "連絡先",
+          "billing_address_title": "請求書",
+          "shipping_address_title": "配送先",
+          "shipping_method_title": "方法",
+          "payment_method_title": "支払い",
+          "change_link_label": "変更",
+          "change_contact_method_link_label": "連絡先情報を変更",
+          "change_billing_address_link_label": "請求先住所を変更",
+          "change_shipping_address_link_label": "発送先住所を変更",
+          "change_shipping_method_link_label": "発送方法を変更",
+          "change_payment_method_link_label": "支払い方法を変更"
+        }
+      },
+      "newsletter": {
+        "subscription_checkbox_label": "ストアからのお知らせを受け取る"
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "最新ニュースと限定情報をメールで受け取る",
+        "unsubscribe": {
+          "title": "お客様のご登録は取り消しをさせて頂きました。",
+          "description": "これよりお客様へのカートのリマインダ通知を差し控えさせて頂きます。"
+        }
+      },
+      "shop_policies": {
+        "refund_policy": "返金ポリシー",
+        "privacy_policy": "プライバシーポリシー",
+        "terms_of_service": "利用規約",
+        "legal_notice": "特定商取引法",
+        "shipping_policy": "配送ポリシー",
+        "terms_of_sale": "Terms of sale"
+      },
+      "remember_me": {
+        "shopify_pay_label": "Shopify Pay",
+        "authorize_purchase": "購入を認証する",
+        "save": "保存",
+        "title": "このデバイスで情報を保存する",
+        "label": "スピーディーなチェックアウトのため、情報を保存する",
+        "description_html": "次回Shopifyを使っているストアでチェックアウトを行う場合、Shopify Payでの安全な購入を進めるために、認証コードがSMSメールで送信されます。",
+        "mobile_phone_icon_alt": "モバイル",
+        "mobile_phone_number": "携帯番号",
+        "terms_and_privacy_html": "Shopify Payの<a class=\"link--muted\" data-modal data-remember-policy-link=\"privacy_policy\" title=\"Shopify Pay Privacy Policy\" href=\"{{ privacy_href }}\">プライバシーポリシー<\/a>、<a class=\"link--muted\" data-modal data-remember-policy-link=\"terms\" title=\"Shopify Pay Terms of Service\" href=\"{{ terms_href }}\">利用規約<\/a>の内容に同意の上、先にお進みください。",
+        "modal": {
+          "guest": {
+            "title": "迅速なチェックアウト",
+            "paragraph": "{{ phone }} に送信されるコードを入力してご自身の保存情報を安全に使用できます。",
+            "paragraph_aria": "保存されている情報を調べるには、{{ phone }} で終わる電話番号に送信された確認コードを入力してください。"
+          },
+          "accelerated": {
+            "title": "承認コードをご入力ください",
+            "paragraph": "購入を完了するには、{{ phone }} に送信されたコードを入力してください。"
+          },
+          "verification_code_label": "認証コード",
+          "footer": "Shopify Pay 搭載",
+          "fill_manually": "閉じる",
+          "code_sending": "コード送信中...",
+          "code_sent": "コード送信済み",
+          "resend_code": "コードを送り直す",
+          "errors": {
+            "enter_valid_code": "入力された認証コードが正しくないようです",
+            "enter_a_code": "有効な認証コードを入力してください",
+            "code_not_received": {
+              "body": "問題がおありですか?",
+              "contact_information_step": {
+                "link": "通常のチェックアウトで進める"
+              },
+              "payment_information_step": {
+                "link": "カード情報を入力してください"
+              }
+            },
+            "server": {
+              "title": "Shopify Payが利用できない",
+              "body": "あなたの保存された情報はこちらの購入では使用できないようです。通常のチェックアウトでお進みください。"
+            },
+            "throttle": {
+              "title": "試行回数が上限に到達しました",
+              "body": "間違った認証コードが何度も入力されたようです。通常のチェックアウトでお進みください。"
+            },
+            "authorize": {
+              "title": "Shopify Payが利用できない",
+              "body": "あなたの保存された情報は一時的に使用できないようです。支払い情報をご入力し、この先お進みください。",
+              "link": "支払い情報を入力する"
+            },
+            "shipping_address": {
+              "title": "あなたのお住まいのエリアに配送することはできません。",
+              "body": "あなたがShopify Payに保存した情報はこの購入では使用することができません。通常のチェックアウトを行ってください。"
+            }
+          }
+        }
+      },
+      "notifications": {
+        "title": "通知"
+      },
+      "order_payment_collection": {
+        "adjustment_line_description": "注文{{ order_name }}の支払い金額"
+      }
+    },
+    "notices": {
+      "customer": {
+        "password_reset_error": "パスワードリセットエラー",
+        "no_account_found": "アカウントが見つかりませんでした。",
+        "invalid_credentials": "有効でないログイン認証情報。"
+      },
+      "address": {
+        "updated": "住所は正常に更新されました。",
+        "error_updating": "住所の更新に失敗しました。",
+        "created": "住所は正常に作成されました",
+        "error_creating": "住所の作成に失敗しました。",
+        "deleted": "住所の削除に成功しました。",
+        "error_deleting": "住所の削除に失敗しました。"
+      },
+      "order": {
+        "not_available": "この注文は利用することができません",
+        "financial_status": {
+          "authorized": "承認済",
+          "pending": "保留",
+          "paid": "支払済",
+          "unpaid": "未払い",
+          "voided": "無効",
+          "partially_paid": "一部支払済",
+          "partially_refunded": "一部返金済",
+          "refunded": "返金済"
+        },
+        "fulfillment_status": {
+          "fulfilled": "発送済",
+          "complete": "完了",
+          "partial": "一部分",
+          "unfulfilled": "未発送",
+          "restocked": "在庫が補充されました"
+        },
+        "transaction_status": {
+          "success": "成功",
+          "pending": "保留",
+          "failure": "失敗",
+          "error": "エラー"
+        },
+        "cancel_reason": {
+          "declined": "支払いが拒否されました",
+          "inventory": "商品を利用できません",
+          "fraud": "詐欺の注文",
+          "customer": "お客さまが注文を変更\/取り消しました",
+          "other": "その他"
+        }
+      },
+      "cart": {
+        "only_n_items_available": "{{ count }}個の{{ name }}しかカートに追加することができません。",
+        "all_items_in_cart": "全ての{{ count }}個の{{ name }}がカートに入っています。",
+        "empty_update": "空のカートを更新することはできません",
+        "missing_parameters": "パラメータが無効です",
+        "generic_error": "カートのエラー",
+        "too_many_line_items_error": "カートには{{ max }}個以上の商品を入れることができません。",
+        "link_expired": "リンクが切れました",
+        "link_no_longer_exists": "リンクはもう存在しておりません。",
+        "stock_problems_html": "1つもしくは複数の商品が売り切れました。<a href='{{ link }}'>カートを更新する<\/a>。",
+        "changed": "カートを変更しました",
+        "items_changed": "1つもしくは複数の商品を変更しました。",
+        "product_sold_out": "'{{ name }}'は既に売り切れました。",
+        "variant_not_found": "異なるモデルを見つけることができません",
+        "shipping_address_not_required": "このショッピングカートは配送先住所を必要としません",
+        "shipping_address_invalid": "有効でない配送先住所"
+      },
+      "storefront": {
+        "invalid_password": "パスワードが間違っています。もう一度お試しください。"
+      }
+    },
+    "page_titles": {
+      "products": "商品",
+      "shopping_cart": "ショッピングカート",
+      "account": "アカウント",
+      "create_account": "アカウントを作成する",
+      "reset_account": "アカウントをリセットする",
+      "addresses": "住所",
+      "order": "{{ name }}を注文する",
+      "search": "検索",
+      "collections": "コレクション",
+      "not_found": "404ページが見つかりません",
+      "challenge": "チャレンジ"
+    },
+    "cart": {
+      "discounts_with_count": "{{ count }}の割引が適用されました"
+    },
+    "challenge": {
+      "message": "続けるためには、あなたがロボットではないことを教えてください。",
+      "error": "あなたの答えは正しくありません。もう一度お試しください。",
+      "submit_button_text": "送信"
+    },
+    "pagination": {
+      "previous": "前",
+      "next": "次"
+    },
+    "links": {
+      "powered_by_shopify": "Powered by Shopify",
+      "learn_more": "もっと詳しく"
+    },
+    "feed": {
+      "more": "さらに"
+    },
+    "attributes": {
+      "email": "メール",
+      "password": "パスワード",
+      "password_confirmation": "パスワードの再確認",
+      "first_name": "名",
+      "last_name": "姓",
+      "body": "ボディ"
+    },
+    "addresses": {
+      "zip_code": "Zipコード",
+      "postal_code": "郵便番号",
+      "postcode": "郵便番号",
+      "pincode": "郵便番号",
+      "region": "地域",
+      "prefecture": "都道府県",
+      "province": "州",
+      "state": "州",
+      "state_and_territory": "州\/準州",
+      "county": "郡",
+      "confirm": "このアドレスを削除してよろしいですか？"
+    },
+    "collections": {
+      "sorting": {
+        "manual": "オススメ",
+        "best_selling": "売上順",
+        "az": "アルファベット順, A-Z",
+        "za": "アルファベット順, Z-A",
+        "price_ascending": "価格の安い順",
+        "price_descending": "価格の高い順",
+        "date_ascending": "古い商品順",
+        "date_descending": "新着順"
+      }
+    },
+    "errors": {
+      "blank": "空白にすることはできません",
+      "credit_card_session_expired": "クレジットカードの承認の期限が切れています。もう一度支払い情報をご入力ください。あなたのカードには請求されません。",
+      "empty": "空欄にすることはできません",
+      "invalid_email": "有効なメールアドレスでなくてはなりません",
+      "discount_disabled": "この割引を使用することができません",
+      "discount_expired": "この割引は期限切れです",
+      "discount_limit_reached": "この割引は使用回数の上限を迎えています",
+      "discount_not_found": "入力したコードと一致する割引が見つかりませんでした",
+      "customer_already_used_once_per_customer_discount_notice": "この割引は使用回数の上限を迎えています",
+      "gift_card_already_applied": "コードは既にあなたの支払いに適用されています",
+      "gift_card_code_invalid": "コードが有効ではありません",
+      "gift_card_currency_mismatch": "{{ gift_card_currency }}のギフトカードは{{ checkout_currency }}の注文に使用することができません",
+      "gift_card_depleted": "このギフトカードには残高が残っていません",
+      "gift_card_disabled": "ギフトカードが無効です",
+      "gift_card_expired": "ギフトカードの使用期限が切れています",
+      "invalid": "無効です",
+      "taken": "は既に使用されています",
+      "contains_html_tags": "HTMLタグを含むことはできません",
+      "too_short": "が短すぎます (最低でも{{ count }}文字以上です)",
+      "too_long": "が長すぎます (最高でも{{ count }}文字以下です)",
+      "password_mismatch": "は提供されたパスワードと一致する必要があります。",
+      "contains_spaces": "はスペースで始まるまたは終わりますstarts or ends with spaces.",
+      "email_domain_invalid": "プロバイダーがサポートされていません",
+      "invalid_for_country": "は{{ country }}で有効ではありません",
+      "invalid_for_country_and_province": "は{{ province }}と{{ country }}で有効ではありません",
+      "invalid_province_in_country": "は{{ country }}の準州で有効ではありません",
+      "invalid_state_in_country": "は{{ country }}の州で有効ではありません",
+      "invalid_region_in_country": "は{{ country }}の地域で有効ではありません",
+      "less_than_or_equal_to": "は{{ count }}以下または同じ数である必要があります",
+      "not_supported": "はサポートされていません",
+      "full_name_required": "有効な名前を入力してください。",
+      "invalid_for_card_type": "が有効ではありません",
+      "invalid_type": "申し訳ございません。このタイプのカードは受け付けておりません。",
+      "invalid_format": "フォーマットが正しくありません",
+      "expired": "期限切れ",
+      "invalid_start_date_or_issue_number_for_debit": "開始日または発行番号が必要です。",
+      "invalid_expiry_year": "は有効な失効年ではありません",
+      "reset_password_html": "このメードアドレスは既にアカウントと関係づけられています。もし、このアカウントがあなたのものでしたら、<a href=\"\/account\/login#recover\">パスワードをリセット<\/a>することができます。",
+      "verify_email": "メールを{{ customer_email }}へ送りました。メールアドレスを認証するために、メール上のリンクをクリックしてください。"
+    },
+    "sentence": {
+      "words_connector": "、",
+      "two_words_connector": "と",
+      "last_word_connector": "、と"
+    },
+    "dates": {
+      "formats": {
+        "default": "%a, %d %b %Y %H:%M:%S %z",
+        "long": "%B %d, %Y %H:%M",
+        "short": "%d %b %H:%M",
+        "month_day": "%B %-d"
+      },
+      "am": "午前",
+      "pm": "午後",
+      "abbr_day_names": {
+        "sunday": "日",
+        "monday": "月",
+        "tuesday": "火",
+        "wednesday": "水",
+        "thursday": "木",
+        "friday": "金",
+        "saturday": "土"
+      },
+      "day_names": {
+        "sunday": "日曜日",
+        "monday": "月曜日",
+        "tuesday": "火曜日",
+        "wednesday": "水曜日",
+        "thursday": "木曜日",
+        "friday": "金曜日",
+        "saturday": "土曜日"
+      },
+      "abbr_month_names": {
+        "january": "1月",
+        "february": "2月",
+        "march": "3月",
+        "april": "4月",
+        "may": "5月",
+        "june": "6月",
+        "july": "7月",
+        "august": "8月",
+        "september": "9月",
+        "october": "10月",
+        "november": "11月",
+        "december": "12月"
+      },
+      "month_names": {
+        "january": "1月",
+        "february": "2月",
+        "march": "3月",
+        "april": "4月",
+        "may": "5月",
+        "june": "6月",
+        "july": "7月",
+        "august": "8月",
+        "september": "9月",
+        "october": "10月",
+        "november": "11月",
+        "december": "12月"
+      }
+    }
+  }
+}

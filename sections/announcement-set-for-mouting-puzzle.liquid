@@ -1,0 +1,313 @@
+  <div class="index-section page-width rich-text mount">
+    <div class="grid">
+      <div class="grid__item">
+        {% if section.settings.section_title != blank %}
+          <div class="rich-text__heading text-center">
+            <div class="heading">
+              {%- assign section_title = section.settings.section_title | escape | split: "," -%}
+              {%- for title_line in section_title -%}
+                  {{ title_line }}{%- unless forloop.last == true -%},<br />{%- endunless -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="grid">
+      <div class="grid__item medium-up--one-third small--one-whole mount__text text-left">{{ section.settings.left_text }}</div>
+      <div class="grid__item medium-up--two-thirds small--one-whole">
+        <div class="announcement-slider">
+
+          {% for block in section.blocks %}
+                 <figure class="mount__step">
+                  <img loading="lazy" src="{{ block.settings.slide_image | img_url: '900x900' }}" alt="{{ block.settings.slide_title }}">
+                  <figcaption class="mount__step-captions">
+                    <p class="mount__step-number">{{ block.settings.slide_step_text }}</p>
+                    <p class="mount__step-text">{{ block.settings.slide_title }}</p>
+                    <p class="mount__step-text-details">{% if block.settings.slide_text == '' %}<br />{% endif %}{{ block.settings.slide_text }}</p>
+                  </figcaption>
+                </figure>
+          {% endfor %}
+        </div>
+      </div>   
+    </div>
+    <div class="grid">
+      <div class="grid__item text-center">
+        <p class="mount__instruction">One set alone will allow you to hang 6 Small puzzles, 3 Medium puzzles, or 3 King Size puzzles.</p>
+        <p><span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single product-single__price">
+            <span id="ProductPrice-{{ section.id }}" itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+               {{ all_products[ section.settings.feature_product ].price | money }}
+            </span>
+          </span>
+        </p>
+           <button id="SetForMounting" class="btn_sp addtocart_btn product-form__cart-submit--small">
+               <span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>
+          </button>
+        <p class="success-feedback" style="display: none;"><i class="fa fa-check"></i>Added to cart <a href="/cart">View cart</a> or <a href="/collections/all">continue shopping</a>.</p>
+      </div>
+    </div>
+  </div>
+
+{% schema %}
+  {
+    "name": "Annoncement Set",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Annoncement Set for mounting puzzle"
+      },
+  {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Annoncement Set for Mounting puzzle"
+    },
+    {
+      "type": "html",
+      "id": "left_text",
+      "label": "Text description",
+      "default" : "Some text description"
+    },
+    {
+       "type": "product",
+       "id": "feature_product",
+       "label": "Select product"
+    }
+  ],
+    "blocks": [
+          {
+            "type": "Slide",
+            "name": "Slide",
+            "settings": [
+              {
+                "type": "image_picker",
+                "id": "slide_image",
+                "label": "Slide image"
+              },
+              {
+                "type": "text",
+                "id": "slide_step_text",
+                "label": "slide step numer",
+                "default" : "Step 1."
+              },
+              {
+                "type": "text",
+                "id": "slide_title",
+                "label": "slide title",
+                "default" : "Slide title"
+              },
+              {
+                "type": "text",
+                "id": "slide_text",
+                "label": "Slide Text details",
+                "default" : "Text details"
+              }
+            ]
+          }
+      ],
+    "presets": [
+      {
+        "name": "Annoncement Set",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  @font-face
+    {
+        font-family: 'slick';
+        font-weight: normal;
+        font-style: normal;
+
+        src: url('{{ "slick.oet" | asset_url }}');
+      src: url('{{ "slick.woff" | asset_url }}') format('woff'), url('{{ "slick.ttf" | asset_url }}') format('truetype');
+    }
+      .mount__instruction {
+        display: block;
+        margin: 20px 0 0;
+        text-align: center;
+        color: #999;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.6;
+    }
+      .mount__step {
+        position: relative;
+        margin: 10px;
+        padding: 0;
+        -webkit-box-shadow: 0 0 12px rgb(0 0 0 / 10%);
+        -moz-box-shadow: 0 0 12px rgba(0,0,0,.1);
+        box-shadow: 0 0 12px rgb(0 0 0 / 10%);
+    }
+      .mount .heading {
+        padding-bottom: 15px;
+      }
+      .mount .heading::after {
+        position: absolute;
+        left: 50%;
+        display: block;
+        width: 40px;
+        height: 3px;
+        margin-left: -20px;
+        content: "";
+        background-color: #ff7607;
+     }
+     .mount__step-number, .mount__step-text {
+        display: block;
+        margin: 0;
+        color: #000;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.5;
+     }
+     .mount__text, .mount__text p {
+        margin:0;
+    }
+      p.mount__step-text {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .mount__text ul {
+    padding-left: 25px;
+    }
+    .mount__text ul>li {
+        list-style: disc;
+      }
+      .mount .slick-next {
+        right: 65px;
+    }
+      .mount .slick-prev {
+        left: 65px;
+    }
+      button.slick-prev.slick-arrow.slick-disabled, button.slick-next.slick-arrow.slick-disabled {
+          display: none !important;
+      }
+      .slick-next, .slick-prev {
+        z-index: 20;
+        display: block;
+        margin-top: -20px;
+        padding: 0;
+
+    }
+      .slick-next::before, .slick-prev::before {
+        font-family: 'slick';
+        display: block;
+        color:#fff;
+        font-size: 42px;
+        margin-top: -5px;
+        border-width: 3px;
+    }
+      .mount__step-captions {
+        text-align: left;
+        z-index: 20;
+        bottom: 0;
+        padding: 25px 30px;
+        background-color: transparent;
+    }
+      .mount__step-number, .mount__step-text {
+        color: #000;
+        font-size: 16px;
+    }
+      .mount__step-text-details {
+        color: #000;
+        font-size: 14px;
+    }
+    .success-feedback {
+        color: #3d9970;
+        text-align: center;
+        margin-top: 5px;
+    }
+    .success-feedback a {
+        text-decoration: revert;
+    }
+  @media only screen and (min-width: 740px) {
+         .mount__text, .mount__text p {
+          text-align: left;
+          margin: 20px 0;
+          color: #595959;
+          font-size: 14px;
+    }
+        .mount__step-captions {
+          position: absolute;
+          text-align: left;
+          z-index: 20;
+          bottom: 0;
+          padding: 25px 30px;
+          background-color: transparent;
+      }
+        .mount__step-number, .mount__step-text {
+          color: #fff;
+          font-size: 16px;
+      }
+      .mount__step-text-details {
+          color: #fff;
+      }
+        p.mount__step-text {
+          font-size: 24px;
+          font-weight: bold;
+      }
+      .mount__step-text-details {
+          color: #fff;
+      }
+      .mount__step::before {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          display: block;
+          content: "";
+          opacity: .3;
+          background-image: -webkit-gradient(linear,left bottom,left top,from(#000),to(transparent));
+          background-image: -webkit-linear-gradient(bottom,#000 0,transparent 100%);
+          background-image: -moz-linear-gradient(bottom,#000 0,transparent 100%);
+          background-image: -o-linear-gradient(bottom,#000 0,transparent 100%);
+          background-image: linear-gradient(to top,#000 0,transparent 100%);
+      }
+}
+
+  @media only screen and (min-width: 980px){
+      .mount__step-captions {
+          padding: 40px 50px;
+      }
+  }
+
+
+</style>
+
+<script>
+  $(document).ready(function(){$('.announcement-slider').slick({infinite:!1,arrows:!0,dots:!1,slidesToShow:1,slidesToScroll:1,variableWidth:!1,swipeToSlide:!0,rows:0,responsive:[{breakpoint:1199,settings:{slidesToShow:1,arrows:!1,variableWidth:!1}}]}).slick("slickGoTo",0)});
+
+  $('#SetForMounting').on('click',function(e){    
+    e.preventDefault();
+    let formData = {
+     'items': [{
+       'id': {{all_products[ section.settings.feature_product ].selected_or_first_available_variant.id}},
+      'quantity': 1
+      }]
+    };
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      $(".success-feedback").fadeIn("fast").delay(4e3).fadeOut("slow");
+      _tfa.push({notify: 'event', name: 'add_to_cart', id: 1366281});
+         $.ajax({
+            type: 'GET',
+            url: '/cart.json',
+            dataType: "json",
+           success: function (data) { $("#CartCost .money").text('$ '+data.total_price*0.01);}
+          });
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  
+ });
+</script>

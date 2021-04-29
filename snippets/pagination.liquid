@@ -1,0 +1,34 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<ul class="list--inline pagination">
+  <li>
+    {% unless paginate.previous.is_link %}
+      <div class="btn btn--secondary btn--narrow btn--disabled">
+        {% include 'icon-arrow-left' %}
+        <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.pagination.previous' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.pagination.previous' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902621' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+      </div>
+    {% else %}
+      <a href="{{ paginate.previous.url }}" class="btn btn--secondary btn--narrow">
+        {% include 'icon-arrow-left' %}
+        <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.pagination.previous' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.pagination.previous' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902621' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+      </a>
+    {% endunless %}
+  </li>
+
+  <li>
+    {% unless paginate.next.is_link %}
+      <div class="btn btn--secondary btn--narrow btn--disabled">
+        {% include 'icon-arrow-right' %}
+        <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.pagination.next' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.pagination.next' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902622' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+      </div>
+    {% else %}
+      <a href="{{ paginate.next.url }}" class="btn btn--secondary btn--narrow">
+        {% include 'icon-arrow-right' %}
+        <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.pagination.next' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.pagination.next' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902622' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+      </a>
+    {% endunless %}
+  </li>
+  
+    <li class="pagination__text">
+    {% comment %}ly_i18n_replace_for_[ 'general.pagination.current_page' | t: current: paginate.current_page, total: paginate.pages ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.pagination.current_page' | t: current: paginate.current_page, total: paginate.pages }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902625' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = paginate.current_page %}{% assign ly_template = ly_template | replace: '[[current]]', replacement %}{% assign replacement = paginate.pages  %}{% assign ly_template = ly_template | replace: '[[total]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+  </li>
+  
+</ul>
