@@ -1,7 +1,7 @@
 {% assign template_support = "product,collection,index" %}
 {% if template_support contains request.page_type %}
  
- <style> .alireview-author, .alireview-post p, .lightbox-modal .lc-desc p, .lc-desc, .alireview-form-title, .alireview-add-form .alireview-form-group label, .alireview-add-form .alireview-file-upload-btn, .alireview-thankyou h4, .alireview-thankyou .alireview-thankyou__message, .alr-summary .alr-count-reviews .alr-sum-wrap .alr-sum-point, #shopify-ali-review .alireview-sort .alireview-sort__label, .alireview-add-form .alireview-input-textarea, .ar-author-content__name, .ar-description{color:#1F1F1F !important}.lds-ellipsis div div{background:#1F1F1F !important}#alireview-review-widget-badge span{font-family:Inter !important}.alr-icon-star:before{content:"\f005" !important}.alr-count-reviews .alr-star i, .alireview-total-review .rating-symbol-foreground, #alireview-review-widget-badge .rating-symbol-foreground > span, .arv-collection .rating-symbol-foreground > span, .alireview-status .rating-symbol-foreground > span, .alireview-status .rating-symbol-background, .ar-popup-reviews-wrap .ar-popup-reviews--content .review__rating .review__star .alr-icon-star, .rating-symbol-background, .rating-symbol-foreground > span, .alireview-total-review .alr-rating-symbol-foreground, #alireview-review-widget-badge .alr-rating-symbol-foreground > span, .arv-collection .alr-rating-symbol-foreground > span, .alireview-status .alr-rating-symbol-foreground > span, .alireview-status .alr-rating-symbol-background, .alr-rating-symbol-background, .alr-rating-symbol-foreground > span{color:#FAAD14 !important}.alr-count-reviews .alr-progress-bar-wrap .alr-progress-bar div{background-color:#1F1F1F !important}</style> <!-- Code css review poup -->
+ <style> .alireview-author, .alireview-post p, .lightbox-modal .lc-desc p, .lc-desc, .alireview-form-title, .alireview-add-form .alireview-form-group label, .alireview-add-form .alireview-file-upload-btn, .alireview-thankyou h4, .alireview-thankyou .alireview-thankyou__message, .alr-summary .alr-count-reviews .alr-sum-wrap .alr-sum-point, #shopify-ali-review .alireview-sort .alireview-sort__label, .alireview-add-form .alireview-input-textarea, .ar-author-content__name, .ar-description{color:#1F1F1F !important}.lds-ellipsis div div{background:#1F1F1F !important}#alireview-review-widget-badge span, .alireview-review-widget-badge span{font-family:Inter !important}.alr-icon-star:before{content:"\f005" !important}.alr-count-reviews .alr-star i, .alireview-total-review .rating-symbol-foreground, #alireview-review-widget-badge .rating-symbol-foreground > span, .alireview-review-widget-badge .rating-symbol-foreground > span, .arv-collection .rating-symbol-foreground > span, .alireview-status .rating-symbol-foreground > span, .alireview-status .rating-symbol-background, .ar-popup-reviews-wrap .ar-popup-reviews--content .review__rating .review__star .alr-icon-star, .rating-symbol-background, .rating-symbol-foreground > span, .alireview-total-review .alr-rating-symbol-foreground, #alireview-review-widget-badge .alr-rating-symbol-foreground > span, .alireview-review-widget-badge .alr-rating-symbol-foreground > span, .arv-collection .alr-rating-symbol-foreground > span, .alireview-status .alr-rating-symbol-foreground > span, .alireview-status .alr-rating-symbol-background, .alr-rating-symbol-background, .alr-rating-symbol-foreground > span{color:#FAAD14 !important}.alr-count-reviews .alr-progress-bar-wrap .alr-progress-bar div{background-color:#1F1F1F !important}</style> <!-- Code css review poup -->
 <style> .ar-popup-reviews .ar-popup-reviews-wrap{background-image:url("https://ar.cdnhub.co/images/review-popup-page/pattern-bg-1.png") !important;background-size:cover;border-radius:10px!important}.ar-popup-reviews .ar-popup-reviews-wrap .ar-popup-reviews--content .review__rating .review__star .alr-icon-star{color:#ffd703 !important}.ar-popup-reviews .ar-popup-reviews-wrap .ar-popup-reviews--content .review__noti p span{color:#FAFF03 !important}.ar-popup-reviews .ar-popup-reviews-wrap .ar-popup-reviews--content .review__noti p{color:#ffffff !important}.ar-popup-reviews .ar-popup-reviews-wrap .ar-popup-reviews--content .review__rating .review__date, .ar-popup-reviews .ar-popup-reviews-wrap .ar-popup-reviews--content .review__desc p{color:#ffffff !important}.ar-popup-reviews{bottom:10px !important;left:10px !important}@media(max-width:600px){.ar-popup-reviews{top:unset !important;bottom:unset !important;left:unset !important;right:unset !important;bottom:10px !important}}</style>
  
  
@@ -30,7 +30,7 @@
         </script>
  <script src="https://ar.cdnhub.co/box/js/frontend/45/iframe.js?version=5.4.9" defer="defer"></script>
 <script type="text/javascript">
-window.addEventListener("load", (event) => {
+function loadCSS() {
   let head = document.getElementsByTagName("head")[0];
   let link = document.createElement("link");
   link.rel = "stylesheet";
@@ -38,46 +38,54 @@ window.addEventListener("load", (event) => {
   link.href = "https://ar.cdnhub.co/box/css/frontend/45/vendor.css?version=5.4.9";
   link.media = "all";
   head.appendChild(link);
- });
-    </script>
+};
+window.addEventListener("load", loadCSS(), false);
+</script>
+
 <script type="text/javascript"> 
   var isLoadedWidgetAR = false;
+  var timerScrollIframeWidgetAR = null;
+  const EL_IFRAME_AR = 'iframe[widget-id][class=aliReviewsFrame]:not([src])';
   function handleIframeWidget(){
-    let offsetTopNearest = 0;
-    let iframes = document.querySelectorAll('iframe[widget-id][class=aliReviewsFrame]:not([src])');
-      
-    iframes.length && iframes.forEach((iframe, index) => {
-      if(index == 0){
-        offsetTopNearest = iframe.offsetTop;
-      }
-      if(offsetTopNearest > iframe.offsetTop){
-        offsetTopNearest = iframe.offsetTop;
-      }
-      // console.log("iframe.offsetTop", iframe.offsetTop)
-    });
+    let iframes = document.querySelectorAll(EL_IFRAME_AR);
     if(iframes.length){
-      loadIframeWidget(iframes, offsetTopNearest);
-
-      document.addEventListener("scroll", function(){
-        loadIframeWidget(iframes, offsetTopNearest);
-      });
+      loadIframeWidget();
+      !isLoadedWidgetAR && document.addEventListener("scroll", loadIframeWidget, false);
     }
   }
-  function loadIframeWidget(iframes, offsetTopNearest){
-    let scrollTop = document.documentElement.scrollTop;
-    let heightScreen = document.documentElement.clientHeight;
-    // console.log("loadIframeWidget", scrollTop, heightScreen, offsetTopNearest);
-    let contentHeight = offsetTopNearest - heightScreen;
-    if (contentHeight <= scrollTop && !isLoadedWidgetAR){
-      isLoadedWidgetAR = true;
-      iframes.length && iframes.forEach((iframe, index) => {
-        let iframeSrc = iframe.getAttribute('data-ar-src');
-        iframe.setAttribute('src', iframeSrc || '');
-      });
+  function loadIframeWidget(){
+    if(timerScrollIframeWidgetAR){
+      clearTimeout(timerScrollIframeWidgetAR);
     }
+    timerScrollIframeWidgetAR = setTimeout(function() {
+      let iframes = document.querySelectorAll(EL_IFRAME_AR);
+      let offsetTopNearest = iframes.length && iframes[0].offsetTop || 0;
+      let scrollTop = document.documentElement.scrollTop;
+      let heightScreen = document.documentElement.clientHeight;
+      let contentHeight = offsetTopNearest - heightScreen;
+      if (contentHeight <= scrollTop && !isLoadedWidgetAR){
+        isLoadedWidgetAR = true;
+        document.removeEventListener("scroll", loadIframeWidget, false);
+        renderIframe(iframes);
+      }
+    }, 100);
+  }
+
+  function renderIframe(iframes){
+    iframes.length && iframes.forEach((iframe, index) => {
+      let iframeSrc = iframe.getAttribute('data-ar-src');
+      iframe.setAttribute('src', iframeSrc || '');
+    });
   }
   document.addEventListener("DOMContentLoaded", function () { 
-    handleIframeWidget()
-  }); 
+    if(window.matchMedia('screen and (max-width: 768px)').matches){
+      handleIframeWidget();
+    }else{
+      let iframes = document.querySelectorAll(EL_IFRAME_AR);
+      renderIframe(iframes);
+    }
+  });
 </script>
+
+
 {% endif %}
