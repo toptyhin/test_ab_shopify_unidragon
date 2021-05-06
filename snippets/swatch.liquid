@@ -68,6 +68,11 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
 
       {% if product.type == 'Puzzle' and swatch == 'Size' %}
       {% assign size_count = size_count | plus: 1 %}
+      {%- if size_count == 2 -%}
+        <div class="product__labels most-popular-label">
+            <span class="product__label product__label--most-popular">most popular</span>
+        </div>
+      {%- endif -%}
       <label for="swatch-{{ option_index }}-{{ value | handle }}-{{ section.id }}">
         <div class="sw_image_outer">
           <span class="sw_image"><img loading="lazy" src="{{variant.image | img_url: 'master' }}"/></span>
@@ -120,3 +125,23 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
 {% endunless %}
 
 {% endif %}
+
+<style>
+  .most-popular-label {
+    display:none;
+    top: 9px;
+  }
+  @media (min-width: 1186px) {
+      .most-popular-label {
+        top: 135px;
+        right: auto;
+    }
+  }
+  @media (min-width: 980px) and (max-width: 1186px) {
+      .most-popular-label {
+        top: 110px;
+        right: auto;
+    }
+  }
+
+</style>
