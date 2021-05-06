@@ -54,7 +54,6 @@
 
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
 
-    {% include 'google-fonts' %}
   <script>
     var theme = {
       strings: {
@@ -102,7 +101,7 @@
  
   {{ content_for_header }}
   
-  <link href="https://fonts.googleapis.com/css?family=Anton|Arimo|Arvo|Baloo+Bhai|Baloo+Bhaina|Bitter|Bree+Serif|Cabin|Catamaran|David+Libre|Dosis|Droid+Sans|Droid+Serif|Ek+Mukta|Fjalla+One|Hind|Inconsolata|Indie+Flower|Lato|Libre+Baskerville|Lobster|Lora|Merriweather|Modak|Montserrat|Muli|Noto+Sans|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Narrow|PT+Serif|Pavanam|Playfair+Display|Poppins|Raleway|Roboto|Roboto+Condensed|Roboto+Slab|Slabo+27px|Source+Sans+Pro|Teko|Titillium+Web|Ubuntu|Yanone+Kaffeesatz|Yatra+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Anton|Arimo|Arvo|Baloo+Bhai|Baloo+Bhaina|Bitter|Bree+Serif|Cabin|Catamaran|David+Libre|Dosis|Droid+Sans|Droid+Serif|Ek+Mukta|Fjalla+One|Hind|Inconsolata|Indie+Flower|Lato|Libre+Baskerville|Lobster|Lora|Merriweather|Modak|Montserrat|Muli|Noto+Sans|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Narrow|PT+Serif|Pavanam|Playfair+Display|Poppins|Raleway|Roboto|Roboto+Condensed|Roboto+Slab|Slabo+27px|Source+Sans+Pro|Teko|Titillium+Web|Ubuntu|Yanone+Kaffeesatz|Yatra+One&display=swap" rel="stylesheet">
 
   <style type="text/css"> .product-description + [data-readmore-toggle], .product-description[data-readmore]{display: block; width: 100%;margin-top: 15px;}.product-description[data-readmore]{transition: height 100ms;overflow-x: hidden !important;overflow: -webkit-paged-x;} .sale_wheel-three{display:none;}</style>
 
@@ -110,11 +109,9 @@
 
 {% include 'alireviews_core' %} 
  
-
+<link rel="preload" href="{{ 'custom.scss.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ 'custom.scss.css' | asset_url }}"></noscript>
     
-  {{ 'custom.scss.css' | asset_url | stylesheet_tag }}
-  
-  
 <!-- DV 04.05.21 Yandex.Metrika counter -->
 <script type="text/javascript" >
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -229,8 +226,6 @@ snaptr('track', 'PAGE_VIEW');
 </script>
 <!-- End Tiktok Pixel Code -->
 
-  
-
 <!-- DV 29/03/21 Outbrain Pixel Code -->
 <script data-obct type = "text/javascript">
   /** DO NOT MODIFY THIS CODE**/
@@ -262,8 +257,6 @@ snaptr('track', 'PAGE_VIEW');
 </script>
 <!-- End Outbrain Pixel Code -->
   
-
-
   
   <input type="hidden" id="product_key" value="{{ settings.product_key }}">
   <input type="hidden" id="permanent_domain" value="{{ shop.permanent_domain }}">
