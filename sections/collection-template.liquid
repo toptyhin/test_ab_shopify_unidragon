@@ -62,7 +62,13 @@
       </noscript>
       <div class="collection-hero__title-wrapper">
         <div class="over_image_content page-width medium-up--text-left">
-          <h1 class="heading">{{ collection.title }}</h1>
+          <h1 class="heading">
+            {%- if collection.metafields.text.collection-h1 -%}
+            {{ collection.metafields.text.collection-h1 }}
+            {%- else -%}
+              {{ collection.title }}
+              {%- endif -%}
+          </h1>
           {% if collection.description != blank %}
           <div class="rte collection-description subheading">
             {{ collection.description }}
