@@ -1,0 +1,63 @@
+<!-- snippets/customer-review-photo-2 -->
+{{ 'magnific-popup.css' | asset_url | stylesheet_tag }}
+{{ 'jquery.magnific-popup.min.js' | asset_url | script_tag }}
+<style>
+  .customer-review-img {
+    display:none;
+    padding: 15px 0;
+  }
+  .img-review-slider a {
+    border-radius: 2px;
+    margin: 0 4px;
+    height: 60px;
+  }
+  @media screen and (min-width:1024px){
+    .img-review-slider a {
+      height: 90px;
+    }
+  }
+  
+</style>
+
+<div class="customer-review-img">
+  <p class="line customer-review-photo">Customer reviews images </p>
+  <div class="img-review-slider">
+    <a href="https://imgs.fireapps.vn/uploads/29113221168//1613410284308fa5e398c2ce6a51c9585fd240151c.jpg"><img loading="lazy" class="lightbox-thmb arv-lozad" src="https://imgs.fireapps.vn/uploads/29113221168//1613410284308fa5e398c2ce6a51c9585fd240151c.jpg" style=""></a>
+    <a href="https://imgs.fireapps.vn/uploads/29113221168//1610936003OgQXgb23586aee9659764c25aee8f0ee5ca45.jpg"><img loading="lazy" class="lightbox-thmb arv-lozad visible-img" src="https://imgs.fireapps.vn/uploads/29113221168//1610936003OgQXgb23586aee9659764c25aee8f0ee5ca45.jpg"></a>
+    <a href="https://imgs.fireapps.vn/uploads/29113221168//1612116075f63fea85cd7b1d3fe1f05d4bf596f676.jpg"><img loading="lazy" class="lightbox-thmb arv-lozad visible-img" src="https://imgs.fireapps.vn/uploads/29113221168//1612116075f63fea85cd7b1d3fe1f05d4bf596f676.jpg"></a>
+    <a href="https://imgs.fireapps.vn/uploads/29113221168//161341036980d7f9ebb06159c755769242a5f1d314.jpg"><img loading="lazy" class="lightbox-thmb arv-lozad visible-img" src="https://imgs.fireapps.vn/uploads/29113221168//161341036980d7f9ebb06159c755769242a5f1d314.jpg"></a>
+    <a href="https://imgs.fireapps.vn/uploads/29113221168//1610432317LaNN1f56cde6ba50b4059efb380d7b041f778.jpg"><img loading="lazy" class="lightbox-thmb arv-lozad visible-img" src="https://imgs.fireapps.vn/uploads/29113221168//1610432317LaNN1f56cde6ba50b4059efb380d7b041f778.jpg"></a>
+    <a href="https://imgs.fireapps.vn/uploads/29113221168//161211571792716e37805cdeaca71eb624c3c9201e.jpg"><img loading="lazy" class="lightbox-thmb arv-lozad visible-img" src="https://imgs.fireapps.vn/uploads/29113221168//161211571792716e37805cdeaca71eb624c3c9201e.jpg"></a>
+    <a href="https://imgs.fireapps.vn/uploads/29113221168//161341046823864bfa9f9676127f92bdcfa6e5ec82.jpg"><img loading="lazy" class="lightbox-thmb arv-lozad visible-img" src="https://imgs.fireapps.vn/uploads/29113221168//161341046823864bfa9f9676127f92bdcfa6e5ec82.jpg"></a>
+    <a href="https://imgs.fireapps.vn/uploads/29113221168//1612116075f63fea85cd7b1d3fe1f05d4bf596f676.jpg"><img loading="lazy" class="lightbox-thmb arv-lozad visible-img" src="https://imgs.fireapps.vn/uploads/29113221168//1612116075f63fea85cd7b1d3fe1f05d4bf596f676.jpg"></a>
+  </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+    $('.img-review-slider').slick({
+        slidesToShow: 4,
+  		slidesToScroll: 1,
+        autoplay: true,
+  		autoplaySpeed: 2000,
+      	arrows:false
+    });
+  });
+  
+  $(document).ready(function() {
+	$('.img-review-slider').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		tLoading: 'Loading image #%curr%...',
+		mainClass: 'mfp-img-mobile',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+		}
+	});
+});
+</script>

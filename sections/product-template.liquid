@@ -170,7 +170,9 @@ kv 02/02/21
         {% endif %}
         
       </div>
-
+        {%if product.handle == 'enchanting-owl'%}
+          {%- render 'customer-review-photo'-%}
+        {%endif%}
       <form style="display: none;" method="post" action="/cart">
 
         <input  type="submit" class="custome_checkout" value="checkout" name="checkout"/>
