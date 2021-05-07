@@ -89,8 +89,8 @@ Title and Description
   {%- endif -%}
   {%- assign baType = 'collection' -%}
 {%- elsif template == 'list-collections' -%}
-  {%- assign booster_title = booster_config.collections_all_title -%}
-  {%- assign booster_desc = booster_config.collections_all_desc -%}
+  {%- assign booster_title = shop.metafields.text.collections-list-title -%}
+  {%- assign booster_desc = shop.metafields.text.collections-list-description -%}
   {%- assign baType = 'collection' -%}
 {%- elsif template == 'article' -%}
 
