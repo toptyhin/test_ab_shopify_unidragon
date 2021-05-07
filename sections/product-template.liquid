@@ -195,7 +195,13 @@ kv 02/02/21
     <div class="grid__item medium-up--one-half">
       <div class="product-single__meta">
 
-        <h1 itemprop="name" class="product-single__title heading">{{ product.title }}</h1>
+        <h1 itemprop="name" class="product-single__title heading">
+          {%- if product.metafields.text.product-h1 -%}
+            {{ product.metafields.text.product-h1 }}
+          {%- else -%}
+            {{ product.title }}
+          {%- endif -%}
+      </h1>
 
         {% if section.settings.show_vendor %}
         <p itemprop="brand" class="product-single__vendor">{{ product.vendor }}</p>
