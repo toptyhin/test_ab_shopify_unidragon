@@ -282,17 +282,11 @@ snaptr('track', 'PAGE_VIEW');
   </div>
 
   {% section 'header' %}
-
-
   <div class="page-container" id="PageContainer">
-
     <main class="main-content" id="MainContent" role="main">
       {{ content_for_layout }}
     </main>
     {% section 'footer' %}
-
-    
-
   </div>
   
     {{ 'fontawesome.css' | asset_url | stylesheet_tag }}
@@ -377,8 +371,8 @@ twq('track','PageView');
       })
     }()
   }]);
+  $("body").on("DOMNodeInserted",function(){$("#chat-24-icon-7")&&$("#chat-24-icon-7").click(function(){$("#smile-ui-container").css("z-index",3e3)})});
 </script>
-
 
 <!-- END chat2desk -->
 
