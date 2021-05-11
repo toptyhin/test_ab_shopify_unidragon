@@ -612,6 +612,9 @@ kv 02/02/21
         <!----------custom-Tax-------------->
       {% include 'custom-tax' %}
         <!------------------------end------------------------------------->
+        <!--FAQ block-->
+          {% render 'faq-block' %}
+        <!--FAQ block and-->
         {% if section.settings.visitor_counter_enable %}
        
         <input type="hidden" value="{{section.settings.visitor_counter_number}}" id="min_max_number">
