@@ -50,10 +50,8 @@
   {% endif %}
 
   {% include 'social-meta-tags' %}
- 
 
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
-
   <script>
     var theme = {
       strings: {
@@ -156,10 +154,6 @@ var clickRe = /(?:\d+FOF\d+)/i;
 var match = clickRe.exec(window.location.href);
 if (match && match.length > 0) window.localStorage.setItem('sid', match[0]);
     })();</script>     
-  
-  
-  
-  
   <!-- cpa TaboolaKV 17/02/21 -->
 <script type='text/javascript'>
   window._tfa = window._tfa || [];
