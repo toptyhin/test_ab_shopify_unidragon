@@ -129,12 +129,17 @@ kv 02/02/21
         <img src="{{ featured_image | img_url: product_image_size, scale: product_image_scale }}" loading="lazy" alt="{{ featured_image.alt }}" id="FeaturedImage-{{ section.id }}" class="product-featured-img" style="max-width: 530px;">
       </noscript>
 
-
       {% if product.images.size > 1 %}
       {%- assign enable_thumbnail_slides = true -%}
       {% endif %}
 
       <div class="thumbnails-wrapper {% if product.images.size == 1 %}medium-up--hide{% endif %}{% if enable_thumbnail_slides == true %} thumbnails-slider--active{% endif %}">
+        {% if enable_thumbnail_slides == true %}
+        <button type="button" class="btn btn--link small--hide thumbnails-slider__btn thumbnails-slider__prev thumbnails-slider__prev--{{ section.id }}">
+          {% include 'icon-chevron-left' %}
+          <span class="icon__fallback-text">{{ 'sections.slideshow.prev_slide' | t }}</span>
+        </button>
+        {% endif %}
             <ul class="grid responsive slider grid--uniform product-single__thumbnails product-single__thumbnails-{{ section.id }}">
                     {% for media in product.media %}
                         {% case media.media_type %}
