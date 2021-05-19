@@ -21,11 +21,6 @@
   {% if section.settings.enable_sticky %}var eblstcky = true;{% else %}var eblstcky = false;{% endif %}{% if section.settings.enable_payment_button %}var ebl_pay_but = true;var addToCartBtnLabel_1 = "{{ 'products.dynamic_checkout_buttons.add_to_cart_text_when_dynamic_checkout_buttons_enable' | t }}";{% else %}var ebl_pay_but = false;var addToCartBtnLabel_1 = "{{ 'products.product.add_to_cart' | t }}";{% endif %}{% if section.settings.visitor_counter_enable %}var visitorcountr = true;{% else %}var visitorcountr = false;{% endif %}
 </script>
 <div class="product-template__container product-{{ product.id }} page-width" itemscope itemtype="http://schema.org/Product" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true"> 
- <!--
-kv 02/02/21
-<div> {{ product.metafields.alireviews.seo_rating_review_key }} </div>
--->
- <div> {{ product.metafields.alireviews.seo_rating_review_key }} </div>
 
   <meta itemprop="name" content="{{ product.title }}">
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
