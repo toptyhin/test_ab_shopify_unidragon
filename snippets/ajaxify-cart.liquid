@@ -22,6 +22,9 @@
               if (optinValue == '1') {eAction = 'add2basket_s'} else if (optinValue == '2') {eAction = 'add2basket_m'} else if (optinValue == '3') {eAction = 'add2basket_ks'};
               ga('send', 'event', { eventCategory: 'purchase_ab', eventAction: eAction});
             },
+            _pinterestGoals = function() {
+                pintrk('track', 'AddToCart', { value: $('#ProductPrice-product-template').attr('content') , order_quantity: 1, currency: $('meta[itemprop="priceCurrency"]').attr('content')});
+            },
             _showFeedback = function(t, e, o) {
                 $(".ajaxified-cart-feedback").remove();
                 var a = '<p class="ajaxified-cart-feedback ' + t + '">' + e + "</p>";
@@ -72,7 +75,7 @@
                                     })
                                 }, 2500), $(".close").on("click", function() {
                                     buyitnowaction && (window.location.href = "/cart")
-                                }), relatedupsellenable && custome_addcart(), relatedupsellmodal && related_poup(), $addToCartBtn.addClass("inverted"), _setText($addToCartBtn, _config.addedToCartBtnLabel), _showFeedback("success", '<i class="fa fa-check"></i>' + added_to_cart + ' <a href="/cart">' + view_cart + '</a>' + sap + '<a href="/collections/all">' + continue_shopping + "</a>.", $addToCartForm), _gaGoals() , window.setTimeout(function() {
+                                }), relatedupsellenable && custome_addcart(), relatedupsellmodal && related_poup(), $addToCartBtn.addClass("inverted"), _setText($addToCartBtn, _config.addedToCartBtnLabel), _showFeedback("success", '<i class="fa fa-check"></i>' + added_to_cart + ' <a href="/cart">' + view_cart + '</a>' + sap + '<a href="/collections/all">' + continue_shopping + "</a>.", $addToCartForm), _gaGoals(), _pinterestGoals(), window.setTimeout(function() {
                                     $addToCartBtn.prop("disabled", !1).removeClass("disabled").removeClass("inverted"), _setText($addToCartBtn, _config.addToCartBtnLabel)
                                 }, _config.howLongTillBtnReturnsToNormal), $.getJSON(_config.shopifyAjaxCartURL, function(t) {
                                     if (_config.cartCountSelector && $(_config.cartCountSelector).size()) {
