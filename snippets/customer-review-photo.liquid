@@ -1,4 +1,4 @@
-<!-- snippets/customer-review-photo-2 -->
+<!-- snippets/customer-review-photo -->
 {{ 'magnific-popup.css' | asset_url | stylesheet_tag }}
 {{ 'jquery.magnific-popup.min.js' | asset_url | script_tag }}
 <style>
@@ -18,21 +18,17 @@
   }
   
 </style>
-
+{%- if product.metafields.link.customer-review-photo != 'none' -%}
+{%- assign review_photo_link = product.metafields.link.customer-review-photo | newline_to_br | split: '<br />'-%}
 <div class="customer-review-img">
   <p class="line customer-review-photo">Customer reviews images </p>
   <div class="img-review-slider">
-    <a href="https://imgs.fireapps.vn/uploads/29113221168//1613410284308fa5e398c2ce6a51c9585fd240151c.jpg"><img loading="lazy" class="lightbox-thmb arv-lozad" src="https://imgs.fireapps.vn/uploads/29113221168//1613410284308fa5e398c2ce6a51c9585fd240151c.jpg" style=""></a>
-    <a href="https://imgs.fireapps.vn/uploads/29113221168//1610936003OgQXgb23586aee9659764c25aee8f0ee5ca45.jpg"><img loading="lazy" class="lightbox-thmb arv-lozad visible-img" src="https://imgs.fireapps.vn/uploads/29113221168//1610936003OgQXgb23586aee9659764c25aee8f0ee5ca45.jpg"></a>
-    <a href="https://imgs.fireapps.vn/uploads/29113221168//1612116075f63fea85cd7b1d3fe1f05d4bf596f676.jpg"><img loading="lazy" class="lightbox-thmb arv-lozad visible-img" src="https://imgs.fireapps.vn/uploads/29113221168//1612116075f63fea85cd7b1d3fe1f05d4bf596f676.jpg"></a>
-    <a href="https://imgs.fireapps.vn/uploads/29113221168//161341036980d7f9ebb06159c755769242a5f1d314.jpg"><img loading="lazy" class="lightbox-thmb arv-lozad visible-img" src="https://imgs.fireapps.vn/uploads/29113221168//161341036980d7f9ebb06159c755769242a5f1d314.jpg"></a>
-    <a href="https://imgs.fireapps.vn/uploads/29113221168//1610432317LaNN1f56cde6ba50b4059efb380d7b041f778.jpg"><img loading="lazy" class="lightbox-thmb arv-lozad visible-img" src="https://imgs.fireapps.vn/uploads/29113221168//1610432317LaNN1f56cde6ba50b4059efb380d7b041f778.jpg"></a>
-    <a href="https://imgs.fireapps.vn/uploads/29113221168//161211571792716e37805cdeaca71eb624c3c9201e.jpg"><img loading="lazy" class="lightbox-thmb arv-lozad visible-img" src="https://imgs.fireapps.vn/uploads/29113221168//161211571792716e37805cdeaca71eb624c3c9201e.jpg"></a>
-    <a href="https://imgs.fireapps.vn/uploads/29113221168//161341046823864bfa9f9676127f92bdcfa6e5ec82.jpg"><img loading="lazy" class="lightbox-thmb arv-lozad visible-img" src="https://imgs.fireapps.vn/uploads/29113221168//161341046823864bfa9f9676127f92bdcfa6e5ec82.jpg"></a>
-    <a href="https://imgs.fireapps.vn/uploads/29113221168//1612116075f63fea85cd7b1d3fe1f05d4bf596f676.jpg"><img loading="lazy" class="lightbox-thmb arv-lozad visible-img" src="https://imgs.fireapps.vn/uploads/29113221168//1612116075f63fea85cd7b1d3fe1f05d4bf596f676.jpg"></a>
+    {%- for link in review_photo_link -%}
+      <a href="{{link}}"><img loading="lazy" class="lightbox-thmb arv-lozad" src="{{link}}"></a>
+    {%- endfor -%}
   </div>
 </div>
-
+{%- endif -%}
 <script>
     $(document).ready(function(){
     $('.img-review-slider').slick({

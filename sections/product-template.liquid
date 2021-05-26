@@ -254,9 +254,9 @@
         {% endif %}
       </div>
     </div>
-        {%if product.handle == 'enchanting-owl'%}
-          {%- render 'customer-review-photo'-%}
-        {%endif%}
+        {%- if product.metafields.link.customer-review-photo -%}
+          {%- render 'customer-review-photo' with product -%}
+        {%- endif -%}
       <form style="display: none;" method="post" action="/cart">
 
         <input  type="submit" class="custome_checkout" value="checkout" name="checkout"/>
