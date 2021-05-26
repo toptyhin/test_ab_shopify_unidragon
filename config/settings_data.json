@@ -746,7 +746,7 @@
           "title": "Unidragon Nature",
           "collection": "nature-puzzles",
           "grid": 3,
-          "rows": 1,
+          "rows": 2,
           "show_vendor": false,
           "show_view_all": true,
           "full_btn": false,

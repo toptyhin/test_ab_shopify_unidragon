@@ -84,7 +84,7 @@
                         <img id="{{ img_id }}" 
                             loading="lazy" 
                             class="feature-row__image {{ img_class }} lazyload"
-                            src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/{{pref_img_name}}_ENG-0{{i}}.jpg">
+                            src="{{ pref_img_name | append: "_ENG-0"| append:i | append:".jpg" | file_url}}">
                         </div>
                     </div> 
                 {% endfor %}
