@@ -43,24 +43,12 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
 </div>
 {% else %}
 <div class="swatch {% if product.type == 'Puzzle' and swatch == 'Size'  %}sw-size{% endif %} clearfix" data-option-index="{{ option_index }}">
-
-  <div class="header">Choose {{ swatch }}:
-    <div class="swatch-nav">
-      <button type="button" class="btn--link swatch-prev slick-arrow" aria-disabled="true" style="display: block;">
-        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left" viewBox="0 0 284.49 498.98"><defs><style>.cls-1{fill:#231f20}</style></defs><path class="cls-1" d="M437.67 129.51a35 35 0 0 1 24.75 59.75L272.67 379l189.75 189.74a35 35 0 1 1-49.5 49.5L198.43 403.75a35 35 0 0 1 0-49.5l214.49-214.49a34.89 34.89 0 0 1 24.75-10.25z" transform="translate(-188.18 -129.51)"></path></svg>
-        <span class="icon__fallback-text">translation missing: en.sections.slideshow.prev_slide</span>
-      </button>
-      <button type="button" class="btn--link swatch-next slick-arrow" style="display: block;" aria-disabled="false">
-        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right" viewBox="0 0 284.49 498.98"><defs><style>.cls-1{fill:#231f20}</style></defs><path class="cls-1" d="M223.18 628.49a35 35 0 0 1-24.75-59.75L388.17 379 198.43 189.26a35 35 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L247.93 618.24a34.89 34.89 0 0 1-24.75 10.25z" transform="translate(-188.18 -129.51)"></path></svg>
-        <span class="icon__fallback-text">Next slide</span>
-      </button> 
-    </div>
-  </div>
+  <div class="header">Choose {{ swatch }}:</div>
 
   <div class="swatch_container">
     {% assign values = '' %}
     {% assign size_count = 0 %}
-    {% for variant in product.variants %}
+    {% for variant in product.variants limit:3%}
 
     {% assign value = variant.options[option_index] %}
     {% unless values contains value %}
@@ -87,16 +75,12 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
       {%- endif -%}
         <div class="sw_image_outer">
           <span class="sw_image"><img loading="lazy" src="{{variant.image | img_url: 'master' }}"/></span>
-          {% case size_count%}
-          {% when 2 %}
-          <span class="sw_badge">2x bigger</span>
-          {% when 3 %}
-          <span class="sw_badge">3x bigger</span>
-          {% when 4 %}
-          <span class="sw_badge">4x bigger</span>
-          {% when 5 %}
-          <span class="sw_badge">5x bigger</span>
-          {% endcase %}
+          {% if size_count == 2 %}
+          <span class="sw_badge">2x bigger than S</span>
+          {% endif %}
+          {% if size_count == 3 %}
+          <span class="sw_badge">3x bigger than S</span>
+          {% endif %}
         </div>
         <div class="sw_content_outer">
           <div class="sw_var_price">
@@ -117,22 +101,22 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
       {% endif %}
 
       {% endif %}
-      {% if variant.available %}
-      <script>
-        jQuery('.swatch[data-option-index="{{ option_index }}"] .{{ value | handle }}').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
-               {% unless section.settings.enable_default_variant %}
-               jQuery('.swatch').each(function(){
-          $(this).find('.available').eq(0).find(':radio').prop( "checked", true );});
-        {% endunless %}
-      </script>
-      {% else %}
-      <script>
-        jQuery('.swatch[data-option-index="{{ option_index }}"] .{{ value | handle }}').find(':radio').removeAttr('checked'); 
-      </script>
-      {% endif %}
+
     </div>
     {% endunless %}
-
+    {% if variant.available %}
+    <script>
+      jQuery('.swatch[data-option-index="{{ option_index }}"] .{{ value | handle }}').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+             {% unless section.settings.enable_default_variant %}
+             jQuery('.swatch').each(function(){
+        $(this).find('.available').eq(0).find(':radio').prop( "checked", true );});
+      {% endunless %}
+    </script>
+    {% else %}
+    <script>
+      jQuery('.swatch[data-option-index="{{ option_index }}"] .{{ value | handle }}').find(':radio').removeAttr('checked'); 
+    </script>
+    {% endif %}
     {% endfor %}
   </div>
 </div>
@@ -144,34 +128,19 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
 <style>
   .most-popular-label {
     display:none;
-    top: 150px;
-    right: auto;
+    top: 9px;
   }
-  .swatch {overflow: hidden;}
-  .swatch-nav, .header {display: flex;}
-  .swatch-nav {
-    margin-left: auto;
-    order: 2;
-  }
-  .sw-size .swatch_container .swatch-element .sw_image_outer{padding-bottom: 30px;padding-top: 10px;}
-</style>
-<script>
-  $('.swatch_container').slick({
-  infinite: false,
-  variableWidth: true,
-  adaptiveHeight: true,
-  prevArrow: $('.swatch-prev'),
-  nextArrow: $('.swatch-next'),
-  slidesToShow: 3,
-  slidesToScroll: 2,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1
-      }
+  @media (min-width: 1186px) {
+      .most-popular-label {
+        top: 135px;
+        right: auto;
     }
-  ]
-});
-</script>
+  }
+  @media (min-width: 980px) and (max-width: 1186px) {
+      .most-popular-label {
+        top: 110px;
+        right: auto;
+    }
+  }
+
+</style>
