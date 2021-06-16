@@ -2,7 +2,7 @@
   .swatch_container{
 
     .swatch-element{
-      height: 250px;width: 160px;
+      /*height: 250px;width: 160px;*/
 
       input:checked+label{
         background-color: transparent;
@@ -41,12 +41,8 @@
         background-color: black;
         color: white;
         padding: 1px 5px;
-        position: absolute;
-        top: 9px;
-        left: 3px;
         line-height: normal;
         font-family: 'Poppins', sans-serif;
-        font-size: 10px;
         font-weight: 600;
       }
       .sw_val {
@@ -559,22 +555,13 @@ input.btn.add_toCart {
     vertical-align: top;
   }
 }
-@media (min-width: 981px){
-  .sw-size{
-    .swatch_container{
-      .swatch-element label {
-        min-height: 250px;
-      }
-    }
-  }  
-}
+
 @media (max-width: 980px){
   .sw-size{
     .swatch_container{
       flex-wrap: wrap;
       .swatch-element{
         flex-basis: 100%;
-        outline: none;
         label{
           width: 100%;
           align-items: center;

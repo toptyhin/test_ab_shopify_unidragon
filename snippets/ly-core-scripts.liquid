@@ -772,10 +772,12 @@
       }
       var links = document.getElementsByClassName('ly-languages-switcher-link');
       for(l = 0; l < links.length; l++) {
-        links[l].setAttribute('href', links[l].getAttribute('href') + window.location.search);
-        links[l].addEventListener('click', function(event) {
-          langify.helper.setCookie('ly-lang-selected', this.getAttribute('data-ly-code'), 365);
-        });
+        if(links[l].getAttribute('href') !== '#') {
+          links[l].setAttribute('href', links[l].getAttribute('href') + window.location.search);
+          links[l].addEventListener('click', function(event) {
+            langify.helper.setCookie('ly-lang-selected', this.getAttribute('data-ly-code'), 365);
+          });          
+        }
       }
 
       // Native select event handling

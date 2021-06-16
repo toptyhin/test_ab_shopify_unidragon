@@ -7,7 +7,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
 
 {% if swatch == blank %}
 <div class="swatch error">
-  <p><ly-as-16902707>You must include the snippet swatch.liquid with the name of a product option.</ly-as-16902707></p> 
+  <p><ly-as-16902707>You must include the snippet swatch.liquid with the name of a product option.</ly-as-16902707></p>
   <p><ly-as-16902708>Use:</ly-as-16902708> <code>{% raw %}{% include 'swatch' with 'name of your product option here' %}{% endraw %}</code></p>
   <p><ly-as-16902710>Example:</ly-as-16902710> <code>{% raw %}{% include 'swatch' with 'Color' %}{% endraw %}</code></p>
 </div>
@@ -44,18 +44,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
 {% else %}
 <div class="swatch {% if product.type == 'Puzzle' and swatch == 'Size'  %}sw-size{% endif %} clearfix" data-option-index="{{ option_index }}">
 
-  <div class="header">Choose {{ swatch }}:
-    <div class="swatch-nav">
-      <button type="button" class="btn--link swatch-prev slick-arrow" aria-disabled="true" style="display: block;">
-        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left" viewBox="0 0 284.49 498.98"><defs><style>.cls-1{fill:#231f20}</style></defs><path class="cls-1" d="M437.67 129.51a35 35 0 0 1 24.75 59.75L272.67 379l189.75 189.74a35 35 0 1 1-49.5 49.5L198.43 403.75a35 35 0 0 1 0-49.5l214.49-214.49a34.89 34.89 0 0 1 24.75-10.25z" transform="translate(-188.18 -129.51)"></path></svg>
-        <span class="icon__fallback-text">translation missing: en.sections.slideshow.prev_slide</span>
-      </button>
-      <button type="button" class="btn--link swatch-next slick-arrow" style="display: block;" aria-disabled="false">
-        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right" viewBox="0 0 284.49 498.98"><defs><style>.cls-1{fill:#231f20}</style></defs><path class="cls-1" d="M223.18 628.49a35 35 0 0 1-24.75-59.75L388.17 379 198.43 189.26a35 35 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L247.93 618.24a34.89 34.89 0 0 1-24.75 10.25z" transform="translate(-188.18 -129.51)"></path></svg>
-        <span class="icon__fallback-text">Next slide</span>
-      </button> 
-    </div>
-  </div>
+  <div class="header">Choose {{ swatch }}:</div>
 
   <div class="swatch_container">
     {% assign values = '' %}
@@ -65,7 +54,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
     {% assign value = variant.options[option_index] %}
     {% unless values contains value %}
     {% assign values = values | join: ',' %}
-    {% assign values = values | append: ',' | append: value %} 
+    {% assign values = values | append: ',' | append: value %}
     {% assign values = values | split: ',' %}
     <div data-value="{{ value | escape }}" class="swatch-element {% if is_color and section.settings.swatch_option == 'with_background' %}color with_bg_color {% elsif is_color and section.settings.swatch_option == 'without_background'%}color color_without_bg {% endif %}{% if is_color and section.settings.color_style == 'square_box' %}square_shape {% elsif is_color and section.settings.color_style == 'round_shape'%}round_shape {% endif %}{{ swatch }} {{ value | handle }} {% if variant.available %}available{% else %}soldout{% endif %}">
       {% if is_color and section.settings.swatch_option == 'with_background' %}
@@ -79,41 +68,51 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
         <img class="crossed-out" src="{% comment %}ly_asset_replace_for_[ 'soldout.png' | asset_url ]_begin{% endcomment %}{% assign ly_asset = 'soldout.png' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}" />
       </label>
       {% else %}
-      <label for="swatch-{{ option_index }}-{{ value | handle }}-{{ section.id }}">
+      <label style="
+    height: 100% !important;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    align-content: center;
+" for="swatch-{{ option_index }}-{{ value | handle }}-{{ section.id }}">
         {%- if size_count == 3 -%}
         <div class="product__labels most-popular-label">
             <span class="product__label product__label--most-popular">most popular</span>
         </div>
       {%- endif -%}
-        <div class="sw_image_outer">
-          {% case size_count%}
-          {% when 1%}
-          <span class="sw_image"><img loading="lazy" src="{{variant.image | img_url: 'master' }}" style="transform: scale(0.6);"/></span>
-          {% when 2 %}
-          <span class="sw_image"><img loading="lazy" src="{{variant.image | img_url: 'master' }}" style="transform: scale(0.6);"/></span>
-          <span class="sw_badge">2x bigger</span>
-          {% when 3 %}
-          <span class="sw_image"><img loading="lazy" src="{{variant.image | img_url: 'master' }}" style="transform: scale(0.6);"/></span>
-          <span class="sw_badge">3x bigger</span>
-          {% when 4 %}
-          <span class="sw_image"><img loading="lazy" src="{{variant.image | img_url: 'master' }}" style="transform: scale(0.8);"/></span>
-          <span class="sw_badge">7x bigger</span>
-          {% when 5 %}
-          <span class="sw_image"><img loading="lazy" src="{{variant.image | img_url: 'master' }}"/></span>
-          <span class="sw_badge">15x bigger</span>
-          {% endcase %}
-        </div>
+        <div class="indoor-block">
+      {% case size_count%}
+        {% when 1%}
+        <div class="size"><div><span>S</span></div></div>
+        {% when 2 %}
+        <div class="size"><div><span>m</span></div></div>
+        {% when 3 %}
+        <div class="size"><div><span>King </span><span>Size</span></div></div>
+        {% when 4 %}
+        <div class="size"><div><span>Royal </span><span>Size</span></div></div>
+      {% endcase %}
         <div class="sw_content_outer">
+          {% case size_count%}
+          {% when 2 %}
+          <div class="sw_image_outer"><span class="sw_badge">2x bigger</span></div>
+          {% when 3 %}
+          <div class="sw_image_outer"><span class="sw_badge">3x bigger</span></div>
+          {% when 4 %}
+          <div class="sw_image_outer"><span class="sw_badge">7x bigger</span></div>
+        {% endcase %}
           <div class="sw_var_price">
-            {%comment%}
             {% if variant.compare_at_price > variant.price %}
             <span class="sw_com_price">{{variant.compare_at_price | money }}</span>
-            {% endif %} {%endcomment%}
-            <style>.sw-size .swatch_container .swatch-element .sw_var_price .sw_m_price {font-size: 18px;}</style>
+            {% endif %}
             <span class="sw_m_price">{{variant.price | money }}</span>
           </div>
-          <span class="sw_val">{{ value }}</span>
+          {% assign opt_parametr = value | split: '—' %}
+          <span class="sw_val">{{ opt_parametr[0] }} {{opt_parametr[1]}}</span>
+          <span class="sw_val">{{ value | split: '—' | last }}</span>
         </div>
+    </div>
         <img class="crossed-out" src="{% comment %}ly_asset_replace_for_[ 'soldout.png' | asset_url ]_begin{% endcomment %}{% assign ly_asset = 'soldout.png' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}" />
       </label>
       {% else %}
@@ -134,7 +133,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
       </script>
       {% else %}
       <script>
-        jQuery('.swatch[data-option-index="{{ option_index }}"] .{{ value | handle }}').find(':radio').removeAttr('checked'); 
+        jQuery('.swatch[data-option-index="{{ option_index }}"] .{{ value | handle }}').find(':radio').removeAttr('checked');
       </script>
       {% endif %}
     </div>
@@ -149,10 +148,27 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
 {% endif %}
 
 <style>
+
+  .indoor-block{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
   .most-popular-label {
     display:none;
-    top: 150px;
-    right: auto;
+    top: 9px;
+  }
+  @media (min-width: 1186px) {
+      .most-popular-label {
+        top: 135px;
+        right: auto;
+    }
+  }
+  @media (min-width: 980px) and (max-width: 1186px) {
+      .most-popular-label {
+        top: 110px;
+        right: auto;
+    }
   }
   .swatch {overflow: hidden;}
   .swatch-nav, .header {display: flex;}
@@ -160,26 +176,91 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
     margin-left: auto;
     order: 2;
   }
-  .sw-size .swatch_container .swatch-element .sw_image_outer{padding-bottom: 30px;padding-top: 10px;}
-  .swatch .swatch-element {margin: 0;}
+  .sw-size .swatch_container .swatch-element label {width:100%}
+  .swatch_container, .sw-size .swatch_container .swatch-element label {
+    /*display: grid;
+    grid-template-columns: repeat(2, 1fr);*/
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px -15px 0;
+  }
+  .swatch-element .size {
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  .sw_content_outer {
+    text-align: left;
+    padding-left: 35px;
+  }
+  .sw_var_price {
+    justify-content: flex-start !important;
+  }
+  .size > div {
+      text-align: center;
+      line-height: 1;
+  }
+
+  .swatch .swatch-element {
+    height: 150px;
+    padding: 0 15px 15px 0;
+    flex: 0 1 50%;
+    margin: 0;
+  }
+  .swatch {
+    margin-bottom: 25px;
+  }
+
+  .swatch-label {
+    height: 100% !important;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    align-content: center;
+  }
+
+.swatch-element:nth-child(1) .size {
+	width:38px;
+	height: 38px;
+}
+
+.swatch-element:nth-child(2) .size {
+	width:48px;
+	height: 48px;
+	font-weight: bold;
+}
+
+.swatch-element:nth-child(3) .size {
+	width:58px;
+	height: 58px;
+}
+
+.swatch-element:nth-child(3) .size div span:first-child,  .swatch-element:nth-child(4) .size div span:first-child{
+	font-weight: bold;
+}
+
+.swatch-element:nth-child(4) .size {
+	width:68px;
+	height: 68px;
+}
+
+.swatch-element:nth-child(2) {
+	column-gap: 27px
+}
+
+.swatch-element:nth-child(3) {
+	column-gap: 22px
+}
+
+.sw-size .swatch_container .swatch-element label:nth-child(4) {
+	column-gap: 17px
+}
 </style>
-<script>
-  $('.swatch_container').slick({
-  infinite: false,
-  variableWidth: true,
-  adaptiveHeight: true,
-  prevArrow: $('.swatch-prev'),
-  nextArrow: $('.swatch-next'),
-  slidesToShow: 3,
-  slidesToScroll: 2,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1
-      }
-    }
-  ]
-});
-</script>
