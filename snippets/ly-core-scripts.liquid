@@ -28,6 +28,7 @@
 {% if switcherSettings.languages.size > 0 %}
   {% assign languages = switcherSettings.languages %}
 {% endif %}
+{%- assign languageDetectionDefault = switcherSettings.languageDetectionDefault -%}
 
 <script>
   var ShopifyAPI = ShopifyAPI || {};

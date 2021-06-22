@@ -420,7 +420,7 @@
         "settings": {
           "cart_notes_enable": true,
           "saved_price": true,
-          "cart_enable": true,
+          "cart_enable": false,
           "cart_timer_minute": 5000,
           "cart_timer_color": "#f30909",
           "shopping_payment": true,
