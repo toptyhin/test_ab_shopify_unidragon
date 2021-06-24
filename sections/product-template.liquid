@@ -672,8 +672,10 @@
           {% endif %}
         </div>
         <div class="reputon-trustpilot-reviews-widget" id="a83b7e60-bc57-11eb-a355-a9194acb8438" style="display: flex; justify-content: center;"></div>
-        {% render 'pdp__discount' %}
-        
+        {%- unless product.title contains "balancing" -%}
+          {% render 'pdp__discount' %}
+        {%- endunless -%}
+
         <div class="medium-up--hide storyblock-mob">{%- render 'fw-storyblock', channel: current_channel -%}</div>
         
         {% if section.settings.product_description == 'under_the_timer'%}
@@ -695,7 +697,7 @@
         {% endif %}
         <!----------custom-Tax-------------->
       {% include 'custom-tax' %}
-        <!------------------------end------------------------------------->
+        <!-------------end------------------>
         <!--FAQ block-->
           {% render 'faq-block' %}
         <!--FAQ block and-->
