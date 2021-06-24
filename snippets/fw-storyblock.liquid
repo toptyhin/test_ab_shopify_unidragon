@@ -1,3 +1,3 @@
 <div class="text-center storyblock"><span class="heading">Inspiring Stories</span></div>
 <div id="storyblock"><fw-storyblock channel="{{channel}}" autoplay="true"></fw-storyblock></div>
-<script>$("body").on("DOMNodeInserted",function(){if($("fw-storyblock")[0].shadowRoot){let o=$("fw-storyblock")[0].shadowRoot;$(o).find("div.css-cftjh0").hide();$(o).find("div:eq( 0 )").height(1.78*$("#storyblock").width())}});</script>
+<script>$("body").on("DOMNodeInserted",function(){if($("fw-storyblock")[0].shadowRoot){let o=$("fw-storyblock")[0].shadowRoot;$(o).find("div.css-cftjh0").hide();$(o).find("div:eq( 0 )").height(1.78*$("#storyblock").width());$(o).find("div:eq(0) > div:eq(1) > a").remove()}});</script>
