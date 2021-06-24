@@ -52,6 +52,12 @@
       {{ customer.default_address | format_address }}
 
       <p><a href="/account/addresses" class="btn btn--small">{% comment %}ly_i18n_replace_for_[ 'customer.account.view_addresses' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.account.view_addresses' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902749' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %} ({{ customer.addresses_count }})</a></p>
+<!-- Begin ReCharge code -->
+<p id="rc_link_container">
+    <a href="/tools/recurring/login">Manage Subscriptions</a>
+</p>
+<!-- End ReCharge code -->
+
     </div>
   </div>
 </div>
