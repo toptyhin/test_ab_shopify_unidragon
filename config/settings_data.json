@@ -402,7 +402,7 @@
           "sort_enable": false,
           "tags_enable": false,
           "on_desktop_title_set": "title_set_line_trim",
-          "desktop_text_limit": 20,
+          "desktop_text_limit": 30,
           "on_mobile_title_set": "mobile_title_set_line_full",
           "mobile_text_limit": 20
         }
@@ -451,17 +451,24 @@
             "settings": {
               "collection": "nature-puzzles"
             }
+          },
+          "204f94a3-723e-4238-a058-1f7fb335acbd": {
+            "type": "collection",
+            "settings": {
+              "collection": "balancing-puzzles"
+            }
           }
         },
         "block_order": [
           "7d525dc6-5d8b-4ecf-a121-2cce4329abd0",
           "d869a183-72a9-474c-a178-7bb8a97d22b2",
-          "292f6e9b-7f37-4d87-8217-795fccb098cf"
+          "292f6e9b-7f37-4d87-8217-795fccb098cf",
+          "204f94a3-723e-4238-a058-1f7fb335acbd"
         ],
         "settings": {
           "display_type": "selected",
           "sort": "alphabetical",
-          "grid": "3",
+          "grid": "4",
           "show_view_all": true,
           "btn_text": "View All"
         }
@@ -941,6 +948,10 @@
           "left_text": "<p>Now you can easily turn your puzzle into a piece of interior decor for the home, office, or just about anywhere.<\/p>\n<p>The kit includes:<\/p>\n<ul>\n<li>A cardboard base for turning the puzzle over;<\/li>\n<li>Special stickers for attaching the base to the table;<\/li>\n<li>Adhesive labels for holding the puzzle pieces together (3 sheets);<\/li>\n<li>Adhesive patches for attaching the puzzle to the desired surface;<\/li>\n<li>Adhesive patches for attaching the puzzle to the desired surface;<\/li>\n<li>Instructions.<\/li>\n<\/ul>\n<p>The fixing system is universal for all puzzles and sizes<\/p>",
           "feature_product": "set-for-mounting-puzzles"
         }
+      },
+      "go-cart": {
+        "type": "go-cart",
+        "settings": {}
       }
     },
     "content_for_index": [
