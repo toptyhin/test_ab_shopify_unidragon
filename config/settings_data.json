@@ -145,6 +145,8 @@
     "full_btn": false,
     "transparent_btn": true,
     "show_cart_drawer": true,
+    "upsell_product": "set-for-mounting-puzzles",
+    "custom_upsell_image": "shopify:\/\/shop_images\/shape.png",
     "disable_delivery_use_tag": true,
     "disable_timer_regular_price": true,
     "disable_timer_use_tag": true,
