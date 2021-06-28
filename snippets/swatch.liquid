@@ -76,16 +76,20 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
         </div>
       {%- endif -%}
         <div class="indoor-block">
-      {% case size_count%}
-        {% when 1%}
-        <div class="size"><div><span>S</span></div></div>
-        {% when 2 %}
-        <div class="size"><div><span>m</span></div></div>
-        {% when 3 %}
-        <div class="size"><div><span>King </span><span>Size</span></div></div>
-        {% when 4 %}
-        <div class="size"><div><span>Royal </span><span>Size</span></div></div>
-      {% endcase %}
+          <div class="size-label">
+            <div class="size">
+              {% case size_count%}
+                {% when 1%}
+                <div><span>S</span></div>
+                {% when 2 %}
+                <div><span>m</span></div>
+                {% when 3 %}
+                <div><span>King </span><span>Size</span></div>
+                {% when 4 %}
+                <div style="width: 68px;"><span>Royal </span><span>Size</span></div>
+              {% endcase %}
+            </div>
+          </div>
         <div class="sw_content_outer">
           {% case size_count %}
           {% when 2 %}
@@ -141,10 +145,14 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
 {% endif %}
 
 <style>
-
+.size-label {
+    width: 95px;
+    text-align: -webkit-center;
+}
   .indoor-block{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
   }
   .most-popular-label {
@@ -187,10 +195,12 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
     flex-wrap: wrap;
     text-transform: uppercase;
     font-size: 14px;
+    width: 100px;
   }
   .sw_content_outer {
     text-align: left;
-    padding-left: 35px;
+    padding-left: 20px;
+    width: 150px;
   }
   .sw_var_price {
     justify-content: flex-start !important;
@@ -241,8 +251,8 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
 }
 
 .swatch-element:nth-child(4) .size {
-	width:68px;
-	height: 68px;
+	width: 88px;
+	height: 88px;
 }
 
 .swatch-element:nth-child(2) {
