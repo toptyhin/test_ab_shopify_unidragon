@@ -503,7 +503,7 @@
              <!--go cart drawer header-->
             <div class="go-cart-drawer__header">
                 <div class="go-cart-drawer__header-items">
-                    <span class="go-cart-drawer__header-items-cart">You cart</span>
+                    <span class="go-cart-drawer__header-items-cart">Your cart</span>
                     <span class="go-cart-drawer__header-items-quantity"><span class="js-go-cart-counter">{{- cart.item_count -}}</span></span>
                 </div>
             </div>
@@ -568,6 +568,8 @@
         var goCart = new GoCart();
         $(".js-video-button").modalVideo({youtube:{nocookie:!0}});
 
+        $.get("https://ipinfo.io/json", function (response) { if (response.country != "US"){ $('.go-cart-drawer-progress-bar').hide();} });
+        
         $('.upsell-button').on('click',function(e){    
         e.preventDefault();
         let formData = {
