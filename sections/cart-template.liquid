@@ -165,6 +165,7 @@
       {{ 'jquery.countdownTimer_2hours.js' | asset_url | script_tag }}
       {% endif %}
       {%- if localization.country == 'United States' -%}
+      <script>  $.get("https://ipinfo.io/json", function (response) { if (response.country != "US"){ $('.shiping-progressbar').hide();} });</script>
         <div id="progressbar" class="shiping-progressbar">
           <div style="width: {% if per_progressbar <= 100 %}{{ per_progressbar }}{%else%}100{%endif%}%"></div>
           {%- if cart.total_price < free_shipping -%}
@@ -528,8 +529,7 @@
   {% if section.settings.cart_enable %}
   
   <script>
-  
-    $('.clear-cart').on('click',function(e){
+   $('.clear-cart').on('click',function(e){
       e.preventDefault();
       $.ajax({
         type: "POST",
@@ -562,8 +562,6 @@
   
   {% endif %}
   {% endif %}
-  
-  
   {% schema %}
   {
   "name": "Cart page",
