@@ -6686,6 +6686,46 @@
     ]
   },
   {
+    "name": "Product page Cart Drawer",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Product page Cart Drawer"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_cart_drawer",
+        "label": "Enable Cart Drawer",
+        "info": "description",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_drawer_triger",
+        "label": "Enable Cart Drawer when click on header cart button",
+        "info": "description",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "need_upsell",
+        "label": "Enable Upsell in Cart Drawer",
+        "info": "description",
+        "default": true
+      },
+      {
+         "type": "product",
+         "id": "upsell_product",
+         "label": "Select product for upsell"
+      },
+      {
+        "type": "image_picker",
+        "id": "custom_upsell_image",
+        "label": "Customem image for upsell announcement"
+      }
+    ]
+  },
+  {
     "name": "Product page Timer & Progress bar",
     "settings": [
       {

@@ -438,9 +438,8 @@
             </div>            
           </div>
           {% else %}
-          <input type="hidden" id="Quantity" name="quantity" value="1" class="product-form__input prod_qty_mobile">
+            <input type="hidden" id="Quantity" name="quantity" value="1" class="product-form__input prod_qty_mobile">
           {% endif %}
-
           {% unless product.has_only_default_variant %}
           {% if section.settings.show_tags %}
           <div class="prod_tags">
@@ -456,8 +455,6 @@
             <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
               {{ option.name }}
             </label>
-
-
             <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
               {% for value in option.values %}
               <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
@@ -1022,6 +1019,7 @@ var enable_defaul_variant = false;
 {% endif %}
 <!-- End Pick an option code -->
 
+{% comment %} Cart Drawer on Product page{% endcomment %}
 
 {% schema %}
   {
@@ -1050,6 +1048,12 @@ var enable_defaul_variant = false;
             "label": "Direct to Cart"
           }
         ] 
+      },
+      { 
+		"type": "checkbox",
+      	"id": "show_cart_drawer",
+      	"label": "Show Cart Drawer",
+      	"default": false
       },
       { 
 		"type": "checkbox",

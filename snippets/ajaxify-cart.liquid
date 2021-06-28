@@ -75,7 +75,7 @@
                                     })
                                 }, 2500), $(".close").on("click", function() {
                                     buyitnowaction && (window.location.href = "/cart")
-                                }), relatedupsellenable && custome_addcart(), relatedupsellmodal && related_poup(), $addToCartBtn.addClass("inverted"), _setText($addToCartBtn, _config.addedToCartBtnLabel), _showFeedback("success", '<i class="fa fa-check"></i>' + added_to_cart + ' <a href="/cart">' + view_cart + '</a>' + sap + '<a href="/collections/all">' + continue_shopping + "</a>.", $addToCartForm), _gaGoals(), _pinterestGoals(), window.setTimeout(function() {
+                                }), relatedupsellenable && custome_addcart(), relatedupsellmodal && related_poup(), $addToCartBtn.addClass("inverted"), _setText($addToCartBtn, _config.addedToCartBtnLabel), _showFeedback("success", '<i class="fa fa-check"></i>' + added_to_cart + ' <a href="/cart">' + view_cart + '</a>' + sap + '<a href="/collections/all">' + continue_shopping + "</a>.", $addToCartForm), _gaGoals(), _pinterestGoals(),goCart.fetchAndOpenCart(), window.setTimeout(function() {
                                     $addToCartBtn.prop("disabled", !1).removeClass("disabled").removeClass("inverted"), _setText($addToCartBtn, _config.addToCartBtnLabel)
                                 }, _config.howLongTillBtnReturnsToNormal), $.getJSON(_config.shopifyAjaxCartURL, function(t) {
                                     if (_config.cartCountSelector && $(_config.cartCountSelector).size()) {

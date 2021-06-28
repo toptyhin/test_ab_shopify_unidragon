@@ -144,6 +144,7 @@
     "btn_text": "View All",
     "full_btn": false,
     "transparent_btn": true,
+    "show_cart_drawer": true,
     "disable_delivery_use_tag": true,
     "disable_timer_regular_price": true,
     "disable_timer_use_tag": true,
@@ -317,6 +318,7 @@
         "type": "product-template",
         "settings": {
           "buy_it_now_action": "thank_you_message",
+          "show_cart_drawer": true,
           "show_saved_amount": true,
           "enable_default_variant": false,
           "show_quantity_selector": true,

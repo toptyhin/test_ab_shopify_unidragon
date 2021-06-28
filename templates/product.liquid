@@ -7,6 +7,10 @@
 {% section 'releted_upsell_popup' %}
 {% section 'related-product' %}
 
+{%- if settings.show_cart_drawer -%}
+  {%- section  'go-cart' -%}
+{%- endif -%}
+
 <script>
   // Override default values of shop.strings for each template.
   // Alternate product templates can change values of

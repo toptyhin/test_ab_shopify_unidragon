@@ -1,0 +1,599 @@
+
+{{ 'modal-video.min.css' | asset_url | stylesheet_tag }}
+<style>
+    .go-cart__modal {
+         position: fixed;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+         z-index: 50;
+         display: flex;
+         align-items: center;
+         width: 100%;
+         max-width: 420px;
+         height: 220px;
+         background-color: #fff;
+         transition: all 0.3s ease-in-out;
+         opacity: 0;
+         visibility: hidden;
+         backface-visibility: hidden;
+    }
+     .go-cart__modal.is-open {
+         opacity: 1;
+         visibility: visible;
+    }
+     .go-cart__overlay {
+         position: fixed;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         z-index: 30;
+         background-color: rgba(0, 0, 0, 0.4);
+         transition: all 0.3s ease-in-out;
+         opacity: 0;
+         visibility: hidden;
+         backface-visibility: hidden;
+    }
+     .go-cart__overlay.is-open {
+         opacity: 1;
+         visibility: visible;
+    }
+     .go-cart__drawer {
+        display: flex;
+        flex-direction: column;
+         position: fixed;
+         top: 0;
+         right: -380px;
+         z-index: 140;
+         width: 100%;
+         max-width: 380px;
+         height: 100%;
+         background-color: #fff;
+         transition: all 0.3s ease-in-out;
+         backface-visibility: hidden;
+         font-family: 'Poppins';
+    }
+     .go-cart__drawer.is-open {
+         transform: translateX(-380px);
+    }
+     .go-cart__drawer--left {
+         right: auto;
+         left: -480px;
+    }
+     .go-cart__drawer--left.is-open {
+         transform: translateX(480px);
+    }
+     .go-cart__mini-cart {
+         position: absolute;
+         top: 100%;
+         left: 0;
+         z-index: 40;
+         width: 480px;
+         height: 480px;
+         background-color: #fff;
+         transition: all 0.3s ease-in-out;
+         opacity: 0;
+         visibility: hidden;
+         cursor: auto;
+         backface-visibility: hidden;
+    }
+     .go-cart__mini-cart.is-open {
+         opacity: 1;
+         visibility: visible;
+    }
+     .go-cart__empty {
+         text-align: center;
+         padding: 40px 0;
+    }
+     .go-cart__trigger {
+         position: relative;
+         cursor: pointer;
+    }
+     .go-cart__button {
+         background: #f2843a;
+         color: white;
+         text-transform: uppercase;
+         font-weight: 600;
+         letter-spacing: 5px;
+         padding: 20px 10px;
+         text-align: center;
+         cursor: pointer;
+    }
+     .go-cart-modal {
+         position: relative;
+         width: 100%;
+         height: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+    }
+     .go-cart-modal__close {
+         position: absolute;
+         z-index: 10;
+         right: 20px;
+         top: 20px;
+         line-height: 0;
+         cursor: pointer;
+    }
+     .go-cart-modal__content {
+         width: 100%;
+         padding: 20px;
+         text-align: center;
+    }
+     .go-cart-modal__buttons {
+         width: 100%;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         padding: 0 20px 20px;
+    }
+     .go-cart-drawer {
+         position: relative;
+         height: 100%;
+    }
+     .go-cart-drawer__header {
+         width: 100%;
+         height: 60px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 0 20px;
+    }
+    .go-cart-drawer__header-items {
+        display: flex;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .go-cart-drawer__header-items-cart {
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .go-cart-drawer__header-items-quantity {
+        font-size: 12px;
+        color: #737373;
+    }
+     .go-cart-drawer__close {
+         cursor: pointer;
+         line-height: 0;
+         margin-top: 15px;
+         margin-right: 30px;
+        display: flex;
+        justify-content: flex-end;
+    }
+     .go-cart-drawer__content-u {
+         max-height: calc(100% - 330px);
+         overflow: hidden;
+         overflow-y: auto;
+    }
+    .go-cart-drawer__content {
+         padding: 0 20px;
+    }
+    .go-cart-drawer__subtotal {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         width: 100%;
+         margin-top: 30px;
+         margin-bottom: 15px;
+         padding: 0 20px;
+         font-size: 14px;
+         font-weight: bold;
+         transition: all 0.3s ease-in-out;
+    }
+    .go-cart-drawer__shipping {
+         width: 100%;
+         padding: 0 20px;
+         font-size: 12px;
+         color: #737373;
+    }
+     .go-cart-drawer__footer {
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         width: 100%;
+         height: 100px;
+         padding: 20px 20px;
+         transition: all 0.3s ease-in-out;
+    }
+     .go-cart-mini-cart {
+         position: relative;
+    }
+     .go-cart-mini-cart__content {
+         position: relative;
+         height: calc(480px - 100px - 50px);
+         overflow: hidden;
+         overflow-y: scroll;
+         padding: 0 30px;
+    }
+     .go-cart-mini-cart__subtotal {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         width: 100%;
+         height: 50px;
+         padding: 0 30px;
+         transition: all 0.3s ease-in-out;
+    }
+     .go-cart-mini-cart__footer {
+         display: flex;
+         justify-content: space-between;
+         width: 100%;
+         height: 100px;
+         text-align: center;
+         padding: 20px 30px;
+         transition: all 0.3s ease-in-out;
+    }
+     .go-cart-item__single {
+         position: relative;
+         transition: all 0.3s ease-in-out;
+         padding-top: 18px;
+         padding-bottom: 20px;
+         border-bottom: 1px solid #f5f5f5;
+    }
+     .go-cart-item__info-wrapper {
+         position: relative;
+         display: flex;
+    }
+     .go-cart-item__info {
+         max-width: 250px;
+         line-height: 1.18;
+         padding: 10px 10px 10px 30px;
+    }
+     .go-cart-item__image {
+         width: 90px;
+         height: 110px;
+         background-size: cover;
+         background-position: center;
+         background-repeat: no-repeat;
+    }
+     .go-cart-item__title {
+         vertical-align: top;
+         font-weight: 600;
+    }
+     .go-cart-item__variant {
+         position: relative;
+         top: 5px;
+    }
+     .go-cart-item__quantity {
+         position: absolute;
+         bottom: 10px;
+         display: flex;
+         align-items: center;
+    }
+     .go-cart-item__quantity-label {
+         margin-right: 5px;
+    }
+     .go-cart-item__quantity-number {
+         width: 30px;
+         height: 24px;
+         margin: 0;
+         padding: 0;
+         text-align: center;
+         font-size: 1rem;
+         color: #000;
+         border: none;
+         outline: none;
+         -moz-appearance: textfield;
+    }
+     .go-cart-item__quantity-number::-webkit-inner-spin-button, .go-cart-item__quantity-number::-webkit-outer-spin-button {
+         -webkit-appearance: none;
+         -moz-appearance: none;
+         appearance: none;
+         margin: 0;
+         display: none;
+    }
+     .go-cart-item__quantity-button {
+         width: 24px;
+         height: 24px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 1rem;
+         margin: 0 2px;
+         cursor: pointer;
+         user-select: none;
+    }
+     .go-cart-item__price {
+         position: absolute;
+         bottom: 30px;
+         right: 0;
+         font-weight: 500;
+    }
+     .go-cart-item__remove {
+         position: absolute;
+         right: 0;
+         top: 25px;
+         cursor: pointer;
+    }
+     .go-cart-modal-item {
+         position: relative;
+         display: flex;
+    }
+     .go-cart-modal-item__info {
+         max-width: 250px;
+         padding: 10px 10px 10px 30px;
+         line-height: 1.18;
+    }
+     .go-cart-modal-item__image {
+         width: 90px;
+         height: 110px;
+         background-size: cover;
+         background-position: center;
+         background-repeat: no-repeat;
+    }
+     .is-invisible {
+         opacity: 0;
+         visibility: hidden;
+    }
+/*progress bar*/
+    .go-cart-drawer-progress-bar {
+        margin-top: 15px;
+        {%- unless localization.country == 'United States' -%}display: none;{%- endunless -%}
+    }
+    #progressbar {
+    background-color: #999999;
+    position: relative;
+    margin-top: 35px;
+    margin: 0 20px;
+    /* (height of inner div) / 2 + padding */
+  }
+  
+  #progressbar>div {
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    height: 20px;
+  }
+  #progressbar>span>img {
+    margin: 0 15px;
+  }
+  #progressbar>span {
+    display: flex;
+    align-items: center;
+    color:white;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    position: absolute;
+    top: 1px;
+  }
+    .shiping-progressbar span.money {
+        margin-right: 5px;
+    }
+    .go-cart-drawer-upsell {
+        padding: 0 20px;
+        background-color: #f5f5f5;
+        margin-bottom: 30px;
+    }
+    .go-cart-drawer-upsell .go-cart-item__image {
+        width: 90px;
+        height: 90px;
+    }
+    .go-cart-upsell-item__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: 12px;
+        width: 72%;
+    }
+    .go-cart-upsell-item__info a {
+        width: 70%;
+        padding-top: 10px;
+    }
+    .go-cart-upsell-item__price {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: #888888;
+        align-items: flex-end;
+        padding-bottom: 8px;
+    }
+    button.upsell-description.upsell-button {
+        text-transform: uppercase;
+        width: 100%;
+        height: 40px;
+        margin-top: 12px;
+        font-size: 11pt;
+        font-weight: bold;
+        border-width: 2px;
+        border-color: black;
+    }
+    .go-cart__trigger, .js-go-cart-trigger {
+        display: none;
+    }
+    .js-video-button {
+        text-decoration: underline;
+        color: #888888;
+    }
+    input.go-cart-item__quantity-number.js-go-cart-quantity {
+        background-color: white;
+        width: 20px;
+    }
+    </style>
+    <!--cart button-->
+<div class="go-cart__trigger js-go-cart-trigger">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+        <path d="M18.936 5.564c-.144-.175-.35-.207-.55-.207h-.003L6.774 4.286c-.272 0-.417.089-.491.18-.079.096-.16.263-.094.585l2.016 5.705c.163.407.642.673 1.068.673h8.401c.433 0 .854-.285.941-.725l.484-4.571c.045-.221-.015-.388-.163-.567z"></path>
+        <path d="M17.107 12.5H7.659L4.98 4.117l-.362-1.059c-.138-.401-.292-.559-.695-.559H.924c-.411 0-.748.303-.748.714s.337.714.748.714h2.413l3.002 9.48c.126.38.295.52.942.52h9.825c.411 0 .748-.303.748-.714s-.336-.714-.748-.714zm-6.683 3.73a1.498 1.498 0 1 1-2.997 0 1.498 1.498 0 0 1 2.997 0zm6.429 0a1.498 1.498 0 1 1-2.997 0 1.498 1.498 0 0 1 2.997 0z"></path>
+    </svg>
+    <!--go cart mini cart-->
+    <div class="go-cart__mini-cart js-go-cart-mini-cart">
+        <div class="go-cart-mini-cart">
+            <!--go cart mini cart content-->
+            <div class="go-cart-mini-cart__content js-go-cart-mini-cart-content"></div>
+            <!--end go cart mini cart content-->
+            <!--go cart mini cart subtotal-->
+            <div class="go-cart-mini-cart__subtotal">
+                <span>Subtotal: </span>
+                <span class="go-cart-mini-cart__subtotal-price js-go-cart-mini-cart-subtotal"></span>
+            </div>
+            <!--end go cart mini cart subtotal-->
+
+            <!--go cart mini cart buttons-->
+            <div class="go-cart-mini-cart__footer js-go-cart-mini-cart-footer">
+                <a href="/checkout/" class="go-cart__button">Proceed to checkout</a>
+                <a href="/cart/" class="go-cart__button">View cart</a>
+            </div>
+            <!--end go cart mini cart buttons-->
+        </div>
+    </div>
+    <!--end go cart mini cart-->
+</div>
+<!--end cart button-->
+    <!--go cart modal fail-->
+    <div class="go-cart__modal go-cart__modal--fail js-go-cart-modal-fail">
+        <div class="go-cart-modal">
+            <!--go cart modal close-->
+            <div class="go-cart-modal__close js-go-cart-modal-fail-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <path d="M15.89 14.696l-4.734-4.734 4.717-4.717c.4-.4.37-1.085-.03-1.485s-1.085-.43-1.485-.03L9.641 8.447 4.97 3.776c-.4-.4-1.085-.37-1.485.03s-.43 1.085-.03 1.485l4.671 4.671-4.688 4.688c-.4.4-.37 1.085.03 1.485s1.085.43 1.485.03l4.688-4.687 4.734 4.734c.4.4 1.085.37 1.485-.03s.43-1.085.03-1.485z"></path>
+                </svg>
+            </div>
+            <!--end go cart modal close-->
+            <!--go cart modal content-->
+            <div class="go-cart-modal__content js-go-cart-modal-fail-content">
+                Something went wrong, please contact us!
+            </div>
+            <!--end go cart modal content-->
+        </div>
+    </div>
+    <!--end go cart modal fail-->
+    
+    <!--go cart modal-->
+    <div class="go-cart__modal js-go-cart-modal">
+        <div class="go-cart-modal">
+            <!--go cart modal close-->
+            <div class="go-cart-modal__close js-go-cart-modal-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <path d="M15.89 14.696l-4.734-4.734 4.717-4.717c.4-.4.37-1.085-.03-1.485s-1.085-.43-1.485-.03L9.641 8.447 4.97 3.776c-.4-.4-1.085-.37-1.485.03s-.43 1.085-.03 1.485l4.671 4.671-4.688 4.688c-.4.4-.37 1.085.03 1.485s1.085.43 1.485.03l4.688-4.687 4.734 4.734c.4.4 1.085.37 1.485-.03s.43-1.085.03-1.485z"></path>
+                </svg>
+            </div>
+            <!--end go cart modal close-->
+            <!--go cart modal content-->
+            <div class="go-cart-modal__content js-go-cart-modal-content"></div>
+            <!--end go cart modal content-->
+            <!--go cart modal buttons-->
+            <div class="go-cart-modal__buttons">
+                <a class="go-cart__button js-go-cart-modal-close">
+                    Continue shopping
+                </a>
+                <a href="/cart/" class="go-cart__button">
+                    View cart
+                </a>
+            </div>
+            <!--end go cart modal buttons-->
+        </div>
+    </div>
+    <!--end go cart modal-->
+    <!--go cart drawer-->
+    <div class="go-cart__drawer js-go-cart-drawer">
+        <div class="go-cart-drawer">
+                <div class="go-cart-drawer__close js-go-cart-drawer-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                        <path d="M15.89 14.696l-4.734-4.734 4.717-4.717c.4-.4.37-1.085-.03-1.485s-1.085-.43-1.485-.03L9.641 8.447 4.97 3.776c-.4-.4-1.085-.37-1.485.03s-.43 1.085-.03 1.485l4.671 4.671-4.688 4.688c-.4.4-.37 1.085.03 1.485s1.085.43 1.485.03l4.688-4.687 4.734 4.734c.4.4 1.085.37 1.485-.03s.43-1.085.03-1.485z"></path>
+                    </svg>
+                </div>
+            <div class="go-cart-drawer-progress-bar"></div>
+             <!--go cart drawer header-->
+            <div class="go-cart-drawer__header">
+                <div class="go-cart-drawer__header-items">
+                    <span class="go-cart-drawer__header-items-cart">You cart</span>
+                    <span class="go-cart-drawer__header-items-quantity"><span class="js-go-cart-counter">{{- cart.item_count -}}</span></span>
+                </div>
+            </div>
+            <hr style="margin: 0 auto;width: calc( 100% - 40px );">
+            <!--end go cart drawer close-->
+            <!--go cart drawer content-->
+        <div class="go-cart-drawer__content-u">
+            <div class="go-cart-drawer__content js-go-cart-drawer-content"></div>
+            <!--end go cart drawer content-->
+            {%- for item in cart.items -%}
+                {%- if item.product.id == settings.upsell_product.id -%}
+                {%- assign upsell_in_cart = true -%}
+                {%- endif -%}
+            {%- endfor -%}
+          {%- if settings.need_upsell and upsell_in_cart != true -%}
+            {%- if settings.upsell_product -%}
+                <div class="go-cart-drawer-upsell">
+                    <div class="go-cart-item__single">
+                        <div class="go-cart-item__info-wrapper">
+                            <div class="go-cart-item__image" style="background-image: url({%- if settings.custom_upsell_image -%}{{ settings.custom_upsell_image | img_url }}{%- else -%}{{ settings.upsell_product.featured_image | img_url }}{%- endif -%});"></div>
+                            <div class="go-cart-upsell-item__info">
+                                <a href="{{ settings.upsell_product.url }}" class="go-cart-item__title">{{settings.upsell_product.title}}</a>
+                                <div class="go-cart-upsell-item__price">
+                                    <a href="https://www.youtube.com/watch?v=NCG1MPDUako" class="js-video-button" data-video-id="NCG1MPDUako">See how it works</a>
+                                    {{ settings.upsell_product.price | money }}</div>
+                            </div>
+                        </div>
+                        <button class="upsell-description upsell-button">{{ 'products.upsell.add_to_cart_button_text' | t }}</button>
+                    </div>
+                </div>
+            {%- endif -%}
+        {%- endif -%}
+        </div>
+        <hr style="margin: 0 auto;width: calc( 100% - 40px );">
+
+            <!--go cart drawer subtotal-->
+            <div class="go-cart-drawer__subtotal">
+                <span>Subtotal: </span>
+                <span class="go-cart-drawer__subtotal-price js-go-cart-drawer-subtotal"></span>
+            
+            </div>
+            <div class="go-cart-drawer__shipping">
+                <span>Shipping & Taxes calculated at checkout</span>
+            </div>
+            <!--end go cart drawer subtotal-->
+    
+            <!--go cart drawer buttons-->
+            <div class="go-cart-drawer__footer js-go-cart-drawer-footer">
+                <a href="/checkout/" class="go-cart__button">Checkout</a>
+            </div>
+            <!--end go cart drawer buttons-->
+        </div>
+    </div>
+    <!--end go cart drawer-->
+    <!--go cart overlay-->
+    <div class="go-cart__overlay js-go-cart-overlay">
+    </div>
+    <!--end go cart overlay-->
+    {{ 'gocart.js' | asset_url | script_tag }}
+    {{'modal-video.js' | asset_url | script_tag }}
+    <script>
+        var goCart = new GoCart();
+        $(".js-video-button").modalVideo({youtube:{nocookie:!0}});
+
+        $('.upsell-button').on('click',function(e){    
+        e.preventDefault();
+        let formData = {
+        'items': [{
+            'id': {{settings.upsell_product.selected_or_first_available_variant.id}},
+            'quantity': 1
+            }]
+        };
+    
+        fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => {
+            //console.log(response.json());
+            _tfa.push({notify: 'event', name: 'add_to_cart', id: 1366281});
+            goCart.fetchAndOpenCart();
+            $('.go-cart-drawer-upsell').hide();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+        
+        });
+    
+    </script>

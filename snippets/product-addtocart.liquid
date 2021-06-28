@@ -38,7 +38,7 @@
     {% endif %}
     {% else %}          
     {% assign zeroCost='' %}  
-    <button type="submit" name="add" id="AddToCart" {% unless current_variant.available %}disabled="disabled"{% endunless %} class="btn_sp addtocart_btn product-form__cart-submit {% if section.settings.enable_payment_button %}dynamic_paybtn {% endif %}{% if section.settings.shake_effect_enable %}js-cartButtonPro-addToCartButton hvr-wobble-horizontal{% endif %}{% if product.options.size == 1 and product.variants[0].title == 'Default Title' %} product-form__cart-submit--small{% endif %}">
+    <button type="submit" name="add" id="AddToCart" {% unless current_variant.available %}disabled="disabled"{% endunless %} class="js-go-cart-add-to-cart btn_sp addtocart_btn product-form__cart-submit {% if section.settings.enable_payment_button %}dynamic_paybtn {% endif %}{% if section.settings.shake_effect_enable %}js-cartButtonPro-addToCartButton hvr-wobble-horizontal{% endif %}{% if product.options.size == 1 and product.variants[0].title == 'Default Title' %} product-form__cart-submit--small{% endif %}">
       <span id="AddToCartText">
         {% unless current_variant.available %}
         {% comment %}ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.sold_out' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902628' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}

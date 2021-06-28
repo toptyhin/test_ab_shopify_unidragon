@@ -277,7 +277,7 @@ snaptr('track', 'PAGE_VIEW');
     </main>
     {% section 'footer' %}
   </div>
-  
+
     {{ 'fontawesome.css' | asset_url | stylesheet_tag }}
   
    <!-- Start discount popup -->  
@@ -288,19 +288,18 @@ snaptr('track', 'PAGE_VIEW');
   {% include 'promo-popup' %}
   {% comment %} Promo popup ends here {% endcomment %}
   
-  {% if settings.salepopup_position == 'bottom'%} 
-   {% include 'notification-popup' %}
-  {% endif %}
+  {%- if settings.salepopup_position == 'bottom' -%} 
+   {%- include 'notification-popup' -%}
+  {%- endif -%}
   {{ 'timer_all.scss' | asset_url | stylesheet_tag }}
   {{ 'timer_new.scss' | asset_url | stylesheet_tag }}
 
   {{ 'shop.js' | asset_url | script_tag }}  
   
-  {% include 'currencies' %}
-{% include 'ajaxify-cart' %}
+  {%- include 'currencies' -%}
+{%- include 'ajaxify-cart' -%}
 {{ '//cdn.shopify.com/s/files/1/0194/1736/6592/t/1/assets/booster-page-speed-optimizer.js?23' | script_tag }}
- {% include 'smile-initializer' %}
-
+ {%- include 'smile-initializer' -%}
 
   <!-- kv 23/12/20 move from header -->
     <link href="{% assign ly_asset = 'slick.css' %} {% include 'ly-asset' with ly_asset %}{{ ly_translation  }}"/>
