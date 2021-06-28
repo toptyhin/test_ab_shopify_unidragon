@@ -164,14 +164,16 @@
       {% if section.settings.cart_enable %}
       {{ 'jquery.countdownTimer_2hours.js' | asset_url | script_tag }}
       {% endif %}
-  <div id="progressbar" class="shiping-progressbar">
-    <div style="width: {% if per_progressbar <= 100 %}{{ per_progressbar }}{%else%}100{%endif%}%"></div>
-    {%- if cart.total_price < free_shipping -%}
-    <span><img src="{{ 'shiping-icon.png' | asset_url}}"/>{{ free_shipping | minus: cart.total_price | money }} until free shipping</span>
-    {%- elsif cart.total_price >= free_shipping -%}
-    <span><img src="https://cdn.shopify.com/s/files/1/0010/6348/5558/files/pngegg.png?v=1622556969" style="max-height: 15px; max-width: 23px; ">Congratulation! You've unlocked free shiping!</span>
-    {%- endif -%}
-  </div>
+      {%- if localization.country == 'United States' -%}
+        <div id="progressbar" class="shiping-progressbar">
+          <div style="width: {% if per_progressbar <= 100 %}{{ per_progressbar }}{%else%}100{%endif%}%"></div>
+          {%- if cart.total_price < free_shipping -%}
+          <span><img src="{{ 'shiping-icon.png' | asset_url}}"/>{{ free_shipping | minus: cart.total_price | money }} until free shipping</span>
+          {%- elsif cart.total_price >= free_shipping -%}
+          <span><img src="https://cdn.shopify.com/s/files/1/0010/6348/5558/files/pngegg.png?v=1622556969" style="max-height: 15px; max-width: 23px; ">Congratulation! You've unlocked free shiping!</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
     <form action="/cart" method="post" novalidate class="cart">
       <div class="section-header_1 grid">
         <div class="grid__item medium-up--one-half small--text-center medium-up--text-left">
