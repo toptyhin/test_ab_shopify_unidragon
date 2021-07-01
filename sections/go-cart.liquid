@@ -568,8 +568,8 @@
         var goCart = new GoCart();
         $(".js-video-button").modalVideo({youtube:{nocookie:!0}});
 
-        $.get("https://ipinfo.io/json", function (response) { if (response.country != "US"){ $('.go-cart-drawer-progress-bar').hide();} });
-        
+        $.get("https://ipinfo.io/json?token=ea639b54a40421", function (response) { if (response.country != "US"){ $('.go-cart-drawer-progress-bar').hide();} });
+
         $('.upsell-button').on('click',function(e){    
         e.preventDefault();
         let formData = {
