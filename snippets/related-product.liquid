@@ -94,9 +94,9 @@
                <div  class=" realted_product1 grid__item {{ grid_item_width }} {{grid_mobile}}">   
               {%- include 'product-card-grid', max_height: max_height -%}
                </div>
+               {%- assign counter = counter | plus: 1 -%}
       {%- endif -%}
     {%- endfor -%}
-  {%- assign counter = counter | plus: 1 -%}
   {%- endif -%}
   
     {%- for product in collection.products -%}
