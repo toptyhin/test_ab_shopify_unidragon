@@ -1,15 +1,13 @@
-{% comment %}ly_liquid_scripts_begin{% endcomment %}{% capture ly_liquid_content %}{% comment %}ly_liquid_scripts_end{% endcomment %}
-
+{% comment %}ly_liquid_scripts_begin{% endcomment %}{%- capture ly_liquid_content -%}{% comment %}ly_liquid_scripts_end{% endcomment %}
 <!doctype html>
 <!--[if IE 9]> <html class="ie9 no-js" lang="{{ shop.locale }}"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="{{ shop.locale }}"> <!--<![endif]-->
 <head>
-  
 {{"https://cozycountryredirect.addons.business/js/eggbox/5107/dtag/script.js?shop=unidragon.myshopify.com" | script_tag }}
 
   <script src="https://www.googleoptimize.com/optimize.js?id=OPT-5RD9DVZ"></script>
 
-{% include 'booster-seo' %}
+{%- include 'booster-seo' -%}
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -19,37 +17,32 @@
   <meta name="cmsmagazine" content="bdcdc6de24aabdfc464a9d2d5d6b34ac" /> 
   <!-- KV 15/02 -->
   <meta name="google-site-verification" content="a4TAWTeb_JqFZ6hfN97VJ_UnJcM5d9ONGZ_qf7-S2JY" />
-  
   <link rel="canonical" href="{{ canonical_url }}">
   {% comment %}
   {% include 'ly-languages-switcher' %}
   {% endcomment %}
-  
-  
-  {% if settings.favicon != blank %}
+  {%- if settings.favicon != blank -%}
     <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
-  {% endif %}
+  {%- endif -%}
 
-  {% capture seo_title %}
+  {%- capture seo_title -%}
     {{ page_title }}
-    {% if current_tags %}
-      {%- assign meta_tags = current_tags | join: ', ' %} – {{ 'general.meta.tags' | t: tags: meta_tags }}
-    {% endif %}
-    {% if current_page != 1 %}
+    {%- if current_tags -%}
+      {%- assign meta_tags = current_tags | join: ', ' -%} – {{ 'general.meta.tags' | t: tags: meta_tags }}
+    {%-endif -%}
+    {%- if current_page != 1 -%}
       – {{ 'general.meta.page' | t: page: current_page }}
-    {% endif %}
-    {% unless page_title contains shop.name %}
+    {%- endif -%}
+    {%- unless page_title contains shop.name -%}
       – {{ shop.name }}
-    {% endunless %}
-  {% endcapture %}
+    {%- endunless -%}
+  {%- endcapture -%}
   {% comment %}<title>{{ seo_title }}</title>{% endcomment %}
 
-  {% if page_description %}
+  {%- if page_description -%}
     {% comment %}<meta name="description" content="{{ page_description | escape }}">{% endcomment %}
-  {% endif %}
-
-  {% include 'social-meta-tags' %}
-
+  {%- endif -%}
+  {%- include 'social-meta-tags' -%}
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
   <script>
     var theme = {
@@ -106,10 +99,6 @@
  
 <link rel="preload" href="{{ 'custom.scss.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="{{ 'custom.scss.css' | asset_url }}"></noscript>
- 
-  
-
-  
   <!-- Facebook Pixel Code -->
 <script>
   !function(f,b,e,v,n,t,s)
@@ -156,22 +145,7 @@ if (match && match.length > 0) window.localStorage.setItem('sid', match[0]);
 </noscript>
 <!-- End of Taboola Pixel Code -->
 
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(52900297, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true,
-        ecommerce:"dataLayer"
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/52900297" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
   
 {% include 'pagefly-header' %}
 

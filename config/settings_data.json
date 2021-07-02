@@ -343,7 +343,7 @@
           "visitor_counter_enable": false,
           "visitor_counter_number": "100-300",
           "show_del_time": true,
-          "delivery_time_number": "3-5",
+          "delivery_time_number": "22 - 24",
           "product_description": "under_the_timer",
           "enable_sticky": false,
           "sticky_button": "show_progress_bar",
@@ -577,6 +577,7 @@
               "title": "EXPRESS FREE SHIPPING!",
               "text": "<p>● USA Shipping takes<strong> 3 to 5<\/strong> days.<\/p><p>● Please note that the delivery time may be longer due to the high demand of our items.<br\/>● Shipping times will be affected by holidays. Manufacturers and couriers will limit their operations at this time. Unfortunately, this is beyond our control. Normal service resumes immediately after each holiday ended.<\/p>",
               "button_label": "",
+              "button_link": "",
               "full_btn": false,
               "transparent_btn": false
             }
@@ -589,6 +590,7 @@
               "title": "GUARANTEE",
               "text": "<p><strong>We are fully responsible for the quality of our products!<\/strong> If you receive products of inadequate quality, we promise to return the money within 30 calendar days.<\/p>",
               "button_label": "",
+              "button_link": "",
               "full_btn": false,
               "transparent_btn": false
             }
@@ -629,6 +631,7 @@
               "title": "USA Shipping takes 3 to 5 days.",
               "text": "",
               "button_label": "",
+              "button_link": "",
               "full_btn": false,
               "transparent_btn": false
             }

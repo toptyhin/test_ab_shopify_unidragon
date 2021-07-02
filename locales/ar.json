@@ -165,6 +165,7 @@
         "discount_has_been_removed": "تمت إزالة الحسم",
         "gift_card_has_been_applied": "تم تطبيق بطاقة الهدايا",
         "gift_card_has_been_removed": "تمت إزالة بطاقة الهدايا",
+        "gift_card_subscriptions_notice": "ستنطبق بطاقات الهدايا على دفعتك الأولى فقط",
         "discount_already_applied": "تم تطبيق الحسم على هذا الطلب. لا يمكنك إضافة حسم آخر.",
         "cart_does_not_meet_discount_requirements_notice": "رمز الخصم <strong>٪ {code} <\/strong> غير صالح للعناصر الموجودة في سلة التسوق",
         "discount_requires_customer_notice": "أدخل معلومات الشحن لتطبيق رمز الخصم <strong>٪ {code} <\/strong>",
@@ -215,7 +216,8 @@
         "estimated_tax_label": "الضريبة المقدرة",
         "multiple_shipping_lines_label": "إجمالي الشحن",
         "recurring_total_label": "المجموع المتكرر",
-        "recurring_total_tooltip": "لا يشمل الضرائب أو الرسوم أو أي خصومات مطبقة."
+        "recurring_total_tooltip": "لا يشمل الضرائب أو الرسوم أو أي خصومات مطبقة.",
+        "confirmation_number_label": "تأكيد #٪ {insurance_number}"
       },
       "shipping": {
         "title": "الشحن",
@@ -274,7 +276,23 @@
             }
           },
           "multiple_subscriptions_shipping_price_label": "٪ {shipping_price} لكل عملية تسليم",
-          "prepaid_shipping_price_label": "٪ {shipping_price} لكل عملية تسليم x٪ {delivery_interval_count}"
+          "prepaid_shipping_price_label": "٪ {shipping_price} لكل عملية تسليم x٪ {delivery_interval_count}",
+          "initial_order_discounted": "تكلفة الشحن الأولى٪ {discounted_shipping_cost} ، ثم٪ {frequency_description}",
+          "prepaid_initial_order_discounted": "تكلفة الشحن الأولى٪ {discounted_shipping_price}٪ {prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "تكلفة الشحن الأولى٪ {discounted_shipping_price}٪ {prepaid_delivery_frequency} (٪ {discounted_cost_per_delivery})",
+          "prepaid_initial_order_discounted_with_renewal": "تكلفة الشحن الأولى٪ {discounted_shipping_price}٪ {prepaid_delivery_frequency} ، ثم٪ {shipping_price}٪ {billing_cycle}",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "تكلفة الشحن الأولى٪ {discounted_shipping_price}٪ {prepaid_delivery_frequency} (٪ {discounted_cost_per_delivery}) ، ثم٪ {shipping_price}٪ {billing_cycle}",
+          "recurring_order_shipping_price": "متبوعًا بـ٪ {recurring_order_shipping_price}",
+          "first_order_shipping_price_included": "تم تضمين الطلب الأول ، متبوعًا بـ٪ {recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "٪ {first_order_shipping_price} (٪ {per_delivery_price} لكل تسليم) ، متبوعًا بـ٪ {recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "one": "أول طلب مجاني",
+            "other": "أول٪ {count} طلبات مجانية"
+          },
+          "free_for_first_n_order": {
+            "one": "للطلب الأول",
+            "other": "لأول٪ {count} من الطلبات"
+          }
         },
         "one_time_purchase_shipping": "الشحن لمرة واحدة"
       },
@@ -302,6 +320,7 @@
         "card_number_placeholder": "رقم البطاقة",
         "card_pay_with": "ادفع عن طريق:",
         "card_security_notice": "كل المعاملات آمنة ومشفرة.",
+        "card_security_vault_notice": "نحن بحاجة إلى التفاصيل الخاصة بك للمدفوعات المستقبلية. جميع المعاملات آمنة ومشفرة.",
         "card_information_notice": "كل المعاملات آمنة ومشفرة.لا يتم تخزين معلومات بطاقة الائتمان.",
         "name_on_card_label": "الاسم على البطاقة",
         "name_on_card_placeholder": "الاسم على البطاقة",
@@ -352,7 +371,6 @@
         "missing_credit_card_error": "أدخل تفاصيل بطاقتك لإتمام الدفع",
         "billing_address_not_supported_for_payment_method_error": "طريقة الدفع هذه غير متاحة لعنوان إرسال الفواتير والعملة. يرجى تجربة طريقة دفع مختلفة.",
         "generic_incorrect_card_info": "تعذر التحقق من تفاصيل الدفع. تحقق من تفاصيل بطاقتك وحاول مرة أخرى.",
-        "shopify_installments_label": "دفع الأقساط للتسوق",
         "sofort_label": "تحويل مصرفي فوري",
         "klarna_pay_later_label": "ادفع لاحقًا مع Klarna",
         "klarna_pay_now_label": "ادفع لاحقًا مع Klarna",
@@ -366,7 +384,14 @@
         "change_currency_section_description": "حدد خيار العملة",
         "no_real_orders_dev_store": "لا يمكن لهذا المتجر قبول الطلبات الحقيقية أو المدفوعات الحقيقية.",
         "waiting_on_payment_methods": "الحصول على طرق الدفع المتاحة ...",
-        "apple_pay_payment_error": "لا يمكن إتمام الدفع الخاص بك. حاول مرة أخرى أو استخدم طريقة دفع مختلفة."
+        "apple_pay_payment_error": "لا يمكن إتمام الدفع الخاص بك. حاول مرة أخرى أو استخدم طريقة دفع مختلفة.",
+        "taxes_not_included": "الضرائب غير مشمولة",
+        "no_taxes_banner_content": "لن يتم تحصيل الضرائب على هذا الطلب. بمجرد تحصيل المدفوعات ، لا يمكن إضافة الضرائب.",
+        "card_update_label": "تحديث البطاقه",
+        "paypal": {
+          "connect": "انقر لتوصيل حساب باي بال الخاص بك",
+          "account_connected": "الحساب متصل"
+        }
       },
       "payment_summary": {
         "gift_card_current_balance_notice": "الرصيد الحالي {{amount}}",
@@ -408,7 +433,6 @@
         "reduction_code_code_not_found": "أدخل رمز خصم أو بطاقة هدايا صالحة",
         "reduction_code_discount_not_found": "أدخل رمز خصم صالح",
         "reduction_code_gift_card_code_invalid": "أدخل بطاقة هدية صالحة",
-        "reduction_code_gift_card_unusable_with_subscriptions": "لا يمكنك استخدام بطاقة هدايا لشراء اشتراك",
         "reduction_code_gift_card_unusable": "لا يمكنك استخدام بطاقة هدايا لشراء بطاقة هدايا أخرى",
         "shipping_line_phone_blank": "أدخل رقم هاتف لاستخدام طريقة التسليم هذه",
         "shipping_line_phone_invalid": "أدخل رقم هاتف لاستخدام طريقة التسليم هذه",
@@ -425,7 +449,8 @@
         "subscription_agreement_blank": "لمتابعة الشراء ، وافق على شروط الاشتراك",
         "physical_gift_card_invalid_quantity": "يجب أن تحتوي عناصر بطاقة الهدايا المادية على كمية تتطابق مع عدد أكواد بطاقات الهدايا.",
         "physical_gift_card_duplicate_code": "يحتوي عنصر بطاقة الهدايا المادية على رمز مكرر.",
-        "physical_gift_card_invalid_code": "رمز بطاقة الهدايا المادية غير صالح."
+        "physical_gift_card_invalid_code": "رمز بطاقة الهدايا المادية غير صالح.",
+        "sms_marketing_phone_invalid": "أدخل رقم هاتف صالح"
       },
       "payment_errors": {
         "generic_error": "كانت هناك مشكلة في معالجة الدفع الخاص بك. حاول مرة أخرى أو استخدم طريقة دفع مختلفة.",
@@ -701,6 +726,15 @@
         "unsubscribe": {
           "title": "لقد ألغيت الاشتراك",
           "description": "لن تتلقى أي تذكيرات أخرى لعربة التسوق منا."
+        },
+        "accept_email_checkbox_label": "راسلني مع الاخبار والعروض",
+        "accept_sms_checkbox_label": "أرسل لي الأخبار والعروض",
+        "sms": {
+          "disclaimer": {
+            "description_html": "من خلال التسجيل عبر الرسائل النصية ، فإنك توافق على تلقي رسائل تسويقية آلية متكررة ، بما في ذلك تذكيرات عربة التسوق ، على رقم الهاتف المقدم. الموافقة ليست شرط شراء. الرد STOP لإلغاء الاشتراك. الرد على \"مساعدة\" للحصول على المساعدة. يختلف تردد الرسائل. قد يتم تطبيق معدلات الرسائل والبيانات. اعرض٪ {privacy_policy_link} و٪ {terms_of_service_link}.",
+            "privacy_policy": "سياسة الخصوصية",
+            "terms_of_service": "شروط الخدمة"
+          }
         }
       },
       "shop_policies": {
@@ -756,7 +790,8 @@
         "payment_total_label": "مجموع الدفع",
         "conversion_rate": "1 %{from_currency_code} = %{rate} %{to_currency_code}",
         "change_currency_link": "تغيير إلى٪ {currency_name}",
-        "card_provider_fx_charges_warning": "قد يفرض مزود بطاقتك رسومًا على معاملات٪ {currency_code}."
+        "card_provider_fx_charges_warning": "قد يفرض مزود بطاقتك رسومًا على معاملات٪ {currency_code}.",
+        "currency_not_supported_by_shop": "العملة التي حددتها لم تعد متوفرة. جميع الأسعار الآن بـ٪ {"
       },
       "change_country": {
         "cart_updated_based_on_country": "تم تحديث سلة التسوق الخاصة بك بناءً على بلد الشحن الخاص بك."
@@ -780,13 +815,6 @@
         }
       },
       "subscriptions": {
-        "recurring_totals_with_policies": {
-          "first_cycles": {
-            "one": "الدفعة الأولى٪ {total_price}",
-            "other": "أول٪ {count} دفعة٪ {total_price} لكل منها"
-          },
-          "following_cycles": "ثم٪ {total_price} كل٪ {فاصل زمني}"
-        },
         "recurring_total_intervals": {
           "day": {
             "one": "يوم",
@@ -805,7 +833,21 @@
             "other": "٪ {عدد} سنوات"
           }
         },
-        "recurring_totals": "٪ {total_price} كل٪ {فاصل زمني}"
+        "recurring_totals": "٪ {total_price} كل٪ {فاصل زمني}",
+        "recurring_totals_with_initial_order_shipping_discount": "الدفعة الأولى٪ {total_price_with_discount} ، ثم٪ {recurring_total}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "الدفعة الأولى٪ {total_price}",
+            "other": "أول٪ {count} دفعة٪ {total_price} لكل منها"
+          },
+          "following_cycles": "ثم٪ {total_price} كل٪ {فاصل زمني}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": "، ثم٪ {count} دفعة بنسبة٪ {total_price}",
+            "other": "، ثم٪ {count} دفعة بواقع٪ {total_price} لكل دفعة"
+          }
+        }
       },
       "customer_payment_methods": {
         "page_title": "طرق الدفع",
@@ -973,6 +1015,12 @@
       },
       "storefront": {
         "invalid_password": "كلمة السرغير صحيحة ، يرجى المحاولة مرة أخرى."
+      },
+      "tags": {
+        "add_articles": "تضييق البحث في المقالات التي تحتوي أيضًا على العلامة٪ {tag}",
+        "add_products": "تضييق التحديد للمنتجات المطابقة للعلامة٪ {tag}",
+        "remove_articles": "توسيع البحث إلى المقالات التي لم ",
+        "remove_products": "إزالة العلامة٪ {tag}"
       }
     },
     "email_marketing": {
@@ -985,6 +1033,33 @@
         "confirmation": "لقد ألغيت الاشتراك من قائمتنا البريدية.",
         "disclaimer": "لن تتلقى أي تحديثات تسويقية أخرى منا. يمكنك الاشتراك مرة أخرى في أي وقت.",
         "preview": "أنت تقوم بمعاينة ما سيراه العملاء عند إلغاء الاشتراك."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b> لقد اشتركت في تتبع البريد الإلكتروني المفتوح. <\/ b>",
+          "visibility": "سيتم الإبلاغ عن معدلات فتح البريد الإلكتروني بشكل مجهول. سنرى فقط ما إذا كنت قد فتحت بريدًا إلكترونيًا كجزء من معدل فتح البريد الإلكتروني المجمع.",
+          "opt_out_html": "يمكنك <a style = 'text-decoration: underline؛' href = '٪ {link}'> إلغاء الاشتراك <\/a> في تتبع فتح البريد الإلكتروني إذا كنت",
+          "preview_bar": "أنت تقوم بمعاينة ما سيراه العملاء عند الاشتراك في تتبع البريد الإلكتروني المفتوح."
+        },
+        "opt_out": {
+          "opted_out_html": "<b> لقد ألغيت الاشتراك في تتبع فتح البريد الإلكتروني. <\/ b>",
+          "visibility": "لن نرى ما إذا كنت قد فتحت رسائل البريد الإلكتروني الخاصة بنا.",
+          "opt_in_html": "<a style = 'text-decoration: underline؛' href = '٪ {link}'> الاشتراك <\/a> في تتبع فتح البريد الإلكتروني.",
+          "preview_bar": "أنت تقوم بمعاينة ما سيراه العملاء عند إلغاء الاشتراك في "
+        },
+        "no_longer_track": {
+          "status_html": "<b> لم نعد نتتبع أي بريد إلكتروني يفتح. <\/ b>",
+          "privacy_policy": "بعد إرسال هذا البريد الإلكتروني ، قمنا بتحديث سياسة الخصوصية الخاصة بنا ولم نعد نتتبع عمليات الفتح."
+        },
+        "track": {
+          "status_html": "<b> تم الإبلاغ عن تتبع البريد الإلكتروني المفتوح. <\/ b>",
+          "visibility": "سنرى فقط ما إذا كنت قد فتحت البريد الإلكتروني ، كجزء من إجمالي معدل فتح البريد الإلكتروني."
+        },
+        "updated_policy": {
+          "status_html": "<b> تم الإبلاغ عن تتبع البريد الإلكتروني المفتوح. <\/ b>",
+          "visibility": "لقد قمنا بتحديث سياستنا ، والآن نتتبع رسائل البريد الإلكتروني المفتوحة. سيتم الإبلاغ عن معدلات فتح البريد الإلكتروني بشكل مجهول. سنرى فقط ما إذا كنت قد فتحت بريدًا إلكترونيًا كجزء من إجمالي مع",
+          "opt_out_html": "إذا كنت لا تريد مشاركة هذه المعلومات ، فيمكنك <a style = 'text-decoration: underline؛' "
+        }
       }
     },
     "page_titles": {
@@ -996,10 +1071,15 @@
       "addresses": "العناوين",
       "order": "طلب ٪{name}",
       "search": "بحث",
+      "search_results": {
+        "one": "بحث: تم العثور على٪ {count} نتيجة لـ \"٪ {terms}\"",
+        "other": "بحث: تم العثور على٪ {count}"
+      },
       "collections": "المجموعات",
       "not_found": "404 غير موجودة",
       "challenge": "التحدي",
-      "checkpoint": "نقطة تفتيش"
+      "checkpoint": "نقطة تفتيش",
+      "blog_or_article_with_error": "خطأ -٪ {title}"
     },
     "cart": {
       "discounts_with_count": "تم تطبيق٪ {count} خصومات"
@@ -1027,6 +1107,24 @@
         "immediately": "جاهز للاستلام الآن",
         "next_day": "جاهز للاستلام في اليوم التالي"
       }
+    },
+    "filters": {
+      "availability": {
+        "label": "التوفر",
+        "value": {
+          "in_stock": "في المخزن",
+          "out_of_stock": "إنتهى من المخزن"
+        }
+      },
+      "vendor": {
+        "label": "ماركة"
+      },
+      "price": {
+        "label": "سعر"
+      },
+      "product_type": {
+        "label": "نوع المنتج"
+      }
     }
   },
   "sections": {
@@ -1047,6 +1145,11 @@
     }
   },
   "general": {
+    "404": {
+      "title": "404 الصفحة غير موجودة",
+      "subtext": "الصفحة التي طلبتها غير موجودة.",
+      "link": "مواصلة التسوق"
+    },
     "accessibility": {
       "skip_to_content": "تخطى الى المحتوى",
       "close_modal": "إغلاق (esc)"
@@ -1054,11 +1157,6 @@
     "meta": {
       "tags": "تم وضع علامة \"{{ tags }}\"",
       "page": "الصفحة {{ page }}"
-    },
-    "404": {
-      "title": "404 الصفحة غير موجودة",
-      "subtext": "الصفحة التي طلبتها غير موجودة.",
-      "link": "مواصلة التسوق"
     },
     "pagination": {
       "previous": "السابق",
@@ -1247,7 +1345,8 @@
       "phone": "رقم الهاتف",
       "message": "رسالة",
       "submit": "إرسال",
-      "post_success": "شكرا لإتصالك بنا. سنعود إليك في أقرب وقت ممكن."
+      "post_success": "شكرا لإتصالك بنا. سنعود إليك في أقرب وقت ممكن.",
+      "error_heading": "يرجى ضبط ما يلي:"
     }
   },
   "customer": {
@@ -1463,5 +1562,50 @@
   },
   "consistent_cart_addon": {
     "merge_cart_text": "يبدو أن لديك بالفعل عربة من جلسة سابقة. هل ترغب في دمج عربة التسوق السابقة مع عربة التسوق الحالية؟"
+  },
+  "pagefly": {
+    "products": {
+      "product": {
+        "regular_price": "سعر عادي",
+        "sold_out": "نفذ",
+        "unavailable": "غير متوفره",
+        "on_sale": "أوكازيون",
+        "quantity": "كمية",
+        "add_to_cart": "أضف إلى السلة",
+        "back_to_collection": "رجوع إلى {{title}}",
+        "view_details": "عرض التفاصيل"
+      }
+    },
+    "article": {
+      "tags": "العلامات:",
+      "all_topics": "كل المواضيع",
+      "by_author": "بواسطة {{المؤلف}}",
+      "posted_in": "نشر في",
+      "read_more": "اقرأ أكثر",
+      "back_to_blog": "رجوع إلى {{title}}"
+    },
+    "comments": {
+      "title": "اترك تعليقا",
+      "name": "اسم",
+      "email": "بريد إلكتروني",
+      "message": "رسالة",
+      "post": "أضف تعليقا",
+      "moderated": "يرجى ملاحظة أنه يجب الموافقة على التعليقات قبل نشرها",
+      "success_moderated": "تم نشر تعليقك بنجاح. سننشره بعد قليل ، لأن مدونتنا خاضعة للإشراف.",
+      "success": "تم نشر تعليقك بنجاح! شكرا لك!",
+      "comments_with_count": {
+        "one": "تعليق {{count }}",
+        "other": "{{count }} تعليق"
+      }
+    },
+    "password_page": {
+      "login_form_message": "أدخل المتجر باستخدام كلمة المرور:",
+      "login_form_password_label": "كلمه السر",
+      "login_form_password_placeholder": "كلمة مرورك",
+      "login_form_submit": "يدخل",
+      "signup_form_email_label": "بريد إلكتروني",
+      "signup_form_success": "سنرسل لك بريدًا إلكترونيًا قبل أن نفتح!",
+      "password_link": "أدخل باستخدام كلمة المرور"
+    }
   }
 }
