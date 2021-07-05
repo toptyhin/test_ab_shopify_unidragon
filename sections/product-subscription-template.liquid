@@ -1,15 +1,3 @@
-<style>
-    button.GiftWizard-gift-button {
-        font-size: 21px !important;
-    }
-    button#AddToCart {
-        display: none;
-    }
-    .swatch_options {
-        padding-bottom: 25px;
-    }
-</style>
-
   <div class="product-template__container product-{{ product.id }} page-width" itemscope itemtype="http://schema.org/Product" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true"> 
   
     <meta itemprop="name" content="{{ product.title }}">
@@ -151,9 +139,7 @@
           </button>
           {% endif %}
         </div>
-        <form style="display: none;" method="post" action="/cart">
-            <input  type="submit" class="custome_checkout" value="checkout" name="checkout"/>
-          </form>
+
       </div>
       
       <div class="grid__item medium-up--one-half">
@@ -242,6 +228,45 @@
             {%- endcapture %}
   
             {% form 'product', product, data-productid: product.id, id: "AddToCartForm", class:form_classes, data-product-id: "{{ product.id }}", data-section: "{{ section.id }}", data-product: "{{ product | json | escape }}" %}
+            {%- liquid
+                assign current_variant = product.selected_or_first_available_variant | default: product.variants.first
+                assign current_selling_plan_allocation = current_variant.selected_selling_plan_allocation
+               
+                if current_selling_plan_allocation == nil and current_variant.requires_selling_plan
+                 assign current_selling_plan_allocation = current_variant.selling_plan_allocations | first
+                endif
+               
+                assign offer = current_selling_plan_allocation | default: current_variant
+               -%}
+               
+       
+               {% if offer.compare_at_price > offer.price %}
+                 <s>{{ offer.compare_at_price | money }}</s>
+                 <span>{% if offer.selling_plan %}Subscription{% else %}Sale{% endif %}</span>
+               {% endif %}
+               
+                 <input type="hidden" name="selling_plan" value="{{ current_selling_plan_allocation.selling_plan.id | default: '' }}">
+                 <fieldset class="selling-plan-fieldset" data-product="{{ product | json }}">
+                   <legend>Purchase options</legend>
+                   {% unless product.requires_selling_plan %}
+                   <input type="radio" name="purchase_option" checked> One-time purchase
+                   {% endunless %}
+               
+                   {% for group in product.selling_plan_groups %}
+                     <input type="radio" name="purchase_option" checked> {{ group.name}}
+               
+                     {% for option in group.options %}
+                       <label>{{ option.name }}</label>
+                     {% endfor %}
+                   {% endfor %}
+                 </fieldset>
+              
+                 <button id="BuySubscription" class="js-go-cart-add-to-cart btn_sp addtocart_btn product-form__cart-submit hvr-wobble-horizontal">
+                    <span id="AddToCartText">{{ 'products.product.subscribe' | t }}</span>
+               </button>
+             <p class="success-feedback" style="display: none;"><i class="fa fa-check"></i>Added to cart</p>
+
+
 
               <input type="hidden" id="Quantity" name="quantity" value="1" class="product-form__input prod_qty_mobile">
             {% unless product.has_only_default_variant %}
@@ -272,51 +297,14 @@
               {% endif %}
               {% endfor %}
             </select>
-  
-            <!-- PRODUCT SWATCH CODE IF ENABLE -->
-  
-            {% if product.variants.size > 1 %}
-            <div class="swatch_options">
-              {% for option in product.options %}
-              {% include 'swatch-gift' with option %}
-              {% endfor %} 
-            </div>
-            {% endif %}
-            <!-- END PRODUCT SWATCH CODE IF ENABLE -->
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+
 {% assign price_var=current_variant.price | withoutmoney %}  
 
 <div class="grid__item row_grid_qnt"{% if section_onboarding %} style="margin-top:20px;"{% endif %}>
 
   <input type="hidden" id="Quantity" name="quantity" value="1" class="product-form__input prod_qty_desktop">
   
-  <div class="{{quantitygrid}}{% if section.settings.enable_sticky %} qty_stickyfor{% endif %}{% unless section.settings.enable_payment_button %} cst-small-crtbtn{% else %} more_payment_btn{% endunless %}">
-    {% if price_var == 0 %}          
-    {% if section.settings.enable_shipping %}
-    <button type="submit" name="add" id="AddToCartZero" class="btn_sp medium-up--five-eighths{% if section.settings.enable_payment_button %} dynamic_paybtn {% endif %}{% if section.settings.shake_effect_enable %} js-cartButtonPro-addToCartButton hvr-wobble-horizontal{% endif %}">
-      <span id="AddToCartText">{% comment %}ly_i18n_replace_for_[ 'products.product.free_add_to_cart' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.free_add_to_cart' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902627' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %} </span>
-    </button>
-    {% endif %}
-    {% else %}          
-    {% assign zeroCost='' %}  
-    <button type="submit" name="add" id="AddToCart" {% unless current_variant.available %}disabled="disabled"{% endunless %} class="js-go-cart-add-to-cart btn_sp addtocart_btn product-form__cart-submit {% if section.settings.enable_payment_button %}dynamic_paybtn {% endif %}{% if section.settings.shake_effect_enable %}js-cartButtonPro-addToCartButton hvr-wobble-horizontal{% endif %}{% if product.options.size == 1 and product.variants[0].title == 'Default Title' %} product-form__cart-submit--small{% endif %}">
-      <span id="AddToCartText">
-        {% unless current_variant.available %}
-        {% comment %}ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.sold_out' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902628' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
-        {% else %}
-        {% if section.settings.enable_payment_button %}
-        {% comment %}ly_i18n_replace_for_[ 'products.dynamic_checkout_buttons.add_to_cart_text_when_dynamic_checkout_buttons_enable' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.dynamic_checkout_buttons.add_to_cart_text_when_dynamic_checkout_buttons_enable' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902629' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
-        {% else %}
-        {% comment %}ly_i18n_replace_for_[ 'products.product.add_to_cart' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.add_to_cart' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902630' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
-        {% endif %}
-        {% endunless %}
-      </span>
-    </button>
-    {% if section.settings.enable_payment_button %}
-    {{ form | payment_button }}
-    {% endif %}
-    {% endif %}
-  </div>
+
   <div class="product-single__description rte ttt" itemprop="description">
     {% assign product_desc = 'products.product_tab.product_tab_1' | t %} 
     {% if product_desc != blank and product.description != blank%}
@@ -334,167 +322,25 @@
   
 </div>
 
-{% if section.settings.enable_trust_badges and section.settings.move_badges_under_cart %}
-<div class="payment-icon">
-  {% assign badges_title = 'products.product.badges_title' | t %} 
-  {% if badges_title != blank%}
-  <p class="line">
-    {% comment %}ly_i18n_replace_for_[ 'products.product.badges_title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.badges_title' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902631' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
-  </p>
-  {% endif %}
-  <span class="payment-img">
-    {% unless section.settings.enable_trust_badges_image == blank %}
-    <img src="{{ section.settings.enable_trust_badges_image | img_url: '550x' }}">
-    {% else %}
-    <img src="{{ 'pay_right.png' | asset_img_url: '500x100' }}">               
-    {% endunless %}  
-  </span>
-</div>
-{% endif %}
-{% comment %}
-{% include 'discount-final' %}
-{% endcomment %}
-<style>
-    span#AddToCartText {
-        font-size: 21px !important;
-    }
-    .product-single__description.rte.ttt {
-        padding-bottom: 30px;
-}
-
-</style>
-
-<!-- for skip add to cart code-->
-
+    {% if section.settings.enable_trust_badges and section.settings.move_badges_under_cart %}
+    <div class="payment-icon">
+    {% assign badges_title = 'products.product.badges_title' | t %} 
+    {% if badges_title != blank%}
+    <p class="line">
+        {% comment %}ly_i18n_replace_for_[ 'products.product.badges_title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.badges_title' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902631' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+    </p>
+    {% endif %}
+    <span class="payment-img">
+        {% unless section.settings.enable_trust_badges_image == blank %}
+        <img src="{{ section.settings.enable_trust_badges_image | img_url: '550x' }}">
+        {% else %}
+        <img src="{{ 'pay_right.png' | asset_img_url: '500x100' }}">               
+        {% endunless %}  
+    </span>
+    </div>
+    {% endif %}
             <input required type="hidden" id="upsellcheckquantity" name="properties[upsellcheckquantity]">
             {% endform %}
-  
-            {% if section.settings.enable_sticky %}
-  
-            <style>
-  
-              @media(max-width:749px) {
-                /*               .counter_box.show{display:none !important;} */
-                /*
-                div#progressBar{ 
-                display:none !important;
-              }
-                .counter_box.show {
-                display: none !important;
-              } */
-  
-                .product-form__item.product-form__item--quantity,  
-                .product-form__item.product-form__item--quantity + div {
-                  display : none !important;
-                }
-              
-                .only_desktop{
-                  display:none !important;
-                }
-                #AddToCartForm .cst-small-crtbtn button#AddToCart,
-                #AddToCartForm .qty_stickyfor button#AddToCart,
-                #AddToCartForm .qty_stickyfor button#AddToCartZero {
-                  display:none;
-                }
-                #AddToCartForm .qty_stickyfor .ajaxified-cart-feedback{
-                  display:none!important;
-                }
-                .stiky_form div#mst-stiky-box {
-                  left: 0 !important;
-                  width: 100%;
-                  right:0;
-                }
-                .price-lable {
-                  font-size: 16px !important;
-                  font-weight: 500 !important;
-                  text-align: center;
-                  margin-bottom: 12px;
-                }
-                .mst-stiky-div.fix-search {
-                  position: fixed;
-                  top: 8px;
-                  z-index: 999;
-                  width: 310px;
-                  right: 0;
-                  display: block!important;
-                }
-                {% if section.settings.enable_payment_button %}
-                .stiky_form div#mst-stiky-box {
-                  padding-bottom: 70px;
-                }
-                .shopify-payment-button {
-                  position: fixed;
-                  bottom: -20px;
-                  width: 100%;
-                  z-index: 1000;
-                  left: auto;
-                  right: 0;
-                  padding-left: 10px;
-                  padding-right: 10px;
-                }
-                {% endif %}
-              }
-  
-              @media(min-width:750px){
-  
-  
-  
-                button#AddToCart {
-                  visibility: visible !important;
-                }
-  
-              }
-            </style>
-  
-            {% if section.settings.enable_buy_it_stiky_qty %}
-            <style> 
-              @media screen and (max-width:749px) {
-                #mst-stiky-box div#sticky_btnn.product-form__item--quantity{ display:none !important; } 
-                #AddToCartForm1.stiky_form button#AddToCart{ width:100% !important; } 
-                #progress_bar1,#progressBar{ display: none !important; } 
-              }
-              {% if section.settings.enable_buy_it_stiky_qty and section.settings.sticky_button == 'show_progress_bar' %}
-              #progress_bar2,#progressBar1{ display: block !important; }
-              #AddToCartForm1.stiky_form .product-form__item.product-form__item--quantity input#Quantity {
-                padding: 9px;
-              }
-              {% endif %}
-  
-            </style>
-            {% else %}
-  
-            <style> 
-              @media screen and (max-width:749px) {
-                #mst-stiky-box div#sticky_btnn.product-form__item--quantity{ display:block !important;float: left;width: 25% !important;padding-right: 0 !important; } 
-              }
-            </style>
-  
-            {% endif  %}
-  
-            {% assign price_var1=current_variant.price | withoutmoney %}  
-            <div id="AddToCartForm1" class="product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %} stiky_form{% if price_var1 == 0 %} zerocost_from_box {% endif %}" data-section="{{ section.id }}" >
-              <div id="mst-stiky-box" class="mst-stiky-div">
-                {% if section.settings.enable_timer_stg_on == 'enable_timer_stg_on' %}  
-                {% if section.settings.sticky_button == 'show_timer' %}
-                {% assign tg = 'show' %}
-  
-                {% if settings.disable_timer_use_tag %}
-                {% for tag in product.tags %}
-                {% if "no-timer" == tag %}
-                {% assign tg = 'hide' %}
-                {% endif %}
-                {% endfor %}
-                {% endif %}
-                
-                
-                {% endif %}
-                {% endif %}
-  
- 
-              </div>
-            </div>  
-            {% endif %}
-
           </div>
           </div>
 
@@ -542,20 +388,6 @@
   </script>
   {% endunless %}
 
-    
-  <!-- READ MORE BUTTON SCRIPT AND STYLE -->
-  {% if section.settings.readmore_enable %}
-  {{ 'readmore.min.js' | asset_url | script_tag }}
-  <script>
-    var read_mor = true;
-  </script>
-  {% else %}
-  <script>
-    var read_mor = false;
-  </script>
-  {% endif %}
-  <!-- END READ MORE BUTTON SCRIPT AND STYLE -->
-  
   <!-- START UPSELL AND ADD TO CART CODE -->
   {% if section.settings.buy_it_now_action == 'thank_you_message' %}
   
@@ -588,7 +420,18 @@
   </script>
   {% endif %}
   <!-- End Pick an option code -->
-  
+
+<style>
+    span#AddToCartText {
+        font-size: 21px;
+    }
+    fieldset.selling-plan-fieldset {
+        margin: 0 0 15px;
+    }
+    .payment-icon {
+    margin-top: 25px;
+}
+</style>
   {% comment %} Cart Drawer on Product page{% endcomment %}
   
   {% schema %}

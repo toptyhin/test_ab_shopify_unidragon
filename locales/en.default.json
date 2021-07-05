@@ -362,7 +362,8 @@
       "sale_end_text": "Sale Ends Once The Timer Hits Zero!",
       "deliiver_time_text_1": "Estimated delivery time",
       "deliiver_time_text_2": "days",
-      "sticky_timer_text": "Price will be expire in: "
+      "sticky_timer_text": "Price will be expire in: ",
+      "subscribe": "Add to cart!"
     },
     "dynamic_checkout_buttons": {
       "add_to_cart_text_when_dynamic_checkout_buttons_enable": "Add to cart"

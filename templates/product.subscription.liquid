@@ -1,0 +1,32 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% comment %}
+  The contents of the product.liquid template can be found in /sections/product-template.liquid
+{% endcomment %}
+
+{% section 'product-subscription-template' %}
+
+{%- if settings.show_cart_drawer -%}
+  {%- section  'go-cart' -%}
+{%- endif -%}
+
+<script>
+  // Override default values of shop.strings for each template.
+  // Alternate product templates can change values of
+  // add to cart button, sold out, and unavailable states here.
+  theme.productStrings = {
+    addToCart: {{ 'products.product.add_to_cart' | t | json }},
+    soldOut: {{ 'products.product.sold_out' | t | json }},
+    unavailable: {{ 'products.product.unavailable' | t | json }}
+  }
+  
+  if(typeof rev!='undefined')
+  {
+    rev('event', 'page_view');
+    console.log('rev -> pageview');
+  }
+</script>
+
+<div class="reputon-trustpilot-reviews-widget" id="78c456a0-bc54-11eb-910a-479bd9607d41" ></div>
+<style>
+  .social-sharing{text-align:center;}
+</style>
