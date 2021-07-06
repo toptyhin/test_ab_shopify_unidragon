@@ -48,9 +48,9 @@ Shopify.formatMoney = function(cents, format) {
 };
 //PDP main image replace
 $("document").ready(function() {
-  setTimeout(function() {
+ /* setTimeout(function() {
     $("ul.product-single__thumbnails li:nth-child(2) img , ul.product-single__thumbnails li:nth-child(2) button").trigger('click');
-  },10);
+  },10); */
   //Discount-popup
   $(".hover_bkgr_fricc").css("display","none");
   $('.hover_bkgr_fricc').click(function(e){
