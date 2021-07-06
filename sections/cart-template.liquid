@@ -147,6 +147,9 @@
   .cart__qty-input {
     width: 40px;
   }
+  a.no-active {
+        color: #ebebeb;
+  }
   </style>
   {%- assign free_shipping = 10000.0 -%}
   {%- assign per_progressbar = cart.total_price | divided_by: free_shipping | times: 100 -%}
@@ -191,14 +194,18 @@
           <th>{{ 'cart.label.total' | t }}</th>
         </thead>
         <tbody>
-          {% for item in cart.items %}
-  
-          {% if item.variant.compare_at_price > item.variant.price and item.variant.price != '0' %}
-          {% assign saving = item.variant.compare_at_price | minus: item.variant.price | times: item.quantity %}
-          {% assign was = item.variant.compare_at_price |  times: item.quantity %}
-          {% assign total_saving = saving | plus: total_saving %}
-          {% assign total_saving_was = was | plus: total_saving_was %}
-          {% endif %}
+
+
+          
+          {%- for item in cart.items -%} 
+          {%- liquid
+            if item.variant.compare_at_price > item.variant.price and item.variant.price != '0'
+              assign saving = item.variant.compare_at_price | minus: item.variant.price | times: item.quantity
+              assign was = item.variant.compare_at_price |  times: item.quantity
+              assign total_saving = saving | plus: total_saving
+              assign total_saving_was = was | plus: total_saving_was
+            endif
+           -%}
   
           <tr class="cart__row border-bottom line{{ forloop.index }} cart-flex{% if forloop.first %} border-top{% endif %}">
             <td class="cart__image-wrapper cart-flex-item">
@@ -229,12 +236,21 @@
                   <div class="block__row-input">
                     <div class="bg-input">
                       {%- assign quantity_minus_one = item.quantity | minus: 1 -%}
+                      {%- if item.id == 39572397719600 or item.id == 39570793824304 -%}
+                      <script>console.log({{item | json}})</script>
+                        <a class="btn-num-product-down color1 flex-c-m size7 bg8 eff2 no-active" href="#">-</a>
+                      {%- else -%}
                         <a class="btn-num-product-down color1 flex-c-m size7 bg8 eff2" href="{{ routes.cart_change_url }}?quantity={{ quantity_minus_one }}&line={{ forloop.index }}">-</a>
+                      {% endif %}
                       <div class="block__element-input">
                         <input class="cart__qty-input" type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0" pattern="[0-9]*">
                       </div>
                       {%- assign quantity_plus_one = item.quantity | plus: 1 -%}
+                      {%- if item.id == 39572397719600 or item.id == 39570793824304 -%}
+                        <a class="btn-num-product-up color1 flex-c-m size7 bg8 eff2 no-active" href="#">+</a>
+                      {%- else -%}
                         <a class="btn-num-product-up color1 flex-c-m size7 bg8 eff2" href="{{ routes.cart_change_url }}?quantity={{ quantity_plus_one }}&line={{ forloop.index }}">+</a>
+                      {% endif %}
                       </div>
                 </div>
               </div>
@@ -263,12 +279,21 @@
               <div class="block__row-input">
                 <div class="bg-input">
                   {%- assign quantity_minus_one = item.quantity | minus: 1 -%}
+                  {%- if item.id == 39572397719600 or item.id == 39570793824304 -%}
+                    <a class="btn-num-product-down color1 flex-c-m size7 bg8 eff2 no-active" href="#">-</a>
+                  {%- else -%}
                     <a class="btn-num-product-down color1 flex-c-m size7 bg8 eff2" href="{{ routes.cart_change_url }}?quantity={{ quantity_minus_one }}&line={{ forloop.index }}">-</a>
+                  {% endif %}
                       <div class="block__element-input">
                         <input class="cart__qty-input" type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0" pattern="[0-9]*">
                       </div>
                   {%- assign quantity_plus_one = item.quantity | plus: 1 -%}
+                  {%- if item.id == 39572397719600 or item.id == 39570793824304 -%}
+                    <a class="btn-num-product-up color1 flex-c-m size7 bg8 eff2 no-active" href="#">+</a>
+                  {%- else -%}
                     <a class="btn-num-product-up color1 flex-c-m size7 bg8 eff2" href="{{ routes.cart_change_url }}?quantity={{ quantity_plus_one }}&line={{ forloop.index }}">+</a>
+                  {% endif %}
+                    
                 </div>
               </div>
             </td>
@@ -292,57 +317,42 @@
             </td>
           </tr>
           {% endfor %}
-  
         </tbody>
       </table>
-  
-      <footer class="cart__footer">
+        <footer class="cart__footer">
         <div class="grid table_medium_up cart__off_wrapper">
           {% if section.settings.cart_notes_enable %}
           <div class="grid__item medium-up--one-half">
-  
-            {% assign puzzle_count = 0 %}
-            {% for item in cart.items %}
-            {% if item.product.type == 'Puzzle' %}
-            {% assign puzzle_count = puzzle_count | plus: item.quantity %}
-            {% endif %}
-            {% endfor %}
-            {% if puzzle_count == 1 or puzzle_count == 2 %}
+
             {% if section.settings.pdp_image != blank or section.settings.pdp_title != blank or pdp_sub_title != blank %}
   
             <div class="pdp_discount pdp_discount-custom">
-  
-              {% if section.settings.pdp_image != blank %}
-              <div class="pdp_img">
-                <img src="{{section.settings.pdp_image | img_url:'master'}}">
-  
-              </div>
-              {% endif %}
+              {%- if section.settings.pdp_image != blank -%}
+                <div class="pdp_img">
+                  <img src="{{section.settings.pdp_image | img_url:'master'}}">
+                </div>
+              {%- endif -%}
   
               <div class="discount_content">
-                {% if section.settings.pdp_title != blank %}
-                <div class="pdp_title">
-                  <p>{{section.settings.pdp_title}}</p>
-                </div>
+                {%- if section.settings.pdp_title != blank -%}
+                  <div class="pdp_title">
+                    <p>{{section.settings.pdp_title}}</p>
+                  </div>
                 {% endif %}
   
-                {% if section.settings.pdp_sub_title != blank %}
-                <div class="pdp_subtitle">
-                  <p>{{section.settings.pdp_sub_title}}</p>
-                </div>
-                {% endif %}
+                {%- if section.settings.pdp_sub_title != blank -%}
+                  <div class="pdp_subtitle">
+                    <p>{{section.settings.pdp_sub_title}}</p>
+                  </div>
+                {%- endif -%}
   
-                {% if section.settings.pdp_cta_text != blank %}
-                <div class="cta_btns">
-                  <a href="{{section.settings.pdp_cta_link}}" class="btn">{{section.settings.pdp_cta_text}}</a>
-                </div>
-                {% endif %}
-  
+                {%- if section.settings.pdp_cta_text != blank -%}
+                  <div class="cta_btns">
+                    <a href="{{section.settings.pdp_cta_link}}" class="btn">{{section.settings.pdp_cta_text}}</a>
+                  </div>
+                {%- endif -%}
               </div>
-  
-  
             </div>
-            {% endif %}
             {% endif %}
             {% comment %}
             <!--slider-section-block-->
@@ -553,12 +563,6 @@
   
     });
   </script>
-  
-  <style>
-    .timer_box span.cart_time {
-      color: {{ section.settings.cart_timer_color }} !important;
-    }
-  </style>
   
   {% endif %}
   {% endif %}
