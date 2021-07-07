@@ -553,9 +553,33 @@
                 <div id="CartCount" class="site-header__cart-count medium-up--hide">
                   <span>{{ cart.item_count }}</span>
                 </div>
+                {%- liquid
+                  assign cart_total_price = 0
+                  for item in cart.items
+                    if item.product.type == 'Puzzle'
+                      assign puzle_discount = puzle_discount | plus: item.quantity
+                    endif
 
+                    if customer
+                      for tag in customer.tags
+                        if tag == 'Subscription membership' 
+                          assign member_discount = true
+                        endif
+                      endfor
+                    endif
+                    if member_discount == true and item.product.type == 'Puzzle'
+                      assign item_line_price = item.line_price | times: 0.75
+                      assign discount_calc = 0.75
+                    elsif puzle_discount > 2
+                      assign item_line_price = item.line_price | times: 0.9
+                    else
+                      assign item_line_price = item.line_price
+                    endif
+                    assign cart_total_price = cart_total_price | plus: item_line_price
+                  endfor
+                -%}
 
-                <span class="commom_colord" id="CartCost">{{ cart.total_price | money }}</span>
+                <span class="commom_colord" id="CartCost" data-discount="{{discount_calc}}">{{ cart_total_price | money }}</span>
               </a>
               {% endunless %}
             </div>

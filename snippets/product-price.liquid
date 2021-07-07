@@ -1,16 +1,25 @@
 {% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
 <!-- snippet/product-price.liquid -->
-{% if product.title %}
-  {%- assign compare_at_price = product.compare_at_price -%}
-  {%- assign price = product.price -%}
-  {%- assign price_varies = product.price_varies -%}
-  {%- assign available = product.available -%}
-{% else %}
-  {%- assign compare_at_price = 1999 -%}
-  {%- assign price = 1999 -%}
-  {%- assign price_varies = false -%}
-  {%- assign available = true -%}
-{% endif %}
+{%- liquid
+   if product.title
+    assign compare_at_price = product.compare_at_price 
+    assign price = product.price 
+    assign price_varies = product.price_varies 
+    assign available = product.available 
+   else 
+    assign compare_at_price = 1999 
+    assign price = 1999 
+    assign price_varies = false 
+    assign available = true 
+  endif
+  if customer
+    for tag in customer.tags
+      if tag == 'Subscription membership' 
+        assign member_discount = true
+      endif
+    endfor
+  endif
+  -%}
 
 {%- assign money_price = price | money -%}
 
@@ -22,7 +31,13 @@
     {{ money_price }}     
   </span>
 {% endcomment %}
-<span class="compare">From </span><span class="product-price__price">{{ product.price_min | money }}</span>
+<span class="compare">From </span>
+{%- if member_discount == true and product.type == 'Puzzle' -%}
+  <span class="product-price__price">{{ product.price_min | times: 0.75 | money }} <span class="save_discount_pro"><span class="per_discount">25% OFF</span></span></span>
+{%- else -%}
+  <span class="product-price__price">{{ product.price_min | money }}</span>
+{%- endif -%}
+
   {% if settings.show_saved_amount and settings.show_discount_amount == 'money_save' %}
   <span class="salePrice sale-tag large"> 
     {% assign sale = product.compare_at_price | minus:  product.price |  money %}
@@ -36,6 +51,11 @@
 {% comment %} 
 <span class="product-price__price">{{ money_price }}</span>
 {% endcomment %}
-<span class="compare">From </span><span class="product-price__price">{{ product.price_min | money }}</span>
+<span class="compare">From </span>
+{%- if member_discount == true and product.type == 'Puzzle' -%}
+<span class="product-price__price">{{ product.price_min | times: 0.75 | money }} <span class="save_discount_pro"><span class="per_discount">25% OFF</span></span></span>
+{%- else -%}
+  <span class="product-price__price">{{ product.price_min | money }}</span>
+{%- endif -%}
 
 {% endif %}

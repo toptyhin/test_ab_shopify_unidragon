@@ -82,7 +82,6 @@
                                         var e = $(_config.cartCountSelector).html() || "0";
                                         $(_config.cartCountSelector).html(e.replace(/[0-9]+/, t.item_count)).removeClass("hidden-count"), t.item_count <= 1 ? $(".items_manage").html(items_count_one) : $(".items_manage").html(items_count_other)
                                     }
-                                    _config.cartTotalSelector && $(_config.cartTotalSelector).size() && ("undefined" != typeof Currency && Currency.moneyFormats, $(_config.cartTotalSelector).html(theme.Currency.formatMoney(t.total_price, theme.moneyFormat)), currency_dropdown && convertCurrencies())
                                 }), goCart.fetchAndOpenCart()
                             },
                             error_callback = function(XMLHttpRequest) {
