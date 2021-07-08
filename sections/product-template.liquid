@@ -44,12 +44,13 @@
           endif
         endfor
       endif
+      
+      assign discount_amount = 1
+
       if member_discount == true and product.type == 'Puzzle'
-        assign current_variant_price = current_variant.price | times: 0.75
+        assign discount_amount =  0.75
       elsif puzle_discount > 2 and product.type == 'Puzzle'
-        assign current_variant_price = current_variant.price | times: 0.9
-      else
-        assign current_variant_price = current_variant.price
+        assign discount_amount =  0.9
       endif
 
     assign product_image_zoom_size = '1024x1024'
@@ -322,21 +323,35 @@
 		  <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition" />
           <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
 
+{%- if  member_discount == true and product.type == 'Puzzle' -%}
+            <p class="product-single__price product-single__price-{{ section.id }}{% unless current_variant.available %} product-price--sold-out{% endunless %}" data-discount="{{discount_amount}}">
+              <s id="ComparePrice-{{ section.id }}" style="color: #ff8e00;">{{ current_variant.price | money }}</s>
+              <span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single">
+                <span id="ProductPrice-{{ section.id }}" itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
+                  {{ current_variant.price | times: discount_amount | money	 }}
+                </span>
+                <span class="save_discount_pro">
+                  <span class="per_discount">
+                    25{{ 'products.product.on_save' | t }}
+                  </span>
+              </span>
+            </p>
+{%- else -%}
            <p class="product-single__price product-single__price-{{ section.id }}{% unless current_variant.available %} product-price--sold-out{% endunless %}">
-            {% if current_variant.compare_at_price > current_variant_price %}
+            {% if current_variant.compare_at_price > current_variant.price %}
             <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
             <s id="ComparePrice-{{ section.id }}">{{ current_variant.compare_at_price | money }}</s>
             <span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single">
               <span id="ProductPrice-{{ section.id }}"
-                    itemprop="price" content="{{ current_variant_price | divided_by: 100.00 }}">
-                {{ current_variant_price | money	 }}
+                    itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
+                {{ current_variant.price | times: discount_amount | money	 }}
               </span>
               {%comment%}
               {%- if customer -%}
                 {% for tag in customer.tags %}
                   {%- if tag == 'Subscription membership' -%}
                     <span id="ProductPrice-withdiscount">
-                      {{ current_variant_price| times: 0.75 | money	 }}
+                      {{ current_variant.price | times: discount_amount| times: 0.75 | money	 }}
                     </span>
                   {%- endif -%}
                 {% endfor %}
@@ -345,23 +360,23 @@
               {% if section.settings.show_saved_amount %}
               <!-- Dscount price in percentage  -->
               <span class="save_discount_pro">
-              {% if current_variant.compare_at_price > current_variant_price %}
+              {% if current_variant.compare_at_price > current_variant.price %}
                 {% if settings.show_discount_amount == 'percent_save' %}
                 <span class="per_discount">
                   {% assign money_pro_format = shop.money_format | strip_html | json %}
              
                   {% if money_pro_format contains "{{amount_no_decimals}}" or money_pro_format contains "{{amount_no_decimals_with_comma_separator}}" %}
-                    {{ current_variant.compare_at_price  | minus: current_variant_price  | times: 100.0 | divided_by: current_variant.compare_at_price | times: 100 | money_without_currency | replace:",","." | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
+                    {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price | times: 100 | money_without_currency | replace:",","." | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
                   {% elsif money_pro_format contains "{{amount_with_comma_separator}}" %}
-                    {{ current_variant.compare_at_price  | minus: current_variant_price  | times: 100.0 | divided_by: current_variant.compare_at_price | money_without_currency | replace:",","."  | times: 100 | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
+                    {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price | money_without_currency | replace:",","."  | times: 100 | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
 				          {% else %}                  
-                    {{ current_variant.compare_at_price  | minus: current_variant_price  | times: 100.0 | divided_by: current_variant.compare_at_price  | money_without_currency | times: 100 | replace: '.0', ''}}{{ 'products.product.on_save' | t }}
+                    {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price  | money_without_currency | times: 100 | replace: '.0', ''}}{{ 'products.product.on_save' | t }}
                   {% endif %}
                 </span>
                 <!-- Dscount price in percentage  -->
                 {% else %}
                   <span class="sale-tag salePrice large"> 
-                    {% assign sale = current_variant.compare_at_price | minus:  current_variant_price |  money %}
+                    {% assign sale = current_variant.compare_at_price | minus:  current_variant.price | times: discount_amount |  money %}
                     {{ 'products.product.on_save_like_price' | t }} {{sale}}
                   </span>
                 {% endif %}
@@ -373,9 +388,8 @@
             <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
             <s id="ComparePrice-{{ section.id }}" class="hide">{{ current_variant.compare_at_price | money }}</s>
             <span class="product-price__price product-price__price-{{ section.id }}">
-              <span id="ProductPrice-{{ section.id }}"
-                    itemprop="price" content="{{ current_variant_price | divided_by: 100.00 }}">
-                {{ current_variant_price | money }}
+              <span id="ProductPrice-{{ section.id }}" itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
+                {{ current_variant.price | times: discount_amount | money }}
               </span>
               {% if section.settings.show_saved_amount %}
               <span class="save_discount_pro hide">
@@ -385,7 +399,7 @@
             </span>
             {% endif %}
           </p>
-
+{%- endif -%}
           {% if section.settings.product_review  %}
           <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
           {% endif %}
@@ -501,31 +515,28 @@
 
           <!-- PRODUCT SWATCH CODE IF ENABLE -->
           {% if product.type == 'Puzzle' %}
-
-          {% if product.variants.size > 1 %}
-          <div class="swatch_options">
-            {% for option in product.options %}
-            {% include 'swatch' with option %}
-            {% endfor %} 
-          </div>
-          {% endif %}
-
+            {% if product.variants.size > 1 %}
+              <div class="swatch_options">
+                {% for option in product.options %}
+                  {% include 'swatch' with option %}
+                {% endfor %} 
+              </div>
+            {% endif %}
           {% else %}
-
-          {% if section.settings.variant_swacth == 'two'  %}  
-          {% if product.variants.size > 1 %}
-          <div class="swatch_options">
-            {% for option in product.options %}
-            {% include 'swatch' with option %}
-            {% endfor %} 
-          </div>
-          {% endif %}
-          {% endif %} 
-
+            {% if section.settings.variant_swacth == 'two'  %}  
+              {% if product.variants.size > 1 %}
+                  <div class="swatch_options">
+                    {% for option in product.options %}
+                      {% include 'swatch' with option %}
+                    {% endfor %} 
+                  </div>
+              {% endif %}
+            {% endif %} 
           {% endif %} 
           <!-- END PRODUCT SWATCH CODE IF ENABLE -->
           {% include 'product-page-features' %}
           <input required type="hidden" id="upsellcheckquantity" name="properties[upsellcheckquantity]">
+          {% render 'ZooomyBackinStock' %}
           {% endform %}
 
           {% if section.settings.enable_sticky %}
@@ -631,7 +642,7 @@
           {% endif  %}
 
 
-          {% assign price_var1=current_variant_price | withoutmoney %}  
+          {% assign price_var1=current_variant.price | times: discount_amount | withoutmoney %}  
           <div id="AddToCartForm1" class="product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %} stiky_form{% if price_var1 == 0 %} zerocost_from_box {% endif %}" data-section="{{ section.id }}" >
             <div id="mst-stiky-box" class="mst-stiky-div">
               {% if section.settings.enable_timer_stg_on == 'enable_timer_stg_on' %}  
@@ -646,7 +657,7 @@
               {% endfor %}
               {% endif %}
               
-              {% if current_variant.compare_at_price > current_variant_price %}
+              {% if current_variant.compare_at_price > current_variant.price %}
               <div class="price-lable {{tg }}">{{ 'products.product.sticky_timer_text' | t }} 
                 {% include 'sticky_timer_mobile'%}
               </div>

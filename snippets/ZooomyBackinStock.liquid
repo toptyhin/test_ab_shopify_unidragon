@@ -1,2 +1,2 @@
 <div id="zooomybackinstock"></div>
-           <script async src="https://zooomyapps.com/backinstock/zooomybackinstock.js" data-shop="{{shop.permanent_domain}}" data-customer-name="{{customer.name}}" data-handle="{{product.handle}}" data-customer="{{customer.email}}" data-product-id="{{product.id}}" ></script>
+<script async src="https://zooomyapps.com/backinstock/zooomybackinstock.js" data-shop="{{shop.permanent_domain}}" data-customer-name="{{customer.name}}" data-handle="{{product.handle}}" data-customer="{{customer.email}}" data-product-id="{{product.id}}" data-language="{{ request.locale.root_url }}" root_url = "{% unless request.locale.primary %}{{ request.locale.root_url }}{% endunless %}"></script>

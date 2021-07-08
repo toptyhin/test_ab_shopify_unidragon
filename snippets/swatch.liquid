@@ -101,9 +101,13 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
             </div>
             <div class="sw_var_price">
               {%- if variant.compare_at_price > variant.price -%}
-              <span class="sw_com_price">{{variant.compare_at_price | money }}</span>
+                {%- if discount_amount < 1 -%}
+                  <span class="sw_com_price">{{variant.price | money }}</span>
+                {%- else -%}
+                  <span class="sw_com_price">{{variant.compare_at_price | money }}</span>
+                {% endif %}
               {% endif %}
-              <span class="sw_m_price">{{variant.price | money }}</span>
+              <span class="sw_m_price">{{variant.price | times: discount_amount | money }}</span>
             </div>
             {%- assign opt_parametr = value | split: '—' -%}
             <span class="sw_val">{{ opt_parametr[0] }} {{opt_parametr[1]}}</span>
@@ -112,7 +116,6 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
       </div>
       
         </label>
-        <span class="crossed-out">out of stock</span>
         {%- else -%}
         <label for="swatch-{{ option_index }}-{{ value | handle }}-{{ section.id }}">
           {{ value }}

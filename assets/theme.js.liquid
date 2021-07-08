@@ -2842,14 +2842,25 @@ theme.Product = (function() {
 
     _updatePrice: function(evt) {
       var variant = evt.variant;
-
+      if ( $(this.selectors.productPrices).get(0).getAttribute('data-discount')) {var discount = $(this.selectors.productPrices).get(0).getAttribute('data-discount')} else {var discount = 1}
       // Update the product price
       $(this.selectors.originalPrice).html(
-        theme.Currency.formatMoney(variant.price, theme.moneyFormat)
+        theme.Currency.formatMoney(variant.price*discount, theme.moneyFormat)
       );
 
       // Update and show the product's compare price if necessary
       if (variant.compare_at_price > variant.price) {
+        if (discount < 1) {
+          $(this.selectors.comparePrice)
+          .html(
+            theme.Currency.formatMoney(
+              variant.price,
+              theme.moneyFormat
+            )
+          )
+          .removeClass('hide');
+                }
+        else {
         $(this.selectors.comparePrice)
           .html(
             theme.Currency.formatMoney(
@@ -2858,20 +2869,22 @@ theme.Product = (function() {
             )
           )
           .removeClass('hide');
-
+            }
         $(this.selectors.originalPriceWrapper).addClass(
           this.selectors.saleClasses
         );
 
         $(this.selectors.saleLabel).removeClass('hide');        
         $(this.selectors.productPrices).find('.save_discount_pro').removeClass('hide');
-        if (precentprice) {
-        var priceSaving = ((variant.compare_at_price - variant.price)/variant.compare_at_price*100).toFixed()+x;          
-        $(this.selectors.productPrices).find('.save_discount_pro').html('<span class="per_discount">' + priceSaving + '</span>');
-        } else {
-        var price_comapre = variant.compare_at_price - variant.price;
-        var priceSaving = sv + "&nbsp;" + theme.Currency.formatMoney(price_comapre, theme.moneyFormat);  
-        $(this.selectors.productPrices).find('.save_discount_pro').html('<span class="sale-tag salePrice large">' + priceSaving + '</span>');
+        if (discount == 1) {
+          if (precentprice) {
+          var priceSaving = ((variant.compare_at_price - variant.price)/variant.compare_at_price*100).toFixed()+x;          
+          $(this.selectors.productPrices).find('.save_discount_pro').html('<span class="per_discount">' + priceSaving + '</span>');
+          } else {
+          var price_comapre = variant.compare_at_price - variant.price;
+          var priceSaving = sv + "&nbsp;" + theme.Currency.formatMoney(price_comapre, theme.moneyFormat);  
+          $(this.selectors.productPrices).find('.save_discount_pro').html('<span class="sale-tag salePrice large">' + priceSaving + '</span>');
+          }
         }
       } else {
   
