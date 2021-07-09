@@ -1,5 +1,7 @@
-
 <style>
+  .bis-reset.bis-edge-left.bis-edge-top.bis-rotate-90 {
+    display: none;
+  }
   {% if product.type == 'Puzzle' %}
   .selector-wrapper {
     display:none;
@@ -15,7 +17,46 @@
   .product-description {
     margin-bottom: 12px;
   }
-</style>
+
+  .videoframe div {
+      position: relative;
+      width: 100%;
+      height: 530px;
+  }
+  .videoframe iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+  .video-media iframe {
+      width: 100%;
+      height: 100%;          
+  }
+    
+   .slick-slider .slick-dots {
+      overflow: scroll;
+  white-space: nowrap; 
+      bottom: -55px;
+  height: 60px;
+    }
+    .slick-slider .slick-dots li {
+      width:50px;
+      height:50px;
+    }
+    .slick-slider .slick-dots li a {
+      width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+    }
+    @media only screen and (max-width: 749px) {
+      .thumbnails-wrapper {
+          padding-bottom: 60px;
+      }
+    }
+  </style>
 <script>
   {% if section.settings.buy_it_now_action == 'direct_to_cart' %}var buyitnowaction = true;{% else %}var buyitnowaction = false;{% endif %}{% if section.settings.enable_related_upsell %}var relatedupsellenable = true;{% else %}var relatedupsellenable = false;{% endif %}{% if section.settings.buy_it_now_action == 'thank_you_message' %}var thankmsg = true;{% else %}var thankmsg = false;{% endif %}{% if section.settings.buy_it_now_action == 'direct_to_checkout' %}var drchkout = true;{% else %}var drchkout = false;{% endif %}
   {% if section.settings.enable_sticky %}var eblstcky = true;{% else %}var eblstcky = false;{% endif %}{% if section.settings.enable_payment_button %}var ebl_pay_but = true;var addToCartBtnLabel_1 = "{{ 'products.dynamic_checkout_buttons.add_to_cart_text_when_dynamic_checkout_buttons_enable' | t }}";{% else %}var ebl_pay_but = false;var addToCartBtnLabel_1 = "{{ 'products.product.add_to_cart' | t }}";{% endif %}{% if section.settings.visitor_counter_enable %}var visitorcountr = true;{% else %}var visitorcountr = false;{% endif %}
@@ -184,53 +225,14 @@
                 </div>
             {% endcase %}
         {% endfor %}
-        <style>
-        .videoframe div {
-            position: relative;
-            width: 100%;
-            height: 530px;
-        }
-        .videoframe iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .video-media iframe {
-            width: 100%;
-            height: 100%;          
-        }
-          
-         .slick-slider .slick-dots {
-            overflow: scroll;
-    		white-space: nowrap; 
-            bottom: -55px;
-    		height: 60px;
-          }
-          .slick-slider .slick-dots li {
-          	width:50px;
-            height:50px;
-          }
-          .slick-slider .slick-dots li a {
-            width: 50px;
-		    height: 50px;
-    		display: flex;
-    		align-items: center;
-          }
-          @media only screen and (max-width: 749px) {
-            .thumbnails-wrapper {
-                padding-bottom: 60px;
-            }
-          }
-        </style>
+
       <noscript>
         {% capture product_image_size %}530x{% endcapture %}
         <img src="{{ featured_image | img_url: product_image_size, scale: product_image_scale }}" loading="lazy" alt="{{ featured_image.alt }}" id="FeaturedImage-{{ section.id }}" class="product-featured-img" style="max-width: 530px;">
       </noscript>
 
       {% if product.images.size > 1 %}
-      {%- assign enable_thumbnail_slides = true -%}
+        {%- assign enable_thumbnail_slides = true -%}
       {% endif %}
 
       <div class="thumbnails-wrapper {% if product.images.size == 1 %}medium-up--hide{% endif %}{% if enable_thumbnail_slides == true %} thumbnails-slider--active{% endif %}">
@@ -256,10 +258,7 @@
                         {% when 'external_video' %}
                             <li class="grid__item {% unless enable_thumbnail_slides == true %}{{ product_thumbnail_width }} {% endunless %}{% if product.images.size > 1 %}product-single__thumbnails-item{% endif %} js">
                             {%comment%}{{ media | external_video_tag }}{%endcomment%}
-                            <a href="#"
-                                    class="text-link product-single__thumbnail product-single__thumbnail--{{ section.id }}"
-                                    data-thumbnail-id="{{ media.id }}"
-                                    {% if enable_zoom %}data-zoom="{{ media.src | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
+                            <a href="#" class="text-link product-single__thumbnail product-single__thumbnail--{{ section.id }}" data-thumbnail-id="{{ media.id }}" {% if enable_zoom %}data-zoom="{{ media.src | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
                             <div class="product-single__thumbnail-image medium-up--hide video-media" style="height:340px;display: flex;align-items: center;justify-content: center;">{{ media | external_video_tag }}</div>
                             <img loading="lazy" class="product-single__thumbnail-image small--hide" src="{{ media.preview_image | img_url: 'compact' }}" alt="{{ media.alt | escape }}">                            
                             </a>
@@ -279,9 +278,7 @@
           {%- render 'customer-review-photo' with product -%}
         {%- endif -%}
       <form style="display: none;" method="post" action="/cart">
-
         <input  type="submit" class="custome_checkout" value="checkout" name="checkout"/>
-
       </form>
       <style>.storyblock {padding-bottom: 10px;padding-top: 60px;}</style>
       <div class="small--hide"  style="max-width: 285px;margin: 0px auto;">
@@ -339,69 +336,58 @@
 {%- else -%}
            <p class="product-single__price product-single__price-{{ section.id }}{% unless current_variant.available %} product-price--sold-out{% endunless %}">
             {% if current_variant.compare_at_price > current_variant.price %}
-            <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
-            <s id="ComparePrice-{{ section.id }}">{{ current_variant.compare_at_price | money }}</s>
-            <span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single">
-              <span id="ProductPrice-{{ section.id }}"
-                    itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
-                {{ current_variant.price | times: discount_amount | money	 }}
-              </span>
-              {%comment%}
-              {%- if customer -%}
-                {% for tag in customer.tags %}
-                  {%- if tag == 'Subscription membership' -%}
-                    <span id="ProductPrice-withdiscount">
-                      {{ current_variant.price | times: discount_amount| times: 0.75 | money	 }}
-                    </span>
-                  {%- endif -%}
-                {% endfor %}
-              {%- endif -%}
-              {%endcomment%}
-              {% if section.settings.show_saved_amount %}
-              <!-- Dscount price in percentage  -->
-              <span class="save_discount_pro">
-              {% if current_variant.compare_at_price > current_variant.price %}
-                {% if settings.show_discount_amount == 'percent_save' %}
-                <span class="per_discount">
-                  {% assign money_pro_format = shop.money_format | strip_html | json %}
-             
-                  {% if money_pro_format contains "{{amount_no_decimals}}" or money_pro_format contains "{{amount_no_decimals_with_comma_separator}}" %}
-                    {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price | times: 100 | money_without_currency | replace:",","." | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
-                  {% elsif money_pro_format contains "{{amount_with_comma_separator}}" %}
-                    {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price | money_without_currency | replace:",","."  | times: 100 | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
-				          {% else %}                  
-                    {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price  | money_without_currency | times: 100 | replace: '.0', ''}}{{ 'products.product.on_save' | t }}
-                  {% endif %}
+              <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+              <s id="ComparePrice-{{ section.id }}">{{ current_variant.compare_at_price | money }}</s>
+              <span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single">
+                <span id="ProductPrice-{{ section.id }}"
+                      itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
+                  {{ current_variant.price | times: discount_amount | money	 }}
                 </span>
+                {% if section.settings.show_saved_amount %}
                 <!-- Dscount price in percentage  -->
-                {% else %}
-                  <span class="sale-tag salePrice large"> 
-                    {% assign sale = current_variant.compare_at_price | minus:  current_variant.price | times: discount_amount |  money %}
-                    {{ 'products.product.on_save_like_price' | t }} {{sale}}
-                  </span>
-                {% endif %}
-              {% endif %}
-              </span>
-              {% endif %}
-            </span>
-            {% else %}
-            <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
-            <s id="ComparePrice-{{ section.id }}" class="hide">{{ current_variant.compare_at_price | money }}</s>
-            <span class="product-price__price product-price__price-{{ section.id }}">
-              <span id="ProductPrice-{{ section.id }}" itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
-                {{ current_variant.price | times: discount_amount | money }}
-              </span>
-              {% if section.settings.show_saved_amount %}
-              <span class="save_discount_pro hide">
-              </span>
-              {% endif %}
+                <span class="save_discount_pro">
+                {% if current_variant.compare_at_price > current_variant.price %}
+                  {% if settings.show_discount_amount == 'percent_save' %}
+                  <span class="per_discount">
+                    {% assign money_pro_format = shop.money_format | strip_html | json %}
               
-            </span>
+                    {% if money_pro_format contains "{{amount_no_decimals}}" or money_pro_format contains "{{amount_no_decimals_with_comma_separator}}" %}
+                      {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price | times: 100 | money_without_currency | replace:",","." | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
+                    {% elsif money_pro_format contains "{{amount_with_comma_separator}}" %}
+                      {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price | money_without_currency | replace:",","."  | times: 100 | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
+                    {% else %}                  
+                      {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price  | money_without_currency | times: 100 | replace: '.0', ''}}{{ 'products.product.on_save' | t }}
+                    {% endif %}
+                  </span>
+                  <!-- Dscount price in percentage  -->
+                  {% else %}
+                    <span class="sale-tag salePrice large"> 
+                      {% assign sale = current_variant.compare_at_price | minus:  current_variant.price | times: discount_amount |  money %}
+                      {{ 'products.product.on_save_like_price' | t }} {{sale}}
+                    </span>
+                  {% endif %}
+                {% endif %}
+                </span>
+                {% endif %}
+              </span>
+            {% else %}
+              <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+              <s id="ComparePrice-{{ section.id }}" class="hide">{{ current_variant.compare_at_price | money }}</s>
+              <span class="product-price__price product-price__price-{{ section.id }}">
+                <span id="ProductPrice-{{ section.id }}" itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
+                  {{ current_variant.price | times: discount_amount | money }}
+                </span>
+                {% if section.settings.show_saved_amount %}
+                <span class="save_discount_pro hide">
+                </span>
+                {% endif %}
+                
+              </span>
             {% endif %}
           </p>
 {%- endif -%}
           {% if section.settings.product_review  %}
-          <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+            <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
           {% endif %}
           {% if section.settings.product_description == 'under_the_price'%}
        
@@ -420,45 +406,7 @@
 
           </div>
           {% endif %}
-
-          <script>
-          {% comment %}apply spoiler styles only on cookie exists {% endcomment %}
-          
-         {% comment %}
-          const _ctest = () => {
-            return false //document.cookie.split(';').filter((item) => item.trim().startsWith('test_descr=')).length
-          }
-            if (_ctest()) {
-              let css = "<style>";
-              	css +=".description_spoiler{overflow: hidden;max-height: 200px;position: relative;transition: all 0.8s ease-in-out;}";
-              	css +=".description_spoiler.shown {max-height:2000px;}";
-              	css +=".description_spoiler:not(.shown):before{content:'';position: absolute;bottom: 0;height: 70%;width: 100%;background: linear-gradient(to top, rgba(255,255,255, 1) 0%, rgba(255,255,255, 0) 70% );pointer-events: none;}";
-                css +="#spoiler_more {color: #39332E !important;font-family: Poppins !important;width:50%;min-width: 104px;margin: 0 auto;height: 40px;border: 1px solid #1f1f1f;border-radius: 8px;border-color: #39332E !important;font-size: 14px;font-weight: 700;font-stretch: normal;font-style: normal;line-height: 1.5;letter-spacing: normal;text-align: center;background-color: transparent;padding: 8px 16px!important;outline: none;box-shadow: none;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}";
-                css +="#spoiler_more:hover {background: #f4f4f4;}"
-                css +="</style>";
-              document.head.insertAdjacentHTML("beforeend", css);
-              const morebtn = document.createElement('div');
-              morebtn.id="spoiler_more";
-              morebtn.innerText = 'More';
-              morebtn.onclick = () => {
-                document.querySelector('.description_spoiler').classList.toggle('shown');
-                morebtn.innerText = morebtn.innerText === 'More' ? 'Less' : 'More';
-                if (morebtn.innerText === 'More') {
-                  ga('send', {
-                    hitType: 'event',
-                    eventCategory: 'ab',
-                    eventAction: 'show_more'
-                  });
-                }                
-              }
-              document.addEventListener('DOMContentLoaded', ()=>{
-                document.querySelector('.product-description').parentElement.appendChild(morebtn);
-              });
-            
-             }
-             {% endcomment %}
-          </script>
-          
+         
           {%- capture "form_classes" -%}
           product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %}{% if section.settings.enable_payment_button and product.has_only_default_variant%} product-form--payment-button-no-variants{% endif %}
           {%- endcapture %}
@@ -534,13 +482,13 @@
             {% endif %} 
           {% endif %} 
           <!-- END PRODUCT SWATCH CODE IF ENABLE -->
+          
           {% include 'product-page-features' %}
           <input required type="hidden" id="upsellcheckquantity" name="properties[upsellcheckquantity]">
-          {% render 'ZooomyBackinStock' %}
+          
           {% endform %}
 
           {% if section.settings.enable_sticky %}
-
           <style>
 
             @media(max-width:749px) {
@@ -557,7 +505,6 @@
               .product-form__item.product-form__item--quantity + div {
                 display : none !important;
               }
-            
               .only_desktop{
                 display:none !important;
               }
@@ -606,13 +553,9 @@
             }
 
             @media(min-width:750px){
-
-
-
               button#AddToCart {
                 visibility: visible !important;
               }
-
             }
           </style>
 
@@ -759,12 +702,7 @@
           </p>         
         </div>
         {% endif %}
-        {% comment %}
-        <!-- moved to product.liquid-->
-          {% if section.settings.show_social %}
-          {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
-          {% endif %}
-        {% endcomment %}
+
         {% if section.settings.enable_trust_badges %}
         {% unless section.settings.move_badges_under_cart %}
         
@@ -785,13 +723,8 @@
         </div> -->
         {% endunless %}
         {% endif %}
-
-
-
         {% if section.settings.product_review  %}
-
-        <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div> 
-
+          <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div> 
         {% endif %}
       </div>
     </div>
@@ -946,57 +879,22 @@
     document.cookie = "prd_rqty  =" + getCookie("prd_rqty2");
 
   }
-  
-    function mob_stk_lft()
-  {
-   
-  var rest = getCookie("prd_rqty");
-  var len = rest.split(',').length;
-    document.cookie = "prd_rqty2  =" + "";
-     
-    var percent = Number($('#counter_left1').text());
-     
-      
-    for (i = 0; i < len; i++)
-    { 
-
-      if((rest.split(',')[i]).indexOf({{ product.id }}) >= 0)
-      {
-
-        document.cookie = "prd_rqty1  ="  + {{ product.id }} + ':' + percent ;
-
-      }
-      else
-      {
-
-        if(getCookie("prd_rqty2").length)
-        {
-
-          document.cookie = "prd_rqty2  =" + rest.split(',')[i] + ',' + getCookie("prd_rqty2");
+  function mob_stk_lft() {
+      var rest = getCookie("prd_rqty");
+      var len = rest.split(',').length;
+        document.cookie = "prd_rqty2  =" + "";
+        var percent = Number($('#counter_left1').text());
+        for (i = 0; i < len; i++)
+        { 
+          if((rest.split(',')[i]).indexOf({{ product.id }}) >= 0) {
+            document.cookie = "prd_rqty1  ="  + {{ product.id }} + ':' + percent ;
+          } else {
+            getCookie("prd_rqty2").length?document.cookie="prd_rqty2  ="+rest.split(",")[i]+","+getCookie("prd_rqty2"):document.cookie="prd_rqty2  ="+rest.split(",")[i];
+          }
         }
-        else
-        {
-          document.cookie = "prd_rqty2  =" + rest.split(',')[i]; 
-        }
-
-      }
-
-    }
-    if(getCookie("prd_rqty2").length)
-    {
-      document.cookie = "prd_rqty2  =" + getCookie("prd_rqty2") + ',' + getCookie("prd_rqty1");
-    }
-    else 
-    {
-      document.cookie = "prd_rqty2  =" + getCookie("prd_rqty1");
-    }
-    document.cookie = "prd_rqty  =" + getCookie("prd_rqty2");
-       
+        getCookie("prd_rqty2").length?document.cookie="prd_rqty2  ="+getCookie("prd_rqty2")+","+getCookie("prd_rqty1"):document.cookie="prd_rqty2  ="+getCookie("prd_rqty1");
+        document.cookie = "prd_rqty  =" + getCookie("prd_rqty2");
   }
-  
-  
-  
-  
 </script>
 {% else %}
 <script>

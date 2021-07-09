@@ -3,7 +3,7 @@
 
 <div class="grid__item row_grid_qnt"{% if section_onboarding %} style="margin-top:20px;"{% endif %}>
   {% if section.settings.show_quantity_selector %}
-  <div class="grid__item pad_zero prod_qty_desktop small--hide {% if section.settings.image_size == "full"  %} full-qty {% endif %} {% if section.settings.image_size == "large"  %} large {% endif %} {% if section.settings.image_size == "medium" or section.settings.image_size == "small" %} cst-small-qty {% endif %}  medium--one-quarter  large-up--two-tenths product-form__item product-form__item--quantity">
+  <div class="grid__item pad_zero prod_qty_desktop small--hide {% if section.settings.image_size == "full"  %} full-qty {% endif %} {% if section.settings.image_size == "large"  %} large {% endif %} {% if section.settings.image_size == "medium" or section.settings.image_size == "small" %} cst-small-qty {% endif %}  medium--one-quarter  product-form__item product-form__item--quantity">
     {% if section.settings.enable_payment_button %}
     <label for="Quantity">{% comment %}ly_i18n_replace_for_[ 'products.product.quantity' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.quantity' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '16902626' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
     {% endif %}
@@ -28,7 +28,7 @@
   {% else %}
   <input type="hidden" id="Quantity" name="quantity" value="1" class="product-form__input prod_qty_desktop">
   {% endif %}
-
+  {% render 'ZooomyBackinStock' %}
   <div class="{{quantitygrid}}{% if section.settings.enable_sticky %} qty_stickyfor{% endif %}{% unless section.settings.enable_payment_button %} cst-small-crtbtn{% else %} more_payment_btn{% endunless %}">
     {% if price_var == 0 %}          
     {% if section.settings.enable_shipping %}

@@ -261,10 +261,11 @@
                   {%- endif -%}
                 </a>
               </div>
+              {%- if item.product.title contains "balancing" -%}<div class="cart__meta-text" style="font-size: 12px;">This item is a subject to additional duty fees to be paid upon delivery to Canada. These fees may equal up to 25-35% of the value of the delivered goods.</div>{%- endif -%}
               {% unless item.variant.title contains 'Default' %}
               <div class="cart__meta-text">
                 {% for option in item.product.options %}
-                {{ item.variant.options[forloop.index0]  | split: '—' | first }}<br/>
+                  {{ item.variant.options[forloop.index0]  | split: '—' | first }}<br/>
                 {% endfor %}
               </div>
               {% endunless %}
