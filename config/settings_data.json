@@ -339,7 +339,7 @@
           "variant_swacth": "one",
           "swatch_option": "with_background",
           "color_style": "square_box",
-          "product_review": false,
+          "product_review": true,
           "visitor_counter_enable": false,
           "visitor_counter_number": "100-300",
           "show_del_time": true,

@@ -1,0 +1,60 @@
+{
+  "shopify": {
+    "checkout": {
+      "general": {
+        "page_title": "Kassa",
+        "skip_to_content": "Gå vidare till innehåll",
+        "continue_button_label": "Fortsätt",
+        "complete_purchase_button_label": "Slutför order",
+        "authenticate_purchase_button_label": "Autentisera betalning",
+        "edit_link_label": "Redigera",
+        "all_rights_reserved": "Alla rättigheter förbehålla {{ shop_namn }}",
+        "print_policies_link_label": "Skriv ut",
+        "cart": "Kundvagn",
+        "close_modal_label": "Stäng",
+        "close_notice_label": "Stäng",
+        "continue_to_shipping_method": "Gå vidare till fraktmetod",
+        "continue_to_payment_method": "Gå vidare till betalmetod",
+        "continue_to_review": "Granska order",
+        "back_to_cart": "Gå tillbaka till kundvagn",
+        "back_to_contact_information": "Gå tillbaka till kundinformation",
+        "back_to_shipping_method": "Gå tillbaka till fraktmetod",
+        "back_to_payment_method": "Gå tillbaka till betalmetod",
+        "edit_shipping_address": "Redigera leveransadress",
+        "edit_contact_information": "Redigera kundinformation",
+        "edit_shipping_method": "Redigera fraktmetod",
+        "edit_payment_method": "Redigera betalmetod",
+        "edit_billing_address": "Redigera faktureringsadress",
+        "choose_shipping_method": "Välj en fraktmetod",
+        "choose_payment_method": "Välj en betalmetod",
+        "choose_billing_address": "Välj en faktureringsadress",
+        "contact_us_html": "Kontakta oss för mer information",
+        "autocomplete_title": "Förslag",
+        "autocomplete_single_item": "1 artikel tillgänglig",
+        "autocomplete_multi_item": "{{antal}} objekt tillgängliga",
+        "autocomplete_selection": "{{antal}} av {{totalt}}",
+        "autocomplete_close": "Stäng förslag",
+        "footer": "Sidfor",
+        "forwarding_indicator": {
+          "new_window": "Öppnas i ett nytt fönster.",
+          "external": "Öppnar extern webbplats.",
+          "external_and_new_window": "Öppnar extern webbplats i ett nytt fönster."
+        },
+        "checkout_context": {
+          "step_one": "{{shop_namn}} - Kassa"
+        }
+      },
+      "stock": {
+        "quantity_column_header": "Kvantitet"
+      },
+      "order_summary": {
+        "quantity_label": "Kvantitet"
+      },
+      "thank_you": {
+        "fulfillment": {
+          "quantity_label": "Kvantitet"
+        }
+      }
+    }
+  }
+}
