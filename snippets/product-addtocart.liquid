@@ -28,8 +28,7 @@
   {% else %}
   <input type="hidden" id="Quantity" name="quantity" value="1" class="product-form__input prod_qty_desktop">
   {% endif %}
-  {% render 'ZooomyBackinStock' %}
-  <div class="{{quantitygrid}}{% if section.settings.enable_sticky %} qty_stickyfor{% endif %}{% unless section.settings.enable_payment_button %} cst-small-crtbtn{% else %} more_payment_btn{% endunless %}">
+    <div class="{{quantitygrid}}{% if section.settings.enable_sticky %} qty_stickyfor{% endif %}{% unless section.settings.enable_payment_button %} cst-small-crtbtn{% else %} more_payment_btn{% endunless %}">
     {% if price_var == 0 %}          
     {% if section.settings.enable_shipping %}
     <button type="submit" name="add" id="AddToCartZero" class="btn_sp medium-up--five-eighths{% if section.settings.enable_payment_button %} dynamic_paybtn {% endif %}{% if section.settings.shake_effect_enable %} js-cartButtonPro-addToCartButton hvr-wobble-horizontal{% endif %}">
