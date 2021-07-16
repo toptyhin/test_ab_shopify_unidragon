@@ -17,7 +17,6 @@
       <div class="grid__item medium-up--one-third small--one-whole mount__text text-left">{{ section.settings.left_text }}</div>
       <div class="grid__item medium-up--two-thirds small--one-whole">
         <div class="announcement-slider">
-
           {% for block in section.blocks %}
                  <figure class="mount__step">
                   <img loading="lazy" src="{{ block.settings.slide_image | img_url: '900x900' }}" alt="{{ block.settings.slide_title }}">

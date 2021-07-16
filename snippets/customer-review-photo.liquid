@@ -22,8 +22,12 @@
 <div class="customer-review-img">
   <p class="line customer-review-photo">Customer reviews images </p>
   <div class="img-review-slider">
-    {%- for link in review_photo_link -%}
-      <a href="{{link}}"><img loading="lazy" class="lightbox-thmb arv-lozad" src="{{link}}"></a>
+    {%- for file_name in review_photo_link -%}
+    {%- liquid
+       assign img_href_path = file_name | asset_url
+       assign img_path = file_name | strip | asset_img_url: 'small'
+    -%}
+      <a href="{{ img_href_path }}"><img loading="lazy" class="lightbox-thmb arv-lozad" src="{{img_path}}"></a>
     {%- endfor -%}
   </div>
 </div>
