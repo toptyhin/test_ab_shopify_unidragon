@@ -274,9 +274,11 @@
         {% endif %}
       </div>
     </div>
-        {%- if product.metafields.link.customer-review-photo -%}
-          {%- render 'customer-review-photo' with product -%}
-        {%- endif -%}
+        {%- liquid
+          if product.metafields.link.customer-review-photo
+            render 'customer-review-photo' with product
+          endif
+        -%}
       <form style="display: none;" method="post" action="/cart">
         <input  type="submit" class="custome_checkout" value="checkout" name="checkout"/>
       </form>
@@ -295,7 +297,7 @@
           {%- assign current_channel = 'unidragon_world' -%}
         {% endcase %}
         {%- render 'fw-storyblock', channel: current_channel -%}
-        </div>
+      </div>
     </div>
     
     <div class="grid__item medium-up--one-half">
@@ -488,6 +490,7 @@
           
           {% endform %}
 
+{%- render 'back-in-stock-form', product_variants_id: current_variant.id -%}
           {% if section.settings.enable_sticky %}
           <style>
 
@@ -729,9 +732,8 @@
       </div>
     </div>
   </div>
-
-
 </div>
+
 {% unless product == empty %}
 <script type="application/json" id="ProductJson-{{ section.id }}">
     {{ product | json }}
