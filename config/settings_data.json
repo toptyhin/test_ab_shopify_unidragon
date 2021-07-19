@@ -461,18 +461,25 @@
             "settings": {
               "collection": "balancing-puzzles"
             }
+          },
+          "d70d11bd-4bb5-4ef2-8a9a-446d1dca08fc": {
+            "type": "collection",
+            "settings": {
+              "collection": "gift-cards"
+            }
           }
         },
         "block_order": [
           "7d525dc6-5d8b-4ecf-a121-2cce4329abd0",
           "d869a183-72a9-474c-a178-7bb8a97d22b2",
           "292f6e9b-7f37-4d87-8217-795fccb098cf",
-          "204f94a3-723e-4238-a058-1f7fb335acbd"
+          "204f94a3-723e-4238-a058-1f7fb335acbd",
+          "d70d11bd-4bb5-4ef2-8a9a-446d1dca08fc"
         ],
         "settings": {
           "display_type": "selected",
           "sort": "alphabetical",
-          "grid": "4",
+          "grid": "5",
           "show_view_all": true,
           "btn_text": "View All"
         }
@@ -483,8 +490,9 @@
           "heading_title": "News Detail",
           "show_blog_image": true,
           "enable_parallax": true,
-          "blog_show_author": true,
-          "blog_show_date": true,
+          "image": "shopify:\/\/shop_images\/3.png",
+          "blog_show_author": false,
+          "blog_show_date": false,
           "show_share_buttons": true
         }
       },
@@ -493,6 +501,7 @@
         "settings": {
           "show_blog_image": true,
           "enable_parallax": true,
+          "image": "shopify:\/\/shop_images\/3.png",
           "layout": "grid",
           "blog_show_author": false,
           "blog_show_date": false,
@@ -728,13 +737,15 @@
           "161747218624fcc73a-0": {
             "type": "featured_collection",
             "settings": {
-              "collection": "wooden-puzzles"
+              "collection": "wooden-puzzles",
+              "image": "shopify:\/\/shop_images\/Categories-01_2.jpg"
             }
           },
           "161747218624fcc73a-1": {
             "type": "featured_collection",
             "settings": {
-              "collection": "nature-puzzles"
+              "collection": "nature-puzzles",
+              "image": "shopify:\/\/shop_images\/Categories-02_2.jpg"
             }
           }
         },
@@ -833,7 +844,7 @@
               "slide_image": "shopify:\/\/shop_images\/7.jpg",
               "slide_step_text": "Step 7.",
               "slide_title": "Place the glue heels on the tape.",
-              "slide_text": ""
+              "slide_text": "It is removable and will not damage your wall."
             }
           },
           "ef7acd9c-265b-4f7b-8fa5-41c4d4c17eed": {
