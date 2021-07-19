@@ -1,0 +1,11 @@
+<div class="text-left storyblock__heading">
+    <div class="storyblock__heading-inner">
+        {{ 'video_camera_icon.png' | asset_img_url | img_tag: "", "storyblock__heading-icon" }}
+        <span class="heading">Inspiring Stories</span>
+    </div>
+
+</div>
+<div id="storyblock" style="width: 60%;">
+    <fw-storyblock channel="{{channel}}" autoplay="true"></fw-storyblock>
+</div>
+<script>$("body").on("DOMNodeInserted",function(){if($("fw-storyblock")[0].shadowRoot){let o=$("fw-storyblock")[0].shadowRoot;$(o).find("div.css-cftjh0").hide();$(o).find("div:eq( 0 )").height(1.78*$("#storyblock").width());$(o).find("div:eq( 1 )").height(1.78*$("#storyblock").width());$(o).find("div:eq(0) > div:eq(1) > a").remove()}});</script>
