@@ -1,9 +1,9 @@
 {% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
-{% comment %}
-  The contents of the product.liquid template can be found in /sections/product-template.liquid
-{% endcomment %}
 
 {% section 'product-giftcart-template' %}
+
+{{ 'magnific-popup.css' | asset_url | stylesheet_tag }}
+{{ 'jquery.magnific-popup.min.js' | asset_url | script_tag }}
 
 {%- if settings.show_cart_drawer -%}
   {%- section  'go-cart' -%}
