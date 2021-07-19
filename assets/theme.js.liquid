@@ -2777,7 +2777,7 @@ theme.Product = (function() {
            
           $(this.selectors.addToCart).prop('disabled', false);
           $(this.selectors.addToCartText).text(addToCartBtnLabel_1);
-          
+          $('#backinstock').hide();
           
           
           if($("#dont_track").length != 0)
@@ -2798,6 +2798,7 @@ theme.Product = (function() {
           
           $(this.selectors.StickyaddToCart).prop('disabled', false);
           $(this.selectors.StickyaddToCartText).text(addToCartBtnLabel_1);
+          $('#backinstock').hide();
           
           // END STICKY ADD TO CART
         } else {
@@ -2812,7 +2813,7 @@ theme.Product = (function() {
           
           $(this.selectors.StickyaddToCart).prop('disabled', true);
           $(this.selectors.StickyaddToCartText).text(theme.strings.soldOut);
-          $('#zooomybackinstock').show();
+          $('#backinstock').show();
           
           // END STICKY ADD TO CART
         }
@@ -2843,6 +2844,7 @@ theme.Product = (function() {
 
     _updatePrice: function(evt) {
       var variant = evt.variant;
+      $('input[name="tags"]').val(variant.id)
       if ( $(this.selectors.productPrices).get(0).getAttribute('data-discount')) {var discount = $(this.selectors.productPrices).get(0).getAttribute('data-discount')} else {var discount = 1}
       // Update the product price
       $(this.selectors.originalPrice).html(
