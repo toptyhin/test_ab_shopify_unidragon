@@ -850,9 +850,8 @@
         $('.upsell-anoncment-popup').click( function () {
             $('.announcement-slider').slick({infinite:!1,arrows:!0,dots:!1,slidesToShow:1,slidesToScroll:1,variableWidth:!1,swipeToSlide:!0,rows:0,autoplay:true,autoplaySpeed:2000,responsive:[{breakpoint:1199,settings:{slidesToShow:1,variableWidth:!1}}]}).slick("slickGoTo",0);
         });
-        //$(".js-video-button").modalVideo({youtube:{nocookie:!0}});
 
-        $.get("https://ipinfo.io/json?token=ea639b54a40421", function (response) { if (response.country != "US"){ $('.go-cart-drawer-progress-bar').hide();} });
+        $.get("https://ipinfo.io/json?token=bfdc4f6f5babff", function (response) { if (response.country != "US"){ $('.go-cart-drawer-progress-bar').hide();} });
 
         $('.upsell-button').on('click',function(e){    
         e.preventDefault();
