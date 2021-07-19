@@ -1,0 +1,83 @@
+<div id="backinstock" style="display: none;">
+    <div class="backinstock__headings">
+        <h3>Out of stock</h3>
+        <div class="heading__text">We will notify you when this product becomes available.</div>
+    </div>
+    <form method="">
+        <input type="hidden" name="tags" value="{{product_variants_id}}"/>
+        <input type="hidden" name="product" value="{{product_id}}"/>
+        <input type="email" name="email" id="alertemail" placeholder="Enter email..." value="{% if customer %}{{ customer.email }}{% endif %}"/>
+        <a class="btn button" id="alertbtn">Notify Me</a>
+    </form>
+</div>
+<style>
+    div#backinstock {
+        margin: 20px 0px;
+        float: left;
+        width: 100%;
+        border: 1px solid #ededed;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .backinstock__headings h3 {
+        float: left;
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+        color: #555555;
+    }
+    .heading__text {
+        float: left;
+        width: 100%;
+        text-align: center;
+        font-size: 13px;
+        color: #888888;
+    }
+    #backinstock form {
+        float: left;
+        width: 100%;
+        margin: 0;
+        padding: 10px 0px;
+    }
+    #alertbtn {
+        float: right;
+        width: 28%;
+        padding: 14px;
+        background: #FF862D;
+        color: #FFFFFF;
+        font-size: 13px;
+        border-radius: 0px;
+        border: 0px solid #FF862D;
+    }
+    #backinstock #alertemail, #backinstock #alertbtn {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 5px 0px;
+        text-align: center;
+    }
+</style>
+
+<script>
+$('#alertbtn').on('click',function(e){    
+      e.preventDefault();
+        var formdata = $('#backinstock > form').serializeArray();
+        var data = {};
+        $(formdata ).each(function(index, obj){
+            data[obj.name] = obj.value;
+        });
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        var raw = JSON.stringify(data);
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+        fetch("https://tech.unidragon.com/users", requestOptions)
+        .then(result => {$('#backinstock > form').hide(); $('.backinstock__headings > h3').text('Thank you!')})
+        .catch(error => console.log('error', error));
+   });
+  </script>

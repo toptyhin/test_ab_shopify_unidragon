@@ -1,5 +1,4 @@
 
-{{ 'modal-video.min.css' | asset_url | stylesheet_tag }}
 <style>
     .go-cart__modal {
          position: fixed;
@@ -415,7 +414,177 @@
         background-color: white;
         width: 20px;
     }
-    </style>
+    .upsell-info.go-cart-item__title {
+        padding: 10px;
+        text-align: center;
+        background-color: #fea;
+    }
+    .upsell-anoncment-popup {  
+        text-decoration: underline;
+        color: #888888;
+    }
+    .upsell-anoncment-container {
+        background-color: white;
+        padding: 20px 0;
+    }
+
+            .mount__instruction {
+              display: block;
+              text-align: center;
+              font-size: 16px;
+              font-weight: bold;
+              line-height: 1.6;
+          }
+            .mount__step {
+              position: relative;
+              margin: 10px;
+              padding: 0;
+              -webkit-box-shadow: 0 0 12px rgb(0 0 0 / 10%);
+              -moz-box-shadow: 0 0 12px rgba(0,0,0,.1);
+              box-shadow: 0 0 12px rgb(0 0 0 / 10%);
+          }
+            .mount .heading {
+              padding-bottom: 15px;
+            }
+            .mount .heading::after {
+              position: absolute;
+              left: 50%;
+              display: block;
+              width: 40px;
+              height: 3px;
+              margin-left: -20px;
+              content: "";
+              background-color: #ff7607;
+           }
+           .mount__step-number, .mount__step-text {
+              display: block;
+              margin: 0;
+              color: #000;
+              font-size: 14px;
+              font-weight: 300;
+              line-height: 1.5;
+           }
+           .mount__text, .mount__text p {
+              margin:0;
+          }
+            p.mount__step-text {
+              font-size: 16px;
+              font-weight: bold;
+          }
+          .mount__text ul {
+          padding-left: 25px;
+          }
+          .mount__text ul>li {
+              list-style: disc;
+            }
+            .mount .slick-next {
+              right: 35px;
+          }
+            .mount .slick-prev {
+              left: 15px;
+          }
+            button.slick-prev.slick-arrow.slick-disabled, button.slick-next.slick-arrow.slick-disabled {
+                display: none !important;
+            }
+            .slick-next, .slick-prev {
+              z-index: 20;
+              display: block;
+              margin-top: -20px;
+              padding: 0;
+      
+          }
+            .slick-next::before, .slick-prev::before {
+              font-family: 'slick';
+              display: block;
+              color:#fff;
+              font-size: 42px;
+              margin-top: -5px;
+              border-width: 3px;
+          }
+            .mount__step-captions {
+              text-align: left;
+              z-index: 20;
+              bottom: 0;
+              padding: 25px 30px;
+              background-color: transparent;
+          }
+            .mount__step-number, .mount__step-text {
+              color: #000;
+              font-size: 16px;
+          }
+            .mount__step-text-details {
+              color: #000;
+              font-size: 14px;
+          }
+          .success-feedback {
+              color: #3d9970;
+              text-align: center;
+              margin-top: 5px;
+          }
+          .success-feedback a {
+              text-decoration: revert;
+          }
+        @media only screen and (min-width: 740px) {
+               .mount__text, .mount__text p {
+                text-align: left;
+                margin: 20px 0;
+                color: #595959;
+                font-size: 14px;
+          }
+              .mount__step-captions {
+                position: absolute;
+                text-align: left;
+                z-index: 20;
+                bottom: 0;
+                padding: 25px 30px;
+                background-color: transparent;
+            }
+              .mount__step-number, .mount__step-text {
+                color: #fff;
+                font-size: 16px;
+            }
+            .mount__step-text-details {
+                color: #fff;
+            }
+              p.mount__step-text {
+                font-size: 24px;
+                font-weight: bold;
+            }
+            .mount__step-text-details {
+                color: #fff;
+            }
+            .mount__step::before {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: block;
+                content: "";
+                opacity: .3;
+                background-image: -webkit-gradient(linear,left bottom,left top,from(#000),to(transparent));
+                background-image: -webkit-linear-gradient(bottom,#000 0,transparent 100%);
+                background-image: -moz-linear-gradient(bottom,#000 0,transparent 100%);
+                background-image: -o-linear-gradient(bottom,#000 0,transparent 100%);
+                background-image: linear-gradient(to top,#000 0,transparent 100%);
+            }
+      }
+      .white-popup {
+        position: relative;
+        background: #FFF;
+        padding: 20px;
+        width: auto;
+        max-width: 1200px !important;
+        margin: 20px auto;
+        border-radius: 10px;
+        }
+      
+        @media only screen and (min-width: 980px){
+            .mount__step-captions {
+                padding: 40px 50px;
+            }
+        }
+      </style>
     <!--cart button-->
 <div class="go-cart__trigger js-go-cart-trigger">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
@@ -520,14 +689,15 @@
             {%- endfor -%}
           {%- if settings.need_upsell and upsell_in_cart != true -%}
             {%- if settings.upsell_product -%}
-                <div class="go-cart-drawer-upsell">
+            <div class="upsell-info go-cart-item__title">After solving the puzzle decorate your walls!</div>
+            <div class="go-cart-drawer-upsell">
                     <div class="go-cart-item__single">
                         <div class="go-cart-item__info-wrapper">
                             <div class="go-cart-item__image" style="background-image: url({%- if settings.custom_upsell_image -%}{{ settings.custom_upsell_image | img_url }}{%- else -%}{{ settings.upsell_product.featured_image | img_url }}{%- endif -%});"></div>
                             <div class="go-cart-upsell-item__info">
                                 <a href="{{ settings.upsell_product.url }}" class="go-cart-item__title">{{settings.upsell_product.title}}</a>
                                 <div class="go-cart-upsell-item__price">
-                                    <a href="https://www.youtube.com/watch?v=NCG1MPDUako" class="js-video-button" data-video-id="NCG1MPDUako">See how it works</a>
+                                    <a href="#upsell-anoncment-popup" class="upsell-anoncment-popup">See how it works</a>
                                     {{ settings.upsell_product.price | money }}</div>
                             </div>
                         </div>
@@ -558,15 +728,129 @@
         </div>
     </div>
     <!--end go cart drawer-->
+    <!--Upsell anoncment popup-->
+    <div id="upsell-anoncment-popup" class="white-popup mfp-hide">
+        <div class="upsell-anoncment-container page-width rich-text mount">
+            <div class="grid" style="margin-left: auto;">
+              <div class="grid__item">
+                  <div class="rich-text__heading text-center">
+                    <div class="heading">SET FOR MOUNTING PUZZLES!</div>
+                  </div>
+              </div>
+              <div class="grid__item text-center">
+                <p class="mount__instruction">One set alone will allow you to hang 6 Small puzzles, 3 Medium puzzles, or 3 King Size puzzles.</p>
+              </div>
+            </div>
+            <div class="grid" style="margin-left: auto;">
+                <div class="grid__item medium-up--two-thirds small--one-whole" style="padding-left: 0;">
+                    <div class="announcement-slider">
+                        <figure class="mount__step">
+                            <img loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/1_29d75e87-aa44-41ce-b9ec-187eb1631cbc_900x900.jpg?v=1619186904" alt="Glue the cardboard to the surface.">
+                            <figcaption class="mount__step-captions">
+                            <p class="mount__step-number">Step 1.</p>
+                            <p class="mount__step-text">Glue the cardboard to the surface.</p>
+                            <p class="mount__step-text-details">Underlay included</p>
+                            </figcaption>
+                        </figure>
+                    
+                            <figure class="mount__step">
+                            <img loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/2_5c23335d-5fbd-4c8c-879c-81bb3bfee883_900x900.jpg?v=1619186904" alt="Move the puzzle onto the cardboard.">
+                            <figcaption class="mount__step-captions">
+                            <p class="mount__step-number">Step 2.</p>
+                            <p class="mount__step-text">Move the puzzle onto the cardboard.</p>
+                            <p class="mount__step-text-details"><br /></p>
+                            </figcaption>
+                        </figure>
+                    
+                            <figure class="mount__step">
+                            <img loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/3_97900aa8-ffa3-4fa1-81b1-566a3ef3e87f_900x900.jpg?v=1619186904" alt="Turn the puzzle over.">
+                            <figcaption class="mount__step-captions">
+                            <p class="mount__step-number">Step 3.</p>
+                            <p class="mount__step-text">Turn the puzzle over.</p>
+                            <p class="mount__step-text-details"><br /></p>
+                            </figcaption>
+                        </figure>
+                    
+                            <figure class="mount__step">
+                            <img loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/4_900x900.jpg?v=1619186904" alt="Stick the film onto the puzzle.">
+                            <figcaption class="mount__step-captions">
+                            <p class="mount__step-number">Step 4.</p>
+                            <p class="mount__step-text">Stick the film onto the puzzle.</p>
+                            <p class="mount__step-text-details"><br /></p>
+                            </figcaption>
+                        </figure>
+                    
+                            <figure class="mount__step">
+                            <img loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/5_900x900.jpg?v=1619186904" alt="Smooth the film over the puzzle.">
+                            <figcaption class="mount__step-captions">
+                            <p class="mount__step-number">Step 5.</p>
+                            <p class="mount__step-text">Smooth the film over the puzzle.</p>
+                            <p class="mount__step-text-details"><br /></p>
+                            </figcaption>
+                        </figure>
+                    
+                            <figure class="mount__step">
+                            <img loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/6_7df23e10-5c60-4fea-85b5-885bc10dd2ab_900x900.jpg?v=1619186904" alt="Cut off excess film.">
+                            <figcaption class="mount__step-captions">
+                            <p class="mount__step-number">Step 6.</p>
+                            <p class="mount__step-text">Cut off excess film.</p>
+                            <p class="mount__step-text-details"><br /></p>
+                            </figcaption>
+                        </figure>
+                    
+                            <figure class="mount__step">
+                            <img loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/7_900x900.jpg?v=1619186904" alt="Place the glue heels on the tape.">
+                            <figcaption class="mount__step-captions">
+                            <p class="mount__step-number">Step 7.</p>
+                            <p class="mount__step-text">Place the glue heels on the tape.</p>
+                            <p class="mount__step-text-details">It is removable and will not damage your walls<br /></p>
+                            </figcaption>
+                        </figure>
+                    
+                            <figure class="mount__step">
+                            <img loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/8_5aa9a5ec-917e-4e1d-9ffa-3e614a575b75_900x900.jpg?v=1619186904" alt="Fix the puzzle to the wall.">
+                            <figcaption class="mount__step-captions">
+                            <p class="mount__step-number">Step 8.</p>
+                            <p class="mount__step-text">Fix the puzzle to the wall.</p>
+                            <p class="mount__step-text-details"><br /></p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            <div class="grid__item medium-up--one-third mount__text text-left" style="padding-bottom: 10px;"><p>Now you can easily turn your puzzle into a piece of interior decor for the home, office, or just about anywhere.</p>
+                <p>The kit includes:</p>
+                <ul>
+                <li>A cardboard base for turning the puzzle over;</li>
+                <li>Special stickers for attaching the base to the table;</li>
+                <li>Adhesive labels for holding the puzzle pieces together (3 sheets);</li>
+                <li>Adhesive patches for attaching the puzzle to the desired surface;</li>
+                <li>Adhesive patches for attaching the puzzle to the desired surface;</li>
+                <li>Instructions.</li>
+                </ul>
+                <p>The fixing system is universal for all puzzles and sizes</p>
+                <div class="text-center">
+                    <iframe src="https://www.youtube.com/embed/NCG1MPDUako" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="max-width: 560px" loading="lazy"></iframe>
+                </div>
+            </div>   
+            </div>
+        </div>
+    </div>
     <!--go cart overlay-->
     <div class="go-cart__overlay js-go-cart-overlay">
     </div>
     <!--end go cart overlay-->
+    
     {{ 'gocart.js' | asset_url | script_tag }}
-    {{'modal-video.js' | asset_url | script_tag }}
+    {{ 'magnific-popup.css' | asset_url | stylesheet_tag }}
+    {{ 'jquery.magnific-popup.min.js' | asset_url | script_tag }}
+
     <script>
         var goCart = new GoCart();
-        $(".js-video-button").modalVideo({youtube:{nocookie:!0}});
+        $('.upsell-anoncment-popup').magnificPopup({type:'inline',midClick: true});
+        $('.upsell-anoncment-popup').click( function () {
+            $('.announcement-slider').slick({infinite:!1,arrows:!0,dots:!1,slidesToShow:1,slidesToScroll:1,variableWidth:!1,swipeToSlide:!0,rows:0,autoplay:true,autoplaySpeed:2000,responsive:[{breakpoint:1199,settings:{slidesToShow:1,variableWidth:!1}}]}).slick("slickGoTo",0);
+        });
+        //$(".js-video-button").modalVideo({youtube:{nocookie:!0}});
 
         $.get("https://ipinfo.io/json?token=ea639b54a40421", function (response) { if (response.country != "US"){ $('.go-cart-drawer-progress-bar').hide();} });
 
@@ -588,9 +872,9 @@
         })
         .then(response => {
             //console.log(response.json());
-            _tfa.push({notify: 'event', name: 'add_to_cart', id: 1366281});
             goCart.fetchAndOpenCart();
             $('.go-cart-drawer-upsell').hide();
+            $('.upsell-info').hide();
         })
         .catch((error) => {
             console.error('Error:', error);
