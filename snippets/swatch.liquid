@@ -42,7 +42,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
     <p><strong><ly-as-16902715>This is case-sensitive!</ly-as-16902715></strong> <ly-as-16902716>Do not put in</ly-as-16902716> <code><ly-as-16902717>'color'</ly-as-16902717></code> <ly-as-16902718>if your product option name is</ly-as-16902718> <code><ly-as-16902719>'Color'</ly-as-16902719></code>.</p>
   </div>
 {% else %}
-  <div class="swatch {% if product.type == 'Puzzle' and swatch == 'Size'  %}sw-size{% endif %} clearfix" data-option-index="{{ option_index }}">
+  <div class="swatch {% if product.type == 'Puzzle' %}sw-size{% endif %} clearfix" data-option-index="{{ option_index }}">
     <div class="header">Choose {{ swatch }}:</div>
     <div class="swatch_container">
       {%- assign values = '' -%}
@@ -59,7 +59,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
           <div class="tooltip">{{ value }}</div>
         {%- endif -%}
 
-        {%- if product.type == 'Puzzle' and swatch == 'Size' -%}
+        {%- if product.type == 'Puzzle' -%}
         {%- assign size_count = size_count | plus: 1 -%}
         <input id="swatch-{{ option_index }}-{{ value | handle }}-{{ section.id }}" type="radio" ga-data="{{size_count}}" name="option-{{ option_index }}" value="{{ value | escape }}"{% if forloop.first %}{% unless section.settings.enable_default_variant %} checked{% endunless %}{% endif %} {% unless variant.available %}disabled{% endunless %} />
         {% if is_color and section.settings.swatch_option == 'with_background' %}
