@@ -652,6 +652,45 @@
         <div class="reputon-trustpilot-reviews-widget" id="a83b7e60-bc57-11eb-a355-a9194acb8438" style="display: flex; justify-content: center;"></div>
         {%- unless product.title contains "balancing" -%}
           {% render 'pdp__discount' %}
+          <style>
+            .custom-faq .line {
+              font-size: 20px;
+            }
+            .custom-faq{
+              width:100%;
+              float:left;
+              margin-top:5px;
+              margin-bottom:25px
+            }
+            .custom-faq .accordion-tax{
+              margin: 10px 0;
+              color:#000;
+              cursor:pointer;
+              width:100%;
+              font-weight:400;
+              text-transform:uppercase;
+              text-align:left;
+              border:none;
+              outline:0;
+              transition:.4s
+            }
+            .custom-faq .panel{
+              background-color:#fff;
+              display:none;
+              text-align:justify;
+              overflow:hidden
+            }
+            .custom-faq .accordion-tax:after {content:'\02795';
+              font-size:13px;
+              color:#000;
+              float:right;
+              margin-left:5px
+            }
+            .custom-faq .active:after{
+              content:"\2796"
+            }
+          </style>
+          <script>$('.pr-info').first().append($('#custom-faq'))</script>
         {%- endunless -%}
 
         <div class="medium-up--hide storyblock-mob">{%- render 'fw-storyblock', channel: current_channel -%}</div>

@@ -171,45 +171,7 @@
         }
       }
       .description_spoiler {padding-top: 20px;}
-              .custom-faq .line, .custom-tax-new .line {
-                font-size: 20px;
-              }
-              .custom-faq, .custom-tax-new {
-                width:100%;
-                float:left;
-                margin-top:5px;
-                margin-bottom:25px
-              }
-              .custom-faq .accordion-tax, .custom-tax-new .accordion-tax {
-                display: flex;
-                justify-content: space-between;
-                margin: 10px 0;
-                color:#000;
-                cursor:pointer;
-                width:100%;
-                font-weight:600;
-                text-align:left;
-                border:none;
-                outline:0;
-                transition:.4s
-              }
-              .custom-faq .panel p, .custom-tax-new .panel p {color: #808080;}
-              .custom-faq .panel, .custom-tax-new .panel {
-                background-color:#fff;
-                width: 90%;
-                display:none;
-                text-align:justify;
-                overflow:hidden
-              }
-              .custom-faq .accordion-tax:after, .custom-tax-new .accordion-tax:after {content:'\002B';
-                font-size:18px;
-                color:#000;
-                float:right;
-                margin-left:5px
-              }
-              .custom-faq .active:after, .custom-tax-new .active:after {
-                content:"\2716"
-              }
+
     </style>
     
   <script>
@@ -524,7 +486,7 @@
             {% if section.settings.product_review  %}
               <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
             {% endif %}
-                       
+           
             {%- capture "form_classes" -%}
             product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %}{% if section.settings.enable_payment_button and product.has_only_default_variant%} product-form--payment-button-no-variants{% endif %}
             {%- endcapture %}
@@ -544,27 +506,27 @@
               <input type="hidden" id="Quantity" name="quantity" value="1" class="product-form__input prod_qty_mobile">
             {% endif %}
             {% unless product.has_only_default_variant %}
-              {% if section.settings.show_tags %}
-                <div class="prod_tags">
-                  <h5>{{ 'products.product.tags' | t }} : </h5>
-                  {% for tag in product.tags %}
-                  <span>{{ tag }}</span>
-                  {% endfor %}
-                </div>
-              {% endif %}
-              {% for option in product.options_with_values %}
-    
-                <div class="selector-wrapper small--one-whole js product-form__item">
-                  <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
-                    {{ option.name }}
-                  </label>
-                  <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
-                    {% for value in option.values %}
-                    <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
-                    {% endfor %}
-                  </select>
-                </div>
+            {% if section.settings.show_tags %}
+            <div class="prod_tags">
+              <h5>{{ 'products.product.tags' | t }} : </h5>
+              {% for tag in product.tags %}
+              <span>{{ tag }}</span>
               {% endfor %}
+            </div>
+            {% endif %}
+            {% for option in product.options_with_values %}
+  
+            <div class="selector-wrapper small--one-whole js product-form__item">
+              <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
+                {{ option.name }}
+              </label>
+              <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
+                {% for value in option.values %}
+                <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            {% endfor %}
             {% endunless %}
   
             <select name="id" data-productid="{{ product.id }}" id="ProductSelect-{{ section.id }}" data-section="{{ section.id }}" class="product-form__variants no-js">
@@ -579,27 +541,27 @@
               {% endfor %}
             </select>
   
-          <!-- PRODUCT SWATCH CODE IF ENABLE -->
-          {% if product.type == 'Puzzle' %}
-            {% if product.variants.size > 1 %}
-              <div class="swatch_options">
-                {% for option in product.options %}
-                  {% include 'swatch' with option %}
-                {% endfor %} 
-              </div>
-            {% endif %}
-          {% else %}
-            {% if section.settings.variant_swacth == 'two'  %}  
+            <!-- PRODUCT SWATCH CODE IF ENABLE -->
+            {% if product.type == 'Puzzle' %}
               {% if product.variants.size > 1 %}
-                  <div class="swatch_options">
-                    {% for option in product.options %}
-                      {% include 'swatch' with option %}
-                    {% endfor %} 
-                  </div>
+                <div class="swatch_options">
+                  {% for option in product.options %}
+                    {% include 'swatch' with option %}
+                  {% endfor %} 
+                </div>
               {% endif %}
+            {% else %}
+              {% if section.settings.variant_swacth == 'two'  %}  
+                {% if product.variants.size > 1 %}
+                    <div class="swatch_options">
+                      {% for option in product.options %}
+                        {% include 'swatch' with option %}
+                      {% endfor %} 
+                    </div>
+                {% endif %}
+              {% endif %} 
             {% endif %} 
-          {% endif %} 
-          <!-- END PRODUCT SWATCH CODE IF ENABLE -->
+            <!-- END PRODUCT SWATCH CODE IF ENABLE -->
             
             {% include 'product-page-features' %}
 
@@ -779,11 +741,9 @@
             .storyblock-text-left {
               display: flex;
               align-items: center;
-              justify-content: space-between;
             }
           </style>
-
-          <div class="storyblock-text-left" style="margin: 0px auto; padding-top: 20px;">
+          <div class="small--hide storyblock-text-left" style="margin: 0px auto; padding-top: 20px;">
             {% case product.title %}
               {% when 'Charming Owl' %}
                 {%- assign current_channel = 'sova_com' -%}
@@ -798,6 +758,7 @@
             {% endcase %}
             {%- render 'fw-storyblock-text-left', channel: current_channel -%}
           </div>
+          <div class="medium-up--hide storyblock-mob">{%- render 'fw-storyblock', channel: current_channel -%}</div>
 
           <div class="shipping-banner">
             <span class="shipping-banner-icon"><img src="{{'shipping-icon.png' | asset_url}}" width="45" height="45"></span>
@@ -850,11 +811,6 @@
               </div>
               <div class="advantage-item-img" style="background-image: url({{'dvantage-item-4.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
             </div>
-          </div>
-
-          <div class="banner-decorate-walls">
-            <img src="{{'banner-decorate-walls.png' | asset_url}}" class="small--hide">
-            <img src="{{'banner-decorate-walls_mob.png' | asset_url}}" class="medium-up--hide" style="width: 100%;">
           </div>
 
           <div class="product-single__description rte" itemprop="description">
@@ -956,6 +912,47 @@
                       <p>This is suitable for all sizes, with the help of one set you can fix and hang 6 small puzzles, 3 medium puzzles, or 3 large puzzles.</p>
                 </div>
               </div>
+            <style>
+              .custom-faq .line, .custom-tax-new .line {
+                font-size: 20px;
+              }
+              .custom-faq, .custom-tax-new {
+                width:100%;
+                float:left;
+                margin-top:5px;
+                margin-bottom:25px
+              }
+              .custom-faq .accordion-tax, .custom-tax-new .accordion-tax {
+                display: flex;
+                justify-content: space-between;
+                margin: 10px 0;
+                color:#000;
+                cursor:pointer;
+                width:100%;
+                font-weight:600;
+                text-align:left;
+                border:none;
+                outline:0;
+                transition:.4s
+              }
+              .custom-faq .panel p, .custom-tax-new .panel p {color: #808080;}
+              .custom-faq .panel, .custom-tax-new .panel {
+                background-color:#fff;
+                width: 90%;
+                display:none;
+                text-align:justify;
+                overflow:hidden
+              }
+              .custom-faq .accordion-tax:after, .custom-tax-new .accordion-tax:after {content:'\002B';
+                font-size:18px;
+                color:#000;
+                float:right;
+                margin-left:5px
+              }
+              .custom-faq .active:after, .custom-tax-new .active:after {
+                content:"\2716"
+              }
+            </style>
           <!--FAQ block and-->
 
           <!----------custom-Tax-------------->
