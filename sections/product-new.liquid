@@ -1,4 +1,15 @@
 <style>
+
+@media only screen and (min-width: 750px) {
+.product-single__photos {
+    position: sticky !important;
+    top: 0 !important;
+}
+.page-container {
+  overflow: inherit;
+}
+}
+
     .bis-reset.bis-edge-left.bis-edge-top.bis-rotate-90 {
       display: none;
     }
@@ -37,9 +48,9 @@
       
      .slick-slider .slick-dots {
         overflow: scroll;
-    white-space: nowrap; 
+        white-space: nowrap; 
         bottom: -55px;
-    height: 60px;
+        height: 60px;
       }
       .slick-slider .slick-dots li {
         width:50px;
@@ -47,11 +58,12 @@
       }
       .slick-slider .slick-dots li a {
         width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
+        height: 50px;
+        display: flex;
+        align-items: center;
       }
       @media only screen and (max-width: 749px) {
+        .shipping-banner {min-height: 95px !important;}
         .thumbnails-wrapper {
             padding-bottom: 60px;
         }
@@ -65,9 +77,17 @@
         span.advantage-item-text {padding-top: 0 !important;}
       }
       /**/
-      .pr-advants, .pr-benefit, .pr-info-item {display: none;}
+      .pr-advants, .pr-benefit, .pr-info-item, ul.tabs {display: none;}
+      div#tab-1 {padding-top: 25px;}
+      .description_spoiler {padding-top: 40px;}
+      .description_spoiler p {
+          color: #808080;
+      }
+      .description_spoiler strong {
+          color: #000000;
+      }
       .shipping-banner {
-        margin: 10px 0;
+        margin-top: 20px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -80,16 +100,19 @@
       }
       .shipping-banner-text {
         margin-left: 20px;
+        width: 50%;
       }
       .shipping-banner-text-bold {
         font-weight: 600;
       }
+      .product-single__meta {font-family: 'Poppins';}
       .banner-inspirational-gift {
         background-color: black;
         background-image: url({{'banner-inspirational-gift_bg.png' | asset_url}});
         background-size: cover;
         height: 400px;
         color: #ffffff;
+        margin-top: 40px;
       }
       .banner-inspirational-gift_header {
         font-size: 18px;
@@ -105,33 +128,54 @@
         padding-right: 15px;
       }
       .banner-decorate-walls {
-        text-align: center;
+        margin-top: 40px;
+        background-image: url({{'banner-decorate-walls_mob_bg.png' | asset_url}});
+        background-size: cover;
+        background-position: bottom;
+        height: 350px;
+        color: #000000;
+      }
+      .banner-decorate-walls_header {
+        width: 100%;
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 20px;
+        padding-bottom: 0;
+      }
+      .banner-decorate-walls_text {
+        padding: 0 20px;
+        font-size: 14px;
+      }
+      .advantage {
+        margin-top: 40px;
       }
       .advantage-item {
         -webkit-box-shadow: 0 0 0 1px #e6e6e6;
          box-shadow: 0 0 0 1px #e6e6e6;
-         margin: 10px 0;
+         margin-bottom: 20px;
          min-height: 125px;
          display: flex;
          align-items: center;
          justify-content: space-between;
       }
       .advantage-block {
-        margin-left: 25px;
+        margin-left: 30px;
         width: 60%;
       }
       span.advantage-item-num {
-          font-size: 22px;
-          font-weight: 500;
+          font-size: 24px;
+          font-weight: 600;
           float: left;
       }
       span.advantage-item-title {
           font-weight: 500;
-          font-size: 16px;
+          font-size: 14px;
       }
       span.advantage-item-text {
         color: #808080;
         padding-top: 10px;
+        font-size: 12px;
       }
       .advantage-item-img {
         min-height: 125px;
@@ -140,7 +184,7 @@
       .advantage-item_left {
         display: flex;
         flex-direction: column;
-        padding-left: 10px;
+        padding-left: 14px;
         padding-top: 5px;
       }
       .delivery_time_new {
@@ -151,39 +195,57 @@
       div#see-more {
           cursor: pointer;
           font-weight: 600;
-          padding-top: 15px;
       }
       @media only screen and (min-width: 749px) {
         .banner-inspirational-gift {
-          height: 480px;
+          height: 450px;
         }
           .banner-inspirational-gift_header {
           font-size: 28px;
           padding-top: 30%;
-          padding-left: 30%;
+          padding-left: 175px;
           padding-right: 70px;
         }
         .banner-inspirational-gift_text {
           font-size: 16px;
           padding-top: 10px;
-          padding-left: 30%;
+          padding-left: 175px;
           padding-right: 85px;
         }
+        .banner-decorate-walls {
+          height: 420px;
+          background-image: url({{'banner-decorate-walls_bg.png' | asset_url}});
+        }
+        .banner-decorate-walls_header {
+          width: 395px;
+          font-size: 22px;
+          letter-spacing: 0.7px;
+          font-weight: 600;
+          text-transform: uppercase;
+          padding-top: 30px;
+          padding-left: 40px;
+        }
+        .banner-decorate-walls_text {
+          width: 40%;
+          letter-spacing: 0.7px;
+          padding-top: 10px;
+          padding-left: 40px;
+        }
       }
-      .description_spoiler {padding-top: 20px;}
+
+
               .custom-faq .line, .custom-tax-new .line {
-                font-size: 20px;
+                font-size: 14px;
               }
               .custom-faq, .custom-tax-new {
                 width:100%;
                 float:left;
-                margin-top:5px;
-                margin-bottom:25px
+                margin-top: 30px;
               }
               .custom-faq .accordion-tax, .custom-tax-new .accordion-tax {
                 display: flex;
                 justify-content: space-between;
-                margin: 10px 0;
+                margin-top: 10px;
                 color:#000;
                 cursor:pointer;
                 width:100%;
@@ -210,6 +272,7 @@
               .custom-faq .active:after, .custom-tax-new .active:after {
                 content:"\2716"
               }
+              p.line {margin-bottom: 20px;}
     </style>
     
   <script>
@@ -431,9 +494,6 @@
           {%- if product.metafields.link.customer-review-photo -%}
             {%- render 'customer-review-photo' with product -%}
           {%- endif -%}
-        <form style="display: none;" method="post" action="/cart">
-          <input  type="submit" class="custome_checkout" value="checkout" name="checkout"/>
-        </form>
       </div>
       
       <div class="grid__item medium-up--one-half">
@@ -780,9 +840,12 @@
               display: flex;
               align-items: center;
               justify-content: space-between;
+              -webkit-box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
+              -moz-box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
+              box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
             }
           </style>
-
+            <div class="text-center storyblock medium-up--hide"><span class="heading">Inspiring Stories</span></div>
           <div class="storyblock-text-left" style="margin: 0px auto; padding-top: 20px;">
             {% case product.title %}
               {% when 'Charming Owl' %}
@@ -800,8 +863,8 @@
           </div>
 
           <div class="shipping-banner">
-            <span class="shipping-banner-icon"><img src="{{'shipping-icon.png' | asset_url}}" width="45" height="45"></span>
-            <span class="shipping-banner-text">Domestic US shipping <span class="shipping-banner-text-bold">2-6 days!</span></span>
+            <div class="shipping-banner-icon"><img src="{{'shipping-icon.png' | asset_url}}" width="45" height="45"></div>
+            <div class="shipping-banner-text">Domestic US shipping <span class="shipping-banner-text-bold">2-6 days!</span></div>
           </div>
 
           <div class="banner-inspirational-gift">
@@ -815,7 +878,7 @@
                 <span class="advantage-item-num">01</span>
                 <div class="advantage-item_left">
                   <span class="advantage-item-title">Spend your time with your loved ones</span>
-                  <span class="advantage-item-text">Our puzzle is a good occasion to bring all the family and frien</span>
+                  <span class="advantage-item-text">Our puzzle is a good occasion to bring all the family and friends together</span>
                 </div>
               </div>
               <div class="advantage-item-img" style="background-image: url({{'dvantage-item-1.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
@@ -825,7 +888,7 @@
                 <span class="advantage-item-num">02</span>
                 <div class="advantage-item_left">
                   <span class="advantage-item-title">It is time to forget the daily routine!</span>
-                  <span class="advantage-item-text">Psychologists recommend puzzles for meditation and stress relie</span>
+                  <span class="advantage-item-text">Psychologists recommend puzzles for meditation and stress relief</span>
                 </div>
               </div>
               <div class="advantage-item-img" style="background-image: url({{'dvantage-item-2.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
@@ -853,8 +916,8 @@
           </div>
 
           <div class="banner-decorate-walls">
-            <img src="{{'banner-decorate-walls.png' | asset_url}}" class="small--hide">
-            <img src="{{'banner-decorate-walls_mob.png' | asset_url}}" class="medium-up--hide" style="width: 100%;">
+            <div class="banner-decorate-walls_header">DECORATE THE WALLS OF YOUR HOME</div>
+            <div class="banner-decorate-walls_text">You can decorate the interior with puzzles and our special mounting system</div>
           </div>
 
           <div class="product-single__description rte" itemprop="description">
@@ -875,35 +938,7 @@
               <div class="product-description">
                 
                 {{ product.description }}
-
-                      <script>
-                        let i = 0;
-                        let seMore = true;
-                        $('.description_spoiler').find('p').each(function(){
-                          if (i > 1 ) $(this).hide();
-                          i++;
-                        });
-                        function myFunction() {
-                        
-                          if (seMore) {
-                            $("#see-more")[0].innerHTML = 'Read less &#708;';
-                            seMore = false;
-                            let i = 0;
-                            $('.description_spoiler').find('p').each(function(){
-                              $(this).show();
-                              i++;
-                            });
-                          } else {
-                            $("#see-more")[0].innerHTML = 'See more <span style="font-size: 12px;">&#709;</span>';
-                            seMore = true;
-                            let i = 0;
-                            $('.description_spoiler').find('p').each(function(){
-                              if (i > 1 ) $(this).hide();
-                              i++;
-                            });
-                          }
-                        }
-                        </script>
+                <script>let i=0,seMore=!0;function myFunction(){if(seMore){$("#see-more")[0].innerHTML="Read less &#708;",seMore=!1;let e=0;$(".description_spoiler").find("p").each(function(){$(this).show(),e++})}else{$("#see-more")[0].innerHTML='See more <span style="font-size: 12px;">&#709;</span>',seMore=!0;let e=0;$(".description_spoiler").find("p").each(function(){e>1&&$(this).hide(),e++})}}$(".description_spoiler").find("p").each(function(){i>1&&$(this).hide(),i++});</script>
 
                 <div onclick="myFunction()" id="see-more">See more <span style="font-size: 12px;">&#709;</span></div>
               </div>
@@ -987,12 +1022,6 @@
             <span class="fake_counter fake-cntr" > {{ 'products.product.visitor_counter_text' | t}}</span>      
           </p>
             {% endif %}
-          {% if section.settings.show_del_time %} 
-          <div class="delivery_time_new">         
-              <img src="{{'delivery-icon.png' | asset_url }}"> 
-              <span>{{ 'products.product.deliiver_time_text_1' | t }} {{ section.settings.delivery_time_number}} {{ 'products.product.deliiver_time_text_2' | t }} </span>
-          </div>
-          {% endif %}
           {% if section.settings.product_review  %}
             <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div> 
           {% endif %}
@@ -1475,12 +1504,6 @@
         {
           "type":"header",
           "content":"Delivery Time"
-        },
-        {
-          "type":"checkbox",
-          "id": "show_del_time",
-          "label":"Enable Delivery Time",
-          "default": true
         },
         {
           "type": "text",

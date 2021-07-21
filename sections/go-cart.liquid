@@ -722,7 +722,8 @@
     
             <!--go cart drawer buttons-->
             <div class="go-cart-drawer__footer js-go-cart-drawer-footer">
-                <a href="/checkout/" class="go-cart__button">Checkout</a>
+                <a href="/checkout/" class="go-cart__button checkout">Checkout</a>
+                <a href="/cart/" class="go-cart__button cart">View cart</a>
             </div>
             <!--end go cart drawer buttons-->
         </div>
@@ -843,7 +844,14 @@
     {{ 'gocart.js' | asset_url | script_tag }}
     {{ 'magnific-popup.css' | asset_url | stylesheet_tag }}
     {{ 'jquery.magnific-popup.min.js' | asset_url | script_tag }}
-
+ <style>
+     .go-cart__button.checkout {
+         display: block;
+     }
+     .go-cart__button.cart {
+         display: none;
+     }
+ </style>
     <script>
         var goCart = new GoCart();
         $('.upsell-anoncment-popup').magnificPopup({type:'inline',midClick: true});
@@ -851,7 +859,7 @@
             $('.announcement-slider').slick({infinite:!1,arrows:!0,dots:!1,slidesToShow:1,slidesToScroll:1,variableWidth:!1,swipeToSlide:!0,rows:0,autoplay:true,autoplaySpeed:2000,responsive:[{breakpoint:1199,settings:{slidesToShow:1,variableWidth:!1}}]}).slick("slickGoTo",0);
         });
 
-        $.get("https://ipinfo.io/json?token=bfdc4f6f5babff", function (response) { if (response.country != "US"){ $('.go-cart-drawer-progress-bar').hide();} });
+        $.get("https://ipinfo.io/json?token=bfdc4f6f5babff", function (response) { if (response.country != "US"){ $('.go-cart-drawer-progress-bar').hide();$('.custom-tax-new').hide();} });
 
         $('.upsell-button').on('click',function(e){    
         e.preventDefault();
