@@ -24,7 +24,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 		featured_media: {{ product_6622323802160.featured_media | json }},
 		images: {{ product_6622323802160.images | json }},
 		quantity: {% assign quantity = '' %}{% for variant in product_6622323802160.variants %}{% assign quantity = quantity | append: variant.id | append: ':' | append: variant.inventory_quantity | append: ',' %}{% endfor %}{% assign quantity = quantity | split: ','%}{{quantity | json }}
-	};{% unless product.id == null %}window.__pageflyProducts["{{product.id}}"] = {
+	};
+{% unless product.id == null %}window.__pageflyProducts["{{product.id}}"] = {
 		id: {{ product.id | json }},
 		handle: {{ product.handle | json }},
 		title: {{ product.title | json }},
@@ -47,12 +48,310 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	};{% endunless %}
 	</script>{% if collection_161845575728 == null %}{%- assign collection_161845575728 = collections["wooden-puzzles"] -%}{% endif %} {% if collection_260572119088 == null %}{%- assign collection_260572119088 = collections["nature-puzzles"] -%}{% endif %}<script>
 	window.__pageflyCollections = window.__pageflyCollections || {};
-	window.__pageflyCollections["161845575728"] = {{collection_161845575728 | json }};window.__pageflyCollections["260572119088"] = {{collection_260572119088 | json }};
+	window.__pageflyCollections["161845575728"] = {{collection_161845575728 | json }};
+window.__pageflyCollections["260572119088"] = {{collection_260572119088 | json }};
 	</script><div style="opacity:0" class="sc-bCwfaz hzzSzX __pf" id="__pf"><div data-pf-type="Body" class="sc-eJocfa jARayQ pf-1_"><div data-pf-type="Layout" class="sc-gSYDnn jcqGXt pf-2_"><div data-element-placeholder="true" data-parallax="false" class="sc-ckTSus kVjkXt pf-4_ pf-bg-lazy pf-sm-hide pf-hide" data-pf-type="Section"><span data-pf-placeholder="true">Section</span></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-5_"><div style="--cw:1170px" class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-6_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c pf-lg-hide pf-md-hide" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-7_ pf-lg-hide pf-md-hide"><p class="sc-TtZnY fPBQTR pf-8_ pf-lg-hide pf-md-hide" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-10_">WOODEN
 JIGSAW
 PUZZLES</span></p></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-11_"><div class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-12_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-13_"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-d3fc6b92--unidragonwoodenpuzzlejigsawpuzzleforadultmilkywhalesm015-2_500x.jpg?v=1625649285" srcSet="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-d3fc6b92--unidragonwoodenpuzzlejigsawpuzzleforadultmilkywhalesm015-2.jpg?v=1625649285 1536w, https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-d3fc6b92--unidragonwoodenpuzzlejigsawpuzzleforadultmilkywhalesm015-2_1500x.jpg?v=1625649285 1280w, https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-d3fc6b92--unidragonwoodenpuzzlejigsawpuzzleforadultmilkywhalesm015-2_1000x.jpg?v=1625649285 768w, https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-d3fc6b92--unidragonwoodenpuzzlejigsawpuzzleforadultmilkywhalesm015-2_500x.jpg?v=1625649285 320w" width="1733" height="1300" sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px" loading="lazy" data-pf-type="Image" class="sc-carFqZ hBWCUB pf-14_ pf-lg-hide pf-md-hide"/></div></div></div><div class="sc-iwajpm kydRHc pf-15_ pf-r pf-c-cm pf-r-eh pf-lg-hide pf-md-hide pf-sm-hide pf-hide" style="--s-xs:15px;--s-lg:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:5"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-16_"><p class="sc-TtZnY fPBQTR pf-17_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-19_">WOODEN<br>JIGSAW<br>PUZZLES<br></span></p><div data-pf-type="Divider" class="sc-ezzafa cjBwMy pf-20_"></div><p class="sc-TtZnY fPBQTR pf-23_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-25_">MAKE GREAT
 GIFTS<br>FOR ADULTS</span></p><div data-pf-type="Divider" class="sc-ezzafa cjBwMy pf-26_"></div><p class="sc-TtZnY fPBQTR pf-29_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-31_">Don't miss out! Sales discounts on everything!</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:7"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-32_ pf-bg-lazy"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-d3fc6b92--unidragonwoodenpuzzlejigsawpuzzleforadultmilkywhalesm015-2_500x.jpg?v=1625649285" srcSet="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-d3fc6b92--unidragonwoodenpuzzlejigsawpuzzleforadultmilkywhalesm015-2.jpg?v=1625649285 1536w, https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-d3fc6b92--unidragonwoodenpuzzlejigsawpuzzleforadultmilkywhalesm015-2_1500x.jpg?v=1625649285 1280w, https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-d3fc6b92--unidragonwoodenpuzzlejigsawpuzzleforadultmilkywhalesm015-2_1000x.jpg?v=1625649285 768w, https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-d3fc6b92--unidragonwoodenpuzzlejigsawpuzzleforadultmilkywhalesm015-2_500x.jpg?v=1625649285 320w" width="1733" height="1300" sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px" loading="lazy" data-pf-type="Image" class="sc-carFqZ hBWCUB pf-33_"/></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-34_"><div style="--cw:1170px" class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-35_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c pf-lg-hide pf-md-hide" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-36_ pf-lg-hide pf-md-hide"><p class="sc-TtZnY fPBQTR pf-37_ pf-lg-hide pf-md-hide" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-39_">MAKE GREAT GIFTS
-FOR ADULTS</span></p><p class="sc-TtZnY fPBQTR pf-40_ pf-lg-hide pf-md-hide" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-42_">Don't miss out! Sales discounts on everything!</span></p></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-43_"><div style="--cw:1170px" class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-44_ pf-r pf-c-cm pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-45_"><p class="sc-TtZnY fPBQTR pf-46_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-48_">Wooden jigsaw puzzles make great gifts for adults. Why? Because they are one of the few gift ideas that are not overused. Rather than buying something generic for a friend, partner, or parent — why not get them a one-of-a-kind gift that they’ll never forget? With a quality wooden jigsaw puzzle from Unidragon, you can create the “wow” factor for that special someone in your life!</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-49_"><div data-pf-type="HTML.Video" class="sc-ciSkZP bwSYJA pf-50_"><video width="100%" height="auto" type="video/mp4?v=1626763284" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/Unidragon---Nature---ENCHANTING-SUNRISE---Wooden-Jigsaw-Puzzle.mp4?v=1626763284" poster="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-78ac2d58--pf6a6a80be-imgitem25.jpg?v=1625068109" controlsList="nodownload" disablepictureinpicture=""></video><svg width="64" height="64" viewBox="0 0 48 48"><path d="M24.0003 47.8334C37.1631 47.8334 47.8337 37.1629 47.8337 24.0001C47.8337 10.8373 37.1631 0.166748 24.0003 0.166748C10.8375 0.166748 0.166992 10.8373 0.166992 24.0001C0.166992 37.1629 10.8375 47.8334 24.0003 47.8334Z" fill="rgb(193, 193, 193, .61)"></path><path d="M19.667 32.6668V15.3335L32.667 24.0002L19.667 32.6668Z" fill="#fff"></path></svg></div></div></div></div><div class="sc-iwajpm kydRHc pf-51_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-52_"><h2 data-pf-type="Heading" class="sc-gXfVKN hOTIIO pf-53_"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-55_">The Struggles of Buying Gifts for Adults</span></h2></div></div></div><div class="sc-iwajpm kydRHc pf-56_ pf-r pf-c-cm pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-57_"><div data-pf-type="HTML.Video" class="sc-ciSkZP bwSYJA pf-58_"><video width="100%" height="auto" type="video/mp4?v=1626763362" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/City-Morning-New-York.mp4?v=1626763362" controls="" poster="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-ac2d58cf--pfc87f89f3-unidragonwoodenpuzzlejigsawpuzzleforadultmilkywhalesm0119.jpg?v=1625068128" controlsList="nodownload" disablepictureinpicture=""></video><svg width="64" height="64" viewBox="0 0 48 48"><path d="M24.0003 47.8334C37.1631 47.8334 47.8337 37.1629 47.8337 24.0001C47.8337 10.8373 37.1631 0.166748 24.0003 0.166748C10.8375 0.166748 0.166992 10.8373 0.166992 24.0001C0.166992 37.1629 10.8375 47.8334 24.0003 47.8334Z" fill="rgb(193, 193, 193, .61)"></path><path d="M19.667 32.6668V15.3335L32.667 24.0002L19.667 32.6668Z" fill="#fff"></path></svg></div></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-59_"><p class="sc-TtZnY fPBQTR pf-60_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-62_">More often than not, choosing the right present for children is pretty easy. You can almost always find toys or games to match their interests and hobbies. However, buying gifts for adults is far more complicated. Whether you’re choosing something for your spouse or a coworker, you might not have a good idea of what they want for a birthday, anniversary, or any other special occasion throughout the year. Fortunately, there is a solution that is versatile enough to work in nearly every situation: wooden jigsaw puzzles.</span></p></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-63_"><div style="--cw:1170px" class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-64_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-65_"><h3 data-pf-type="Heading" class="sc-gXfVKN hOTIIO pf-66_"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-68_">Why Wooden Jigsaw Puzzles?</span></h3><p class="sc-TtZnY fPBQTR pf-69_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-71_">You’re probably asking yourself: what’s so special about wooden jigsaw puzzles? In truth, there are a few important benefits that make Unidragon’s wooden jigsaw puzzles great gifts for adults, regardless of the occasion:</span></p></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-72_"><div style="--cw:1170px" class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-73_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-74_"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-fa423a05--pf1690d51f-IMG6548_500x.jpg?v=1625040928" srcSet="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-fa423a05--pf1690d51f-IMG6548.jpg?v=1625040928 1536w, https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-fa423a05--pf1690d51f-IMG6548_500x.jpg?v=1625040928 320w" width="555" height="832" sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px" loading="lazy" data-pf-type="Image" class="sc-carFqZ hBWCUB pf-75_"/></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-76_"><div class="sc-iwajpm kydRHc pf-77_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-78_"><h3 data-pf-type="Heading" class="sc-gXfVKN hOTIIO pf-79_"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-81_">Each puzzle piece has its own unique shape, making the puzzles far more complex and intricate than more traditional designs</span></h3></div></div></div><div class="sc-iwajpm kydRHc pf-82_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-83_"><h3 data-pf-type="Heading" class="sc-gXfVKN hOTIIO pf-84_"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-86_">Putting together a puzzle is an activity that appeals to both adults and children, making it an ideal hobby gift for the whole family&nbsp;</span></h3></div></div></div><div class="sc-iwajpm kydRHc pf-87_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-88_"><h3 data-pf-type="Heading" class="sc-gXfVKN hOTIIO pf-89_"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-91_">Each puzzle comes in a premium wooden gift box, ensuring that the experience of opening the gift is particularly special for the recipient</span></h3></div></div></div><div class="sc-iwajpm kydRHc pf-92_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-93_"><h3 data-pf-type="Heading" class="sc-gXfVKN hOTIIO pf-94_"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-96_">Unidragon releases new puzzles every month, allowing you to have unique gift ideas ready throughout the year</span></h3></div></div></div><div class="sc-iwajpm kydRHc pf-97_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-98_"><h3 data-pf-type="Heading" class="sc-gXfVKN hOTIIO pf-99_"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-101_">Every puzzle is sure to “wow” friends and family with bright, beautiful, colorful designs</span></h3></div></div></div></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-102_"><div style="--cw:1170px" class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-103_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-104_"><div data-product-id="6622323802160" data-default-variant="39578073071664" data-pf-type="ProductBox" class="sc-jtiXyc jireel pf-105_">{% assign defaultProduct = product %}{% assign product = product_6622323802160 %}<!-- -->{% if product != null %}{% form "product", product, data-productid: product.id, class: "pf-product-form" %}<div class="sc-iwajpm kydRHc pf-106_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-107_"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-e2fa423a--pagyfly_500x.jpg?v=1625040759" srcSet="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-e2fa423a--pagyfly.jpg?v=1625040759 1536w, https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-e2fa423a--pagyfly_500x.jpg?v=1625040759 320w" width="555" height="330" sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px" loading="lazy" data-pf-type="Image" class="sc-carFqZ hBWCUB pf-108_"/></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-109_"><h3 data-product-type="title" data-product-id="{{ product.id }}" data-pf-type="ProductTitle" class="sc-kmIPcE htFMXJ pf-110_">{{ product.title }}</h3><div data-product-type="compare_at_price" data-product-id="{{ product.id }}" data-pf-type="ProductPrice" class="sc-iIgjPs krBuaG pf-111_">{{ product.variants[0].compare_at_price | money }}</div><div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice" class="sc-iIgjPs krBuaG pf-112_">{{ product.variants[0].price | money }}</div><div data-combined="true" data-display="dropdown" data-label="true" data-product-id="{{ product.id }}" class="sc-bShgHC fLeAPa pf-113_ pf-r-ew" data-pf-type="ProductVariant"><select name="id" data-productid="{{product.id}}" class="pf-variant-select">{% for variant in product.variants %}<option value="{{ variant.id }}">{{ variant.title }} - {% if variant.available != true %}Sold Out {% else %} {{ variant.price | money }} {% endif %}</option>{% endfor %}</select></div><div data-compact="30" data-show-button="true" data-more="" data-less="" data-product-type="content" data-product-id="{{ product.id }}" data-pf-type="ProductDescription" class="sc-iIgjPs krBuaG pf-114_">{{ product.content }}</div><div data-pf-type="Block" class="sc-jffHpj jjTcTs pf-115_"><div data-product-id="{{ product.id }}" size="40" data-pf-type="ProductQuantity" class="sc-jhGUec kFMsSX pf-116_"><button data-quantity-action="decrease" type="button" data-pf-type="QuantityButton" class="pf-117_" store="[object Object]"><i class="pfa pfa-minus"></i></button><input type="number" value="1" min="1" max="{%- if product.selected_or_first_available_variant.inventory_quantity > 0 -%}{{ product.selected_or_first_available_variant.inventory_quantity }}{%- else -%}50{%- endif -%}" data-hidespinner="true" name="quantity" data-pf-type="QuantityField" class="sc-hkoqWr jwZvNA pf-118_"/><button data-quantity-action="increase" type="button" data-pf-type="QuantityButton" class="pf-119_" store="[object Object]"><i class="pfa pfa-plus"></i></button></div><button data-product-id="{{ product.id }}" data-checkout="same" data-soldout="Sold out" data-adding="Adding..." data-added="Thank you!" type="button" data-pf-type="ProductATC" class="sc-dvUynV dMGmXk pf-120_"><span>Add To Cart</span></button></div><a class="sc-juXuNZ KigMW pf-123_" data-product-id="{{ product.id }}" href="{{ product.url }}" data-pf-type="ProductViewDetails"><span>View Details</span></a></div></div></div>{% endform %}{% endif %}<!-- -->{% assign product = defaultProduct %}</div></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-126_"><div style="--cw:1170px" class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-127_ pf-r pf-c-ct" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-128_"><a data-action="openUrl" data-pf-type="Image" class="sc-iTVJFM oxVOu pf-129_"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-075e6f2c--imgitem14_500x.jpg?v=1623161733" srcSet="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-075e6f2c--imgitem14.jpg?v=1623161733 1536w, https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-075e6f2c--imgitem14_500x.jpg?v=1623161733 320w" width="570" height="428" sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px" loading="lazy" alt="Confectioner image" class="sc-carFqZ hBWCUB"/></a></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-130_"><p class="sc-TtZnY fPBQTR pf-131_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-133_">If you’re still on the fence about wooden jigsaw puzzles as gifts, you can rest easy knowing that Unidragon stands by its products. We only produce high-quality jigsaw puzzles for adults and children. However, just because we believe in creating beautiful puzzles doesn’t mean we overcharge for our products. In fact, Unidragon manufacturers some of the most affordable wooden puzzles on the market. In short, if you’re looking for the best wooden jigsaw puzzles for adults, Unidragon has got you covered!<br></span></p></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-134_"><div style="--cw:1170px" class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-135_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-136_"><p class="sc-TtZnY fPBQTR pf-137_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-139_">If you are looking for the ideal gift, there’s no doubt that a wooden puzzle goes beyond ‘ordinary’. The wooden puzzles we have to offer at Unidragon are of premium quality. She or hi will be completely mesmerised by this precious gift, and will simply love the journey you take together when putting each piece together. Because our puzzles, just like life, are a journey – a journey you will take together.</span></p></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-140_"><div class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-141_ pf-r pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-142_"><div data-pf-type="Custom.HTML" class="sc-cBoqAE lRfdj pf-143_"><div class="reputon-trustpilot-reviews-widget" id="78c456a0-bc54-11eb-910a-479bd9607d41" ></div></div></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-144_"><div style="--cw:1170px" class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-145_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-146_"><div class="sc-gGGFjW jNWwl pf-147_ pf-r pf-r-ew" style="--s-xs:15px;--ew-xs:2;--ew-md:4" data-pf-type="ProductList">{% assign collection_161845575728 = collections["wooden-puzzles"] %}<!-- -->{% assign defaultProduct = product %}<!-- -->{% paginate collection_161845575728.products by 4 %}<!-- -->{% for product in collection_161845575728.products %}<div class="pf-c"><div data-product-id="{{ product.id }}" data-pf-type="ProductBox" class="sc-jtiXyc jireel pf-148_">{% if product != null %}{% form "product", product, data-productid: product.id, class: "pf-product-form" %}<div class="sc-iwajpm kydRHc pf-149_ pf-r pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-150_"><div data-product-id="{{ product.id }}" data-pf-type="ProductImage" class="sc-fyjqAk dtoRLS pf-151_">{% assign images = product.images %}<div style="--w-xs:0" class="sc-JsfZP fqhZYB pf-r-dg"><div data-href="{{ product.url }}" data-pf-type="MasterImage" style="order:0;--ratio:100%" class="sc-cGKJhA khEVbn"><img src="{{ product.featured_image | img_url: "x270", scale: 2 }}" alt="{{ product.featured_image.alt }}" loading="lazy" width="{{ product.featured_image.width }}" height="{{ product.featured_image.height }}"/>{% assign _product = product %}<div data-pf-type="ProductImagePagination" class="sc-iXeHaJ xCnor pf-hide pf-sm-hide pf-md-hide pf-lg-hide">{% for i in (1..images.size) %}<span></span>{% endfor %}</div></div><div class="sc-bUQyIj exIfBg pf-hide pf-sm-hide pf-md-hide pf-lg-hide"><div data-pf-type="ProductImageList" class="sc-tsGVs liNYvh pf-r-dg">
+FOR ADULTS</span></p><p class="sc-TtZnY fPBQTR pf-40_ pf-lg-hide pf-md-hide" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-42_">Don't miss out! Sales discounts on everything!</span></p></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-43_"><div style="--cw:1170px" class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-44_ pf-r pf-c-cm pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-45_"><p class="sc-TtZnY fPBQTR pf-46_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-48_">Wooden jigsaw puzzles make great gifts for adults. Why? Because they are one of the few gift ideas that are not overused. Rather than buying something generic for a friend, partner, or parent — why not get them a one-of-a-kind gift that they’ll never forget? With a quality wooden jigsaw puzzle from Unidragon, you can create the “wow” factor for that special someone in your life!</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-49_"><div data-pf-type="HTML.Video" class="sc-ciSkZP bwSYJA pf-50_"><video width="100%" height="auto" type="video/mp4?v=1626763284" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/Unidragon---Nature---ENCHANTING-SUNRISE---Wooden-Jigsaw-Puzzle.mp4?v=1626763284" poster="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-78ac2d58--pf6a6a80be-imgitem25.jpg?v=1625068109" controlsList="nodownload" disablepictureinpicture=""></video><svg width="64" height="64" viewBox="0 0 48 48"><path d="M24.0003 47.8334C37.1631 47.8334 47.8337 37.1629 47.8337 24.0001C47.8337 10.8373 37.1631 0.166748 24.0003 0.166748C10.8375 0.166748 0.166992 10.8373 0.166992 24.0001C0.166992 37.1629 10.8375 47.8334 24.0003 47.8334Z" fill="rgb(193, 193, 193, .61)"></path><path d="M19.667 32.6668V15.3335L32.667 24.0002L19.667 32.6668Z" fill="#fff"></path></svg></div></div></div></div><div class="sc-iwajpm kydRHc pf-51_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-52_"><h2 data-pf-type="Heading" class="sc-gXfVKN hOTIIO pf-53_"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-55_">The Struggles of Buying Gifts for Adults</span></h2></div></div></div><div class="sc-iwajpm kydRHc pf-56_ pf-r pf-c-cm pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-57_"><div data-pf-type="HTML.Video" class="sc-ciSkZP bwSYJA pf-58_"><video width="100%" height="auto" type="video/mp4?v=1626763362" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/City-Morning-New-York.mp4?v=1626763362" controls="" poster="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-ac2d58cf--pfc87f89f3-unidragonwoodenpuzzlejigsawpuzzleforadultmilkywhalesm0119.jpg?v=1625068128" controlsList="nodownload" disablepictureinpicture=""></video><svg width="64" height="64" viewBox="0 0 48 48"><path d="M24.0003 47.8334C37.1631 47.8334 47.8337 37.1629 47.8337 24.0001C47.8337 10.8373 37.1631 0.166748 24.0003 0.166748C10.8375 0.166748 0.166992 10.8373 0.166992 24.0001C0.166992 37.1629 10.8375 47.8334 24.0003 47.8334Z" fill="rgb(193, 193, 193, .61)"></path><path d="M19.667 32.6668V15.3335L32.667 24.0002L19.667 32.6668Z" fill="#fff"></path></svg></div></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-59_"><p class="sc-TtZnY fPBQTR pf-60_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-62_">More often than not, choosing the right present for children is pretty easy. You can almost always find toys or games to match their interests and hobbies. However, buying gifts for adults is far more complicated. Whether you’re choosing something for your spouse or a coworker, you might not have a good idea of what they want for a birthday, anniversary, or any other special occasion throughout the year. Fortunately, there is a solution that is versatile enough to work in nearly every situation: wooden jigsaw puzzles.</span></p></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-63_"><div style="--cw:1170px" class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-64_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-65_"><h3 data-pf-type="Heading" class="sc-gXfVKN hOTIIO pf-66_"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-68_">Why Wooden Jigsaw Puzzles?</span></h3><p class="sc-TtZnY fPBQTR pf-69_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-71_">You’re probably asking yourself: what’s so special about wooden jigsaw puzzles? In truth, there are a few important benefits that make Unidragon’s wooden jigsaw puzzles great gifts for adults, regardless of the occasion:</span></p></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-72_"><div style="--cw:1170px" class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-73_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-74_"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-fa423a05--pf1690d51f-IMG6548_500x.jpg?v=1625040928" srcSet="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-fa423a05--pf1690d51f-IMG6548.jpg?v=1625040928 1536w, https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-fa423a05--pf1690d51f-IMG6548_500x.jpg?v=1625040928 320w" width="555" height="832" sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px" loading="lazy" data-pf-type="Image" class="sc-carFqZ hBWCUB pf-75_"/></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-76_"><div class="sc-iwajpm kydRHc pf-77_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-78_"><h3 data-pf-type="Heading" class="sc-gXfVKN hOTIIO pf-79_"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-81_">Each puzzle piece has its own unique shape, making the puzzles far more complex and intricate than more traditional designs</span></h3></div></div></div><div class="sc-iwajpm kydRHc pf-82_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-83_"><h3 data-pf-type="Heading" class="sc-gXfVKN hOTIIO pf-84_"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-86_">Putting together a puzzle is an activity that appeals to both adults and children, making it an ideal hobby gift for the whole family&nbsp;</span></h3></div></div></div><div class="sc-iwajpm kydRHc pf-87_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-88_"><h3 data-pf-type="Heading" class="sc-gXfVKN hOTIIO pf-89_"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-91_">Each puzzle comes in a premium wooden gift box, ensuring that the experience of opening the gift is particularly special for the recipient</span></h3></div></div></div><div class="sc-iwajpm kydRHc pf-92_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-93_"><h3 data-pf-type="Heading" class="sc-gXfVKN hOTIIO pf-94_"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-96_">Unidragon releases new puzzles every month, allowing you to have unique gift ideas ready throughout the year</span></h3></div></div></div><div class="sc-iwajpm kydRHc pf-97_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-98_"><h3 data-pf-type="Heading" class="sc-gXfVKN hOTIIO pf-99_"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-101_">Every puzzle is sure to “wow” friends and family with bright, beautiful, colorful designs</span></h3></div></div></div></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-102_"><div style="--cw:1170px" class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-103_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-104_"><div data-product-id="6622323802160" data-default-variant="39578073071664" data-pf-type="ProductBox" class="sc-jtiXyc jireel pf-105_">{% assign defaultProduct = product %}{% assign product = product_6622323802160 %}<!-- -->{% if product != null %}{% form "product", product, data-productid: product.id, class: "pf-product-form" %}<div class="sc-iwajpm kydRHc pf-106_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-107_"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-e2fa423a--pagyfly_500x.jpg?v=1625040759" srcSet="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-e2fa423a--pagyfly.jpg?v=1625040759 1536w, https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-e2fa423a--pagyfly_500x.jpg?v=1625040759 320w" width="555" height="330" sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px" loading="lazy" data-pf-type="Image" class="sc-carFqZ hBWCUB pf-108_"/></div></div>
+<div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-109_"><h3 data-product-type="title" data-product-id="{{ product.id }}" data-pf-type="ProductTitle" class="sc-kmIPcE htFMXJ pf-110_">{{ product.title }}</h3><div data-product-type="compare_at_price" data-product-id="{{ product.id }}" data-pf-type="ProductPrice" class="sc-iIgjPs krBuaG pf-111_">{{ product.variants[0].compare_at_price | money }}</div><div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice" class="sc-iIgjPs krBuaG pf-112_">{{ product.variants[0].price | money }}</div>
+<div data-combined="true" data-display="dropdown" data-label="true" data-product-id="{{ product.id }}" class="sc-bShgHC fLeAPa pf-113_ pf-r-ew" data-pf-type="ProductVariant">
+	<select name="id" data-productid="{{product.id}}" class="pf-variant-select">
+		{% for variant in product.variants %}<option value="{{ variant.id }}">{{ variant.title }} - {% if variant.available != true %}Sold Out {% else %} {{ variant.price | money }} {% endif %}</option>{% endfor %}</select>
+</div>
+{% if product.variants.size > 1 %}
+<div class="swatch_options">
+  {% for option in product.options %}
+	{% assign swatch = option %}
+
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% comment %}
+Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
+{% endcomment %}
+
+{%- assign file_extension = 'jpg' -%}
+
+{%- if swatch == blank -%}
+  <div class="swatch error">
+    <p><ly-as-16902707>You must include the snippet swatch.liquid with the name of a product option.</ly-as-16902707></p>
+    <p><ly-as-16902708>Use:</ly-as-16902708> <code>{% raw %}{% include 'swatch' with 'name of your product option here' %}{% endraw %}</code></p>
+    <p><ly-as-16902710>Example:</ly-as-16902710> <code>{% raw %}{% include 'swatch' with 'Color' %}{% endraw %}</code></p>
+  </div>
+{%- else -%}
+
+  {%- assign found_option = false -%}
+  {%- assign is_color = false -%}
+  {%- assign option_index = 0 -%}
+
+  {% for option in product.options %}
+    {% if option == swatch %}
+      {% assign found_option = true %}
+      {% assign option_index = forloop.index0 %}
+      <style>
+        label[for="product-select-option-{{ option_index }}"] { display: none; }
+        #product-select-option-{{ option_index }} { display: none; }
+        #product-select-option-{{ option_index }} + .custom-style-select-box { display: none !important; }
+      </style>
+      <script>$(window).load(function() { $('.selector-wrapper:eq({{ option_index }})').hide(); });</script>
+      {% assign downcased_option = swatch | downcase %}
+      {% if downcased_option contains 'color' or downcased_option contains 'colour' %}
+        {% assign is_color = true %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+{% unless found_option %}
+  <div class="swatch error">
+    <p><ly-as-16902712>You included the snippet swatch.liquid with the name of a product option —</ly-as-16902712> <code>'{{ swatch }}'</code> <ly-as-16902713>— that does not belong to your product.</ly-as-16902713></p>
+    <p><ly-as-16902714>Use</ly-as-16902714> <code>{% raw %}{% include 'swatch' with 'name of your product option here' %}{% endraw %}</code></p>
+    <p><ly-as-16902710>Example:</ly-as-16902710> <code>{% raw %}{% include 'swatch' with 'Color' %}{% endraw %}</code></p>
+    <p><strong><ly-as-16902715>This is case-sensitive!</ly-as-16902715></strong> <ly-as-16902716>Do not put in</ly-as-16902716> <code><ly-as-16902717>'color'</ly-as-16902717></code> <ly-as-16902718>if your product option name is</ly-as-16902718> <code><ly-as-16902719>'Color'</ly-as-16902719></code>.</p>
+  </div>
+{% else %}
+  <div class="swatch {% if product.type == 'Puzzle' %}sw-size{% endif %} clearfix" data-option-index="{{ option_index }}">
+    <div class="header">Choose {{ swatch }}:</div>
+    <div class="swatch_container">
+      {%- assign values = '' -%}
+      {%- assign size_count = 0 -%}
+      {%- for variant in product.variants -%}
+
+      {%- assign value = variant.options[option_index] -%}
+      {%- unless values contains value -%}
+      {%- assign values = values | join: ',' -%}
+      {%- assign values = values | append: ',' | append: value -%}
+      {%- assign values = values | split: ',' -%}
+      <div data-value="{{ variant.id }}" class="swatch-element {% if is_color and section.settings.swatch_option == 'with_background' %}color with_bg_color {% elsif is_color and section.settings.swatch_option == 'without_background'%}color color_without_bg {% endif %}{% if is_color and section.settings.color_style == 'square_box' %}square_shape {% elsif is_color and section.settings.color_style == 'round_shape'%}round_shape {% endif %}{{ swatch }} {{ value | handle }} {% if variant.available %}available{% else %}soldout{% endif %}">
+        {%- if is_color and section.settings.swatch_option == 'with_background' -%}
+          <div class="tooltip">{{ value }}</div>
+        {%- endif -%}
+
+        {%- if product.type == 'Puzzle' -%}
+        {%- assign size_count = size_count | plus: 1 -%}
+        <input id="swatch-{{ option_index }}-{{ value | handle }}-{{ section.id }}" type="radio" ga-data="{{size_count}}" name="option-{{ option_index }}" value="{{ value | escape }}"{% if forloop.first %}{% unless section.settings.enable_default_variant %} checked{% endunless %}{% endif %} {% unless variant.available %}disabled{% endunless %} />
+        {% if is_color and section.settings.swatch_option == 'with_background' %}
+          <label for="swatch-{{ option_index }}-{{ value | handle }}-{{ section.id }}" style="background-color: {{ value | split: ' ' | last | handle }}; background-image: url({% comment %}ly_asset_replace_for_[ value | handle | append: '.' | append: file_extension | asset_url ]_begin{% endcomment %}{% assign ly_asset = value | handle | append: '.' | append: file_extension %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %})">
+            <img class="crossed-out" src="{% comment %}ly_asset_replace_for_[ 'soldout-1.png' | asset_url ]_begin{% endcomment %}{% assign ly_asset = 'soldout-1.png' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}" />
+          </label>
+        {%- else -%}
+        <label style="height: 100% !important;display: flex;flex-wrap: nowrap;flex-direction: row;align-items: center;justify-content: space-around;align-content: center;" for="swatch-{{ option_index }}-{{ value | handle }}-{{ section.id }}">
+          {%- if size_count == 3 -%}
+            <div class="product__labels most-popular-label">
+                <span class="product__label product__label--most-popular">most popular</span>
+            </div>
+          {%- endif -%}
+          <div class="indoor-block">
+            <div class="size-label">
+              <div class="size">
+                {%- case size_count -%}
+                  {%- when 1 -%}
+                  <div><span>S</span></div>
+                  {%- when 2 -%}
+                  <div><span>m</span></div>
+                  {%- when 3 -%}
+                  <div><span>King </span><span>Size</span></div>
+                  {%- when 4 -%}
+                  <div style="width: 68px;"><span>Royal </span><span>Size</span></div>
+                {%- endcase -%}
+              </div>
+            </div>
+          <div class="sw_content_outer">
+            <div class="sw_image_outer">
+                {%- case size_count -%}
+                  {%- when 2 -%}
+                  <span class="sw_badge">2x bigger</span>
+                  {%- when 3 -%}
+                  <span class="sw_badge">3x bigger</span>
+                  {%- when 4 -%}
+                  <span class="sw_badge">7x bigger</span>
+                {%- endcase -%}
+            </div>
+            <div class="sw_var_price">
+              {%- if variant.compare_at_price > variant.price -%}
+                  <span class="sw_com_price">{{variant.compare_at_price | money }}</span>
+              {% endif %}
+              <span class="sw_m_price">{{variant.price | money }}</span>
+            </div>
+            {%- assign opt_parametr = value | split: '—' -%}
+            <span class="sw_val">{{ opt_parametr[0] }} {{opt_parametr[1]}}</span>
+            <span class="sw_val">{{ value | split: '—' | last }}</span>
+          </div>
+      </div>
+      
+        </label>
+        {%- else -%}
+          <label for="swatch-{{ option_index }}-{{ value | handle }}-{{ section.id }}">
+            {{ value }}
+            <img class="crossed-out" src="{% assign ly_asset = 'soldout-1.png' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}" />
+          </label>
+        {%- endif -%}
+
+        {%- endif -%}
+
+      </div>
+      {%- endunless -%}
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endunless -%}
+{%- endif -%}
+<script>
+  jQuery('.swatch[data-option-index="{{ option_index }}"] .{{ value | handle }}').removeClass('soldout').addClass('available').find(':radio').removeAttr('disabled');
+  $('.pf-variant-select').hide();
+  $('.swatch-element').click( function() {
+    let variant_id = $(this).data( 'value' );
+	let i =0;
+	$('.pf-variant-select').find('option').each(function(){
+		 if ($(this).val() == variant_id) {
+		$(this).prop('selected', true);
+		$('.pf-112_ > .money').text('$'+Number(__pageflyProducts["6622323802160"].variants[i].price*0.01).toFixed(2));
+		$('.pf-111_ > .money').text('$'+Number(__pageflyProducts["6622323802160"].variants[i].compare_at_price*0.01).toFixed(2));
+	} 
+	i++;
+})
+	//console.log(variant_id);
+  });
+
+
+
+</script>
+<style>
+.size-label {
+    width: 95px;
+    text-align: -webkit-center;
+    text-align: -moz-center;
+}
+  .indoor-block{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+  .most-popular-label {
+    display:none;
+    top: 9px;
+  }
+  @media (min-width: 1186px) {
+      .most-popular-label {
+        top: 135px;
+        right: auto;
+    }
+  }
+  @media (min-width: 980px) and (max-width: 1186px) {
+      .most-popular-label {
+        top: 110px;
+        right: auto;
+    }
+  }
+  .swatch {overflow: hidden;}
+  .swatch-nav, .header {display: flex;}
+  .swatch-nav {
+    margin-left: auto;
+    order: 2;
+  }
+  .sw-size .swatch_container .swatch-element label {width:100%}
+  .swatch_container, .sw-size .swatch_container .swatch-element label {
+    /*display: grid;
+    grid-template-columns: repeat(2, 1fr);*/
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px -15px 0;
+  }
+  .swatch-element .size {
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-transform: uppercase;
+    font-size: 14px;
+    width: 100px;
+  }
+  .sw_content_outer {
+    text-align: left;
+    padding-left: 20px;
+    width: 150px;
+  }
+  .sw_var_price {
+    justify-content: flex-start !important;
+  }
+  .size > div {
+      text-align: center;
+      line-height: 1;
+  }
+
+  .swatch .swatch-element {
+    height: 150px;
+    padding: 0 15px 15px 0;
+    flex: 0 1 50%;
+    margin: 0;
+  }
+  .swatch {
+    margin-bottom: 25px;
+  }
+
+  .swatch-label {
+    height: 100% !important;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    align-content: center;
+  }
+
+.swatch-element:nth-child(1) .size {
+	width:38px;
+	height: 38px;
+}
+
+.swatch-element:nth-child(2) .size {
+	width:48px;
+	height: 48px;
+	font-weight: bold;
+}
+
+.swatch-element:nth-child(3) .size {
+	width:58px;
+	height: 58px;
+}
+
+.swatch-element:nth-child(3) .size div span:first-child,  .swatch-element:nth-child(4) .size div span:first-child{
+	font-weight: bold;
+}
+
+.swatch-element:nth-child(4) .size {
+	width: 88px;
+	height: 88px;
+}
+
+.swatch-element:nth-child(2) {
+	column-gap: 27px
+}
+
+.swatch-element:nth-child(3) {
+	column-gap: 22px
+}
+
+.sw-size .swatch_container .swatch-element label:nth-child(4) {
+	column-gap: 17px
+}
+</style>
+
+
+
+
+  {% endfor %} 
+</div>
+{% endif %}
+
+
+
+
+
+<div data-compact="30" data-show-button="true" data-more="" data-less="" data-product-type="content" data-product-id="{{ product.id }}" data-pf-type="ProductDescription" class="sc-iIgjPs krBuaG pf-114_">{{ product.content }}</div><div data-pf-type="Block" class="sc-jffHpj jjTcTs pf-115_"><div data-product-id="{{ product.id }}" size="40" data-pf-type="ProductQuantity" class="sc-jhGUec kFMsSX pf-116_"><button data-quantity-action="decrease" type="button" data-pf-type="QuantityButton" class="pf-117_" store="[object Object]"><i class="pfa pfa-minus"></i></button><input type="number" value="1" min="1" max="{%- if product.selected_or_first_available_variant.inventory_quantity > 0 -%}{{ product.selected_or_first_available_variant.inventory_quantity }}{%- else -%}50{%- endif -%}" data-hidespinner="true" name="quantity" data-pf-type="QuantityField" class="sc-hkoqWr jwZvNA pf-118_"/><button data-quantity-action="increase" type="button" data-pf-type="QuantityButton" class="pf-119_" store="[object Object]"><i class="pfa pfa-plus"></i></button></div><button data-product-id="{{ product.id }}" data-checkout="same" data-soldout="Sold out" data-adding="Adding..." data-added="Thank you!" type="button" data-pf-type="ProductATC" class="sc-dvUynV dMGmXk pf-120_"><span>Add To Cart</span></button></div><a class="sc-juXuNZ KigMW pf-123_" data-product-id="{{ product.id }}" href="{{ product.url }}" data-pf-type="ProductViewDetails"><span>View Details</span></a></div></div></div>{% endform %}{% endif %}<!-- -->{% assign product = defaultProduct %}</div></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-126_"><div style="--cw:1170px" class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-127_ pf-r pf-c-ct" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-128_"><a data-action="openUrl" data-pf-type="Image" class="sc-iTVJFM oxVOu pf-129_"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-075e6f2c--imgitem14_500x.jpg?v=1623161733" srcSet="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-075e6f2c--imgitem14.jpg?v=1623161733 1536w, https://cdn.shopify.com/s/files/1/0291/1322/1168/t/14/assets/pf-075e6f2c--imgitem14_500x.jpg?v=1623161733 320w" width="570" height="428" sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px" loading="lazy" alt="Confectioner image" class="sc-carFqZ hBWCUB"/></a></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-130_"><p class="sc-TtZnY fPBQTR pf-131_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-133_">If you’re still on the fence about wooden jigsaw puzzles as gifts, you can rest easy knowing that Unidragon stands by its products. We only produce high-quality jigsaw puzzles for adults and children. However, just because we believe in creating beautiful puzzles doesn’t mean we overcharge for our products. In fact, Unidragon manufacturers some of the most affordable wooden puzzles on the market. In short, if you’re looking for the best wooden jigsaw puzzles for adults, Unidragon has got you covered!<br></span></p></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-134_"><div style="--cw:1170px" class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-135_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-136_"><p class="sc-TtZnY fPBQTR pf-137_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-eGJWMs gQYBcx pf-139_">If you are looking for the ideal gift, there’s no doubt that a wooden puzzle goes beyond ‘ordinary’. The wooden puzzles we have to offer at Unidragon are of premium quality. She or hi will be completely mesmerised by this precious gift, and will simply love the journey you take together when putting each piece together. Because our puzzles, just like life, are a journey – a journey you will take together.</span></p></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-140_"><div class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-141_ pf-r pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-142_"><div data-pf-type="Custom.HTML" class="sc-cBoqAE lRfdj pf-143_"><div class="reputon-trustpilot-reviews-widget" id="78c456a0-bc54-11eb-910a-479bd9607d41" ></div></div></div></div></div></div></div><div data-pf-type="Section" class="sc-ckTSus kVjkXt pf-144_"><div style="--cw:1170px" class="sc-gGLxEB dGJRan"><div class="sc-iwajpm kydRHc pf-145_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-146_"><div class="sc-gGGFjW jNWwl pf-147_ pf-r pf-r-ew" style="--s-xs:15px;--ew-xs:2;--ew-md:4" data-pf-type="ProductList">{% assign collection_161845575728 = collections["wooden-puzzles"] %}<!-- -->{% assign defaultProduct = product %}<!-- -->{% paginate collection_161845575728.products by 4 %}<!-- -->{% for product in collection_161845575728.products %}<div class="pf-c"><div data-product-id="{{ product.id }}" data-pf-type="ProductBox" class="sc-jtiXyc jireel pf-148_">{% if product != null %}{% form "product", product, data-productid: product.id, class: "pf-product-form" %}<div class="sc-iwajpm kydRHc pf-149_ pf-r pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-lg:12"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-150_"><div data-product-id="{{ product.id }}" data-pf-type="ProductImage" class="sc-fyjqAk dtoRLS pf-151_">{% assign images = product.images %}<div style="--w-xs:0" class="sc-JsfZP fqhZYB pf-r-dg"><div data-href="{{ product.url }}" data-pf-type="MasterImage" style="order:0;--ratio:100%" class="sc-cGKJhA khEVbn"><img src="{{ product.featured_image | img_url: "x270", scale: 2 }}" alt="{{ product.featured_image.alt }}" loading="lazy" width="{{ product.featured_image.width }}" height="{{ product.featured_image.height }}"/>{% assign _product = product %}<div data-pf-type="ProductImagePagination" class="sc-iXeHaJ xCnor pf-hide pf-sm-hide pf-md-hide pf-lg-hide">{% for i in (1..images.size) %}<span></span>{% endfor %}</div></div><div class="sc-bUQyIj exIfBg pf-hide pf-sm-hide pf-md-hide pf-lg-hide"><div data-pf-type="ProductImageList" class="sc-tsGVs liNYvh pf-r-dg">
 								{% assign pf_all = "" %}
 								{% assign pf_laptop = "" %}
 								{% assign pf_tablet = "" %}
