@@ -19,7 +19,6 @@
   <meta name="google-site-verification" content="a4TAWTeb_JqFZ6hfN97VJ_UnJcM5d9ONGZ_qf7-S2JY" />
   <link rel="canonical" href="{{ canonical_url }}">
   {% comment %}
-  {% include 'ly-languages-switcher' %}
   {% endcomment %}
   {%- if settings.favicon != blank -%}
     <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
@@ -182,7 +181,20 @@ snaptr('track', 'PAGE_VIEW');
 </script>
 <!-- End Snap Pixel Code -->
   
-
+  
+   <!-- DV 11/03/21 geotargetly -->
+<script>
+(function(g,e,o,t,a,r,ge,tl,y){
+s=function(){var def='geotargetlygeocontent1626874543940_default',len=g.getElementsByClassName(def).length;
+if(len>0){for(i=0;i<len;i++){g.getElementsByClassName(def)[i].style.display='inline';}}};
+t=g.getElementsByTagName(e)[0];y=g.createElement(e);
+y.async=true;y.src='https://g1584674680.co/gc?id=-Mf8GrtsRBP3ymbGa6Xn&refurl='+g.referrer+'&winurl='+encodeURIComponent(window.location);
+t.parentNode.insertBefore(y,t);y.onerror=function(){s()};
+})(document,'script');
+</script>
+<noscript><style>.geotargetlygeocontent1626874543940_default{display:inline !important}</style></noscript>
+<!-- End geotargetly Code -->
+  
   
 <!-- DV 16/03/21 Tiktok Pixel Code -->
   <script>
