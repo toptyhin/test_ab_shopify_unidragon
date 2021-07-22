@@ -385,9 +385,11 @@
           <img src="{{ featured_image | img_url: product_image_size, scale: product_image_scale }}" loading="lazy" alt="{{ featured_image.alt }}" id="FeaturedImage-{{ section.id }}" class="product-featured-img" style="max-width: 530px;">
         </noscript>
   
-        {% if product.images.size > 1 %}
-          {%- assign enable_thumbnail_slides = true -%}
-        {% endif %}
+        {%- liquid
+          if product.images.size > 1
+            assign enable_thumbnail_slides = true
+          endif 
+        -%}
   
         <div class="thumbnails-wrapper {% if product.images.size == 1 %}medium-up--hide{% endif %}{% if enable_thumbnail_slides == true %} thumbnails-slider--active{% endif %}">
           {% if enable_thumbnail_slides == true %}
@@ -565,13 +567,13 @@
   
             <select name="id" data-productid="{{ product.id }}" id="ProductSelect-{{ section.id }}" data-section="{{ section.id }}" class="product-form__variants no-js">
               {% for variant in product.variants %}
-              {% if variant.available %}
-              <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
-                {{ variant.title }}
-              </option>
-              {% else %}
-              <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
-              {% endif %}
+                {% if variant.available %}
+                  <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+                    {{ variant.title }}
+                  </option>
+                {% else %}
+                  <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+                {% endif %}
               {% endfor %}
             </select>
   
@@ -602,7 +604,9 @@
             <input required type="hidden" id="upsellcheckquantity" name="properties[upsellcheckquantity]">
             
             {% endform %}
-  
+
+            {%- render 'back-in-stock-form', product_id: product.id, product_variants_id: current_variant.id -%}
+
             {% if section.settings.enable_sticky %}
             <style>
   
@@ -675,20 +679,13 @@
             </style>
   
             {% if section.settings.enable_buy_it_stiky_qty %}
-            <style> 
-              @media screen and (max-width:749px) {
-                #mst-stiky-box div#sticky_btnn.product-form__item--quantity{ display:none !important; } 
-                #AddToCartForm1.stiky_form button#AddToCart{ width:100% !important; } 
-                #progress_bar1,#progressBar{ display: none !important; } 
-              }
-              {% if section.settings.enable_buy_it_stiky_qty and section.settings.sticky_button == 'show_progress_bar' %}
-              #progress_bar2,#progressBar1{ display: block !important; }
-              #AddToCartForm1.stiky_form .product-form__item.product-form__item--quantity input#Quantity {
-                padding: 9px;
-              }
-              {% endif %}
-  
-            </style>
+              <style> 
+                @media screen and (max-width:749px) {
+                  #mst-stiky-box div#sticky_btnn.product-form__item--quantity{ display:none !important; } 
+                  #AddToCartForm1.stiky_form button#AddToCart{ width:100% !important; } 
+                  #progress_bar1,#progressBar{ display: none !important; } 
+                }
+              </style>
             {% else %}
   
             <style> 
@@ -701,32 +698,6 @@
             {% assign price_var1=current_variant.price | times: discount_amount | withoutmoney %}  
             <div id="AddToCartForm1" class="product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %} stiky_form{% if price_var1 == 0 %} zerocost_from_box {% endif %}" data-section="{{ section.id }}" >
               <div id="mst-stiky-box" class="mst-stiky-div">
-                {% if section.settings.enable_timer_stg_on == 'enable_timer_stg_on' %}  
-                  {% if section.settings.sticky_button == 'show_timer' %}
-                    {% assign tg = 'show' %}
-      
-                    {% if settings.disable_timer_use_tag %}
-                      {% for tag in product.tags %}
-                        {% if "no-timer" == tag %}
-                          {% assign tg = 'hide' %}
-                        {% endif %}
-                      {% endfor %}
-                    {% endif %}
-                    
-                    {% if current_variant.compare_at_price > current_variant.price %}
-                      <div class="price-lable {{tg }}">{{ 'products.product.sticky_timer_text' | t }} 
-                        {% include 'sticky_timer_mobile'%}
-                      </div>
-                    {% else %}
-                      {% unless settings.disable_timer_regular_price %}
-                        <div class="price-lable {{tg }}">{{ 'products.product.sticky_timer_text' | t }} 
-                          {% include 'sticky_timer_mobile'%}
-                        </div>
-                      {% endunless %}
-                    {% endif %}
-                  {% endif %}
-                {% endif %}
-  
                 {% if price_var1 == 0 %}          
                   <button type="button" name="add" id="AddToCartZero" class="btn_sp btn stiky_button{% if section.settings.enable_payment_button %} dynamic_paybtn {% endif %}{% if section.settings.shake_effect_enable %} js-cartButtonPro-addToCartButton hvr-wobble-horizontal{% endif %}">
                     <span id="AddToCartText">{{ 'products.product.free_add_to_cart' | t }}</span>
@@ -777,7 +748,9 @@
 
           <div class="shipping-banner">
             <div class="shipping-banner-icon"><img src="{{'shipping-icon.png' | asset_url}}" width="45" height="45"></div>
-            <div class="shipping-banner-text">Domestic US shipping <span class="shipping-banner-text-bold">2-6 days!</span></div>
+            <div class='geotargetlygeocontent1626874543940 shipping-banner-text'>
+            <!-- Content will render here -->
+            </div>
           </div>
 
           <div class="banner-inspirational-gift">
@@ -1017,26 +990,6 @@
       stk_lft();
     }
     
-  /*=================== MOBILE PROGRESS BAR =========================*/
-    {% if section.settings.sticky_button == 'show_progress_bar' %}
-    if(prd_qty > 1)
-    {
-      document.getElementById("stock_left_num1").value= prd_qty;
-      document.getElementById("stock_final_num1").value= prd_qty;
-      document.getElementById("counter_left1").innerHTML= prd_qty;
-    }
-    else
-    {
-      document.getElementById("stock_left_num1").value= currentLeftnum;
-      document.getElementById("stock_final_num1").value= currentLeftnum;
-      document.getElementById("counter_left1").innerHTML= currentLeftnum;
-      stk_lft();
-    }
-    {% endif %}
-  /*=================== END MOBILE PROGRESS BAR =========================*/
-    
-    
-  
     
     function stk_lft()
     {
@@ -1453,22 +1406,6 @@
           "id": "enable_sticky",
           "label": "Enable Sticky button",
           "default": true
-        },
-        {
-          "type": "select",
-          "id": "sticky_button",
-          "label": "Sticky Button",
-          "default": "show_timer",
-          "options": [
-            {
-              "value": "show_timer",
-              "label": "Show timer"
-            },
-            {	
-              "value": "show_progress_bar",
-              "label": "Show progress bar"
-            } 
-          ] 
         },
         {
           "type": "header",
