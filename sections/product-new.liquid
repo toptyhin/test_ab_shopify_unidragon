@@ -1,13 +1,13 @@
 <style>
 
 @media only screen and (min-width: 750px) {
-.product-single__photos {
-    position: sticky !important;
-    top: 0 !important;
-}
-.page-container {
-  overflow: inherit;
-}
+  .product-single__photos {
+      position: sticky !important;
+      top: 0 !important;
+  }
+  .page-container {
+    overflow: inherit;
+  }
 }
 
     .bis-reset.bis-edge-left.bis-edge-top.bis-rotate-90 {
@@ -273,6 +273,30 @@
                 content:"\2716"
               }
               p.line {margin-bottom: 20px;}
+            .storyblock__heading {
+              padding-bottom: 10px;
+              width: 40%;
+            }
+            .storyblock__video {
+              padding-top: 24px;
+            }
+            .storyblock__heading-inner {
+              display: grid;
+              margin-left: 50px;
+            }
+            .storyblock__heading-icon {
+              padding-bottom: 22px;
+            }
+            .storyblock-text-left {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin: 0px auto;
+              padding-top: 20px;
+              -webkit-box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
+              -moz-box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
+              box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
+            }
     </style>
     
   <script>
@@ -320,91 +344,6 @@
     <div class="grid product-single">
       <div class="grid__item product-single__photos medium-up--one-half">
         {% render 'label-product-tag', products: product %}
-          {% if product.handle == 'enchanting-owl' or product.handle == 'pre-order-majestic-wolf' or product.handle == 'wooden-jigsaw-puzzle-mysterious-lion' %}
-            <div class="abtest">
-              {% case product.handle %}
-                  {% when 'enchanting-owl'%}
-              {% assign pref_img_name = 'Owl' %}
-                  {% when 'pre-order-majestic-wolf'%}
-              {% assign pref_img_name = 'Wolf' %}
-                  {% when 'wooden-jigsaw-puzzle-mysterious-lion'%}
-              {% assign pref_img_name = 'Lion' %}
-              {% endcase %}
-              <style>.abtest{display:none;}</style>
-                  {% for media in product.media limit:2 %}
-                          {% capture img_id %}FeaturedImage-{{ section.id }}-{{ media.id }}{% endcapture %}
-                          {% capture img_class %}product-featured-img{% endcapture %}
-                          {% capture zoom_img_id %}FeaturedImageZoom-{{ section.id }}-{{ media.id }}{% endcapture %}
-                          {% capture img_wrapper_id %}{{ zoom_img_id }}-wrapper{% endcapture %}
-                          {%- assign img_url = media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-                          {% include 'image-style' with small_style: true, width: 530, height: 530, wrapper_id: img_wrapper_id, img_id: img_id %}
-                          <div id="{{ img_wrapper_id }}" class="product-single__photo-wrapper js">
-                              <div id="{{ zoom_img_id }}" style="padding-top:{{ 1 | divided_by: media.aspect_ratio | times: 100}}%;position: relative;overflow: hidden;" class="product-single__photo-{{ section.id }}{% if enable_zoom %} js-zoom-enabled{% endif %}{% if product.images.size > 1 %} product-single__photo--has-thumbnails{% endif %}{% unless featured_image == media %} hide{% endunless %}" data-image-id="{{ media.id }}"{% if enable_zoom %} data-zoom="{{ media | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
-                              <img id="{{ img_id }}" 
-                                  loading="lazy" 
-                                  class="feature-row__image {{ img_class }} lazyload{% unless featured_image == media %} lazypreload{% endunless %}"
-                                  src="{{ media | img_url: '300x300' }}"
-                                  data-src="{{ img_url }}"
-                                  data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
-                                  data-aspectratio="{{ media.aspect_ratio }}"
-                                  data-sizes="auto"
-                                  alt="{{ media.alt | escape }}">
-                              </div>
-                          </div>            
-                  {% endfor %}
-                  {%comment%}additional image{%endcomment%}
-                  {% for i in (1..5) %}
-                      {% capture img_id %}FeaturedImage-{{ section.id }}-{{ i }}{% endcapture %}
-                      {% capture img_class %}product-featured-img{% endcapture %}
-                      {% capture zoom_img_id %}FeaturedImageZoom-{{ section.id }}-{{ i }}{% endcapture %}
-                      {% capture img_wrapper_id %}{{ zoom_img_id }}-wrapper{% endcapture %}
-                      <div id="{{ img_wrapper_id }}" class="product-single__photo-wrapper js">
-                          <div id="{{ zoom_img_id }}" style="padding-top:100.0%;position: relative;overflow: hidden;" class="product-single__photo-{{ section.id }}{% if enable_zoom %} js-zoom-enabled{% endif %}{% if product.images.size > 1 %} product-single__photo--has-thumbnails{% endif %} hide" data-image-id="{{ i }}"{% if enable_zoom %} data-zoom="//cdn.shopify.com/s/files/1/0291/1322/1168/files/{{pref_img_name}}_ENG-0{{i}}.jpg"{% endif %}>
-                          <img id="{{ img_id }}" 
-                              loading="lazy" 
-                              class="feature-row__image {{ img_class }} lazyload"
-                              src="{{ pref_img_name | append: "_ENG-0"| append:i | append:".jpg" | file_url}}">
-                          </div>
-                      </div> 
-                  {% endfor %}
-                <div class="thumbnails-wrapper {% if product.images.size == 1 %}medium-up--hide{% endif %}{% if enable_thumbnail_slides == true %} thumbnails-slider--active{% endif %}">
-                  <button type="button" class="btn btn--link small--hide thumbnails-slider__btn thumbnails-slider__prev thumbnails-slider__prev--product-template slick-arrow slick-disabled" aria-disabled="true" style="display: block;">
-                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left" viewBox="0 0 284.49 498.98"><defs><style>.cls-1{fill:#231f20}</style></defs><path class="cls-1" d="M437.67 129.51a35 35 0 0 1 24.75 59.75L272.67 379l189.75 189.74a35 35 0 1 1-49.5 49.5L198.43 403.75a35 35 0 0 1 0-49.5l214.49-214.49a34.89 34.89 0 0 1 24.75-10.25z" transform="translate(-188.18 -129.51)"></path></svg>
-                    <span class="icon__fallback-text">translation missing: en.sections.slideshow.prev_slide</span>
-                  </button>
-                      <ul class="grid responsive slider grid--uniform product-single__thumbnails product-single__thumbnails_abtest">
-                              {% for media in product.media limit:2 %}
-                                      <li class="grid__item {% unless enable_thumbnail_slides == true %}{{ product_thumbnail_width }} {% endunless %}{% if product.images.size > 1 %}product-single__thumbnails-item{% endif %} js">
-                                      <a href="{{ media.src | img_url: product_image_zoom_size, scale: product_image_scale }}"
-                                              class="text-link product-single__thumbnail product-single__thumbnail--{{ section.id }}"
-                                              data-thumbnail-id="{{ media.id }}"
-                                              {% if enable_zoom %}data-zoom="{{ media.src | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
-                                              <img class="product-single__thumbnail-image" loading="lazy" src="{{ media.src | img_url: 'compact' }}" alt="{{ media.alt | escape }}">
-                                              </a>
-                                          </li>       
-                              {% endfor %}
-                              {%comment%}additional image{%endcomment%}
-                              {% for i in (1..5) %}
-                                <li class="grid__item {% unless enable_thumbnail_slides == true %}{{ product_thumbnail_width }} {% endunless %}{% if product.images.size > 1 %}product-single__thumbnails-item{% endif %} js">
-                                  <a href="//cdn.shopify.com/s/files/1/0291/1322/1168/files/{{pref_img_name}}_ENG-0{{i}}.jpg"
-                                        class="text-link product-single__thumbnail product-single__thumbnail--{{ section.id }}"
-                                        data-thumbnail-id="{{ i }}"
-                                        {% if enable_zoom %}data-zoom="//cdn.shopify.com/s/files/1/0291/1322/1168/files/{{pref_img_name}}_ENG-0{{i}}.jpg"{% endif %}>
-                                        <img class="product-single__thumbnail-image medium-up--hide" loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/{{pref_img_name}}_ENG-0{{i}}.jpg" alt="{{ media.alt | escape }}">
-                                        <img class="product-single__thumbnail-image small--hide" loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/{{pref_img_name}}_ENG-0{{i}}.jpg" alt="{{ media.alt | escape }}">
-                                        </a>
-                                    </li>
-                              {% endfor %}
-                      </ul>
-                      <button type="button" class="btn btn--link small--hide thumbnails-slider__btn thumbnails-slider__next thumbnails-slider__next--product-template slick-arrow" style="display: block;" aria-disabled="false">
-                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right" viewBox="0 0 284.49 498.98"><defs><style>.cls-1{fill:#231f20}</style></defs><path class="cls-1" d="M223.18 628.49a35 35 0 0 1-24.75-59.75L388.17 379 198.43 189.26a35 35 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L247.93 618.24a34.89 34.89 0 0 1-24.75 10.25z" transform="translate(-188.18 -129.51)"></path></svg>
-                        <span class="icon__fallback-text">Next slide</span>
-                      </button>       
-                </div>
-          </div>
-          {%endif%}
-      
-       <div class="atest">
         {% if section.settings.enable_default_variant %}
         {%- assign featured_image = product.featured_image -%}
         {% else %}
@@ -418,9 +357,7 @@
                   {% capture zoom_img_id %}FeaturedImageZoom-{{ section.id }}-{{ media.id }}{% endcapture %}
                   {% capture img_wrapper_id %}{{ zoom_img_id }}-wrapper{% endcapture %}
                   {%- assign img_url = media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-  
                   {% include 'image-style' with small_style: true, width: 530, height: 530, wrapper_id: img_wrapper_id, img_id: img_id %}
-  
                   <div id="{{ img_wrapper_id }}" class="product-single__photo-wrapper small--hide js">
                       <div id="{{ zoom_img_id }}" style="padding-top:{{ 1 | divided_by: media.aspect_ratio | times: 100}}%;position: relative;overflow: hidden;" class="product-single__photo-{{ section.id }}{% if enable_zoom %} js-zoom-enabled{% endif %}{% if product.images.size > 1 %} product-single__photo--has-thumbnails{% endif %}{% unless featured_image == media %} hide{% endunless %}" data-image-id="{{ media.id }}"{% if enable_zoom %} data-zoom="{{ media | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
                       <img id="{{ img_id }}" 
@@ -484,17 +421,16 @@
                       {% endfor %}
               </ul>        
           {% if enable_thumbnail_slides == true %}
-          <button type="button" class="btn btn--link small--hide thumbnails-slider__btn thumbnails-slider__next thumbnails-slider__next--{{ section.id }}">
-            {% include 'icon-chevron-right' %}
-            <span class="icon__fallback-text">{{ 'sections.slideshow.next_slide' | t }}</span>
-          </button>
+            <button type="button" class="btn btn--link small--hide thumbnails-slider__btn thumbnails-slider__next thumbnails-slider__next--{{ section.id }}">
+              {% include 'icon-chevron-right' %}
+              <span class="icon__fallback-text">{{ 'sections.slideshow.next_slide' | t }}</span>
+            </button>
           {% endif %}
         </div>
-      </div>
           {%- if product.metafields.link.customer-review-photo -%}
             {%- render 'customer-review-photo' with product -%}
           {%- endif -%}
-      </div>
+    </div>
       
       <div class="grid__item medium-up--one-half">
         <div class="product-single__meta">
@@ -819,34 +755,11 @@
           </div>
           <div class="reputon-trustpilot-reviews-widget" id="a83b7e60-bc57-11eb-a355-a9194acb8438" style="display: flex; justify-content: center;"></div>
           {%- unless product.title contains "balancing" -%}
-          {% render 'pdp__discount' %}
-        {%- endunless -%}
-          <style>
-            .storyblock__heading {
-              padding-bottom: 10px;
-              width: 40%;
-            }
-            .storyblock__video {
-              padding-top: 24px;
-            }
-            .storyblock__heading-inner {
-              display: grid;
-              margin-left: 50px;
-            }
-            .storyblock__heading-icon {
-              padding-bottom: 22px;
-            }
-            .storyblock-text-left {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              -webkit-box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
-              -moz-box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
-              box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
-            }
-          </style>
-            <div class="text-center storyblock medium-up--hide"><span class="heading">Inspiring Stories</span></div>
-          <div class="storyblock-text-left" style="margin: 0px auto; padding-top: 20px;">
+            {% render 'pdp__discount' %}
+          {%- endunless -%}
+
+          <div class="text-center storyblock medium-up--hide"><span class="heading">Inspiring Stories</span></div>
+          <div class="storyblock-text-left">
             {% case product.title %}
               {% when 'Charming Owl' %}
                 {%- assign current_channel = 'sova_com' -%}
