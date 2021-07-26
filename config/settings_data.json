@@ -245,7 +245,7 @@
         "type": "header",
         "settings": {
           "remove_space": true,
-          "align_logo": "center",
+          "align_logo": "left",
           "logo": "shopify:\/\/shop_images\/Logo-unidragon.png",
           "desktop_logo_size": "90%",
           "logo_mobile": "shopify:\/\/shop_images\/unidragon-logo-shopify-2.png",
@@ -342,7 +342,7 @@
           "product_review": true,
           "visitor_counter_enable": false,
           "visitor_counter_number": "100-300",
-          "show_del_time": true,
+          "show_del_time": false,
           "delivery_time_number": "22 - 24",
           "product_description": "under_the_timer",
           "enable_sticky": false,
