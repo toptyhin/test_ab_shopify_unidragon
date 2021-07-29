@@ -1,0 +1,65 @@
+<div id="coloring-book" class="info-popup white-popup mfp-hide">
+    <div style="min-width: 305px; margin: 5px 20px; margin-bottom: 25px; display: flex; flex-direction: column; align-items: center; justify-content: space-around;">
+
+        <div class="img">
+            <img src="https://cdn.shopify.com/s/files/1/0010/6348/5558/files/pngegg.png?v=1622556969" style="max-height: 100px; max-width: 100px; margin-top: 35px;">
+        </div>
+
+        <div>
+            <p style="font-size: 18px; text-align: center; margin-top: 35px;">
+                <!-- SendPulse Simple Subscription Form -->
+                <form action="https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo3NDI4MTE2LCJhZGRyZXNzX2Jvb2tfaWQiOjEyOTAwMzUsImxhbmciOiJydSJ9" method="post">
+                    <label>Email</label>
+                    <input type="email" required name="email">
+                    <input type="hidden" name="sender" value="mail@m.unidragon.com">
+                    <button>Subscribe</button>
+                </form>
+                <!-- SendPulse Simple Subscription Form -->
+            </p>
+        </div>       
+    </div>
+</div>
+
+
+
+
+<style>
+    .white-popup {
+        position: relative;
+        background: #FFF;
+        padding: 20px;
+        width: auto;
+        max-width: 500px;
+        margin: 20px auto;
+        border-radius: 10px;
+        }
+</style>
+
+<!-- Magnific Popup core CSS file -->
+
+<link rel="stylesheet" href="{{ 'magnific-popup.css' | asset_url }}">
+
+  <!-- Magnific Popup core JS file -->
+  <script src="{{ 'jquery.magnific-popup.min.js' | asset_url }}"></script>
+  <script src="{{ 'js-cookie.js' | asset_url }}"></script>
+<script>
+    function showpopup(popupId) {
+        console.log('Init showpopup');
+        if (!$.cookie('mrtPopupShown') && $(popupId).length) {
+            $.magnificPopup.open({
+                items: {
+                    src: popupId,
+                    type: 'inline'
+                },
+                showCloseBtn: true,
+                enableEscapeKey: false,
+                closeOnContentClick: true,
+                closeOnBgClick: false,
+                fixedContentPos: true,
+            });
+            console.log('Popup close has been initiated');
+            //$.cookie('mrtPopupShown', true, { expires: 7 });
+    }
+}
+showpopup('coloring-book');
+</script>
