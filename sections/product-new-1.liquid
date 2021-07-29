@@ -297,7 +297,15 @@
                 -moz-box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
                 box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
               }
-      </style>
+    .product.in-stock {
+      color: green;
+      padding-left: 10px;
+    }
+    .product.out-of-stock {
+      color: red;
+      padding-left: 10px;
+    }
+</style>
       
     <script>
       {% if section.settings.buy_it_now_action == 'direct_to_cart' %}var buyitnowaction = true;{% else %}var buyitnowaction = false;{% endif %}{% if section.settings.enable_related_upsell %}var relatedupsellenable = true;{% else %}var relatedupsellenable = false;{% endif %}{% if section.settings.buy_it_now_action == 'thank_you_message' %}var thankmsg = true;{% else %}var thankmsg = false;{% endif %}{% if section.settings.buy_it_now_action == 'direct_to_checkout' %}var drchkout = true;{% else %}var drchkout = false;{% endif %}
@@ -517,7 +525,12 @@
                     
                   </span>
                 {% endif %}
-              </p>
+                {%- if current_variant.available -%}
+                  <span class="product in-stock">In stock</span>
+                {%- else -%}
+                  <span class="product out-of-stock">Out of stock</span>
+                {%- endif -%}
+            </p>
     {%- endif -%}
               {% if section.settings.product_review  %}
                 <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
@@ -918,144 +931,6 @@
     {% endunless %}
     <!-- enable random number-->
   
-    <!-- End Js for don't track inventory -->
-    {% if section.settings.enable_progressbar_text or section.settings.enable_timer_top_message %}
-    {% if settings.enable_inventory_stock_number == "enable_stock_number_random"%}
-    <script>
-       var progress_bar_random = true;
-      
-      // for stock left number
-      var myLeftnum = ['5', '6', '7', '8','9','10','11','12','13','14','15','16','17','18','19','20'];    
-      var randLeftnum = Math.floor(Math.random() * myLeftnum.length);
-      var currentLeftnum = myLeftnum[randLeftnum];
-      
-      var qty = getCookie("prd_rqty");
-      
-      
-      
-      var res = getCookie("prd_rqty");
-      if (res.indexOf({{ product.id }}) >= 0)
-      { 
-      }
-      else
-      {
-        
-        if(qty.length > 0)
-        {
-         document.cookie = "prd_rqty  =" + {{ product.id }} + ':' + currentLeftnum + ',' + getCookie("prd_rqty");
-        }
-        else
-        {
-          document.cookie = "prd_rqty  =" + {{ product.id }} + ':' + currentLeftnum ;
-        }
-         
-      }
-      res = getCookie("prd_rqty");
-      
-      var new_rqty = getCookie("prd_rqty");
-      var len = new_rqty.split(',').length;
-      var rct_qty =  $("prd_rqty1").html();
-    
-      for (i = 0; i < len; i++)
-      { 
-        
-        if((res.split(',')[i]).indexOf({{ product.id }}) >= 0)
-        {
-    
-    
-           var prd_qty = (res.split(',')[i]).split(':')[1]; 
-        
-        }
-        
-      }
-    
-    
-      if(prd_qty > 1)
-      {
-      
-        document.getElementById("stock_left_num").value = prd_qty;
-        document.getElementById("stock_final_num").value= prd_qty;
-        document.getElementById("counter_left").innerHTML= prd_qty;
-      }
-      else
-      {
-        document.getElementById("stock_left_num").value = currentLeftnum;
-        document.getElementById("stock_final_num").value= currentLeftnum;
-        document.getElementById("counter_left").innerHTML= currentLeftnum;
-        stk_lft();
-      }
-      
-      
-      function stk_lft()
-      {
-    
-        var rest = getCookie("prd_rqty");
-        var len = rest.split(',').length;
-        document.cookie = "prd_rqty2  =" + "";
-    
-        var percent = Number($('#counter_left').text());
-    
-    
-        for (i = 0; i < len; i++)
-        { 
-    
-          if((rest.split(',')[i]).indexOf({{ product.id }}) >= 0)
-          {
-    
-            document.cookie = "prd_rqty1  ="  + {{ product.id }} + ':' + percent ;           
-          }
-          else
-          {
-    
-            if(getCookie("prd_rqty2").length)
-            {
-              document.cookie = "prd_rqty2  =" + rest.split(',')[i] + ',' + getCookie("prd_rqty2");
-            }
-            else
-            {
-              document.cookie = "prd_rqty2  =" + rest.split(',')[i]; 
-            }
-    
-          }
-    
-        }
-        if(getCookie("prd_rqty2").length)
-        {
-          document.cookie = "prd_rqty2  =" + getCookie("prd_rqty2") + ',' + getCookie("prd_rqty1");
-        }
-        else 
-        {
-          document.cookie = "prd_rqty2  =" + getCookie("prd_rqty1");
-        }
-        document.cookie = "prd_rqty  =" + getCookie("prd_rqty2");
-    
-      }
-      function mob_stk_lft() {
-          var rest = getCookie("prd_rqty");
-          var len = rest.split(',').length;
-            document.cookie = "prd_rqty2  =" + "";
-            var percent = Number($('#counter_left1').text());
-            for (i = 0; i < len; i++)
-            { 
-              if((rest.split(',')[i]).indexOf({{ product.id }}) >= 0) {
-                document.cookie = "prd_rqty1  ="  + {{ product.id }} + ':' + percent ;
-              } else {
-                getCookie("prd_rqty2").length?document.cookie="prd_rqty2  ="+rest.split(",")[i]+","+getCookie("prd_rqty2"):document.cookie="prd_rqty2  ="+rest.split(",")[i];
-              }
-            }
-            getCookie("prd_rqty2").length?document.cookie="prd_rqty2  ="+getCookie("prd_rqty2")+","+getCookie("prd_rqty1"):document.cookie="prd_rqty2  ="+getCookie("prd_rqty1");
-            document.cookie = "prd_rqty  =" + getCookie("prd_rqty2");
-      }
-    </script>
-    {% else %}
-    <script>
-      var progress_bar_random = false;
-    </script>
-    {% endif %} 
-    
-    {% endif %} 
-    
-    
     <!-- READ MORE BUTTON SCRIPT AND STYLE -->
     {% if section.settings.readmore_enable %}
       {{ 'readmore.min.js' | asset_url | script_tag }}
