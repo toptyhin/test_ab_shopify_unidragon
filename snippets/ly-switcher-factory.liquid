@@ -474,13 +474,6 @@
     </div>
   {%- endcapture -%}
 
-  <form method="post" action="/cart/update" id="currency_switcher_form" accept-charset="UTF-8" enctype="multipart/form-data">
-    <input type="hidden" name="form_type" value="currency">
-    <input type="hidden" name="utf8" value="✓">
-    <input type="hidden" name="return_to" value="{{shop.url}}">
-    <input type="hidden" name="currency" value="{{cart.currency.iso_code}}">
-  </form>
-
   {{ switcher }}
 
   {%- if recommendation_enabled and breakpoint.key == recommendation_switcher_key or recommendation_switcher == nil and recommendation_switcher_key == -1 -%}
