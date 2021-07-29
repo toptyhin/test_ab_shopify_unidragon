@@ -3,7 +3,7 @@
   The contents of the product.liquid template can be found in /sections/product-template.liquid
 {% endcomment %}
 
-{% section 'product-new-1' %}
+{% section 'product-template-balancing' %}
 {% section 'releted_upsell_popup' %}
 {% section 'related-product' %}
 
@@ -23,7 +23,12 @@
     soldOut: {{ 'products.product.sold_out' | t | json }},
     unavailable: {{ 'products.product.unavailable' | t | json }}
   }
-
+  
+  if(typeof rev!='undefined')
+  {
+    rev('event', 'page_view');
+    console.log('rev -> pageview');
+  }
 </script>
  
  <div id="shopify-ali-review" product-id="{{ product.id }}"> {% comment %}ly_code_replace_for_[ shop.metafields.review_collector.review_code ]_begin{% endcomment %}{% assign language = cart.attributes["language"] %}{% if language == nil %}{% assign language = shop.metafields["languages"]["default"] %}{% endif %}{% assign ns = language | append: 'review_collector' %}{% assign key = 'review_code' %}{% if shop.metafields[ns][key] %}{% assign ly_translation = shop.metafields[ns][key] %}{% else %}{% assign ly_translation =  shop.metafields.review_collector.review_code  %}{% endif %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %} </div> 
