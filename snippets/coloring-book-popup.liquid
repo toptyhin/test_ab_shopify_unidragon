@@ -1,30 +1,29 @@
-<div id="coloring-book" class="info-popup white-popup mfp-hide">
+<div id="coloring-book" class="info-popup white-popup_coloring-book mfp-hide">
     <div style="min-width: 305px; margin: 5px 20px; margin-bottom: 25px; display: flex; flex-direction: column; align-items: center; justify-content: space-around;">
 
         <div class="img">
-            <img src="https://cdn.shopify.com/s/files/1/0010/6348/5558/files/pngegg.png?v=1622556969" style="max-height: 100px; max-width: 100px; margin-top: 35px;">
+            <img src="{{ 'coloring-book.png' | asset_url }}">
+        </div>
+        <div class="coloring-book_text">
+            <p class="header">Power your creativity!</p>
+            <p class="subtitle">Get free coloring sheet and make your own Majestic Wolf.</p>
         </div>
 
-        <div>
-            <p style="font-size: 18px; text-align: center; margin-top: 35px;">
+        <div class="coloring-book-subscribe">
+            <p>Sign up and get your free PDF file for printing</p>
                 <!-- SendPulse Simple Subscription Form -->
-                <form action="https://login.sendpulse.com/forms/simple/u/eyJ1c2VyX2lkIjo3NDI4MTE2LCJhZGRyZXNzX2Jvb2tfaWQiOjEyOTAwMzUsImxhbmciOiJydSJ9" method="post">
-                    <label>Email</label>
-                    <input type="email" required name="email">
+                <form method="">
+                    <input type="email" required name="email" placeholder="Email">
                     <input type="hidden" name="sender" value="mail@m.unidragon.com">
-                    <button>Subscribe</button>
+                    <button id="subscribe-button" class="btn hero__btn">Sign up</button>
                 </form>
                 <!-- SendPulse Simple Subscription Form -->
-            </p>
         </div>       
     </div>
 </div>
 
-
-
-
 <style>
-    .white-popup {
+    .white-popup_coloring-book {
         position: relative;
         background: #FFF;
         padding: 20px;
@@ -32,6 +31,32 @@
         max-width: 500px;
         margin: 20px auto;
         border-radius: 10px;
+        }
+        p.header {
+            display: block;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        p.subtitle {
+            font-size: 16px;
+            font-weight: 500;
+            background-color: #fea;
+            padding: 20px 25px;
+        }
+        .coloring-book-subscribe {
+            padding-top: 50px;
+        }
+        .coloring-book-subscribe form{
+            display: flex;
+            flex-direction: column;
+        }
+        .coloring-book-subscribe {
+            width: 300px;
+            text-align: center;
+        }
+        .coloring-book_text {
+            text-align: center;
         }
 </style>
 
@@ -45,7 +70,7 @@
 <script>
     function showpopup(popupId) {
         console.log('Init showpopup');
-        if (!$.cookie('mrtPopupShown') && $(popupId).length) {
+        if (!$.cookie('cbPopupShown') && $(popupId).length) {
             $.magnificPopup.open({
                 items: {
                     src: popupId,
@@ -53,13 +78,40 @@
                 },
                 showCloseBtn: true,
                 enableEscapeKey: false,
-                closeOnContentClick: true,
-                closeOnBgClick: false,
+                closeOnContentClick: false,
+                closeOnBgClick: true,
                 fixedContentPos: true,
             });
             console.log('Popup close has been initiated');
-            //$.cookie('mrtPopupShown', true, { expires: 7 });
+            $.cookie('cbPopupShown', true, { expires: 240 });
     }
 }
-showpopup('coloring-book');
+$('#subscribe-button').on('click',function(e){    
+          e.preventDefault();
+          $('#subscribe-button').text('Processing...');
+            var formdata = $('.coloring-book-subscribe > form').serializeArray();
+            var data = {};
+            $(formdata ).each(function(index, obj){
+                data[obj.name] = obj.value;
+            });
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            var raw = JSON.stringify(data);
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+            fetch("https://tech.unidragon.com/users/sendpulse", requestOptions)
+            .then(result => {
+                $('.coloring-book-subscribe').hide(); $('.coloring-book_text').text('Thank you for subscribing. Your coloring book will be sent to you in the first email.');
+                })
+            .catch(error => {
+                console.log('error', error)
+                $('.coloring-book_text').text('error');
+            });
+       });
+
+setTimeout ( showpopup, 10000, '#coloring-book');
 </script>

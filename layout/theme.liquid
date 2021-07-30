@@ -314,22 +314,32 @@ t.parentNode.insertBefore(y,t);y.onerror=function(){s()};
   {% include 'discount_popup' %}    
   <!-- End discount popup -->
   
-  {% comment %}Promo popup, 19.02.21 alexey{% endcomment %}
-  {% include 'promo-popup' %}
-  {% comment %} Promo popup ends here {% endcomment %}
-  
-  {%- if settings.salepopup_position == 'bottom' -%} 
-   {%- include 'notification-popup' -%}
-  {%- endif -%}
+
+
+  {%- liquid
+
+    include 'promo-popup'
+
+    unless template == 'cart'
+     render 'coloring-book-popup'
+    endunless
+    
+    if settings.salepopup_position == 'bottom'
+      include 'notification-popup'
+    endif
+
+    include 'currencies'
+    include 'ajaxify-cart'
+    include 'smile-initializer'
+    
+  -%}
+
   {{ 'timer_all.scss' | asset_url | stylesheet_tag }}
   {{ 'timer_new.scss' | asset_url | stylesheet_tag }}
 
   {{ 'shop.js' | asset_url | script_tag }}  
-  
-  {%- include 'currencies' -%}
-{%- include 'ajaxify-cart' -%}
-{{ '//cdn.shopify.com/s/files/1/0194/1736/6592/t/1/assets/booster-page-speed-optimizer.js?23' | script_tag }}
- {%- include 'smile-initializer' -%}
+
+  {{ '//cdn.shopify.com/s/files/1/0194/1736/6592/t/1/assets/booster-page-speed-optimizer.js?23' | script_tag }}
 
   <!-- kv 23/12/20 move from header -->
     <link href="{% assign ly_asset = 'slick.css' %} {% include 'ly-asset' with ly_asset %}{{ ly_translation  }}"/>
@@ -345,7 +355,6 @@ twq('init','o5m45');
 twq('track','PageView');
 </script>
 <!-- End Twitter universal website tag code -->
-  
    
   <!-- cpa KV 08/02/21 revcontent (moved from header 09/03/21 -->
   <script src="https://assets.revcontent.com/master/rev.js"></script>
