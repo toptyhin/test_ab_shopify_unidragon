@@ -305,6 +305,55 @@
       color: red;
       padding-left: 10px;
     }
+    /* description spoiler*/
+    .description_spoiler {
+      padding-top: 40px;
+    }
+
+    .description_spoiler strong {
+      color: #000000;
+    }
+
+    .description_spoiler p {
+      color: #808080;
+    }
+
+    .read-more {
+      overflow: hidden;
+      position: relative;
+      max-height: 240px;
+      min-height: 240px;
+    }
+
+    .read-more::after {
+      opacity: 1;
+      content: "";
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      transition: opacity 200ms ease-in;
+      background-image: linear-gradient(to bottom, rgba(212, 59, 59, 0) 80%, #ffffff);
+      pointer-events: none;
+      height: 50%;
+      width: 100%;
+    }
+
+    .read-more.active {
+      overflow: auto;
+      max-height: fit-content;
+    }
+
+    .read-more.active::after {
+      opacity: 0;
+    }
+
+    #see-more {
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+
 </style>
     
   <script>
@@ -836,10 +885,17 @@
               <div class="product-description">
                 
                 {{ product.description }}
-                <script>let i=0,seMore=!0;function seeMore(){if(seMore){$("#see-more")[0].innerHTML="Read less &#708;",seMore=!1;let e=0;$(".description_spoiler").find("p").each(function(){$(this).show(),e++})}else{$("#see-more")[0].innerHTML='See more <span style="font-size: 12px;">&#709;</span>',seMore=!0;let e=0;$(".description_spoiler").find("p").each(function(){e>1&&$(this).hide(),e++})}}$(".description_spoiler").find("p").each(function(){i>1&&$(this).hide(),i++});</script>
 
-                <div onclick="seeMore()" id="see-more">See more <span style="font-size: 12px;">&#709;</span></div>
               </div>
+              <div id="see-more">See more &#709;</div>
+              <script>$(document).ready(function () {
+                      $('.description_spoiler').addClass('read-more');
+                      $('#see-more').click(function () {
+                        if ($("#see-more")[0].innerHTML == 'See more ˅') {$("#see-more")[0].innerHTML = 'Read less &#708;'} else {$("#see-more")[0].innerHTML = 'See more &#709;'}
+                        $('.read-more').toggleClass('active');
+                      })
+                    })
+              </script>
             </div>
           </div>
 
