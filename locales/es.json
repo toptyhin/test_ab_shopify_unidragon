@@ -165,6 +165,7 @@
         "discount_has_been_removed": "El descuento ha sido removido",
         "gift_card_has_been_applied": "La tarjeta de regalo ha sido aplicada",
         "gift_card_has_been_removed": "La tarjeta de regalo ha sido removida",
+        "gift_card_subscriptions_notice": "Las tarjetas regalo solo se aplicarán a tu primer pago",
         "discount_already_applied": "Hemos aplicado un descuento a tu pedido. No es posible aplicar un descuento adicional.",
         "cart_does_not_meet_discount_requirements_notice": "El código de descuento <strong>%{code}<\/strong> no es válido para los artículos en tu carrito de compra",
         "discount_requires_customer_notice": "Introduce tu información de envío para aplicar el código de descuento <strong>%{code}<\/strong>",
@@ -213,7 +214,10 @@
         },
         "gift_card_ending": "Tarjeta de regalo que termina en %{last_characters}",
         "estimated_tax_label": "Impuesto estimado",
-        "multiple_shipping_lines_label": "Total de envío"
+        "multiple_shipping_lines_label": "Total de envío",
+        "recurring_total_label": "Total recurrente",
+        "recurring_total_tooltip": "No incluye envío, impuestos, aranceles ni descuentos aplicables.",
+        "confirmation_number_label": "Confirmación N°%{confirmation_number}"
       },
       "shipping": {
         "title": "Envíos",
@@ -272,7 +276,24 @@
             }
           },
           "multiple_subscriptions_shipping_price_label": "%{shipping_price} por entrega",
-          "prepaid_shipping_price_label": "%{shipping_price} por entrega x %{delivery_interval_count}"
+          "prepaid_shipping_price_label": "%{shipping_price} por entrega x %{delivery_interval_count}",
+          "initial_order_discounted": "Costo del primer envío %{discounted_shipping_cost}, luego %{frequency_description}",
+          "prepaid_initial_order_discounted": "Costo del primer envío %{discounted_shipping_price} %{prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "Costo del primer envío %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery})",
+          "prepaid_initial_order_discounted_with_renewal": "Costo del primer envío %{discounted_shipping_price} %{prepaid_delivery_frequency}, luego %{shipping_price} %{billing_cycle}",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "Costo del primer envío %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery}), luego %{shipping_price} %{billing_cycle}",
+          "shipping_price_included": "Incluido",
+          "recurring_order_shipping_price": "seguido de %{recurring_order_shipping_price}",
+          "first_order_shipping_price_included": "Primer pedido incluido, seguido de %{recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "%{first_order_shipping_price} (%{per_delivery_price} por entrega), seguido de %{recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "one": "Primer pedido gratis",
+            "other": "Primeros %{count} pedidos gratis"
+          },
+          "free_for_first_n_order": {
+            "one": "Para el primer pedido",
+            "other": "Para los primeros %{count} pedidos"
+          }
         },
         "one_time_purchase_shipping": "Envío único"
       },
@@ -300,6 +321,7 @@
         "card_number_placeholder": "Número de tarjeta",
         "card_pay_with": "Pagar con:",
         "card_security_notice": "Todas las transacciones son seguras y están encriptadas.",
+        "card_security_vault_notice": "Necesitamos tu información para futuros pagos. Todas las transacciones son seguras y están encriptadas.",
         "card_information_notice": "Todas las transacciones son seguras y están encriptadas. Nunca se almacena la información de la tarjeta de crédito.",
         "name_on_card_label": "Nombre del titular como aparece en la tarjeta",
         "name_on_card_placeholder": "Nombre del titular como aparece en la tarjeta",
@@ -350,7 +372,6 @@
         "missing_credit_card_error": "Introduce los detalles de tu tarjeta para completar el pago",
         "billing_address_not_supported_for_payment_method_error": "Este método de pago no está disponible para tu dirección de facturación y moneda. Prueba con otra forma de pago.",
         "generic_incorrect_card_info": "No se pudo verificar los detalles de tu pago. Verifica los detalles de tu tarjeta e inténtalo de nuevo.",
-        "shopify_installments_label": "Cuotas de Shop Pay",
         "sofort_label": "Sofort",
         "klarna_pay_later_label": "Paga en 30 días con Klarna",
         "klarna_pay_now_label": "Paga ahora con Klarna",
@@ -364,7 +385,16 @@
         "change_currency_section_description": "Selecciona una opción de moneda",
         "no_real_orders_dev_store": "Esta tienda no puede aceptar pedidos reales ni pagos reales.",
         "waiting_on_payment_methods": "Buscando formas de pago disponibles...",
-        "apple_pay_payment_error": "No se pudo completar tu pago. Inténtalo de nuevo o utiliza otra forma de pago."
+        "apple_pay_payment_error": "No se pudo completar tu pago. Inténtalo de nuevo o utiliza otra forma de pago.",
+        "taxes_not_included": "Impuestos no incluidos",
+        "no_taxes_banner_content": "No se cobrarán impuestos en este pedido. Una vez que hayas cobrado el pago, ya no se podrán agregar impuestos.",
+        "card_update_label": "Actualizar tarjeta",
+        "paypal": {
+          "connect": "Haz clic para conectar tu cuenta de Paypal",
+          "account_connected": "Cuenta conectada"
+        },
+        "subscription_agreement_label": "Reconozco que estoy aceptando una suscripción. Se renovará al precio y con la frecuencia indicados hasta que finalice o se %{cancelled}.",
+        "subscription_agreement_cancelled": "cancele"
       },
       "payment_summary": {
         "gift_card_current_balance_notice": "Saldo actual %{amount}",
@@ -406,7 +436,6 @@
         "reduction_code_code_not_found": "Introduce un código de descuento o tarjeta de regalo válido(a)",
         "reduction_code_discount_not_found": "Introduce un código de descuento válido",
         "reduction_code_gift_card_code_invalid": "Introduce una tarjeta de regalo válida",
-        "reduction_code_gift_card_unusable_with_subscriptions": "No puedes utilizar una tarjeta de regalo para comprar una suscripción",
         "reduction_code_gift_card_unusable": "No puedes utilizar una tarjeta de regalo para comprar otra tarjeta de regalo",
         "shipping_line_phone_blank": "Introduce un número de teléfono para usar esta forma de entrega",
         "shipping_line_phone_invalid": "Introduce un número de teléfono válido para usar esta forma de entrega",
@@ -423,7 +452,8 @@
         "subscription_agreement_blank": "Para continuar con tu compra, acepta los términos de la suscripción",
         "physical_gift_card_invalid_quantity": "Las líneas de artículos de tarjetas de regalo físicas deben tener una cantidad que coincida con la cantidad de códigos de tarjetas de regalo.",
         "physical_gift_card_duplicate_code": "La línea de artículo de la tarjeta de regalo física contiene un código duplicado.",
-        "physical_gift_card_invalid_code": "El código de la tarjeta de regalo física es inválido."
+        "physical_gift_card_invalid_code": "El código de la tarjeta de regalo física es inválido.",
+        "sms_marketing_phone_invalid": "Introduce un número de teléfono válido"
       },
       "payment_errors": {
         "generic_error": "Se produjo un error al procesar tu pago. Inténtalo de nuevo o utiliza una forma de pago diferente.",
@@ -699,6 +729,15 @@
         "unsubscribe": {
           "title": "Ha cancelado su suscripción",
           "description": "No recibirá más recordatorios de cestas de compra nuestros."
+        },
+        "accept_email_checkbox_label": "Enviarme novedades y ofertas por correo electrónico",
+        "accept_sms_checkbox_label": "Enviarme novedades y ofertas por SMS",
+        "sms": {
+          "disclaimer": {
+            "description_html": "Al registrarte por SMS, aceptas recibir mensajes automatizados de marketing recurrentes al número de teléfono proporcionado, incluyendo recordatorios de carritos. El consentimiento no es una condición de compra. Responde STOP para darte de baja. Responde HELP para obtener ayuda. La frecuencia de los mensajes varía. Pueden aplicarse tarifas de mensajes y datos. Ver nuestra %{privacy_policy_link} y nuestros%{terms_of_service_link}.",
+            "privacy_policy": "Política de privacidad",
+            "terms_of_service": "Términos del servicio"
+          }
         }
       },
       "shop_policies": {
@@ -754,7 +793,8 @@
         "payment_total_label": "Total del pago",
         "conversion_rate": "1 %{from_currency_code} = %{rate} %{to_currency_code}",
         "change_currency_link": "Cambia a %{currency_name}",
-        "card_provider_fx_charges_warning": "Es posible que tu proveedor de tarjeta cobre algún cargo por transacciones en %{currency_code}."
+        "card_provider_fx_charges_warning": "Es posible que tu proveedor de tarjeta cobre algún cargo por transacciones en %{currency_code}.",
+        "currency_not_supported_by_shop": "La moneda que has seleccionado ya no está disponible. Todos los precios ahora están en %{currency_code}."
       },
       "change_country": {
         "cart_updated_based_on_country": "Tu carrito de compra se ha actualizado según tu país de envío."
@@ -778,18 +818,37 @@
         }
       },
       "subscriptions": {
-        "recurring_totals": {
-          "one": "%{total_price} cada %{interval}",
-          "other": "%{total_price} cada %{count} %{interval}s"
+        "recurring_total_intervals": {
+          "day": {
+            "one": "día",
+            "other": "%{count} días"
+          },
+          "week": {
+            "one": "semana",
+            "other": "%{count} semanas"
+          },
+          "month": {
+            "one": "mes",
+            "other": "%{count} meses"
+          },
+          "year": {
+            "one": "año",
+            "other": "%{count} años"
+          }
         },
+        "recurring_totals": "%{total_price} cada %{interval}",
+        "recurring_totals_with_initial_order_shipping_discount": "Primer pago %{total_price_with_discount}, luego %{recurring_total}",
         "recurring_totals_with_policies": {
           "first_cycles": {
             "one": "Primer pago %{total_price}",
             "other": "Primeros %{count} pagos %{total_price} cada uno"
           },
-          "following_cycles": {
-            "one": "luego %{total_price} cada %{interval}",
-            "other": "luego %{total_price} cada %{count} %{interval}os"
+          "following_cycles": ", luego %{total_price} cada %{interval}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", luego %{count} pago de %{total_price}",
+            "other": ", luego %{count} pagos de %{total_price} cada uno"
           }
         }
       },
@@ -913,7 +972,8 @@
           "voided": "Anulada",
           "partially_paid": "Pagada parcialmente",
           "partially_refunded": "Reembolsada parcialmente",
-          "refunded": "Reembolsada"
+          "refunded": "Reembolsada",
+          "expired": "Vencido"
         },
         "fulfillment_status": {
           "fulfilled": "Concluida",
@@ -959,6 +1019,12 @@
       },
       "storefront": {
         "invalid_password": "Contraseña incorrecta, por favor vuelve a intentarlo."
+      },
+      "tags": {
+        "add_articles": "Refinar búsqueda a los artículos que también tienen la etiqueta %{tag}",
+        "add_products": "Refinar selección a los productos que coinciden con la etiqueta %{tag}",
+        "remove_articles": "Ampliar búsqueda a los artículos que no están etiquetados con %{tag}",
+        "remove_products": "Eliminar etiqueta %{tag}"
       }
     },
     "email_marketing": {
@@ -971,6 +1037,33 @@
         "confirmation": "Has cancelado tu suscripción a nuestra lista de distribución.",
         "disclaimer": "No te enviaremos más noticias de marketing. Puede suscribirte nuevamente en cualquier momento.",
         "preview": "Estás revisando la vista previa de lo que verán los clientes cuando se dan de baja."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>Te has suscripto al seguimiento de correos abiertos.<\/b>",
+          "visibility": "Las tasas de correos abiertos se informarán de manera anónima. Solo veremos si has abierto un correo electrónico como parte de una tasa agregada de correos abiertos.",
+          "opt_out_html": "Puedes <a style='text-decoration:underline;' href='%{link}'>darte de baja<\/a> del seguimiento de correos abiertos si no deseas compartir esta información.",
+          "preview_bar": "Estás revisando la vista previa de lo que verán los clientes cuando se suscriban al seguimiento de correos abiertos."
+        },
+        "opt_out": {
+          "opted_out_html": "<b>Te has dado de baja del seguimiento de correos abiertos.<\/b>",
+          "visibility": "No veremos si has abierto nuestros correos electrónicos.",
+          "opt_in_html": "<a style='text-decoration:underline;' href='%{link}'>Acepta<\/a> el seguimiento de correos abiertos.",
+          "preview_bar": "Estás revisando la vista previa de lo que verán los clientes cuando se den de baja del seguimiento de correos abiertos."
+        },
+        "no_longer_track": {
+          "status_html": "<b>Ya no hacemos seguimiento de correos abiertos.<\/b>",
+          "privacy_policy": "Después de enviar este correo electrónico, hemos actualizado nuestra política de privacidad y ya no hacemos seguimiento de aperturas."
+        },
+        "track": {
+          "status_html": "<b>El seguimiento de correos abiertos se informa.<\/b>",
+          "visibility": "Solo veremos si has abierto el correo electrónico como parte de la tasa total de correos abiertos."
+        },
+        "updated_policy": {
+          "status_html": "<b>El seguimiento de correos abiertos se informa.<\/b>",
+          "visibility": "Hemos actualizado nuestra política y ahora hacemos seguimiento de correos abiertos. Las tasas de correos abiertos se informarán de manera anónima. Solo veremos si has abierto un correo electrónico como parte de la tasa total de correos abiertos.",
+          "opt_out_html": "Si no deseas compartir esta información, puedes <a style='text-decoration:underline;' href='%{link}'>darte de baja<\/a>."
+        }
       }
     },
     "page_titles": {
@@ -982,10 +1075,15 @@
       "addresses": "Direcciones",
       "order": "Pedido%{name}",
       "search": "Buscar",
+      "search_results": {
+        "one": "Búsqueda: %{count} resultado encontrado para \"%{terms}\"",
+        "other": "Búsqueda: %{count} resultados encontrados para \"%{terms}\""
+      },
       "collections": "Colecciones",
       "not_found": "404 No encontrado",
       "challenge": "Desafío",
-      "checkpoint": "Punto de control"
+      "checkpoint": "Punto de control",
+      "blog_or_article_with_error": "Error: %{title}"
     },
     "cart": {
       "discounts_with_count": "se han aplicado %{count} descuentos"
@@ -1013,6 +1111,24 @@
         "immediately": "Listo para ser retirado ahora",
         "next_day": "Listo para retiro al día siguiente"
       }
+    },
+    "filters": {
+      "availability": {
+        "label": "Disponibilidad",
+        "value": {
+          "in_stock": "En existencia",
+          "out_of_stock": "Agotado"
+        }
+      },
+      "vendor": {
+        "label": "Marca"
+      },
+      "price": {
+        "label": "Precio"
+      },
+      "product_type": {
+        "label": "Tipo de producto"
+      }
     }
   },
   "sections": {
@@ -1033,6 +1149,11 @@
     }
   },
   "general": {
+    "404": {
+      "title": "404 Página no encontrada",
+      "subtext": "La página que ha solicitado no existe.",
+      "link": "Volver a la tienda"
+    },
     "accessibility": {
       "skip_to_content": "Saltar al contenido",
       "close_modal": "Cerrar (esc)"
@@ -1040,11 +1161,6 @@
     "meta": {
       "tags": "Etiquetado \"{{ tags }}\"",
       "page": "Página {{ page }}"
-    },
-    "404": {
-      "title": "404 Página no encontrada",
-      "subtext": "La página que ha solicitado no existe.",
-      "link": "Volver a la tienda"
     },
     "pagination": {
       "previous": "Anterior",
@@ -1233,7 +1349,8 @@
       "phone": "Número de teléfono",
       "message": "Mensaje",
       "submit": "Enviar",
-      "post_success": "Gracias por contactarnos. Le responderemos lo antes posible."
+      "post_success": "Gracias por contactarnos. Le responderemos lo antes posible.",
+      "error_heading": "Ajuste lo siguiente:"
     }
   },
   "customer": {
@@ -1413,7 +1530,8 @@
       "sale_end_text": "¡La venta termina una vez que el temporizador llega a cero!",
       "deliiver_time_text_1": "Tiempo de entrega estimado",
       "deliiver_time_text_2": "dias",
-      "sticky_timer_text": "El precio expirará en:"
+      "sticky_timer_text": "El precio expirará en:",
+      "subscribe": "¡Añadir a la cesta!"
     },
     "dynamic_checkout_buttons": {
       "add_to_cart_text_when_dynamic_checkout_buttons_enable": "Añadir a la cesta"
@@ -1449,5 +1567,50 @@
   },
   "consistent_cart_addon": {
     "merge_cart_text": "Al parecer ya tienes un carro de una sesión anterior. ¿Te gustaría combinar tu carro previo con el actual?"
+  },
+  "pagefly": {
+    "products": {
+      "product": {
+        "regular_price": "Precio regular",
+        "sold_out": "Vendido",
+        "unavailable": "Indisponible",
+        "on_sale": "Venta",
+        "quantity": "Cantidad",
+        "add_to_cart": "Añadir a la cesta",
+        "back_to_collection": "Volver a {{title}}",
+        "view_details": "Ver detalles"
+      }
+    },
+    "article": {
+      "tags": "Etiquetas:",
+      "all_topics": "Todos los temas",
+      "by_author": "por {{ author }}",
+      "posted_in": "Publicado en",
+      "read_more": "Lee mas",
+      "back_to_blog": "De regreso {{ title }}"
+    },
+    "comments": {
+      "title": "Deja un comentario",
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "message": "Mensaje",
+      "post": "Publicar comentario",
+      "moderated": "Tenga en cuenta que los comentarios deben aprobarse antes de que se publiquen",
+      "success_moderated": "Tu comentario se publicó correctamente. Lo publicaremos en un rato, ya que nuestro blog está moderado.",
+      "success": "¡Tu comentario se publicó correctamente! ¡Gracias!",
+      "comments_with_count": {
+        "one": "{{ count }} comentario",
+        "other": "{{ count }} comentario"
+      }
+    },
+    "password_page": {
+      "login_form_message": "Ingrese a la tienda usando contraseña:",
+      "login_form_password_label": "Clave",
+      "login_form_password_placeholder": "Tu contraseña",
+      "login_form_submit": "Ingresar",
+      "signup_form_email_label": "Correo electrónico",
+      "signup_form_success": "¡Le enviaremos un correo electrónico justo antes de que abramos!",
+      "password_link": "Entrar usando contraseña"
+    }
   }
 }
