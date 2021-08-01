@@ -316,18 +316,21 @@ t.parentNode.insertBefore(y,t);y.onerror=function(){s()};
   
 
 
-  {%- liquid
 
-    include 'promo-popup'
 
+    
+{%- comment -%}
     unless template == 'cart'
      render 'coloring-book-popup'
     endunless
-    
+{%- endcomment -%}
+
+{%- liquid
+
     if settings.salepopup_position == 'bottom'
       include 'notification-popup'
     endif
-
+    include 'promo-popup'
     include 'currencies'
     include 'ajaxify-cart'
     include 'smile-initializer'
