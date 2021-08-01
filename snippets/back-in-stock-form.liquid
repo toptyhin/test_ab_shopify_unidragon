@@ -207,9 +207,6 @@ $('#alertbtn').on('click',function(e){
         };
         fetch("https://tech.unidragon.com/users", requestOptions)
         .then(result => {
-            gtag('event', 'show_RS_popup', {
-                'method': 'Google'
-                });
             $('#backinstock > form').hide(); $('.backinstock__headings > h3').text('Thank you!');
             $.magnificPopup.open({
                 items: {
