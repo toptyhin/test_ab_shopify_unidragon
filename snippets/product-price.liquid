@@ -33,7 +33,7 @@
 {% endcomment %}
 <span class="compare">From </span>
 {%- if member_discount == true and product.type == 'Puzzle' -%}
-  <span class="product-price__price">{{ product.price_min | times: 0.75 | money }} <span class="save_discount_pro"><span class="per_discount">25% OFF</span></span></span>
+  <span class="product-price__price">{{ product.price_min | times: 0.8 | money }} <span class="save_discount_pro"><span class="per_discount">20% OFF</span></span></span>
 {%- else -%}
   <span class="product-price__price">{{ product.price_min | money }}</span>
 {%- endif -%}
@@ -53,7 +53,7 @@
 {% endcomment %}
 <span class="compare">From </span>
 {%- if member_discount == true and product.type == 'Puzzle' -%}
-<span class="product-price__price">{{ product.price_min | times: 0.75 | money }} <span class="save_discount_pro"><span class="per_discount">25% OFF</span></span></span>
+<span class="product-price__price">{{ product.price_min | times: 0.8 | money }} <span class="save_discount_pro"><span class="per_discount">20% OFF</span></span></span>
 {%- else -%}
   <span class="product-price__price">{{ product.price_min | money }}</span>
 {%- endif -%}

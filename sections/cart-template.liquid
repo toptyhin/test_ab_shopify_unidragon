@@ -212,9 +212,9 @@
               endfor
             endif
             if member_discount == true and item.product.type == 'Puzzle'
-              assign item_price = item.price | times: 0.75
-              assign item_line_price = item.line_price | times: 0.75
-              assign item_original_line_price = item.original_line_price | times: 0.75
+              assign item_price = item.price | times: 0.8
+              assign item_line_price = item.line_price | times: 0.8
+              assign item_original_line_price = item.original_line_price | times: 0.8
                 if item.variant.compare_at_price > item.variant.price and item.variant.price != '0'
                   assign saving = item.variant.compare_at_price | minus: item_price | times: item.quantity
                   assign was = item.variant.compare_at_price |  times: item.quantity

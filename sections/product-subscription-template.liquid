@@ -164,8 +164,7 @@
               <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
               <s id="ComparePrice-{{ section.id }}">{{ current_variant.compare_at_price | money }}</s>
               <span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single">
-                <span id="ProductPrice-{{ section.id }}"
-                      itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+                <span id="ProductPrice-{{ section.id }}" itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
                   {{ current_variant.price | money	 }}
                 </span>
                 {% if section.settings.show_saved_amount %}
@@ -174,15 +173,13 @@
                 {% if current_variant.compare_at_price > current_variant.price %}
                   {% if settings.show_discount_amount == 'percent_save' %}
                   <span class="per_discount">
-                  
                     {% assign money_pro_format = shop.money_format | strip_html | json %}
-               
                     {% if money_pro_format contains "{{amount_no_decimals}}" or money_pro_format contains "{{amount_no_decimals_with_comma_separator}}" %}
-                    {{ current_variant.compare_at_price  | minus: current_variant.price  | times: 100.0 | divided_by: current_variant.compare_at_price | times: 100 | money_without_currency | replace:",","." | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
+                      {{ current_variant.compare_at_price  | minus: current_variant.price  | times: 100.0 | divided_by: current_variant.compare_at_price | times: 100 | money_without_currency | replace:",","." | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
                     {% elsif money_pro_format contains "{{amount_with_comma_separator}}" %}
-                    {{ current_variant.compare_at_price  | minus: current_variant.price  | times: 100.0 | divided_by: current_variant.compare_at_price | money_without_currency | replace:",","."  | times: 100 | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
+                      {{ current_variant.compare_at_price  | minus: current_variant.price  | times: 100.0 | divided_by: current_variant.compare_at_price | money_without_currency | replace:",","."  | times: 100 | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
                     {% else %}                  
-                    {{ current_variant.compare_at_price  | minus: current_variant.price  | times: 100.0 | divided_by: current_variant.compare_at_price  | money_without_currency | times: 100 | replace: '.0', ''}}{{ 'products.product.on_save' | t }}
+                      {{ current_variant.compare_at_price  | minus: current_variant.price  | times: 100.0 | divided_by: current_variant.compare_at_price  | money_without_currency | times: 100 | replace: '.0', ''}}{{ 'products.product.on_save' | t }}
                     {% endif %}
                     </span>
                   <!-- Dscount price in percentage  -->
@@ -227,7 +224,7 @@
             product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %}{% if section.settings.enable_payment_button and product.has_only_default_variant%} product-form--payment-button-no-variants{% endif %}
             {%- endcapture %}
   
-            {% form 'product', product, data-productid: product.id, id: "AddToCartForm", class:form_classes, data-product-id: "{{ product.id }}", data-section: "{{ section.id }}", data-product: "{{ product | json | escape }}" %}
+            {% form 'product', product, data-productid: product.id, id: "AddToCartForm", class:form_classes, data-product-id: "product.id", data-section: "section.id", data-product: "product | json | escape" %}
             {%- liquid
                 assign current_variant = product.selected_or_first_available_variant | default: product.variants.first
                 assign current_selling_plan_allocation = current_variant.selected_selling_plan_allocation

@@ -568,8 +568,8 @@
                       endfor
                     endif
                     if member_discount == true and item.product.type == 'Puzzle'
-                      assign item_line_price = item.line_price | times: 0.75
-                      assign discount_calc = 0.75
+                      assign item_line_price = item.line_price | times: 0.8
+                      assign discount_calc = 0.8
                     elsif puzle_discount > 2
                       assign item_line_price = item.line_price | times: 0.9
                     else
