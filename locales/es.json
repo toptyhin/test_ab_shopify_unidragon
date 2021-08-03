@@ -1612,5 +1612,16 @@
       "signup_form_success": "¡Le enviaremos un correo electrónico justo antes de que abramos!",
       "password_link": "Entrar usando contraseña"
     }
+  },
+  "custome_block": {
+    "sizechart": {
+        "title_block": "CARTA DEL TAMAÑO",
+        "bigger": "MÁS GRANDE",
+        "king_size": "Tamaño Gigante",
+        "royal_size": "Tamaño Real",
+        "puzle_pieces": "Piezas de rompecabezas",
+        "assembly_time": "Tiempo de ensamblaje",
+        "time": "A partir de {{ time }} horas"
+    }
   }
 }

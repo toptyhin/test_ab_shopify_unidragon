@@ -1607,5 +1607,16 @@
       "signup_form_success": "سنرسل لك بريدًا إلكترونيًا قبل أن نفتح!",
       "password_link": "أدخل باستخدام كلمة المرور"
     }
+  },
+  "custome_block": {
+    "sizechart": {
+        "title_block": "حجم الرسم البياني",
+        "bigger": "أكبر",
+        "king_size": "الحجم الملكي",
+        "royal_size": "الحجم الملكي",
+        "puzle_pieces": "قطع اللغز",
+        "assembly_time": "وقت التجمع",
+        "time": "من {{time}} ساعة"
+    }
   }
 }

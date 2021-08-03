@@ -460,5 +460,16 @@
       "signup_form_success": "We will send you an email right before we open!",
       "password_link": "Enter using password"
     }
+  },
+  "custome_block": {
+    "sizechart": {
+        "title_block": "SIZE CHART",
+        "bigger": "BIGGER",
+        "king_size": "King Size",
+        "royal_size": "Royal Size",
+        "puzle_pieces": "Puzzle pieces",
+        "assembly_time": "Assembly time",
+        "time": "From {{ time }} hours"
+    }
   }
 }

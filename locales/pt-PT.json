@@ -1609,5 +1609,16 @@
       "signup_form_success": "Enviaremos um e-mail antes de abrirmos!",
       "password_link": "Entre usando a senha"
     }
+  },
+  "custome_block": {
+    "sizechart": {
+        "title_block": "TABELA DE TAMANHO",
+        "bigger": "MAIOR",
+        "king_size": "King Size",
+        "royal_size": "Tamanho Real",
+        "puzle_pieces": "Peças de quebra-cabeças",
+        "assembly_time": "Hora da assembléia",
+        "time": "De {{time}} horas"
+    }
   }
 }

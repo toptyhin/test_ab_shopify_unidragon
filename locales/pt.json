@@ -1193,5 +1193,16 @@
   },
   "consistent_cart_addon": {
     "merge_cart_text": "It seems you already have a cart from a previous session. Would you like to merge your previous cart with your current cart?"
+  },
+  "custome_block": {
+    "sizechart": {
+        "title_block": "TABELA DE TAMANHO",
+        "bigger": "MAIOR",
+        "king_size": "King Size",
+        "royal_size": "Tamanho Real",
+        "puzle_pieces": "Peças de quebra-cabeças",
+        "assembly_time": "Hora da assembléia",
+        "time": "De {{time}} horas"
+    }
   }
 }
