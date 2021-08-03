@@ -1026,6 +1026,7 @@
         } else {
           if(langify.helper.getCookie('ly-lang-selected') && langify.helper.getCookie('ly-lang-selected') !== currentLang) {
             if(languageUrls[langify.helper.getCookie('ly-lang-selected')]) {
+              langify.helper.setCookie('ly-lang-selected', currentLang, 365);
               this.redirect(languageUrls[langify.helper.getCookie('ly-lang-selected')]);
             }
           }

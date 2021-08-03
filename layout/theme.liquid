@@ -326,10 +326,7 @@ t.parentNode.insertBefore(y,t);y.onerror=function(){s()};
 {%- endcomment -%}
 
 {%- liquid
-  unless template == 'cart'
-    render 'coloring-book-popup'
-  endunless
-
+  
     if settings.salepopup_position == 'bottom'
       include 'notification-popup'
     endif
