@@ -284,6 +284,7 @@
           },
           "1521800689906": {
             "type": "customer_shopify",
+            "disabled": true,
             "settings": {
               "social_icons_footer": false
             }
