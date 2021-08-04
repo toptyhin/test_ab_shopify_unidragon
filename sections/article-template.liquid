@@ -56,8 +56,11 @@
         {{ article.content }}
       </div>
        <hr>
+      {% if section.settings.show_random_products %}
+        {% include 'show-random-products' %}
+      {% endif %}
       {% if section.settings.show_share_buttons %}
-      {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+        {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
       {% endif %}
     </div>
   </div>
@@ -104,6 +107,12 @@
         "type": "checkbox",
         "id": "show_share_buttons",
         "label": "Show social sharing buttons",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_random_products",
+        "label": "Show products after blogpost",
         "default": true
       }
     ]

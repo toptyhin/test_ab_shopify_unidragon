@@ -1,0 +1,16 @@
+<!-- snippets/show-random-products -->
+<h2 class="" style="text-align: center; margin: 30px 0;">CHOOSE YOUR PUZZLE</h2>
+<div class="grid grid--uniform grid--view-items">
+    {%- assign index = 'now' | date: '%S' -%}
+    {%- assign i = 1 -%}
+    {%- assign index = index | times: collections['wooden-puzzles'].products.size -%}
+    {%- assign index = index | divided_by: 60 -%}
+  {%- for product in collections['wooden-puzzles'].products offset: index -%}
+    {%- if i <= 3 -%}
+        <div class="grid__item grid__item medium-up--one-third small--one-whole">
+            {% include 'product-card-grid', max_height: 345 %}
+        </div>
+        {%- assign i = i | plus: 1 -%}
+    {%- endif -%}
+  {%- endfor -%}
+</div>
