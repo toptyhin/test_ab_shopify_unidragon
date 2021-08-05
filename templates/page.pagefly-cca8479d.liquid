@@ -116,7 +116,8 @@ window.__pageflyCollections["260572119088"] = {{collection_260572119088 | json }
 								{% endif %}
 								{% endif %}
 							<div class="sc-dSnXvR dzBcKB pf-81_ {{pf_all}} {{pf_laptop}} {{pf_tablet}} {{pf_mobile}}" data-img-id="{{ image.id }}" data-pf-type="ImageItem"><img loading="lazy" src="{{ image.src | img_url: "master" }}" alt="{{ image.alt }}" draggable="false"/></div>{% endfor %}</div>{% if true %}<div data-pf-nav="prev" class="sc-jLqRGG bcRTMJ"><i class="pfa pfa-angle-left"></i></div><div data-pf-nav="next" class="sc-jLqRGG bcRTMJ"><i class="pfa pfa-angle-right"></i></div>{% endif %}</div></div></div></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-lg:6"><div data-pf-type="Column" class="sc-oeezt OJJCp pf-83_"><h3 data-product-type="title" data-product-id="{{ product.id }}" data-pf-type="ProductTitle" class="sc-kmIPcE htFMXJ pf-84_">{{ product.title }}</h3>
-								<div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice" class="sc-iIgjPs krBuaG pf-85_">{{ product.variants[0].price | money }}</div>
+                <div data-product-type="compare_at_price" data-product-id="{{ product.id }}" data-pf-type="ProductPrice" class="sc-iIgjPs krBuaG pf-885_">{{ product.variants[0].compare_at_price | money }}</div>
+                <div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice" class="sc-iIgjPs krBuaG pf-85_">{{ product.variants[0].price | money }}</div>
 							<div data-combined="true" data-display="dropdown" data-label="true" data-product-id="{{ product.id }}" class="sc-bShgHC fLeAPa pf-86_ pf-r-ew" data-pf-type="ProductVariant">
 	<select name="id" data-productid="{{product.id}}" class="pf-variant-select">
 		{% for variant in product.variants %}<option value="{{ variant.id }}">{{ variant.title }} - {% if variant.available != true %}Sold Out {% else %} {{ variant.price | money }} {% endif %}</option>{% endfor %}</select>
@@ -266,7 +267,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
 		 if ($(this).val() == variant_id) {
 		$(this).prop('selected', true);
 		$('.pf-85_ > .money').text('$'+Number(__pageflyProducts["6575442526256"].variants[i].price*0.01).toFixed(2));
-		//$('.pf-85_ > .money').text('$'+Number(__pageflyProducts["6575442526256"].variants[i].compare_at_price*0.01).toFixed(2));
+		$('.pf-885_ > .money').text('$'+Number(__pageflyProducts["6575442526256"].variants[i].compare_at_price*0.01).toFixed(2));
 	} 
 	i++;
 })
@@ -274,6 +275,17 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
   });
 </script>
 <style>
+.__pf .pf-85_ {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #e1160e;
+    font-weight: 700;
+}
+.__pf .pf-885_ {
+    text-decoration: line-through;
+    text-align: left;
+    font-size: 24px;
+}
 .size-label {
     width: 95px;
     text-align: -webkit-center;
