@@ -127,6 +127,27 @@
         padding-left: 130px;
         padding-right: 15px;
       }
+      .banner-inspirational-gift_link {
+        padding-left: 130px;
+        padding-top: 40px;
+      }
+      .banner-inspirational-gift_link a{
+        background-color: #ff6f05;
+        padding: .58em 2em;
+        font-size: 21px;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        border-radius: 2px;
+        border: none;
+        box-shadow: 0 0 0 0 transparent;
+        color: white;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 500;
+        line-height: 1;
+        text-align: center;
+        transition: background 0.2s ease-in-out;
+      }
       .banner-decorate-walls {
         margin-top: 40px;
         background-image: url({{'banner-decorate-walls_mob_bg.png' | asset_url}});
@@ -211,6 +232,9 @@
           padding-top: 10px;
           padding-left: 175px;
           padding-right: 85px;
+        }
+        .banner-inspirational-gift_link {
+          padding-left: 175px;
         }
         .banner-decorate-walls {
           height: 420px;
@@ -584,7 +608,12 @@
             {% if section.settings.product_review  %}
               <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
             {% endif %}
-                       
+            <style>
+              html .gs-buttons.gs-big-counter.gs-small>.gs-big-counter {
+                font-size: 32px !important;
+              }
+            </style>
+            {% include 'getsocial-inline-bar' %}           
             {%- capture "form_classes" -%}
             product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %}{% if section.settings.enable_payment_button and product.has_only_default_variant%} product-form--payment-button-no-variants{% endif %}
             {%- endcapture %}
@@ -785,6 +814,7 @@
   
             {% endif %}
           </div>
+
           <div class="reputon-trustpilot-reviews-widget" id="a83b7e60-bc57-11eb-a355-a9194acb8438" style="display: flex; justify-content: center;"></div>
           {%- unless product.title contains "balancing" -%}
             {% render 'pdp__discount' %}
@@ -817,8 +847,8 @@
           <div class="banner-inspirational-gift">
             <div class="banner-inspirational-gift_header">Inspirational Gift</div>
             <div class="banner-inspirational-gift_text">Bring more happiness into the life of your loved ones by choosing a gift that is unforgettable experience.</div>
+            <div class="banner-inspirational-gift_link hide"><a href="/products/giftcard">Buy Gift Card</a></div>
           </div>
-
           <div class="advantage">
             <div class="advantage-item">
               <div class="advantage-block">
@@ -866,6 +896,21 @@
             <div class="banner-decorate-walls_header">DECORATE THE WALLS OF YOUR HOME</div>
             <div class="banner-decorate-walls_text">You can decorate the interior with puzzles and our special mounting system</div>
           </div>
+          <div class="banner-decorate-walls_howitworks hide" style="background-color: #464646;padding: .58em 0;text-align: center;margin-top: 10px;"><a href="#upsell-anoncment-popup" class="upsell-anoncment-popup" style=" 
+            font-size: 21px;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            border-radius: 2px;
+            border: none;
+            box-shadow: 0 0 0 0 transparent;
+            color: white;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            line-height: 1;
+            text-align: center;
+            transition: background 0.2s;
+            text-decoration: none;">See how it works</a></div>
 
           <div class="product-single__description rte" itemprop="description">
             {% for block in section.blocks %}
