@@ -129,24 +129,16 @@
       }
       .banner-inspirational-gift_link {
         padding-left: 130px;
-        padding-top: 40px;
+        padding-top: 15px;
       }
       .banner-inspirational-gift_link a{
-        background-color: #ff6f05;
-        padding: .58em 2em;
+        text-decoration: underline;
         font-size: 21px;
-        text-transform: uppercase;
         letter-spacing: .08em;
-        border-radius: 2px;
-        border: none;
-        box-shadow: 0 0 0 0 transparent;
         color: white;
-        cursor: pointer;
         font-size: 1em;
         font-weight: 500;
         line-height: 1;
-        text-align: center;
-        transition: background 0.2s ease-in-out;
       }
       .banner-decorate-walls {
         margin-top: 40px;
@@ -168,6 +160,10 @@
         padding: 0 20px;
         font-size: 14px;
       }
+      .banner-decorate-walls_howitworks {
+          padding-left: 20px;
+          padding-top: 10px;
+        }
       .advantage {
         margin-top: 40px;
       }
@@ -254,6 +250,10 @@
           letter-spacing: 0.7px;
           padding-top: 10px;
           padding-left: 40px;
+        }
+        .banner-decorate-walls_howitworks {
+          padding-left: 40px;
+          padding-top: 0;
         }
       }
 
@@ -848,7 +848,7 @@
           <div class="banner-inspirational-gift">
             <div class="banner-inspirational-gift_header">Inspirational Gift</div>
             <div class="banner-inspirational-gift_text">Bring more happiness into the life of your loved ones by choosing a gift that is unforgettable experience.</div>
-            <div class="banner-inspirational-gift_link hide"><a href="/products/giftcard">Buy Gift Card</a></div>
+            <div class="banner-inspirational-gift_link"><a href="/products/giftcard" class="banner-inspirational-gift_a">buy gift card -></a></div>
           </div>
           <div class="advantage">
             <div class="advantage-item">
@@ -896,22 +896,8 @@
           <div class="banner-decorate-walls">
             <div class="banner-decorate-walls_header">DECORATE THE WALLS OF YOUR HOME</div>
             <div class="banner-decorate-walls_text">You can decorate the interior with puzzles and our special mounting system</div>
+            <div class="banner-decorate-walls_howitworks"><a href="#upsell-anoncment-popup" style="text-decoration: underline;font-weight: 600;font-size: 14px;color: #292929;" class="upsell-anoncment-popup">see how it works -></a></div>
           </div>
-          <div class="banner-decorate-walls_howitworks hide" style="background-color: #464646;padding: .58em 0;text-align: center;margin-top: 10px;"><a href="#upsell-anoncment-popup" class="upsell-anoncment-popup" style=" 
-            font-size: 21px;
-            text-transform: uppercase;
-            letter-spacing: .08em;
-            border-radius: 2px;
-            border: none;
-            box-shadow: 0 0 0 0 transparent;
-            color: white;
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: 500;
-            line-height: 1;
-            text-align: center;
-            transition: background 0.2s;
-            text-decoration: none;">See how it works</a></div>
 
           <div class="product-single__description rte" itemprop="description">
             {% for block in section.blocks %}
