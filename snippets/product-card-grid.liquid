@@ -109,7 +109,7 @@
         <img loading="lazy"
              id="{{ img_id }}"
              class="grid-view-item__image lazyload"
-             src="{{ product.featured_image | img_url: '300x300' }}"
+             src="{{ product.featured_image | img_url: '250x250' }}"
              data-src="{{ img_url }}"
              data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
              data-aspectratio="{{ product.featured_image.aspect_ratio }}"
@@ -126,7 +126,7 @@
     {%- else -%}
     
     <div class="reveal">
-      {%- assign image_pro = '300x300'%}
+      {%- assign image_pro = '250x250'%}
       <img loading="lazy" class="main_pro1_img{%- if product.images.size > 1 -%} has_image{%- endif -%}" src="{{ product.featured_image.src | img_url: image_pro }}" alt="{{ product.featured_image.alt | escape }}">
       {%- if product.images.size > 1 -%}
       <img loading="lazy" class="hidden" src="{{ product.images[1] | img_url: image_pro }}" alt="{{ product.images.last.alt | escape }}" />
