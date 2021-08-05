@@ -404,9 +404,14 @@
             {% if section.settings.product_review  %}
               <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
             {% endif %}
+            <style>
+              html .gs-buttons.gs-big-counter.gs-small>.gs-big-counter {
+                font-size: 32px !important;
+              }
+            </style>
+            {% include 'getsocial-inline-bar' %}
             {% if section.settings.product_description == 'under_the_price'%}
-         
-            <div class="product-single__description rte ttt" itemprop="description">
+              <div class="product-single__description rte ttt" itemprop="description">
               {% assign product_desc = 'products.product_tab.product_tab_1' | t %} 
               {% if product_desc != blank and product.description != blank%}
               <ul class="tabs">
