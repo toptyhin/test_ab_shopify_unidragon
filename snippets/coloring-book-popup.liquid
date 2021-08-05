@@ -1,11 +1,15 @@
 <div id="coloring-book" class="info-popup white-popup_coloring-book mfp-hide">
-    <div style="min-width: 305px; margin-bottom: 25px; display: flex; flex-direction: column; align-items: center; justify-content: space-around;">
+    <div style="min-width: 305px; margin-bottom: 25px; display: flex; flex-direction: column; justify-content: space-around;">
         <div class="img">
-            <img src="{{ 'coloring-book.png' | asset_url }}">
+            <img src="{{ 'coloring-book2.png' | asset_url }}">
+            <div class="coloring-book-price">
+                <span class="money">$0.99</span>
+                <span class="free">Free</span>
+            </div>
         </div>
         <div class="coloring-book_text">
-            <p class="header">Power your creativity!</p>
-            <p class="subtitle">Get free coloring sheet and make your own Majestic Wolf.</p>
+            <p class="header">Coloring Sheet Majestic Wolf</p>
+            <p class="subtitle">GET FREE! POWER YOUR CREATIVITY!</p>
         </div>
         <div class="coloring-book-subscribe">
             <p>Sign up and get your free PDF file for printing</p>
@@ -19,6 +23,25 @@
 </div>
 
 <style>
+    .coloring-book-price {
+        position: absolute;
+        background-color: #fea;
+        top: 40px;
+        left: 40px;
+        padding: 5px 10px;
+    }
+    .coloring-book-price .money {
+        color: red;
+        font-size: 18px;
+        font-weight: 400;
+        text-decoration: line-through;
+    }
+    .coloring-book-price .free {
+        color: #ff6c00;
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
     .white-popup_coloring-book {
         position: relative;
         background: #FFF;
@@ -28,17 +51,17 @@
         margin: 20px auto;
         border-radius: 10px;
         }
-        p.header {
-            display: block;
-            text-align: center;
-            font-size: 18px;
-            font-weight: 600;
+    p.header {
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 500;
         }
         p.subtitle {
-            font-size: 16px;
-            font-weight: 500;
-            background-color: #fea;
-            padding: 20px 25px;
+           font-size: 24px;
+           font-weight: 600;
+           padding: 20px 25px;
+           color: #ff862d;
         }
         .coloring-book-subscribe {
             padding-top: 50px;
@@ -49,7 +72,7 @@
         }
         .coloring-book-subscribe {
             width: 300px;
-            text-align: center;
+            margin: 0 auto;
         }
         .coloring-book_text {
             text-align: center;
@@ -66,7 +89,7 @@
 <script>
     function showpopup(popupId) {
         console.log('Init showpopup');
-        if (!$.cookie('cbPopupShown') && $(popupId).length) {
+        //if (!$.cookie('cbPopupShown') && $(popupId).length) {
             $.magnificPopup.open({
                 items: {
                     src: popupId,
@@ -80,7 +103,7 @@
             });
             console.log('Popup close has been initiated');
             $.cookie('cbPopupShown', true, { expires: 240 });
-    }
+   // }
 }
 $('#subscribe-button').on('click',function(e){    
           e.preventDefault();
@@ -109,5 +132,5 @@ $('#subscribe-button').on('click',function(e){
             });
        });
 
-setTimeout ( showpopup, 10000, '#coloring-book');
+//setTimeout ( showpopup, 10000, '#coloring-book');
 </script>
