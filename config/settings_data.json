@@ -492,7 +492,7 @@
           "image": "shopify:\/\/shop_images\/Fox_Owl_Lion__1_3.png",
           "blog_show_author": false,
           "blog_show_date": false,
-          "show_share_buttons": true
+          "show_share_buttons": false
         }
       },
       "blog-template": {
