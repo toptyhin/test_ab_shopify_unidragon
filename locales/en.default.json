@@ -19,7 +19,7 @@
       "current_page": "Page {{ current }} of {{ total }}"
     },
     "copyright_credit": {
-      "designer_credits_html": "Designed by Booster theme"
+      "designer_credits_html": ""
     },
     "password_page": {
       "opening_soon": "Opening Soon",
@@ -463,13 +463,13 @@
   },
   "custome_block": {
     "sizechart": {
-        "title_block": "SIZE CHART",
-        "bigger": "BIGGER",
-        "king_size": "King Size",
-        "royal_size": "Royal Size",
-        "puzle_pieces": "Puzzle pieces",
-        "assembly_time": "Assembly time",
-        "time": "From {{ time }} hours"
+      "title_block": "SIZE CHART",
+      "bigger": "BIGGER",
+      "king_size": "King Size",
+      "royal_size": "Royal Size",
+      "puzle_pieces": "Puzzle pieces",
+      "assembly_time": "Assembly time",
+      "time": "From {{ time }} hours"
     }
   }
 }
