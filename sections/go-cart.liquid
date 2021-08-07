@@ -824,7 +824,15 @@
                     </div>
                 </div>
             <div class="grid__item medium-up--one-third mount__text text-left">
-                <button class="upsell-description upsell-button btn" style="border: none;">{{ 'products.upsell.add_to_cart_button_text' | t }}</button>
+                <div class="medium-up--hide" style="color: #292929;font-size: 18px;font-weight: 400;font-weight: 700;">
+                    <span class="product-price__price product-price__price-product-template">
+                      <span id="ProductPrice-product-template" itemprop="price" content="19.95">
+                        {{settings.upsell_product.selected_or_first_available_variant.price | money}}
+                      </span>
+                    </span>
+                    <span class="product in-stock">In stock</span>
+                    <button class="upsell-description upsell-button btn" style="border: none;">{{ 'products.upsell.add_to_cart_button_text' | t }}</button>
+                </div>
                 <p style="padding-top: 10px;">Now you can easily turn your puzzle into a piece of interior decor for the home, office, or just about anywhere.</p>
                 <p>The kit includes:</p>
                 <ul>
@@ -836,7 +844,16 @@
                 <li>Instructions.</li>
                 </ul>
                 <p>The fixing system is universal for all puzzles and sizes</p>
-                <div class="text-center">
+                <div class="small--hide" style="color: #292929;font-size: 18px;font-weight: 400;font-weight: 700;">
+                    <span class="product-price__price product-price__price-product-template">
+                      <span id="ProductPrice-product-template" itemprop="price" content="19.95">
+                        {{settings.upsell_product.selected_or_first_available_variant.price | money}}
+                      </span>
+                    </span>
+                    <span class="product in-stock">In stock</span>
+                    <button class="upsell-description upsell-button btn" style="border: none;">{{ 'products.upsell.add_to_cart_button_text' | t }}</button>
+                </div>
+                <div class="text-center" style="margin-top: 20px;">
                     <iframe src="https://www.youtube.com/embed/NCG1MPDUako" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="max-width: 560px" loading="lazy"></iframe>
                 </div>
             </div>   
