@@ -1,9 +1,9 @@
 <style>
 
 @media only screen and (min-width: 750px) {
-  .product-single__photos {
-      position: sticky !important;
-      top: 0 !important;
+  .grid__item.product-single__photos.medium-up--one-half {
+    position: sticky;
+    top: 0;
   }
   .page-container {
     overflow: inherit;
@@ -333,7 +333,7 @@
     }
     /* description spoiler*/
     .description_spoiler {
-      padding-top: 40px;
+      padding-top: 25px;
     }
 
     .description_spoiler strong {
@@ -431,12 +431,22 @@
   
     <div class="grid product-single">
       <div class="grid__item product-single__photos medium-up--one-half">
-        {% render 'label-product-tag', products: product %}
-        {% if section.settings.enable_default_variant %}
+        {%- render 'label-product-tag', products: product -%}
+        {%- if section.settings.enable_default_variant -%}
         {%- assign featured_image = product.featured_image -%}
-        {% else %}
+        {%- else -%}
         {%- assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image -%}
-        {% endif %}
+        {%- endif -%}
+        {%- assign videos = product.media | where: "media_type", "external_video" -%}
+        {%- if videos.size > 0 -%}
+          {%- for video in videos -%}
+            <div id="{{ img_wrapper_id }}" class="product-single__photo-wrapper small--hide js videoframe">
+              <div id="{{ zoom_img_id }}" style="padding-top:{{ 1 | divided_by: media.aspect_ratio | times: 100}}%; position: relative;overflow: hidden;" class="product-single__photo-{{ section.id }}{% if product.images.size > 1 %} product-single__photo--has-thumbnails{% endif %} hide" data-image-id="{{ video.id }}">                
+                  {{ video | external_video_tag }}
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
           {% for media in product.media %}
               {% case media.media_type %}
               {% when 'image' %}
@@ -459,12 +469,6 @@
                           alt="{{ media.alt | escape }}">
                       </div>
                   </div>            
-              {% when 'external_video' %}
-                  <div id="{{ img_wrapper_id }}" class="product-single__photo-wrapper small--hide js videoframe">
-                      <div id="{{ zoom_img_id }}" style="padding-top:{{ 1 | divided_by: media.aspect_ratio | times: 100}}%; position: relative;overflow: hidden;" class="product-single__photo-{{ section.id }}{% if product.images.size > 1 %} product-single__photo--has-thumbnails{% endif %}{% unless featured_image == media %} hide{% endunless %}" data-image-id="{{ media.id }}">                
-                          {{ media | external_video_tag }}
-                      </div>
-                  </div>
               {% endcase %}
           {% endfor %}
   
@@ -487,6 +491,17 @@
           </button>
           {% endif %}
               <ul class="grid responsive slider grid--uniform product-single__thumbnails product-single__thumbnails-{{ section.id }}">
+                {%- if videos.size > 0 -%}
+                  {%- for video in videos -%}
+                    <li class="grid__item {% unless enable_thumbnail_slides == true %}{{ product_thumbnail_width }} {% endunless %}{% if product.images.size > 1 %}product-single__thumbnails-item{% endif %} js">
+                    {%comment%}{{ media | external_video_tag }}{%endcomment%}
+                      <a href="#" class="text-link product-single__thumbnail product-single__thumbnail--{{ section.id }}" data-thumbnail-id="{{ video.id }}" {% if enable_zoom %}data-zoom="{{ video.src | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
+                        <div class="product-single__thumbnail-image medium-up--hide video-media" style="height:340px;display: flex;align-items: center;justify-content: center;">{{ video | external_video_tag }}</div>
+                        <img loading="lazy" class="product-single__thumbnail-image small--hide" src="{{ video.preview_image | img_url: 'compact' }}" alt="{{ video.alt | escape }}">                            
+                      </a>
+                    </li>
+                  {%- endfor -%}
+                {%- endif -%}
                       {% for media in product.media %}
                           {% case media.media_type %}
                           {% when 'image' %}
@@ -498,15 +513,7 @@
                                       <img class="product-single__thumbnail-image medium-up--hide" loading="lazy" src="{{ media.src | img_url: '480x480', scale: 2 }}" alt="{{ media.alt | escape }}">
                                       <img class="product-single__thumbnail-image small--hide" loading="lazy" src="{{ media.src | img_url: 'compact' }}" alt="{{ media.alt | escape }}">
                                       </a>
-                                  </li>       
-                          {% when 'external_video' %}
-                              <li class="grid__item {% unless enable_thumbnail_slides == true %}{{ product_thumbnail_width }} {% endunless %}{% if product.images.size > 1 %}product-single__thumbnails-item{% endif %} js">
-                              {%comment%}{{ media | external_video_tag }}{%endcomment%}
-                              <a href="#" class="text-link product-single__thumbnail product-single__thumbnail--{{ section.id }}" data-thumbnail-id="{{ media.id }}" {% if enable_zoom %}data-zoom="{{ media.src | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
-                              <div class="product-single__thumbnail-image medium-up--hide video-media" style="height:340px;display: flex;align-items: center;justify-content: center;">{{ media | external_video_tag }}</div>
-                              <img loading="lazy" class="product-single__thumbnail-image small--hide" src="{{ media.preview_image | img_url: 'compact' }}" alt="{{ media.alt | escape }}">                            
-                              </a>
-                              </li>                       
+                                  </li>                            
                           {% endcase %}            
                       {% endfor %}
               </ul>        
@@ -901,7 +908,7 @@
           <div class="banner-decorate-walls">
             <div class="banner-decorate-walls_header">DECORATE THE WALLS OF YOUR HOME</div>
             <div class="banner-decorate-walls_text">You can decorate the interior with puzzles and our special mounting system</div>
-            <div class="banner-decorate-walls_howitworks"><a href="#upsell-anoncment-popup" style="text-decoration: underline;font-weight: 600;font-size: 14px;color: #292929;" class="upsell-anoncment-popup">see how it works -></a></div>
+            <div class="banner-decorate-walls_howitworks"><a id="annoncment-banner-link" href="#upsell-anoncment-popup" style="text-decoration: underline;font-weight: 600;font-size: 14px;color: #292929;" class="upsell-anoncment-popup">see how it works -></a></div>
           </div>
 
           <div class="product-single__description rte" itemprop="description">
@@ -920,7 +927,10 @@
   
             <div id="tab-1">
               <div class="product-description">
-                
+                {% assign video = product.media | where: "media_type", "external_video" %}
+                {% if video != blank %}
+                  {{ video[0] | external_video_tag }}
+                {% endif %}
                 {{ product.description }}
 
               </div>

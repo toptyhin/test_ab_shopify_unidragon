@@ -3255,9 +3255,10 @@ $('.thumbnails-slider--active .responsive').slick({
               customPaging: (slider,i) =>{
                 const thumb = $(slider.$slides[i]).find('.product-single__thumbnail-image.small--hide').attr('src');
         		return '<a><img src="'+thumb+'"></a>';
-              } 
+              }
             }
           }
         ]
 });
+$('.thumbnails-slider--active .responsive').slick('slickGoTo', 1);
   });    
