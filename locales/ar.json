@@ -282,6 +282,7 @@
           "prepaid_initial_order_discounted_with_per_delivery_price": "تكلفة الشحن الأولى٪ {discounted_shipping_price}٪ {prepaid_delivery_frequency} (٪ {discounted_cost_per_delivery})",
           "prepaid_initial_order_discounted_with_renewal": "تكلفة الشحن الأولى٪ {discounted_shipping_price}٪ {prepaid_delivery_frequency} ، ثم٪ {shipping_price}٪ {billing_cycle}",
           "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "تكلفة الشحن الأولى٪ {discounted_shipping_price}٪ {prepaid_delivery_frequency} (٪ {discounted_cost_per_delivery}) ، ثم٪ {shipping_price}٪ {billing_cycle}",
+          "shipping_price_included": "متضمن",
           "recurring_order_shipping_price": "متبوعًا بـ٪ {recurring_order_shipping_price}",
           "first_order_shipping_price_included": "تم تضمين الطلب الأول ، متبوعًا بـ٪ {recurring_order_shipping_price}",
           "first_order_different_shipping_price": "٪ {first_order_shipping_price} (٪ {per_delivery_price} لكل تسليم) ، متبوعًا بـ٪ {recurring_order_shipping_price}",
@@ -391,7 +392,9 @@
         "paypal": {
           "connect": "انقر لتوصيل حساب باي بال الخاص بك",
           "account_connected": "الحساب متصل"
-        }
+        },
+        "subscription_agreement_label": "أفهم أنني أوافق على الاشتراك. سيتم تجديده بالسعر وفترة التكرار المذكورة حتى ينتهي أو يتم٪ {cancelled}.",
+        "subscription_agreement_cancelled": "ألغيت"
       },
       "payment_summary": {
         "gift_card_current_balance_notice": "الرصيد الحالي {{amount}}",
@@ -1125,6 +1128,13 @@
       "product_type": {
         "label": "نوع المنتج"
       }
+    },
+    "search": {
+      "sorting": {
+        "relevance": "ملاءمة",
+        "price_ascending": "السعر من الارخص للاعلى",
+        "price_descending": "السعر الاعلى الى الادنى"
+      }
     }
   },
   "sections": {
@@ -1162,9 +1172,6 @@
       "previous": "السابق",
       "next": "التالى\n",
       "current_page": "الصفحة  {{ current }} من {{ total }}"
-    },
-    "copyright_credit": {
-      "designer_credits_html": "مصمم بواسطة Booster Theme"
     },
     "password_page": {
       "opening_soon": "قريبا الافتتاح",
@@ -1526,7 +1533,8 @@
       "sale_end_text": "ينتهي البيع بمجرد أن يصل المؤقت إلى الصفر!",
       "deliiver_time_text_1": "وقت التسليم المقدر",
       "deliiver_time_text_2": "الأيام",
-      "sticky_timer_text": "السعر سينتهي في:"
+      "sticky_timer_text": "السعر سينتهي في:",
+      "subscribe": "أضف إلى السلة!"
     },
     "dynamic_checkout_buttons": {
       "add_to_cart_text_when_dynamic_checkout_buttons_enable": "أضف إلى السلة"
@@ -1610,13 +1618,13 @@
   },
   "custome_block": {
     "sizechart": {
-        "title_block": "حجم الرسم البياني",
-        "bigger": "أكبر",
-        "king_size": "الحجم الملكي",
-        "royal_size": "الحجم الملكي",
-        "puzle_pieces": "قطع اللغز",
-        "assembly_time": "وقت التجمع",
-        "time": "من {{time}} ساعة"
+      "title_block": "حجم الرسم البياني",
+      "bigger": "أكبر",
+      "king_size": "الحجم الملكي",
+      "royal_size": "الحجم الملكي",
+      "puzle_pieces": "قطع اللغز",
+      "assembly_time": "وقت التجمع",
+      "time": "من {{time}} ساعة"
     }
   }
 }
