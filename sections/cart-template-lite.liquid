@@ -1,0 +1,589 @@
+{% layout 'theme.light' %}
+
+<style>
+  .grid__item.totle_cart.text-right.left_indent {
+    padding-left: 0;
+}
+    .js-video-button {
+      font-weight: bold;
+      text-decoration: underline;
+      color: #ff7607;
+    }
+    .upsell-button {
+      background-color: #333333;
+      font-weight: bold;
+      color: white;
+      text-transform: uppercase;
+      font-size: 12px;
+      padding: 7px 18px;
+      border: none;
+    }
+    .upsell-description {
+      padding: 5px 0px;
+      font-size: 0.86667em;
+      width: 100%;
+      margin-top: 5px;
+    }
+    .cart__row p{
+      font-size: 0.86667em;
+      font-style: italic;
+    }
+    .cart__savings {
+            display: flex;
+            justify-content: space-between;
+        }
+    @media screen and (max-width: 768px){
+      td.text-right.upsell {
+        margin: 0 auto;
+      }
+      .cart__row p{
+        display: none;
+        /*font-size: 12px;*/
+      }
+    }
+    @media screen and (min-width: 750px){
+      .left_indent {
+        padding-left: 60px !important;
+      }
+    }
+    .cart__shipping-custom {
+      text-align: left;
+      font-style: normal;
+      font-size: 100%;
+      padding: 0 0 30px;
+    }
+    .pdp_discount-custom{
+      margin-top: 0;
+    }
+    .indent_down{
+      margin-bottom: 70px;
+    }
+    .block__row, .td_price {
+      display:flex;
+      justify-content:space-between;
+    }
+    .block__row-input, .bg-input  {
+      display:flex;
+      align-items: center;;
+    }
+    .we-accept-custom{
+      text-align: left;
+    }
+  
+    .spoiler__title-line{
+      border-bottom: 1px dashed #737373;
+    }
+    .spoiler__title{
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: 45px;
+    }
+    .spoiler__text{
+      display:none;
+      cursor:pointer;
+    }
+    .cart th {
+      font-weight: 600;
+    }
+    td.cart__price-wrapper {
+      font-weight: 600;
+    }
+    td.text-bold {
+      font-weight: 600;
+    }
+    .cart__meta-text {
+      font-style: normal;
+    }
+    .list-view-item__title {
+      font-weight: 600;
+    }
+    .btn-num-product-up, .btn-num-product-down {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 8px;
+    }
+    .bg-input, .block__element-input input{
+      background-color: #fafafa;
+    }
+  
+    /*progress bar*/
+    #progressbar {
+    background-color: #999999;
+    position: relative;
+    margin-bottom: 15px;
+    /* (height of inner div) / 2 + padding */
+  }
+  
+  #progressbar>div {
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    height: 38px;
+  }
+  #progressbar>span>img {
+    margin: 0 15px;
+  }
+  #progressbar>span {
+    color:white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    position: absolute;
+    top: 8px;
+  }
+  .block__element-input input{
+    border: none;
+  }
+  @media only screen and (max-width: 749px) {
+    #progressbar>span {
+      font-size: 10px;
+    }
+    #progressbar>span>img {
+      margin: 0px 12px;
+    }
+    .pdp_discount .pdp_img {
+        height: 200px;
+        overflow: hidden;
+    }
+    .additional-checkout-buttons {
+        margin: 0;
+    }
+  }
+  .cart__qty-input {
+    width: 40px;
+  }
+  a.no-active {
+        color: #ebebeb;
+  }
+  </style>
+  {%- assign free_shipping = 10000.0 -%}
+  {%- assign per_progressbar = cart_total_price | divided_by: free_shipping | times: 100 -%}
+  <script>
+    $(document).ready(function (){
+      $('.spoiler__title').click(function (event){
+        $(this).toggleClass('active').next().slideToggle(200);
+      });
+    });
+  </script>
+  
+  <div class="page-width" data-section-id="{{ section.id }}" data-section-type="cart-template">
+  
+    {% if cart.item_count > 0 %}
+      {% if section.settings.cart_enable %}
+      {{ 'jquery.countdownTimer_2hours.js' | asset_url | script_tag }}
+      {%- endif -%}
+      {%- if localization.country == 'United States' -%}
+      <script>  $.get("https://ipinfo.io/json", function (response) { if (response.country != "US"){ $('.shiping-progressbar').hide();} });</script>
+        <div id="progressbar" class="shiping-progressbar">
+          <div style="width: {% if per_progressbar <= 100 %}{{ per_progressbar }}{%else%}100{%endif%}%"></div>
+          {%- if cart_total_price < free_shipping -%}
+          <span><img src="{{ 'shiping-icon.png' | asset_url}}"/>{{ free_shipping | minus: cart_total_price | money }} until free shipping</span>
+          {%- elsif cart_total_price >= free_shipping -%}
+          <span><img src="https://cdn.shopify.com/s/files/1/0010/6348/5558/files/pngegg.png?v=1622556969" style="max-height: 15px; max-width: 23px; ">Congratulation! You've unlocked free shiping!</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    <form action="/cart" method="post" novalidate class="cart">
+      <div class="section-header_1 grid">
+        <div class="grid__item medium-up--one-half small--text-center medium-up--text-left">
+          <h3 class="heading">{{ 'cart.general.title' | t }}</h3>
+        </div>
+        <div class="grid__item medium-up--one-half small--text-center medium-up--text-right">
+        </div>
+      </div>
+      <table class="indent_down">
+        <thead class="cart__row cart__header" style="border-top: 0;">
+          <th colspan="2" class="set_align">{{ 'cart.label.product' | t }}</th>
+          <th>{{ 'cart.label.price' | t }}</th>
+          <th>{{ 'cart.label.quantity' | t }}</th>
+          <th>{{ 'cart.label.total' | t }}</th>
+        </thead>
+        <tbody>
+
+          {%- liquid
+            for item in cart.items
+              if item.product.type == 'Puzzle'
+                assign puzle_discount = puzle_discount | plus: item.quantity
+              endif
+            endfor
+          -%}
+          {%- for item in cart.items -%} 
+          {%- liquid
+            if customer
+              for tag in customer.tags
+                if tag == 'Subscription membership' 
+                  assign member_discount = true
+                endif
+              endfor
+            endif
+            if member_discount == true and item.product.type == 'Puzzle'
+              assign item_price = item.price | times: 0.8
+              assign item_line_price = item.line_price | times: 0.8
+              assign item_original_line_price = item.original_line_price | times: 0.8
+                if item.variant.compare_at_price > item.variant.price and item.variant.price != '0'
+                  assign saving = item.variant.compare_at_price | minus: item_price | times: item.quantity
+                  assign was = item.variant.compare_at_price |  times: item.quantity
+                  assign total_saving = saving | plus: total_saving
+                  assign total_saving_was = was | plus: total_saving_was
+                endif
+            elsif puzle_discount > 2 and item.product.type == 'Puzzle'
+              assign item_price = item.price | times: 0.9
+              assign item_line_price = item.line_price | times: 0.9
+              assign item_original_line_price = item.original_line_price | times: 0.9
+                if item.variant.compare_at_price > item.variant.price and item.variant.price != '0'
+                  assign saving = item.variant.compare_at_price | minus: item_price | times: item.quantity
+                  assign was = item.variant.compare_at_price |  times: item.quantity
+                  assign total_saving = saving | plus: total_saving
+                  assign total_saving_was = was | plus: total_saving_was
+                endif
+            else
+              assign item_price = item.price
+              assign item_line_price = item.line_price
+              assign item_original_line_price = item.original_line_price
+                if item.variant.compare_at_price > item.variant.price and item.variant.price != '0'
+                  assign saving = item.variant.compare_at_price | minus: item.variant.price | times: item.quantity
+                  assign was = item.variant.compare_at_price |  times: item.quantity
+                  assign total_saving = saving | plus: total_saving
+                  assign total_saving_was = was | plus: total_saving_was
+                endif
+            endif
+
+            assign cart_total_price = cart_total_price | plus: item_line_price
+           -%}
+  
+          <tr class="cart__row border-bottom line{{ forloop.index }} cart-flex{% if forloop.first %} border-top{%- endif -%}">
+            <td class="cart__image-wrapper cart-flex-item">
+              <a href="{{ item.url | within: collections.all }}">
+                <img class="cart__image" src="{{ item | img_url: '95x95', scale: 2 }}" alt="{{ item.title | escape }}">
+              </a>
+            </td>
+            <td class="cart__meta small--text-left cart-flex-item">
+              <div class="list-view-item__title">
+                <a href="{{ item.url }}">
+                  {{ item.product.title }}
+                  {% if item.quantity > 1 %}
+                  <span class="medium-up--hide"><span class="visually-hidden">{{ 'cart.label.quantity' | t }}</span>(x{{ item.quantity }})</span>
+                  {%- endif -%}
+                </a>
+              </div>
+              {%- if item.product.title contains "balancing" -%}<div class="cart__meta-text" style="font-size: 12px;">This item is a subject to additional duty fees to be paid upon delivery to Canada. These fees may equal up to 25-35% of the value of the delivered goods.</div>{%- endif -%}
+              {% unless item.variant.title contains 'Default' %}
+              <div class="cart__meta-text">
+                {% for option in item.product.options %}
+                  {{ item.variant.options[forloop.index0]  | split: '—' | first }}<br/>
+                {% endfor %}
+              </div>
+              {% endunless %}
+  
+              {%- assign property_size = item.properties | size -%}
+              {% if property_size > 0 %}
+              <div class="cart__meta-text medium-up--hide">
+                  <div class="block__row-input{% if item.id == 39572397719600 or item.id == 39570793824304  or item.id == 39570793857072 or item.id == 39602407997488 %} hide{% endif %}">
+                    <div class="bg-input">
+                      {%- assign quantity_minus_one = item.quantity | minus: 1 -%}
+                        <a class="btn-num-product-down color1 flex-c-m size7 bg8 eff2" href="{{ routes.cart_change_url }}?quantity={{ quantity_minus_one }}&line={{ forloop.index }}">-</a>
+                      <div class="block__element-input">
+                        <input class="cart__qty-input" type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0" pattern="[0-9]*">
+                      </div>
+                      {%- assign quantity_plus_one = item.quantity | plus: 1 -%}
+                        <a class="btn-num-product-up color1 flex-c-m size7 bg8 eff2" href="{{ routes.cart_change_url }}?quantity={{ quantity_plus_one }}&line={{ forloop.index }}">+</a>
+                      </div>
+                </div>
+              </div>
+              {%- endif -%}
+  
+            </td>
+            <td class="cart__price-wrapper cart-flex-item text-center medium-up--hide">
+  
+              <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="btn--small btn--secondary cart__remove" style="margin-bottom: 12px;">&#10006</a>
+              {{ item_price | money }}
+  
+              {% for discount in item.discounts %}
+              <div class="cart-item__discount medium-up--hide">{{ discount.title }}</div>
+              {% endfor %}
+  
+            </td>
+            <td class="cart__price-wrapper cart-flex-item small--hide">
+              {{ item_price | money }}
+  
+              {% for discount in item.discounts %}
+                <div class="cart-item__discount medium-up--hide">{{ discount.title }}</div>
+              {% endfor %}
+  
+            </td>
+            <td class="cart__update-wrapper cart-flex-item">
+              <div class="block__row-input{% if item.id == 39572397719600 or item.id == 39570793824304  or item.id == 39570793857072 or item.id == 39602407997488 %} hide{% endif %}">
+                <div class="bg-input">
+                  {%- assign quantity_minus_one = item.quantity | minus: 1 -%}
+                    <a class="btn-num-product-down color1 flex-c-m size7 bg8 eff2" href="{{ routes.cart_change_url }}?quantity={{ quantity_minus_one }}&line={{ forloop.index }}">-</a>
+                      <div class="block__element-input">
+                        <input class="cart__qty-input" type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0" pattern="[0-9]*">
+                      </div>
+                  {%- assign quantity_plus_one = item.quantity | plus: 1 -%}
+                    <a class="btn-num-product-up color1 flex-c-m size7 bg8 eff2" href="{{ routes.cart_change_url }}?quantity={{ quantity_plus_one }}&line={{ forloop.index }}">+</a>
+                </div>
+              </div>
+            </td>
+            <td class="small--hide text-bold">
+              {% if item_original_line_price != item_line_price %}
+              <div class="cart-item__original-price"><s>{{ item_original_line_price | money }}</s></div>
+              {%- endif -%}
+  
+              <div>
+                {{ item_line_price | money }}
+              </div>
+  
+              {% for discount in item.discounts %}
+              <div class="cart-item__discount">{{ discount.title }}</div>
+              {% endfor %}
+            </td>
+            <td class="small--hide text-center">
+              <div>
+                  <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="btn--small btn--secondary cart__remove">&#10006</a>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+        <footer class="cart__footer">
+        <div class="grid small--one-whole medium-up--one-half cart__off_wrapper" style="float:right">
+          {% if section.settings.cart_notes_enable %}
+          <div class="grid__item medium-up--one-half">
+
+  
+            <div class="pdp_discount pdp_discount-custom">
+  
+              <div class="discount_content">
+
+              </div>
+            </div>
+                  <p class="dots">....</p>
+                  <li><div class="content_border content_border4 text_center {% if puzzle_count == 1 or puzzle_count == 2 or puzzle_count == 3 or puzzle_count < 4 %}{% else %}bg_coloradd{%- endif -%}"><span class="border-content">20%</span></div>
+                    <p class="numbers">4</p>
+                    <p class="type">puzzles</p>
+                  </li>
+  
+                </ul>
+  
+
+  
+              </div>
+  
+  
+         </div>
+            <div class="cart-note small--hide spoiler__block spoiler__close">
+              <div class="spoiler__title">
+                <label for="CartSpecialInstructions" class="cart-note__label small--text-center"><span class="spoiler__title-line">{{ 'cart.general.note' | t }}</span></label>
+              </div>
+              <div class="spoiler__text">
+                <textarea name="note" id="CartSpecialInstructions" class="cart-note__input">{{ cart.note }}</textarea>
+              </div>
+              <div class="medium-up--hide">
+                <a href="collections/all" class="btn cart__update cart__continue--large" >{{ 'cart.general.continue_shopping' | t }}</a>
+              </div>
+            </div>
+          </div>
+          {%- endif -%}
+          <div class="grid__item totle_cart text-right{% if section.settings.cart_notes_enable %} medium-up--one-half{% endif %} left_indent">
+            <div>
+              {% if total_saving %}
+              {% assign x = total_saving | plus: 0  %}
+              {% assign y = x | plus: cart.total_price | plus: 0  %}
+              {% assign sale = total_saving | times: 100.0  %}
+              {% assign sale = sale | divided_by:  y | round | append: '%' %}
+              {% if section.settings.saved_price  %}
+              <div class="td_price">
+                <span class="cart__subtotal-title" >
+                  {{ 'cart.general.yousave' | t }}
+                </span>
+                <span class="saved_prc cart__subtotal"><span class="cart-sale_price">{{ sale }} OFF</span></span>
+              </div>
+              {%- endif -%}
+              {%- endif -%}
+  
+            <div class="block__row">
+              <div>
+                <span class="cart__subtotal-title">{{ 'cart.general.subtotal' | t }}</span>
+              </div>
+              <div>
+                <span class="cart__subtotal"><span class="crt_total">{{ cart_total_price | money }}</span></span>
+              </div>
+            </div>
+  
+            </div>
+            {% if cart.total_discounts > 0 %}
+            <div class="cart__savings">
+              {{ 'cart.general.savings' | t }}
+              <span class="cart__savings-amount">{{ cart.total_discounts | money }}</span>
+            </div>
+            {%- endif -%}
+            <div class="cart__shipping cart__shipping-custom">{{ 'cart.general.shipping_at_checkout' | t }}</div>
+            {% if section.settings.cart_enable %}
+            <script>
+              var time_minute={{ section.settings.cart_timer_minute }}/60 ;
+              var hours = Math.floor( time_minute / 60);
+              var minutes = Math.floor(time_minute % 60);
+              $(function(){
+                $('#hm_timer120').countdowntimer({
+                  hours : hours,
+                  minutes :minutes,
+                  seconds :00
+                });
+              });
+            </script>
+            <p class="timer_box"><span class="cart_text">{{ 'cart.general.cart_expire_text' | t }} </span>
+              <span id="hm_timer120" class="cart_time"></span></p>
+  
+            {%- endif -%}
+  
+            <div class="content_block">
+              <div class="content_block-indent">
+              <button name="checkout" type="submit" class="marg_btm checkout_btn btn_sp btn--small-wide" style="width: 100%">
+                <img src="https://cdn.shopify.com/s/files/1/3096/8844/files/icon_1.png">
+                <span>{{ 'cart.general.checkout' | t }}</span>
+              </button>
+                {% if additional_checkout_buttons %}
+                <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
+              {%- endif -%}
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </footer>
+    </form>
+    {% else %}
+    <div class="empty-page-content text-center">
+      <h1>{{ 'cart.general.title' | t }}</h1>
+      <p class="cart--empty-message">{{ 'cart.general.empty' | t }}</p>
+      <div class="cookie-message">
+        <p>{{ 'cart.general.cookies_required' | t }}</p>
+      </div>
+      <a href="/" class="btn btn--has-icon-after cart__continue-btn">{{ 'general.404.link' | t }}{% include 'icon-arrow-right' %}</a>
+    </div>
+    {%- endif -%}
+  </div>
+  <a href="/cart/clear" class="clear-cart my-super-fancy-button-style">Clear All Items From Cart</a>
+  {% if cart.item_count > 0 %}
+  {% if section.settings.cart_enable %}
+  
+  <script>
+   $('.clear-cart').on('click',function(e){
+      e.preventDefault();
+      $.ajax({
+        type: "POST",
+        url: '/cart/clear.js',
+        success: function(){
+          window.location.href = "/cart/";
+        },
+        dataType: 'json'
+      });
+    });
+    var time_minute_1 ={{ section.settings.cart_timer_minute }}/60 ;
+    //   alert(time_minute);
+    var hours_1 = Math.floor( time_minute_1 / 60) * 60;
+    var minutes_1 = Math.floor(time_minute_1 % 60);
+    var totalminute = minutes_1 + hours_1;
+    var milisecond = (totalminute * 60) * 1000;
+    $(window).load(function(){
+      setTimeout(function() {
+        $('.clear-cart').trigger('click');
+      }, milisecond);
+  
+    });
+  </script>
+  
+  {%- endif -%}
+  {%- endif -%}
+  {% schema %}
+  {
+  "name": "Cart page",
+  "settings": [
+  {
+  "type": "checkbox",
+  "id": "cart_notes_enable",
+  "label": "Enable cart notes",
+  "default": false
+  },
+  {
+  "type": "checkbox",
+  "id": "saved_price",
+  "label": "Enable Saved Percentage",
+  "default": true
+  },
+  {
+  "type": "header",
+  "content": "Cart Page Timer"
+  },
+  {
+  "type": "checkbox",
+  "id": "cart_enable",
+  "label": "Timer Enable"
+  },
+  {
+  "type": "number",
+  "id": "cart_timer_minute",
+  "label": "Cart Timer Minute",
+  "info": "Example: 1500 second left = 25 minutes left"
+  },
+  {
+  "type": "color",
+  "id": "cart_timer_color",
+  "label": "Cart Timer Color"
+  },
+  {
+  "type": "header",
+  "content": "cart page images setting"
+  },
+  {
+  "type": "checkbox",
+  "id": "shopping_payment",
+  "label": "Enable secure shopping and payment card images",
+  "default": true
+  },
+  {
+  "type": "image_picker",
+  "id": "cart_left_image",
+  "label": "Left image",
+  "info": "Maximum logo dimensions are 500px wide by 100px high. The uploaded file will be resized to fit within those constraints."
+  },
+  {
+  "type": "image_picker",
+  "id": "cart_right_image",
+  "label": "Right image",
+  "info": "Maximum logo dimensions are 500px wide by 100px high. The uploaded file will be resized to fit within those constraints."
+  },
+  {
+    "type":"header",
+    "content":"Discount Info"
+  },
+  {
+    "type":"image_picker",
+    "id":"pdp_image",
+    "label":"Image"
+  },
+  {
+    "type":"textarea",
+    "id":"pdp_title",
+    "label":"Title"
+  },
+  {
+    "type":"textarea",
+    "id":"pdp_sub_title",
+    "label":"Sub-title"
+  },
+  {
+    "type":"text",
+    "id":"pdp_cta_text",
+    "label":"CTA text"
+  },
+  {
+    "type":"url",
+    "id":"pdp_cta_link",
+    "label":"CTA link"
+  }
+  ]
+  }
+  {% endschema %}
+  
