@@ -465,7 +465,7 @@
           if (newContent != node.textContent) {
             if(!node.parentNode.hasAttribute('data-ly-mutation-count') || parseInt(node.parentNode.getAttribute('data-ly-mutation-count')) < langify.settings.maxMutations) {
               var count = node.parentNode.hasAttribute('data-ly-mutation-count') ? parseInt(node.parentNode.getAttribute('data-ly-mutation-count')) : 0;
-              node.parentNode.setAttribute('data-ly-mutation-count', count+1);
+              node.parentNode.setAttribute('data-ly-mutation-count', count);
               node.textContent = newContent;
 
               mutationCount = mutationCount + 1;

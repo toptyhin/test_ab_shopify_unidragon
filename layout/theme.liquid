@@ -19,8 +19,29 @@
   <meta name="google-site-verification" content="a4TAWTeb_JqFZ6hfN97VJ_UnJcM5d9ONGZ_qf7-S2JY" />
   <!-- DV 27/07 -->
   <meta name="p:domain_verify" content="300f08e5f3316850033f167b79a36ae1"/>
-  
-  
+  {% assign lang_code = request.path | slice: 1,2 %}
+  {% if lang_code == 'ar' %}
+    <style>
+      p, h1, h2, h3, ul > li, span, div {
+        text-align: right;
+      }
+      .banner-inspirational-gift_link {
+          padding-right: 15px;
+      }
+        .banner-decorate-walls_howitworks {
+            padding-right: 20px;
+        }
+      @media only screen and (min-width: 749px) {
+        .banner-inspirational-gift_link {
+          padding-right: 85px;
+      }
+        .banner-decorate-walls_howitworks {
+            width: 40%;
+            padding: 0 20px;
+        }
+      }
+    </style>
+  {% endif %}
   
   <link rel="canonical" href="{{ canonical_url }}">
 
