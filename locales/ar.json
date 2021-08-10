@@ -1626,5 +1626,16 @@
       "assembly_time": "وقت التجمع",
       "time": "من {{time}} ساعة"
     }
+  },
+  "custome_text": {
+    "banner": {
+      "buy_gift_card": "راء بطاقة هدية ",
+      "see_how_it_works": "انظر كيف يعمل"
+    },
+    "button": {
+      "buy_it_now": "تر الآن",
+      "see_more": "اهد المزيد",
+      "read_less": "أ أقل"
+    }
   }
 }

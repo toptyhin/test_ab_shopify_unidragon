@@ -1623,5 +1623,16 @@
         "assembly_time": "Tiempo de ensamblaje",
         "time": "A partir de {{ time }} horas"
     }
+  },
+  "custome_text": {
+    "banner": {
+      "buy_gift_card": "comprar tarjeta de regalo",
+      "see_how_it_works": "mira como funciona"
+    },
+    "button": {
+      "buy_it_now": "Compre ya",
+      "see_more": "ver más",
+      "read_less": "leer menos"
+    }
   }
 }

@@ -471,5 +471,16 @@
       "assembly_time": "Assembly time",
       "time": "From {{ time }} hours"
     }
+  },
+  "custome_text": {
+    "banner": {
+      "buy_gift_card": "buy gift card",
+      "see_how_it_works": "see how it works"
+    },
+    "button": {
+      "buy_it_now": "buy it now",
+      "see_more": "see more",
+      "read_less": "read less"
+    }
   }
 }

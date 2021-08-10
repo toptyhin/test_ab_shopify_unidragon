@@ -1620,5 +1620,16 @@
         "assembly_time": "Hora da assembléia",
         "time": "De {{time}} horas"
     }
+  },
+  "custome_text": {
+    "banner": {
+      "buy_gift_card": "comprar vale-presente",
+      "see_how_it_works": "veja como funciona"
+    },
+    "button": {
+      "buy_it_now": "Compre agora",
+      "see_more": "ver mais",
+      "read_less": "eia menos"
+    }
   }
 }
