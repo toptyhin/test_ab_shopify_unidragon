@@ -151,9 +151,7 @@
           </button>
           {% endif %}
         </div>
-        <form style="display: none;" method="post" action="/cart">
-            <input  type="submit" class="custome_checkout" value="checkout" name="checkout"/>
-          </form>
+        {% include 'getsocial-inline-bar' %}
       </div>
       
       <div class="grid__item medium-up--one-half">
@@ -241,7 +239,6 @@
                 font-size: 32px !important;
               }
             </style>
-            {% include 'getsocial-inline-bar' %}
             {%- capture "form_classes" -%}
             product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %}{% if section.settings.enable_payment_button and product.has_only_default_variant%} product-form--payment-button-no-variants{% endif %}
             {%- endcapture %}

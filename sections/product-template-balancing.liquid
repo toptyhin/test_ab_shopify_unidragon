@@ -287,6 +287,7 @@
               render 'customer-review-photo' with product
             endif
           -%}
+          {% include 'getsocial-inline-bar' %}
         <form style="display: none;" method="post" action="/cart">
           <input  type="submit" class="custome_checkout" value="checkout" name="checkout"/>
         </form>
@@ -409,7 +410,6 @@
                 font-size: 32px !important;
               }
             </style>
-            {% include 'getsocial-inline-bar' %}
             {% if section.settings.product_description == 'under_the_price'%}
               <div class="product-single__description rte ttt" itemprop="description">
               {% assign product_desc = 'products.product_tab.product_tab_1' | t %} 
