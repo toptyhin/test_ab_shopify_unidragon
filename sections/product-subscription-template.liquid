@@ -249,21 +249,135 @@
                {% endif %}
                
                  <input type="hidden" name="selling_plan" value="{{ current_selling_plan_allocation.selling_plan.id | default: '' }}">
-                 <fieldset class="selling-plan-fieldset" data-product="{{ product | json }}">
-                   <legend>Purchase options</legend>
-                   {% unless product.requires_selling_plan %}
-                   <input type="radio" name="purchase_option" checked> One-time purchase
-                   {% endunless %}
-               
-                   {% for group in product.selling_plan_groups %}
-                     <input type="radio" name="purchase_option" checked> {{ group.name}}
-               
-                     {% for option in group.options %}
-                       <label>{{ option.name }}</label>
-                     {% endfor %}
-                   {% endfor %}
-                 </fieldset>
+                 {% assign subscription_products = all_products %}
+
+            <div class="swatch_options">
+              <div class="swatch sw-size clearfix" data-option-index="0">
+                <div class="header">Choose subscription:</div>
+                <div class="swatch_container">
+                  {% if product.handle == 'subscription'%}
+                    <a href="{{all_products['month-subscription'].url}}">
+                      <div class="swatch-element">
+                          <label for="swatch-subscription">
+                          <div class="sw_image_outer">
+                            <span class="sw_image"><img loading="lazy" src="{{all_products['month-subscription'].featured_image | img_url: 'medium'}}"></span>
+                          </div>
+                          <div class="sw_content_outer">
+                            <div class="sw_var_price">
+                              {% if all_products['month-subscription'].compare_at_price > all_products['month-subscription'].price %}
+                              <span class="sw_com_price">{{all_products['month-subscription'].compare_at_price | money }}</span>
+                              {% endif %}
+                              <span class="sw_m_price">{{all_products['month-subscription'].price | money }}</span>
+                            </div>
+                            <span class="sw_val">{{ all_products['month-subscription'].title }}</span>
+                          </div>
+                          <img class="crossed-out" src="//cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/soldout.png?v=16939202558076501984">
+                        </label>
+                      </div>
+                    </a>
+                    <div class="swatch-element subscription subscription active">
+                          <label for="swatch-subscription">
+                          <div class="sw_image_outer">
+                            <span class="sw_image"><img loading="lazy" src="{{all_products['subscription'].featured_image | img_url: 'medium'}}"></span>
+                          </div>
+                          <div class="sw_content_outer">
+                            <div class="sw_var_price">
+                              {% if all_products['subscription'].compare_at_price > all_products['subscription'].price %}
+                              <span class="sw_com_price">{{all_products['subscription'].compare_at_price | money }}</span>
+                              {% endif %}
+                              <span class="sw_m_price" style="color: black;">{{all_products['subscription'].price | money }}</span>
+                            </div>
+                            <span class="sw_val">{{ all_products['subscription'].title }}</span>
+                          </div>
+                          <img class="crossed-out" src="//cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/soldout.png?v=16939202558076501984">
+                        </label>
+                    </div>
+                  {% else %}
+                      <div class="swatch-element subscription active">
+                        <label for="swatch-subscription">
+                        <div class="sw_image_outer">
+                          <span class="sw_image"><img loading="lazy" src="{{all_products['month-subscription'].featured_image | img_url: 'medium'}}"></span>
+                        </div>
+                        <div class="sw_content_outer">
+                          <div class="sw_var_price">
+                            {% if all_products['month-subscription'].compare_at_price > all_products['month-subscription'].price %}
+                            <span class="sw_com_price">{{all_products['month-subscription'].compare_at_price | money }}</span>
+                            {% endif %}
+                            <span class="sw_m_price" style="color: black;">{{all_products['month-subscription'].price | money }}</span>
+                          </div>
+                          <span class="sw_val">{{ all_products['month-subscription'].title }}</span>
+                        </div>
+                        <img class="crossed-out" src="//cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/soldout.png?v=16939202558076501984">
+                      </label>
+                    </div>
+
+                    <a href="{{all_products['subscription'].url}}">
+                      <div class="swatch-element subscription">
+                          <label for="swatch-subscription">
+                          <div class="sw_image_outer">
+                            <span class="sw_image"><img loading="lazy" src="{{all_products['subscription'].featured_image | img_url: 'medium'}}"></span>
+                          </div>
+                          <div class="sw_content_outer">
+                            <div class="sw_var_price">
+                              {% if all_products['subscription'].compare_at_price > all_products['subscription'].price %}
+                              <span class="sw_com_price">{{all_products['subscription'].compare_at_price | money }}</span>
+                              {% endif %}
+                              <span class="sw_m_price">{{all_products['subscription'].price | money }}</span>
+                            </div>
+                            <span class="sw_val">{{ all_products['subscription'].title }}</span>
+                          </div>
+                          <img class="crossed-out" src="//cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/soldout.png?v=16939202558076501984">
+                        </label>
+                      </div>
+                    </a>
+                  {% endif %}
+                </div>
+                {% for group in product.selling_plan_groups %}
+                  <input type="radio" name="purchase_option" checked>
+                {% endfor %}
+              </div>
+              <style>
+                .subscription.active label{
+                    border: 2px solid #000;
+                }
+                  .sw_image_outer {
+                padding-top: 25px;
+            }
+                  .sw_content_outer {
+                        padding-bottom: 30px;
+                        padding-top: 15px;
+                    }
+                    span.sw_m_price {
+                        font-size: 23px;
+                    }
+                  .swatch .swatch-element {
+                    margin: 10px;
+                  }
+                  .swatch_container {
+                    display: flex;
+                  }
+                .most-popular-label {
+                  display:none;
+                  top: 9px;
+                }
+                @media (min-width: 1186px) {
+                    .most-popular-label {
+                      top: 135px;
+                      right: auto;
+                  }
+                }
+                @media (min-width: 980px) and (max-width: 1186px) {
+                    .most-popular-label {
+                      top: 110px;
+                      right: auto;
+                  }
+                }
               
+              </style>  
+            
+                           
+                        </div>
+                 
                  <button id="BuySubscription" class="js-go-cart-add-to-cart btn_sp addtocart_btn product-form__cart-submit hvr-wobble-horizontal">
                     <span id="AddToCartText">{{ 'products.product.subscribe' | t }}</span>
                </button>
