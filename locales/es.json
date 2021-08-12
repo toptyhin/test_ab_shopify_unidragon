@@ -1571,57 +1571,57 @@
   "pagefly": {
     "products": {
       "product": {
-        "regular_price": "Precio regular",
-        "sold_out": "Vendido",
-        "unavailable": "Indisponible",
-        "on_sale": "Venta",
-        "quantity": "Cantidad",
-        "add_to_cart": "Añadir a la cesta",
-        "back_to_collection": "Volver a {{title}}",
-        "view_details": "Ver detalles"
+        "regular_price": "Regular price",
+        "sold_out": "Sold out",
+        "unavailable": "Unavailable",
+        "on_sale": "Sale",
+        "quantity": "Quantity",
+        "add_to_cart": "Add to cart",
+        "back_to_collection": "Back to {{ title }}",
+        "view_details": "View details"
       }
     },
     "article": {
-      "tags": "Etiquetas:",
-      "all_topics": "Todos los temas",
-      "by_author": "por {{ author }}",
-      "posted_in": "Publicado en",
-      "read_more": "Lee mas",
-      "back_to_blog": "De regreso {{ title }}"
+      "tags": "Tags:",
+      "all_topics": "All topics",
+      "by_author": "by {{ author }}",
+      "posted_in": "Posted in",
+      "read_more": "Read more",
+      "back_to_blog": "Back to {{ title }}"
     },
     "comments": {
-      "title": "Deja un comentario",
-      "name": "Nombre",
-      "email": "Correo electrónico",
-      "message": "Mensaje",
-      "post": "Publicar comentario",
-      "moderated": "Tenga en cuenta que los comentarios deben aprobarse antes de que se publiquen",
-      "success_moderated": "Tu comentario se publicó correctamente. Lo publicaremos en un rato, ya que nuestro blog está moderado.",
-      "success": "¡Tu comentario se publicó correctamente! ¡Gracias!",
+      "title": "Leave a comment",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "post": "Post comment",
+      "moderated": "Please note, comments must be approved before they are published",
+      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
+      "success": "Your comment was posted successfully! Thank you!",
       "comments_with_count": {
-        "one": "{{ count }} comentario",
-        "other": "{{ count }} comentario"
+        "one": "{{ count }} comment",
+        "other": "{{ count }} comments"
       }
     },
     "password_page": {
-      "login_form_message": "Ingrese a la tienda usando contraseña:",
-      "login_form_password_label": "Clave",
-      "login_form_password_placeholder": "Tu contraseña",
-      "login_form_submit": "Ingresar",
-      "signup_form_email_label": "Correo electrónico",
-      "signup_form_success": "¡Le enviaremos un correo electrónico justo antes de que abramos!",
-      "password_link": "Entrar usando contraseña"
+      "login_form_message": "Enter store using password:",
+      "login_form_password_label": "Password",
+      "login_form_password_placeholder": "Your password",
+      "login_form_submit": "Enter",
+      "signup_form_email_label": "Email",
+      "signup_form_success": "We will send you an email right before we open!",
+      "password_link": "Enter using password"
     }
   },
   "custome_block": {
     "sizechart": {
-        "title_block": "CARTA DEL TAMAÑO",
-        "bigger": "MÁS GRANDE",
-        "king_size": "Tamaño Gigante",
-        "royal_size": "Tamaño Real",
-        "puzle_pieces": "Piezas de rompecabezas",
-        "assembly_time": "Tiempo de ensamblaje",
-        "time": "A partir de {{ time }} horas"
+      "title_block": "CARTA DEL TAMAÑO",
+      "bigger": "MÁS GRANDE",
+      "king_size": "Tamaño Gigante",
+      "royal_size": "Tamaño Real",
+      "puzle_pieces": "Piezas de rompecabezas",
+      "assembly_time": "Tiempo de ensamblaje",
+      "time": "A partir de {{ time }} horas"
     }
   },
   "custome_text": {

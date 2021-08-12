@@ -122,6 +122,9 @@
       out.inViewport = bounding.x > 0 && bounding.y > 0;
       return out;
     },
+    isDomainFeatureEnabled: function() {
+      return {{ shop.metafields.langify_v2.cross_domain_links | json }};
+    },
     getVal: function(str) {
       var v = window.location.search.match(new RegExp('(?:[?&]'+str+'=)([^&]+)'));
       return v ? v[1] : null;
@@ -229,8 +232,8 @@
       {%- if isValid == false -%}
         {%- if shop.metafields.langify_v2.cross_domain_links[request.host][language.iso_code] -%}
           {%- assign isValid = true -%}
-        {%- assign used_root_url = shop.metafields.langify_v2.cross_domain_links[request.host][language.iso_code].root_url -%}
-        {%- assign used_domain = shop.metafields.langify_v2.cross_domain_links[request.host][language.iso_code].host -%}
+          {%- assign used_root_url = shop.metafields.langify_v2.cross_domain_links[request.host][language.iso_code].root_url -%}
+          {%- assign used_domain = shop.metafields.langify_v2.cross_domain_links[request.host][language.iso_code].host -%}
         {%- endif -%}
       {%- endif -%}
       {%- if isValid -%}
@@ -252,7 +255,7 @@
         },
       {%- endif -%}
     {% endfor %}
-    ],
+    ]
   };
 
   function isIE() {
@@ -465,7 +468,7 @@
           if (newContent != node.textContent) {
             if(!node.parentNode.hasAttribute('data-ly-mutation-count') || parseInt(node.parentNode.getAttribute('data-ly-mutation-count')) < langify.settings.maxMutations) {
               var count = node.parentNode.hasAttribute('data-ly-mutation-count') ? parseInt(node.parentNode.getAttribute('data-ly-mutation-count')) : 0;
-              node.parentNode.setAttribute('data-ly-mutation-count', count);
+              node.parentNode.setAttribute('data-ly-mutation-count', count+1);
               node.textContent = newContent;
 
               mutationCount = mutationCount + 1;
@@ -818,7 +821,7 @@
       }
 
       if(langify.locale.languages.length === 1) {
-        console.info(`%c LANGIFY INFO:\n`, 'font-weight: bold;', 'All languages are disabled! There must be at least one active language in order that the languages switcher is displayed.')
+        console.info(`%c LANGIFY INFO:\n`, 'font-weight: bold;', 'The language switcher is hidden! This can have one the following reasons: \n * All additional languages are disabled in the "Langify -> Dashboard -> Languages" section. \n * If you are using different domains for your additional languages, ensure that "Cross Domain Links" are enabled inside the "Langify -> Dashboard -> Switcher Configurator -> Domains" section.');
       }
 
       this._currencySwitcherBindings();
@@ -826,18 +829,22 @@
     _currencySwitcherBindings: function() {
       var currencySwitcherForm = document.getElementById('currency_switcher_form');
       if(currencySwitcherForm) {
-        var currencySelectSwitcher = document.querySelectorAll('select.ly-currency-switcher');
-        var currencyCustomSwitcher = document.querySelectorAll('div.ly-currency-switcher a');
+        var currencySelectSwitcher = document.querySelectorAll('select.ly-currency-switcher , select.ly-country-switcher');
+        var currencyCustomSwitcher = document.querySelectorAll('div.ly-currency-switcher a, div.ly-country-switcher a');
         currencySwitcherForm.querySelector('input[name="return_to"]').value = window.location.pathname;
         for(var i=0; i<currencyCustomSwitcher.length; i++) {
-          currencyCustomSwitcher[i].addEventListener('click', function() {
-            currencySwitcherForm.querySelector('input[name="currency"]').value = this.getAttribute('data-currency');
+          currencyCustomSwitcher[i].addEventListener('click', function(e) {
+            var formType = 'currency';
+            if(this.closest('.ly-custom-dropdown-switcher').getAttribute('class').indexOf('ly-country-switcher') >= 0) formType = 'country_code';
+            currencySwitcherForm.querySelector('input[name="'+formType+'"]').value = this.getAttribute('data-currency');
             currencySwitcherForm.submit();
           });
         }
         for(var a=0; a<currencySelectSwitcher.length; a++) {
           currencySelectSwitcher[a].addEventListener('change', function(){
-            currencySwitcherForm.querySelector('input[name="currency"]').value = this.getAttribute('data-currency');
+            var formType = 'currency';
+            if(this.getAttribute('class') === 'ly-country-switcher') formType = 'country_code';
+            currencySwitcherForm.querySelector('input[name="'+formType+'"]').value = this.value;
             currencySwitcherForm.submit();
           });
         }
@@ -967,9 +974,9 @@
 
       	element.querySelector('.ly-custom-dropdown-list li.current').classList.remove('current');  
       	element.querySelector('.ly-custom-dropdown-list li[key="'+ valueToSelect +'"]').classList.add('current');  
-
-        currentLabel.innerHTML = element.querySelector('.ly-custom-dropdown-list li.current span').innerHTML;
-        currentIcon.classList = element.querySelector('.ly-custom-dropdown-list li.current .ly-icon').classList;
+  
+        if(element.querySelector('.ly-custom-dropdown-list li.current span')) currentLabel.innerHTML = element.querySelector('.ly-custom-dropdown-list li.current span').innerHTML;
+        if(element.querySelector('.ly-custom-dropdown-list li.current .ly-icon')) currentIcon.classList = element.querySelector('.ly-custom-dropdown-list li.current .ly-icon').classList;
       }
 	  },
     toggleOpen: function(e) {
@@ -1026,7 +1033,11 @@
         } else {
           if(langify.helper.getCookie('ly-lang-selected') && langify.helper.getCookie('ly-lang-selected') !== currentLang) {
             if(languageUrls[langify.helper.getCookie('ly-lang-selected')]) {
-              langify.helper.setCookie('ly-lang-selected', currentLang, 365);
+
+              // Only save cookie when the domain feature is active
+              if(langify.helper.isDomainFeatureEnabled()) {
+                langify.helper.setCookie('ly-lang-selected', currentLang, 365);
+              }
               this.redirect(languageUrls[langify.helper.getCookie('ly-lang-selected')]);
             }
           }
@@ -1039,11 +1050,14 @@
     redirect: function(url) {
       var params = window.location.search;
       var link = document.createElement("a");
+      var append = '';
 
-      // TODO: Only append when redirecting to another domain
-      var append = '?redirected=true';
-      if(params.indexOf('?') >= 0) {
-        append = '&redirected=true';
+      // Only append when redirecting to another domain
+      if(langify.helper.isDomainFeatureEnabled()) {
+        append = '?redirected=true';
+        if(params.indexOf('?') >= 0) {
+          append = '&redirected=true';
+        }
       }
 
       link.setAttribute('data-ly-locked', 'true');

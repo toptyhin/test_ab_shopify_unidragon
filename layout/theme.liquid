@@ -130,6 +130,7 @@
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '651854269089781');
+    fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=651854269089781&ev=PageView&noscript=1"
@@ -334,9 +335,6 @@ t.parentNode.insertBefore(y,t);y.onerror=function(){s()};
   endunless
 {%endcomment%}
 {%- liquid
-  unless template == 'cart'
-    render 'coloring-book-popup'
-  endunless
 
   if settings.salepopup_position == 'bottom'
       include 'notification-popup'
