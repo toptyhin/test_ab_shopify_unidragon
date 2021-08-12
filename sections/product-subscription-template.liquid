@@ -256,8 +256,8 @@
                 <div class="header">Choose subscription:</div>
                 <div class="swatch_container">
                   {% if product.handle == 'subscription'%}
-                    <a href="{{all_products['month-subscription'].url}}">
                       <div class="swatch-element">
+                        <a href="{{all_products['month-subscription'].url}}">
                           <label for="swatch-subscription">
                           <div class="sw_image_outer">
                             <span class="sw_image"><img loading="lazy" src="{{all_products['month-subscription'].featured_image | img_url: 'medium'}}"></span>
@@ -273,8 +273,8 @@
                           </div>
                           <img class="crossed-out" src="//cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/soldout.png?v=16939202558076501984">
                         </label>
+                      </a>
                       </div>
-                    </a>
                     <div class="swatch-element subscription subscription active">
                           <label for="swatch-subscription">
                           <div class="sw_image_outer">
@@ -311,8 +311,8 @@
                       </label>
                     </div>
 
-                    <a href="{{all_products['subscription'].url}}">
                       <div class="swatch-element subscription">
+                        <a href="{{all_products['subscription'].url}}">
                           <label for="swatch-subscription">
                           <div class="sw_image_outer">
                             <span class="sw_image"><img loading="lazy" src="{{all_products['subscription'].featured_image | img_url: 'medium'}}"></span>
@@ -328,8 +328,8 @@
                           </div>
                           <img class="crossed-out" src="//cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/soldout.png?v=16939202558076501984">
                         </label>
+                      </a>
                       </div>
-                    </a>
                   {% endif %}
                 </div>
                 {% for group in product.selling_plan_groups %}

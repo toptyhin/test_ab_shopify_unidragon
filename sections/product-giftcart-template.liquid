@@ -107,7 +107,27 @@
         </noscript>
   
         {% if product.images.size > 1 %}
-        {%- assign enable_thumbnail_slides = true -%}
+        {%- liquid
+           assign enable_thumbnail_slides = true 
+
+          if customer
+          for tag in customer.tags
+            if tag == 'Subscription membership' 
+              assign member_discount = true
+            endif
+          endfor
+        endif
+        
+        assign discount_amount = 1
+  
+        if member_discount == true
+          assign discount_amount =  0.8
+        elsif puzle_discount > 2 and product.type == 'Puzzle'
+          assign discount_amount =  0.9
+        endif
+          
+          
+          -%}
         {% endif %}
   
         <div class="thumbnails-wrapper {% if product.images.size == 1 %}medium-up--hide{% endif %}{% if enable_thumbnail_slides == true %} thumbnails-slider--active{% endif %}">
@@ -171,14 +191,28 @@
             <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition" />
             <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
   
-             <p class="product-single__price product-single__price-{{ section.id }}{% unless current_variant.available %} product-price--sold-out{% endunless %}">
-              {% if current_variant.compare_at_price > current_variant.price %}
+            {%- if  member_discount == true -%}
+            <p class="product-single__price product-single__price-{{ section.id }}{% unless current_variant.available %} product-price--sold-out{% endunless %}" data-discount="{{discount_amount}}">
+              <s id="ComparePrice-{{ section.id }}" style="color: #ff8e00;">{{ current_variant.price | money }}</s>
+              <span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single">
+                <span id="ProductPrice-{{ section.id }}" itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
+                  {{ current_variant.price | times: discount_amount | money	 }}
+                </span>
+                <span class="save_discount_pro">
+                  <span class="per_discount">
+                    20{{ 'products.product.on_save' | t }}
+                  </span>
+              </span>
+            </p>
+{%- else -%}
+           <p class="product-single__price product-single__price-{{ section.id }}{% unless current_variant.available %} product-price--sold-out{% endunless %}">
+            {% if current_variant.compare_at_price > current_variant.price %}
               <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
               <s id="ComparePrice-{{ section.id }}">{{ current_variant.compare_at_price | money }}</s>
               <span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single">
                 <span id="ProductPrice-{{ section.id }}"
-                      itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
-                  {{ current_variant.price | money	 }}
+                      itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
+                  {{ current_variant.price | times: discount_amount | money	 }}
                 </span>
                 {% if section.settings.show_saved_amount %}
                 <!-- Dscount price in percentage  -->
@@ -186,35 +220,33 @@
                 {% if current_variant.compare_at_price > current_variant.price %}
                   {% if settings.show_discount_amount == 'percent_save' %}
                   <span class="per_discount">
-                  
                     {% assign money_pro_format = shop.money_format | strip_html | json %}
-               
+              
                     {% if money_pro_format contains "{{amount_no_decimals}}" or money_pro_format contains "{{amount_no_decimals_with_comma_separator}}" %}
-                    {{ current_variant.compare_at_price  | minus: current_variant.price  | times: 100.0 | divided_by: current_variant.compare_at_price | times: 100 | money_without_currency | replace:",","." | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
+                      {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price | times: 100 | money_without_currency | replace:",","." | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
                     {% elsif money_pro_format contains "{{amount_with_comma_separator}}" %}
-                    {{ current_variant.compare_at_price  | minus: current_variant.price  | times: 100.0 | divided_by: current_variant.compare_at_price | money_without_currency | replace:",","."  | times: 100 | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
+                      {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price | money_without_currency | replace:",","."  | times: 100 | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
                     {% else %}                  
-                    {{ current_variant.compare_at_price  | minus: current_variant.price  | times: 100.0 | divided_by: current_variant.compare_at_price  | money_without_currency | times: 100 | replace: '.0', ''}}{{ 'products.product.on_save' | t }}
+                      {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price  | money_without_currency | times: 100 | replace: '.0', ''}}{{ 'products.product.on_save' | t }}
                     {% endif %}
-                    </span>
+                  </span>
                   <!-- Dscount price in percentage  -->
                   {% else %}
-                  <span class="sale-tag salePrice large"> 
-                    {% assign sale = current_variant.compare_at_price | minus:  current_variant.price |  money %}
-                    {{ 'products.product.on_save_like_price' | t }} {{sale}}
-                  </span>
+                    <span class="sale-tag salePrice large"> 
+                      {% assign sale = current_variant.compare_at_price | minus:  current_variant.price | times: discount_amount |  money %}
+                      {{ 'products.product.on_save_like_price' | t }} {{sale}}
+                    </span>
                   {% endif %}
                 {% endif %}
                 </span>
                 {% endif %}
               </span>
-              {% else %}
+            {% else %}
               <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
               <s id="ComparePrice-{{ section.id }}" class="hide">{{ current_variant.compare_at_price | money }}</s>
               <span class="product-price__price product-price__price-{{ section.id }}">
-                <span id="ProductPrice-{{ section.id }}"
-                      itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
-                  {{ current_variant.price | money }}
+                <span id="ProductPrice-{{ section.id }}" itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
+                  {{ current_variant.price | times: discount_amount | money }}
                 </span>
                 {% if section.settings.show_saved_amount %}
                 <span class="save_discount_pro hide">
@@ -222,8 +254,14 @@
                 {% endif %}
                 
               </span>
-              {% endif %}
-            </p>
+            {% endif %}
+            {%- if current_variant.available -%}
+              <span class="product in-stock">In stock</span>
+            {%- else -%}
+              <span class="product out-of-stock">Out of stock</span>
+            {%- endif -%}
+          </p>
+{%- endif -%}
             {% comment %}
             {% if current_variant.price != 0 %}
             {% else %}
