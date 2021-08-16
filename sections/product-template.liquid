@@ -395,6 +395,7 @@
   </script>
   
   <div class="product-template__container product-{{ product.id }} page-width" itemscope itemtype="http://schema.org/Product" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true"> 
+ <div> {{ product.metafields.alireviews.seo_rating_review_key }} </div> 
   
     <meta itemprop="name" content="{{ product.title }}">
     <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">

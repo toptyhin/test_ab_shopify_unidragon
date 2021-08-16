@@ -90,9 +90,9 @@
 {%- endif -%}
 {%- endif -%}   
 {%- if settings.enable_collection_url -%}
-<a class="grid-view-item__link grid-view-item__image-container" href="{{ product.url | within:collection }}">
+<a id="{{product.handle}}" class="grid-view-item__link grid-view-item__image-container" href="{{ product.url | within:collection }}">
   {%- else -%}
-  <a class="grid-view-item__link grid-view-item__image-container" href="{{ product.url }}">
+  <a id="{{product.handle}}" class="grid-view-item__link grid-view-item__image-container" href="{{ product.url }}">
     {%- endif -%} 
     {%- unless settings.show_second_image -%}
     
