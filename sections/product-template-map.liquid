@@ -287,6 +287,11 @@
             render 'customer-review-photo' with product
           endif
         -%}
+        <style>
+          .getsocial {
+            padding-top: 15px;
+          }
+      </style>
         {%- include 'getsocial-inline-bar' -%}
       <form style="display: none;" method="post" action="/cart">
         <input  type="submit" class="custome_checkout" value="checkout" name="checkout"/>

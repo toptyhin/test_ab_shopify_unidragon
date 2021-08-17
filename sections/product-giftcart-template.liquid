@@ -171,6 +171,11 @@
           </button>
           {% endif %}
         </div>
+        <style>
+          .getsocial {
+            padding-top: 15px;
+          }
+      </style>
         {% include 'getsocial-inline-bar' %}
       </div>
       
@@ -357,6 +362,69 @@
     {% endif %}
     {% endif %}
   </div>
+<style>
+      .banner-inspirational-gift {
+        background-color: black;
+        background-image: url({{'banner-inspirational-gift_bg.png' | asset_url}});
+        background-size: cover;
+        height: 400px;
+        color: #ffffff;
+        margin-top: 20px;
+      }
+      .banner-inspirational-gift_header {
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding-top: 130px;
+        padding-left: 130px;
+      }
+      .banner-inspirational-gift_text {
+        font-size: 12px;
+        padding-top: 10px;
+        padding-left: 130px;
+        padding-right: 15px;
+      }
+      .banner-inspirational-gift_link {
+        padding-left: 130px;
+        padding-top: 15px;
+        display: none;
+      }
+      .banner-inspirational-gift_link a{
+        text-decoration: underline;
+        font-size: 21px;
+        letter-spacing: .08em;
+        color: white;
+        font-size: 1em;
+        font-weight: 500;
+        line-height: 1;
+      }
+      @media only screen and (min-width: 749px) {
+        .banner-inspirational-gift {
+          height: 450px;
+        }
+          .banner-inspirational-gift_header {
+          font-size: 28px;
+          padding-top: 30%;
+          padding-left: 175px;
+          padding-right: 70px;
+        }
+        .banner-inspirational-gift_text {
+          font-size: 16px;
+          padding-top: 10px;
+          padding-left: 175px;
+          padding-right: 85px;
+        }
+        .banner-inspirational-gift_link {
+          padding-left: 175px;
+        }
+        }
+</style>
+  <div class="banner-inspirational-gift">
+    <div class="banner-inspirational-gift_header">SEND A GIFT</div>
+    <div class="banner-inspirational-gift_text">Share emotional experiences with others. Delight your loved ones with Unidragon Gift Cards.</div>
+    <div class="banner-inspirational-gift_link"><a href="/products/giftcard" class="banner-inspirational-gift_a">{{ 'custome_text.banner.buy_gift_card' | t }} -></a></div>
+  </div>
+
   <div class="product-single__description rte ttt" itemprop="description">
     {% assign product_desc = 'products.product_tab.product_tab_1' | t %} 
     {% if product_desc != blank and product.description != blank%}
