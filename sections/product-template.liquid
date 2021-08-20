@@ -1087,7 +1087,24 @@
     </script>
   {% endif %}
   <!-- End Pick an option code -->
-  
+  <script>
+    if ($('.getsocial').get(0)) {
+      let targetNode = $('.getsocial').get(0);
+      let config = { childList: true };
+      let counter = '<div class="gs-big-counter ab-test"><strong class="gs-value">'+ Math.floor( Math.random() * (5 - 1) + 1) +'.'+ Math.floor(Math.random() * (9 - 0)) +'k</strong><span><span>Shares</span></span></div>'
+      const callback = function(mutationsList, observer) {
+          for(const mutation of mutationsList) {
+              if (mutation.type === 'childList') {
+                $('.gs-bar').addClass('gs-big-counter');
+                $('.gs-bar').prepend(counter);
+                observer.disconnect();
+              }
+          }
+      };
+      let observer = new MutationObserver(callback);
+      observer.observe(targetNode, config);
+      }
+  </script>
   {% schema %}
     {
       "name": "Product page",
