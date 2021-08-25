@@ -828,6 +828,7 @@
     },
     _currencySwitcherBindings: function() {
       var currencySwitcherForm = document.getElementById('currency_switcher_form');
+      var countryCodeField = currencySwitcherForm.querySelector('input[name="country_code"]');
       if(currencySwitcherForm) {
         var currencySelectSwitcher = document.querySelectorAll('select.ly-currency-switcher , select.ly-country-switcher');
         var currencyCustomSwitcher = document.querySelectorAll('div.ly-currency-switcher a, div.ly-country-switcher a');
@@ -836,14 +837,16 @@
           currencyCustomSwitcher[i].addEventListener('click', function(e) {
             var formType = 'currency';
             if(this.closest('.ly-custom-dropdown-switcher').getAttribute('class').indexOf('ly-country-switcher') >= 0) formType = 'country_code';
-            currencySwitcherForm.querySelector('input[name="'+formType+'"]').value = this.getAttribute('data-currency');
+            if(countryCodeField && this.closest('.ly-currency-switcher')) countryCodeField.remove();
+            currencySwitcherForm.querySelector('input[name="'+formType+'"]').value = this.getAttribute('data-'+ formType.replace('_', '-'));
             currencySwitcherForm.submit();
           });
         }
         for(var a=0; a<currencySelectSwitcher.length; a++) {
           currencySelectSwitcher[a].addEventListener('change', function(){
             var formType = 'currency';
-            if(this.getAttribute('class') === 'ly-country-switcher') formType = 'country_code';
+            if(this.getAttribute('class').indexOf('ly-country-switcher') >= 0) formType = 'country_code';
+            if(countryCodeField && this.getAttribute('class').indexOf('ly-currency-switcher') >= 0) countryCodeField.remove();
             currencySwitcherForm.querySelector('input[name="'+formType+'"]').value = this.value;
             currencySwitcherForm.submit();
           });
@@ -869,10 +872,19 @@
     },
   };
 
+
   langify.recommendation = langify.recommendation || {
     recommendated: null,
+    el: null,
     init: function() {
-	    var recommendated = this._findRecommendedLanguage();
+      var _localizationForm = document.getElementById('currency_switcher_form')
+      this.el = {
+        localizationForm: _localizationForm,
+        currencyField: _localizationForm.querySelector('input[name="currency"]'),
+        countryCodeField: _localizationForm.querySelector('input[name="country_code"]'),
+        languageCodeField: _localizationForm.querySelector('input[name="language_code"]'),
+      };
+	  var recommendated = this._findRecommendedLanguage();
       this.recommendated = recommendated;
       if(recommendated && recommendated !== langify.locale.iso_code && !langify.helper.getCookie('ly-lang-selected')) {
         this._translateStrings(recommendated);
@@ -919,66 +931,113 @@
       recommendationElement.innerHTML = newCode;     
     },
     _bindings: function() {
+      var _this = this;
 	    var recommendated = this._findRecommendedLanguage();
       var currentLang = langify.locale.iso_code;
       var userLang = navigator.language || navigator.userLanguage;
       var lyForceOff = location.search.split('ly-force-off=')[1];
+
+
       var recommendationElement = document.querySelectorAll('.ly-recommendation')[0];
       var form = recommendationElement.querySelectorAll('.ly-recommendation-form')[0];
-      var links = recommendationElement.getElementsByClassName('ly-languages-switcher-link');
-      var customDropdown = recommendationElement.querySelectorAll('.ly-languages-switcher.ly-custom-dropdown-switcher');
+      var links = recommendationElement.getElementsByClassName('ly-custom-dropdown-list-element');
+      var customDropdown = recommendationElement.querySelectorAll('.ly-custom-dropdown-switcher');
       var nativeSelects = recommendationElement.getElementsByClassName('ly-native-select');
 
-      form.setAttribute('action', languageUrls[this.recommendated]);
-      form.addEventListener('submit', function() {
+      //form.setAttribute('action', languageUrls[this.recommendated]);
+      if(!this.el.languageCodeField) {
+        // Backwards compability
+        this.el.languageCodeField = document.createElement('input');
+        this.el.languageCodeField.type = 'hidden';
+        this.el.languageCodeField.name = 'language_code';
+        this.el.localizationForm.appendChild(languageCodeField)
+      }
+      this.el.languageCodeField.value = recommendated;
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
         langify.helper.setCookie('ly-lang-selected', recommendated, 365);
+        _this.el.localizationForm.submit();
       });
       
-      for(var i = 0; i < nativeSelects.length; i++) {
-        nativeSelects[i].onchange = function() {
-          event.preventDefault();
-          var selectedLanguageCode = this[this.selectedIndex].getAttribute('key');
-          var url = languageUrls[selectedLanguageCode];
-          if(url) {
-            form.setAttribute('action', url+window.location.search);
-          }
-        };
-        this._selectLanguage(nativeSelects[i], recommendated);
-      }
       for(l = 0; l < links.length; l++) {
         links[l].addEventListener('click', function(event) {
           event.preventDefault();
-          form.setAttribute('action', this.getAttribute('href'));
+          
+          // When clicked from within a custom dropdown
+          var parentCustomDropdown = event.currentTarget.closest('.ly-custom-dropdown-switcher');
+          if(parentCustomDropdown) {
+            _this._selectCustomDropdownEntry(parentCustomDropdown, this);
+          } else {
+            _this.el.languageCodeField.value = this.getAttribute('data-ly-code');
+          }
         });
-        this._selectLanguage(links[l], recommendated);
       }
+
+      for(var i = 0; i < nativeSelects.length; i++) {
+        nativeSelects[i].onchange = this._selectNativeDropdownEntry;//.bind(this);
+        
+        if(nativeSelects[i].classList.contains('ly-languages-switcher')) {
+          nativeSelects[i].value = recommendated;
+        }
+      }
+
       for(i = 0; i < customDropdown.length; i++) {
       	if(recommendationElement.className.indexOf('bottom') > -1) {
           customDropdown[i].classList.add('ly-is-dropup');       
-      	}	
-        form.setAttribute('action', customDropdown[i].querySelector('.ly-custom-dropdown-list li[key="'+ recommendated +'"] a').getAttribute('href'));
-        this._selectLanguage(customDropdown[i], recommendated);
+      	}
+        
+        if(customDropdown[i].classList.contains('ly-languages-switcher')) {
+          this._selectCustomDropdownEntry(customDropdown[i], customDropdown[i].querySelector('.ly-custom-dropdown-list a[data-ly-code="'+ recommendated +'"]'));
+        }
       } 
       if(!lyForceOff) {
         recommendationElement.classList.add('ly-is-open');
       }
     },
-    _selectLanguage: function(element, valueToSelect) {
-      if(element.classList.contains('ly-native-select')) {
-      	element.value = valueToSelect;  
-      }
-      if(element.classList.contains('ly-custom-dropdown-switcher')) {
-        var currentElem = element.querySelector('.ly-custom-dropdown-current');
-        var currentIcon = currentElem.querySelector('.ly-icon');        
-        var currentLabel = currentElem.querySelector('span');
 
-      	element.querySelector('.ly-custom-dropdown-list li.current').classList.remove('current');  
-      	element.querySelector('.ly-custom-dropdown-list li[key="'+ valueToSelect +'"]').classList.add('current');  
-  
-        if(element.querySelector('.ly-custom-dropdown-list li.current span')) currentLabel.innerHTML = element.querySelector('.ly-custom-dropdown-list li.current span').innerHTML;
-        if(element.querySelector('.ly-custom-dropdown-list li.current .ly-icon')) currentIcon.classList = element.querySelector('.ly-custom-dropdown-list li.current .ly-icon').classList;
+    _selectNativeDropdownEntry: function(event) {
+      event.preventDefault();
+      var element = event.currentTarget;
+      var _this = langify.recommendation;
+
+      if(element.classList.contains('ly-languages-switcher')) {
+        _this.el.languageCodeField.value = element[this.selectedIndex].getAttribute('key');
+      	//element.value = valueToSelect;  
       }
-	  },
+      if(element.classList.contains('ly-country-switcher') || element.classList.contains('ly-currency-switcher')) {
+        _this.el.currencyField.value = element[this.selectedIndex].getAttribute('data-currency');
+        _this.el.countryCodeField.value = element[this.selectedIndex].getAttribute('data-country-code');
+      }
+	},
+    _selectCustomDropdownEntry: function(element, entry) {
+      var _this = langify.recommendation;
+      var currentElem = element.querySelector('.ly-custom-dropdown-current');
+      var currentIcon = currentElem.querySelector('.ly-icon');        
+      var currentLabel = currentElem.querySelector('span');
+      var valueToSelect = '';
+
+      if(element.classList.contains('ly-languages-switcher')) {
+        _this.el.languageCodeField.value = entry.getAttribute('data-ly-code');
+        valueToSelect = entry.getAttribute('data-ly-code');
+      }
+      if(element.classList.contains('ly-country-switcher')) {
+        _this.el.currencyField.value = entry.getAttribute('data-currency');
+        _this.el.countryCodeField.value = entry.getAttribute('data-country-code');
+        valueToSelect = entry.getAttribute('data-country-code')+'-'+entry.getAttribute('data-currency');
+      }
+      if(element.classList.contains('ly-currency-switcher')) {
+        _this.el.currencyField.value = entry.getAttribute('data-currency');
+        valueToSelect = entry.getAttribute('data-currency');
+      }
+
+      if(element.querySelector('.ly-custom-dropdown-list li.current')) {
+        element.querySelector('.ly-custom-dropdown-list li.current').classList.remove('current');  
+        element.querySelector('.ly-custom-dropdown-list li[key="'+ valueToSelect +'"]').classList.add('current');  
+      }
+      if(element.querySelector('.ly-custom-dropdown-list li.current span')) currentLabel.innerHTML = element.querySelector('.ly-custom-dropdown-list li.current span').innerHTML;
+      if(element.querySelector('.ly-custom-dropdown-list li.current .ly-icon')) currentIcon.classList = element.querySelector('.ly-custom-dropdown-list li.current .ly-icon').classList;
+    },
     toggleOpen: function(e) {
       e.closest('.ly-recommendation').classList.toggle('ly-is-open');
       if(!e.closest('.ly-recommendation').classList.contains('ly-is-open')) {
@@ -986,6 +1045,7 @@
       }
     },
   };
+
 
   langify.languageDetection = langify.languageDetection || {
     init: function() {

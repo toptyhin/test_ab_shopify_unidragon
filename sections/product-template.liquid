@@ -132,7 +132,6 @@
       .banner-inspirational-gift_link {
         padding-left: 130px;
         padding-top: 15px;
-        display: none;
       }
       .banner-inspirational-gift_link a{
         text-decoration: underline;
@@ -492,12 +491,15 @@
             <span class="icon__fallback-text">{{ 'sections.slideshow.prev_slide' | t }}</span>
           </button>
           {% endif %}
+          {%- if videos.size > 0 -%}
+          <script>$(document).on('ready', function() {$('.thumbnails-slider--active .responsive').slick('slickGoTo', {{videos.size}})});</script>
+          {%- endif -%}
               <ul class="grid responsive slider grid--uniform product-single__thumbnails product-single__thumbnails-{{ section.id }}">
                 {%- if videos.size > 0 -%}
                   {%- for video in videos -%}
                     <li class="grid__item {% unless enable_thumbnail_slides == true %}{{ product_thumbnail_width }} {% endunless %}{% if product.images.size > 1 %}product-single__thumbnails-item{% endif %} js">
                     {%comment%}{{ media | external_video_tag }}{%endcomment%}
-                      <a href="#" class="text-link product-single__thumbnail product-single__thumbnail--{{ section.id }}" data-thumbnail-id="{{ video.id }}" {% if enable_zoom %}data-zoom="{{ video.src | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
+                      <a href="#" class="text-link product-single__thumbnail product-single__thumbnail--{{ section.id }} product-video" data-thumbnail-id="{{ video.id }}" {% if enable_zoom %}data-zoom="{{ video.src | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
                         <div class="product-single__thumbnail-image medium-up--hide video-media" style="height:230px;display: flex;align-items: center;justify-content: center;">{{ video | external_video_tag }}</div>
                         <img src="{{ 'play-button.png' | asset_img_url: '50x' }}" style="position: fixed; margin: 0 auto; top: 25%; left: 55px;" />
                         <img loading="lazy" class="product-single__thumbnail-image small--hide" src="{{ video.preview_image | img_url: 'compact' }}" alt="{{ video.alt | escape }}">                            

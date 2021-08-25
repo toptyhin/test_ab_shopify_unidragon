@@ -62,7 +62,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
         {% else %}
         <label for="swatch-{{ option_index }}-{{ value | handle }}-{{ section.id }}">
           <div class="sw_image_outer">
-            <span class="sw_image"><img loading="lazy" src="{{variant.image | img_url: 'master' }}"/></span>
+            <img loading="lazy" src="{{variant.image | img_url: '300x180', crop: 'center' }}"/>
           </div>
           <div class="sw_content_outer">
             <div class="sw_var_price">
@@ -111,7 +111,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
   <style>
       .sw_image_outer {
     padding-top: 25px;
-}
+    }
       .sw_content_outer {
             padding-bottom: 30px;
             padding-top: 15px;

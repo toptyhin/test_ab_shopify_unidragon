@@ -1,4 +1,4 @@
-{% for tag in products.tags %}
+{% for tag in products.tags limit:1 %}
 	{% if forloop.first == true %}<div class="product__labels">{% endif %}
 	<span class="product__label product__label--{{ tag | replace: " ", "-"}}">{{ tag }}</span>
 	{% if forloop.last == true %}</div>{% endif %}
