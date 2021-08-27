@@ -760,7 +760,8 @@
       },
       "alireviews-widget-11374": {
         "type": "alireviews-widget-11374",
-        "settings": {}
+        "settings": {
+        }
       },
       "1619166932275f9b54": {
         "type": "collection",
@@ -778,7 +779,8 @@
       },
       "16196152017fa5809a": {
         "type": "size-block-owl-statick",
-        "settings": {}
+        "settings": {
+        }
       },
       "1619615291e2b75557": {
         "type": "announcement-set-for-mouting-puzzle",
@@ -966,7 +968,8 @@
       },
       "go-cart": {
         "type": "go-cart",
-        "settings": {}
+        "settings": {
+        }
       },
       "product-new": {
         "type": "product-new",
@@ -1559,11 +1562,9 @@
             "product_review": true,
             "visitor_counter_enable": true,
             "visitor_counter_number": "1-15",
-            "show_del_time": true,
             "delivery_time_number": "14-30",
             "product_description": "under_the_timer",
             "enable_sticky": true,
-            "sticky_button": "show_progress_bar",
             "enable_trust_badges": false,
             "enable_trust_badges_image": "shopify:\/\/shop_images\/Booster-badges.png"
           }
@@ -2274,11 +2275,9 @@
             "product_review": true,
             "visitor_counter_enable": true,
             "visitor_counter_number": "1-15",
-            "show_del_time": true,
             "delivery_time_number": "14-30",
             "product_description": "under_the_timer",
             "enable_sticky": true,
-            "sticky_button": "show_progress_bar",
             "enable_trust_badges": false,
             "enable_trust_badges_image": "shopify:\/\/shop_images\/Booster-badges.png"
           }
@@ -2989,11 +2988,9 @@
             "product_review": true,
             "visitor_counter_enable": true,
             "visitor_counter_number": "1-15",
-            "show_del_time": true,
             "delivery_time_number": "14-30",
             "product_description": "under_the_timer",
             "enable_sticky": true,
-            "sticky_button": "show_progress_bar",
             "enable_trust_badges": false,
             "enable_trust_badges_image": "shopify:\/\/shop_images\/Booster-badges.png"
           }
