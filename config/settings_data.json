@@ -403,7 +403,7 @@
           "enable_parallax": true,
           "show_vendor": false,
           "sort_enable": false,
-          "tags_enable": false,
+          "tags_enable": true,
           "on_desktop_title_set": "title_set_line_trim",
           "desktop_text_limit": 30,
           "on_mobile_title_set": "mobile_title_set_line_full",

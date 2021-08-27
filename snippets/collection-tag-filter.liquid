@@ -1,0 +1,9 @@
+<!-- snippets/collection-tag-filter -->
+
+{% for tag in collection.all_tags %}
+    {% if forloop.first == true %}<ul style="display: none;">{% endif %}
+        {% unless show_tags contains tag %}
+            <li>{{ tag }}</li>
+        {% endunless %}
+    {% if forloop.last == true %}</ul>{% endif %}
+{% endfor %}
