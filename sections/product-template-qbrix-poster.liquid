@@ -108,64 +108,6 @@
             font-weight: 600;
           }
           .product-single__meta {font-family: 'Poppins';}
-          .banner-inspirational-gift {
-            background-color: black;
-            background-image: url({{'banner-inspirational-gift_bg.png' | asset_url}});
-            background-size: cover;
-            height: 400px;
-            color: #ffffff;
-            margin-top: 40px;
-          }
-          .banner-inspirational-gift_header {
-            font-size: 18px;
-            font-weight: 600;
-            text-transform: uppercase;
-            padding-top: 130px;
-            padding-left: 130px;
-          }
-          .banner-inspirational-gift_text {
-            font-size: 12px;
-            padding-top: 10px;
-            padding-left: 130px;
-            padding-right: 15px;
-          }
-          .banner-inspirational-gift_link {
-            padding-left: 130px;
-            padding-top: 15px;
-          }
-          .banner-inspirational-gift_link a{
-            text-decoration: underline;
-            font-size: 21px;
-            letter-spacing: .08em;
-            color: white;
-            font-size: 1em;
-            font-weight: 500;
-            line-height: 1;
-          }
-          .banner-decorate-walls {
-            margin-top: 40px;
-            background-image: url({{'banner-decorate-walls_mob_bg.png' | asset_url}});
-            background-size: cover;
-            background-position: left;
-            height: 350px;
-            color: #000000;
-          }
-          .banner-decorate-walls_header {
-            width: 100%;
-            font-size: 20px;
-            font-weight: 600;
-            text-transform: uppercase;
-            padding: 20px;
-            padding-bottom: 0;
-          }
-          .banner-decorate-walls_text {
-            padding: 0 20px;
-            font-size: 14px;
-          }
-          .banner-decorate-walls_howitworks {
-              padding-left: 20px;
-              padding-top: 10px;
-            }
           .advantage {
             margin-top: 40px;
           }
@@ -215,50 +157,6 @@
               cursor: pointer;
               font-weight: 600;
           }
-          @media only screen and (min-width: 749px) {
-            .banner-inspirational-gift {
-              height: 450px;
-            }
-              .banner-inspirational-gift_header {
-              font-size: 28px;
-              padding-top: 30%;
-              padding-left: 175px;
-              padding-right: 70px;
-            }
-            .banner-inspirational-gift_text {
-              font-size: 16px;
-              padding-top: 10px;
-              padding-left: 175px;
-              padding-right: 85px;
-            }
-            .banner-inspirational-gift_link {
-              padding-left: 175px;
-            }
-            .banner-decorate-walls {
-              height: 420px;
-              background-image: url({{'banner-decorate-walls_bg.png' | asset_url}});
-            }
-            .banner-decorate-walls_header {
-              width: 395px;
-              font-size: 22px;
-              letter-spacing: 0.7px;
-              font-weight: 600;
-              text-transform: uppercase;
-              padding-top: 30px;
-              padding-left: 40px;
-            }
-            .banner-decorate-walls_text {
-              width: 40%;
-              letter-spacing: 0.7px;
-              padding-top: 10px;
-              padding-left: 40px;
-            }
-            .banner-decorate-walls_howitworks {
-              padding-left: 40px;
-              padding-top: 0;
-            }
-          }
-    
     
                   .custom-faq .line, .custom-tax-new .line {
                     font-size: 14px;
@@ -861,12 +759,6 @@
                 <!-- Content will render here -->
                 </div>
               </div>
-    
-              <div class="banner-inspirational-gift">
-                <div class="banner-inspirational-gift_header">Inspirational Gift</div>
-                <div class="banner-inspirational-gift_text">Bring more happiness into the life of your loved ones by choosing a gift that is unforgettable experience.</div>
-                <div class="banner-inspirational-gift_link"><a href="/products/giftcard" class="banner-inspirational-gift_a">{{ 'custome_text.banner.buy_gift_card' | t }} -></a></div>
-              </div>
               <div class="advantage">
                 <div class="advantage-item">
                   <div class="advantage-block">
@@ -910,12 +802,6 @@
                 </div>
               </div>
     
-              <div class="banner-decorate-walls">
-                <div class="banner-decorate-walls_header">DECORATE THE WALLS OF YOUR HOME</div>
-                <div class="banner-decorate-walls_text">You can decorate the interior with puzzles and our special mounting system</div>
-                <div class="banner-decorate-walls_howitworks"><a id="annoncment-banner-link" href="#upsell-anoncment-popup" style="text-decoration: underline;font-weight: 600;font-size: 14px;color: #292929;" class="upsell-anoncment-popup">{{ 'custome_text.banner.see_how_it_works' | t }} -></a></div>
-              </div>
-    
               <div class="product-single__description rte" itemprop="description">
                 {% for block in section.blocks %}
                   {% if block.type == 'icons-set-with-text' %}
@@ -953,55 +839,7 @@
                   </script>
                 </div>
               </div>
-    
-              <!--FAQ block-->
-                  <div class="custom-faq" id="custom-faq">
-                    <p class="line">frequently asked questions</p>
-                    <div class="accordion-tax">
-                        <span class="accordion-taxes">How does the size of the pieces differ for the puzzle sizes – S, M, L?</span>
-                      </div>
-                    <div class="panel" style="display: none;">
-                          <p>Our sizes change with the number of pieces, so the size of the pieces is the same in every puzzle.</p>
-                    </div>
-                    <div class="accordion-tax">
-                        <span class="accordion-taxes">What is a wooden puzzle?</span>
-                      </div>
-                    <div class="panel" style="display: none;">
-                          <p>Our puzzles are made from a pressured HDF that is 3mm thick. This material is eco-friendly, high-quality and durable. It doesn’t deform and doesn’t give splinters (like with plywood).</p>
-                    </div>
-                    <div class="accordion-tax">
-                        <span class="accordion-taxes">How long does each size puzzle take to assemble?</span>
-                      </div>
-                    <div class="panel" style="display: none;">
-                          <p>Check our illustration (link/popup of with an illustration of the sizes and photo of a girl). As well as the size pay attention to the assembly times:
-                            <ul>
-                              <li>S -> from 2 hours</li>
-                              <li>M-> from 4 hours</li>
-                              <li>L-> from 6 hours</li>
-                            </ul>
-                            <p>The large puzzle will most probably take a couple of evenings to assemble so it is best to complete it on a separate table. </p>
-                    </div>
-                    <div class="accordion-tax">
-                        <span class="accordion-taxes">Who are the puzzles suitable for?</span>
-                      </div>
-                    <div class="panel" style="display: none;">
-                          <p>Wooden puzzles are a great gift for practically anyone.</p>
-                          <p>You can assemble them by yourself, getting away from your routine, it is a pleasant and useful exercise as it develops the brain and fine motor skills. </p>
-                          <p>You can spend an evening assembling the puzzle with your family, children, loved ones. </p>
-                          <p>As well as puzzle lovers, our jigsaws are bought by creative people, board game lovers, people who like to do simple tasks with their hands</p>
-                    </div>
-                    <div class="accordion-tax">
-                        <span class="accordion-taxes">What do I do with completed puzzles?</span>
-                      </div>
-                    <div class="panel" style="display: none;">
-                          <p>Many customers use their puzzle as an alternative to board games: they visit friends or family and complete the puzzle together. </p>
-                          <p>Some families even do timed assemblies. You can also make the assembly more difficult by completing it from the other side (it also has a picture on it)! </p>
-                          <p>When you’ve completed the assembly process, don’t put the puzzle back in the cupboard. Use it as interior decoration! We have developed a special gluing system for this which fixes the puzzle together and sticks it to the wall. </p>
-                          <p>This is suitable for all sizes, with the help of one set you can fix and hang 6 small puzzles, 3 medium puzzles, or 3 large puzzles.</p>
-                    </div>
-                  </div>
-              <!--FAQ block and-->
-    
+  
               <!----------custom-Tax-------------->
               {% if section.settings.heading-tax != blank %}
                 <div class="custom-tax-new">
@@ -1543,18 +1381,6 @@
                     }
                   ],
                   "default": "align_left"
-                },
-                {
-                  "type":"text",
-                  "id": "title",
-                  "label": "Title",
-                  "default": "Great as a gift"
-                },
-                {
-                  "type":"text",
-                  "id": "text",
-                  "label": "Text",
-                  "default": "A gift that will surprise them and stay in their memory. Each puzzle is packed in a premium wooden gift box."
                 }
               ]
             }
