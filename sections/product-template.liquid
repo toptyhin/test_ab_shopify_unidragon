@@ -932,9 +932,12 @@
   
             <div id="tab-1">
               <div class="product-description">
-                {% assign video = product.media | where: "media_type", "external_video" %}
+                {% assign video = product.media | where: "media_type", "external_video" | first %}
                 {% if video != blank %}
-                  {{ video[0] | external_video_tag }}
+                  {{ video | external_video_tag }}
+                {% else %}
+                  {% assign video = product.media | where: "media_type", "video" | first %}
+                  {{ video | video_tag }}
                 {% endif %}
                 {{ product.description }}
 
