@@ -512,27 +512,16 @@
                   {% endfor %}
                 </select>
       
-              <!-- PRODUCT SWATCH CODE IF ENABLE -->
-              {% if product.type == 'Puzzle' %}
-                {% if product.variants.size > 1 %}
-                  <div class="swatch_options">
-                    {% for option in product.options %}
-                      {% include 'swatch' with option %}
-                    {% endfor %} 
-                  </div>
-                {% endif %}
-              {% else %}
-                {% if section.settings.variant_swacth == 'two'  %}  
-                  {% if product.variants.size > 1 %}
-                      <div class="swatch_options">
-                        {% for option in product.options %}
-                          {% include 'swatch' with option %}
-                        {% endfor %} 
-                      </div>
-                  {% endif %}
-                {% endif %} 
-              {% endif %} 
-              <!-- END PRODUCT SWATCH CODE IF ENABLE -->
+          <!-- PRODUCT SWATCH CODE IF ENABLE -->
+
+          {% if product.variants.size > 1 %}
+          <div class="swatch_options">
+            {% for option in product.options %}
+            {% include 'swatch-gift' with option %}
+            {% endfor %} 
+          </div>
+          {% endif %}
+          <!-- END PRODUCT SWATCH CODE IF ENABLE -->
                 {% include 'product-page-features' %}
     
                 <input required type="hidden" id="upsellcheckquantity" name="properties[upsellcheckquantity]">
