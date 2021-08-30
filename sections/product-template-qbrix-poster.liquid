@@ -526,7 +526,7 @@
                   {% if product.variants.size > 1 %}
                       <div class="swatch_options">
                         {% for option in product.options %}
-                          {% include 'swatch-slider' with option %}
+                          {% include 'swatch' with option %}
                         {% endfor %} 
                       </div>
                   {% endif %}
