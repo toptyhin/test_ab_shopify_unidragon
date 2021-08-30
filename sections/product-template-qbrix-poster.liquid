@@ -69,14 +69,6 @@
             .thumbnails-wrapper {
                 padding-bottom: 60px;
             }
-            span.advantage-item-text {font-size: 12px;}
-            span.advantage-item-title {font-size: 14px;}
-            span.advantage-item-num {
-              float: none !important;
-              font-size: 18px !important;
-            }
-            .advantage-item_left {padding-left: 0 !important; padding-top: 0 !important;}
-            span.advantage-item-text {padding-top: 0 !important;}
           }
           /**/
           .pr-advants, .pr-benefit, .pr-info-item, ul.tabs {display: none;}
@@ -108,47 +100,7 @@
             font-weight: 600;
           }
           .product-single__meta {font-family: 'Poppins';}
-          .advantage {
-            margin-top: 40px;
-          }
-          .advantage-item {
-            -webkit-box-shadow: 0 0 0 1px #e6e6e6;
-             box-shadow: 0 0 0 1px #e6e6e6;
-             margin-bottom: 20px;
-             min-height: 125px;
-             display: flex;
-             align-items: center;
-             justify-content: space-between;
-          }
-          .advantage-block {
-            margin-left: 30px;
-            width: 60%;
-          }
-          span.advantage-item-num {
-              font-size: 24px;
-              font-weight: 600;
-              float: left;
-          }
-          span.advantage-item-title {
-              font-weight: 500;
-              font-size: 14px;
-          }
-          span.advantage-item-text {
-            color: #808080;
-            padding-top: 10px;
-            font-size: 12px;
-          }
-          .advantage-item-img {
-            min-height: 125px;
-            width: 190px;
-          }
-          .advantage-item_left {
-            display: flex;
-            flex-direction: column;
-            padding-left: 14px;
-            padding-top: 5px;
-          }
-          .delivery_time_new {
+         .delivery_time_new {
             display: flex;
             align-items: center;
           }
@@ -197,30 +149,6 @@
                     content:"\2716"
                   }
                   p.line {margin-bottom: 20px;}
-                .storyblock__heading {
-                  padding-bottom: 10px;
-                  width: 40%;
-                }
-                .storyblock__video {
-                  padding-top: 24px;
-                }
-                .storyblock__heading-inner {
-                  display: grid;
-                  margin-left: 50px;
-                }
-                .storyblock__heading-icon {
-                  padding-bottom: 22px;
-                }
-                .storyblock-text-left {
-                  display: flex;
-                  align-items: center;
-                  justify-content: space-between;
-                  margin: 0px auto;
-                  padding-top: 20px;
-                  -webkit-box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
-                  -moz-box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
-                  box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
-                }
         .product.in-stock {
           color: green;
           padding-left: 10px;
@@ -732,76 +660,13 @@
               </div>
               
               <div class="reputon-trustpilot-reviews-widget" id="a83b7e60-bc57-11eb-a355-a9194acb8438" style="display: flex; justify-content: center;"></div>
-              {%- unless product.title contains "balancing" -%}
-                {% render 'pdp__discount' %}
-              {%- endunless -%}
-    
-              <div class="text-center storyblock medium-up--hide"><span class="heading">Inspiring Stories</span></div>
-              <div class="storyblock-text-left">
-                {% case product.title %}
-                  {% when 'Charming Owl' %}
-                    {%- assign current_channel = 'sova_com' -%}
-                  {% when 'Alluring Fox' %}
-                    {%- assign current_channel = 'fox_com' -%}
-                  {% when 'Mysterious Lion' %}
-                    {%- assign current_channel = 'lion_com' -%}
-                  {% when 'Milky Whales 2 in 1' %}
-                    {%- assign current_channel = 'mlechnye_kity_milky_whales' -%}
-                  {% else %}
-                    {%- assign current_channel = 'unidragon_world' -%}
-                {% endcase %}
-                {%- render 'fw-storyblock-text-left', channel: current_channel -%}
-              </div>
-    
               <div class="shipping-banner">
                 <div class="shipping-banner-icon"><img src="{{'shipping-icon.png' | asset_url}}" width="45" height="45"></div>
                 <div class='geotargetlygeocontent1626874543940 shipping-banner-text'>
                 <!-- Content will render here -->
                 </div>
               </div>
-              <div class="advantage">
-                <div class="advantage-item">
-                  <div class="advantage-block">
-                    <span class="advantage-item-num">01</span>
-                    <div class="advantage-item_left">
-                      <span class="advantage-item-title">Spend your time with your loved ones</span>
-                      <span class="advantage-item-text">Our puzzle is a good occasion to bring all the family and friends together</span>
-                    </div>
-                  </div>
-                  <div class="advantage-item-img" style="background-image: url({{'dvantage-item-1.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
-                </div>
-                <div class="advantage-item">
-                  <div class="advantage-block">
-                    <span class="advantage-item-num">02</span>
-                    <div class="advantage-item_left">
-                      <span class="advantage-item-title">It is time to forget the daily routine!</span>
-                      <span class="advantage-item-text">Psychologists recommend puzzles for meditation and stress relief</span>
-                    </div>
-                  </div>
-                  <div class="advantage-item-img" style="background-image: url({{'dvantage-item-2.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
-                </div>
-                <div class="advantage-item">
-                  <div class="advantage-block">
-                    <span class="advantage-item-num">03</span>
-                    <div class="advantage-item_left">
-                      <span class="advantage-item-title">Try something new</span>
-                      <span class="advantage-item-text">Unidragon puzzles have the most unique shape and design</span>
-                    </div>
-                  </div>
-                  <div class="advantage-item-img" style="background-image: url({{'dvantage-item-3.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
-                </div>
-                <div class="advantage-item">
-                  <div class="advantage-block">
-                    <span class="advantage-item-num">04</span>
-                    <div class="advantage-item_left">
-                      <span class="advantage-item-title">Challenge yourself</span>
-                      <span class="advantage-item-text">Puzzles work out your brain and strengthen your mind</span>
-                    </div>
-                  </div>
-                  <div class="advantage-item-img" style="background-image: url({{'dvantage-item-4.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
-                </div>
-              </div>
-    
+   
               <div class="product-single__description rte" itemprop="description">
                 {% for block in section.blocks %}
                   {% if block.type == 'icons-set-with-text' %}
