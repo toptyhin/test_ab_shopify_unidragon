@@ -517,7 +517,7 @@
                 {% if product.variants.size > 1 %}
                   <div class="swatch_options">
                     {% for option in product.options %}
-                      {% include 'swatch' with option %}
+                      {% include 'swatch-old' with option %}
                     {% endfor %} 
                   </div>
                 {% endif %}
