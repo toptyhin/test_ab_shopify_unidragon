@@ -937,7 +937,7 @@
                   {{ video | external_video_tag }}
                 {% else %}
                   {% assign video = product.media | where: "media_type", "video" | first %}
-                  {{ video |  video_tag: loop: true, autoplay: false, muted: true, img_url: '900x'  }}
+                  {{ video |  video_tag }}
                 {% endif %}
                 {{ product.description }}
 
