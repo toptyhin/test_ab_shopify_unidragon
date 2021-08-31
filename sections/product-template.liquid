@@ -962,10 +962,10 @@
                 <p class="line">frequently asked questions</p>
             {%- endif -%}
               <div class="accordion-tax">
-                <span class="accordion-taxes">{{block.faq_title}}</span>
+                <span class="accordion-taxes">{{block.settings.faq_title}}</span>
               </div>
               <div class="panel" style="display: none;">
-                    <p>{{block.faq_text}}</p>
+                    <p>{{block.settings.faq_text}}</p>
               </div>
             {% if forloop.last == true %}
               </div>
