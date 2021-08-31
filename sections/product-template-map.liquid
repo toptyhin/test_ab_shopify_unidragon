@@ -737,9 +737,26 @@
         <!----------custom-Tax-------------->
       {% include 'custom-tax' %}
         <!-------------end------------------>
-        <!--FAQ block-->
-          {% render 'faq-block' %}
-        <!--FAQ block and-->
+
+        {%- assign faq_blocks = section.blocks | where: "type", "faq" -%}
+        {%- for block in faq_blocks -%}
+          {% if forloop.first == true %}
+          <!--FAQ block-->
+            <div class="custom-faq" id="custom-faq">
+              <p class="line">frequently asked questions</p>
+          {%- endif -%}
+            <div class="accordion-tax">
+              <span class="accordion-taxes">{{block.settings.faq_title}}</span>
+            </div>
+            <div class="panel" style="display: none;">
+                  <p>{{block.settings.faq_text}}</p>
+            </div>
+          {% if forloop.last == true %}
+            </div>
+            <!--FAQ block and-->
+          {%- endif -%}
+        {%- endfor -%}
+
         {% if section.settings.visitor_counter_enable %}
        
         <input type="hidden" value="{{section.settings.visitor_counter_number}}" id="min_max_number">
@@ -1353,7 +1370,7 @@ var enable_defaul_variant = false;
         "label": "Enable Badges",
         "default": true
       },
-	  {
+	   {
         "type": "image_picker",
         "id": "enable_trust_badges_image",
         "label": "Payment icons"
@@ -1441,8 +1458,26 @@ var enable_defaul_variant = false;
       "id":"pdp_cta_link1",
       "label":"CTA link"
       }
-
-
+    ],
+    "blocks": [
+      {
+        "type": "faq",
+        "name": "Faq-Item",
+        "settings":[
+          {
+            "type": "text",
+            "id": "faq_title",
+            "default": "Put your question here !",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "faq_text",
+            "default": "<p>Put the answer here !</p>",
+            "label": "Text"
+          }
+        ]
+      }
     ]
   }
 {% endschema %}
