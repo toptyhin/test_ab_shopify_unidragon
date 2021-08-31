@@ -2,16 +2,12 @@
 {% comment %}
   The contents of the product.liquid template can be found in /sections/product-template.liquid
 {% endcomment %}
-
 {% section 'product-subscription-template' %}
-
 {{ 'magnific-popup.css' | asset_url | stylesheet_tag }}
 {{ 'jquery.magnific-popup.min.js' | asset_url | script_tag }}
-
 {%- if settings.show_cart_drawer -%}
   {%- section  'go-cart' -%}
 {%- endif -%}
-
 <script>
   // Override default values of shop.strings for each template.
   // Alternate product templates can change values of
@@ -28,5 +24,4 @@
     console.log('rev -> pageview');
   }
 </script>
-
 <div class="reputon-trustpilot-reviews-widget" id="78c456a0-bc54-11eb-910a-479bd9607d41" ></div>

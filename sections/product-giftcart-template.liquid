@@ -9,9 +9,7 @@
       padding-bottom: 25px;
   }
 </style>
-
 <div class="product-template__container product-{{ product.id }} page-width" itemscope itemtype="http://schema.org/Product" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true"> 
-
   <meta itemprop="name" content="{{ product.title }}">
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
   <meta itemprop="image" content="{{ product.featured_image.src | img_url: '800x' }}">
@@ -20,7 +18,6 @@
   {%- assign product_image_zoom_size = '1024x1024' -%}
   {%- assign product_image_scale = '2' -%}
   {%- assign enable_zoom = section.settings.enable_zoom -%}
-
   <div class="grid product-single">
     <div class="grid__item product-single__photos medium-up--one-half">
       {% render 'label-product-tag', products: product %}
@@ -37,9 +34,7 @@
                 {% capture zoom_img_id %}FeaturedImageZoom-{{ section.id }}-{{ media.id }}{% endcapture %}
                 {% capture img_wrapper_id %}{{ zoom_img_id }}-wrapper{% endcapture %}
                 {%- assign img_url = media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-
                 {% include 'image-style' with small_style: true, width: 530, height: 530, wrapper_id: img_wrapper_id, img_id: img_id %}
-
                 <div id="{{ img_wrapper_id }}" class="product-single__photo-wrapper small--hide js">
                     <div id="{{ zoom_img_id }}" style="padding-top:{{ 1 | divided_by: media.aspect_ratio | times: 100}}%;position: relative;overflow: hidden;" class="product-single__photo-{{ section.id }}{% if enable_zoom %} js-zoom-enabled{% endif %}{% if product.images.size > 1 %} product-single__photo--has-thumbnails{% endif %}{% unless featured_image == media %} hide{% endunless %}" data-image-id="{{ media.id }}"{% if enable_zoom %} data-zoom="{{ media | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
                     <img id="{{ img_id }}" 
@@ -105,11 +100,9 @@
         {% capture product_image_size %}530x{% endcapture %}
         <img src="{{ featured_image | img_url: product_image_size, scale: product_image_scale }}" loading="lazy" alt="{{ featured_image.alt }}" id="FeaturedImage-{{ section.id }}" class="product-featured-img" style="max-width: 530px;">
       </noscript>
-
       {% if product.images.size > 1 %}
       {%- liquid
          assign enable_thumbnail_slides = true 
-
         if customer
         for tag in customer.tags
           if tag == 'Subscription membership' 
@@ -119,7 +112,6 @@
       endif
       
       assign discount_amount = 1
-
       if member_discount == true
         assign discount_amount =  0.8
       elsif puzle_discount > 2 and product.type == 'Puzzle'
@@ -129,7 +121,6 @@
         
         -%}
       {% endif %}
-
       <div class="thumbnails-wrapper {% if product.images.size == 1 %}medium-up--hide{% endif %}{% if enable_thumbnail_slides == true %} thumbnails-slider--active{% endif %}">
         {% if enable_thumbnail_slides == true %}
         <button type="button" class="btn btn--link small--hide thumbnails-slider__btn thumbnails-slider__prev thumbnails-slider__prev--{{ section.id }}">
@@ -188,14 +179,12 @@
             {{ product.title }}
           {%- endif -%}
       </h1>
-
         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
           <!-- KV 02/02/21 <meta itemprop="priceCurrency" content="{{ shop.currency }}"> -->
           <meta itemprop="priceCurrency" content="USD">
           
           <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition" />
           <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
-
           {%- if  member_discount == true -%}
           <p class="product-single__price product-single__price-{{ section.id }}{% unless current_variant.available %} product-price--sold-out{% endunless %}" data-discount="{{discount_amount}}">
             <s id="ComparePrice-{{ section.id }}" style="color: #ff8e00;">{{ current_variant.price | money }}</s>
@@ -285,14 +274,10 @@
           {%- capture "form_classes" -%}
           product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %}{% if section.settings.enable_payment_button and product.has_only_default_variant%} product-form--payment-button-no-variants{% endif %}
           {%- endcapture %}
-
           {% form 'product', product, data-productid: product.id, id: "AddToCartForm", class:form_classes, data-product-id: "{{ product.id }}", data-section: "{{ section.id }}", data-product: "{{ product | json | escape }}" %}
-
             <input type="hidden" id="Quantity" name="quantity" value="1" class="product-form__input prod_qty_mobile">
           {% unless product.has_only_default_variant %}
-
           {% for option in product.options_with_values %}
-
           <div class="selector-wrapper js product-form__item" style="display: none;">
             <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
               {{ option.name }}
@@ -305,7 +290,6 @@
           </div>
           {% endfor %}
           {% endunless %}
-
           <select name="id" data-productid="{{ product.id }}" id="ProductSelect-{{ section.id }}" data-section="{{ section.id }}" class="product-form__variants no-js">
             {% for variant in product.variants %}
             {% if variant.available %}
@@ -317,9 +301,7 @@
             {% endif %}
             {% endfor %}
           </select>
-
           <!-- PRODUCT SWATCH CODE IF ENABLE -->
-
           {% if product.variants.size > 1 %}
           <div class="swatch_options">
             {% for option in product.options %}
@@ -330,11 +312,8 @@
           <!-- END PRODUCT SWATCH CODE IF ENABLE -->
 {% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
 {% assign price_var=current_variant.price | withoutmoney %}  
-
 <div class="grid__item row_grid_qnt"{% if section_onboarding %} style="margin-top:20px;"{% endif %}>
-
 <input type="hidden" id="Quantity" name="quantity" value="1" class="product-form__input prod_qty_desktop">
-
 <div class="{{quantitygrid}}{% if section.settings.enable_sticky %} qty_stickyfor{% endif %}{% unless section.settings.enable_payment_button %} cst-small-crtbtn{% else %} more_payment_btn{% endunless %}">
   {% if price_var == 0 %}          
   {% if section.settings.enable_shipping %}
@@ -362,9 +341,7 @@
   {% endif %}
   {% endif %}
 </div>
-
 <style>
-
     .banner-inspirational-gift {
       background-color: black;
       background-image: url({{'banner-inspirational-gift-new_bg.png' | asset_url}});
@@ -514,7 +491,6 @@
       }
     }
 </style>
-
 <div class="grid__item--wrapper">
   <div class="banner-inspirational-gift">
     <div class="banner-inspirational-gift_wrapper">
@@ -575,10 +551,8 @@
       {{ product.description }}
     </div>
   </div>
-
 </div>
 </div>
-
 {% if section.settings.enable_trust_badges and section.settings.move_badges_under_cart %}
 <div class="payment-icon">
 {% assign badges_title = 'products.product.badges_title' | t %} 
@@ -606,18 +580,12 @@
   .product-single__description.rte.ttt {
       padding-bottom: 30px;
 }
-
 </style>
-
 <!-- for skip add to cart code-->
-
           <input required type="hidden" id="upsellcheckquantity" name="properties[upsellcheckquantity]">
           {% endform %}
-
           {% if section.settings.enable_sticky %}
-
           <style>
-
             @media(max-width:749px) {
               /*               .counter_box.show{display:none !important;} */
               /*
@@ -627,7 +595,6 @@
               .counter_box.show {
               display: none !important;
             } */
-
               .product-form__item.product-form__item--quantity,  
               .product-form__item.product-form__item--quantity + div {
                 display : none !important;
@@ -679,18 +646,12 @@
               }
               {% endif %}
             }
-
             @media(min-width:750px){
-
-
-
               button#AddToCart {
                 visibility: visible !important;
               }
-
             }
           </style>
-
           {% if section.settings.enable_buy_it_stiky_qty %}
           <style> 
             @media screen and (max-width:749px) {
@@ -704,25 +665,20 @@
               padding: 9px;
             }
             {% endif %}
-
           </style>
           {% else %}
-
           <style> 
             @media screen and (max-width:749px) {
               #mst-stiky-box div#sticky_btnn.product-form__item--quantity{ display:block !important;float: left;width: 25% !important;padding-right: 0 !important; } 
             }
           </style>
-
           {% endif  %}
-
           {% assign price_var1=current_variant.price | withoutmoney %}  
           <div id="AddToCartForm1" class="product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %} stiky_form{% if price_var1 == 0 %} zerocost_from_box {% endif %}" data-section="{{ section.id }}" >
             <div id="mst-stiky-box" class="mst-stiky-div">
               {% if section.settings.enable_timer_stg_on == 'enable_timer_stg_on' %}  
               {% if section.settings.sticky_button == 'show_timer' %}
               {% assign tg = 'show' %}
-
               {% if settings.disable_timer_use_tag %}
               {% for tag in product.tags %}
               {% if "no-timer" == tag %}
@@ -734,15 +690,11 @@
               
               {% endif %}
               {% endif %}
-
-
             </div>
           </div>  
           {% endif %}
-
         </div>
         </div>
-
         {% if section.settings.visitor_counter_enable %}
        
         <input type="hidden" value="{{section.settings.visitor_counter_number}}" id="min_max_number">
@@ -757,26 +709,20 @@
       </div>
     </div>
   </div>
-
-
 </div>
 {% unless product == empty %}
 <script type="application/json" id="ProductJson-{{ section.id }}">
     {{ product | json }}
 </script>
 {% endunless %}
-
-
 <!-- START UPSELL AND ADD TO CART CODE -->
 {% if section.settings.buy_it_now_action == 'thank_you_message' %}
-
 {% elsif section.settings.buy_it_now_action == 'direct_to_checkout' %}
 <input type="hidden" name="return_to" value="/checkout" />
 {% else %}
 <input type="hidden" name="return_to" value="/cart" />
 {% endif %}
 <!-- END UPSELL AND ADD TO CART CODE -->
-
 <!-- Pick an option code -->
 {% if section.settings.enable_default_variant %}
 {% unless product.selected_variant %}
@@ -799,9 +745,7 @@ var enable_defaul_variant = false;
 </script>
 {% endif %}
 <!-- End Pick an option code -->
-
 {% comment %} Cart Drawer on Product page{% endcomment %}
-
 {% schema %}
   {
     "name": "Product Gift Cart page",
@@ -1186,7 +1130,6 @@ var enable_defaul_variant = false;
       "type":"header",
       "content":"Discount PopUp"
       },
-
       {
       "type": "textarea",
       "id": "title",
@@ -1227,8 +1170,6 @@ var enable_defaul_variant = false;
       "id":"pdp_cta_link1",
       "label":"CTA link"
       }
-
-
     ]
   }
 {% endschema %}

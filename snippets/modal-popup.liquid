@@ -1,62 +1,60 @@
-<div id="info-popup-GB" class="info-popup white-popup mfp-hide">
-    <div style="min-width: 305px; margin: 5px 20px; margin-bottom: 25px; display: flex; flex-direction: column; align-items: center; justify-content: space-around;">
-        <div class="img">
-            <img src="https://cdn.shopify.com/s/files/1/0010/6348/5558/files/pngegg.png?v=1622556969" style="max-height: 100px; max-width: 100px; margin-top: 35px;">
-        </div>
-        <div>
-            <p style="font-size: 18px; text-align: center; margin-top: 35px;">Citizens of <span style="font-weight: 700;">Great Britain</span>, we have good news for you!</p>
-            <p style="font-size: 18px; text-align: center;">In-country delivery now only takes <span style="font-weight: 700;">2-4 days</span> and costs from <span style="font-weight: 700;">6-9 €</span>.</p>
-            <p style="font-size: 18px; text-align: center; font-weight: 700;">WITHOUT CUSTOMS FEES!</p>
-        </div>       
-    </div>
-</div>
-
-<div id="info-popup-GE" class="info-popup white-popup mfp-hide">
-    <div style="max-height: 420px; max-width: 700px; margin: 5px 20px; margin-bottom: 25px; display: flex; flex-direction: column; align-items: center;">
-        <div class="img">
-            <img src="https://cdn.shopify.com/s/files/1/0010/6348/5558/files/pngegg.png?v=1622556969" style="max-height: 100px; max-width: 100px; margin-top: 35px;">
-        </div>
-        <div style="line-height: 21px;">
-            <p style="font-size: 18px; text-align: center; margin-top: 35px;">Hallo an alle Kunden aus <span style="font-weight: 700;">Deutschland!</span> Wir haben gute Nachrichten für Sie!</p>
-            <p style="font-size: 18px; text-align: center;">Inlandslieferungen erfolgen in nur <span style="font-weight: 700;">2-3 Tagen</span> and costs from <span style="font-weight: 700;">5.99 €</span>.</p>
-            <p style="font-size: 20px; text-align: center; font-weight: 700;">OHNE STEUERN!</p>
-        </div>
-    </div>
-</div>
-
-<style>
-    .white-popup {
-        position: relative;
-        background: #FFF;
-        padding: 20px;
-        width: auto;
-        max-width: 500px;
-        margin: 20px auto;
-        border-radius: 10px;
-        }
-</style>
-<!-- Magnific Popup core CSS file -->
-<link rel="stylesheet" href="{{ 'magnific-popup.css' | asset_url }}">
-  <!-- Magnific Popup core JS file -->
-  <script src="{{ 'jquery.magnific-popup.min.js' | asset_url }}"></script>
-  <script src="{{ 'js-cookie.js' | asset_url }}"></script>
-<script>
-    function showpopup(popupId) {
-        console.log('Init showpopup');
-        if (!$.cookie('mrtPopupShown') && $(popupId).length) {
-            $.magnificPopup.open({
-                items: {
-                    src: popupId,
-                    type: 'inline'
-                },
-                showCloseBtn: true,
-                enableEscapeKey: false,
-                closeOnContentClick: true,
-                closeOnBgClick: false,
-                fixedContentPos: true,
-            });
-            console.log('Popup close has been initiated');
-            $.cookie('mrtPopupShown', true, { expires: 7 });
-    }
-}
+<div id="info-popup-GB" class="info-popup white-popup mfp-hide">
+    <div style="min-width: 305px; margin: 5px 20px; margin-bottom: 25px; display: flex; flex-direction: column; align-items: center; justify-content: space-around;">
+        <div class="img">
+            <img src="https://cdn.shopify.com/s/files/1/0010/6348/5558/files/pngegg.png?v=1622556969" style="max-height: 100px; max-width: 100px; margin-top: 35px;">
+        </div>
+        <div>
+            <p style="font-size: 18px; text-align: center; margin-top: 35px;">Citizens of <span style="font-weight: 700;">Great Britain</span>, we have good news for you!</p>
+            <p style="font-size: 18px; text-align: center;">In-country delivery now only takes <span style="font-weight: 700;">2-4 days</span> and costs from <span style="font-weight: 700;">6-9 €</span>.</p>
+            <p style="font-size: 18px; text-align: center; font-weight: 700;">WITHOUT CUSTOMS FEES!</p>
+        </div>       
+    </div>
+</div>
+<div id="info-popup-GE" class="info-popup white-popup mfp-hide">
+    <div style="max-height: 420px; max-width: 700px; margin: 5px 20px; margin-bottom: 25px; display: flex; flex-direction: column; align-items: center;">
+        <div class="img">
+            <img src="https://cdn.shopify.com/s/files/1/0010/6348/5558/files/pngegg.png?v=1622556969" style="max-height: 100px; max-width: 100px; margin-top: 35px;">
+        </div>
+        <div style="line-height: 21px;">
+            <p style="font-size: 18px; text-align: center; margin-top: 35px;">Hallo an alle Kunden aus <span style="font-weight: 700;">Deutschland!</span> Wir haben gute Nachrichten für Sie!</p>
+            <p style="font-size: 18px; text-align: center;">Inlandslieferungen erfolgen in nur <span style="font-weight: 700;">2-3 Tagen</span> and costs from <span style="font-weight: 700;">5.99 €</span>.</p>
+            <p style="font-size: 20px; text-align: center; font-weight: 700;">OHNE STEUERN!</p>
+        </div>
+    </div>
+</div>
+<style>
+    .white-popup {
+        position: relative;
+        background: #FFF;
+        padding: 20px;
+        width: auto;
+        max-width: 500px;
+        margin: 20px auto;
+        border-radius: 10px;
+        }
+</style>
+<!-- Magnific Popup core CSS file -->
+<link rel="stylesheet" href="{{ 'magnific-popup.css' | asset_url }}">
+  <!-- Magnific Popup core JS file -->
+  <script src="{{ 'jquery.magnific-popup.min.js' | asset_url }}"></script>
+  <script src="{{ 'js-cookie.js' | asset_url }}"></script>
+<script>
+    function showpopup(popupId) {
+        console.log('Init showpopup');
+        if (!$.cookie('mrtPopupShown') && $(popupId).length) {
+            $.magnificPopup.open({
+                items: {
+                    src: popupId,
+                    type: 'inline'
+                },
+                showCloseBtn: true,
+                enableEscapeKey: false,
+                closeOnContentClick: true,
+                closeOnBgClick: false,
+                fixedContentPos: true,
+            });
+            console.log('Popup close has been initiated');
+            $.cookie('mrtPopupShown', true, { expires: 7 });
+    }
+}
 </script>

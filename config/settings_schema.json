@@ -6714,9 +6714,9 @@
         "default": true
       },
       {
-         "type": "product",
-         "id": "upsell_product",
-         "label": "Select product for upsell"
+        "type": "product",
+        "id": "upsell_product",
+        "label": "Select product for upsell"
       },
       {
         "type": "image_picker",
