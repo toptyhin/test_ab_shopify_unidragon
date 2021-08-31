@@ -319,6 +319,18 @@
       },
       "product-template": {
         "type": "product-template",
+        "blocks": {
+          "7f756150-3b48-4f5b-9173-3d4590f61878": {
+            "type": "faq",
+            "settings": {
+              "faq_title": "How does the size of the pieces differ for the puzzle sizes – S, M, L?",
+              "faq_text": "<p>Our sizes change with the number of pieces, so the size of the pieces is the same in every puzzle.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "7f756150-3b48-4f5b-9173-3d4590f61878"
+        ],
         "settings": {
           "buy_it_now_action": "thank_you_message",
           "show_cart_drawer": true,
