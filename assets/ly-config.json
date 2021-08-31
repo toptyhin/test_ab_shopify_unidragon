@@ -113,6 +113,7 @@
     "observeImages": true,
     "observeCustomContents": true,
     "linksBlacklist": [
+
     ]
   }
 }

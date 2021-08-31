@@ -954,53 +954,24 @@
             </div>
           </div>
 
-          <!--FAQ block-->
+          {%- assign faq_blocks = section.blocks | where "type", "faq" -%}
+          {%- for faq_block in faq_blocks -%}
+            {% if forloop.first == true %}
+            <!--FAQ block-->
               <div class="custom-faq" id="custom-faq">
                 <p class="line">frequently asked questions</p>
-                <div class="accordion-tax">
-                    <span class="accordion-taxes">How does the size of the pieces differ for the puzzle sizes – S, M, L?</span>
-                  </div>
-                <div class="panel" style="display: none;">
-                      <p>Our sizes change with the number of pieces, so the size of the pieces is the same in every puzzle.</p>
-                </div>
-                <div class="accordion-tax">
-                    <span class="accordion-taxes">What is a wooden puzzle?</span>
-                  </div>
-                <div class="panel" style="display: none;">
-                      <p>Our puzzles are made from a pressured HDF that is 3mm thick. This material is eco-friendly, high-quality and durable. It doesn’t deform and doesn’t give splinters (like with plywood).</p>
-                </div>
-                <div class="accordion-tax">
-                    <span class="accordion-taxes">How long does each size puzzle take to assemble?</span>
-                  </div>
-                <div class="panel" style="display: none;">
-                      <p>Check our illustration (link/popup of with an illustration of the sizes and photo of a girl). As well as the size pay attention to the assembly times:
-                        <ul>
-                          <li>S -> from 2 hours</li>
-                          <li>M-> from 4 hours</li>
-                          <li>L-> from 6 hours</li>
-                        </ul>
-                        <p>The large puzzle will most probably take a couple of evenings to assemble so it is best to complete it on a separate table. </p>
-                </div>
-                <div class="accordion-tax">
-                    <span class="accordion-taxes">Who are the puzzles suitable for?</span>
-                  </div>
-                <div class="panel" style="display: none;">
-                      <p>Wooden puzzles are a great gift for practically anyone.</p>
-                      <p>You can assemble them by yourself, getting away from your routine, it is a pleasant and useful exercise as it develops the brain and fine motor skills. </p>
-                      <p>You can spend an evening assembling the puzzle with your family, children, loved ones. </p>
-                      <p>As well as puzzle lovers, our jigsaws are bought by creative people, board game lovers, people who like to do simple tasks with their hands</p>
-                </div>
-                <div class="accordion-tax">
-                    <span class="accordion-taxes">What do I do with completed puzzles?</span>
-                  </div>
-                <div class="panel" style="display: none;">
-                      <p>Many customers use their puzzle as an alternative to board games: they visit friends or family and complete the puzzle together. </p>
-                      <p>Some families even do timed assemblies. You can also make the assembly more difficult by completing it from the other side (it also has a picture on it)! </p>
-                      <p>When you’ve completed the assembly process, don’t put the puzzle back in the cupboard. Use it as interior decoration! We have developed a special gluing system for this which fixes the puzzle together and sticks it to the wall. </p>
-                      <p>This is suitable for all sizes, with the help of one set you can fix and hang 6 small puzzles, 3 medium puzzles, or 3 large puzzles.</p>
-                </div>
+            {%- endif -%}
+              <div class="accordion-tax">
+                <span class="accordion-taxes">{{faq_block.faq_title}}</span>
               </div>
-          <!--FAQ block and-->
+              <div class="panel" style="display: none;">
+                    <p>{{faq_block.faq_text}}</p>
+              </div>
+            {% if forloop.last == true %}
+              </div>
+              <!--FAQ block and-->
+            {%- endif -%}
+          {%- endfor -%}
 
           <!----------custom-Tax-------------->
           {% if section.settings.heading-tax != blank %}
@@ -1518,6 +1489,24 @@
         {
           "type": "icons-set-with-text",
           "name": "Icons set with Text"
+        },
+        {
+          "type": "faq",
+          "name": "Faq",
+          "settings":[
+            {
+              "type": "text",
+              "id": "faq_title",
+              "default": "Put your question here !",
+              "label": "Title"
+            },
+            {
+              "type": "richtext",
+              "id": "faq_text",
+              "default": "<p>Put the answer here !</p>",
+              "label": "Text"
+            }
+          ]
         },
         {
           "type": "image-with-text",
