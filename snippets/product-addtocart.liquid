@@ -19,11 +19,6 @@
   {% else %}
   {% assign quantitygrid='grid__item medium--three-quarters large-up--eight-tenths  small--one-whole pad_zero' %} 
   {% endif %}
-  {% if section.settings.enable_progressbar_text or section.settings.enable_timer_top_message %}
-  {% if section.settings.enable_payment_button %}
-  {% include 'product-progress-bar' %}
-  {% endif %}
-  {% endif %}
   <!-- allow setting after quantity-->
 
   {% else %}
