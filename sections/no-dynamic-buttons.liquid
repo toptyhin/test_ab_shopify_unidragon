@@ -461,9 +461,6 @@ kv 02/02/21
               
               {% endif %}
               {% endif %}
-              {% if section.settings.sticky_button == 'show_progress_bar' %}
-              {% include 'product-progress-bar-mobile' %}
-              {% endif %}
 
               {% if price_var1 == 0 %}          
               <button type="button" name="add" id="AddToCartZero" class="btn_sp btn stiky_button{% if section.settings.enable_payment_button %} dynamic_paybtn {% endif %}{% if section.settings.shake_effect_enable %} js-cartButtonPro-addToCartButton hvr-wobble-horizontal{% endif %}">
