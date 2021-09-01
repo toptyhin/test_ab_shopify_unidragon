@@ -1,11 +1,4 @@
 {% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
-<!--prouct-count-->
- {% unless section.settings.show_quantity_selector and section.settings.enable_payment_button %}
-{% if section.settings.enable_progressbar_text  or  section.settings.enable_timer_top_message %}
-{% include 'product-progress-bar' %} 
-{% endif %}
-{% endunless %}
-
 {% include 'product-addtocart' %}
 {% if section.settings.enable_timer_stg_on == 'enable_timer_stg_on' and template == 'product' %}
   {% if current_variant.compare_at_price > current_variant.price %}
