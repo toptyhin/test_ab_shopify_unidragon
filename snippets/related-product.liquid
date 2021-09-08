@@ -43,11 +43,13 @@
 {%- if product.metafields.c_f.Related_Products -%}
   {%- assign collection = collections[product.metafields.c_f.Related_Products] -%}
 {%- endif -%}
-
+{{collection.all_products_count}}
 {%- assign found_a_collection = false -%}
+{%- if collection and collection.all_products_count > 1 -%}
   {%- unless exclusions contains collection.handle -%}
     {%- assign found_a_collection = true -%}
   {%- endunless -%}
+{%- endif -%}
 {%- unless found_a_collection -%}
   {%- for c in product.collections -%}
     {%- unless exclusions contains c.handle or c.all_products_count < 2 -%}
@@ -61,7 +63,6 @@
 {%- comment -%}
   If we have a relevant collection.
 {%- endcomment -%}
-{{product.metafields.c_f.Related_Products}}
 {%- if found_a_collection -%}
 
   {%- assign counter = 0 -%}
