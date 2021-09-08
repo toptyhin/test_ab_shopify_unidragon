@@ -43,7 +43,6 @@
 {%- if product.metafields.c_f.Related_Products -%}
   {%- assign collection = collections['wooden-puzzles'] -%}
 {%- endif -%}
-{{product.metafields.c_f.Related_Products}}@@
   {%- assign found_a_collection = false -%}
 {%- if collection and collection.all_products_count > 1 -%}
   {%- unless exclusions contains collection.handle -%}
