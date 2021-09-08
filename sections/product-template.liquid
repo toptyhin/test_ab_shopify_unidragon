@@ -359,7 +359,6 @@
       bottom: 0;
       position: absolute;
       transition: opacity 200ms ease-in;
-      background-image: linear-gradient(to bottom, rgba(212, 59, 59, 0) 80%, #ffffff);
       pointer-events: none;
       height: 50%;
       width: 100%;
@@ -973,6 +972,10 @@
             {%- endif -%}
           {%- endfor -%}
 
+          {%- if section.settings.enable_combo_upsell -%}
+            {%- include 'combo-upsell-block' -%}
+          {%- endif -%}
+
           <!----------custom-Tax-------------->
           {% if section.settings.heading-tax != blank %}
             <div class="custom-tax-new">
@@ -1031,16 +1034,11 @@
   {% endif %}
   <!-- END READ MORE BUTTON SCRIPT AND STYLE -->
   
-  <!-- START UPSELL AND ADD TO CART CODE -->
-  {% if section.settings.buy_it_now_action == 'thank_you_message' %}
-  
-  {% elsif section.settings.buy_it_now_action == 'direct_to_checkout' %}
-    <input type="hidden" name="return_to" value="/checkout" />
-  {% else %}
-    <input type="hidden" name="return_to" value="/cart" />
-  {% endif %}
-  <!-- END UPSELL AND ADD TO CART CODE -->
-  
+
+  {%- if section.settings.enable_mobile_atc_button -%}
+    {% include 'mobile-etc-button' %}
+  {%- endif -%}
+
   <!-- Pick an option code -->
   {% if section.settings.enable_default_variant %}
     {% unless product.selected_variant %}
@@ -1379,6 +1377,31 @@
           "id": "enable_sticky",
           "label": "Enable Sticky button",
           "default": true
+        },
+        {
+          "type": "header",
+          "content": "Upsell"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_combo_upsell",
+          "label": "Enable COMBO Upsell Block",
+          "default": true
+        },
+        {
+          "type": "product",
+          "id": "combo_upsell_product",
+          "label": "Select product for upsell"
+        },
+        {
+          "type": "header",
+          "content": "Mobile Sticky ADD TO CART Button"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_mobile_atc_button",
+          "label": "Enable Mobile Sticky ADD TO CART Button",
+          "default": false
         },
         {
           "type": "header",
