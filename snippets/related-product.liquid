@@ -46,7 +46,7 @@
 {{collection.all_products_count}}
   {%- assign found_a_collection = false -%}
 {%- if collection and collection.all_products_count > 1 -%}
-  {{collection.all_products_count}}
+  {{collection.all_products_count}}@@@
   {%- unless exclusions contains collection.handle -%}
     {%- assign found_a_collection = true -%}
   {%- endunless -%}
