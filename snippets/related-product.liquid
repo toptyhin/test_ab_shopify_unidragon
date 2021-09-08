@@ -40,8 +40,8 @@
   Looking for a relevant collection.
 {%- endcomment -%}
 
-{%- if product.metafields.c_f['Related Products'] -%}
-  {%- assign collection = collections[product.metafields.c_f['Related Products']] -%}
+{%- if product.metafields.c_f.Related_Products -%}
+  {%- assign collection = collections[product.metafields.c_f.Related_Products] -%}
 {%- endif -%}
 
 {%- assign found_a_collection = false -%}
