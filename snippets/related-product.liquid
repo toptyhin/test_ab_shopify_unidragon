@@ -41,7 +41,7 @@
 {%- endcomment -%}
 
 {%- if product.metafields.c_f.Related_Products -%}
-  {%- assign collection = collections[product.metafields.c_f.Related_Products] -%}
+  {%- assign collection = collections['wooden-puzzles'] -%}
 {%- endif -%}
 {{product.metafields.c_f.Related_Products}}@@
   {%- assign found_a_collection = false -%}
