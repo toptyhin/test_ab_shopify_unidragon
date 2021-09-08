@@ -43,7 +43,7 @@
 {%- if product.metafields.c_f.Related_Products -%}
   {%- assign collection = collections[product.metafields.c_f.Related_Products] -%}
 {%- endif -%}
-
+{{collection.all_products_count}}
   {%- assign found_a_collection = false -%}
 {%- if collection and collection.all_products_count > 1 -%}
   {{collection.all_products_count}}
