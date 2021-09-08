@@ -1,0 +1,147 @@
+<style>
+    .mobile-sticky-atc {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 100;
+        background: white;
+    }
+    .mobile-sticky-atc button {
+        font-size: 15px;
+        color: rgb(255, 255, 255);
+        text-transform: uppercase;
+        background-color: rgb(255, 142, 0);
+        width: 100%;
+        border: none;
+        letter-spacing: inherit;
+        padding: 12px;
+    }
+    .mobile-sticky-atc-size__item label {
+        font-size: 10px;
+        width: 25px;
+        height: 25px;
+    }
+    .mobile-sticky-atc-size {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+    .mobile-sticky-atc-size__item {
+        margin-right: 10px;
+        display: flex;
+    }
+    .mobile-sticky-atc-size__item label {
+        border-radius: 50%;
+        background-color: rgb(247, 247, 247);
+        width: 33px;
+        height: 33px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: rgb(153, 153, 153);
+        font-weight: bold;
+        transition: all .3s;
+    }
+    .mobile-sticky-atc-size__item input:checked+label, .mobile-sticky-atc-size__item label:hover {
+        border: 1px solid rgb(26, 26, 26);
+        color: rgb(26, 26, 26);
+    }
+    .shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    }
+    .mobile-sticky-atc-size__item.shake label {
+        border: 1px solid red;
+    }
+    @keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+    }
+</style>
+<div class="mobile-sticky-atc">
+    
+    <div class="mobile-sticky-atc-size">
+        {%- assign size_selector = ',S,M,KS,RS' | split:',' -%}
+      {% for variant in product.variants %}
+          {% if variant.available %}
+              <div class="mobile-sticky-atc-size__item">
+                  <input type="radio" class="custom-checkbox" id="atc-button-{{size_selector[forloop.index]}}" name="atc-size-selector" price="{{variant.price | money}}" value="{{variant.id}}">
+                  <label for="{{variant.id}}">{{size_selector[forloop.index]}}</label>
+              </div>
+          {%- endif -%}
+      {%- endfor -%}
+    </div>
+    {%comment%}<div style="text-align: center;"><img src="{{ product.featured_image.src | img_url: '160x' }}"/></div>{%endcomment%}
+    <button id="mobile-sticky-atc" class="btn_sp">Add to card <span class="button-price"></span></button>
+</div>
+<script>
+    if (screen.width < 425) {
+        $(document).scroll(function() {
+            var y = $(this).scrollTop();
+            if (y > 800) {
+                $('.mobile-sticky-atc').fadeIn();
+            } else {
+                $('.mobile-sticky-atc').fadeOut();
+            }
+        });
+        $('.mobile-sticky-atc-size__item').on('click',function(e){  
+            $('.button-price').html( $('.mobile-sticky-atc-size__item > input:checked').attr('price') );
+            $('.mobile-sticky-atc-size__item').removeClass('shake');
+        });
+        $('.swatch-element').on('click',function(e){
+            let var_numb = $(this).find('input').attr('ga-data');
+            let f_class = '.mobile-sticky-atc-size__item:nth-child(' + var_numb + ') > input';
+            $('.mobile-sticky-atc-size__item > input').removeAttr('checked');
+            $(f_class).prop('checked', true);
+            $('.mobile-sticky-atc-size__item').removeClass('shake');
+            $('.button-price').html( $('.mobile-sticky-atc-size__item > input:checked').attr('price') );
+        });
+    }
+
+      $('#mobile-sticky-atc').on('click',function(e){ 
+          if ($('.mobile-sticky-atc-size__item > input:checked').val())  { 
+          e.preventDefault();
+          let formData = {
+              'items': [
+                  {
+                      'id': $('.mobile-sticky-atc-size__item > input:checked').val(),
+                      'quantity': 1
+                  }
+              ]
+          };
+          fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+          })
+          .then(response => {
+          goCart.fetchAndOpenCart();
+          })
+          .catch((error) => {
+          console.error('Error:', error);
+          });
+        } else {
+            $('.mobile-sticky-atc-size__item').addClass('shake');
+        }
+      });
+</script>
