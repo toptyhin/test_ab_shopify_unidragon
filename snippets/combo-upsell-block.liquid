@@ -1,0 +1,347 @@
+<div class="combo-block">
+    <div class="combo-block__title">
+      <p class="combo-title__main">COMBO OFFER: <span>SAVE $10</span></p>
+      <p class="combo-title__text">Special price for the Mounting set when you buy together</p>
+    </div>
+  
+    <div class="combo-main">
+      <div class="combo-main__items">
+        <div class="combo-item">
+          <img src="{{ product.featured_image.src | img_url: '160x' }}">
+          <div class="combo-size">
+              {%- assign size_selector = ',S,M,KS,RS' | split:',' -%}
+            {% for variant in product.variants %}
+                {% if variant.available %}
+                    <div class="combo-size__item">
+                        <input type="radio" class="custom-checkbox" id="{{size_selector[forloop.index]}}" name="upsell-size-selector" combo-compare-price="{{ variant.price | plus: section.settings.combo_upsell_product.compare_at_price | money }}" combo-price="{{ variant.price | plus: section.settings.combo_upsell_product.price | money }}" price="{{variant.price | money}}" value="{{variant.id}}"{%- if variant.id == current_variant.id -%} checked{%- endif -%}>
+                        <label for="{{variant.id}}">{{size_selector[forloop.index]}}</label>
+                    </div>
+                {%- endif -%}
+            {%- endfor -%}
+          </div>
+          <div class="combo-item__price">
+            {{ current_variant.price | money }}
+          </div>
+        </div>
+        <div class="combo-item">
+          <span class="combo-item__plus">+</span>
+        </div>
+        <div class="combo-item">
+          <img src="{{ section.settings.combo_upsell_product.featured_image.src | img_url: '160x' }}">
+          <div class="combo-item__text">
+            <p>Mounting set</p>
+            <span class="combo-item__old">{{section.settings.combo_upsell_product.compare_at_price | money}} </span><span class="combo-item__new">{{section.settings.combo_upsell_product.price | money}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="combo-footer">
+      <div class="combo-footer__title">
+        <p>ONLY {{ current_variant.price | plus: section.settings.combo_upsell_product.compare_at_price | money }} {{ current_variant.price | plus: section.settings.combo_upsell_product.price | money }}</p>
+      </div>
+      <p class="success-feedback" style="display: none;"><i class="fa fa-check"></i>Added to cart!</p>
+      <div class="combo-footer__link">
+        <button id="add-combo-upsell" class="dynamic_paybtn js-go-cart-add-to-cart">Add both to card</button>
+      </div>
+    </div>
+  
+  </div>
+  
+  <style>
+    .combo-size {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .combo-size__item {
+      margin-right: 2px;
+      display: flex;
+    }
+    .combo-size__item label {
+      border-radius: 50%;
+      background-color: rgb(247, 247, 247);
+      width: 33px;
+      height: 33px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: rgb(153, 153, 153);
+      font-weight: bold;
+      transition: all .3s;
+    }
+    .combo-size__item input:checked+label, .combo-size__item label:hover {
+      border: 1px solid rgb(26, 26, 26);
+      color: rgb(26, 26, 26);
+    }
+    .combo-item__price {
+      margin-top: 10px;
+    }
+    .combo-item__price span {
+      color: #ff862d;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .custom-checkbox {
+      position: absolute;
+      opacity: 0;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+    }
+    .combo-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+    .combo-item img {
+        padding: 10px;
+    }
+    .combo-item:nth-child(2) {
+      justify-content: center;
+    }
+    
+    .combo-block {
+      border: 1px solid rgb(230, 230, 230);
+      float: left;
+      width: 100%;
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 18px;
+    }
+    .combo-title__main {
+      font-size: 16px;
+      color: rgb(26, 26, 26);
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .combo-title__text {
+      font-size: 12px;
+      color: rgb(128, 128, 128);
+      padding-top: 5px;
+    }
+    .combo-block__title {
+      padding: 0px 10px;
+    }
+    .combo-block__title span {
+      color: #ff862d;
+    }
+    .combo-footer__title p {
+      font-size: 16px;
+      color: rgb(26, 26, 26);
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0;
+      padding-top: 20px;
+    }
+    .combo-footer__title span:first-child {
+      color: rgb(128, 128, 128);
+      font-size: 16px;
+      font-weight: 400;
+      text-transform: uppercase;
+      text-decoration: line-through;
+    }
+    .combo-footer__title span:last-child {
+      color: #ff862d;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .combo-footer__link {
+      margin: 20px 0 35px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .combo-footer__link button {
+      font-size: 12px;
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      text-transform: uppercase;
+      background-color: rgb(255, 142, 0);
+      max-width: 279px;
+      width: 100%;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 2px;
+      border: none;
+    }
+    .combo-main {
+      border-top: 1px solid rgb(230, 230, 230);
+      border-bottom: 1px solid rgb(230, 230, 230);
+      margin-top: 20px;
+      padding-bottom: 25px;
+    }
+    .combo-main__items {
+      display: flex;
+      justify-content: space-between;
+      max-width: 430px;
+      margin: 0 auto;
+    }
+    .combo-item__plus {
+      font-size: 30px;
+      color: rgb(26, 26, 26);
+    }
+    .combo-item__text p {
+      font-size: 14px;
+      color: rgb(26, 26, 26);
+      font-weight: 600;
+      padding-bottom: 8px;
+    }
+    .combo-item__old {
+      color: rgb(128, 128, 128);
+      font-size: 16px;
+      font-weight: 400;
+      text-transform: uppercase;
+      text-decoration: line-through;
+    }
+    .combo-item__new {
+      color: #ff862d;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  
+    @media (max-width: 376px) {
+      .combo-item__price {
+        margin-top: 0;
+      }
+      .combo-footer__link button {
+        font-size: 1.2em;
+        padding: 8px 0;
+        margin-top: 12px;
+        max-width: 285px;
+      }
+      .combo-footer__title span:first-child, .combo-footer__title span:last-child {
+        font-size: 1em;
+      }
+      .combo-size__item {
+        margin-right: 6px;
+      }
+      .combo-main {
+        margin-top: 22px;
+        padding-bottom: 5px;
+      }
+      .combo-block {
+        padding-top: 23px;
+        padding-bottom: 12px;
+      }
+      .combo-title__main {
+        font-size: 1.2em;
+      }
+      .combo-item__new, .combo-item__old, .combo-item__price span {
+        font-size: 1.2em;
+      }
+      .combo-item__text p {
+        font-size: 1.1em;
+      }
+      .combo-title__text {
+        font-size: 1em;
+        padding-top: 10px;
+      }
+      .combo-main__items {
+        padding: 20px 10px;
+      }
+      .combo-item {
+        width: 45%;
+        margin-top: 0;
+      }
+      .combo-item img {
+          padding: 10px;
+      }
+      .combo-item:nth-child(2) {
+        width: 10%;
+      }
+      .combo-footer__link {
+        margin: 10px 0 20px 0;
+      }
+      .combo-size__item label {
+        font-size: 1em;
+        width: 30px;
+        height: 30px;
+      }
+      .combo-footer__title p {
+        padding-top: 22px;
+        font-size: 1.2em;
+      }
+      @media (max-width: 321px) {
+        .combo-title__main {
+          font-size: 1em;
+        }
+        .combo-block {
+          padding-top: 18px;
+        }
+        .combo-title__text {
+          font-size: 0.8em;
+        }
+        .combo-size__item label {
+          font-size: 0.8em;
+          width: 25px;
+          height: 25px;
+        }
+          .combo-item__new, .combo-item__old, .combo-item__price span {
+            font-size: 1em;
+        }
+        .combo-item__text p {
+          padding-bottom: 0;
+        }
+        .combo-footer__title p {
+          padding-top: 10px;
+          font-size: 1em;
+        }
+        .combo-footer__link button {
+            font-size: 1em;
+            padding: 6px 0;
+            max-width: 250px;
+        }
+      }
+    }
+  </style>
+  <script>
+      $('.swatch-element').on('click',function(e){
+          let var_numb = $(this).find('input').attr('ga-data');
+          let f_class = '.combo-size__item:nth-child(' + var_numb + ') > input';
+          $('.combo-size__item > input').removeAttr('checked');
+          $(f_class).prop('checked', true);
+      });
+      $('.combo-size__item').on('click',function(e){  
+        $('.combo-footer__title').html('<p>ONLY '+ $('.combo-size__item > input:checked').attr('combo-compare-price') +' '+ $('.combo-size__item > input:checked').attr('combo-price') +'</p>');
+        $('.combo-item__price').html( $('.combo-size__item > input:checked').attr('price') );
+      });
+        $('#add-combo-upsell').on('click',function(e){    
+            e.preventDefault();
+            let formData = {
+                'items': [
+                    {
+                        'id': $('.combo-size__item > input:checked').val(),
+                        'quantity': 1
+                    },
+                    {
+                        'id': {{section.settings.combo_upsell_product.selected_or_first_available_variant.id}},
+                        'quantity': 1
+                    }
+                ]
+            };
+            fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+            })
+            .then(response => {
+            $(".success-feedback").fadeIn("fast").delay(4e3).fadeOut("slow");
+            goCart.fetchAndOpenCart();$('.go-cart-drawer-upsell').hide();$('.upsell-info').hide();
+            })
+            .catch((error) => {
+            console.error('Error:', error);
+            });
+        
+        });
+  </script>
