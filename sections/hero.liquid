@@ -82,7 +82,13 @@
   }
   {% endif %}
 </style>
-<div class="hero hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %} box ratio-container lazyload js">
+<div class="hero hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %} box ratio-container lazyload js"
+      {% if section.settings.image %}
+      data-bgset="{% include 'bgset', image: section.settings.image %}"
+      data-sizes="auto"
+      data-parent-fit="cover"
+      style="background-position: {{ section.settings.alignment }}; background-image: url('{{ section.settings.image | img_url: '300x300' }}');"
+      {% endif %}>
   {% if section.settings.image == blank %}
     <div class="placeholder-background">
       {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
