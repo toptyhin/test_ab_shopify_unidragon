@@ -602,6 +602,8 @@
       "1522671309651": {
         "type": "hero",
         "settings": {
+          "enable_video": true,
+          "video_bg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0291\/1322\/1168\/files\/fon_1.mp4?v=1631176999",
           "image": "shopify:\/\/shop_images\/unidragon-wooden-jigsaw-puzzle-1.jpg",
           "enable_parallax": true,
           "alignment": "center",
