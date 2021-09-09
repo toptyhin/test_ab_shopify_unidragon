@@ -74,19 +74,24 @@
     {% endif %}
     }
   }
- 
+  {%- if section.settings.enable_video -%}
+  @media only screen and (max-width:456px) {
+    .hero.hero--medium.hero__overlay.box.ratio-container.js.lazyloaded{
+      height: 210px;
+    }
+  }
+  {% endif %}
 </style>
-<div class="hero hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %} box ratio-container lazyload js"
-     {% if section.settings.image %}
-     data-bgset="{% include 'bgset', image: section.settings.image %}"
-     data-sizes="auto"
-     data-parent-fit="cover"
-     style="background-position: {{ section.settings.alignment }}; background-image: url('{{ section.settings.image | img_url: '300x300' }}');"
-     {% endif %}>
+<div class="hero hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %} box ratio-container lazyload js">
   {% if section.settings.image == blank %}
     <div class="placeholder-background">
       {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
     </div>
+  {% endif %}
+  {%- if section.settings.enable_video -%}
+    <video autoplay muted loop playsinline id="myVideo" style="object-fit: cover;width: 100vw;">
+      <source src="{{ section.settings.video_bg }}" type="video/mp4">
+    </video>
   {% endif %}
   <div class="hero__inner">
     <div class="page-width text-{{section.settings.text_alignment}}">
@@ -116,7 +121,21 @@
   {
     "name": "Image with text overlay",
     "settings": [
-  	  {
+      {
+        "type": "header",
+        "content": "Video background setting"
+      },     
+      {
+        "type": "checkbox",
+        "id": "enable_video",
+        "label": "Enable Video"
+      },
+      {
+        "type": "text",
+        "id": "video_bg",
+        "label": "Video"
+      },
+      {
         "type": "header",
         "content": "Image with text overlay [NEED HELP?](https:\/\/help.boostertheme.com\/hc/en-us\/articles\/360002080854-How-to-setup-Image-with-text-Overlay-section-in-Booster-2-0)"
       },
