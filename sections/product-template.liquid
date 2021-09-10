@@ -939,10 +939,11 @@
                   {% assign video = product.media | where: "media_type", "video" | first %}
                   {{ video |  video_tag }}
                 {% endif %}
-                {{ product.description }}
-
+                {{ product.description | split: '<!-- additional video-->' | first }}
+                <div id="see-more">{{ 'custome_text.button.see_more' | t }} &#709;</div>
+                {{ product.description | split: '<!-- additional video-->' | last }}
               </div>
-              <div id="see-more">{{ 'custome_text.button.see_more' | t }} &#709;</div>
+              
               <script>$(document).ready(function () {
                       $('.description_spoiler').addClass('read-more');
                       $('#see-more').click(function () {
