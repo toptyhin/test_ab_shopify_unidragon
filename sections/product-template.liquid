@@ -943,7 +943,7 @@
                   {% assign video = product.media | where: "media_type", "video" | first %}
                   {{ video |  video_tag }}
                 {% endif %}
-                {{ product.description split: '<iframe' | first }}
+                {{ product.description split: 'iframe' | first }}
 
               </div>
               <div id="see-more">{{ 'custome_text.button.see_more' | t }} &#709;</div>
