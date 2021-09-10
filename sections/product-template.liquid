@@ -947,7 +947,7 @@
                 {{ product.description | split: '<!-- additional video-->' | first }}
                 <div id="see-more">{{ 'custome_text.button.see_more' | t }} &#709;</div>
                 {%- assign additional_video = product.description | split: '<!-- additional video-->' | last -%}
-                {%- if additional_video -%}
+                {%- if product.description contains '<!-- additional video-->' -%}
                   <style>div#see-more {padding-bottom: 15px;}</style>
                   {{ additional_video }}
                 {%- endif -%}
