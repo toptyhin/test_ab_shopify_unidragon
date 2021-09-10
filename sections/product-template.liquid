@@ -531,12 +531,8 @@
           {%- if product.metafields.link.customer-review-photo -%}
             {%- render 'customer-review-photo' with product -%}
           {%- endif -%}
-        <div style="display: flex;align-items: flex-end;">
             {%- include 'getsocial-inline-bar' -%}
           <!-- Swym button on product pages -->
-          <div class="swym-wishlist-button-bar"></div>
-          <!-- Swym button on product pages -->
-        </div>
     </div>
       <div class="grid__item medium-up--one-half">
         <div class="product-single__meta">
@@ -943,7 +939,7 @@
                   {% assign video = product.media | where: "media_type", "video" | first %}
                   {{ video |  video_tag }}
                 {% endif %}
-                {{ product.description split: 'iframe' | first }}
+                {{ product.description }}
 
               </div>
               <div id="see-more">{{ 'custome_text.button.see_more' | t }} &#709;</div>
