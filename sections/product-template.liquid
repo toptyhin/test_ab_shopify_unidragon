@@ -942,9 +942,10 @@
                 {% endif %}
                 {{ product.description | split: '<!-- additional video-->' | first }}
                 <div id="see-more">{{ 'custome_text.button.see_more' | t }} &#709;</div>
-                {%- if product.description | split: '<!-- additional video-->' | last -%}
+                {%- assign additional_video = product.description | split: '<!-- additional video-->' | last -%}
+                {%- if additional_video -%}
                   <style>div#see-more {padding-bottom: 15px;}</style>
-                  {{ product.description | split: '<!-- additional video-->' | last }}
+                  {{ additional_video }}
                 {%- endif -%}
               </div>
               
