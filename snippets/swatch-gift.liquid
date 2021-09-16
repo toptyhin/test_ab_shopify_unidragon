@@ -64,7 +64,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
           <div class="sw_image_outer">
             <img loading="lazy" src="{{variant.image | img_url: '300x180', crop: 'center' }}"/>
           </div>
-          <div class="sw_content_title sw-val">
+          <div class="sw_content_title">
           	{{ variant.title }}
           </div>
           <div class="sw_content_outer">
@@ -112,6 +112,12 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
   {% endunless %}
 
   <style>
+    .sw_content_title {
+    	color: grey;
+    line-height: 20px;
+    display: block;
+    font-size: 12px;
+    }
       .sw_image_outer {
     padding-top: 25px;
     }
