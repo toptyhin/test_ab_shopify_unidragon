@@ -525,7 +525,7 @@
         "settings": {
           "display_type": "all",
           "sort": "date",
-          "grid": "3",
+          "grid": "4",
           "show_view_all": true,
           "btn_text": "View All"
         }
