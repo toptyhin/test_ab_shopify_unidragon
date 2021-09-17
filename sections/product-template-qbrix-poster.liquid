@@ -212,6 +212,339 @@
         .getsocial.gs-inline-group.gs-big-counter {
             margin-bottom: 5px !important;
         }
+
+        .masterpiece {
+          margin-top: 35px;
+          background-image: url( "{{ 'masterpiece-bg.png' | asset_url }}" );
+          background-repeat: no-repeat;
+          background-size: cover;
+          min-height: 420px;
+          display: flex;
+        }
+        .masterpiece__text {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          max-width: 255px;
+          padding-left: 50px;
+        }
+        .masterpiece__text span {
+          font-size: 30px;
+          color: rgb(255, 255, 255);
+          font-weight: bold;
+          text-transform: uppercase;
+          line-height: 1.2;
+          margin-bottom: 10px;
+        }
+        .masterpiece__text p {
+          font-size: 14px;
+          color: rgb(255, 255, 255);
+          line-height: 1.714;
+        }
+        .advantage {
+          margin-top: 30px;
+        }
+      .advantage-item {
+        -webkit-box-shadow: 0 0 0 1px #e6e6e6;
+         box-shadow: 0 0 0 1px #e6e6e6;
+         margin-bottom: 20px;
+         min-height: 125px;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+      }
+      .advantage-item:last-child {
+        margin-bottom: 0;
+      }
+      .advantage-block {
+        margin-left: 30px;
+        width: 60%;
+      }
+      span.advantage-item-num {
+          font-size: 24px;
+          font-weight: 600;
+          float: left;
+      }
+      span.advantage-item-title {
+          font-weight: 500;
+          font-size: 14px;
+      }
+      span.advantage-item-text {
+        color: #808080;
+        padding-top: 10px;
+        font-size: 12px;
+      }
+      .advantage-item-img {
+        min-height: 125px;
+        width: 190px;
+      }
+      .advantage-item_left {
+        display: flex;
+        flex-direction: column;
+        padding-left: 14px;
+        padding-top: 5px;
+      }
+
+      .decorates {
+          background-image: url( "{{ 'decorates-bg.png' | asset_url }}" );
+          background-repeat: no-repeat;
+          background-size: cover;
+          min-height: 420px;
+          display: flex;
+          margin-top: 40px;
+        }
+        .decorates__text {
+          max-width: 305px;
+          margin: 0 auto;
+          padding: 50px 0px 0px 100px;
+        }
+        .decorates__text p {
+          font-size: 30px;
+          color: rgb(26, 26, 26);
+          font-weight: bold;
+          text-transform: uppercase;
+          line-height: 1.2;
+        }
+        .qbrix {
+          margin-top: 40px;
+        }
+        .qbrix-bg {
+          background-image: url( "{{ 'qbrix-bg.png' | asset_url }}" );
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          min-height: 420px;
+        }
+        .qbrix-wrapper {
+          border: 1px solid rgb(230, 230, 230);
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          padding: 30px;
+        }
+        .qbrix__logo {
+          display: flex;
+        }
+        .qbrix__logo span:first-child {
+          border: 1px solid rgb(26, 26, 26);
+          border-radius: 3px;
+          font-size: 18px;
+          color: rgb(26, 26, 26);
+          font-weight: bold;
+          text-transform: uppercase;
+          line-height: 1.667;
+          margin-right: 5px;
+          padding: 0 2px;
+        }
+        .qbrix__logo span:last-child {
+          font-size: 24px;
+          color: rgb(26, 26, 26);
+          font-weight: bold;
+          text-transform: uppercase;
+          line-height: 1.25;
+        }
+        .qbrix__list ul li {
+          font-size: 14px;
+          color: rgb(26, 26, 26);
+          line-height: 1.571;
+        }
+        .lines {
+          margin-top: 40px;
+        }
+        .rebuild {
+          margin-top: 40px;
+          background-image: url( "{{ 'rebuild-bg.png' | asset_url }}" );
+          background-repeat: no-repeat;
+          background-size: cover;
+          min-height: 420px;
+          display: flex;
+          align-items: center;
+        }
+        .rebuild__text {
+          background-image: url( "{{ 'rebuild-text-bg.png' | asset_url }}" );
+          background-repeat: no-repeat;
+          background-size: cover;
+          min-height: 190px;
+          padding: 30px;
+          width: 64%;
+        }
+        .rebuild__text span {
+          font-size: 14px;
+          color: rgb(26, 26, 26);
+          text-transform: uppercase;
+          line-height: 2.571;
+        }
+        .rebuild__text p {
+          font-size: 24px;
+          color: rgb(26, 26, 26);
+          font-weight: bold;
+          text-transform: uppercase;
+          line-height: 1.25;
+          max-width: 160px;
+        }
+
+        .post {
+          margin-top: 40px;
+        }
+        .post__wrapper {
+          display: flex;
+          min-height: 320px;
+        }
+        .post__img {
+          background-image: url( "{{ 'post-img.png' | asset_url }}" );
+          background-repeat: no-repeat;
+          background-size: cover;
+          flex: 0 1 50%;
+        }
+        .post__info {
+          padding: 30px;
+          border: 1px solid rgb(230, 230, 230);
+          flex: 0 1 50%;
+        }
+        .post__info-title {
+          font-size: 24px;
+          color: rgb(26, 26, 26);
+          font-weight: bold;
+          text-transform: uppercase;
+          line-height: 1.25;
+        }
+        .post__info-quote {
+          display: flex;
+          align-items: flex-start;
+          margin: 25px 0;
+        }
+        .post__info-quote img {
+          margin-right: 13px;
+        }
+        .post__info-quote p {
+          font-size: 12px;
+          color: rgb(128, 128, 128);
+          font-style: italic;
+          line-height: 1.667;
+        }
+        .post__info-bottom {
+          display: flex;
+        }
+        .post__info-bottom_name {
+          font-size: 12px;
+          color: rgb(26, 26, 26);
+          line-height: 1.833;
+          font-weight: bold;
+          margin-right: 10px;
+          position: relative;
+        }
+        .post__info-bottom_name::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: -17%;
+          border-right: 1px solid rgb(204, 204, 204);
+          height: 10px;
+          transform: translateY(-5px);
+        }
+        .post__info-bottom_city {
+          font-size: 12px;
+          color: rgb(191, 191, 191);
+          line-height: 1.833;
+          margin-left: 10px;
+        }
+
+
+        @media (max-width: 749px) {
+          .masterpiece {
+            min-height: 300px;
+          }
+          .masterpiece__text {
+            padding-left: 40px;
+          }
+          .masterpiece__text span {
+            font-size: 24px;
+          }
+          .masterpiece__text p {
+            font-size: 12px;
+          }
+          .advantage {
+            margin-top: 0;
+          }
+          span.advantage-item-text {
+            font-size: 12px;
+          }
+          span.advantage-item-title {
+            font-size: 14px;
+          }
+          span.advantage-item-num {
+            float: none !important;
+            font-size: 18px !important;
+          }
+          .advantage-item_left {
+            padding-left: 0 !important; 
+            padding-top: 0 !important;}
+          span.advantage-item-text {
+            padding-top: 0 !important;
+          }
+          .decorates {
+            min-height: 300px;
+            margin-top: 10px;
+          }
+          .decorates__text p {
+            font-size: 24px;
+          }
+          .decorates__text {
+            max-width: 265px;
+            margin: 0 0 0 auto;
+            padding: 25px 0px 0px 80px;
+          }
+          .qbrix {
+            margin-top: 10px;
+          }
+          .qbrix-bg {
+            min-height: 300px;
+          }
+          .qbrix-wrapper {
+            flex-direction: column;
+            padding: 20px;
+          }
+          .qbrix__list ul li {
+            font-size: 12px;
+          }
+          .qbrix__list {
+            margin-top: 20px;
+          }
+          .lines {
+            margin-top: 10px;
+          }
+          .lines img {
+            width: 100%;
+          }
+          .rebuild {
+            margin-top: 10px;
+            min-height: 300px;
+          }
+          .rebuild__text {
+            padding: 20px;
+            background-size: 100% 100%;
+            background-position: center;
+            min-height: 170px;
+            width: 85%;
+          }
+          .post {
+            margin-top: 10px;
+          }
+          .post__wrapper {
+            flex-direction: column;
+          }
+          .post__img {
+            min-height: 250px;
+          }
+        }
+        @media (max-width: 320px) {
+          .decorates__text p {
+            font-size: 20px;
+          }
+          .decorates__text {
+            padding: 25px 0px 0px 110px;
+          }
+        }
     
     </style>
         
@@ -674,6 +1007,7 @@
       
                 <div id="tab-1">
                   <div class="product-description">
+
                     {% assign video = product.media | where: "media_type", "external_video" | first %}
                     {% if video != blank %}
                       {{ video | external_video_tag }}
@@ -681,6 +1015,113 @@
                       {% assign video = product.media | where: "media_type", "video" | first %}
                       {{ video |  video_tag }}
                     {% endif %}
+
+                    <div class="masterpiece">
+                      <div class="masterpiece__text">
+                        <span>Create a masterpiece</span>
+                        <p>Nurture the seeds of creativity found in all of us</p>
+                      </div>
+                    </div>
+
+                    <div class="advantage">
+                      <div class="advantage-item">
+                        <div class="advantage-block">
+                          <span class="advantage-item-num">01</span>
+                          <div class="advantage-item_left">
+                            <span class="advantage-item-title">Spend your time with your loved ones</span>
+                            <span class="advantage-item-text">Our puzzle is a good occasion to bring all the family and friends together</span>
+                          </div>
+                        </div>
+                        <div class="advantage-item-img" style="background-image: url({{'step-1.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
+                      </div>
+                      <div class="advantage-item">
+                        <div class="advantage-block">
+                          <span class="advantage-item-num">02</span>
+                          <div class="advantage-item_left">
+                            <span class="advantage-item-title">It is time to forget the daily routine!</span>
+                            <span class="advantage-item-text">Psychologists recommend puzzles for meditation and stress relief</span>
+                          </div>
+                        </div>
+                        <div class="advantage-item-img" style="background-image: url({{'step-2.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
+                      </div>
+                      <div class="advantage-item">
+                        <div class="advantage-block">
+                          <span class="advantage-item-num">03</span>
+                          <div class="advantage-item_left">
+                            <span class="advantage-item-title">Try something new</span>
+                            <span class="advantage-item-text">Qbrix puzzles inspire you to create a masterpiece.</span>
+                          </div>
+                        </div>
+                        <div class="advantage-item-img" style="background-image: url({{'step-3.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
+                      </div>
+                      <div class="advantage-item">
+                        <div class="advantage-block">
+                          <span class="advantage-item-num">04</span>
+                          <div class="advantage-item_left">
+                            <span class="advantage-item-title">Challenge yourself</span>
+                            <span class="advantage-item-text">Puzzles work out your brain and strengthen your mind</span>
+                          </div>
+                        </div>
+                        <div class="advantage-item-img" style="background-image: url({{'step-4.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
+                      </div>
+                    </div>
+
+                    <div class="decorates">
+                      <div class="decorates__text">
+                        <p>An art object that decorates</p>
+                      </div>
+                    </div>
+
+                    <div class="qbrix">
+                      <div class="qbrix-bg">
+
+                      </div>
+                      <div class="qbrix__info">
+                        <div class="qbrix-wrapper">
+                          <div class="qbrix__logo">
+                            <span>Q</span><span> BRIX</span>
+                          </div>
+                          <div class="qbrix__list">
+                            <ul>
+                              <li>Install the free app and upload a photo</li>
+                              <li>Choose your stylization</li>
+                              <li>Assemble the puzzle with step-by-step instruction</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="lines">
+                      <img src="{{ 'line-image.png' | asset_url }}" alt="">
+                    </div>
+
+                    <div class="rebuild">
+                      <div class="rebuild__text">
+                        <span>Tired of it?</span>
+                        <p>Rebuild with a new image!</p>
+                      </div>
+                    </div>
+
+                    <div class="post">
+                      <div class="post__wrapper">
+                        <div class="post__img">
+
+                        </div>
+                        <div class="post__info">
+                          <span class="post__info-title">Give it to your loved one</span>
+                          <div class="post__info-quote">
+                            <img src="{{ 'post-icon.png' | asset_url }}" alt="">
+                            <p>Such a great gift! I got it for my birthday and couldn't wait t</p>
+                          </div>
+                          <div class="post__info-bottom">
+                            <span class="post__info-bottom_name">Elon Musk</span>
+                            <span class="post__info-bottom_city">Los Angeles</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                     {{ product.description }}
     
                   </div>
