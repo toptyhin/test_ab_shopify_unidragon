@@ -524,7 +524,7 @@
         ],
         "settings": {
           "display_type": "all",
-          "sort": "alphabetical",
+          "sort": "date",
           "grid": "3",
           "show_view_all": true,
           "btn_text": "View All"
