@@ -1123,8 +1123,17 @@
                     </div>
 
                     {{ product.description }}
+                    <div id="see-more">{{ 'custome_text.button.see_more' | t }} &#709;</div>
     
                   </div>
+                  	<script>$(document).ready(function () {
+                      $('.description_spoiler').addClass('read-more');
+                      $('#see-more').click(function () {
+                        if ($("#see-more")[0].innerHTML == "{{ 'custome_text.button.see_more' | t }} ˅") {$("#see-more")[0].innerHTML = "{{ 'custome_text.button.read_less' | t }} &#708;"} else {$("#see-more")[0].innerHTML = "{{ 'custome_text.button.see_more' | t }} &#709;"}
+                        $('.read-more').toggleClass('active');
+                      })
+                    })
+              		</script>
                 </div>
               </div>
   
