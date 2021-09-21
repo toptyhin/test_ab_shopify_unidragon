@@ -389,7 +389,8 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        color: #888888;
+        font-weight: 500;
+        color:red;;
         align-items: flex-end;
         padding-bottom: 8px;
     }
@@ -703,7 +704,9 @@
                                 <a href="{{ settings.upsell_product.url }}" class="go-cart-item__title">{{settings.upsell_product.title}}</a>
                                 <div class="go-cart-upsell-item__price">
                                     <a href="#upsell-anoncment-popup" class="upsell-anoncment-popup">See how it works</a>
-                                    {{ settings.upsell_product.price | money }}</div>
+                                    <span style="text-decoration: line-through; color:#a6a6a6; padding-right: 3px;">{{ settings.upsell_product.compare_at_price | money }}</span>
+                                    {{ settings.upsell_product.price | money }}
+                                </div>
                             </div>
                         </div>
                         <button class="upsell-description upsell-button">{{ 'products.upsell.add_to_cart_button_text' | t }}</button>
