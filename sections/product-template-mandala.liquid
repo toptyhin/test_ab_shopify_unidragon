@@ -689,25 +689,17 @@
                 </select>
       
               <!-- PRODUCT SWATCH CODE IF ENABLE -->
-              {% if product.type == 'Puzzle' %}
-                {% if product.variants.size > 1 %}
-                  <div class="swatch_options">
-                    {% for option in product.options %}
-                      {% include 'swatch' with option %}
-                    {% endfor %} 
-                  </div>
-                {% endif %}
-              {% else %}
+
                 {% if section.settings.variant_swacth == 'two'  %}  
                   {% if product.variants.size > 1 %}
                       <div class="swatch_options">
                         {% for option in product.options %}
-                          {% include 'swatch' with option %}
+                          {% include 'swatch-mandala' with option %}
                         {% endfor %} 
                       </div>
                   {% endif %}
-                {% endif %} 
-              {% endif %} 
+                {% endif %}
+
               <!-- END PRODUCT SWATCH CODE IF ENABLE -->
                 {% include 'product-page-features' %}
     
@@ -721,14 +713,6 @@
                 <style>
       
                   @media(max-width:749px) {
-                    /*               .counter_box.show{display:none !important;} */
-                    /*
-                    div#progressBar{ 
-                    display:none !important;
-                  }
-                    .counter_box.show {
-                    display: none !important;
-                  } */
       
                     .product-form__item.product-form__item--quantity,  
                     .product-form__item.product-form__item--quantity + div {
@@ -838,7 +822,7 @@
               {%- unless product.title contains "balancing" -%}
                 {% render 'pdp__discount' %}
               {%- endunless -%}
-    
+    {%comment%}
               <div class="text-center storyblock medium-up--hide"><span class="heading">Inspiring Stories</span></div>
               <div class="storyblock-text-left">
                 {% case product.title %}
@@ -855,7 +839,6 @@
                 {% endcase %}
                 {%- render 'fw-storyblock-text-left', channel: current_channel -%}
               </div>
-    {%comment%}
               <div class="shipping-banner">
                 <div class="shipping-banner-icon"><img src="{{'shipping-icon.png' | asset_url}}" width="45" height="45"></div>
                 <div class='geotargetlygeocontent1626874543940 shipping-banner-text'>
@@ -868,6 +851,7 @@
                 <div class="banner-inspirational-gift_text">Bring more happiness into the life of your loved ones by choosing a gift that is unforgettable experience.</div>
                 <div class="banner-inspirational-gift_link"><a href="/products/giftcard" class="banner-inspirational-gift_a">{{ 'custome_text.banner.buy_gift_card' | t }} -></a></div>
               </div>
+    {%comment%}
               <div class="advantage">
                 <div class="advantage-item">
                   <div class="advantage-block">
@@ -916,7 +900,7 @@
                 <div class="banner-decorate-walls_text">You can decorate the interior with puzzles and our special mounting system</div>
                 <div class="banner-decorate-walls_howitworks"><a id="annoncment-banner-link" href="#upsell-anoncment-popup" style="text-decoration: underline;font-weight: 600;font-size: 14px;color: #292929;" class="upsell-anoncment-popup">{{ 'custome_text.banner.see_how_it_works' | t }} -></a></div>
               </div>
-    
+    {%endcomment%}
               <div class="product-single__description rte" itemprop="description">
                 {% for block in section.blocks %}
                   {% if block.type == 'icons-set-with-text' %}
@@ -933,14 +917,16 @@
       
                 <div id="tab-1">
                   <div class="product-description">
-                    {% assign video = product.media | where: "media_type", "external_video" | first %}
-                    {% if video != blank %}
-                      {{ video | external_video_tag }}
-                    {% else %}
-                      {% assign video = product.media | where: "media_type", "video" | first %}
-                      {{ video |  video_tag }}
-                    {% endif %}
-                    {{ product.description | split: '<!-- additional video-->' | first }}
+                    <div class="description_spoiler read-more">
+                        {% assign video = product.media | where: "media_type", "external_video" | first %}
+                        {% if video != blank %}
+                        {{ video | external_video_tag }}
+                        {% else %}
+                        {% assign video = product.media | where: "media_type", "video" | first %}
+                        {{ video |  video_tag }}
+                        {% endif %}
+                        {{ product.description | split: '<!-- additional video-->' | first }}
+                    </div>
                     <div id="see-more">{{ 'custome_text.button.see_more' | t }} &#709;</div>
                     {%- assign additional_video = product.description | split: '<!-- additional video-->' | last -%}
                     {%- if product.description contains '<!-- additional video-->' -%}
