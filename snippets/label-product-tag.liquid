@@ -2,6 +2,7 @@
 		{%- if tag == 'New' or tag == 'Bestseller' or tag == 'most-popular' or tag == 'sale' -%}
 			<div class="product__labels">
 				<span class="product__label product__label--{{ tag | replace: " ", "-"}}">{{ tag }}</span>
+				{%- if template contains 'collection' -%}{% render 'wishlisthero-collection-product' with product: products %}{%-endif-%}
 			</div>
 			{% break %}
 		{%- endif -%}

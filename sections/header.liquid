@@ -582,6 +582,10 @@
                 <span class="commom_colord" id="CartCost" data-discount="{{discount_calc}}">{{ cart_total_price | money }}</span>
               </a>
               {% endunless %}
+              <style>
+                .site-header__icons-wrapper {display: flex;align-items: center;}
+              </style>
+              {% render 'wishlisthero-header-icon.liquid' %}
             </div>
 
           </div>

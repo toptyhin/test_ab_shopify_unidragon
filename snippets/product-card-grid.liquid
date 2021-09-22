@@ -32,10 +32,9 @@
 {%- assign free = true -%}
 {%- endif -%}
 
-
 <div class="grid-view-item{% unless product.available %} product-price--sold-out grid-view-item--sold-out{% endunless %} sale-sold">
   
-  {%- render 'label-product-tag', products: product -%}
+  {%- render 'label-product-tag', products: product, template: template -%}
   
   {%- if free and settings.show_free_badges -%}
   {%- unless  sold_out -%} 
