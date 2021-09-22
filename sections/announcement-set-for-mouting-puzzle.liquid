@@ -33,7 +33,9 @@
     <div class="grid">
       <div class="grid__item text-center">
         <p class="mount__instruction">One set alone will allow you to hang 6 Small puzzles, 3 Medium puzzles, or 3 King Size puzzles.</p>
-        <p><span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single product-single__price">
+        <p>
+          <span style="text-decoration: line-through;color: #999;">{{ all_products[ section.settings.feature_product ].compare_at_price | money }}</span>
+          <span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single product-single__price">
             <span id="ProductPrice-{{ section.id }}" itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
                {{ all_products[ section.settings.feature_product ].price | money }}
             </span>
