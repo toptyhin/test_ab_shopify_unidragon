@@ -273,7 +273,14 @@ t.parentNode.insertBefore(y,t);y.onerror=function(){s()};
 </script>
 <!-- DO NOT MODIFY -->
 <!-- End Reddit Pixel -->
-  
+
+{% if product.handle contains "subscription" or product.handle contains "giftcard" or product.handle contains "qbrix-poster" %}
+        <style type="text/css">
+        .wishlisthero-product-page-button-container{
+            display: none !important;
+        }
+      </style>
+{% endif %}
 
   
   <input type="hidden" id="product_key" value="{{ settings.product_key }}">
