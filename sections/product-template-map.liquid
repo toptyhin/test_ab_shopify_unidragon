@@ -292,7 +292,10 @@
             padding-top: 15px;
           }
       </style>
-        {%- include 'getsocial-inline-bar' -%}
+                    <div class="social-and-wishlist">
+                      {%- include 'getsocial-inline-bar' -%}
+                      {% render 'wishlisthero-custom-button.liquid' %}
+                    </div>
       <form style="display: none;" method="post" action="/cart">
         <input  type="submit" class="custome_checkout" value="checkout" name="checkout"/>
       </form>

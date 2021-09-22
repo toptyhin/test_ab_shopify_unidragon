@@ -693,7 +693,10 @@
               {%- if product.metafields.link.customer-review-photo -%}
                 {%- render 'customer-review-photo' with product -%}
               {%- endif -%}
-              {%- include 'getsocial-inline-bar' -%}
+              <div class="social-and-wishlist">
+                {%- include 'getsocial-inline-bar' -%}
+                {% render 'wishlisthero-custom-button.liquid' %}
+              </div>
         </div>
           <div class="grid__item medium-up--one-half">
             <div class="product-single__meta">
