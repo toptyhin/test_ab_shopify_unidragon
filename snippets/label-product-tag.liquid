@@ -10,7 +10,7 @@
 				{% assign wishlist_label = true%}
 			{%- endif -%}
 	{% endfor %}
-	{%- if wishlist_labe -%}
+	{%- if wishlist_label -%}
 		<div class="product__labels">
 			{%- if template contains 'collection' -%}{% render 'wishlisthero-collection-product' with product: products %}{%-endif-%}
 		</div>
