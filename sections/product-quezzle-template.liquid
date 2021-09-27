@@ -838,9 +838,11 @@
               </div>
               
               <div class="reputon-trustpilot-reviews-widget" id="a83b7e60-bc57-11eb-a355-a9194acb8438" style="display: flex; justify-content: center;"></div>
+            {%- if section.settings.enable_discount_info -%}
               {%- unless product.title contains "balancing" -%}
                 {% render 'pdp__discount' %}
               {%- endunless -%}
+            {%- endif -%}
             {%- if section.settings.enable_inspiring_stories -%}
               <div class="text-center storyblock medium-up--hide"><span class="heading">Inspiring Stories</span></div>
               <div class="storyblock-text-left">
