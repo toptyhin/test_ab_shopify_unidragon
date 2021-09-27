@@ -869,13 +869,14 @@
                 </div>
               </div>
             {%- endif -%}
-              {%- if  section.settings.enable_inspirational_gift_banner -%}
+            {%- if  section.settings.enable_inspirational_gift_banner -%}
               <div class="banner-inspirational-gift">
                 <div class="banner-inspirational-gift_header">Inspirational Gift</div>
                 <div class="banner-inspirational-gift_text">Bring more happiness into the life of your loved ones by choosing a gift that is unforgettable experience.</div>
                 <div class="banner-inspirational-gift_link"><a href="/products/giftcard" class="banner-inspirational-gift_a">{{ 'custome_text.banner.buy_gift_card' | t }} -></a></div>
               </div>
-              {%- endif -%}
+            {%- endif -%}
+            {%- if  section.settings.enable_steps_block -%}
               <div class="advantage">
                 <div class="advantage-item">
                   <div class="advantage-block">
@@ -918,6 +919,7 @@
                   <div class="advantage-item-img" style="background-image: url({{'dvantage-item-4.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
                 </div>
               </div>
+            {%- endif -%}
               {%- if  section.settings.enable_decorate_walls -%}
               <div class="banner-decorate-walls">
                 <div class="banner-decorate-walls_header">DECORATE THE WALLS OF YOUR HOME</div>
@@ -1412,6 +1414,16 @@
               "id": "enable_delivery_date",
               "label": "Enable delivery date BLOCK",
               "default": true
+            },
+            {
+              "type": "header",
+              "content": "Steps block"
+            },
+            {
+              "type": "checkbox",
+              "id": "enable_steps_block",
+              "label": "Enable steps block",
+              "default": false
             },
             {
               "type": "header",
