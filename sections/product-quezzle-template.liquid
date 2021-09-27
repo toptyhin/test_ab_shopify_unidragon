@@ -865,12 +865,13 @@
                 <!-- Content will render here -->
                 </div>
               </div>
-    
+              {%- if  section.settings.enable_inspirational_gift_banner -%}
               <div class="banner-inspirational-gift">
                 <div class="banner-inspirational-gift_header">Inspirational Gift</div>
                 <div class="banner-inspirational-gift_text">Bring more happiness into the life of your loved ones by choosing a gift that is unforgettable experience.</div>
                 <div class="banner-inspirational-gift_link"><a href="/products/giftcard" class="banner-inspirational-gift_a">{{ 'custome_text.banner.buy_gift_card' | t }} -></a></div>
               </div>
+              {%- endif -%}
               <div class="advantage">
                 <div class="advantage-item">
                   <div class="advantage-block">
