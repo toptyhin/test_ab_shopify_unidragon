@@ -1474,6 +1474,8 @@
           "delivery_time_number": "1-3",
           "product_description": "under_the_price",
           "enable_inspirational_gift_banner": false,
+          "enable_inspiring_stories": false,
+          "enable_delivery_date": false,
           "enable_decorate_walls": false,
           "enable_sticky": false,
           "enable_combo_upsell": false,
