@@ -490,16 +490,28 @@
               "collection": "wooden-puzzles"
             }
           },
+          "292f6e9b-7f37-4d87-8217-795fccb098cf": {
+            "type": "collection",
+            "settings": {
+              "collection": "nature-puzzles"
+            }
+          },
+          "6e7e268d-6a01-470f-971a-d43c140d8cdc": {
+            "type": "collection",
+            "settings": {
+              "collection": "mandala-puzzles"
+            }
+          },
           "d869a183-72a9-474c-a178-7bb8a97d22b2": {
             "type": "collection",
             "settings": {
               "collection": "world_map_puzzles"
             }
           },
-          "292f6e9b-7f37-4d87-8217-795fccb098cf": {
+          "f3f744f0-cb84-418e-8b44-055c0579e326": {
             "type": "collection",
             "settings": {
-              "collection": "nature-puzzles"
+              "collection": "qbrix"
             }
           },
           "204f94a3-723e-4238-a058-1f7fb335acbd": {
@@ -517,13 +529,15 @@
         },
         "block_order": [
           "7d525dc6-5d8b-4ecf-a121-2cce4329abd0",
-          "d869a183-72a9-474c-a178-7bb8a97d22b2",
           "292f6e9b-7f37-4d87-8217-795fccb098cf",
+          "6e7e268d-6a01-470f-971a-d43c140d8cdc",
+          "d869a183-72a9-474c-a178-7bb8a97d22b2",
+          "f3f744f0-cb84-418e-8b44-055c0579e326",
           "204f94a3-723e-4238-a058-1f7fb335acbd",
           "d70d11bd-4bb5-4ef2-8a9a-446d1dca08fc"
         ],
         "settings": {
-          "display_type": "all",
+          "display_type": "selected",
           "sort": "date",
           "grid": "4",
           "show_view_all": true,
