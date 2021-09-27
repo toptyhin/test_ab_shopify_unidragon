@@ -3,11 +3,11 @@
         <h3>Out of stock</h3>
         <div class="heading__text">We will notify you when this product becomes available.</div>
     </div>
-    <form method="">
-        <input type="hidden" name="tags" value="{{product_variants_id}}"/>
-        <input type="hidden" name="product" value="{{product_id}}"/>
-        <input type="hidden" name="shop_domain" value="{{ shop.domain | split:'.' | last }}"/>
-        <input type="email" name="email" id="alertemail" placeholder="Enter email..." value="{% if customer %}{{ customer.email }}{% endif %}"/>
+    <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="contact-form js-focus-hidden" tabindex="-1" onsubmit="window.Shopify.recaptchaV3.addToken(this, &quot;customer&quot;); return false;">
+        <input type="hidden" name="form_type" value="customer">
+        <input type="hidden" name="utf8" value="✓">
+        <input type="hidden" name="contact[tags]" value="dn_{{ shop.domain | split:'.' | last }},pi_{{product_id}},vi_{{product_variants_id}},out-of-stock"/>
+        <input type="email" name="contact[email]" id="alertemail" placeholder="Enter email..." value="{% if customer %}{{ customer.email }}{% endif %}"/>
         <a class="btn button" id="alertbtn">Notify Me</a>
     </form>
 </div>
@@ -193,21 +193,8 @@
 $('#alertbtn').on('click',function(e){    
       e.preventDefault();
       $('#alertbtn').text('Processing...');
-        var formdata = $('#backinstock > form').serializeArray();
-        var data = {};
-        $(formdata ).each(function(index, obj){
-            data[obj.name] = obj.value;
-        });
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        var raw = JSON.stringify(data);
-        var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
-        };
-        fetch("https://tech.unidragon.com/users", requestOptions)
+        var formdata = $('#backinstock > form')[0];
+        formdata.submit()
         .then(result => {
             $('#backinstock > form').hide(); $('.backinstock__headings > h3').text('Thank you!');
             $.magnificPopup.open({
