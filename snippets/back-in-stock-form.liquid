@@ -6,6 +6,7 @@
     <form method="">
         <input type="hidden" name="tags" value="{{product_variants_id}}"/>
         <input type="hidden" name="product" value="{{product_id}}"/>
+        <input type="hidden" name="shop" value="{{shop.domain}}"/>
         <input type="email" name="email" id="alertemail" placeholder="Enter email..." value="{% if customer %}{{ customer.email }}{% endif %}"/>
         <a class="btn button" id="alertbtn">Notify Me</a>
     </form>
