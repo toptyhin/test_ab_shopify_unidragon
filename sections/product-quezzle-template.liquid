@@ -841,7 +841,7 @@
               {%- unless product.title contains "balancing" -%}
                 {% render 'pdp__discount' %}
               {%- endunless -%}
-    
+            {%- if section.settings.enable_inspiring_stories -%}
               <div class="text-center storyblock medium-up--hide"><span class="heading">Inspiring Stories</span></div>
               <div class="storyblock-text-left">
                 {% case product.title %}
@@ -858,13 +858,15 @@
                 {% endcase %}
                 {%- render 'fw-storyblock-text-left', channel: current_channel -%}
               </div>
-    
+            {%- endif -%}
+            {%- if section.settings.nable_delivery_date -%}
               <div class="shipping-banner">
                 <div class="shipping-banner-icon"><img src="{{'shipping-icon.png' | asset_url}}" width="45" height="45"></div>
                 <div class='geotargetlygeocontent1626874543940 shipping-banner-text'>
                 <!-- Content will render here -->
                 </div>
               </div>
+            {%- endif -%}
               {%- if  section.settings.enable_inspirational_gift_banner -%}
               <div class="banner-inspirational-gift">
                 <div class="banner-inspirational-gift_header">Inspirational Gift</div>
