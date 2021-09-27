@@ -1,0 +1,37 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% comment %}
+  The contents of the product.liquid template can be found in /sections/product-template.liquid
+{% endcomment %}
+
+{% section 'product-quezzle-template' %}
+{% section 'releted_upsell_popup' %}
+{% section 'related-product' %}
+
+{%- if settings.show_cart_drawer -%}
+  {%- section  'go-cart' -%}
+{%- endif -%}
+
+{{ 'magnific-popup.css' | asset_url | stylesheet_tag }}
+{{ 'jquery.magnific-popup.min.js' | asset_url | script_tag }}
+
+<script>
+  // Override default values of shop.strings for each template.
+  // Alternate product templates can change values of
+  // add to cart button, sold out, and unavailable states here.
+  theme.productStrings = {
+    addToCart: {{ 'products.product.add_to_cart' | t | json }},
+    soldOut: {{ 'products.product.sold_out' | t | json }},
+    unavailable: {{ 'products.product.unavailable' | t | json }}
+  }
+  
+  if(typeof rev!='undefined')
+  {
+    rev('event', 'page_view');
+    console.log('rev -> pageview');
+  }
+</script>
+ 
+ <div id="shopify-ali-review" product-id="{{ product.id }}"> {% comment %}ly_code_replace_for_[ shop.metafields.review_collector.review_code ]_begin{% endcomment %}{% assign language = cart.attributes["language"] %}{% if language == nil %}{% assign language = shop.metafields["languages"]["default"] %}{% endif %}{% assign ns = language | append: 'review_collector' %}{% assign key = 'review_code' %}{% if shop.metafields[ns][key] %}{% assign ly_translation = shop.metafields[ns][key] %}{% else %}{% assign ly_translation =  shop.metafields.review_collector.review_code  %}{% endif %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %} </div> 
+
+{% section 'alireviews-widget-11374' %}
+<div class="reputon-trustpilot-reviews-widget" id="78c456a0-bc54-11eb-910a-479bd9607d41" ></div>
