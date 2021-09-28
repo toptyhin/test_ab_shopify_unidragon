@@ -890,7 +890,7 @@
     token=ea639b54a40421
 {%endcomment%}
         $.get("https://ipinfo.io/json?token=bfdc4f6f5babff", function (response) {
-            console.log(response.code)
+            console.log(response)
             if (response.code != 200) {
                 $.get("https://ipinfo.io/json?token=ea639b54a40421", function (response) {if (response.country != "US"){ $('.go-cart-drawer-progress-bar').hide();$('.custom-tax-new').hide();} });
             } else {
