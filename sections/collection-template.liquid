@@ -49,7 +49,11 @@
 
 <div data-section-id="{{ section.id }}" data-section-type="collection-template">
   <header class="collection-header">
-
+    {%- if section.settings.enable_video -%}
+      <video autoplay muted loop playsinline id="myVideo" style="object-fit: cover;width: 100vw;">
+        <source src="{{ section.settings.video_bg }}" type="video/mp4">
+      </video>
+    {% endif %}
     {% if section.settings.show_collection_image and collection.image %}
     <div class="collection-hero">
       <div class="collection-hero__image ratio-container lazyload js"
@@ -91,11 +95,7 @@
       </div>
     </div>
     {% endif %}
-    {%- if section.settings.enable_video -%}
-      <video autoplay muted loop playsinline id="myVideo" style="object-fit: cover;width: 100vw;">
-        <source src="{{ section.settings.video_bg }}" type="video/mp4">
-      </video>
-    {% endif %}
+
     <!-- ====================== Normal Collection Code =========================== -->  
     {% assign collection_1 = '' %}
     {% for block in section.blocks %}
@@ -609,7 +609,7 @@
     "type": "text",
     "id": "video_bg",
     "label": "Video"
-  },     
+  }     
   {
   "type": "checkbox",
   "id": "enable_parallax",
