@@ -44,12 +44,16 @@
 {% else %}
 {%- assign limit = 16 -%}
 {% endif %}
-{% endcomment %}
+{% endcomment %} 
 {% paginate collection.products by limit %}
 
 <div data-section-id="{{ section.id }}" data-section-type="collection-template">
   <header class="collection-header">
-
+    {%- if section.settings.enable_video -%}
+      <video autoplay muted loop playsinline id="myVideo" style="object-fit: cover;width: 100vw;">
+        <source src="{{ section.settings.video_bg }}" type="video/mp4">
+      </video>
+    {% endif %}
     {% if section.settings.show_collection_image and collection.image %}
     <div class="collection-hero">
       <div class="collection-hero__image ratio-container lazyload js"
@@ -591,6 +595,20 @@
   "id": "show_collection_image",
   "label": "Show collection image",
   "default": true
+  },
+  {
+    "type": "header",
+    "content": "Video background setting"
+  },     
+  {
+    "type": "checkbox",
+    "id": "enable_video",
+    "label": "Enable Video"
+  },
+  {
+    "type": "text",
+    "id": "video_bg",
+    "label": "Video"
   },     
   {
   "type": "checkbox",
