@@ -571,132 +571,143 @@
 
   {% schema %}
   {
-  "name": "Collection pages",
-  "settings": [
-  {
-  "type": "range",
-  "id": "grid",
-  "min": 2,
-  "max": 5,
-  "step": 1,
-  "label": "Products per row (grid only)",
-  "default": 4
-  },
-  {
-  "type": "range",
-  "id": "rows",
-  "min": 2,
-  "max": 8,
-  "step": 1,
-  "label": "Rows per page (grid only)",
-  "default": 2
-  },
-  {
-  "type": "checkbox",
-  "id": "show_collection_image",
-  "label": "Show collection image",
-  "default": true
-  },     
-  {
-  "type": "checkbox",
-  "id": "enable_parallax",
-  "label": "Enable Parallax"
-  }, 
-  {
-  "type": "checkbox",
-  "id": "show_vendor",
-  "label": "Show product vendors",
-  "default": false
-  },
-  {
-  "type": "checkbox",
-  "id": "sort_enable",
-  "label": "Enable sorting",
-  "default": true
-  },
-  {
-  "type": "checkbox",
-  "id": "tags_enable",
-  "label": "Enable tag filtering",
-  "default": true
-  },
-  {
-  "type": "header",
-  "content": "Product title"
-  },
-  {
-  "type": "select",
-  "id": "on_desktop_title_set",
-  "label": "Product Title Limit for Desktop",
-  "options": [
-  {
-  "value": "title_set_line_full",
-  "label": "Full Line Title Text"
-  },
-  {
-  "value": "title_set_line_trim",
-  "label": "Limit Title Text"
-  }
-
-  ],
-  "default": "title_set_line_trim"
-  },
-  {
-  "type": "range",
-  "id": "desktop_text_limit",
-  "min": 0,
-  "max": 30,
-  "step": 1,
-  "label": "Product title limit for desktop",
-  "info": "Number of characters in your Title.",
-  "default": 30
-  },
-  {
-  "type": "select",
-  "id": "on_mobile_title_set",
-  "label": "Product title limit for mobile ",
-  "options": [
-  {
-  "value": "mobile_title_set_line_full",
-  "label": "Full Line Title Text"
-  },
-  {
-  "value": "mobile_title_set_line_trim",
-  "label": "Limit Title Text"
-  }
-
-  ],
-  "default": "mobile_title_set_line_trim"
-  },
-  {
-  "type": "range",
-  "id": "mobile_text_limit",
-  "min": 0,
-  "max": 30,
-  "step": 1,
-  "label": "Product title limit for mobile",
-  "info": "Number of characters in your Title.",
-  "default": 30
-  }
-  ],
-  "blocks": [
-  {
-  "type": "sub-collection",
-  "name": "Sub-Collection",
-  "settings": [
-  {
-  "type": "collection",
-  "id": "choose_collection",
-  "label": "Choose collection"
-  },
-  {
-  "type": "link_list",
-  "id": "link_menu",
-  "label": "Select sub-collection menu"
-  }
-  ]
-  }
-  ]
-
-  }
+    "name":"Collection pages",
+    "settings":[
+       {
+          "type":"range",
+          "id":"grid",
+          "min":2,
+          "max":5,
+          "step":1,
+          "label":"Products per row (grid only)",
+          "default":4
+       },
+       {
+          "type":"range",
+          "id":"rows",
+          "min":2,
+          "max":8,
+          "step":1,
+          "label":"Rows per page (grid only)",
+          "default":2
+       },
+       {
+          "type":"checkbox",
+          "id":"show_collection_image",
+          "label":"Show collection image",
+          "default":true
+       },
+       {
+          "type":"checkbox",
+          "id":"enable_parallax",
+          "label":"Enable Parallax"
+       },
+       {
+          "type":"header",
+          "content":"Video background setting"
+       },
+       {
+          "type":"checkbox",
+          "id":"enable_video",
+          "label":"Enable Video"
+       },
+       {
+          "type":"text",
+          "id":"video_bg",
+          "label":"Video"
+       },
+       {
+          "type":"checkbox",
+          "id":"show_vendor",
+          "label":"Show product vendors",
+          "default":false
+       },
+       {
+          "type":"checkbox",
+          "id":"sort_enable",
+          "label":"Enable sorting",
+          "default":true
+       },
+       {
+          "type":"checkbox",
+          "id":"tags_enable",
+          "label":"Enable tag filtering",
+          "default":true
+       },
+       {
+          "type":"header",
+          "content":"Product title"
+       },
+       {
+          "type":"select",
+          "id":"on_desktop_title_set",
+          "label":"Product Title Limit for Desktop",
+          "options":[
+             {
+                "value":"title_set_line_full",
+                "label":"Full Line Title Text"
+             },
+             {
+                "value":"title_set_line_trim",
+                "label":"Limit Title Text"
+             }
+          ],
+          "default":"title_set_line_trim"
+       },
+       {
+          "type":"range",
+          "id":"desktop_text_limit",
+          "min":0,
+          "max":30,
+          "step":1,
+          "label":"Product title limit for desktop",
+          "info":"Number of characters in your Title.",
+          "default":30
+       },
+       {
+          "type":"select",
+          "id":"on_mobile_title_set",
+          "label":"Product title limit for mobile ",
+          "options":[
+             {
+                "value":"mobile_title_set_line_full",
+                "label":"Full Line Title Text"
+             },
+             {
+                "value":"mobile_title_set_line_trim",
+                "label":"Limit Title Text"
+             }
+          ],
+          "default":"mobile_title_set_line_trim"
+       },
+       {
+          "type":"range",
+          "id":"mobile_text_limit",
+          "min":0,
+          "max":30,
+          "step":1,
+          "label":"Product title limit for mobile",
+          "info":"Number of characters in your Title.",
+          "default":30
+       }
+    ],
+    "blocks":[
+       {
+          "type":"sub-collection",
+          "name":"Sub-Collection",
+          "settings":[
+             {
+                "type":"collection",
+                "id":"choose_collection",
+                "label":"Choose collection"
+             },
+             {
+                "type":"link_list",
+                "id":"link_menu",
+                "label":"Select sub-collection menu"
+             }
+          ]
+       }
+    ]
+ }
   {% endschema %}
