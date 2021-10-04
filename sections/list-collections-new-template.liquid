@@ -37,35 +37,63 @@
             </div>
           </div>
       </a>
-            <a class="collections-item" href="{{collections['nature-puzzles'].url}}">
-                <div class="collections-item__info">
-                <span class="collections-item__title">Wooden Jigsaw Nature Puzzles</span>
-                <p class="collections-item__text">Find Inspiration</p>
-                <div class="collections-item__list">
-                    <ul>
-                      <li>It is time to forget the daily routine</li>
-                      <li>Puzzles work out your brain and strengthen your mind</li>
-                    </ul>
-                </div>
-                <div class="collections-item__bottom">
-                    <span class="collections-item__num">{{collections['nature-puzzles'].products_count}} ITEMS</span>
-                    {% assign collectionMinPrice = collections['nature-puzzles'].products | sort: 'price' %}
-                    <span class="collections-item__price">FROM {{collectionMinPrice[0].price_min | money}}</span>
-                </div>
-                <div class="item-button__mobile">
-                    <button>Choose puzzles</button>
-                </div>
-                </div>
-                <div class="collections-item__img">
-                <img src="{{'new-collection-img2.png' | asset_url }}" alt="">
-                </div>
-                <div class="item-hover natural-puzzle">
-                <div class="item-hover__btn">
-                    <button>Go to Directory</button>
-                </div>
-                </div>
-            </a>
-            <a class="collections-item" href="/products/set-for-mounting-puzzles">
+      <a class="collections-item" href="{{collections['nature-puzzles'].url}}">
+        <div class="collections-item__info">
+        <span class="collections-item__title">Wooden Jigsaw Nature Puzzles</span>
+        <p class="collections-item__text">Find Inspiration</p>
+        <div class="collections-item__list">
+            <ul>
+              <li>It is time to forget the daily routine</li>
+              <li>Puzzles work out your brain and strengthen your mind</li>
+            </ul>
+        </div>
+        <div class="collections-item__bottom">
+            <span class="collections-item__num">{{collections['nature-puzzles'].products_count}} ITEMS</span>
+            {% assign collectionMinPrice = collections['nature-puzzles'].products | sort: 'price' %}
+            <span class="collections-item__price">FROM {{collectionMinPrice[0].price_min | money}}</span>
+        </div>
+        <div class="item-button__mobile">
+            <button>Choose puzzles</button>
+        </div>
+        </div>
+        <div class="collections-item__img">
+        <img src="{{'new-collection-img2.png' | asset_url }}" alt="">
+        </div>
+        <div class="item-hover natural-puzzle">
+        <div class="item-hover__btn">
+            <button>Go to Directory</button>
+        </div>
+        </div>
+      </a>
+      <a class="collections-item" href="{{collections['mandala-puzzles'].url}}">
+        <div class="collections-item__info">
+        <span class="collections-item__title">Mandala Puzzles</span>
+        <p class="collections-item__text">Your dreams can possibly come true</p>
+        <div class="collections-item__list">
+            <ul>
+              <li>Hours for your inner world</li>
+              <li>Focusing on cherished things</li>
+            </ul>
+        </div>
+        <div class="collections-item__bottom">
+            <span class="collections-item__num">{{collections['mandala-puzzles'].products_count}} ITEMS</span>
+            {% assign collectionMinPrice = collections['mandala-puzzles'].products | sort: 'price' %}
+            <span class="collections-item__price">FROM {{collectionMinPrice[0].price_min | money}}</span>
+        </div>
+        <div class="item-button__mobile">
+            <button>Choose puzzles</button>
+        </div>
+        </div>
+        <div class="collections-item__img">
+        <img src="{{'new-collection-img9.png' | asset_url }}" alt="">
+        </div>
+        <div class="item-hover mandala-puzzle">
+        <div class="item-hover__btn">
+            <button>Go to Directory</button>
+        </div>
+        </div>
+      </a>
+      <a class="collections-item" href="/products/set-for-mounting-puzzles">
               <div class="collections-item__info">
               <span class="collections-item__title">Set For Mounting Puzzles</span>
               <p class="collections-item__text">After solving the puzzle decorate your walls!</p>
@@ -119,6 +147,34 @@
                 <button>Go to Directory</button>
             </div>
             </div>
+        </a>
+        <a class="collections-item" href="{{collections['qbrix'].url}}">
+          <div class="collections-item__info">
+          <span class="collections-item__title">Qbrix</span>
+          <p class="collections-item__text">Create a masterpiece</p>
+          <div class="collections-item__list">
+              <ul>
+                <li>Nurture the seeds of creativity found in all of us</li>
+                <li>An art object that decorates</li>
+              </ul>
+          </div>
+          <div class="collections-item__bottom">
+              <span class="collections-item__num">{{collections['qbrix'].products_count}} ITEMS</span>
+              {% assign collectionMinPrice = collections['qbrix'].products | sort: 'price' %}
+              <span class="collections-item__price">FROM {{collectionMinPrice[0].price_min | money}}</span>
+          </div>
+          <div class="item-button__mobile">
+              <button>Choose puzzles</button>
+          </div>
+          </div>
+          <div class="collections-item__img">
+          <img src="{{'new-collection-img8.png' | asset_url }}" alt="">
+          </div>
+          <div class="item-hover qbrix">
+          <div class="item-hover__btn">
+              <button>Go to Directory</button>
+          </div>
+          </div>
         </a>
         <a class="collections-item" href="{{collections['balancing-puzzles'].url}}">
           <div class="collections-item__info">
@@ -176,62 +232,7 @@
           </div>
           </div>
       </a>
-      <a class="collections-item" href="{{collections['mandala-puzzles'].url}}">
-        <div class="collections-item__info">
-        <span class="collections-item__title">Mandala Puzzles</span>
-        <p class="collections-item__text">Your dreams can possibly come true</p>
-        <div class="collections-item__list">
-            <ul>
-              <li>Hours for your inner world</li>
-              <li>Focusing on cherished things</li>
-            </ul>
-        </div>
-        <div class="collections-item__bottom">
-            <span class="collections-item__num">{{collections['mandala-puzzles'].products_count}} ITEMS</span>
-            {% assign collectionMinPrice = collections['mandala-puzzles'].products | sort: 'price' %}
-            <span class="collections-item__price">FROM {{collectionMinPrice[0].price_min | money}}</span>
-        </div>
-        <div class="item-button__mobile">
-            <button>Choose puzzles</button>
-        </div>
-        </div>
-        <div class="collections-item__img">
-        <img src="{{'new-collection-img9.png' | asset_url }}" alt="">
-        </div>
-        <div class="item-hover mandala-puzzle">
-        <div class="item-hover__btn">
-            <button>Go to Directory</button>
-        </div>
-        </div>
-      </a>
-      <a class="collections-item" href="{{collections['qbrix'].url}}">
-        <div class="collections-item__info">
-        <span class="collections-item__title">Qbrix</span>
-        <p class="collections-item__text">Create a masterpiece</p>
-        <div class="collections-item__list">
-            <ul>
-              <li>Nurture the seeds of creativity found in all of us</li>
-              <li>An art object that decorates</li>
-            </ul>
-        </div>
-        <div class="collections-item__bottom">
-            <span class="collections-item__num">{{collections['qbrix'].products_count}} ITEMS</span>
-            {% assign collectionMinPrice = collections['qbrix'].products | sort: 'price' %}
-            <span class="collections-item__price">FROM {{collectionMinPrice[0].price_min | money}}</span>
-        </div>
-        <div class="item-button__mobile">
-            <button>Choose puzzles</button>
-        </div>
-        </div>
-        <div class="collections-item__img">
-        <img src="{{'new-collection-img8.png' | asset_url }}" alt="">
-        </div>
-        <div class="item-hover qbrix">
-        <div class="item-hover__btn">
-            <button>Go to Directory</button>
-        </div>
-        </div>
-      </a>
+
     </div>
   </div>
 </div>
