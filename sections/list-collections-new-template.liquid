@@ -1,0 +1,582 @@
+
+<div class="page-width">
+    <header class="section-header text-center">
+      <h1 style="font-size: 47px;text-transform: uppercase;letter-spacing: 0;font-weight: bold;color: black;">Collections</h1>
+    </header>
+
+
+
+  
+  <div class="collections__wrapper">
+    <div class="collections__items">
+      <a class="collections-item" href="{{collections['wooden-puzzles'].url}}">
+          <div class="collections-item__info">
+          <span class="collections-item__title">Wooden Jigsaw Animals Puzzle</span>
+          <p class="collections-item__text">Brighten up your life</p>
+          <div class="collections-item__list">
+            <ul>
+              <li>Spend your time with your loved ones</li>
+              <li>Unidragon puzzles have the most unique shape and design</li>
+            </ul>
+          </div>
+          <div class="collections-item__bottom">
+              <span class="collections-item__num">{{collections['wooden-puzzles'].products_count}} ITMES</span>
+              {% assign collectionMinPrice = collections['wooden-puzzles'].products | sort: 'price' %}
+              <span class="collections-item__price">FROM {{collectionMinPrice[0].price_min | money}}</span>
+          </div>
+          <div class="item-button__mobile">
+              <button>Choose puzzles</button>
+          </div>
+          </div>
+          <div class="collections-item__img">
+          <img src="{{'new-collection-img1.png' | asset_url }}" alt="">
+          </div>
+          <div class="item-hover animal-puzzle">
+            <div class="item-hover__btn">
+                <button>Go to Directory</button>
+            </div>
+          </div>
+      </a>
+            <a class="collections-item" href="{{collections['nature-puzzles'].url}}">
+                <div class="collections-item__info">
+                <span class="collections-item__title">Wooden Jigsaw Nature Puzzles</span>
+                <p class="collections-item__text">Find Inspiration</p>
+                <div class="collections-item__list">
+                    <ul>
+                      <li>It is time to forget the daily routine</li>
+                      <li>Puzzles work out your brain and strengthen your mind</li>
+                    </ul>
+                </div>
+                <div class="collections-item__bottom">
+                    <span class="collections-item__num">{{collections['nature-puzzles'].products_count}} ITMES</span>
+                    {% assign collectionMinPrice = collections['nature-puzzles'].products | sort: 'price' %}
+                    <span class="collections-item__price">FROM {{collectionMinPrice[0].price_min | money}}</span>
+                </div>
+                <div class="item-button__mobile">
+                    <button>Choose puzzles</button>
+                </div>
+                </div>
+                <div class="collections-item__img">
+                <img src="{{'new-collection-img2.png' | asset_url }}" alt="">
+                </div>
+                <div class="item-hover natural-puzzle">
+                <div class="item-hover__btn">
+                    <button>Go to Directory</button>
+                </div>
+                </div>
+            </a>
+            <a class="collections-item" href="/products/set-for-mounting-puzzles">
+              <div class="collections-item__info">
+              <span class="collections-item__title">Set For Mounting Puzzles</span>
+              <p class="collections-item__text">After solving the puzzle decorate your walls!</p>
+              <div class="collections-item__list">
+                  <ul>
+                    <li>It is removable and will not damage your wall</li>
+                    <li>Suitable for all wall surfaces</li>
+                  </ul>
+              </div>
+              <div class="collections-item__bottom">
+                  <span class="collections-item__num">1 ITMES</span>
+                  <span class="collections-item__price">FROM $19.95</span>
+              </div>
+              <div class="item-button__mobile">
+                  <button>Choose puzzles</button>
+              </div>
+              </div>
+              <div class="collections-item__img">
+              <img src="{{'new-collection-img7.png' | asset_url }}" alt="">
+              </div>
+              <div class="item-hover set-for-mountig">
+              <div class="item-hover__btn">
+                  <button>Go to Directory</button>
+              </div>
+              </div>
+          </a>
+          <a class="collections-item" href="{{collections['world_map_puzzles'].url}}">
+            <div class="collections-item__info">
+            <span class="collections-item__title">Wooden World Maps</span>
+            <p class="collections-item__text">3D Map looks amazing</p>
+            <div class="collections-item__list">
+                <ul>
+                  <li>A great addition to any decor</li>
+                  <li>Live is even better than the picture</li>
+                </ul>
+            </div>
+            <div class="collections-item__bottom">
+                <span class="collections-item__num">{{collections['world_map_puzzles'].products_count}} ITMES</span>
+                {% assign collectionMinPrice = collections['world_map_puzzles'].products | sort: 'price' %}
+                <span class="collections-item__price">FROM {{collectionMinPrice[0].price_min | money}}</span>
+            </div>
+            <div class="item-button__mobile">
+                <button>Choose puzzles</button>
+            </div>
+            </div>
+            <div class="collections-item__img">
+            <img src="{{'new-collection-img3.png' | asset_url }}" alt="">
+            </div>
+            <div class="item-hover world-map">
+            <div class="item-hover__btn">
+                <button>Go to Directory</button>
+            </div>
+            </div>
+        </a>
+        <a class="collections-item" href="{{collections['balancing-puzzles'].url}}">
+          <div class="collections-item__info">
+          <span class="collections-item__title">Balancing Puzzles</span>
+          <p class="collections-item__text">Fun for both kids and adults</p>
+          <div class="collections-item__list">
+              <ul>
+              <li>Interesting game for a fun company</li>
+              <li>Create dozens of variants of acrobatic tricks with cats</li>
+              </ul>
+          </div>
+          <div class="collections-item__bottom">
+              <span class="collections-item__num">{{collections['balancing-puzzles'].products_count}} ITMES</span>
+              {% assign collectionMinPrice = collections['balancing-puzzles'].products | sort: 'price' %}
+              <span class="collections-item__price">FROM {{collectionMinPrice[0].price_min | money}}</span>
+          </div>
+          <div class="item-button__mobile">
+              <button>Choose puzzles</button>
+          </div>
+          </div>
+          <div class="collections-item__img">
+          <img src="{{'new-collection-img4.png' | asset_url }}" alt="">
+          </div>
+          <div class="item-hover balancing-puzzle">
+          <div class="item-hover__btn">
+              <button>Go to Directory</button>
+          </div>
+          </div>
+      </a>
+        <a class="collections-item" href="{{collections['gift-cards'].url}}">
+          <div class="collections-item__info">
+          <span class="collections-item__title">Gift Cards</span>
+          <p class="collections-item__text">Delight your loved ones with a special Gift</p>
+          <div class="collections-item__list">
+              <ul>
+                <li>Choose a cool design and make it personal</li>
+                <li>Email your greeting card to your friend</li>
+              </ul>
+          </div>
+          <div class="collections-item__bottom">
+              <span class="collections-item__num">{{collections['gift-cards'].products_count}} ITMES</span>
+              {% assign collectionMinPrice = collections['gift-cards'].products | sort: 'price' %}
+              <span class="collections-item__price">FROM {{collectionMinPrice[0].price_min | money}}</span>
+          </div>
+          <div class="item-button__mobile">
+              <button>Choose puzzles</button>
+          </div>
+          </div>
+          <div class="collections-item__img">
+          <img src="{{'new-collection-img5.png' | asset_url }}" alt="">
+          </div>
+          <div class="item-hover gift-card">
+          <div class="item-hover__btn">
+              <button>Go to Directory</button>
+          </div>
+          </div>
+      </a>
+      <a class="collections-item" href="{{collections['mandala-puzzles'].url}}">
+        <div class="collections-item__info">
+        <span class="collections-item__title">Mandala Puzzles</span>
+        <p class="collections-item__text">Your dreams can possibly come true</p>
+        <div class="collections-item__list">
+            <ul>
+              <li>Hours for your inner world</li>
+              <li>Focusing on cherished things</li>
+            </ul>
+        </div>
+        <div class="collections-item__bottom">
+            <span class="collections-item__num">{{collections['mandala-puzzles'].products_count}} ITMES</span>
+            {% assign collectionMinPrice = collections['mandala-puzzles'].products | sort: 'price' %}
+            <span class="collections-item__price">FROM {{collectionMinPrice[0].price_min | money}}</span>
+        </div>
+        <div class="item-button__mobile">
+            <button>Choose puzzles</button>
+        </div>
+        </div>
+        <div class="collections-item__img">
+        <img src="{{'new-collection-img9.png' | asset_url }}" alt="">
+        </div>
+        <div class="item-hover mandala-puzzle">
+        <div class="item-hover__btn">
+            <button>Go to Directory</button>
+        </div>
+        </div>
+      </a>
+      <a class="collections-item" href="{{collections['qbrix'].url}}">
+        <div class="collections-item__info">
+        <span class="collections-item__title">Qbrix</span>
+        <p class="collections-item__text">Create a masterpiece</p>
+        <div class="collections-item__list">
+            <ul>
+              <li>Nurture the seeds of creativity found in all of us</li>
+              <li>An art object that decorates</li>
+            </ul>
+        </div>
+        <div class="collections-item__bottom">
+            <span class="collections-item__num">{{collections['qbrix'].products_count}} ITMES</span>
+            {% assign collectionMinPrice = collections['qbrix'].products | sort: 'price' %}
+            <span class="collections-item__price">FROM {{collectionMinPrice[0].price_min | money}}</span>
+        </div>
+        <div class="item-button__mobile">
+            <button>Choose puzzles</button>
+        </div>
+        </div>
+        <div class="collections-item__img">
+        <img src="{{'new-collection-img8.png' | asset_url }}" alt="">
+        </div>
+        <div class="item-hover qbrix">
+        <div class="item-hover__btn">
+            <button>Go to Directory</button>
+        </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Обнуление */
+
+*, 
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+img {
+  vertical-align: top;
+}
+
+.collections__title {
+  padding: 100px 0px 70px 0px;
+  text-align: center;
+}
+.collections__title span {
+  font-size: 36px;
+  color: rgb(26, 26, 26);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.222;
+}
+.collections__wrapper {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.collections__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.collections-item {
+  background-color: #fafafa;
+  display: flex;
+  flex-basis: 48%;
+  margin-bottom: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.collections-item:hover .item-hover {
+  opacity: 1;
+  visibility: visible;
+}
+.item-hover img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.item-hover.animal-puzzle {
+  background: url({{'image-hover-animals.png' | asset_url }}) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.item-hover.natural-puzzle {
+  background: url({{'image-hover-natural-puzzle.png' | asset_url }}) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.item-hover.set-for-mountig {
+  background: url({{'image-hover-set-for-mountig.png' | asset_url }}) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.item-hover.world-map {
+  background: url({{'image-hover-world-map.png' | asset_url }}) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.item-hover.balancing-puzzle {
+  background: url({{'image-hover-balancing-puzzle.png' | asset_url }}) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.item-hover.gift-card {
+  background: url({{'image-hover-gift-card.png' | asset_url }}) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.item-hover.mandala-puzzle {
+  background: url({{'image-hover-mandala-puzzle.png' | asset_url }}) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.item-hover.qbrix {
+  background: url({{'image-hover-qbrix.png' | asset_url }}) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.item-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .2s ease-in-out;
+}
+.item-hover__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.item-hover__btn button {
+  font-size: 13px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 5.231;
+  background-color: rgb(255, 142, 0);
+  width: 219px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.collections-item__info {
+  padding: 30px 30px 40px 30px;
+  flex: 0 1 50%;
+}
+.collections-item__title {
+  font-size: 26px;
+  font-weight: 600;
+  color: rgb(26, 26, 26);
+  line-height: 1.231;
+}
+.collections-item__text {
+  font-size: 14px;
+  color: rgb(26, 26, 26);
+  line-height: 1.857;
+  margin-top: 10px;
+  max-width: 190px;
+}
+.collections-item__list {
+  padding: 30px 0 40px 18px;
+}
+.collections-item__list ul li {
+  font-size: 12px;
+  color: rgb(115, 115, 115);
+  line-height: 2.167;
+  list-style-type: disc;
+}
+.collections-item__bottom {
+  display: flex;
+}
+.collections-item__num {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(26, 26, 26);
+  text-transform: uppercase;
+  line-height: 1.833;
+  margin-right: 15px;
+  position: relative;
+}
+.collections-item__num::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  right: -15px;
+  width: 1px;
+  height: 13px;
+  background-color: rgb(191, 191, 191);
+}
+.collections-item__price {
+  font-size: 12px;
+  color: rgb(255, 142, 0);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.833;
+  margin-left: 15px;
+}
+.collections-item__img {
+  flex: 0 1 50%;
+  text-align: right;
+}
+.collections-item__img img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.item-button__mobile {
+  display: none;
+}
+
+
+
+@media (max-width: 1020px) {
+  .collections__items {
+    justify-content: center;
+  }
+  .collections-item {
+    flex-basis: 90%;
+  }
+  .collections-item__img {
+    text-align: right;
+  }
+}
+@media (max-width: 767px) {
+  .collections__title {
+    padding: 40px 0 30px 0;
+  }
+  .collections__title span {
+    font-size: 22px;
+  }
+  .collections-item {
+    flex-direction: column-reverse;
+  }
+  .collections-item__img img {
+    width: 100%;
+    max-height: 150px;
+    object-position: top;
+  }
+  .collections-item:hover .item-hover {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .collections__items {
+    display: block;
+  }
+  .collections-item__info {
+    padding: 25px;
+  }
+  .collections-item__title {
+    font-size: 20px;
+  }
+  .collections-item__text {
+    font-size: 12px;
+    max-width: fit-content;
+    line-height: unset;
+  }
+  .collections-item__num {
+    display: none;
+  }
+  .collections-item__price {
+    margin-left: 0;
+    color: rgb(26, 26, 26);
+  }
+  .collections-item__list {
+    padding: 10px 0 15px 18px;
+  }
+  .item-button__mobile {
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+  }
+  .item-button__mobile button {
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 2.833;
+    text-align: center;
+    background-color: rgb(255, 142, 0);
+    width: 250px;
+    height: 39px; 
+    border-radius: 50px;
+}
+
+</style>
+
+  {% schema %}
+    {
+      "name": "NEW Collections list page",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "All of your collections are listed by default. To customize your list, choose 'Selected' and add collections."
+        },
+        {
+          "type": "radio",
+          "id": "display_type",
+          "label": "Select collections to show",
+          "default": "all",
+          "options": [
+            {
+              "value": "all",
+              "label": "All"
+            },
+            {
+              "value": "selected",
+              "label": "Selected"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "sort",
+          "label": "Sort collections by:",
+          "info": "Sorting only applies when 'All' is selected",
+          "default": "alphabetical",
+          "options": [
+            {
+              "value": "products_high",
+              "label": "Product count, high to low"
+            },
+            {
+              "value": "products_low",
+              "label": "Product count, low to high"
+            },
+            {
+              "value": "alphabetical",
+              "label": "Alphabetically, A-Z"
+            },
+            {
+              "value": "alphabetical_reversed",
+              "label": "Alphabetically, Z-A"
+            },
+            {
+              "value": "date",
+              "label": "Date, old to new"
+            },
+            {
+              "value": "date_reversed",
+              "label": "Date, new to old"
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "type": "collection",
+          "name": "Collection",
+          "settings": [
+            {
+              "label": "Collection",
+              "id": "collection",
+              "type": "collection"
+            }
+          ]
+        }
+      ]
+    }
+  {% endschema %}
+  
