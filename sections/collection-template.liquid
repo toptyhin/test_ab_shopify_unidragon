@@ -233,12 +233,12 @@
     {%- assign grid_mobile = "small--one-half" -%}
     {% endif %}
     <h2 class="" style="text-align: center; margin: 30px 0;">CHOOSE YOUR PUZZLE</h2>
-    {%comment%}
+{%comment%}
     <div id="auto-popup" data-timeout="20" data-quiz-id="BZHY5Y" style="display: none;"></div>
-    {%endcomment%}
+{%endcomment%}
     <div class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
       {% for product in collection.products %}
-{%comment%}
+
       {%- if forloop.index == 8 -%}
       <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
         <style>
@@ -299,7 +299,7 @@
           </div>
         </div>
       {%- endif -%}
-  {%endcomment%}    
+    
       <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
         {% include 'product-card-grid', max_height: max_height %}
 
