@@ -222,9 +222,9 @@
                   assign total_saving_was = was | plus: total_saving_was
                 endif
             elsif puzle_discount > 2 and item.product.type == 'Puzzle'
-              assign item_price = item.price | times: 0.9
+              assign item_price = item.price
               assign item_line_price = item.line_price | times: 0.9
-              assign item_original_line_price = item.original_line_price | times: 0.9
+              assign item_original_line_price = item.original_line_price
                 if item.variant.compare_at_price > item.variant.price and item.variant.price != '0'
                   assign saving = item.variant.compare_at_price | minus: item_price | times: item.quantity
                   assign was = item.variant.compare_at_price |  times: item.quantity
@@ -291,7 +291,13 @@
             <td class="cart__price-wrapper cart-flex-item text-center medium-up--hide">
   
               <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="btn--small btn--secondary cart__remove" style="margin-bottom: 12px;">&#10006</a>
-              {{ item_price | money }}
+                {% if item_original_line_price != item_line_price %}
+                <span style="text-decoration: line-through;color: #a6a6a6;padding-right: 3px;">{{ item_original_line_price | money }}</span>
+                {%- endif -%}
+    
+                <span {% if item_original_line_price != item_line_price %}style="color: red"{%- endif -%}>
+                  {{ item_line_price | money }}
+                </span>
   
               {% for discount in item.discounts %}
               <div class="cart-item__discount medium-up--hide">{{ discount.title }}</div>
@@ -320,14 +326,15 @@
               </div>
             </td>
             <td class="small--hide text-bold">
+              <div style="display: flex;">
               {% if item_original_line_price != item_line_price %}
-              <div class="cart-item__original-price"><s>{{ item_original_line_price | money }}</s></div>
+              <div style="text-decoration: line-through;color: #a6a6a6;padding-right: 3px;margin-right: 10px;"><s>{{ item_original_line_price | money }}</s></div>
               {%- endif -%}
   
-              <div>
+              <div {% if item_original_line_price != item_line_price %}style="color: red"{%- endif -%}>
                 {{ item_line_price | money }}
               </div>
-  
+              </div>
               {% for discount in item.discounts %}
               <div class="cart-item__discount">{{ discount.title }}</div>
               {% endfor %}
