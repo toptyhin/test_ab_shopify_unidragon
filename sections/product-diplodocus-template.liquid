@@ -62,6 +62,9 @@
             align-items: center;
           }
           @media only screen and (max-width: 749px) {
+            .banner-decorate-walls_text {
+            padding: 0 105px 0 20px;
+          }
             .thumbnails-wrapper.thumbnails-slider--active .slick-track {
               display: block;
           }
@@ -110,7 +113,7 @@
           .product-single__meta {font-family: 'Poppins';}
           .banner-inspirational-gift {
             background-color: black;
-            background-image: url({{'banner-inspirational-gift_bg.png' | asset_url}});
+            background-image: url({{'banner-inspirational-diplodoc_bg.png' | asset_url}});
             background-size: cover;
             height: 400px;
             color: #ffffff;
@@ -121,12 +124,12 @@
             font-weight: 600;
             text-transform: uppercase;
             padding-top: 130px;
-            padding-left: 130px;
+            padding-left: 120px;
           }
           .banner-inspirational-gift_text {
             font-size: 12px;
             padding-top: 10px;
-            padding-left: 130px;
+            padding-left: 120px;
             padding-right: 15px;
           }
           .banner-inspirational-gift_link {
@@ -144,7 +147,7 @@
           }
           .banner-decorate-walls {
             margin-top: 40px;
-            background-image: url({{'banner-decorate-walls_mob_bg.png' | asset_url}});
+            background-image: url({{'banner-decorate-walls-diplo_mob_bg.png' | asset_url}});
             background-size: cover;
             background-position: left;
             height: 350px;
@@ -157,10 +160,6 @@
             text-transform: uppercase;
             padding: 20px;
             padding-bottom: 0;
-          }
-          .banner-decorate-walls_text {
-            padding: 0 20px;
-            font-size: 14px;
           }
           .banner-decorate-walls_howitworks {
               padding-left: 20px;
@@ -189,7 +188,8 @@
           }
           span.advantage-item-title {
               font-weight: 500;
-              font-size: 14px;
+              font-size: 16px;
+              text-align: center;
           }
           span.advantage-item-text {
             color: #808080;
@@ -216,27 +216,31 @@
               font-weight: 600;
           }
           @media only screen and (min-width: 749px) {
+            .banner-decorate-walls_text {
+            padding: 0 20px;
+            font-size: 14px;
+          }
             .banner-inspirational-gift {
               height: 450px;
             }
               .banner-inspirational-gift_header {
               font-size: 28px;
               padding-top: 30%;
-              padding-left: 175px;
-              padding-right: 70px;
+              padding-left: 140px;
+              padding-right: 35px;
             }
             .banner-inspirational-gift_text {
               font-size: 16px;
               padding-top: 10px;
-              padding-left: 175px;
+              padding-left: 140px;
               padding-right: 85px;
             }
             .banner-inspirational-gift_link {
-              padding-left: 175px;
+              padding-left: 140px;
             }
             .banner-decorate-walls {
               height: 420px;
-              background-image: url({{'banner-decorate-walls_bg.png' | asset_url}});
+              background-image: url({{'banner-decorate-walls_diplodocus_bg.png' | asset_url}});
             }
             .banner-decorate-walls_header {
               width: 395px;
@@ -837,13 +841,18 @@
                 {% render 'pdp__discount' %}
               {%- endunless -%}
     
+              <div class="banner-inspirational-gift">
+                <div class="banner-inspirational-gift_header">A surprise in every set</div>
+                <div class="banner-inspirational-gift_text">Get an extra gift and assemble your 3D dinosaur model</div>
+                {%-comment-%}<div class="banner-inspirational-gift_link"><a href="/products/giftcard" class="banner-inspirational-gift_a">{{ 'custome_text.banner.buy_gift_card' | t }} -></a></div>{%-endcomment-%}
+              </div>
+
               <div class="advantage">
                 <div class="advantage-item">
                   <div class="advantage-block">
                     <span class="advantage-item-num">01</span>
                     <div class="advantage-item_left">
                       <span class="advantage-item-title">Get the whole family together and have a fun time</span>
-                      <span class="advantage-item-text">Our puzzle is a good occasion to bring all the family and friends together</span>
                     </div>
                   </div>
                   <div class="advantage-item-img" style="background-image: url({{'dvantage-item-1.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
@@ -853,33 +862,36 @@
                     <span class="advantage-item-num">02</span>
                     <div class="advantage-item_left">
                       <span class="advantage-item-title">Develop fine motor skills of hands, logic and thinking</span>
-                      <span class="advantage-item-text">Psychologists recommend puzzles for meditation and stress relief</span>
                     </div>
                   </div>
-                  <div class="advantage-item-img" style="background-image: url({{'dvantage-item-2.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
+                  <div class="advantage-item-img" style="background-image: url({{'dvantage-item-2-diplo.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
                 </div>
                 <div class="advantage-item">
                   <div class="advantage-block">
                     <span class="advantage-item-num">03</span>
                     <div class="advantage-item_left">
                       <span class="advantage-item-title">Clean your mind puting together fanciful shapes</span>
-                      <span class="advantage-item-text">Unidragon puzzles have the most unique shape and design</span>
                     </div>
                   </div>
-                  <div class="advantage-item-img" style="background-image: url({{'dvantage-item-3.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
+                  <div class="advantage-item-img" style="background-image: url({{'dvantage-item-3-diplo.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
                 </div>
                 <div class="advantage-item">
                   <div class="advantage-block">
                     <span class="advantage-item-num">04</span>
                     <div class="advantage-item_left">
                       <span class="advantage-item-title">Learn about animal diversity throughout history</span>
-                      <span class="advantage-item-text">Puzzles work out your brain and strengthen your mind</span>
                     </div>
                   </div>
-                  <div class="advantage-item-img" style="background-image: url({{'dvantage-item-5.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
+                  <div class="advantage-item-img" style="background-image: url({{'dvantage-item-4-diplo.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
                 </div>
               </div>
-    
+
+              <div class="banner-decorate-walls">
+                <div class="banner-decorate-walls_header">Mounting system in each puzzle set</div>
+                <div class="banner-decorate-walls_text">Fix the assembled puzzle on the wall in the child's room.</div>
+                {%-comment-%}<div class="banner-decorate-walls_howitworks"><a id="annoncment-banner-link" href="#upsell-anoncment-popup" style="text-decoration: underline;font-weight: 600;font-size: 14px;color: #292929;" class="upsell-anoncment-popup">{{ 'custome_text.banner.see_how_it_works' | t }} -></a></div>{%-endcomment-%}
+              </div>
+
               <div class="product-single__description rte" itemprop="description">
                 {% for block in section.blocks %}
                   {% if block.type == 'icons-set-with-text' %}
