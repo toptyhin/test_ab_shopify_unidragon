@@ -183,9 +183,9 @@
         <p>{{section.settings.header_text}} <a href="{{section.settings.insta_url}}" style="color: #737373;">@Unidragon_com</a></p>
       </div>
       <div class="inspired__title-info">
-        <p>{{section.settings.publication}}<span> publications</span></p>
-        <p>{{section.settings.subscribers}}<span> subscribers</span></p>
-        <a href="{{section.settings.insta_url}}">Subscribe</a>
+        <p>{{section.settings.publication}}<span> Posts</span></p>
+        <p>{{section.settings.subscribers}}<span> Followers</span></p>
+        <a href="{{section.settings.insta_url}}">Follow</a>
       </div>
     </div>
 
@@ -209,7 +209,8 @@
         $('.inspired-slider').slick({
             centerMode: true,
             dots: true,
-            slidesToShow: 6,
+            slidesToShow: 5,
+            centerPadding: "120px",
             responsive: [
             {
                 breakpoint: 1020,
@@ -221,6 +222,7 @@
             {
                 breakpoint: 480,
                 settings: {
+                centerPadding: "30px",
                 arrows: false,
                 slidesToShow: 1
                 }
