@@ -183,8 +183,8 @@
         <p>{{section.settings.header_text}} <a href="{{section.settings.insta_url}}" style="color: #737373;">@Unidragon_com</a></p>
       </div>
       <div class="inspired__title-info">
-        <p>246<span> publications</span></p>
-        <p>111k<span> publications</span></p>
+        <p>{{section.settings.publication}}<span> publications</span></p>
+        <p>{{section.settings.subscribers}}<span> subscribers</span></p>
         <a href="{{section.settings.insta_url}}">Subscribe</a>
       </div>
     </div>
@@ -245,6 +245,18 @@
             "id": "header_text",
             "label": "Header text",
             "default": "Get inspired following us on Instagram"
+        },
+        {
+            "type": "text",
+            "id": "publication",
+            "label": "Instagram publications",
+            "default": "246"
+        },
+        {
+            "type": "text",
+            "id": "subscribers",
+            "label": "Instagram subscribers",
+            "default": "111k"
         }
     ],
     "blocks": [
