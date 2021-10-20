@@ -1,0 +1,280 @@
+<style>
+    /* Slider */
+
+    .inspired {
+    background-color: #fafafa;
+    }
+    .inspired__title {
+    padding: 70px 0 45px 0;
+    text-align: center;
+    }
+    .inspired__title-text p {
+    font-size: 22px;
+    color: rgb(26, 26, 26);
+    font-weight: bold;
+    text-transform: uppercase;
+    }
+    .inspired__title-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 440px;
+    margin: 10px auto 0px auto;
+    }
+    .inspired__title-info p:first-child {
+    position: relative;
+    }
+    .inspired__title-info p:first-child::after {
+    content: '';
+    position: absolute;
+    top: 7px;
+    right: -30px;
+    border-right: 1px solid rgb(217, 217, 217);
+    height: 20px;
+    }
+    .inspired__title-info p {
+    font-size: 14px;
+    color: rgb(26, 26, 26);
+    font-weight: bold;
+    line-height: 2.429;
+    margin: 0;
+    }
+    .inspired__title-info span {
+    color: #737373;
+    }
+    .inspired__title-info a {
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border-radius: 3px;
+    background-color: rgb(63, 153, 242);
+    height: 30px;
+    padding: 0 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+
+    .slider__item {
+    position: relative;
+    }
+    .slider__item a {
+    font-size: 10px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    border: 2px solid rgb(255, 255, 255);
+    padding: 7px 20px;
+    }
+
+    .inspired-slider {
+    position: relative;
+    padding-bottom: 100px;
+    }
+    .slick-arrow {
+    position: absolute;
+    top: 30%;
+    font-size: 0;
+    z-index: 12;
+    width: 31px;
+    height: 31px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .7);
+    cursor: pointer;
+    }
+    .slick-arrow.slick-prev {
+    left: 7px;
+    background: url(./arrow-left.png) 0 0 / 100% no-repeat;
+    }
+    .slick-arrow.slick-next {
+    right: 7px;
+    background: url(./arrow-right.png) 0 0 / 100% no-repeat;
+    }
+
+    .slider__item-img {
+    margin: 0px 7px;
+    }
+    .slider__item-img img {
+    max-width: 100%;
+    }
+    .slick-list {
+    overflow: hidden;
+    }
+    .slick-track {
+    display: flex;
+    }
+
+    .slick-dots {
+    padding-left: 0;
+    position: absolute;
+    transform: translate(-50%);
+    left: 50%;
+    bottom: 15%;
+    z-index: 1;
+    list-style: none;
+    }
+    .slick-dots li {
+    margin: 0px 5px;
+    z-index: 3;
+    }
+    .slick-dots button {
+    font-size: 0;
+    width: 10px;
+    height: 1em;
+    border: none;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    cursor: pointer;
+    }
+    .slick-dots li.slick-active button {
+    background-color: #1a1a1a;
+    }
+
+
+    @media (max-width: 480px) {
+    .inspired__title {
+        padding: 40px 0 25px 0;
+    }
+    .inspired__title-text p {
+        font-size: 16px;
+        width: 260px;
+        margin: 0 auto;
+    }
+    .inspired__title-text span {
+        font-size: 16px;
+    }
+    .inspired__title-info {
+        flex-wrap: wrap;
+    }
+    .inspired__title-info p {
+        font-size: 1em;
+    }
+    .inspired__title-info p:nth-child(1) {
+        flex: 50%;
+    }
+    .inspired__title-info p:nth-child(2) {
+        flex: 50%;
+    }
+    .inspired__title-info p:first-child::after {
+        right: 0;
+        top: 5px;
+    }
+    .inspired__title-info a {
+        margin-top: 15px;
+    }
+    .slick-dots {
+        bottom: 10%;
+    }
+    }
+</style>
+
+<div class="inspired">
+    <div class="inspired__title">
+      <div class="inspired__title-text heading">
+        <p>{{section.settings.header_text}} <a href="{{section.settings.insta_url}}" style="color: #737373;">@Unidragon_com</a></p>
+      </div>
+      <div class="inspired__title-info">
+        <p>246<span> publications</span></p>
+        <p>111k<span> publications</span></p>
+        <a href="{{section.settings.insta_url}}">Subscribe</a>
+      </div>
+    </div>
+
+    <div class="inspired-slider">
+        {%- for block in section.blocks -%}
+            <div class="inspired-slider__item slider__item">
+                <div class="slider__item-img">
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
+                </div>
+                <a href="{{ block.settings.button_url }}">{{ block.settings.button_text }}</a>
+            </div>
+        {%- endfor -%}
+    </div>
+
+  </div>
+
+
+
+<script>
+    $(document).ready(function() {
+        $('.inspired-slider').slick({
+            centerMode: true,
+            dots: true,
+            slidesToShow: 6,
+            responsive: [
+            {
+                breakpoint: 1020,
+                settings: {
+                arrows: false,
+                slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                arrows: false,
+                slidesToShow: 1
+                }
+            }
+            ]
+        })
+    })
+</script>
+
+{% schema %}
+  {
+    "name": "Instagram slider",
+    "settings": [
+        {
+            "type": "text",
+            "id": "insta_url",
+            "label": "Instagram URL",
+            "default": "https://www.instagram.com/unidragon_com/"
+        },
+        {
+            "type": "text",
+            "id": "header_text",
+            "label": "Header text",
+            "default": "Get inspired following us on Instagram"
+        }
+    ],
+    "blocks": [
+     {
+       "name": "Slide",
+       "type": "slide",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         },
+         {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text"
+          },
+          {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button URL"
+          }
+       ]
+     }
+    ],
+    "presets": [
+      {
+        "name": "Instagram slider",
+        "category": "Main slider"
+      }
+    ]
+  }
+{% endschema %}
