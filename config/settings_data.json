@@ -539,7 +539,7 @@
           "d70d11bd-4bb5-4ef2-8a9a-446d1dca08fc"
         ],
         "settings": {
-          "display_type": "selected",
+          "display_type": "all",
           "sort": "date",
           "grid": "4",
           "show_view_all": true,
