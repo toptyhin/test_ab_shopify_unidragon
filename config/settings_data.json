@@ -1553,6 +1553,7 @@
             "type": "collection",
             "settings": {
               "collection_item": "wooden-puzzles",
+              "collection_title": "",
               "collection_item_text": "Brighten up your life",
               "collection_description": "<ul>\n              <li>Spend your time with your loved ones<\/li>\n              <li>Unidragon puzzles have the most unique shape and design<\/li>\n            <\/ul>",
               "collection_image": "shopify:\/\/shop_images\/new-collection-img1.png",
@@ -1564,6 +1565,7 @@
             "type": "collection",
             "settings": {
               "collection_item": "nature-puzzles",
+              "collection_title": "",
               "collection_item_text": "Find Inspiration",
               "collection_description": "<ul>\n              <li>It is time to forget the daily routine<\/li>\n              <li>Puzzles work out your brain and strengthen your mind<\/li>\n            <\/ul>",
               "collection_image": "shopify:\/\/shop_images\/new-collection-img2.png",
@@ -1575,6 +1577,7 @@
             "type": "product-item",
             "settings": {
               "product_item": "mandala-inexhaustible-abundance",
+              "product_title": "Mandala Puzzles",
               "product_item_text": "Your dreams can possibly come true",
               "product_description": "<ul>\n              <li>Hours for your inner world<\/li>\n              <li>Focusing on cherished things<\/li>\n            <\/ul>",
               "product_image": "shopify:\/\/shop_images\/new-collection-img9.png",
@@ -1586,6 +1589,7 @@
             "type": "product-item",
             "settings": {
               "product_item": "set-for-mounting-puzzles",
+              "product_title": "",
               "product_item_text": "After solving the puzzle decorate your walls!",
               "product_description": "<ul>\n                    <li>It is removable and will not damage your wall<\/li>\n                    <li>Suitable for all wall surfaces<\/li>\n                  <\/ul>",
               "product_image": "shopify:\/\/shop_images\/new-collection-img7.png",
@@ -1597,6 +1601,7 @@
             "type": "collection",
             "settings": {
               "collection_item": "world_map_puzzles",
+              "collection_title": "",
               "collection_item_text": "3D Map looks amazing",
               "collection_description": "<ul>\n                  <li>A great addition to any decor<\/li>\n                  <li>Live is even better than the picture<\/li>\n                <\/ul>",
               "collection_image": "shopify:\/\/shop_images\/new-collection-img6.png",
@@ -1608,6 +1613,7 @@
             "type": "product-item",
             "settings": {
               "product_item": "qbrix-poster",
+              "product_title": "",
               "product_item_text": "Create a masterpiece",
               "product_description": "<ul>\n                <li>Nurture the seeds of creativity found in all of us<\/li>\n                <li>An art object that decorates<\/li>\n              <\/ul>",
               "product_image": "shopify:\/\/shop_images\/new-collection-img8.png",
@@ -1619,6 +1625,7 @@
             "type": "collection",
             "settings": {
               "collection_item": "balancing-puzzles",
+              "collection_title": "",
               "collection_item_text": "Fun for both kids and adults",
               "collection_description": "<ul>\n              <li>Interesting game for a fun company<\/li>\n              <li>Create dozens of variants of acrobatic tricks with cats<\/li>\n              <\/ul>",
               "collection_image": "shopify:\/\/shop_images\/new-collection-img4.png",
@@ -1630,6 +1637,7 @@
             "type": "product-item",
             "settings": {
               "product_item": "giftcard",
+              "product_title": "",
               "product_item_text": "Delight your loved ones with a special Gift",
               "product_description": "<ul>\n                <li>Choose a cool design and make it personal<\/li>\n                <li>Email your greeting card to your friend<\/li>\n              <\/ul>",
               "product_image": "shopify:\/\/shop_images\/new-collection-img5.png",
