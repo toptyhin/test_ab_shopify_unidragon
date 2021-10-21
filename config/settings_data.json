@@ -1613,7 +1613,7 @@
             "type": "product-item",
             "settings": {
               "product_item": "qbrix-poster",
-              "product_title": "",
+              "product_title": "Qbrix",
               "product_item_text": "Create a masterpiece",
               "product_description": "<ul>\n                <li>Nurture the seeds of creativity found in all of us<\/li>\n                <li>An art object that decorates<\/li>\n              <\/ul>",
               "product_image": "shopify:\/\/shop_images\/new-collection-img8.png",
@@ -1625,7 +1625,7 @@
             "type": "collection",
             "settings": {
               "collection_item": "balancing-puzzles",
-              "collection_title": "",
+              "collection_title": "Balancing Puzzles",
               "collection_item_text": "Fun for both kids and adults",
               "collection_description": "<ul>\n              <li>Interesting game for a fun company<\/li>\n              <li>Create dozens of variants of acrobatic tricks with cats<\/li>\n              <\/ul>",
               "collection_image": "shopify:\/\/shop_images\/new-collection-img4.png",
@@ -1637,7 +1637,7 @@
             "type": "product-item",
             "settings": {
               "product_item": "giftcard",
-              "product_title": "",
+              "product_title": "Gift Cards",
               "product_item_text": "Delight your loved ones with a special Gift",
               "product_description": "<ul>\n                <li>Choose a cool design and make it personal<\/li>\n                <li>Email your greeting card to your friend<\/li>\n              <\/ul>",
               "product_image": "shopify:\/\/shop_images\/new-collection-img5.png",
