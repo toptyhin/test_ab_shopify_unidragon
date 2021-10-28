@@ -98,6 +98,7 @@
     <video autoplay muted loop playsinline id="myVideo" style="object-fit: cover;width: 100vw;">
       <source src="{{ section.settings.video_bg }}" type="video/mp4">
     </video>
+    {%- elsif section.settings.enable_external_video -%}
     <style>
       #myVideo {
         right: 0;
@@ -106,7 +107,7 @@
         min-height: 100%;
       }
     </style>
-      <iframe id="myVideo" src="https://www.youtube.com/embed/{{ section.settings.external_video.id }}" frameborder="0" controls="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe id="myVideo" src="https://www.youtube.com/embed/{{ section.settings.external_video.id }}?&autoplay=1&mute=1&controls=0&showinfo=0&autohide=1" frameborder="0" controls="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   {% endif %}
   <div class="hero__inner">
     <div class="page-width text-{{section.settings.text_alignment}}">
