@@ -680,7 +680,7 @@
                 key: "renderDrawerCart",
                 value: function(t) {
                     var e = this;
-                    let ship_limit = $('.go-cart-drawer-progress-bar')[0].dataset.shippingLimit
+                    if ($('.go-cart-drawer-progress-bar')[0]) let ship_limit = $('.go-cart-drawer-progress-bar')[0].dataset.shippingLimit
                     if ( t.total_price*0.01 >= ship_limit ) {
                         var w = ship_limit;
                         var m = '<span><img src="https://cdn.shopify.com/s/files/1/0010/6348/5558/files/pngegg.png?v=1622556969" style="max-height: 15px; max-width: 23px; ">You`ve unlocked free shiping!</span>';
