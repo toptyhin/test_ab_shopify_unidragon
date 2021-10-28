@@ -1,4 +1,3 @@
-{% comment %}ly_global_begin{% endcomment %}{% capture ly-global-content %}{% render 'ly-global' render:true %}{% endcapture %}{% assign ly-global-content = ly-global-content | split: '#ly#' %}{% assign langify_title = ly-global-content[0] %}{% assign langify_description = ly-global-content[1] %}{% assign langify_shop_name = ly-global-content[2] %}{% assign langify_shop_description = ly-global-content[3] %}{% assign canonical_langify_url = ly-global-content[4] %}{% assign langify_shop_url = ly-global-content[5] %}{% assign langify_shop_domain = ly-global-content[6] %}{% comment %}ly_global_end{% endcomment %}
 
 <style>
     .go-cart__modal {
@@ -99,9 +98,6 @@
          padding: 20px 10px;
          text-align: center;
          cursor: pointer;
-    }
-    .go-cart__button.cart {
-        margin-top: 10px;
     }
      .go-cart-modal {
          position: relative;
@@ -334,6 +330,41 @@
          opacity: 0;
          visibility: hidden;
     }
+/*progress bar*/
+    .go-cart-drawer-progress-bar {
+        margin-top: 15px;
+        {%- unless localization.country == 'United States' -%}display: none;{%- endunless -%}
+    }
+    #progressbar {
+    background-color: #999999;
+    position: relative;
+    margin-top: 35px;
+    margin: 0 20px;
+    /* (height of inner div) / 2 + padding */
+  }
+  
+  #progressbar>div {
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    height: 20px;
+  }
+  #progressbar>span>img {
+    margin: 0 15px;
+  }
+  #progressbar>span {
+    display: flex;
+    align-items: center;
+    color:white;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    position: absolute;
+    top: 1px;
+  }
+    .shiping-progressbar span.money {
+        margin-right: 5px;
+    }
     .go-cart-drawer-upsell {
         padding: 0 20px;
         background-color: #f5f5f5;
@@ -358,7 +389,8 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        color: #888888;
+        font-weight: 500;
+        color:red;;
         align-items: flex-end;
         padding-bottom: 8px;
     }
@@ -573,15 +605,15 @@
             <!--end go cart mini cart content-->
             <!--go cart mini cart subtotal-->
             <div class="go-cart-mini-cart__subtotal">
-                <span><ly-as-19706757>Subtotal:</ly-as-19706757> </span>
+                <span>Subtotal: </span>
                 <span class="go-cart-mini-cart__subtotal-price js-go-cart-mini-cart-subtotal"></span>
             </div>
             <!--end go cart mini cart subtotal-->
 
             <!--go cart mini cart buttons-->
             <div class="go-cart-mini-cart__footer js-go-cart-mini-cart-footer">
-                <a href="/checkout/" class="go-cart__button"><ly-as-19706758>Proceed to checkout</ly-as-19706758></a>
-                <a href="/cart/" class="go-cart__button"><ly-as-19706759>View cart</ly-as-19706759></a>
+                <a href="/checkout/" class="go-cart__button">Proceed to checkout</a>
+                <a href="/cart/" class="go-cart__button">View cart</a>
             </div>
             <!--end go cart mini cart buttons-->
         </div>
@@ -601,7 +633,7 @@
             <!--end go cart modal close-->
             <!--go cart modal content-->
             <div class="go-cart-modal__content js-go-cart-modal-fail-content">
-                <ly-as-19706760>Something went wrong, please contact us!</ly-as-19706760>
+                Something went wrong, please contact us!
             </div>
             <!--end go cart modal content-->
         </div>
@@ -624,10 +656,10 @@
             <!--go cart modal buttons-->
             <div class="go-cart-modal__buttons">
                 <a class="go-cart__button js-go-cart-modal-close">
-                    <ly-as-19706761>Continue shopping</ly-as-19706761>
+                    Continue shopping
                 </a>
                 <a href="/cart/" class="go-cart__button">
-                    <ly-as-19706759>View cart</ly-as-19706759>
+                    View cart
                 </a>
             </div>
             <!--end go cart modal buttons-->
@@ -642,64 +674,12 @@
                         <path d="M15.89 14.696l-4.734-4.734 4.717-4.717c.4-.4.37-1.085-.03-1.485s-1.085-.43-1.485-.03L9.641 8.447 4.97 3.776c-.4-.4-1.085-.37-1.485.03s-.43 1.085-.03 1.485l4.671 4.671-4.688 4.688c-.4.4-.37 1.085.03 1.485s1.085.43 1.485.03l4.688-4.687 4.734 4.734c.4.4 1.085.37 1.485-.03s.43-1.085.03-1.485z"></path>
                     </svg>
                 </div>
-                {%- if section.settings.enable_progressbar -%}
-                    {%- liquid
-                        if localization.country.iso_code != blank
-                            for block in section.blocks
-                                if block.settings.country_select == localization.country.iso_code
-                                    assign shipping_money_limit = block.settings.money_limit
-                                endif
-                            endfor
-                        else
-                            assign shipping_money_limit = section.settings.default_limit
-                        endif 
-                    -%}
-                    <style>
-                        /*progress bar*/
-                        .go-cart-drawer-progress-bar {
-                            margin-top: 15px;
-                        }
-                        #progressbar {
-                            background-color: #999999;
-                            position: relative;
-                            margin-top: 35px;
-                            margin: 0 20px;
-                            /* (height of inner div) / 2 + padding */
-                        }
-                    
-                        #progressbar>div {
-                            background-color: #1a1a1a;
-                            display: flex;
-                            align-items: center;
-                            height: 20px;
-                        }
-                        #progressbar>span>img {
-                            margin: 0 15px;
-                        }
-                        #progressbar>span {
-                            display: flex;
-                            align-items: center;
-                            color:white;
-                            text-transform: uppercase;
-                            font-size: 12px;
-                            font-weight: 600;
-                            position: absolute;
-                            top: 1px;
-                        }
-                        .shiping-progressbar span.money {
-                            margin-right: 5px;
-                        }
-                    </style>
-                    {%- if shipping_money_limit != blank -%}<div data-shipping-limit="{{shipping_money_limit}}" class="go-cart-drawer-progress-bar"></div>{%- endif -%}
-                    <script>
-                        //$.get("https://ipinfo.io/json?token=bfdc4f6f5babff", function (response) { if (response.country != "US"){ $('.go-cart-drawer-progress-bar').hide();$('.custom-tax-new').hide();} });
-                    </script>
-                {%- endif -%}
+            <div class="go-cart-drawer-progress-bar"></div>
              <!--go cart drawer header-->
             <div class="go-cart-drawer__header">
                 <div class="go-cart-drawer__header-items">
-                    <span class="go-cart-drawer__header-items-cart"><ly-as-19706762>Your cart</ly-as-19706762></span>
-                    <span class="go-cart-drawer__header-items-quantity"><span class="js-go-cart-counter">{{ cart.item_count }}</span></span>
+                    <span class="go-cart-drawer__header-items-cart">Your cart</span>
+                    <span class="go-cart-drawer__header-items-quantity"><span class="js-go-cart-counter">{{- cart.item_count -}}</span></span>
                 </div>
             </div>
             <hr style="margin: 0 auto;width: calc( 100% - 40px );">
@@ -715,7 +695,7 @@
             {%- endfor -%}
           {%- if settings.need_upsell and upsell_in_cart != true -%}
             {%- if settings.upsell_product -%}
-            <div class="upsell-info go-cart-item__title"><ly-as-19746315>After solving the puzzle decorate your walls!</ly-as-19746315></div>
+            <div class="upsell-info go-cart-item__title">After solving the puzzle decorate your walls!</div>
             <div class="go-cart-drawer-upsell">
                     <div class="go-cart-item__single">
                         <div class="go-cart-item__info-wrapper">
@@ -723,11 +703,13 @@
                             <div class="go-cart-upsell-item__info">
                                 <a href="{{ settings.upsell_product.url }}" class="go-cart-item__title">{{settings.upsell_product.title}}</a>
                                 <div class="go-cart-upsell-item__price">
-                                    <a href="#upsell-anoncment-popup" class="upsell-anoncment-popup"><ly-as-19706763>See how it works</ly-as-19706763></a>
-                                    {{ settings.upsell_product.price | money }}</div>
+                                    <a href="#upsell-anoncment-popup" class="upsell-anoncment-popup">See how it works</a>
+                                    <span style="text-decoration: line-through; color:#a6a6a6; padding-right: 3px;position: relative; top: -30px;">{{ settings.upsell_product.compare_at_price | money }}</span>
+                                    <span style="position: relative; top: -30px;">{{ settings.upsell_product.price | money }}</span>
+                                </div>
                             </div>
                         </div>
-                        <button class="upsell-description upsell-button">{% comment %}ly_i18n_replace_for_[ 'products.upsell.add_to_cart_button_text' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.upsell.add_to_cart_button_text' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19706766' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</button>
+                        <button class="upsell-description upsell-button">{{ 'products.upsell.add_to_cart_button_text' | t }}</button>
                     </div>
                 </div>
             {%- endif -%}
@@ -737,18 +719,19 @@
 
             <!--go cart drawer subtotal-->
             <div class="go-cart-drawer__subtotal">
-                <span><ly-as-19706757>Subtotal:</ly-as-19706757> </span>
+                <span>Subtotal: </span>
                 <span class="go-cart-drawer__subtotal-price js-go-cart-drawer-subtotal"></span>
             
             </div>
             <div class="go-cart-drawer__shipping">
-                <span><ly-as-19706764>Shipping & Taxes calculated at checkout</ly-as-19706764></span>
+                <span>Shipping & Taxes calculated at checkout</span>
             </div>
             <!--end go cart drawer subtotal-->
+    
             <!--go cart drawer buttons-->
             <div class="go-cart-drawer__footer js-go-cart-drawer-footer">
-                <a href="/checkout/" class="go-cart__button checkout"><ly-as-19706765>Checkout</ly-as-19706765></a>
-                <a href="/cart/" class="go-cart__button cart"><ly-as-19706759>View cart</ly-as-19706759></a>
+                <a href="/checkout/" class="go-cart__button checkout">Checkout</a>
+                <a href="/cart/" class="go-cart__button cart">View cart</a>
             </div>
             <!--end go cart drawer buttons-->
         </div>
@@ -760,11 +743,11 @@
             <div class="grid" style="margin-left: auto;">
               <div class="grid__item">
                   <div class="rich-text__heading text-center">
-                    <div class="heading"><ly-as-19746316>SET FOR MOUNTING PUZZLES!</ly-as-19746316></div>
+                    <div class="heading">SET FOR MOUNTING PUZZLES!</div>
                   </div>
               </div>
               <div class="grid__item text-center">
-                <p class="mount__instruction"><ly-as-19746317>One set alone will allow you to hang 6 Small puzzles, 3 Medium puzzles, or 3 King Size puzzles.</ly-as-19746317></p>
+                <p class="mount__instruction">One set alone will allow you to hang 6 Small puzzles, 3 Medium puzzles, or 3 King Size puzzles.</p>
               </div>
             </div>
             <div class="grid" style="margin-left: auto;">
@@ -773,17 +756,17 @@
                         <figure class="mount__step">
                             <img loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/1_29d75e87-aa44-41ce-b9ec-187eb1631cbc_900x900.jpg?v=1619186904" alt="Glue the cardboard to the surface.">
                             <figcaption class="mount__step-captions">
-                            <p class="mount__step-number"><ly-as-19746318>Step 1.</ly-as-19746318></p>
-                            <p class="mount__step-text"><ly-as-19746319>Glue the cardboard to the surface.</ly-as-19746319></p>
-                            <p class="mount__step-text-details"><ly-as-19746320>Underlay included</ly-as-19746320><br /><br /></p>
+                            <p class="mount__step-number">Step 1.</p>
+                            <p class="mount__step-text">Glue the cardboard to the surface.</p>
+                            <p class="mount__step-text-details">Underlay included<br /><br /></p>
                             </figcaption>
                         </figure>
                     
                             <figure class="mount__step">
                             <img loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/2_5c23335d-5fbd-4c8c-879c-81bb3bfee883_900x900.jpg?v=1619186904" alt="Move the puzzle onto the cardboard.">
                             <figcaption class="mount__step-captions">
-                            <p class="mount__step-number"><ly-as-19746321>Step 2.</ly-as-19746321></p>
-                            <p class="mount__step-text"><ly-as-19746322>Move the puzzle onto the cardboard.</ly-as-19746322></p>
+                            <p class="mount__step-number">Step 2.</p>
+                            <p class="mount__step-text">Move the puzzle onto the cardboard.</p>
                             <p class="mount__step-text-details"><br /><br /></p>
                             </figcaption>
                         </figure>
@@ -791,8 +774,8 @@
                             <figure class="mount__step">
                             <img loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/3_97900aa8-ffa3-4fa1-81b1-566a3ef3e87f_900x900.jpg?v=1619186904" alt="Turn the puzzle over.">
                             <figcaption class="mount__step-captions">
-                            <p class="mount__step-number"><ly-as-19746323>Step 3.</ly-as-19746323></p>
-                            <p class="mount__step-text"><ly-as-19746324>Turn the puzzle over.</ly-as-19746324></p>
+                            <p class="mount__step-number">Step 3.</p>
+                            <p class="mount__step-text">Turn the puzzle over.</p>
                             <p class="mount__step-text-details"><br /><br /></p>
                             </figcaption>
                         </figure>
@@ -800,8 +783,8 @@
                             <figure class="mount__step">
                             <img loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/4_900x900.jpg?v=1619186904" alt="Stick the film onto the puzzle.">
                             <figcaption class="mount__step-captions">
-                            <p class="mount__step-number"><ly-as-19746325>Step 4.</ly-as-19746325></p>
-                            <p class="mount__step-text"><ly-as-19746326>Stick the film onto the puzzle.</ly-as-19746326></p>
+                            <p class="mount__step-number">Step 4.</p>
+                            <p class="mount__step-text">Stick the film onto the puzzle.</p>
                             <p class="mount__step-text-details"><br /><br /></p>
                             </figcaption>
                         </figure>
@@ -809,8 +792,8 @@
                             <figure class="mount__step">
                             <img loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/5_900x900.jpg?v=1619186904" alt="Smooth the film over the puzzle.">
                             <figcaption class="mount__step-captions">
-                            <p class="mount__step-number"><ly-as-19746327>Step 5.</ly-as-19746327></p>
-                            <p class="mount__step-text"><ly-as-19746328>Smooth the film over the puzzle.</ly-as-19746328></p>
+                            <p class="mount__step-number">Step 5.</p>
+                            <p class="mount__step-text">Smooth the film over the puzzle.</p>
                             <p class="mount__step-text-details"><br /><br /></p>
                             </figcaption>
                         </figure>
@@ -818,8 +801,8 @@
                             <figure class="mount__step">
                             <img loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/6_7df23e10-5c60-4fea-85b5-885bc10dd2ab_900x900.jpg?v=1619186904" alt="Cut off excess film.">
                             <figcaption class="mount__step-captions">
-                            <p class="mount__step-number"><ly-as-19746329>Step 6.</ly-as-19746329></p>
-                            <p class="mount__step-text"><ly-as-19746330>Cut off excess film.</ly-as-19746330></p>
+                            <p class="mount__step-number">Step 6.</p>
+                            <p class="mount__step-text">Cut off excess film.</p>
                             <p class="mount__step-text-details"><br /><br /></p>
                             </figcaption>
                         </figure>
@@ -827,17 +810,17 @@
                             <figure class="mount__step">
                             <img loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/7_900x900.jpg?v=1619186904" alt="Place the glue heels on the tape.">
                             <figcaption class="mount__step-captions">
-                            <p class="mount__step-number"><ly-as-19746331>Step 7.</ly-as-19746331></p>
-                            <p class="mount__step-text"><ly-as-19746332>Place the glue heels on the tape.</ly-as-19746332></p>
-                            <p class="mount__step-text-details"><ly-as-19746333>It is removable and will not damage your walls</ly-as-19746333><br /></p>
+                            <p class="mount__step-number">Step 7.</p>
+                            <p class="mount__step-text">Place the glue heels on the tape.</p>
+                            <p class="mount__step-text-details">It is removable and will not damage your walls<br /></p>
                             </figcaption>
                         </figure>
                     
                             <figure class="mount__step">
                             <img loading="lazy" src="//cdn.shopify.com/s/files/1/0291/1322/1168/files/8_5aa9a5ec-917e-4e1d-9ffa-3e614a575b75_900x900.jpg?v=1619186904" alt="Fix the puzzle to the wall.">
                             <figcaption class="mount__step-captions">
-                            <p class="mount__step-number"><ly-as-19746334>Step 8.</ly-as-19746334></p>
-                            <p class="mount__step-text"><ly-as-19746335>Fix the puzzle to the wall.</ly-as-19746335></p>
+                            <p class="mount__step-number">Step 8.</p>
+                            <p class="mount__step-text">Fix the puzzle to the wall.</p>
                             <p class="mount__step-text-details"><br /><br /></p>
                             </figcaption>
                         </figure>
@@ -850,28 +833,28 @@
                         {{settings.upsell_product.selected_or_first_available_variant.price | money}}
                       </span>
                     </span>
-                    <span class="product in-stock"><ly-as-19746336>In stock</ly-as-19746336></span>
-                    <button class="upsell-description upsell-button btn" style="border: none;">{% comment %}ly_i18n_replace_for_[ 'products.upsell.add_to_cart_button_text' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.upsell.add_to_cart_button_text' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19706766' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</button>
+                    <span class="product in-stock">In stock</span>
+                    <button class="upsell-description upsell-button btn" style="border: none;">{{ 'products.upsell.add_to_cart_button_text' | t }}</button>
                 </div>
-                <p style="padding-top: 10px;"><ly-as-19746337>Now you can easily turn your puzzle into a piece of interior decor for the home, office, or just about anywhere.</ly-as-19746337></p>
-                <p><ly-as-19746338>The kit includes:</ly-as-19746338></p>
+                <p style="padding-top: 10px;">Now you can easily turn your puzzle into a piece of interior decor for the home, office, or just about anywhere.</p>
+                <p>The kit includes:</p>
                 <ul>
-                <li><ly-as-19746339>A cardboard base for turning the puzzle over;</ly-as-19746339></li>
-                <li><ly-as-19746340>Special stickers for attaching the base to the table;</ly-as-19746340></li>
-                <li><ly-as-19746341>Adhesive labels for holding the puzzle pieces together (3 sheets);</ly-as-19746341></li>
-                <li><ly-as-19746342>Adhesive patches for attaching the puzzle to the desired surface;</ly-as-19746342></li>
-                <li><ly-as-19746342>Adhesive patches for attaching the puzzle to the desired surface;</ly-as-19746342></li>
-                <li><ly-as-19746343>Instructions.</ly-as-19746343></li>
+                <li>A cardboard base for turning the puzzle over;</li>
+                <li>Special stickers for attaching the base to the table;</li>
+                <li>Adhesive labels for holding the puzzle pieces together (3 sheets);</li>
+                <li>Adhesive patches for attaching the puzzle to the desired surface;</li>
+                <li>Adhesive patches for attaching the puzzle to the desired surface;</li>
+                <li>Instructions.</li>
                 </ul>
-                <p><ly-as-19746344>The fixing system is universal for all puzzles and sizes</ly-as-19746344></p>
+                <p>The fixing system is universal for all puzzles and sizes</p>
                 <div class="small--hide" style="color: #292929;font-size: 18px;font-weight: 400;font-weight: 700;">
                     <span class="product-price__price product-price__price-product-template">
                       <span id="ProductPrice-product-template" itemprop="price" content="19.95">
                         {{settings.upsell_product.selected_or_first_available_variant.price | money}}
                       </span>
                     </span>
-                    <span class="product in-stock"><ly-as-19746336>In stock</ly-as-19746336></span>
-                    <button class="upsell-description upsell-button btn" style="border: none;">{% comment %}ly_i18n_replace_for_[ 'products.upsell.add_to_cart_button_text' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.upsell.add_to_cart_button_text' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19706766' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</button>
+                    <span class="product in-stock">In stock</span>
+                    <button class="upsell-description upsell-button btn" style="border: none;">{{ 'products.upsell.add_to_cart_button_text' | t }}</button>
                 </div>
                 <div class="text-center" style="margin-top: 20px;">
                     <iframe src="https://www.youtube.com/embed/NCG1MPDUako" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="max-width: 560px" loading="lazy"></iframe>
@@ -885,14 +868,16 @@
     </div>
     <!--end go cart overlay-->
     
-    {% comment %}ly_asset_replace_for_[ 'gocart.js' | asset_url | script_tag ]_begin{% endcomment %}{% assign ly_asset = 'gocart.js' %}{% capture ly_translation %}{% render 'ly-asset' with ly_asset render:true %}{% endcapture %}{{ ly_translation  | script_tag }}{% comment %}ly_asset_replace_end{% endcomment %}
-    {% comment %}ly_asset_replace_for_[ 'magnific-popup.css' | asset_url | stylesheet_tag ]_begin{% endcomment %}{% assign ly_asset = 'magnific-popup.css' %}{% capture ly_translation %}{% render 'ly-asset' with ly_asset render:true %}{% endcapture %}{{ ly_translation  | stylesheet_tag }}{% comment %}ly_asset_replace_end{% endcomment %}
-    {% comment %}ly_asset_replace_for_[ 'jquery.magnific-popup.min.js' | asset_url | script_tag ]_begin{% endcomment %}{% assign ly_asset = 'jquery.magnific-popup.min.js' %}{% capture ly_translation %}{% render 'ly-asset' with ly_asset render:true %}{% endcapture %}{{ ly_translation  | script_tag }}{% comment %}ly_asset_replace_end{% endcomment %}
+    {{ 'gocart.js' | asset_url | script_tag }}
+    {{ 'magnific-popup.css' | asset_url | stylesheet_tag }}
+    {{ 'jquery.magnific-popup.min.js' | asset_url | script_tag }}
  <style>
      .go-cart__button.checkout {
          display: block;
      }
-
+     .go-cart__button.cart {
+        margin-top: 10px;
+     }
  </style>
     <script>
         var goCart = new GoCart();
@@ -900,6 +885,17 @@
         $('.upsell-anoncment-popup').click( function () {
             $('.announcement-slider').slick({infinite:!1,arrows:!0,dots:!1,slidesToShow:1,slidesToScroll:1,variableWidth:!1,swipeToSlide:!0,rows:0,autoplay:true,autoplaySpeed:2000,responsive:[{breakpoint:1199,settings:{slidesToShow:1,variableWidth:!1}}]}).slick("slickGoTo",0);
         });
+{%comment%}
+    token=bfdc4f6f5babff
+    token=ea639b54a40421
+{%endcomment%}
+        $.get("https://ipinfo.io/json?token=bfdc4f6f5babff", function (response) {
+            if (!response) {
+                $.get("https://ipinfo.io/json?token=ea639b54a40421", function (response) {if (response.country != "US"){ $('.go-cart-drawer-progress-bar').hide();$('.custom-tax-new').hide();} });
+            } else {
+                if (response.country != "US"){ $('.go-cart-drawer-progress-bar').hide();$('.custom-tax-new').hide();} 
+            } 
+            });
 
         $('.upsell-button').on('click',function(e){    
         e.preventDefault();
@@ -931,46 +927,3 @@
         });
     
     </script>
-
-{% schema %}
-{
-  "name": "Go cart",
-  "tag": "section",
-  "settings": [
-    {
-        "type": "checkbox",
-        "id": "enable_progressbar",
-        "label": "Enable progress bar",
-        "default": true
-    },
-    {
-        "type": "text",
-        "id": "default_limit",
-        "label": "Defaul limit if country not detected",
-        "default": "100"
-    }
-  ],
-  "blocks": [
-    {
-        "name": "Country limit",
-        "type": "text",
-        "settings": [
-            {
-                "type": "select",
-                "id": "country_select",
-                "label": "Select Country",
-                "options": [
-                { "value": "AD", "label": "Andorra" },{ "value": "AT", "label": "Austria" },{ "value": "BE", "label": "Belgium" },{ "value": "CY", "label": "Cyprus" },{ "value": "EE", "label": "Estonia" },{ "value": "FI", "label": "Finland" },{ "value": "FR", "label": "France" },{ "value": "DE", "label": "Germany" },{ "value": "GR", "label": "Greece" },{ "value": "IE", "label": "Ireland" },{ "value": "IT", "label": "Italy" },{ "value": "XK", "label": "Kosovo" },{ "value": "LV", "label": "Latvia" },{ "value": "LT", "label": "Lithuania" },{ "value": "LU", "label": "Luxembourg" },{ "value": "MT", "label": "Malta" },{ "value": "MC", "label": "Monaco" },{ "value": "ME", "label": "Montenegro" },{ "value": "NL", "label": "Netherlands" },{ "value": "PT", "label": "Portugal" },{ "value": "SM", "label": "San Marino" },{ "value": "SK", "label": "Slovakia" },{ "value": "SI", "label": "Slovenia" },{ "value": "ES", "label": "Spain" }
-                ]
-            },
-            {
-                "type": "text",
-                "id": "money_limit",
-                "label": "Money limit",
-                "default": "100"
-            }
-        ]
-    }
-  ]
-}
-{% endschema %}
