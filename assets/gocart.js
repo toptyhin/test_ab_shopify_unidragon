@@ -680,12 +680,13 @@
                 key: "renderDrawerCart",
                 value: function(t) {
                     var e = this;
-                    if ( t.total_price*0.01 >= 100 ) {
-                        var w = 100;
+                    let ship_limit = $('.go-cart-drawer-progress-bar')[0].dataset.shippingLimit
+                    if ( t.total_price*0.01 >= ship_limit ) {
+                        var w = ship_limit;
                         var m = '<span><img src="https://cdn.shopify.com/s/files/1/0010/6348/5558/files/pngegg.png?v=1622556969" style="max-height: 15px; max-width: 23px; ">You`ve unlocked free shiping!</span>';
                     } else {
                         var w = t.total_price*0.01;
-                        var l = 100 - t.total_price*0.01;
+                        var l = ship_limit - t.total_price*0.01;
                         var m = '<span><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/shiping-icon.png?v=15131799856026653235"/>'.concat(l.toFixed(2),'$ until free shipping</span>');
                     }
                     var p = '<div id="progressbar" class="shiping-progressbar"><div style="width: '.concat(w, '%"></div>').concat(m,'</div>');
