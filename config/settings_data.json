@@ -620,6 +620,8 @@
         "settings": {
           "enable_video": true,
           "video_bg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0291\/1322\/1168\/files\/fon_1.mp4?v=1631176999",
+          "enable_external_video": false,
+          "external_video": "https:\/\/youtu.be\/iH4yWWTm8MU",
           "image": "shopify:\/\/shop_images\/unidragon-wooden-jigsaw-puzzle-1.jpg",
           "enable_parallax": true,
           "alignment": "center",
@@ -1660,6 +1662,91 @@
           "display_type": "all",
           "sort": "alphabetical"
         }
+      },
+      "1634880766341f5eed": {
+        "type": "instagram-slider",
+        "blocks": {
+          "c2aeea15-e9c2-447c-93c6-1e492da9125f": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider-insp-1.jpg",
+              "button_text": "Buy now",
+              "button_url": "shopify:\/\/products\/enchanting-owl"
+            }
+          },
+          "40996e05-d64b-40c5-870a-7f5ed30d1830": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider-insp-8.jpg",
+              "button_text": "Buy now",
+              "button_url": "shopify:\/\/products\/wooden-jigsaw-puzzle-milky-whales"
+            }
+          },
+          "35150fe1-4afb-4ac7-b12c-a134026c1f8e": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider-insp-7.jpg",
+              "button_text": "Buy now",
+              "button_url": "shopify:\/\/products\/wooden-jigsaw-puzzle-raccoon"
+            }
+          },
+          "d6a16bee-43fa-42e0-a592-98622fcf1175": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider-insp-3.jpg",
+              "button_text": "Buy now",
+              "button_url": "shopify:\/\/products\/pre-order-majestic-wolf"
+            }
+          },
+          "c5c65e36-78ff-470c-9a28-19c21383b85d": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider-insp-4.jpg",
+              "button_text": "Buy now",
+              "button_url": "shopify:\/\/products\/fiery-fox"
+            }
+          },
+          "74a4a9dd-bc86-4fab-bb75-df4492bb7adb": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider-insp-2.jpg",
+              "button_text": "Buy now",
+              "button_url": "shopify:\/\/products\/enchanting-owl"
+            }
+          },
+          "e2a9d9ba-0c87-489f-8eed-70738d5433d5": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider-insp-5.jpg",
+              "button_text": "Buy now",
+              "button_url": "shopify:\/\/products\/wooden-jigsaw-puzzle-mysterious-lion"
+            }
+          },
+          "602e7d5b-f631-4712-85b4-0e8e1258a776": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider-insp-6.jpg",
+              "button_text": "Buy now",
+              "button_url": "shopify:\/\/products\/pre-order-wooden-puzzle-gentle-lynx"
+            }
+          }
+        },
+        "block_order": [
+          "c2aeea15-e9c2-447c-93c6-1e492da9125f",
+          "40996e05-d64b-40c5-870a-7f5ed30d1830",
+          "35150fe1-4afb-4ac7-b12c-a134026c1f8e",
+          "d6a16bee-43fa-42e0-a592-98622fcf1175",
+          "c5c65e36-78ff-470c-9a28-19c21383b85d",
+          "74a4a9dd-bc86-4fab-bb75-df4492bb7adb",
+          "e2a9d9ba-0c87-489f-8eed-70738d5433d5",
+          "602e7d5b-f631-4712-85b4-0e8e1258a776"
+        ],
+        "settings": {
+          "insta_url": "https:\/\/www.instagram.com\/unidragon_com\/",
+          "header_text": "Get inspired following us on Instagram",
+          "publication": "246",
+          "subscribers": "111k"
+        }
       }
     },
     "content_for_index": [
@@ -1673,7 +1760,8 @@
       "1574534655335",
       "16039015597eb3b5ec",
       "1603965658ea939929",
-      "1619615291e2b75557"
+      "1619615291e2b75557",
+      "1634880766341f5eed"
     ]
   },
   "presets": {
