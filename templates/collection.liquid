@@ -3,7 +3,9 @@
   The contents of the collection.liquid template can be found in /sections/collection-template.liquid
 {% endcomment %}
 
-{% section 'collection-template' %}
-{% unless collection.handle == 'nature-puzzles'%}
-{% render 'size-block' %}
-{% endunless %}
+{%- liquid
+    section 'collection-template'
+    unless collection.handle == 'nature-puzzles' or collection.handle == 'world_map_puzzles' or collection.handle == 'balancing-puzzles'
+      render 'size-block'
+    endunless
+  -%}

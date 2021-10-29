@@ -345,12 +345,14 @@
       {%- assign is_empty_collection = true -%}
       {% endif %}
       {% endfor %}
-      <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
-        <style>
-          .storyblock {margin: 20px 0 10px;}
-        </style>
-        {%- render 'fw-storyblock', channel: 'unidragon_world' -%}
-      </div>
+      {%- unless collection.handle == 'world_map_puzzles' or collection.handle == 'balancing-puzzles'-%}
+        <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
+          <style>
+            .storyblock {margin: 20px 0 10px;}
+          </style>
+          {%- render 'fw-storyblock', channel: 'unidragon_world' -%}
+        </div>
+      {%- endunless -%}
     </div>
     {% comment %}
     {% if section.settings.layout == 'grid' %}
