@@ -180,12 +180,12 @@
 <div class="inspired">
     <div class="inspired__title">
       <div class="inspired__title-text heading">
-        <p>{{section.settings.header_text}} <a href="{{section.settings.insta_url}}" style="color: #737373;">@Unidragon_com</a></p>
+        <p>{{section.settings.header_text}} <a href="{{section.settings.insta_url}}" style="color: #737373;" target="_blank">@Unidragon_com</a></p>
       </div>
       <div class="inspired__title-info">
         <p>{{section.settings.publication}}<span> Posts</span></p>
         <p>{{section.settings.subscribers}}<span> Followers</span></p>
-        <a href="{{section.settings.insta_url}}">Follow</a>
+        <a href="{{section.settings.insta_url}}" target="_blank">Follow</a>
       </div>
     </div>
 
@@ -195,7 +195,7 @@
                 <div class="slider__item-img">
                 <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
                 </div>
-                <a href="{{ block.settings.button_url }}">{{ block.settings.button_text }}</a>
+                <a id="insta-to-product" href="{{ block.settings.button_url }}">{{ block.settings.button_text }}</a>
             </div>
         {%- endfor -%}
     </div>
