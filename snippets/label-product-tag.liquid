@@ -1,6 +1,6 @@
 {%- if products.tags.size > 0 -%}
 	{%- for tag in products.tags  -%}
-			{%- if tag == 'New' or tag == 'Bestseller' or tag == 'most-popular' or tag == 'sale' -%}
+			{%- if tag == 'New' or tag == 'Bestseller' or tag == 'most-popular' or tag == 'sale' or tag == 'symbol 2022' -%}
 				<div class="product__labels">
 					<span class="product__label product__label--{{ tag | replace: " ", "-"}}">{{ tag }}</span>
 				</div>
