@@ -294,22 +294,6 @@
       <form style="display: none;" method="post" action="/cart">
         <input  type="submit" class="custome_checkout" value="checkout" name="checkout"/>
       </form>
-      <style>.storyblock {padding-bottom: 10px;padding-top: 60px;}</style>
-      <div class="small--hide"  style="max-width: 285px;margin: 0px auto;">
-        {% case product.title %}
-        {% when 'Charming Owl' %}
-          {%- assign current_channel = 'sova_com' -%}
-        {% when 'Alluring Fox' %}
-          {%- assign current_channel = 'fox_com' -%}
-        {% when 'Mysterious Lion' %}
-          {%- assign current_channel = 'lion_com' -%}
-        {% when 'Milky Whales 2 in 1' %}
-          {%- assign current_channel = 'mlechnye_kity_milky_whales' -%}
-        {% else %}
-          {%- assign current_channel = 'unidragon_world' -%}
-        {% endcase %}
-        {%- render 'fw-storyblock', channel: current_channel -%}
-      </div>
     </div>
     
     <div class="grid__item medium-up--one-half">
