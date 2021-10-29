@@ -620,6 +620,8 @@
         "settings": {
           "enable_video": true,
           "video_bg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0291\/1322\/1168\/files\/fon_1.mp4?v=1631176999",
+          "enable_external_video": false,
+          "external_video": "https:\/\/youtu.be\/iH4yWWTm8MU",
           "image": "shopify:\/\/shop_images\/unidragon-wooden-jigsaw-puzzle-1.jpg",
           "enable_parallax": true,
           "alignment": "center",
@@ -1545,6 +1547,206 @@
           "pdp_cta_text1": "",
           "pdp_cta_link1": ""
         }
+      },
+      "list-collections-new-template": {
+        "type": "list-collections-new-template",
+        "blocks": {
+          "8e53cb73-e853-45ab-bc83-43b73caa7e4a": {
+            "type": "collection",
+            "settings": {
+              "collection_item": "wooden-puzzles",
+              "collection_title": "",
+              "collection_item_text": "Brighten up your life",
+              "collection_description": "<ul>\n              <li>Spend your time with your loved ones<\/li>\n              <li>Unidragon puzzles have the most unique shape and design<\/li>\n            <\/ul>",
+              "collection_image": "shopify:\/\/shop_images\/new-collection-img1.png",
+              "collection_hover_image": "shopify:\/\/shop_images\/image-hover-animals.png",
+              "button_text": "Go to directory"
+            }
+          },
+          "286e7868-2be8-4f0d-94fc-85dd820d7e97": {
+            "type": "collection",
+            "settings": {
+              "collection_item": "nature-puzzles",
+              "collection_title": "Wooden Jigsaw Nature Puzzles",
+              "collection_item_text": "Find Inspiration",
+              "collection_description": "<ul>\n              <li>It is time to forget the daily routine<\/li>\n              <li>Puzzles work out your brain and strengthen your mind<\/li>\n            <\/ul>",
+              "collection_image": "shopify:\/\/shop_images\/new-collection-img2.png",
+              "collection_hover_image": "shopify:\/\/shop_images\/image-hover-natural-puzzle.png",
+              "button_text": "Go to directory"
+            }
+          },
+          "22786e4f-ddd8-4437-a485-f7c696e4897c": {
+            "type": "product-item",
+            "settings": {
+              "product_item": "mandala-inexhaustible-abundance",
+              "product_title": "Mandala Puzzles",
+              "product_item_text": "Your dreams can possibly come true",
+              "product_description": "<ul>\n              <li>Hours for your inner world<\/li>\n              <li>Focusing on cherished things<\/li>\n            <\/ul>",
+              "product_image": "shopify:\/\/shop_images\/new-collection-img9.png",
+              "product_hover_image": "shopify:\/\/shop_images\/image-hover-mandala-puzzle.png",
+              "button_text": "Go to directory"
+            }
+          },
+          "524039b1-fc1d-423b-8c8b-377b03cd1e46": {
+            "type": "product-item",
+            "settings": {
+              "product_item": "set-for-mounting-puzzles",
+              "product_title": "Set For Mounting Puzzles",
+              "product_item_text": "After solving the puzzle decorate your walls!",
+              "product_description": "<ul>\n                    <li>It is removable and will not damage your wall<\/li>\n                    <li>Suitable for all wall surfaces<\/li>\n                  <\/ul>",
+              "product_image": "shopify:\/\/shop_images\/new-collection-img7.png",
+              "product_hover_image": "shopify:\/\/shop_images\/image-hover-set-for-mountig.png",
+              "button_text": "Go to directory"
+            }
+          },
+          "8050d109-e461-4f01-8b14-a74c4d729537": {
+            "type": "collection",
+            "settings": {
+              "collection_item": "world_map_puzzles",
+              "collection_title": "",
+              "collection_item_text": "3D Map looks amazing",
+              "collection_description": "<ul>\n                  <li>A great addition to any decor<\/li>\n                  <li>Live is even better than the picture<\/li>\n                <\/ul>",
+              "collection_image": "shopify:\/\/shop_images\/new-collection-img6.png",
+              "collection_hover_image": "shopify:\/\/shop_images\/image-hover-world-map.png",
+              "button_text": "Go to directory"
+            }
+          },
+          "5861f35d-b156-405e-a244-7f7dba7c8ed0": {
+            "type": "product-item",
+            "settings": {
+              "product_item": "qbrix-poster",
+              "product_title": "Qbrix",
+              "product_item_text": "Create a masterpiece",
+              "product_description": "<ul>\n                <li>Nurture the seeds of creativity found in all of us<\/li>\n                <li>An art object that decorates<\/li>\n              <\/ul>",
+              "product_image": "shopify:\/\/shop_images\/new-collection-img8.png",
+              "product_hover_image": "shopify:\/\/shop_images\/image-hover-qbrix.png",
+              "button_text": "Go to directory"
+            }
+          },
+          "39c553b7-493a-455d-9915-6a8f30a738cd": {
+            "type": "collection",
+            "settings": {
+              "collection_item": "balancing-puzzles",
+              "collection_title": "Balancing Puzzles",
+              "collection_item_text": "Fun for both kids and adults",
+              "collection_description": "<ul>\n              <li>Interesting game for a fun company<\/li>\n              <li>Create dozens of variants of acrobatic tricks with cats<\/li>\n              <\/ul>",
+              "collection_image": "shopify:\/\/shop_images\/new-collection-img4.png",
+              "collection_hover_image": "shopify:\/\/shop_images\/image-hover-balancing-puzzle.png",
+              "button_text": "Go to directory"
+            }
+          },
+          "95ef7eb0-eef8-4105-b904-06848450108d": {
+            "type": "product-item",
+            "settings": {
+              "product_item": "giftcard",
+              "product_title": "Gift Cards",
+              "product_item_text": "Delight your loved ones with a special Gift",
+              "product_description": "<ul>\n                <li>Choose a cool design and make it personal<\/li>\n                <li>Email your greeting card to your friend<\/li>\n              <\/ul>",
+              "product_image": "shopify:\/\/shop_images\/new-collection-img5.png",
+              "product_hover_image": "shopify:\/\/shop_images\/image-hover-gift-card.png",
+              "button_text": "Go to directory"
+            }
+          }
+        },
+        "block_order": [
+          "8e53cb73-e853-45ab-bc83-43b73caa7e4a",
+          "286e7868-2be8-4f0d-94fc-85dd820d7e97",
+          "22786e4f-ddd8-4437-a485-f7c696e4897c",
+          "524039b1-fc1d-423b-8c8b-377b03cd1e46",
+          "8050d109-e461-4f01-8b14-a74c4d729537",
+          "5861f35d-b156-405e-a244-7f7dba7c8ed0",
+          "39c553b7-493a-455d-9915-6a8f30a738cd",
+          "95ef7eb0-eef8-4105-b904-06848450108d"
+        ],
+        "settings": {
+          "display_type": "all",
+          "sort": "alphabetical"
+        }
+      },
+      "1634880766341f5eed": {
+        "type": "instagram-slider",
+        "blocks": {
+          "c2aeea15-e9c2-447c-93c6-1e492da9125f": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider-insp-1.jpg",
+              "button_text": "Buy now",
+              "button_url": "shopify:\/\/products\/enchanting-owl"
+            }
+          },
+          "40996e05-d64b-40c5-870a-7f5ed30d1830": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider-insp-8.jpg",
+              "button_text": "Buy now",
+              "button_url": "shopify:\/\/products\/wooden-jigsaw-puzzle-milky-whales"
+            }
+          },
+          "35150fe1-4afb-4ac7-b12c-a134026c1f8e": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider-insp-7.jpg",
+              "button_text": "Buy now",
+              "button_url": "shopify:\/\/products\/wooden-jigsaw-puzzle-raccoon"
+            }
+          },
+          "d6a16bee-43fa-42e0-a592-98622fcf1175": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider-insp-3.jpg",
+              "button_text": "Buy now",
+              "button_url": "shopify:\/\/products\/pre-order-majestic-wolf"
+            }
+          },
+          "c5c65e36-78ff-470c-9a28-19c21383b85d": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider-insp-4.jpg",
+              "button_text": "Buy now",
+              "button_url": "shopify:\/\/products\/fiery-fox"
+            }
+          },
+          "74a4a9dd-bc86-4fab-bb75-df4492bb7adb": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider-insp-2.jpg",
+              "button_text": "Buy now",
+              "button_url": "shopify:\/\/products\/enchanting-owl"
+            }
+          },
+          "e2a9d9ba-0c87-489f-8eed-70738d5433d5": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider-insp-5.jpg",
+              "button_text": "Buy now",
+              "button_url": "shopify:\/\/products\/wooden-jigsaw-puzzle-mysterious-lion"
+            }
+          },
+          "602e7d5b-f631-4712-85b4-0e8e1258a776": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/slider-insp-6.jpg",
+              "button_text": "Buy now",
+              "button_url": "shopify:\/\/products\/pre-order-wooden-puzzle-gentle-lynx"
+            }
+          }
+        },
+        "block_order": [
+          "c2aeea15-e9c2-447c-93c6-1e492da9125f",
+          "40996e05-d64b-40c5-870a-7f5ed30d1830",
+          "35150fe1-4afb-4ac7-b12c-a134026c1f8e",
+          "d6a16bee-43fa-42e0-a592-98622fcf1175",
+          "c5c65e36-78ff-470c-9a28-19c21383b85d",
+          "74a4a9dd-bc86-4fab-bb75-df4492bb7adb",
+          "e2a9d9ba-0c87-489f-8eed-70738d5433d5",
+          "602e7d5b-f631-4712-85b4-0e8e1258a776"
+        ],
+        "settings": {
+          "insta_url": "https:\/\/www.instagram.com\/unidragon_com\/",
+          "header_text": "Get inspired following us on Instagram",
+          "publication": "246",
+          "subscribers": "111k"
+        }
       }
     },
     "content_for_index": [
@@ -1558,7 +1760,8 @@
       "1574534655335",
       "16039015597eb3b5ec",
       "1603965658ea939929",
-      "1619615291e2b75557"
+      "1619615291e2b75557",
+      "1634880766341f5eed"
     ]
   },
   "presets": {

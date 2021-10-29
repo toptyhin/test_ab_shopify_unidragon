@@ -225,7 +225,8 @@ snaptr('track', 'PAGE_VIEW');
   {% render 'easy-gdpr-settings' %}
  
 {% include 'pagefly-header' %}
- </head> 
+   {% include 'qikify-contactform' %}
+</head> 
 
 <body class="template-{{ template | split: '.' | first }}"><div class="pagefly-container">{{ content_for_layout }}</div></body>
 
