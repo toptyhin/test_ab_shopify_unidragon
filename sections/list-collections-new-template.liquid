@@ -240,7 +240,13 @@
         {%- when 'collection' -%}
           <a class="collections-item new-collection-list" href="{{ block.settings.collection_item.url }}">
             <div class="collections-item__info">
-              <span class="collections-item__title">{{ block.settings.collection_item.title }}</span>
+              <span class="collections-item__title">
+                {%- if block.settings.collection_title != blank -%}
+                  {{ block.settings.collection_title }}
+                {%- else -%}
+                  {{ block.settings.collection_item.title }}
+                {%- endif -%}
+              </span>
               <p class="collections-item__text">{{ block.settings.collection_item_text }}</p>
               <div class="collections-item__list">
                 {{ block.settings.collection_description }}
@@ -266,7 +272,13 @@
           {%- when 'product-item' -%}
             <a class="collections-item new-collection-list" href="{{ block.settings.product_item.url }}">
               <div class="collections-item__info">
-                <span class="collections-item__title">{{ block.settings.product_item.title }}</span>
+                <span class="collections-item__title">
+                  {%- if block.settings.product_title != blank -%}
+                    {{ block.settings.product_title }}
+                  {%- else -%}
+                    {{ block.settings.product_item.title }}
+                  {%- endif -%}
+                </span>
                 <p class="collections-item__text">{{ block.settings.collection_item_text }}</p>
               <div class="collections-item__list">
                 {{ block.settings.product_description }}
@@ -363,6 +375,11 @@
             },
             {
               "type": "text",
+              "id": "collection_title",
+              "label": "Custome Collection Title"
+            },
+            {
+              "type": "text",
               "id": "collection_item_text",
               "label": "Collection Item Slogan"
             },
@@ -397,6 +414,11 @@
               "type": "product",
               "id": "product_item",
               "label": "Product"              
+            },
+            {
+              "type": "text",
+              "id": "product_title",
+              "label": "Custome Product Title"
             },
             {
               "type": "text",
