@@ -860,12 +860,79 @@
             <!-- Content will render here -->
             </div>
           </div>
+        {%- if product.handle == '' -%}
+          <style>
+            .banner-symbol {
+              background: url({{'banner-bg.png' | asset_url }}) no-repeat;
+              background-size: cover;
+              background-position: center;
+              min-height: 420px;
+              max-width: 533px;
+              width: 100%;
+            }
+            .banner__info {
+              display: flex;
+              align-items: flex-end;
+              justify-content: space-between;
+              padding: 25px 40px;
+            }
+            .banner__info-year {
+              display: flex;
+              flex-direction: column;
+            }
+            .banner__info-year span {
+              font-weight: bold;
+              font-size: 24px;
+              color: #000000;
+              padding-left: 10px;
+            }
+            .banner__info-year img {
+              max-width: 100%;
+            }
+            .banner__info-text p {
+              font-weight: 500;
+              font-size: 18px;
+              color: #FFFFFF;
+              max-width: 220px;
+            }
 
+
+
+            @media (max-width: 749px) {
+              .banner-symbol {
+                min-height: 333px;
+              }
+              .banner__info-year span {
+                font-size: 14px;
+              }
+              .banner__info-text p {
+                font-size: 10px;
+              }
+            }
+            @media (max-width: 370px) {
+              .banner-symbol {
+                min-height: 274px;
+              }
+            }
+          </style>
+          <div class="banner-symbol banner">
+            <div class="banner__info">
+              <div class="banner__info-year">
+                <span>Symbol</span>
+                <img src="{{'2022.png' | asset_url }}" alt="">
+              </div>
+              <div class="banner__info-text">
+                <p>Get your own tiger or make a gift to a friend</p>
+              </div>
+            </div>
+          </div>
+        {%- else -%}
           <div class="banner-inspirational-gift">
             <div class="banner-inspirational-gift_header">Inspirational Gift</div>
             <div class="banner-inspirational-gift_text">Bring more happiness into the life of your loved ones by choosing a gift that is unforgettable experience.</div>
             <div class="banner-inspirational-gift_link"><a href="/products/giftcard" class="banner-inspirational-gift_a">{{ 'custome_text.banner.buy_gift_card' | t }} -></a></div>
           </div>
+        {%- endif -%}
           <div class="advantage">
             <div class="advantage-item">
               <div class="advantage-block">
