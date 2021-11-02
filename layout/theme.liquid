@@ -179,7 +179,7 @@ if (match && match.length > 0) window.localStorage.setItem('sid', match[0]);
 
   {% render 'easy-gdpr-settings' %}
   {% include 'qikify-contactform' %}
-</head> 
+{% include 'flashify-common' %}</head> 
 
 <body class="template-{{ template | split: '.' | first }}">
   
