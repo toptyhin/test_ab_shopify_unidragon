@@ -76,7 +76,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
           {% if product.handle contains "quezzle" %}
             <div class="quezzle-grid-sec" id="scroll-top">
               <div class="quezzle-grid-info">
-                <div class="quezzle-grid-fig">{{ variant.image.src | img_url: '300x' | img_tag: 'alternate text' }}</div>
+                <div class="quezzle-grid-fig">{{ variant.image.src | img_url: '600x' | img_tag: 'alternate text' }}</div>
                 <h4>{{ variant.title }}</h4>
                 {%- case size_count -%}
                   {%- when 1 -%}
