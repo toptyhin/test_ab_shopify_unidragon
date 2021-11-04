@@ -42,7 +42,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
     <p><strong><ly-as-16902715>This is case-sensitive!</ly-as-16902715></strong> <ly-as-16902716>Do not put in</ly-as-16902716> <code><ly-as-16902717>'color'</ly-as-16902717></code> <ly-as-16902718>if your product option name is</ly-as-16902718> <code><ly-as-16902719>'Color'</ly-as-16902719></code>.</p>
   </div>
 {% else %}
-  <div class="swatch {% if product.type == 'Puzzle' %}sw-size{% endif %} clearfix" data-option-index="{{ option_index }}">
+  <div id="swatchQuezzle" class="swatch {% if product.type == 'Puzzle' %}sw-size{% endif %} clearfix" data-option-index="{{ option_index }}">
     <div class="header">Choose {{ swatch }}:</div>
     <div class="swatch_container">
       {%- assign values = '' -%}
@@ -67,12 +67,53 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
             <img class="crossed-out" src="{% comment %}ly_asset_replace_for_[ 'soldout-1.png' | asset_url ]_begin{% endcomment %}{% assign ly_asset = 'soldout-1.png' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}" />
           </label>
         {%- else -%}
-        <label style="height: 100% !important;display: flex;flex-wrap: nowrap;flex-direction: row;align-items: center;justify-content: space-around;align-content: center;" for="swatch-{{ option_index }}-{{ value | handle }}-{{ section.id }}">
+        <label style="height: 100% !important;display: flex;flex-wrap: nowrap;{% if product.handle contains "quezzle" %}flex-direction: column;{% else %}flex-direction: row;{% endif %}align-items: center;justify-content: space-around;align-content: center;" for="swatch-{{ option_index }}-{{ value | handle }}-{{ section.id }}">
           {%- if size_count == 3 -%}
             <div class="product__labels most-popular-label">
                 <span class="product__label product__label--most-popular">most popular</span>
             </div>
           {%- endif -%}
+          {% if product.handle contains "quezzle" %}
+            <div class="quezzle-grid-sec" id="scroll-top">
+              <div class="quezzle-grid-info">
+                <div class="quezzle-grid-fig">{{ variant.image.src | img_url: '300x' | img_tag: 'alternate text' }}</div>
+                <h4>{{ variant.title }}</h4>
+                {%- case size_count -%}
+                  {%- when 1 -%}
+                  <p class="bg-txt">Please check basic Quezzle mechanics</p>
+                  <ul class="light-list">
+                    <li>750 pieces </li>
+                    <li>36 x 25 cm — 3 pcs</li>
+                    <li>3D-figurine — 3 pcs</li>
+                  </ul>
+                  {%- when 2 -%}
+                  <p class="bg-txt">Buy up to a complete set and start the main quest</p>
+                  <ul class="light-list">
+                    <li>750 pieces </li>
+                    <li>36 x 25 cm — 3 pcs</li>
+                    <li>3D-figurine — 3 pcs</li>
+                    <li>30 additional tasks</li>
+                    <li>5 mazes</li>
+                  </ul>
+                  {%- when 3 -%}                  
+                  <p class="bg-txt">All of 4 parts together open the story line — 12-step quest</p>
+                  <ul class="light-list">
+                    <li>750 pieces </li>
+                    <li>36 x 25 cm — 3 pcs</li>
+                    <li>3D-figurine — 3 pcs</li>
+                    <li>30 additional tasks</li>
+                    <li>5 mazes</li>
+                    <li>6 mini-puzzles</li>
+                    <li>4 storyline mazes</li>
+                  </ul>
+                {%- endcase -%}
+                <div class="quezzle-grid-price">
+                  <span><strike>{{variant.compare_at_price | money }}</strike></span>
+                  <strong>{{variant.price | money }}</strong>
+                </div>
+              </div>
+            </div>
+          {% else %}
           <div class="indoor-block">
             <div class="size-label">
               <div class="size">
@@ -88,33 +129,33 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
                 {%- endcase -%}
               </div>
             </div>
-          <div class="sw_content_outer">
-            <div class="sw_image_outer">
-                {%- case size_count -%}
-                  {%- when 2 -%}
-                  <span class="sw_badge">2x bigger</span>
-                  {%- when 3 -%}
-                  <span class="sw_badge">3x bigger</span>
-                  {%- when 4 -%}
-                  <span class="sw_badge">7x bigger</span>
-                {%- endcase -%}
-            </div>
-            <div class="sw_var_price">
-              {%- if variant.compare_at_price > variant.price -%}
-                {%- if discount_amount < 1 -%}
-                  <span class="sw_com_price">{{variant.price | money }}</span>
-                {%- else -%}
-                  <span class="sw_com_price">{{variant.compare_at_price | money }}</span>
+            <div class="sw_content_outer">
+              <div class="sw_image_outer">
+                  {%- case size_count -%}
+                    {%- when 2 -%}
+                    <span class="sw_badge">2x bigger</span>
+                    {%- when 3 -%}
+                    <span class="sw_badge">3x bigger</span>
+                    {%- when 4 -%}
+                    <span class="sw_badge">7x bigger</span>
+                  {%- endcase -%}
+              </div>
+              <div class="sw_var_price">
+                {%- if variant.compare_at_price > variant.price -%}
+                  {%- if discount_amount < 1 -%}
+                    <span class="sw_com_price">{{variant.price | money }}</span>
+                  {%- else -%}
+                    <span class="sw_com_price">{{variant.compare_at_price | money }}</span>
+                  {% endif %}
                 {% endif %}
-              {% endif %}
-              <span class="sw_m_price">{{variant.price | times: discount_amount | money }}</span>
+                <span class="sw_m_price">{{variant.price | times: discount_amount | money }}</span>
+              </div>
+              {%- assign opt_parametr = value | split: '—' -%}
+              <span class="sw_val">{{ opt_parametr[0] }} {{opt_parametr[1]}}</span>
+              <span class="sw_val">{{ value | split: '—' | last }}</span>
             </div>
-            {%- assign opt_parametr = value | split: '—' -%}
-            <span class="sw_val">{{ opt_parametr[0] }} {{opt_parametr[1]}}</span>
-            <span class="sw_val">{{ value | split: '—' | last }}</span>
           </div>
-      </div>
-      
+          {% endif %}
         </label>
         {%- else -%}
           <label for="swatch-{{ option_index }}-{{ value | handle }}-{{ section.id }}">
@@ -227,39 +268,261 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
   }
 
 .swatch-element:nth-child(1) .size {
-	width:38px;
-	height: 38px;
+  width:38px;
+  height: 38px;
 }
 
 .swatch-element:nth-child(2) .size {
-	width:48px;
-	height: 48px;
-	font-weight: bold;
+  width:48px;
+  height: 48px;
+  font-weight: bold;
 }
 
 .swatch-element:nth-child(3) .size {
-	width:58px;
-	height: 58px;
+  width:58px;
+  height: 58px;
 }
 
 .swatch-element:nth-child(3) .size div span:first-child,  .swatch-element:nth-child(4) .size div span:first-child{
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .swatch-element:nth-child(4) .size {
-	width: 88px;
-	height: 88px;
+  width: 88px;
+  height: 88px;
 }
 
 .swatch-element:nth-child(2) {
-	column-gap: 27px
+  column-gap: 27px
 }
 
 .swatch-element:nth-child(3) {
-	column-gap: 22px
+  column-gap: 22px
 }
 
 .sw-size .swatch_container .swatch-element label:nth-child(4) {
-	column-gap: 17px
+  column-gap: 17px
 }
+{% if product.handle contains "quezzle" %}
+  .swatch .swatch-element{
+    flex: 0 1 33%;
+    max-width: 33.33%;
+    height: auto;
+  }
+  .sw-size .swatch_container .swatch-element label{
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  .swatch-element input:checked + label .quezzle-grid-sec{
+    border-color: #FF7607;
+  }
+  .swatch .quezzle-grid-sec{
+    padding: 0 11px 18px;
+  }
+  .swatch .quezzle-grid-fig{
+    margin-top: 0;
+    min-height: 126px;
+    padding: 10px 0;
+  }
+  .swatch .part-1 .quezzle-grid-fig{
+    padding-right: 40px;
+  }
+  .swatch .extention-pack-part-2-4 .quezzle-grid-fig{
+    padding-right: 10px;
+  }
+  .swatch .quezzle-grid-fig img{
+    display: block;
+    width: 100%;
+  }
+  .swatch .quezzle-grid-price{
+    position: static;
+  }
+  .swatch .quezzle-grid-info{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .swatch .quezzle-grid-info h4{
+    min-height: 40px;
+  }
+  .swatch .quezzle-grid-price{
+    margin-top: auto;
+  }
+  .swatch .quezzle-grid-info .bg-txt{
+    background: #FF7607;
+    line-height: 1.5;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .swatch .quezzle-grid-info ul.light-list{
+    max-width: none;
+  }
+  span.qtyplus,
+  span.qtyminus{
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  span.qtyminus::before{
+    content: '<';
+  }
+  span.qtyplus::before{
+    content: '>';
+  }
+  .qty_selector svg.icon{
+    display: none;
+  }
+  #FeaturedImageZoom-product-template-21324044992560-wrapper{
+    max-width: 400px;
+  }
+  @media ( max-width: 1199px ) {
+    .swatch .quezzle-grid-fig{
+      min-height: 100px;
+    }
+  }
+  @media ( max-width: 1023px ) {
+    .swatch .swatch-element{
+      flex: 0 1 50%;
+      max-width: 50%;
+    }
+    .product-video-grid .grid__item{
+      width: auto;
+    }
+    .product-video-sec{
+      height: auto;
+      margin-bottom: 19px;
+    }
+    .product-video-grid .grid__item br{
+      display: none;
+    }
+    .product-video-sec.d-flex{
+      flex-direction: column;
+    }
+    .product-video-sec.d-flex .product-video-info{
+      max-width: none;
+    }
+    .single-quezzle-grid .grid__item{
+      width: auto;
+      margin-top: 100px;
+    }
+    .single-quezzle-grid{
+      margin-top: 0;
+    }
+    .single-quezzle-bg-sec{
+      display: block;
+    }
+    .single-quezzle-bg-right{
+      padding-left: 0;
+    }
+    .single-quezzle-bg-left{
+      max-width: none;
+      margin-bottom: 30px;
+    }
+    .single-quezzle-list{
+      padding-top: 12px;
+    }
+    .single-quezzle-bg-left > img{
+      width: 100%;
+      margin: 0;
+    }
+    .single-quezzle-sec p{
+      font-size: 16px;
+      position: relative;
+    }
+    .single-quezzle-sec{
+      padding-bottom: 0;
+    }
+    .swatch .quezzle-grid-info .bg-txt {
+      min-height: 65px;
+    }
+    .swatch .complete-buy .quezzle-grid-info .bg-txt{
+      font-size: 12px;
+    }
+    .swatch .quezzle-grid-fig{
+      min-height: 125px;
+    }
+    
+  }
+  @media ( max-width: 767px ) {
+    .swatch .quezzle-grid-info h4{
+      font-size: 26px;
+      text-align: left;
+      margin-left: 22px;
+    }
+    .swatch .swatch-element{
+      flex: 0 1 100%;
+      max-width: none;
+    }
+    .swatch .quezzle-grid-sec{
+      width: 99%;
+    }
+    .single-quezzle-sec > img{
+      margin-bottom: -30px;
+      margin-top: -28px;
+    }
+    .swatch .quezzle-grid-fig {
+      min-height: inherit;
+      margin-left: 20px;
+    }
+
+    .quezzle-grid-info h4 {
+      min-height: inherit;
+    }
+    .quezzle-grid-info .bg-txt {
+      min-height: inherit;
+    }
+    .complete-buy .quezzle-grid-price{
+      bottom: 77px;
+    }
+    .swatch .quezzle-grid-info ul.light-list{
+        padding: 0 15px;
+    }
+    .quezzle-grid-info ul.light-list{
+        font-size: 19px;
+    }
+    .complete-buy ul.light-list{
+      font-size: 13px;
+    }
+    .complete-buy .bg-txt{
+      font-size: 12px !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 40px;
+      text-align: center;
+    }
+    .complete-buy .quezzle-grid-price,.complete-buy .single-quezzle-price{
+      font-size: 20px;
+    }
+    .quezzle-grid-price, .single-quezzle-price{
+        font-size: 29px;
+        padding-left: 15px; 
+    }
+    .complete-buy .quezzle-grid-price strong,.complete-buy .single-quezzle-price strong{
+        font-size: 30px;
+    }
+    .quezzle-grid-price strong, .single-quezzle-price strong{
+        font-size: 45px;
+    }
+    .quezzle-grid-info .bg-txt{
+        font-size: 18px;
+    }
+    .product-video-bg-sec h3{
+        margin-bottom: 36px;
+    }
+    .product-video-bg-sec{
+        padding: 20px 8px 11px;
+    }
+    .swatch .part-1 .quezzle-grid-fig{
+      padding-right: 120px;
+    }
+    .swatch .extention-pack-part-2-4 .quezzle-grid-fig{
+      padding-right: 30px;
+    }
+  }
+{% endif %}
 </style>
