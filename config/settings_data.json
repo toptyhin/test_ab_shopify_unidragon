@@ -1653,6 +1653,7 @@
           },
           "5861f35d-b156-405e-a244-7f7dba7c8ed0": {
             "type": "product-item",
+            "disabled": true,
             "settings": {
               "product_item": "qbrix-poster",
               "product_title": "Qbrix",
