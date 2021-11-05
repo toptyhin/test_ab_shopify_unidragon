@@ -472,8 +472,12 @@
         flex-wrap: wrap;
         clear: both;
       }
+      .product-video-grid{
+        margin: 0 -8px;
+      }
       .product-video-grid .grid__item{
         float: none;
+        padding: 0 8px;
       }
       .product-video-sec.d-flex .product-video-fig{
         margin-bottom: -21px;
@@ -491,15 +495,8 @@
         text-align: center;
       }
       /*my style start */
-      .quezzle-grid-info p{
-        padding: 0 15px;
-      }
       .quezzle-grid-info ul.light-list{
-        padding: 0 15px;
-      }
-      .quezzle-grid-info ul.type-list{
-        padding: 0 15px;
-        min-height:74px;
+        padding: 0 10px;
       }
       .puzzle-quest-sec h3,
       .order-quezzel-sec h3{
@@ -520,7 +517,7 @@
         margin-bottom: -37px;
       }
       .puzzle-featured-banner{
-        margin-top: -43px;
+        margin-top: -65px;
       }
       .puzzle-featured-box{
         flex: 0 0 49%;
@@ -588,7 +585,7 @@
         padding-bottom: 18px;
       }
       .quzzel-featured-box{
-        padding: 57px 9px 9px;
+        padding: 30px 9px 9px;
         background: #FF7607;
         margin-bottom: 11px;
         flex: 0 0 49%;
@@ -612,7 +609,7 @@
         position: relative;
         z-index:55 ;     
         width: 176px;   
-        margin: 0 auto 9px;
+        margin: 0 auto 15px;
       } 
       .quzzel-featured-box p{ 
         font-weight: 400;
@@ -762,19 +759,17 @@
         border-bottom: 5px solid #F0F0F0;
     }
     .gadgets-featured-info h3{
-        max-width: 196px;
         margin: 0 auto 12px;
         font-weight: bold;
         font-size: 16px;
-        padding: 0 10px;
+        padding: 0 18px;
     }
     .gadgets-featured-info p{
-        max-width: 196px;
         margin: 0 auto;
         margin-bottom: 0;
         font-weight: normal;
         font-size: 14px;
-        padding: 0 10px;
+        padding: 0 18px;
     }
     .gadgets-featured-img img{
         margin-top: -10px;
@@ -807,7 +802,8 @@
         left: 27px;
     }
     .quzzel-featured-box-5 .number-img {
-        width: 38px;
+        width: 40px;
+        top: 18px;
     }
     .quzzel-featured-box-6 .number-img {
         width: 40px;
@@ -849,14 +845,14 @@
         margin-top: -150px;
     }
     .gadgets-featured-box.gadgets-featured-box6{
-        margin-top: -230px;
+        margin-top: -140px;
     }
 
     @media (max-width: 1199px){
-        .type-list{
-          min-height: 72px;
-        }
+      .basic-quiz .quezzle-grid-fig{
+        min-height: 140px;
       }
+    }
     @media (max-width: 1023px){
         .gadgets-screens-featured-2{
             margin-top: 0;
@@ -1004,10 +1000,6 @@
         .quezzle-grid-info .bg-txt{
           min-height: inherit;
         }
-        .type-list,
-        .quezzle-grid-info p:not(.bg-txt){
-          min-height: inherit;
-        }
         .puzzle-featured-img{
           margin-top: 0;
         }
@@ -1137,9 +1129,6 @@
                 max-width: 206px;
                 margin: 0 auto 23px;
             }
-            .quezzle-grid-info ul.type-list{
-                padding: 0 17px;
-            }
             .quezzle-grid-info ul.light-list{
                 padding: 0 17px;    
             }
@@ -1224,7 +1213,7 @@
         font-weight: 500;
         font-size: 14px;
         line-height: 175%;
-        padding: 68px 10px 12px;
+        padding: 80px 10px 12px;
       }
       .single-quezzle-list ul{
         margin: 0;
@@ -1302,7 +1291,7 @@
         color: #FF7607;
       }
       .single-quezzle-grid{
-        margin-top: 100px;
+        margin: 100px -8px 0;
       }
       .single-quezzle-grid.grid{
         display: flex;
@@ -1310,6 +1299,7 @@
       }
       .single-quezzle-grid .grid__item{
         float: none;
+        padding: 0 8px;
       }
       .quezzle-grid-sec{
         padding: 0 16px 18px;
@@ -1334,7 +1324,13 @@
         font-weight: 500;
         font-size: 12px;
         color: #333;
-        min-height: 75px;
+        margin-bottom: 0;
+      }
+      .info-box{
+        min-height: 85px;
+        margin: 0 16px 10px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #EBEBEB;
       }
       .quezzle-grid-info .bg-txt{
         background: #4D30FF;
@@ -1377,11 +1373,55 @@
         color: #333;
         margin-bottom: 21px;
         max-width: 60%;
-        min-height: 80px;
+        min-height: 85px;
         padding: 0 15px;
       }
-      .type-list{
-        padding: 0 15px;
+      @media (max-width: 1199px){
+        .info-box{
+          min-height: 95px;
+          margin: 0 7px 10px;
+        }
+        .quezzle-grid-info ul.light-list{
+          padding: 0 7px;
+        }
+        .quezzle-grid-info ul.light-list{
+          min-height: 100px;
+        }
+        .quzzel-featured-box-5 .quzzel-featured-img{
+          width: auto;
+        }
+        .quzzel-featured-box h4{
+          width: auto;
+          margin: 0 0 10px 10px;
+        }
+        .quzzel-featured-box-5 h4{
+          max-width: 125px;
+        }
+        .quzzel-featured-box p{
+          padding: 10px;
+        }
+        .gadgets-featured-box.gadgets-featured-box6{
+          margin-top: -170px;
+        }
+        .catchy-gift-right-inner h3{
+          padding: 0 10px 0 20px;
+        }
+      }
+      @media (max-width: 1023px){
+        .info-box,
+        .quezzle-grid-info .bg-txt,
+        .quezzle-grid-info ul.light-list{
+          min-height: inherit;
+        }
+        .quzzel-featured-box-5 h4{
+          max-width: 150px;
+        }
+        .gadgets-featured-box.gadgets-featured-box6{
+          margin-top: 0;
+        }
+        .single-quezzle-sec > img{
+          margin-top: 0;
+        }
       }
       @media (max-width:  767px){
         .quezzle-grid-info .quezzle-btn{
@@ -1390,9 +1430,65 @@
             margin: 0 17px;
             font-size: 20px;
         }
+        .info-box{
+          margin: 0 17px 10px;
+        }
+        .quezzle-grid-info ul.light-list{
+          padding: 0 17px;
+        }
         .quezzle-grid-info hr{
             width: auto;
             margin: 12px 17px 8px;
+        }
+        .quzzel-featured-box h4{
+          font-size: 20px;
+          margin-left: 30px;
+        }
+        .quzzel-featured-box p{
+          font-size: 16px;
+          padding: 20px 20px 20px 30px;
+        }
+        .gadgets-featured-info p{
+          font-size: 16px;
+        }
+        .product-video-info p,
+        .single-quezzle-bg-right li{
+          font-size: 14px;
+        }
+        .puzzle-featured-info p{
+          font-size: 16px;
+        }
+        .quezzle-grid-info h4{
+          font-size: 18px;
+        }
+        .quezzle-grid-info p:not(.bg-txt),
+        .quezzle-grid-info ul.type-list li{
+          font-size: 13px;
+        }
+        .number-img{
+          width: 25px;
+          top: 15px;
+        }
+        .quzzel-featured-box-2 .number-img {
+          top: 28px;
+          left: 25px;
+        }
+        .quzzel-featured-box-3 .number-img {
+          top: 50px;
+        }
+        .quzzel-featured-box-4 .number-img {
+          top: 20px;
+          width: 50px;
+        }
+        .quzzel-featured-box-5 .number-img {
+          top: 20px;
+          width: 50px;
+          left: 20px;
+        }
+        .quzzel-featured-box-5 .number-img {
+          top: 40px;
+          width: 50px;
+          left: 20px;
         }
       }
       
@@ -2147,8 +2243,9 @@
                   <div class="quezzle-grid-info complete-buy">
                     <h4>Part 1 of 4</h4>
                     <p class="bg-txt">Please check basic Quezzle mechanics</p>
-                    <p>250 colorful pieces bright jigsaw puzzle, 3D-constructor, several mini-missions and Quezzle basic mechanics. </p>
-                    <hr>
+                    <div class="info-box">
+                      <p>250 colorful pieces bright jigsaw puzzle, 3D-constructor, several mini-missions and Quezzle basic mechanics. </p>
+                    </div>                    
                     <ul class="light-list">
                       <li>750 pieces </li>
                       <li>36 x 25 cm — 3 pcs</li>
@@ -2177,13 +2274,14 @@
                   <div class="quezzle-grid-info complete-buy">
                     <h4>Parts 2, 3 and 4</h4>
                     <p class="bg-txt">Buy up to a complete set and start the main quest</p>
-                    <ul class="type-list">
-                      <li class="light-txt">Heavenly Dragon district</li>
-                      <li>Western side-streets district</li>
-                      <li>Cloudy sunset district</li>
-                      <li>Eastern square district</li>
-                    </ul>
-                    <hr>
+                    <div class="info-box">
+                      <ul class="type-list">
+                        <li class="light-txt">Heavenly Dragon district</li>
+                        <li>Western side-streets district</li>
+                        <li>Cloudy sunset district</li>
+                        <li>Eastern square district</li>
+                      </ul>
+                    </div>
                     <ul class="light-list">
                       <li>750 pieces </li>
                       <li>36 x 25 cm — 3 pcs</li>
@@ -2294,7 +2392,7 @@
                         <div class="quzzel-featured-img">
                             <img src="{{'explore-img.png' | asset_url}}" alt="IMG">
                         </div>
-                        <h4>Explore Cappadocia world</h4>
+                        <h4>Explore <br> Cappadocia world</h4>
                         <p>Take an imaginary walk along the side-streets and fly below the clouds on gas balloons</p>
                     </div>
                     <div class="quzzel-featured-box quzzel-featured-box-5">
@@ -2302,7 +2400,7 @@
                         <div class="quzzel-featured-img">
                             <img src="{{'loseyouleff-img.png' | asset_url}}" alt="IMG">
                         </div>
-                        <h4>Lose yourself in going through the main quest</h4>
+                        <h4>Lose yourself <br>in going <br>through the main <br>quest</h4>
                         <p>Go through mazes and complete additional tasks</p>
                     </div>
                     <div class="quzzel-featured-box quzzel-featured-box-6">
