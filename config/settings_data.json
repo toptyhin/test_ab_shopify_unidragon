@@ -1567,7 +1567,6 @@
           },
           "88ea7c3e-4b6a-4302-8348-9ceae2b0710d": {
             "type": "product-item",
-            "disabled": true,
             "settings": {
               "product_item": "quezzle",
               "product_title": "QUEZZLE",
