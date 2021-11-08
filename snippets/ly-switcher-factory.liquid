@@ -487,7 +487,7 @@
               {% else %}
                 {%- assign currencies = shop.enabled_currencies | reverse -%}
                 {% for currency in currencies %}
-                  <li key="{{ country.currency.iso_code }}"{% if currency == cart.currency %} class="current"{% endif %} style="{{ item_padding_style }}">
+                  <li key="{{ currency.iso_code }}"{% if currency == cart.currency %} class="current"{% endif %} style="{{ item_padding_style }}">
                     <a class="ly-custom-dropdown-list-element" href="#" data-currency="{{currency.iso_code}}"><span class="ly-inner-text">{{currency.iso_code}} {{currency.symbol}}</span></a>
                   </li>
                 {% endfor %}

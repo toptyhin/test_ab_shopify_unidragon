@@ -845,9 +845,11 @@
         for(var a=0; a<currencySelectSwitcher.length; a++) {
           currencySelectSwitcher[a].addEventListener('change', function(){
             var formType = 'currency';
+            var theValue = this.value;
             if(this.getAttribute('class').indexOf('ly-country-switcher') >= 0) formType = 'country_code';
             if(countryCodeField && this.getAttribute('class').indexOf('ly-currency-switcher') >= 0) countryCodeField.remove();
-            currencySwitcherForm.querySelector('input[name="'+formType+'"]').value = this.value;
+            if(formType === 'currency') theValue = this.value.split(' ')[0];
+            currencySwitcherForm.querySelector('input[name="'+formType+'"]').value = theValue;
             currencySwitcherForm.submit();
           });
         }
@@ -1028,6 +1030,7 @@
       }
       if(element.classList.contains('ly-currency-switcher')) {
         _this.el.currencyField.value = entry.getAttribute('data-currency');
+        _this.el.countryCodeField.value = '';
         valueToSelect = entry.getAttribute('data-currency');
       }
 

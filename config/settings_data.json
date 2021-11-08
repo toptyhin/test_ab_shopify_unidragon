@@ -154,7 +154,7 @@
     "enable_timer_reset_every_day": "23:59:59",
     "enable_timer_stg_custom": 1500,
     "enable_inventory_stock_number": "enable_stock_number_random",
-    "share_image": "",
+    "share_image": "shopify:\/\/shop_images\/unidragon-wooden-puzzle-jigsaw-puzzle-for-adult-lovely-tiger-m01_720x_387072bc-1dca-4df7-9ea6-9e4d768c240a.jpg",
     "social_title": "Follow Us",
     "share_facebook": true,
     "share_twitter": true,
@@ -449,6 +449,8 @@
           "show_collection_image": true,
           "enable_parallax": true,
           "enable_video": true,
+          "enable_external_video": false,
+          "external_video": "",
           "video_bg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0291\/1322\/1168\/files\/fon_1.mp4?v=1631176999",
           "show_vendor": false,
           "sort_enable": false,
@@ -1563,6 +1565,18 @@
               "button_text": "Go to directory"
             }
           },
+          "88ea7c3e-4b6a-4302-8348-9ceae2b0710d": {
+            "type": "product-item",
+            "settings": {
+              "product_item": "quezzle",
+              "product_title": "QUEZZLE",
+              "product_item_text": "More than just a puzzle",
+              "product_description": "<ul>\n                <li>Quest + Puzzle = Quezzle<\/li>\n                <li>Look and find out secrets<\/li>\n              <\/ul>",
+              "product_image": "shopify:\/\/shop_images\/unidragon-wooden-puzzle-jigsaw-puzzle-for-adult-quezzle-amazing-cappadocia-set-01.jpg",
+              "product_hover_image": "shopify:\/\/shop_images\/unidragon-wooden-puzzle-jigsaw-puzzle-for-adult-quezzle-amazing-cappadocia-set-01.jpg",
+              "button_text": "Go to directory"
+            }
+          },
           "286e7868-2be8-4f0d-94fc-85dd820d7e97": {
             "type": "collection",
             "settings": {
@@ -1638,6 +1652,7 @@
           },
           "5861f35d-b156-405e-a244-7f7dba7c8ed0": {
             "type": "product-item",
+            "disabled": true,
             "settings": {
               "product_item": "qbrix-poster",
               "product_title": "Qbrix",
@@ -1676,6 +1691,7 @@
         },
         "block_order": [
           "8e53cb73-e853-45ab-bc83-43b73caa7e4a",
+          "88ea7c3e-4b6a-4302-8348-9ceae2b0710d",
           "286e7868-2be8-4f0d-94fc-85dd820d7e97",
           "22786e4f-ddd8-4437-a485-f7c696e4897c",
           "296dfcc3-67ca-4c51-b1f5-94443532230f",
