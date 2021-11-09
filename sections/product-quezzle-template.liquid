@@ -110,7 +110,7 @@
         .product-single__meta {font-family: 'Poppins';}
         .banner-inspirational-gift {
           background-color: black;
-          background-image: url({{'banner-inspirational-gift_bg.png' | asset_url}});
+          background-image: url({{'banner-inspirational-gift_bg.png' | asset_url }});
           background-size: cover;
           height: 400px;
           color: #ffffff;
@@ -144,7 +144,7 @@
         }
         .banner-decorate-walls {
           margin-top: 40px;
-          background-image: url({{'banner-decorate-walls_mob_bg.png' | asset_url}});
+          background-image: url({{'banner-decorate-walls_mob_bg.png' | asset_url }});
           background-size: cover;
           background-position: left;
           height: 350px;
@@ -236,7 +236,7 @@
           }
           .banner-decorate-walls {
             height: 420px;
-            background-image: url({{'banner-decorate-walls_bg.png' | asset_url}});
+            background-image: url({{'banner-decorate-walls_bg.png' | asset_url }});
           }
           .banner-decorate-walls_header {
             width: 395px;
@@ -393,7 +393,6 @@
       {% if section.settings.enable_sticky %}var eblstcky = true;{% else %}var eblstcky = false;{% endif %}{% if section.settings.enable_payment_button %}var ebl_pay_but = true;var addToCartBtnLabel_1 = "{{ 'products.dynamic_checkout_buttons.add_to_cart_text_when_dynamic_checkout_buttons_enable' | t }}";{% else %}var ebl_pay_but = false;var addToCartBtnLabel_1 = "{{ 'products.product.add_to_cart' | t }}";{% endif %}{% if section.settings.visitor_counter_enable %}var visitorcountr = true;{% else %}var visitorcountr = false;{% endif %}
     </script>
     
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
       <script type="text/javascript">
         jQuery(document).ready(function($) {
           $(".quezzle-btn").click(function() {
@@ -803,10 +802,6 @@
       .destop-hide{
           display: none;
       }
-      .basic-quiz .quezzle-grid-fig{
-          max-width: 119px;
-          margin: -70px  auto 0;
-      }
       .basic-quiz-2 .quezzle-grid-fig{
           max-width: 200px;
       }
@@ -851,7 +846,7 @@
               width: 100%;
           }
           .basic-quiz .quezzle-grid-fig{
-              max-width: 150px;
+              max-width: 200px;
               margin: -70px  auto 0;
           }
           .basic-quiz-2 .quezzle-grid-fig{
@@ -1295,7 +1290,6 @@
           justify-content: space-between;
         }
         .quezzle-grid-fig{
-          position: relative;
           margin-top: -70px;
         }
         .quezzle-grid-info{
@@ -1639,11 +1633,6 @@
               </button>
             {% endif %}
           </div>
-            {%- if product.metafields.link.customer-review-photo -%}
-              {%- render 'customer-review-photo' with product -%}
-            {%- endif -%}
-                {%- include 'getsocial-inline-bar' -%}
-            <!-- Swym button on product pages -->
       </div>
         <div class="grid__item medium-up--one-half quezzle-right">
           <div class="product-single__meta">
@@ -1804,7 +1793,7 @@
               {% if product.variants.size > 1 %}
                 <div class="swatch_options">
                   {% for option in product.options %}
-                    {% include 'swatch' with option %}
+                    {% include 'swatch-quezzle' with option %}
                   {% endfor %} 
                 </div>
               {% endif %}
@@ -1813,7 +1802,7 @@
                 {% if product.variants.size > 1 %}
                     <div class="swatch_options">
                       {% for option in product.options %}
-                        {% include 'swatch' with option %}
+                        {% include 'swatch-quezzle' with option %}
                       {% endfor %} 
                     </div>
                 {% endif %}
@@ -1954,7 +1943,7 @@
                       <p>Dragons, gas ballons and animals-like figurines piece by piece add up to Cappadocia illustration</p>
                     </div>
                     <div class="product-video-fig">
-                      <a data-fancybox href="https://player.vimeo.com/video/609269615"><img src="{{'product-video-img1.png' | asset_url}}" alt="IMG"></a>
+                      <a data-fancybox href="https://player.vimeo.com/video/609269615"><img src="{{'product-video-img1.png' | asset_url }}" alt="IMG"></a>
                     </div>
                   </div>
                 </div>
@@ -1965,7 +1954,7 @@
                       <p>Quezzle is an illustration with detailed drawing, hundreds of stories and characters.</p>
                     </div>
                     <div class="product-video-fig">
-                      <a data-fancybox href="https://player.vimeo.com/video/609268605"><img src="{{'product-video-img2.png' | asset_url}}" alt="IMG"></a>
+                      <a data-fancybox href="https://player.vimeo.com/video/609268605"><img src="{{'product-video-img2.png' | asset_url }}" alt="IMG"></a>
                     </div>
                   </div>
                 </div>
@@ -1979,8 +1968,8 @@
                     </div>
                     <div class="product-video-fig">
                       <a data-fancybox href="https://player.vimeo.com/video/609269786">
-                          <img class="mobile-hide" src="{{'product-video-img3.png' | asset_url}}" alt="IMG">
-                          <img  class="destop-hide" src="{{'product-video-img3-mobiel.png' | asset_url}}" alt="IMG"></a>
+                          <img class="mobile-hide" src="{{'product-video-img3.png' | asset_url }}" alt="IMG">
+                          <img  class="destop-hide" src="{{'product-video-img3-mobiel.png' | asset_url }}" alt="IMG"></a>
                     </div>
                   </div>
                 </div>
@@ -1988,7 +1977,7 @@
                 <div class="grid__item one-whole">
                   <div class="product-video-bg-sec">
                     <h3>Meet Quezzle</h3>
-                    <a data-fancybox href="https://www.youtube.com/watch?v=9YaK6reb5vc"><img src="{{'product-video-img4.png' | asset_url}}" alt="IMG"></a>
+                    <a data-fancybox href="https://www.youtube.com/watch?v=9YaK6reb5vc"><img src="{{'product-video-img4.png' | asset_url }}" alt="IMG"></a>
                   </div>
                 </div>
                 <div class="grid__item one-whole"><br></div>
@@ -2000,20 +1989,20 @@
                   <div class="puzzle-featured-box">
                       <div class="puzzle-featured-info puzzle-featured-box-1">
                           <div class="puzzle-featured-img">
-                              <img src="{{'unique-pices.png' | asset_url}}" alt="">
+                              <img src="{{'unique-pices.png' | asset_url }}" alt="">
                           </div>
                           <p>1000 unique pieces. More interesting than a usual jigsaw puzzle!</p>
                       </div>
                       <div class="puzzle-featured-info puzzle-featured-box-3">
                           <div class="puzzle-featured-img">
-                              <img src="{{'main-quest.png' | asset_url}}" alt="">
+                              <img src="{{'main-quest.png' | asset_url }}" alt="">
                           </div>
                           <p>One main quest. 4 parts. 50 tasks.</p>
                       </div>
                       <div class="puzzle-featured-box puzzle-featured-box-5">
                           <div class="puzzle-featured-info">
                               <div class="puzzle-featured-img">
-                                  <img src="{{'colorfull-img.png' | asset_url}}" alt="">
+                                  <img src="{{'colorfull-img.png' | asset_url }}" alt="">
                               </div>
                               <p>Colorful image with a detailed drawing</p>
                           </div>
@@ -2022,14 +2011,14 @@
                   <div class="puzzle-featured-box puzzle-featured-right-box">
                       <div class="puzzle-featured-info puzzle-featured-box-2">
                           <div class="puzzle-featured-img">
-                              <img src="{{'mini-figurines-img.png' | asset_url}}" alt="">
+                              <img src="{{'mini-figurines-img.png' | asset_url }}" alt="">
                           </div>
                           <p>6 secret puzzles and 4 mini-figurines</p>
                       </div>
                       <div class="puzzle-featured-box puzzle-featured-box-4 mr-bottom">
                           <div class="puzzle-featured-info">
                               <div class="puzzle-featured-img">
-                                  <img src="{{'game-time-img.png' | asset_url}}" alt="">
+                                  <img src="{{'game-time-img.png' | asset_url }}" alt="">
                               </div>
                               <p>8+ hours of a game time</p>
                           </div>
@@ -2037,7 +2026,7 @@
                       <div class="puzzle-featured-box puzzle-featured-box-6 mr-bottom">
                           <div class="puzzle-featured-info">
                               <div class="puzzle-featured-img">
-                                  <img src="{{'wooden-rack.png' | asset_url}}" alt="">
+                                  <img src="{{'wooden-rack.png' | asset_url }}" alt="">
                               </div>
                               <p>Collectors wooden box for your collection</p>
                           </div>
@@ -2047,7 +2036,7 @@
             </div>
             <div class="order-quezzel-sec">
                  <div class="puzzle-featured-banner">
-                      <img src="{{'order-quezzle-image.png' | asset_url}}" alt="">
+                      <img src="{{'order-quezzle-image.png' | asset_url }}" alt="">
                   </div>
                   <h3>Order Quezzle now</h3>
             </div>
@@ -2056,7 +2045,7 @@
                 <div class="grid__item medium-up--one-half">
                   <div class="quezzle-grid-sec basic-quiz">
                     <div class="quezzle-grid-fig">
-                      <img src="{{'single-1a-product-quezzle.png' | asset_url}}" alt="IMG">
+                      <img src="{{'single-1a-product-quezzle.png' | asset_url }}" alt="IMG">
                     </div>
                     <div class="quezzle-grid-info complete-buy">
                       <h4>Part 1 of 4</h4>
@@ -2087,7 +2076,7 @@
                 <div class="grid__item medium-up--one-half">
                   <div class="quezzle-grid-sec basic-quiz basic-quiz-2">
                     <div class="quezzle-grid-fig">
-                      <img src="{{'single-1b-product-quezzle.png' | asset_url}}" alt="IMG">
+                      <img src="{{'single-1b-product-quezzle.png' | asset_url }}" alt="IMG">
                     </div>
                     <div class="quezzle-grid-info complete-buy">
                       <h4>Parts 2, 3 and 4</h4>
@@ -2127,7 +2116,7 @@
               <div class="single-quezzle-bg-wrap">
                 <div class="single-quezzle-bg-sec">
                   <div class="single-quezzle-bg-left">
-                    <img src="{{'single-2-product-quezzle.png' | asset_url}}" alt="IMG">
+                    <img src="{{'single-2-product-quezzle.png' | asset_url }}" alt="IMG">
                     <div class="single-quezzle-list md-none">
                       <ul>
                         <li>Heavenly Dragon district</li>
@@ -2178,53 +2167,53 @@
               </div>
               <div class="quzzel-mechnices">
                   <div class="quzzel-mechnices-img">
-                      <img src="{{'quzzel-mechnices-img.png' | asset_url}}" alt="IMG">      
+                      <img src="{{'quzzel-mechnices-img.png' | asset_url }}" alt="IMG">      
                   </div>
                   <div class="quzzel-mechnices-featured">
                       <div class="quzzel-featured-box quzzel-featured-box-1">
-                          <img class="number-img" src="{{'number-img1.png' | asset_url}}" alt="IMG">
+                          <img class="number-img" src="{{'number-img1.png' | asset_url }}" alt="IMG">
                           <div class="quzzel-featured-img">
-                              <img src="{{'checkquzzel.png' | asset_url}}" alt="IMG">
+                              <img src="{{'checkquzzel.png' | asset_url }}" alt="IMG">
                           </div>
                           <h4>Please check Quezzle basic mechanics</h4>
                           <p>It's so easy to let your eyes linger at the illustration, but it's high time to do the puzzle </p>
                       </div>
                       <div class="quzzel-featured-box quzzel-featured-box-2">
-                          <img class="number-img" src="{{'number-img2.png' | asset_url}}" alt="IMG">
+                          <img class="number-img" src="{{'number-img2.png' | asset_url }}" alt="IMG">
                           <div class="quzzel-featured-img">
-                              <img src="{{'compile3d1.png' | asset_url}}" alt="IMG">
+                              <img src="{{'compile3d1.png' | asset_url }}" alt="IMG">
                           </div>
                           <h4>Compile <br> 3D-figurines</h4>
                           <p>Having extra details left? They are Unidragon's friends</p>
                       </div>
                       <div class="quzzel-featured-box quzzel-featured-box-3">
-                          <img class="number-img" src="{{'number-img3.png' | asset_url}}" alt="IMG">
+                          <img class="number-img" src="{{'number-img3.png' | asset_url }}" alt="IMG">
                           <div class="quzzel-featured-img">
-                              <img src="{{'compile3d2.png' | asset_url}}" alt="IMG">
+                              <img src="{{'compile3d2.png' | asset_url }}" alt="IMG">
                           </div>
                           <h4>Compile <br> 3D-figurines</h4>
                           <p>Don't get lost in Quezzle story-lines!</p>
                       </div>
                       <div class="quzzel-featured-box quzzel-featured-box-4">
-                          <img class="number-img" src="{{'number-img4.png' | asset_url}}" alt="IMG">
+                          <img class="number-img" src="{{'number-img4.png' | asset_url }}" alt="IMG">
                           <div class="quzzel-featured-img">
-                              <img src="{{'explore-img.png' | asset_url}}" alt="IMG">
+                              <img src="{{'explore-img.png' | asset_url }}" alt="IMG">
                           </div>
                           <h4>Explore <br> Cappadocia world</h4>
                           <p>Take an imaginary walk along the side-streets and fly below the clouds on gas balloons</p>
                       </div>
                       <div class="quzzel-featured-box quzzel-featured-box-5">
-                          <img class="number-img" src="{{'number-img5.png' | asset_url}}" alt="IMG">
+                          <img class="number-img" src="{{'number-img5.png' | asset_url }}" alt="IMG">
                           <div class="quzzel-featured-img">
-                              <img src="{{'loseyouleff-img.png' | asset_url}}" alt="IMG">
+                              <img src="{{'loseyouleff-img.png' | asset_url }}" alt="IMG">
                           </div>
                           <h4>Lose yourself <br>in going <br>through the main <br>quest</h4>
                           <p>Go through mazes and complete additional tasks</p>
                       </div>
                       <div class="quzzel-featured-box quzzel-featured-box-6">
-                          <img class="number-img" src="{{'number-img6.png' | asset_url}}" alt="IMG">
+                          <img class="number-img" src="{{'number-img6.png' | asset_url }}" alt="IMG">
                           <div class="quzzel-featured-img">
-                              <img src="{{'adventurr.png' | asset_url}}" alt="IMG">
+                              <img src="{{'adventurr.png' | asset_url }}" alt="IMG">
                           </div>
                           <h4>The adventure will go on in augmented reality!</h4>
                           <p>Quezzle is a bright catchy gift </p>
@@ -2239,7 +2228,7 @@
                       </div>
                       <div class="catchy-gift-right">
                           <div class="catchy-gift-right-inner">
-                              <img src="{{'surprise-img.jpg' | asset_url}}" alt="IMG">
+                              <img src="{{'surprise-img.jpg' | asset_url }}" alt="IMG">
                               <h3>Surprise everybody and let them gather round you at the party</h3>
                           </div>
                       </div>
@@ -2251,7 +2240,7 @@
                       </div>
                       <div class="catchy-gift-right">
                           <div class="catchy-gift-right-inner">
-                              <img src="{{'unforgeabegift.jpg' | asset_url}}" alt="IMG">
+                              <img src="{{'unforgeabegift.jpg' | asset_url }}" alt="IMG">
                               <h3>Unforgettable gift for the New Year and Christmas</h3>
                           </div>
                       </div>
@@ -2263,7 +2252,7 @@
                       </div>
                       <div class="catchy-gift-right">
                           <div class="catchy-gift-right-inner">
-                              <img src="{{'good-play-img.jpg' | asset_url}}" alt="IMG">
+                              <img src="{{'good-play-img.jpg' | asset_url }}" alt="IMG">
                               <h3>Good to play together with kids</h3>
                           </div>
                       </div>
@@ -2275,7 +2264,7 @@
                       </div>
                       <div class="catchy-gift-right">
                           <div class="catchy-gift-right-inner">
-                              <img src="{{'surprise-img2.png' | asset_url}}" alt="IMG">
+                              <img src="{{'surprise-img2.png' | asset_url }}" alt="IMG">
                               <h3>A reason to gather all the family together</h3>
                           </div>
                       </div>
@@ -2283,7 +2272,7 @@
               </div>
               <div class="gadgets-screens-wrap">
                   <div class="gadgets-featured-right gadgets-right-box1"> 
-                      <img src="{{'mine-gaget-right.png' | asset_url}}" alt="IMG">
+                      <img src="{{'mine-gaget-right.png' | asset_url }}" alt="IMG">
                   </div>
                   <div class="gadgets-screens-featured">   
                       <div class="gadgets-screens-featured-2">    
@@ -2293,12 +2282,12 @@
                                   <p>Let your eyes have a rest. Your smartphone should be waiting.</p> 
                               </div>
                               <div class="gadgets-featured-img">
-                                  <img src="{{'gaget-screen1.png' | asset_url}}" alt="IMG">
+                                  <img src="{{'gaget-screen1.png' | asset_url }}" alt="IMG">
                               </div>
                           </div>
                           <div class="gadgets-featured-box gadgets-featured-box2 ">
                               <div class="gadgets-featured-img">
-                                  <img src="{{'releaf-store.png' | asset_url}}" alt="IMG">
+                                  <img src="{{'releaf-store.png' | asset_url }}" alt="IMG">
                               </div>
                               <div class="gadgets-featured-info">
                                   <h3>Have a playful time</h3>
@@ -2311,7 +2300,7 @@
                                   <p>Quezzle is fascinating for the whole family anf friends! Compile the puzzle and go through the quest together! </p> 
                               </div>
                               <div class="gadgets-featured-img">
-                                  <img src="{{'chanange-yourself.png' | asset_url}}" alt="IMG">
+                                  <img src="{{'chanange-yourself.png' | asset_url }}" alt="IMG">
                               </div>
                           </div>
                       </div>
@@ -2322,12 +2311,12 @@
                                   <p>Quezzle will take you off your daily routine</p> 
                               </div>
                               <div class="gadgets-featured-img">
-                                  <img src="{{'play-full.jpg' | asset_url}}" alt="IMG">
+                                  <img src="{{'play-full.jpg' | asset_url }}" alt="IMG">
                               </div>
                           </div>
                           <div class="gadgets-featured-box gadgets-featured-box5 mr-top">
                               <div class="gadgets-featured-img">
-                                  <img src="{{'happy-time.png' | asset_url}}" alt="IMG">
+                                  <img src="{{'happy-time.png' | asset_url }}" alt="IMG">
                               </div>
                               <div class="gadgets-featured-info">
                                   <h3>Challenge yourself</h3>
@@ -2340,21 +2329,21 @@
                                   <p>And not only motor skills: neurologists consider puzzles to be an excellent way to make your brain work better </p> 
                               </div>
                               <div class="gadgets-featured-img">
-                                  <img src="{{'moter-skils.png' | asset_url}}" alt="IMG">
+                                  <img src="{{'moter-skils.png' | asset_url }}" alt="IMG">
                               </div>
                           </div>      
                       </div>
                   </div>
                   <div class="gadgets-featured-box gadgets-featured-box6">
-                      <img src="{{'change-2.png' | asset_url}}" alt="IMG">
+                      <img src="{{'change-2.png' | asset_url }}" alt="IMG">
                   </div>
               </div>
               <div class="single-quezzle-sec">
                 <h3>One last step left</h3>
                 <p><strong>Start learning Cappadocia world right now together with Quezzle!</strong></p>
                 <p>Just go choose your own puzzles set and a fascinating journey is already waiting for you!</p>
-                <img class="mobile-hide" src="{{'single-last-quezzle.png' | asset_url}}" alt="IMG">
-                <img class="destop-hide" src="{{'single-last-quezzle-mobile.png' | asset_url}}" alt="IMG">
+                <img class="mobile-hide" src="{{'single-last-quezzle.png' | asset_url }}" alt="IMG">
+                <img class="destop-hide" src="{{'single-last-quezzle-mobile.png' | asset_url }}" alt="IMG">
                 <a href="#scroll-top">Buy now</a>
               </div>
 
