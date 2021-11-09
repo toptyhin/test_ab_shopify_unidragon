@@ -380,6 +380,7 @@
       }
       .getsocial {
         padding-top: 15px;
+        padding-bottom: 15px;
       }
       .getsocial.gs-inline-group.gs-big-counter {
           margin-bottom: 5px !important;
@@ -413,23 +414,7 @@
         });
       </script>
       <style type="text/css">
-      @import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;400;500;700&display=swap');
-        .quezzle-right{
-           font-family: 'Fira Sans Condensed', sans-serif;
-           font-weight: 400;
-        }
-        .quezzle-right div{
-          font-family: 'Fira Sans Condensed', sans-serif;
-        }
-        .quezzle-right h1,
-        .quezzle-right h2,
-        .quezzle-right h3,
-        .quezzle-right h4,
-        .quezzle-right h5,
-        .quezzle-right h6,
-        .quezzle-right p{
-          font-family: 'Fira Sans Condensed', sans-serif;
-        }
+
         .product-video-sec{
           background: #FFFFFF;
           border: 1px solid #EBEBEB;
@@ -1136,6 +1121,11 @@
                 display: block;
               }
           }
+          @media (max-width: 320px) {
+            .complete-set .single-quezzle-price {
+              right: 5px;
+            }
+          }
   
       }
         
@@ -1227,6 +1217,7 @@
           width: 6.09px;
           height: 6.09px;
           border-radius: 100%;
+          border: 1px solid #EBEBEB;
         }
         .single-quezzle-bg-right{
           padding-left: 30px;
@@ -1263,11 +1254,7 @@
           font-size: 18px;
         }
         .quezzle-grid-price{
-          position: absolute;
-          bottom: 70px;
-          right: 10px;
-          line-height: 1.1;
-          margin-left: 10px;
+          text-align: right;
         }
         .quezzle-grid-price > span,
         .single-quezzle-price > span{
@@ -1303,6 +1290,9 @@
           border: 1px solid #EBEBEB;
           height: 100%;
           position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
         }
         .quezzle-grid-fig{
           position: relative;
@@ -1314,8 +1304,7 @@
           font-weight: bold;
           font-size: 16px;
           color: #333;
-          min-height: 38px;
-          margin-left: 10px;
+          padding: 10px 0 0 15px;
         }
         .quezzle-grid-info p:not(.bg-txt){
           font-weight: 500;
@@ -1358,6 +1347,10 @@
           border-radius: 100%;
           background: #FF7607;
           top: 5px;
+          border: 1px solid #EBEBEB;
+        }
+        .quezzle-grid-info ul.type-list li.light-txt::before {
+          background: transparent;
         }
         .quezzle-grid-info ul.type-list li.light-txt{
           color: #BDBDBD;
@@ -1438,9 +1431,9 @@
               margin: 12px 17px 8px;
           }
           .quzzel-featured-box h4{
-            max-width: 125px;
+            max-width: 150px;
             font-size: 20px;
-            margin-left: 30px;
+            margin-left: 35px;
           }
           .quzzel-featured-box h4 br{
             display: none
@@ -1461,6 +1454,7 @@
           }
           .quezzle-grid-info h4{
             font-size: 18px;
+            text-align: center;
           }
           .quezzle-grid-info p:not(.bg-txt),
           .quezzle-grid-info ul.type-list li{
@@ -1494,12 +1488,18 @@
           .quzzel-featured-box{
             display: block;
             min-height: inherit;
+            margin: 0 auto 13px;
+            max-width: 100%;
           }
           .quzzel-featured-box-2{
             padding-top: 70px;
+            margin: 0 auto 13px;
+            max-width: 100%;
           }
           .quzzel-featured-box-3{
             padding-top: 60px;
+            max-width: 100%;
+            margin: 0 auto 13px;
           }
         }
         
