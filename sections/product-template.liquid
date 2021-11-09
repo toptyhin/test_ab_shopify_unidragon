@@ -9,7 +9,6 @@
     overflow: inherit;
   }
 }
-
     .bis-reset.bis-edge-left.bis-edge-top.bis-rotate-90 {
       display: none;
     }
@@ -400,9 +399,7 @@
     <meta itemprop="image" content="{{ product.featured_image.src | img_url: '800x' }}">
     <meta itemprop="productID" content="{{product.id }}">
     {%- liquid
-  
       assign current_variant = product.selected_or_first_available_variant
-  
         for item in cart.items
           if item.product.type == 'Puzzle'
             assign puzle_discount = puzle_discount | plus: item.quantity
@@ -557,7 +554,7 @@
                 <s id="ComparePrice-{{ section.id }}" style="color: #ff8e00;">{{ current_variant.price | money }}</s>
                 <span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single">
                   <span id="ProductPrice-{{ section.id }}" itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
-                    {{ current_variant.price | times: discount_amount | money    }}
+                    {{ current_variant.price | times: discount_amount | money }}
                   </span>
                   <span class="save_discount_pro">
                     <span class="per_discount">
@@ -573,7 +570,7 @@
                 <span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single">
                   <span id="ProductPrice-{{ section.id }}"
                         itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
-                    {{ current_variant.price | times: discount_amount | money    }}
+                    {{ current_variant.price | times: discount_amount | money }}
                   </span>
                   {% if section.settings.show_saved_amount %}
                   <!-- Dscount price in percentage  -->
@@ -1039,7 +1036,6 @@
   {% endunless %}
   <!-- enable random number-->
 
-  
   <!-- READ MORE BUTTON SCRIPT AND STYLE -->
   {% if section.settings.readmore_enable %}
     {{ 'readmore.min.js' | asset_url | script_tag }}
@@ -1052,7 +1048,6 @@
     </script>
   {% endif %}
   <!-- END READ MORE BUTTON SCRIPT AND STYLE -->
-  
 
   {%- if section.settings.enable_mobile_atc_button -%}
     {% include 'mobile-etc-button' %}
