@@ -2370,22 +2370,23 @@
                       {{ video |  video_tag }}
                     {% endif %}
                     {{ product.description | split: '<!-- additional video-->' | first }}
+                    {%- if product.description contains 'description_spoiler' -%}
                     <div id="see-more">{{ 'custome_text.button.see_more' | t }} &#709;</div>
+                    <script>$(document).ready(function () {
+                            $('.description_spoiler').addClass('read-more');
+                            $('#see-more').click(function () {
+                              if ($("#see-more")[0].innerHTML == "{{ 'custome_text.button.see_more' | t }} ˅") {$("#see-more")[0].innerHTML = "{{ 'custome_text.button.read_less' | t }} &#708;"} else {$("#see-more")[0].innerHTML = "{{ 'custome_text.button.see_more' | t }} &#709;"}
+                              $('.read-more').toggleClass('active');
+                            })
+                          })
+                    </script>
+                    {%- endif -%}
                     {%- assign additional_video = product.description | split: '<!-- additional video-->' | last -%}
                     {%- if product.description contains '<!-- additional video-->' -%}
                       <style>div#see-more {padding-bottom: 15px;}</style>
                       {{ additional_video }}
                     {%- endif -%}
                   </div>
-                  
-                  <script>$(document).ready(function () {
-                          $('.description_spoiler').addClass('read-more');
-                          $('#see-more').click(function () {
-                            if ($("#see-more")[0].innerHTML == "{{ 'custome_text.button.see_more' | t }} ˅") {$("#see-more")[0].innerHTML = "{{ 'custome_text.button.read_less' | t }} &#708;"} else {$("#see-more")[0].innerHTML = "{{ 'custome_text.button.see_more' | t }} &#709;"}
-                            $('.read-more').toggleClass('active');
-                          })
-                        })
-                  </script>
                 </div>
               </div>
 
