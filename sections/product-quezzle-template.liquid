@@ -2346,7 +2346,49 @@
                 <a href="#scroll-top">Buy now</a>
               </div>
 
-  
+              <div class="product-single__description rte" itemprop="description">
+                {% for block in section.blocks %}
+                  {% if block.type == 'icons-set-with-text' %}
+                    {%- render 'ud-product-description-icons-with-text' -%}
+                  {% endif %}
+                {% endfor %}
+      
+                {% assign product_desc = 'products.product_tab.product_tab_1' | t %}
+                {% if product_desc != blank and product.description != blank %}
+                <ul class="tabs">
+                  <li><a href="#tab-1">{{ 'products.product_tab.product_tab_1' | t }}</a></li>
+                </ul>
+                {% endif %}
+      
+                <div id="tab-1">
+                  <div class="product-description">
+                    {% assign video = product.media | where: "media_type", "external_video" | first %}
+                    {% if video != blank %}
+                      {{ video | external_video_tag }}
+                    {% else %}
+                      {% assign video = product.media | where: "media_type", "video" | first %}
+                      {{ video |  video_tag }}
+                    {% endif %}
+                    {{ product.description | split: '<!-- additional video-->' | first }}
+                    <div id="see-more">{{ 'custome_text.button.see_more' | t }} &#709;</div>
+                    {%- assign additional_video = product.description | split: '<!-- additional video-->' | last -%}
+                    {%- if product.description contains '<!-- additional video-->' -%}
+                      <style>div#see-more {padding-bottom: 15px;}</style>
+                      {{ additional_video }}
+                    {%- endif -%}
+                  </div>
+                  
+                  <script>$(document).ready(function () {
+                          $('.description_spoiler').addClass('read-more');
+                          $('#see-more').click(function () {
+                            if ($("#see-more")[0].innerHTML == "{{ 'custome_text.button.see_more' | t }} ˅") {$("#see-more")[0].innerHTML = "{{ 'custome_text.button.read_less' | t }} &#708;"} else {$("#see-more")[0].innerHTML = "{{ 'custome_text.button.see_more' | t }} &#709;"}
+                            $('.read-more').toggleClass('active');
+                          })
+                        })
+                  </script>
+                </div>
+              </div>
+              
             {% if section.settings.visitor_counter_enable %}
            
             <input type="hidden" value="{{section.settings.visitor_counter_number}}" id="min_max_number">
