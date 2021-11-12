@@ -24,13 +24,14 @@
   }
 
   {% endif %}
-
-  .grid__item.grid__item--collection-mandala-template.medium-up--one-half.small--one-half img,
-  .grid__item.grid__item--collection-mandala-template .reveal .hidden,
-  .grid__item.grid__item--collection-mandala-template.medium-up--one-half.small--one-half {
-        margin: 0 auto;
-        align-items: center;
-        display: flex;
+  @media only screen and (min-width:749px) {
+    .grid__item.grid__item--collection-mandala-template.medium-up--one-half.small--one-half img,
+    .grid__item.grid__item--collection-mandala-template .reveal .hidden,
+    .grid__item.grid__item--collection-mandala-template.medium-up--one-half.small--one-half {
+            margin: 0 auto;
+            align-items: center;
+            display: flex;
+        }
     }
     .grid__item.grid__item--collection-mandala-template .shop-now {
     position: absolute;
