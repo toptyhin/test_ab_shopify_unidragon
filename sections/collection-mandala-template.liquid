@@ -429,7 +429,7 @@
         {% for link in linklists[block.settings.link_menu].links %}
         <div class="grid__item {{ grid_item_width }} {{grid_mobile}}">
           {%- assign collection = link.object -%}
-          {% include 'collection-grid-item' %}          
+          {% include 'collection-noinstastory-grid-item' %}          
         </div>
         {% endfor %}
       </div>
