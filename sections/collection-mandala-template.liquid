@@ -1,0 +1,804 @@
+
+<style>
+  {% if section.settings.enable_parallax%}
+  .collection-hero__image {  
+    position: relative;
+    height: 40vh;
+    /*background-attachment: fixed;*/
+    background-position: center;
+    /*background-size: cover;*/
+    background-color: #241c42;
+  }
+  @media only screen and (max-width:749px) { 
+    .collection-hero__image {
+      height: 50vh;
+    }  
+    .collection-hero__image {
+      background-attachment: scroll; 
+    }
+  }
+  @media only screen and (min-width:749px) and (max-width:1024px) {
+    .collection-hero__image {
+      background-attachment: scroll;     
+    }
+  }
+
+  {% endif %}
+
+  .grid__item.grid__item--collection-mandala-template.medium-up--one-half.small--one-half img,
+  .grid__item.grid__item--collection-mandala-template .reveal .hidden,
+  .grid__item.grid__item--collection-mandala-template.medium-up--one-half.small--one-half {
+        margin: 0 auto;
+        align-items: center;
+        display: flex;
+    }
+    .grid__item.grid__item--collection-mandala-template .shop-now {
+    position: absolute;
+    margin: 0 auto;
+    bottom: 2px;
+    right: 0;
+    background-color: #ff862d;
+    color: #fff;
+    padding: 18px;
+    left: 0;
+    width: 120px;
+    }
+</style>
+
+{% case section.settings.grid %}
+{% when 2 %}
+{%- assign max_height = 530 -%}
+{% when 3 %}
+{%- assign max_height = 345 -%}
+{% when 4 %}
+{%- assign max_height = 250 -%}
+{% when 5 %}
+{%- assign max_height = 195 -%}
+{% endcase %}
+
+
+{%- assign limit = section.settings.grid | times: section.settings.rows -%}
+{% comment %}
+{% if section.settings.layout == 'grid' %}
+{% else %}
+{%- assign limit = 16 -%}
+{% endif %}
+{% endcomment %} 
+{% paginate collection.products by limit %}
+
+<div data-section-id="{{ section.id }}" data-section-type="collection-template">
+  <header class="collection-header">
+    {% if section.settings.show_collection_image and collection.image %}
+    <div class="collection-hero">
+        {%- if section.settings.enable_video -%}
+            <video autoplay muted loop playsinline id="myVideo" style="object-fit: cover;width: 100vw;">
+            <source src="{{ section.settings.video_bg }}" type="video/mp4">
+            </video>
+        {%- else -%}
+            <div class="collection-hero__image ratio-container lazyload js"
+                data-bgset="{% include 'bgset', image: collection.image %}"
+                data-sizes="auto"
+                data-parent-fit="cover"
+                style="background-image: url('{{ collection.image | img_url: '1600x' }});">
+            </div>
+            <noscript>
+            <div class="collection-hero__image" style="background-image: url({{ collection.image | img_url: '2048x600', crop: 'top' }});"></div>
+            </noscript>
+        {% endif %}
+      <div class="collection-hero__title-wrapper">
+        <div class="over_image_content page-width medium-up--text-left">
+          <h1 class="heading">
+            {%- if collection.metafields.text.collection-h1 -%}
+            {{ collection.metafields.text.collection-h1 }}
+            {%- else -%}
+              {{ collection.title }}
+              {%- endif -%}
+          </h1>
+          {% if collection.description != blank %}
+          <div class="rte collection-description subheading">
+            {{ collection.description }}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+
+    {% else %}
+    <div class="page-width">
+      <div class="section-header text-center">
+        <h1>{{ collection.title }}</h1>
+        {% if collection.description != blank %}
+        <div class="rte">
+          {{ collection.description }}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- ====================== Normal Collection Code =========================== -->  
+    {% assign collection_1 = '' %}
+    {% for block in section.blocks %}
+    {% assign collection_1 = collection_1 | append:' ' |  append:block.settings.choose_collection %}
+    {% endfor %}    
+    {% assign collection_list = collection_1 | replace:' ',',' %}
+
+    {% unless collection_list contains collection.handle %}
+    {% if collection.handle == 'wooden-puzzles' and section.settings.tags_enable or section.settings.sort_enable %}
+    <div class="filters-toolbar-wrapper">
+      <div class="page-width">
+        <div class="filters-toolbar">
+          {% if section.settings.tags_enable %}
+          <div class="filters-toolbar__item">
+            <style>
+              ul.filter-tags li {
+                display: inline;
+              }
+              .filter-tags a {
+                font-weight: 500;
+                padding: 10px;
+              }
+              .filter-tags a:hover {
+                color: #ff7607;
+              }
+              ul.filter-tags {
+                text-align: center;
+                margin: 20px 0;
+                line-height: 35px;
+              }
+              .filter-tags .selected {
+                color: #ff7607;
+                border: 2px solid #ff7607;
+              }
+            </style>
+            <ul class="filter-tags">
+              {% if current_tags %}
+                {% if collection.handle %}
+                  <li><a href="/collections/{{ collection.handle }}">{{ 'collections.filters.all_tags' | t }}</a></li>
+                {% elsif collection.current_type %}
+                  <li><a href="{{ collection.current_type | url_for_type }}">{{ 'collections.filters.all_tags' | t }}</a></li>
+                {% elsif collection.current_vendor %}
+                  <li><a href="{{ collection.current_vendor | url_for_vendor }}">{{ 'collections.filters.all_tags' | t }}</a></li>
+                {% endif %}
+              {% else %}
+                  <li><a href="#" class="selected">{{ 'collections.filters.all_tags' | t }}</a></li>
+              {% endif %}
+              {%- assign filter_tags = "Perfect gift,Most popular,Big,Perfect for her,For kids,Perfect for him,Composite,New" | split: "," -%}
+              {% for tag in filter_tags %}
+                <li><a href="/collections/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}"{% if current_tags contains tag %} class="selected"{% endif %}>{{ tag }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+
+          {% if section.settings.sort_enable %}
+          <div class="filters-toolbar__item text-right">
+            {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+            <label for="SortBy" class="label--hidden">{{ 'collections.sorting.title' | t }}</label>
+            <select name="SortBy" id="SortBy" class="filters-toolbar__input filters-toolbar__input--sort hidden">
+              {% if sort_by == collection.default_sort_by %}
+              <option value="title-ascending" selected="selected">{{ 'collections.sorting.title' | t }}</option>
+              {% if collection.default_sort_by != 'manual' %}
+              <option value="manual"{% if sort_by == "manual" %} selected="selected"{% endif %}>{{ 'collections.sorting.featured' | t }}</option>
+              {% endif %}
+              {% if collection.default_sort_by != 'best-selling' %}
+              <option value="best-selling"{% if sort_by == "best-selling" %} selected="selected"{% endif %}>{{ 'collections.sorting.best_selling' | t }}</option>
+              {% endif %}
+              {% if collection.default_sort_by != 'title-ascending' %}
+              <option value="title-ascending"{% if sort_by == "title-ascending"  %}selected="selected"{% endif %}>{{ 'collections.sorting.az' | t }}</option>
+              {% endif %}
+              {% if collection.default_sort_by != 'title-descending' %}
+              <option value="title-descending"{% if sort_by == "title-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.za' | t }}</option>
+              {% endif %}
+              {% if collection.default_sort_by != 'price-ascending' %}
+              <option value="price-ascending"{% if sort_by == "price-ascending" %} selected="selected"{% endif %}>{{ 'collections.sorting.price_ascending' | t }}</option>
+              {% endif %}
+              {% if collection.default_sort_by != 'price-descending' %}
+              <option value="price-descending"{% if sort_by == "price-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.price_descending' | t }}</option>
+              {% endif %}
+              {% if collection.default_sort_by != 'created-descending' %}
+              <option value="created-descending"{% if sort_by == "created-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.date_descending' | t }}</option>
+              {% endif %}
+              {% if collection.default_sort_by != 'created-ascending' %}
+              <option value="created-ascending"{% if sort_by == "created-ascending" %} selected="selected"{% endif %}>{{ 'collections.sorting.date_ascending' | t }}</option>
+              {% endif %}
+              {% else %}
+              <option value="manual"{% if sort_by == "manual" %} selected="selected"{% endif %}>{{ 'collections.sorting.featured' | t }}</option>
+              <option value="best-selling"{% if sort_by == "best-selling" %} selected="selected"{% endif %}>{{ 'collections.sorting.best_selling' | t }}</option>
+              <option value="title-ascending"{% if sort_by == "title-ascending"  %}selected="selected"{% endif %}>{{ 'collections.sorting.az' | t }}</option>
+              <option value="title-descending"{% if sort_by == "title-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.za' | t }}</option>
+              <option value="price-ascending"{% if sort_by == "price-ascending" %} selected="selected"{% endif %}>{{ 'collections.sorting.price_ascending' | t }}</option>
+              <option value="price-descending"{% if sort_by == "price-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.price_descending' | t }}</option>
+              <option value="created-descending"{% if sort_by == "created-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.date_descending' | t }}</option>
+              <option value="created-ascending"{% if sort_by == "created-ascending" %} selected="selected"{% endif %}>{{ 'collections.sorting.date_ascending' | t }}</option>
+              {% endif %}
+            </select>
+            <input id="DefaultSortBy" type="hidden" value="{{ collection.default_sort_by }}">
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="page-width" id="Collection">
+
+    {% case section.settings.grid %}
+    {% when 2 %}
+    {%- assign grid_item_width = 'medium-up--one-half' -%}
+    {% when 3 %}
+    {%- assign grid_item_width = 'medium-up--one-third ' -%}
+    {% when 4 %}
+    {%- assign grid_item_width = 'medium-up--one-quarter' -%}
+    {% when 5 %}
+    {%- assign grid_item_width = 'large-up--one-fifth medium--one-quarter' -%}
+    {% endcase %}
+
+    {% if settings.mobile_grid_1 == "on_mobile_set_row_one" %}
+    {%- assign grid_mobile = "small--one-whole" -%}
+    {% elsif settings.mobile_grid_1 == "on_mobile_set_row_two" %}
+    {%- assign grid_mobile = "small--one-half" -%}
+    {% endif %}
+    <h2 class="" style="text-align: center; margin: 30px 0;">CHOOSE YOUR PUZZLE</h2>
+{%comment%}
+    <div id="auto-popup" data-timeout="20" data-quiz-id="BZHY5Y" style="display: none;"></div>
+{%endcomment%}
+    <div class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
+      {% for product in collection.products %}
+
+      {%- if forloop.index == 8 -%}
+      <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
+        <style>
+        .quiz-item {
+          height: 335px;
+          position: relative;
+        }
+        .quiz-item::before {
+          content: ' ';
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0.3;
+          background-image: url({{ 'quiz-background.jpg' | asset_url }});
+          background-repeat: no-repeat;
+          background-position: 50% 0;
+          background-size: cover;
+        }
+        .quiz-item-content {
+          position: relative;
+          margin: 0 auto;
+          text-align: center;
+          padding-top: 35%;
+        }
+        .quiz-item-content a{
+          height: 42px;
+          padding: 5px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          background-color: black;
+          color: white;
+        }
+        .quiz-button {
+          margin-top: 20px;
+        }
+        .quiz-mes {
+          font-size: 16px;
+          font-weight: 600;
+          margin: 0 25px;
+        }
+        @media screen and (max-width:749px) {
+          .quiz-item {max-height: 240px;}
+          .quiz-mes {font-size: 12px;font-weight: 600;}
+        }
+        </style>
+          <div class="grid-view-item quiz-item">
+            <div class="quiz-item-content">
+              <div class="quiz-mes">Don't know what to choose?
+              I'll help you!
+              Just answer a few questions.</div>
+              <div class="quiz-button">
+                <a id="quiz-ref" href="#quiz-BZHY5Y">Start Quiz</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    
+      <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
+        {% include 'product-card-grid', max_height: max_height %}
+
+        {% comment %}<form method="post" action="/cart/add" class="add-to-cart">
+          <input type="hidden" name="id" class="pdp_id" data-type="{{ product.type }}" value="{{ product.variants.first.id }}" />
+          <input min="1" type="hidden" class="qtty" id="quantity" name="quantity" value="1"/>
+          <input type="button" name="add" class="btn add_toCart"
+                 value="Add to Cart"/>
+        </form>{% endcomment %}
+      </div>
+      {% else %}
+      {% comment %}
+      Add default products to help with onboarding for collections/all only.
+
+      The onboarding styles and products are only loaded if the
+      store has no products.
+      {% endcomment %}
+      {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0 %}
+      <div class="grid__item">
+        <div class="grid grid--uniform">
+          {% for i in (1..limit) %}
+          <div class="grid__item {{ grid_item_width }}">
+            <div class="grid-view-item">
+              <a href="#" class="grid-view-item__link">
+                <div class="grid-view-item__image">
+                  {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                  {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+                <div class="h4 grid-view-item__title">{{ 'homepage.onboarding.product_title' | t }}</div>
+                <div class="grid-view-item__meta">
+                  <span class="product-price__price">$19.99</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% else %}
+      {%- assign is_empty_collection = true -%}
+      {% endif %}
+      {% endfor %}
+    </div>
+    {% comment %}
+    {% if section.settings.layout == 'grid' %}
+    {% else %}
+    <div class="list-view-items">
+      {% for product in collection.products %}
+      {% if settings.enable_collection_url %}
+      <a href="{{ product.url | within: collection }}" class="list-view-item">
+        {% else %}
+        <a href="{{ product.url }}" class="list-view-item">
+          {% endif %}
+          {% include 'product-card-list', product: product %}
+        </a>
+        {% else %}
+
+        {% comment %}
+        Add default products to help with onboarding for collections/all only.
+
+        The onboarding styles and products are only loaded if the
+        store has no products.
+        {% endcomment %}
+        {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0%}
+        {% for i in (1..4) %}
+        <a href="#" class="list-view-item">
+          <div class="list-view-item__image-column">
+            <div class="list-view-item__image-wrapper">
+              <div class="list-view-item__image">
+                {%- assign placeholder = 'placeholder-product-' | append: i -%}
+                {% include placeholder %}
+              </div>
+            </div>
+          </div>
+
+          <div class="list-view-item__title-column">
+            <div class="list-view-item__title">{{ 'homepage.onboarding.product_title' | t }}</div>
+          </div>
+
+          <div class="list-view-item__price-column">
+            <span class="product-price__price">$19.99</span>
+          </div>
+        </a>
+        {% endfor %}
+        {% else %}
+        {%- assign is_empty_collection = true -%}
+        {% endif %}
+        {% endfor %}
+        </div>
+      {% endif %}
+      {% endcomment %}
+
+      {% if is_empty_collection %}
+      <div class="grid__item small--text-center">
+        <p class="text-center">{{ 'collections.general.no_matches' | t }}</p>
+      </div>
+      {% endif %}
+
+      {% if paginate.pages > 1 %}
+      {% include 'pagination' %}
+      {% endif %}
+    </div>  
+    {% endunless %}
+
+    <!-- ====================== Sub Collection Code =========================== -->
+    
+
+    {% for block in section.blocks %}
+    {% if block.settings.choose_collection == collection.handle %}
+    {% if block.settings.link_menu != blank %}
+    <div class="page-width coll_list_page" id="Collection" {{ block.shopify_attributes }}>    
+      {% case section.settings.grid %}
+      {% when 2 %}
+      {%- assign grid_item_width = 'medium-up--one-half' -%}
+      {% when 3 %}
+      {%- assign grid_item_width = 'medium-up--one-third ' -%}
+      {% when 4 %}
+      {%- assign grid_item_width = 'medium-up--one-quarter' -%}
+      {% when 5 %}
+      {%- assign grid_item_width = 'large-up--one-fifth medium--one-quarter' -%}
+      {% endcase %}
+
+      {% if settings.mobile_grid_1 == "on_mobile_set_row_one" %}
+      {%- assign grid_mobile = "small--one-whole" -%}
+      {% elsif settings.mobile_grid_1 == "on_mobile_set_row_two" %}
+      {%- assign grid_mobile = "small--one-half" -%}
+      {% endif %}
+      <div class="grid grid--uniform grid--view-items sub_collection_img"> 
+        {% for link in linklists[block.settings.link_menu].links %}
+        <div class="grid__item {{ grid_item_width }} {{grid_mobile}}">
+          {%- assign collection = link.object -%}
+          {% include 'collection-grid-item' %}          
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% else %}
+
+    {% if collection.handle == 'wooden-puzzles' and section.settings.tags_enable or section.settings.sort_enable %}
+    <div class="filters-toolbar-wrapper">
+      <div class="page-width">
+        <div class="filters-toolbar">
+          {% if section.settings.tags_enable %}
+          <div class="filters-toolbar__item">
+            <ul>
+              {% if current_tags %}
+                {% if collection.handle %}
+                  <li><a href="/collections/{{ collection.handle }}">{{ 'collections.filters.all_tags' | t }}</a></li>
+                {% elsif collection.current_type %}
+                  <li><a href="{{ collection.current_type | url_for_type }}">{{ 'collections.filters.all_tags' | t }}</a></li>
+                {% elsif collection.current_vendor %}
+                  <li><a href="{{ collection.current_vendor | url_for_vendor }}">{{ 'collections.filters.all_tags' | t }}</a></li>
+                {% endif %}
+              {% else %}
+                  <li><a href="#">{{ 'collections.filters.all_tags' | t }}</a></li>
+              {% endif %}
+              {% for tag in collection.all_tags %}
+                <li><a href="/collections/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}"{% if current_tags contains tag %} selected="selected"{% endif %}>{{ tag }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+
+          {% if section.settings.sort_enable %}
+          <div class="filters-toolbar__item text-right">
+            {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+            <label for="SortBy" class="label--hidden">{{ 'collections.sorting.title' | t }}</label>
+            <select name="SortBy" id="SortBy" class="filters-toolbar__input filters-toolbar__input--sort hidden">
+              {% if sort_by == collection.default_sort_by %}
+              <option value="title-ascending" selected="selected">{{ 'collections.sorting.title' | t }}</option>
+              {% if collection.default_sort_by != 'manual' %}
+              <option value="manual"{% if sort_by == "manual" %} selected="selected"{% endif %}>{{ 'collections.sorting.featured' | t }}</option>
+              {% endif %}
+              {% if collection.default_sort_by != 'best-selling' %}
+              <option value="best-selling"{% if sort_by == "best-selling" %} selected="selected"{% endif %}>{{ 'collections.sorting.best_selling' | t }}</option>
+              {% endif %}
+              {% if collection.default_sort_by != 'title-ascending' %}
+              <option value="title-ascending"{% if sort_by == "title-ascending"  %}selected="selected"{% endif %}>{{ 'collections.sorting.az' | t }}</option>
+              {% endif %}
+              {% if collection.default_sort_by != 'title-descending' %}
+              <option value="title-descending"{% if sort_by == "title-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.za' | t }}</option>
+              {% endif %}
+              {% if collection.default_sort_by != 'price-ascending' %}
+              <option value="price-ascending"{% if sort_by == "price-ascending" %} selected="selected"{% endif %}>{{ 'collections.sorting.price_ascending' | t }}</option>
+              {% endif %}
+              {% if collection.default_sort_by != 'price-descending' %}
+              <option value="price-descending"{% if sort_by == "price-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.price_descending' | t }}</option>
+              {% endif %}
+              {% if collection.default_sort_by != 'created-descending' %}
+              <option value="created-descending"{% if sort_by == "created-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.date_descending' | t }}</option>
+              {% endif %}
+              {% if collection.default_sort_by != 'created-ascending' %}
+              <option value="created-ascending"{% if sort_by == "created-ascending" %} selected="selected"{% endif %}>{{ 'collections.sorting.date_ascending' | t }}</option>
+              {% endif %}
+              {% else %}
+              <option value="manual"{% if sort_by == "manual" %} selected="selected"{% endif %}>{{ 'collections.sorting.featured' | t }}</option>
+              <option value="best-selling"{% if sort_by == "best-selling" %} selected="selected"{% endif %}>{{ 'collections.sorting.best_selling' | t }}</option>
+              <option value="title-ascending"{% if sort_by == "title-ascending"  %}selected="selected"{% endif %}>{{ 'collections.sorting.az' | t }}</option>
+              <option value="title-descending"{% if sort_by == "title-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.za' | t }}</option>
+              <option value="price-ascending"{% if sort_by == "price-ascending" %} selected="selected"{% endif %}>{{ 'collections.sorting.price_ascending' | t }}</option>
+              <option value="price-descending"{% if sort_by == "price-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.price_descending' | t }}</option>
+              <option value="created-descending"{% if sort_by == "created-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.date_descending' | t }}</option>
+              <option value="created-ascending"{% if sort_by == "created-ascending" %} selected="selected"{% endif %}>{{ 'collections.sorting.date_ascending' | t }}</option>
+              {% endif %}
+            </select>
+            <input id="DefaultSortBy" type="hidden" value="{{ collection.default_sort_by }}">
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    </header>
+
+  <div class="page-width" id="Collection">
+
+    {% case section.settings.grid %}
+    {% when 2 %}
+    {%- assign grid_item_width = 'medium-up--one-half' -%}
+    {% when 3 %}
+    {%- assign grid_item_width = 'medium-up--one-third ' -%}
+    {% when 4 %}
+    {%- assign grid_item_width = 'medium-up--one-quarter' -%}
+    {% when 5 %}
+    {%- assign grid_item_width = 'large-up--one-fifth medium--one-quarter' -%}
+    {% endcase %}
+
+    {% if settings.mobile_grid_1 == "on_mobile_set_row_one" %}
+    {%- assign grid_mobile = "small--one-whole" -%}
+    {% elsif settings.mobile_grid_1 == "on_mobile_set_row_two" %}
+    {%- assign grid_mobile = "small--one-half" -%}
+    {% endif %}
+    <div class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
+      {% for product in collection.products %}
+      <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
+        {% include 'product-card-grid', max_height: max_height %}
+      </div>
+      {% else %}
+      {% comment %}
+      Add default products to help with onboarding for collections/all only.
+
+      The onboarding styles and products are only loaded if the
+      store has no products.
+      {% endcomment %}
+      {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0 %}
+      <div class="grid__item">
+        <div class="grid grid--uniform">
+          {% for i in (1..limit) %}
+          <div class="grid__item {{ grid_item_width }}">
+            <div class="grid-view-item">
+              <a href="#" class="grid-view-item__link">
+                <div class="grid-view-item__image">
+                  {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                  {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+                <div class="h4 grid-view-item__title">{{ 'homepage.onboarding.product_title' | t }}</div>
+                <div class="grid-view-item__meta">
+                  <span class="product-price__price">$19.99</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% else %}
+      {%- assign is_empty_collection = true -%}
+      {% endif %}
+      {% endfor %}
+    </div>
+    {% comment %}
+    {% if section.settings.layout == 'grid' %}
+    {% else %}
+    <div class="list-view-items">
+      {% for product in collection.products %}
+      {% if settings.enable_collection_url %}
+      <a href="{{ product.url | within: collection }}" class="list-view-item">
+        {% else %}
+        <a href="{{ product.url }}" class="list-view-item">
+          {% endif %}
+          {% include 'product-card-list', product: product %}
+        </a>
+
+        {% else %}
+
+        {% comment %}
+        Add default products to help with onboarding for collections/all only.
+
+        The onboarding styles and products are only loaded if the
+        store has no products.
+        {% endcomment %}
+        {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0%}
+        {% for i in (1..4) %}
+        <a href="#" class="list-view-item">
+          <div class="list-view-item__image-column">
+            <div class="list-view-item__image-wrapper">
+              <div class="list-view-item__image">
+                {%- assign placeholder = 'placeholder-product-' | append: i -%}
+                {% include placeholder %}
+              </div>
+            </div>
+          </div>
+
+          <div class="list-view-item__title-column">
+            <div class="list-view-item__title">{{ 'homepage.onboarding.product_title' | t }}</div>
+          </div>
+
+          <div class="list-view-item__price-column">
+            <span class="product-price__price">$19.99</span>
+          </div>
+        </a>
+        {% endfor %}
+        {% else %}
+        {%- assign is_empty_collection = true -%}
+        {% endif %}
+        {% endfor %}
+        </div>
+      {% endif %}
+      {% endcomment %}
+
+      {% if is_empty_collection %}
+      <div class="grid__item small--text-center">
+        <p class="text-center">{{ 'collections.general.no_matches' | t }}</p>
+      </div>
+      {% endif %}
+
+      {% if paginate.pages > 1 %}
+      {% include 'pagination' %}
+      {% endif %}
+    </div>  
+    {% endif %}   
+    {% endif %} 
+    {% endfor %}
+
+  </div>
+
+  {% endpaginate %}
+
+  {% schema %}
+  {
+    "name":"Collection pages",
+    "settings":[
+       {
+          "type":"range",
+          "id":"grid",
+          "min":2,
+          "max":5,
+          "step":1,
+          "label":"Products per row (grid only)",
+          "default":4
+       },
+       {
+          "type":"range",
+          "id":"rows",
+          "min":2,
+          "max":8,
+          "step":1,
+          "label":"Rows per page (grid only)",
+          "default":2
+       },
+       {
+          "type":"checkbox",
+          "id":"show_collection_image",
+          "label":"Show collection image",
+          "default":true
+       },
+       {
+          "type":"checkbox",
+          "id":"enable_parallax",
+          "label":"Enable Parallax"
+       },
+       {
+          "type":"header",
+          "content":"Video background setting"
+       },
+       {
+          "type":"checkbox",
+          "id":"enable_video",
+          "label":"Enable Video"
+       },
+       {
+         "type": "checkbox",
+         "id": "enable_external_video",
+         "default": false,
+         "label": "Enable External video"
+       },
+       {
+         "type": "video_url",
+         "accept": ["vimeo", "youtube"],
+         "id": "external_video",
+         "label": "Link to extarnal Video"
+       },
+       {
+          "type":"text",
+          "id":"video_bg",
+          "label":"Video"
+       },
+       {
+          "type":"checkbox",
+          "id":"show_vendor",
+          "label":"Show product vendors",
+          "default":false
+       },
+       {
+          "type":"checkbox",
+          "id":"sort_enable",
+          "label":"Enable sorting",
+          "default":true
+       },
+       {
+          "type":"checkbox",
+          "id":"tags_enable",
+          "label":"Enable tag filtering",
+          "default":true
+       },
+       {
+          "type":"header",
+          "content":"Product title"
+       },
+       {
+          "type":"select",
+          "id":"on_desktop_title_set",
+          "label":"Product Title Limit for Desktop",
+          "options":[
+             {
+                "value":"title_set_line_full",
+                "label":"Full Line Title Text"
+             },
+             {
+                "value":"title_set_line_trim",
+                "label":"Limit Title Text"
+             }
+          ],
+          "default":"title_set_line_trim"
+       },
+       {
+          "type":"range",
+          "id":"desktop_text_limit",
+          "min":0,
+          "max":30,
+          "step":1,
+          "label":"Product title limit for desktop",
+          "info":"Number of characters in your Title.",
+          "default":30
+       },
+       {
+          "type":"select",
+          "id":"on_mobile_title_set",
+          "label":"Product title limit for mobile ",
+          "options":[
+             {
+                "value":"mobile_title_set_line_full",
+                "label":"Full Line Title Text"
+             },
+             {
+                "value":"mobile_title_set_line_trim",
+                "label":"Limit Title Text"
+             }
+          ],
+          "default":"mobile_title_set_line_trim"
+       },
+       {
+          "type":"range",
+          "id":"mobile_text_limit",
+          "min":0,
+          "max":30,
+          "step":1,
+          "label":"Product title limit for mobile",
+          "info":"Number of characters in your Title.",
+          "default":30
+       }
+    ],
+    "blocks":[
+       {
+          "type":"sub-collection",
+          "name":"Sub-Collection",
+          "settings":[
+             {
+                "type":"collection",
+                "id":"choose_collection",
+                "label":"Choose collection"
+             },
+             {
+                "type":"link_list",
+                "id":"link_menu",
+                "label":"Select sub-collection menu"
+             }
+          ]
+       }
+    ]
+ }
+  {% endschema %}
