@@ -332,14 +332,6 @@
       {%- assign is_empty_collection = true -%}
       {% endif %}
       {% endfor %}
-      {%- unless collection.handle == 'world_map_puzzles' or collection.handle == 'balancing-puzzles'-%}
-        <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
-          <style>
-            .storyblock {margin: 20px 0 10px;}
-          </style>
-          {%- render 'fw-storyblock', channel: 'unidragon_world' -%}
-        </div>
-      {%- endunless -%}
     </div>
     {% comment %}
     {% if section.settings.layout == 'grid' %}
@@ -429,7 +421,7 @@
         {% for link in linklists[block.settings.link_menu].links %}
         <div class="grid__item {{ grid_item_width }} {{grid_mobile}}">
           {%- assign collection = link.object -%}
-          {% include 'collection-noinstastory-grid-item' %}          
+          {% include 'collection-grid-item' %}          
         </div>
         {% endfor %}
       </div>
