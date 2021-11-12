@@ -1583,8 +1583,21 @@
               "button_text": "SHOP THE COLLECTION"
             }
           },
+          "d7d286eb-85ee-4fd1-af17-9c29f1538459": {
+            "type": "collection",
+            "settings": {
+              "collection_item": "mandala-puzzles",
+              "collection_title": "Mandala Puzzles",
+              "collection_item_text": "Your dreams can possibly come true",
+              "collection_description": "<ul>\n              <li>Hours for your inner world<\/li>\n              <li>Focusing on cherished things<\/li>\n            <\/ul>",
+              "collection_image": "shopify:\/\/shop_images\/unidragon-wooden-puzzle-jigsaw-puzzle-for-adult-mandala-lifestyle-0_102_5a79deab-9cba-49aa-abcc-0a6b9461ad1c.jpg",
+              "collection_hover_image": "shopify:\/\/shop_images\/2021-11-12_09-57-31_1636710356.jpg",
+              "button_text": "SHOP THE COLLECTION"
+            }
+          },
           "22786e4f-ddd8-4437-a485-f7c696e4897c": {
             "type": "product-item",
+            "disabled": true,
             "settings": {
               "product_item": "mandala-inexhaustible-abundance",
               "product_title": "Mandala Puzzles",
@@ -1687,6 +1700,7 @@
           "8e53cb73-e853-45ab-bc83-43b73caa7e4a",
           "88ea7c3e-4b6a-4302-8348-9ceae2b0710d",
           "286e7868-2be8-4f0d-94fc-85dd820d7e97",
+          "d7d286eb-85ee-4fd1-af17-9c29f1538459",
           "22786e4f-ddd8-4437-a485-f7c696e4897c",
           "296dfcc3-67ca-4c51-b1f5-94443532230f",
           "b32d7969-a1ad-49e8-830c-c12cef4c3044",
