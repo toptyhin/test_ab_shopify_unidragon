@@ -1,0 +1,95 @@
+
+{% assign has_gift_in_cart = false %}
+
+{% for item in cart.items %}
+  {% if item.gift_card == true %}
+    {% assign has_gift_in_cart = true %}
+  {% endif %}
+{% endfor %}
+
+{% capture products %}{% for item in cart.items %}&product_id[]={{item.product_id}}{% endfor %}{% endcapture %}
+
+{% unless cart_has_subscription_item == 'true' or has_gift_in_cart == true %}
+<script>
+  document.addEventListener("DOMContentLoaded", giftMagicCart);
+
+  function giftMagicCart() {
+    window.giftMagicCartAppendet = true;
+
+    if (location.pathname !== '/cart'  || location.host.match(/glopal.com|glopalstore.com/)) {
+      return false;
+    }
+
+    function renderButton() {
+      var buttons = document.querySelectorAll('form[action*=cart] input[name=checkout]');
+      
+      if (!checkoutButtons.length) {
+        buttons = document.querySelectorAll('form[action*=cart] input[name=submit]');
+      }
+
+      var defaultButton = buttons.length ? buttons[buttons.length - 1] : null;
+      
+      if (!defaultButton) {
+        console.error('[GiftMagic]: can not find Check Out button');
+        return;
+      }
+
+      var disabled = defaultButton.getAttribute("disabled");
+
+      defaultButton.insertAdjacentHTML('afterEnd', '<button type="button" name="send" class="sg-button sg-button__cart">Send as Gift</button>')
+      defaultButton.insertAdjacentHTML('beforebegin', `
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+          <path fill-rule="evenodd" d="M9.435 8.086L5.313 3.964a1.05 1.05 0 0 1 0-1.484l1.114-1.114a1.048 1.048 0 0 1 1.484 0l4.121 4.122-2.597 2.598zm3.077-2.118l4.122 4.122c.41.41.41 1.074 0 1.483l-1.114 1.114a1.048 1.048 0 0 1-1.484 0L9.915 8.565l2.597-2.597zm-3.56 2.485l-4.707 4.734L.786 9.709a1.05 1.05 0 0 1 0-1.48l3.972-3.993 4.194 4.218zm.594.499l4.219 4.194-3.994 3.971a1.049 1.049 0 0 1-1.48 0L4.814 13.66 9.546 8.95zm-7.858 3.652a.308.308 0 0 1 .436.435L.527 14.637a.308.308 0 1 1-.436-.436l1.597-1.597zm3.273 3.272a.308.308 0 0 1 .436.436L3.8 17.91a.308.308 0 1 1-.436-.437l1.598-1.597zM3.32 14.241a.31.31 0 1 1 .44.44L.532 17.909a.31.31 0 1 1-.44-.44l3.227-3.228zM13.783 4.13l-.092.178.18-.091c.332-.162.575-.277.728-.342.791-.344 1.39-.481 1.843-.409a1.853 1.853 0 0 1 1.536 2.11 1.827 1.827 0 0 1-2.102 1.522c-.62-.1-1.38-.667-2.41-1.716l-.848-.848c-1.05-1.031-1.616-1.79-1.716-2.41A1.829 1.829 0 0 1 12.425.022a1.853 1.853 0 0 1 2.108 1.537c.073.452-.066 1.05-.408 1.842-.066.153-.18.396-.342.73zm-.756.008l.048-.093c.61-1.183.843-1.93.776-2.347a1.218 1.218 0 0 0-1.386-1.01 1.2 1.2 0 0 0-.785.481c-.186.258-.262.58-.209.893.069.425.54 1.08 1.527 2.047l.029.029zm.86.764c.97.99 1.625 1.461 2.051 1.53a1.194 1.194 0 0 0 1.374-.994 1.218 1.218 0 0 0-1.01-1.385c-.417-.067-1.164.166-2.347.775l-.093.048.025.026z"/>
+        </svg>
+      `);
+      
+      var sgButton = document.querySelector('.sg-button');
+      sgButton.classList.add(defaultButton.className);
+
+      var buttonIco = document.querySelector('.sg-button svg');
+      buttonIco.style.fill = sgButton.style.color;
+
+      if (disabled) {
+        sgButton.disabled = true;
+      }
+
+      sgButton.addEventListener('click', function () {
+        var form = document.querySelector('form[action*=cart]');
+        var formData = new FormData(form);
+        var customerId = '';
+        var email = '';
+        
+        {% if customer %}
+          customerId = '&customer={{ customer.id }}';
+          email = '&email={{ customer.email }}';
+        {% endif %}
+        
+        var userInfo = customerId + email;
+
+        if (!formData) {
+          console.error('[GiftMagic]: Can not find Cart form!');
+        } else {
+          fetch('/cart', {
+            method: 'POST',
+            body: formData
+          }).then(function () {
+            location.href = "https://app.getgiftmagic.com/checkout?shop=" + location.hostname + userInfo;
+          });
+        }
+      });
+    }
+
+    var apiUrl = 'https://app.getgiftmagic.com/api/v1/platform/shopify/availability';
+
+    fetch(apiUrl + "?shop_name=" + location.hostname + "{{products}}")
+        .then(function (data) {
+            if (data.available) {
+                renderButton();
+            }  
+        })
+        .catch(function (err) {
+            console.error(xOptions, textStatus);
+        })
+  }
+</script>
+{% endunless %}

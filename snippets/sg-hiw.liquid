@@ -1,0 +1,124 @@
+
+  <div class="sg-overlay" style="visibility: hidden;opacity: 0;">
+    <div class="sg-modal">
+      <div class="sg-modal-header">
+        <div class="sg-modal-header__text">
+          <div class="sg-modal-header__title">"Send as gift" — Fast checkout with no need for
+            delivery address!
+          </div>
+          <div class="sg-modal-header__description">Instant delivery by messenger or email. Your
+            recipient will fill in shipping address
+          </div>
+        </div>
+        <img
+          class="sg-modal-header__img"
+          width="298" height="217"
+          src="https://app.getgiftmagic.com/plugin/i/hiw/header.png"
+          srcSet="https://app.getgiftmagic.com/plugin/i/hiw/header.png 1x,
+                      https://app.getgiftmagic.com/plugin/i/hiw/header@2x.png 2x,
+                      https://app.getgiftmagic.com/plugin/i/hiw/header@3x.png 3x"
+          alt=""
+        />
+      </div>
+      <div class="sg-modal-body">
+        <div class="sg-modal-steps">
+          <div class="sg-modal-steps-item">
+            <img
+              class="sg-modal-steps-item__img"
+              width="298" height="217"
+              src="https://app.getgiftmagic.com/plugin/i/hiw/step1.png"
+              srcSet="https://app.getgiftmagic.com/plugin/i/hiw/step1.png 1x,
+                      https://app.getgiftmagic.com/plugin/i/hiw/step1@2x.png 2x,
+                      https://app.getgiftmagic.com/plugin/i/hiw/step1@3x.png 3x"
+              alt="Step 1"
+            />
+            <div class="sg-modal-steps-item__text">Buy real gift and we’ll wrap it into virtual
+              giftbox
+            </div>
+          </div>
+          <div class="sg-modal-steps-item">
+            <img
+              class="sg-modal-steps-item__img"
+              width="298" height="217"
+              src="https://app.getgiftmagic.com/plugin/i/hiw/step2.png"
+              srcSet="https://app.getgiftmagic.com/plugin/i/hiw/step2.png 1x,
+                      https://app.getgiftmagic.com/plugin/i/hiw/step2@2x.png 2x,
+                      https://app.getgiftmagic.com/plugin/i/hiw/step2@3x.png 3x"
+              alt="Step 2"
+            />
+            <div class="sg-modal-steps-item__text">Send gift in messenger, for instant delivery as
+              easily as a sticker
+            </div>
+          </div>
+          <div class="sg-modal-steps-item">
+            <img
+              class="sg-modal-steps-item__img"
+              width="298" height="217"
+              src="https://app.getgiftmagic.com/plugin/i/hiw/step3.png"
+              srcSet="https://app.getgiftmagic.com/plugin/i/hiw/step3.png 1x,
+                      https://app.getgiftmagic.com/plugin/i/hiw/step3@2x.png 2x,
+                      https://app.getgiftmagic.com/plugin/i/hiw/step3@3x.png 3x"
+              alt="Step 3"
+            />
+            <div class="sg-modal-steps-item__text">Recipient opens gift and fills in shipping
+              address
+            </div>
+          </div>
+        </div>
+        <button class="sg-modal__button sg-toggle-modal">Got it</button>
+      </div>
+      <button class="sg-modal-close sg-toggle-modal">&nbsp;</button>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+       
+      if(location.host.match(/glopal.com|glopalstore.com/)) {
+        return false;
+      }
+      
+      var domain = window.location.hostname;
+      if (domain.indexOf('www') === 0) {
+        domain = domain.slice(4);
+      }
+      
+      const head = document.querySelector('head');
+      const css = document.createElement('link');
+      
+      css.setAttribute('href', "https://app.getgiftmagic.com/plugin/hiw.css?shop=" + domain);
+      css.setAttribute('rel', 'stylesheet');
+      css.setAttribute('type', 'text/css');
+  
+      head.appendChild(css);
+      
+      function initHiw() {
+        document.addEventListener('click', function (event) {
+          
+          if (!event.target.classList.contains('sg-toggle-modal')) {
+            return;
+          }
+          
+          var body = document.querySelector('body');
+          var shown = !body.classList.contains('noScroll');
+    
+          document.querySelector('.sg-overlay').classList.toggle('active');
+          body.classList.toggle('noScroll');
+    
+          if (gm_Event) {
+            var category;
+    
+            if (event.target.classList.contains('sg-topBanner')) {
+              category = "top_banner";
+            } else if (event.target.classList.contains('sg-leftBanner')) {
+              category = "floating_button";
+            } else {
+              category = "tooltip";
+            }
+    
+            gm_Event('education_overlay_view_' + category);
+          }
+        });
+      }
+      initHiw()
+    });
+  </script>
