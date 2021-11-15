@@ -1,0 +1,132 @@
+
+  <script>
+    function gm_QS() {
+      var match;
+      var pl = /\+/g;
+      var search = /([^&=]+)=?([^&]*)/g;
+      var decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); };
+      var query  = window.location.search.substring(1);
+      var urlParams = {};
+
+      while((match = search.exec(query)) !== null) {
+        urlParams[decode(match[1])] = decode(match[2]);
+      }
+
+      return urlParams;
+    }
+
+    function gm_Event(event) {
+      if (!event || !window.gm_ShopName) {
+        console.error('[GiftMagic]: gmEvent() fail. Event name or Shop name is not provided');
+        return false;
+      } else {
+        var body = JSON.stringify({
+          name: event,
+          shop: window.gm_ShopName,
+        });
+      }
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "https://app.getgiftmagic.com/api/v1/giftmagic/event");
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.setRequestHeader("Accept", "*/*");
+      xhr.setRequestHeader("Cache-Control", "no-cache");
+      xhr.setRequestHeader("cache-control", "no-cache");
+
+      xhr.send(body);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      window.gm_ShopName = ((window.Shopify && window.Shopify.shop) || window.location.hostname).replace('www.', '').split('.')[0];
+
+      if(location.host.match(/glopal.com|glopalstore.com/)) {
+        return false;
+      }
+
+      // ViewContent
+      {% unless product.metafields.subscriptions.subscription_id %}
+        {% if product.id and product.available == "true" %}
+           gm_Event('product_screen');
+        {% elsif product.id and product.available == "false" %}
+           gm_Event('product_sold_out');
+        {% elsif page.url == "cart" %}
+           gm_Event('cart_screen');
+        {% endif %}
+      {% else %}
+        {% if product.id %}
+           gm_Event('product_no_gm');
+        {% elsif page.url == "cart" %}
+          gm_Event('cart_no_gm');
+        {% endif %}
+      {% endunless %}
+
+      // SG Button
+      var sgButton = document.querySelector('.sg-button');
+      // Default Add To Cart
+      var cartButtons = document.querySelectorAll('form[action*=cart\\/add] button[type=submit], form[action*=cart\\/add] input[type=submit]');
+      var addToCartButton = null;
+      if (cartButtons) {
+        addToCartButton = cartButtons[cartButtons.length - 1];
+      }
+      // Default Checkout
+      var checkoutButtons = document.querySelectorAll('form[action*=cart] input[name=checkout]');
+      if (!checkoutButtons) {
+        checkoutButtons = document.querySelectorAll('form[action*=cart] button[type=submit]');
+      }
+      var checkoutButton = checkoutButtons[checkoutButtons.length - 1];
+      // Tooltip
+      var tooltip = document.querySelector('.sg-tooltip__product');
+
+      // Buttons
+      {% unless product.metafields.subscriptions.subscription_id %}
+        if (sgButton) {
+          // sgButton.classList.contains('sg-button__product');
+          sgButton.addEventListener("click", function() {
+              {% if product.id %}
+                gm_Event('click_sg_button_product_screen');
+              {% else %}
+                gm_Event('click_sg_button_cart');
+              {% endif %}
+          });
+        }
+        {% if product.id %}
+          if (addToCartButton) {
+            addToCartButton.addEventListener("click", function() {
+              gm_Event('click_cart_button_product_screen');
+            });
+          }
+        {% endif %}
+
+        if (checkoutButton) {
+          checkoutButton.addEventListener("click", function() {
+            gm_Event('checkout_button_cart_click');
+          });
+        }
+
+        if (tooltip) {
+          tooltip.addEventListener("click", function() {
+            {% if product.id and product.available == "true" %}
+              gm_Event('click_tooltip_button_product_screen');
+            {% else %}
+              gm_Event('click_tooltip_button_product_sold_out');
+            {% endif %}
+          });
+        }
+      // Add to Cart button click (Without SG Button)
+      {% else %}
+        {% if product.id %}
+          if (addToCartButton) {
+            addToCartButton.addEventListener("click", function() {
+              gm_Event('click_cart_button_product_no_sg');
+            });
+          }
+        {% elsif page.url == "cart" %}
+          if (checkoutButton) {
+            checkoutButton.addEventListener("click", function() {
+              gm_Event('click_checkout_button_product_no_sg');
+            })
+          }
+        {% endif %}
+      {% endunless %}
+    });
+  </script>

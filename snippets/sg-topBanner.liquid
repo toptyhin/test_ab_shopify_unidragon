@@ -1,0 +1,57 @@
+
+  <div class="sg-banner sg-topBanner sg-toggle-modal">
+    <div class="sg-banner__text">
+      <span>Buying a Gift?</span> Instant delivery without knowing shipping address
+    </div>
+    <button class="sg-banner__close"></button>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      function initTopBanner() {
+        if(location.host.match(/glopal.com|glopalstore.com/)) {
+          return false;
+        }
+  
+  
+        if (localStorage.getItem('sg_hiwTopBanner')) {
+          return false;
+        }
+  
+        document.querySelector('.sg-topBanner').classList.add('sg-visible');
+  
+        if (gm_Event) {
+          gm_Event('hiw_top_banner_view');
+        }
+  
+        document.addEventListener('click', function(event) {
+          
+          if (!event.target.matches('.sg-banner__close')) {
+            return;
+          }
+          
+          try {
+            localStorage.setItem('sg_hiwTopBanner', true);
+          } catch (e) {
+            console.error(e);
+          }
+  
+          document.querySelector('.sg-topBanner').classList.remove('sg-visible');
+          return false;
+        });
+      }
+      
+      var apiUrl = 'https://app.getgiftmagic.com/api/v1/platform/shopify/' + location.hostname + '/settings';
+
+      fetch(apiUrl, {
+          method: 'GET',
+          mode: 'cors',
+          cache: 'no-cache',
+          credentials: 'same-origin'
+      })
+          .then(res => res.json())
+          .then(data =>  {
+                data.hiw && data.hiw.topBanner && initTopBanner(data);
+          })
+
+    });
+  </script>

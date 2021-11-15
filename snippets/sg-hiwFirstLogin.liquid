@@ -1,0 +1,45 @@
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+      if(location.host.match(/glopal.com|glopalstore.com/)) {
+        return false;
+      }
+      
+      if (localStorage.getItem('sg_hiwShowed')) {
+        return;
+      }  
+        
+      function initFirstLoginHiw() {
+        setTimeout(function() {
+          document.querySelector('.sg-overlay').classList.add('active');
+          document.querySelector('body').classList.add('noScroll');
+  
+          if (gm_Event) {
+            gm_Event('education_overlay_view_landing');
+          }
+        }, 3000);
+  
+        try {
+          localStorage.setItem('sg_hiwShowed', true);
+        } catch (e) {
+          console.error(e);
+        }
+          
+      }
+      
+      var apiUrl = 'https://app.getgiftmagic.com/api/v1/platform/shopify/' + location.hostname + '/settings';
+
+      fetch(apiUrl, {
+          method: 'GET',
+          mode: 'cors',
+          cache: 'no-cache',
+          credentials: 'same-origin'
+      })
+          .then(res => res.json())
+          .then(data =>  {
+              data.hiw && data.hiw.firstLogin && initFirstLoginHiw(data);
+          })
+
+    });
+  </script>

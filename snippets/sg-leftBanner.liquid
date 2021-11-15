@@ -1,0 +1,39 @@
+
+  <div class="sg-banner sg-leftBanner sg-toggle-modal" style="display: none;">
+    Buying a Gift?
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      
+      function initLeftHiw() {
+        if(location.host.match(/glopal.com|glopalstore.com/)) {
+          return false;
+        }
+  
+        if (gm_Event) {
+          gm_Event('hiw_floating_view');
+        }
+        
+        const leftBanner = document.querySelector('.sg-leftBanner');
+        
+        if (leftBanner) {
+          leftBanner.style.display = 'block';
+        }
+      }
+      
+      
+      var apiUrl = 'https://app.getgiftmagic.com/api/v1/platform/shopify/' + location.hostname + '/settings';
+
+      fetch(apiUrl, {
+          method: 'GET',
+          mode: 'cors',
+          cache: 'no-cache',
+          credentials: 'same-origin'
+      })
+          .then(res => res.json())
+          .then(data =>  {
+              data.hiw && data.hiw.leftBanner && initLeftHiw(data);
+          });
+    });
+  </script>
