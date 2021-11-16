@@ -916,14 +916,14 @@
       
                 <div id="tab-1">
                   <div class="product-description">
-                    <div class="description_spoiler read-more">
-                        {%-comment-%}{% assign video = product.media | where: "media_type", "external_video" | first %}
+                        {% assign video = product.media | where: "media_type", "external_video" | first %}
                         {% if video != blank %}
                         {{ video | external_video_tag }}
                         {% else %}
                         {% assign video = product.media | where: "media_type", "video" | first %}
                         {{ video |  video_tag }}
-                        {% endif %}{%-endcomment-%}
+                        {% endif %}
+                    <div class="description_spoiler read-more">
                         {{ product.description | split: '<!-- additional video-->' | first }}
                     </div>
                     <div id="see-more">{{ 'custome_text.button.see_more' | t }} &#709;</div>
