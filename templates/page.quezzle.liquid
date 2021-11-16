@@ -1,0 +1,1486 @@
+{{}}
+<div class="page__wrapper">
+    <header class="header page__header">
+        <div class="header__container">
+            <div class="logo header__logo"><a href="#intro"> <img src="assets/img/logo.svg" width="196" height="50" alt="QUEZZLE - Puzzle and Quest" /></a></div>
+            <nav class="menu header__menu">
+                <ul class="menu__items">
+                    <li class="menu__item"><a class="menu__link" href="#about">Что такое Quezzle?</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#team">Unidragon &amp; IC4Design</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#answers">FAQ</a></li>
+                </ul>
+            </nav><a class="btn-cart js-popup header__btn-cart" href="#popup-cart" aria-label="Корзина"><span class="btn-cart__icon"><svg class="svg-icon svg-icon--cart">
+                        <use xlink:href="assets/img/sprite.svg#cart"></use>
+                    </svg></span><span class="btn-cart__total"><span class="btn-cart__total-value">0.00</span> ₽</span></a><a class="button header__button-buy button--small" href="#order" role="button"><span class="button__caption">Купить</span></a>
+            <div class="lang header__lang"><button class="lang__toggle" type="button"><img class="lang__icon" src="assets/img/russian.svg" width="30" height="30" alt="Русский" /><span class="lang__caption">Рус</span></button>
+                <ul class="lang__items">
+                    <li class="lang__item current"><a class="lang__link" href="#"><img class="lang__icon" src="assets/img/russian.svg" width="30" height="30" alt="Русский" /><span class="lang__caption">Рус</span></a></li>
+                    <li class="lang__item"><a class="lang__link" href="#"><img class="lang__icon" src="assets/img/english.svg" width="30" height="30" alt="English" /><span class="lang__caption">Eng</span></a></li>
+                </ul>
+            </div><a class="btn-menu js-popup header__btn-menu" href="#popup-menu" aria-label="Меню"><span class="btn-menu__icon"><svg class="svg-icon svg-icon--menu">
+                        <use xlink:href="assets/img/sprite.svg#menu"></use>
+                    </svg></span></a>
+        </div>
+    </header>
+    <main class="page__content">
+        <h1 class="visually-hidden">QUEZZLE - Пазл и Квест</h1>
+        <div class="intro page__intro" id="intro">
+            <div class="intro__start"><button class="button intro__button-start button--blue" type="button"><span class="button__caption">Начать приключение</span></button></div>
+            <picture>
+                <source srcset="assets/img/intro/balloon@desktop.webp 1x, assets/img/intro/balloon@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                <source srcset="assets/img/intro/balloon@desktop.png 1x, assets/img/intro/balloon@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                <source srcset="assets/img/intro/balloon@mob.webp 1x, assets/img/intro/balloon@mob@2x.webp 2x" type="image/webp" />
+                <source srcset="assets/img/intro/balloon@mob.png 1x, assets/img/intro/balloon@mob@2x.png 2x" type="image/png" /><img class="intro__balloon" src="assets/img/intro/balloon@mob.png" data-src="assets/img/intro/balloon@mob.png 1x, assets/img/intro/balloon@mob@2x.png 2x" alt="" />
+            </picture>
+            <picture>
+                <source srcset="assets/img/intro/dragon@desktop.webp" media="(min-width: 1000px)" type="image/webp" />
+                <source srcset="assets/img/intro/dragon@desktop.png" media="(min-width: 1000px)" type="image/png" />
+                <source srcset="assets/img/intro/dragon@mob.webp" type="image/webp" />
+                <source srcset="assets/img/intro/dragon@mob.png" type="image/png" /><img class="intro__dragon" src="assets/img/intro/dragon@mob.png" alt="" />
+            </picture>
+            <div class="intro__scene">
+                <picture>
+                    <source srcset="assets/img/intro/left.webp 1x, assets/img/intro/left@2x.webp 2x" type="image/webp" />
+                    <source srcset="assets/img/intro/left.png 1x, assets/img/intro/left@2x.png 2x" type="image/png" /><img class="intro__left" src="assets/img/intro/left.png" data-src="assets/img/intro/left.png 1x, assets/img/intro/left@2x.png 2x" alt="" />
+                </picture>
+                <picture>
+                    <source srcset="assets/img/intro/right.webp 1x, assets/img/intro/right@2x.webp 2x" type="image/webp" />
+                    <source srcset="assets/img/intro/right.png 1x, assets/img/intro/right@2x.png 2x" type="image/png" /><img class="intro__right" src="assets/img/intro/right.png" data-src="assets/img/intro/right.png 1x, assets/img/intro/right@2x.png 2x" alt="" />
+                </picture>
+                <picture>
+                    <source srcset="assets/img/intro/center.webp 1x, assets/img/intro/center@2x.webp 2x" type="image/webp" />
+                    <source srcset="assets/img/intro/center.png 1x, assets/img/intro/center@2x.png 2x" type="image/png" /><img class="intro__center" src="assets/img/intro/center.png" data-src="assets/img/intro/center.png 1x, assets/img/intro/center@2x.png 2x" alt="" />
+                </picture>
+            </div>
+            <div class="intro__container">
+                <h2 class="title intro__title">Пазл + Квест = Quezzle</h2>
+                <div class="intro__row">
+                    <ul class="intro__features">
+                        <li class="intro__feature">
+                            <picture>
+                                <source srcset="assets/img/intro/feature-1@desktop.webp 1x, assets/img/intro/feature-1@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                <source srcset="assets/img/intro/feature-1@desktop.png 1x, assets/img/intro/feature-1@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                <source srcset="assets/img/intro/feature-1@mob.webp 1x, assets/img/intro/feature-1@mob@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/intro/feature-1@mob.png 1x, assets/img/intro/feature-1@mob@2x.png 2x" type="image/png" /><img class="intro__feature-image" src="assets/img/intro/feature-1@mob.png" data-src="assets/img/intro/feature-1@mob.png 1x, assets/img/intro/feature-1@mob@2x.png 2x" alt="" />
+                            </picture>
+                            <h3 class="intro__feature-title">Собирайте яркий пазл из&nbsp;тысячи кусочков</h3>
+                            <p class="intro__feature-text">Фигурки в&nbsp;виде драконов, воздушных шаров и&nbsp;животных кусочек за&nbsp;кусочком собираются в&nbsp;иллюстрацию Каппадокии.</p>
+                        </li>
+                        <li class="intro__feature">
+                            <picture>
+                                <source srcset="assets/img/intro/feature-2@desktop.webp 1x, assets/img/intro/feature-2@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                <source srcset="assets/img/intro/feature-2@desktop.png 1x, assets/img/intro/feature-2@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                <source srcset="assets/img/intro/feature-2@mob.webp 1x, assets/img/intro/feature-2@mob@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/intro/feature-2@mob.png 1x, assets/img/intro/feature-2@mob@2x.png 2x" type="image/png" /><img class="intro__feature-image" src="assets/img/intro/feature-2@mob.png" data-src="assets/img/intro/feature-2@mob.png 1x, assets/img/intro/feature-2@mob@2x.png 2x" alt="" />
+                            </picture>
+                            <h3 class="intro__feature-title">Разглядывайте и находите секреты:</h3>
+                            <p class="intro__feature-text">Quezzle — это детально прорисованная иллюстрация с сотнями сюжетов и персонажей.</p>
+                        </li>
+                        <li class="intro__feature">
+                            <picture>
+                                <source srcset="assets/img/intro/feature-3@desktop.webp 1x, assets/img/intro/feature-3@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                <source srcset="assets/img/intro/feature-3@desktop.png 1x, assets/img/intro/feature-3@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                <source srcset="assets/img/intro/feature-3@mob.webp 1x, assets/img/intro/feature-3@mob@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/intro/feature-3@mob.png 1x, assets/img/intro/feature-3@mob@2x.png 2x" type="image/png" /><img class="intro__feature-image" src="assets/img/intro/feature-3@mob.png" data-src="assets/img/intro/feature-3@mob.png 1x, assets/img/intro/feature-3@mob@2x.png 2x" alt="" />
+                            </picture>
+                            <h3 class="intro__feature-title">Проходите квесты и&nbsp;спасите принцессу</h3>
+                            <p class="intro__feature-text">На&nbsp;помощь придут 3D-фигурки Слона, Пегаса, Орла и&nbsp;Льва&nbsp;&mdash; друзья принца Юнидрагон ждут вас в&nbsp;каждой части Quezzle.</p>
+                        </li>
+                    </ul>
+                    <div class="intro__spinner-wrapper">
+                        <div class="spinner intro__spinner">
+                            <div class="spinner__items">
+                                <div class="spinner__item" data-position="1">
+                                    <picture>
+                                        <source srcset="assets/img/spinner/item-1@desktop.webp 1x, assets/img/spinner/item-1@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                        <source srcset="assets/img/spinner/item-1@desktop.png 1x, assets/img/spinner/item-1@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                        <source srcset="assets/img/spinner/item-1@mob.webp 1x, assets/img/spinner/item-1@mob@2x.webp 2x" type="image/webp" />
+                                        <source srcset="assets/img/spinner/item-1@mob.png 1x, assets/img/spinner/item-1@mob@2x.png 2x" type="image/png" /><img src="assets/img/spinner/item-1@mob.png" data-src="assets/img/spinner/item-1@mob.png 1x, assets/img/spinner/item-1@mob@2x.png 2x" alt="" />
+                                    </picture>
+                                </div>
+                                <div class="spinner__item" data-position="2">
+                                    <picture>
+                                        <source srcset="assets/img/spinner/item-3@desktop.webp 1x, assets/img/spinner/item-3@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                        <source srcset="assets/img/spinner/item-3@desktop.png 1x, assets/img/spinner/item-3@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                        <source srcset="assets/img/spinner/item-3@mob.webp 1x, assets/img/spinner/item-3@mob@2x.webp 2x" type="image/webp" />
+                                        <source srcset="assets/img/spinner/item-3@mob.png 1x, assets/img/spinner/item-3@mob@2x.png 2x" type="image/png" /><img src="assets/img/spinner/item-3@mob.png" data-src="assets/img/spinner/item-3@mob.png 1x, assets/img/spinner/item-3@mob@2x.png 2x" alt="" />
+                                    </picture>
+                                </div>
+                                <div class="spinner__item" data-position="3">
+                                    <picture>
+                                        <source srcset="assets/img/spinner/item-2@desktop.webp 1x, assets/img/spinner/item-2@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                        <source srcset="assets/img/spinner/item-2@desktop.png 1x, assets/img/spinner/item-2@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                        <source srcset="assets/img/spinner/item-2@mob.webp 1x, assets/img/spinner/item-2@mob@2x.webp 2x" type="image/webp" />
+                                        <source srcset="assets/img/spinner/item-2@mob.png 1x, assets/img/spinner/item-2@mob@2x.png 2x" type="image/png" /><img src="assets/img/spinner/item-2@mob.png" data-src="assets/img/spinner/item-2@mob.png 1x, assets/img/spinner/item-2@mob@2x.png 2x" alt="" />
+                                    </picture>
+                                </div>
+                            </div>
+                            <div class="spinner__nav"><button class="btn-arrow btn-arrow--prev spinner__prev" type="button" title="Назад"><svg class="svg-icon svg-icon--arrow">
+                                        <use xlink:href="assets/img/sprite.svg#arrow"></use>
+                                    </svg></button><button class="btn-arrow btn-arrow--next spinner__next" type="button" title="Далее"><svg class="svg-icon svg-icon--arrow">
+                                        <use xlink:href="assets/img/sprite.svg#arrow"></use>
+                                    </svg></button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page__content-wrapper">
+            <section class="about lazy-bg page__about" id="about">
+                <div class="about__container">
+                    <div class="about__top">
+                        <h2 class="title title--white about__title">Знакомьтесь: Quezzle</h2>
+                    </div><a class="btn-video js-popup-video about__btn-video" href="https://www.youtube.com/watch?v=9YaK6reb5vc">
+                        <div class="btn-video__cover">
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/video-cover.webp" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/video-cover.png" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/video-cover.png" alt="" />
+                            </picture>
+                        </div>
+                        <div class="btn-video__poster">
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/about/video-poster.webp" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/about/video-poster.png" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/about/video-poster.png" alt="" />
+                            </picture>
+                        </div><img class="btn-video__play lazy" src="assets/img/placeholder.png" data-src="assets/img/play.svg" alt="" />
+                    </a>
+                    <div class="about__bottom">
+                        <div class="about__arrow"><svg class="svg-icon svg-icon--arrow">
+                                <use xlink:href="assets/img/sprite.svg#arrow"></use>
+                            </svg></div>
+                    </div><img class="about__cell lazy" src="assets/img/placeholder.png" data-src="assets/img/about/cell.svg" alt="" />
+                    <picture>
+                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/about/hand@desktop.webp 1x, assets/img/about/hand@desktop@2x.webp 2x" media="(min-width: 480px)" type="image/webp" />
+                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/about/hand@desktop.png 1x, assets/img/about/hand@desktop@2x.png 2x" media="(min-width: 480px)" type="image/png" />
+                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/about/hand@mob.webp 1x, assets/img/about/hand@mob@2x.webp 2x" type="image/webp" />
+                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/about/hand@mob.png 1x, assets/img/about/hand@mob@2x.png 2x" type="image/png" /><img class="about__hand lazy" src="assets/img/placeholder.png" data-src="assets/img/about/hand@mob.png 1x, assets/img/about/hand@mob@2x.png 2x" alt="" />
+                    </picture>
+                </div>
+            </section>
+            <section class="order page__order" id="order">
+                <div class="order__container">
+                    <h2 class="title order__title">Закажи Quezzle сейчас</h2>
+                    <div class="order__items">
+                        <div class="product product--1 order__item">
+                            <div class="product__image">
+                                <picture>
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/products/product-1.webp 1x, assets/img/products/product-1@2x.webp 2x" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/products/product-1.png 1x, assets/img/products/product-1@2x.png 2x" type="image/png" /><img class="gift__item-image lazy" src="assets/img/placeholder.png" data-src="assets/img/products/product-1.png 1x, assets/img/products/product-1@2x.png 2x" width="413" height="268" alt="Часть 1 из 4" />
+                                </picture>
+                            </div>
+                            <div class="product__content">
+                                <h3 class="product__title">Часть 1&nbsp;из&nbsp;4</h3>
+                                <p class="product__subtitle">Ознакомьтесь с&nbsp;базовыми механиками Quezzle</p><button class="product__toggle" type="button"><span class="product__toggle-caption">Подробнее</span><span class="product__toggle-caption">Скрыть</span></button>
+                                <div class="product__details">
+                                    <ul class="product__options">
+                                        <li class="product__option">Яркий пазл <br>из 250 уникальных деталей, 3D-конструктор, несколько мини-миссий и базовые механики Quezzle</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product__order">
+                                <p class="product__price-label">Цена по&nbsp;предзаказу</p>
+                                <p class="product__price-old">3 490 ₽</p>
+                                <p class="product__price">2 490 ₽</p><button class="button product__button-buy js-buy button--blue" type="button" data-product-id="1"><span class="button__caption">Купить</span></button>
+                            </div>
+                        </div>
+                        <div class="product product--2 order__item">
+                            <div class="product__image">
+                                <picture>
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/products/product-2.webp 1x, assets/img/products/product-2@2x.webp 2x" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/products/product-2.png 1x, assets/img/products/product-2@2x.png 2x" type="image/png" /><img class="gift__item-image lazy" src="assets/img/placeholder.png" data-src="assets/img/products/product-2.png 1x, assets/img/products/product-2@2x.png 2x" width="413" height="268" alt="Часть 2, 3 и 4" />
+                                </picture>
+                            </div>
+                            <div class="product__content">
+                                <h3 class="product__title">Часть&nbsp;2, 3&nbsp;и&nbsp;4</h3>
+                                <p class="product__subtitle">Докупите до&nbsp;полного набора и&nbsp;начинайте основной квест</p><button class="product__toggle" type="button"><span class="product__toggle-caption">Подробнее</span><span class="product__toggle-caption">Скрыть</span></button>
+                                <div class="product__details">
+                                    <ul class="product__options">
+                                        <li class="product__option disabled">Район Небесного дракона</li>
+                                        <li class="product__option">Район Западные переулки</li>
+                                        <li class="product__option">Район Облачный закат</li>
+                                        <li class="product__option">Район Восточная площадь</li>
+                                    </ul>
+                                    <ul class="product__features">
+                                        <li class="product__feature">750 Деталей</li>
+                                        <li class="product__feature">36 см х 25 см - 3 шт.</li>
+                                        <li class="product__feature">3D фигурка - 3 шт.</li>
+                                        <li class="product__feature">30 доп. заданий</li>
+                                        <li class="product__feature">5 лабиринтов</li>
+                                        <li class="product__feature disabled">6 мини-пазлов</li>
+                                        <li class="product__feature disabled">4 сюжетных лабиринта</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product__order">
+                                <p class="product__price-label">Цена по&nbsp;предзаказу</p>
+                                <p class="product__price-old">8 990 ₽</p>
+                                <p class="product__price">6 990 ₽</p><button class="button product__button-buy js-buy button--blue" type="button" data-product-id="2"><span class="button__caption">Купить</span></button>
+                            </div>
+                        </div>
+                        <div class="product product--3 order__item">
+                            <div class="product__image">
+                                <picture>
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/products/product-3.webp 1x, assets/img/products/product-3@2x.webp 2x" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/products/product-3.png 1x, assets/img/products/product-3@2x.png 2x" type="image/png" /><img class="gift__item-image lazy" src="assets/img/placeholder.png" data-src="assets/img/products/product-3.png 1x, assets/img/products/product-3@2x.png 2x" width="413" height="268" alt="Полный набор" />
+                                </picture>
+                            </div>
+                            <div class="product__content">
+                                <h3 class="product__title">Полный набор</h3>
+                                <p class="product__subtitle">Все 4&nbsp;части откроют сюжетную линию&nbsp;&mdash; квест из&nbsp;12&nbsp;шагов</p><button class="product__toggle" type="button"><span class="product__toggle-caption">Подробнее</span><span class="product__toggle-caption">Скрыть</span></button>
+                                <div class="product__details">
+                                    <ul class="product__options">
+                                        <li class="product__option">Район Небесного дракона</li>
+                                        <li class="product__option">Район Западные переулки</li>
+                                        <li class="product__option">Район Облачный закат</li>
+                                        <li class="product__option">Район Восточная площадь</li>
+                                    </ul>
+                                    <ul class="product__features">
+                                        <li class="product__feature">1000 Деталей</li>
+                                        <li class="product__feature">36 см х 25 см - 4 шт.</li>
+                                        <li class="product__feature">3D фигурка - 4 шт.</li>
+                                        <li class="product__feature">40 доп. заданий</li>
+                                        <li class="product__feature">6 лабиринтов</li>
+                                        <li class="product__feature">6 мини-пазлов</li>
+                                        <li class="product__feature">4 сюжетных лабиринта</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product__order">
+                                <p class="product__price-label">Цена по&nbsp;предзаказу</p>
+                                <p class="product__price-old">9 990 ₽</p>
+                                <p class="product__price">7 990 ₽</p><button class="button product__button-buy js-buy" type="button" data-product-id="3"><span class="button__caption">Купить</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="discover lazy-bg page__discover" id="discover">
+                <div class="discover__container">
+                    <h2 class="title title--white discover__title">Откройте целый мир Каппадокии</h2>
+                    <div class="discover__items">
+                        <div class="discover__item">
+                            <div class="discover__item-main">
+                                <div class="discover__item-content">
+                                    <h3 class="discover__item-title">Собирайте:</h3>
+                                    <div class="discover__item-text">
+                                        <p><b>Quezzle&nbsp;&mdash; это деревянный пазл из&nbsp;тысячи уникальных деталей.</b> <br>Фигурки в&nbsp;виде драконов, воздушных шаров и&nbsp;животных кусочек за&nbsp;кусочком собираются в&nbsp;иллюстрацию Каппадокии.</p>
+                                    </div>
+                                </div>
+                                <div class="discover__item-bg">
+                                    <picture>
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/item-1-bg.webp 1x, assets/img/discover/item-1-bg@2x.webp 2x" type="image/webp" />
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/item-1-bg.png 1x, assets/img/discover/item-1-bg@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/discover/item-1-bg.png 1x, assets/img/discover/item-1-bg@2x.png 2x" width="413" height="319" alt="" />
+                                    </picture>
+                                </div>
+                                <div class="discover__item-visual">
+                                    <picture>
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/item-1-visual.webp 1x, assets/img/discover/item-1-visual@2x.webp 2x" type="image/webp" />
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/item-1-visual.png 1x, assets/img/discover/item-1-visual@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/discover/item-1-visual.png 1x, assets/img/discover/item-1-visual@2x.png 2x" width="413" height="374" alt="" />
+                                    </picture>
+                                </div>
+                            </div><a class="btn-video js-popup-video btn-video--small discover__btn-video" href="https://vimeo.com/609269615">
+                                <div class="btn-video__cover">
+                                    <picture>
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/video-cover.webp" type="image/webp" />
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/video-cover.png" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/video-cover.png" alt="" />
+                                    </picture>
+                                </div>
+                                <div class="btn-video__poster">
+                                    <picture>
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/video-poster-1.webp" type="image/webp" />
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/video-poster-1.jpg" type="image/jpeg" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/discover/video-poster-1.jpg" alt="" />
+                                    </picture>
+                                </div><img class="btn-video__play lazy" src="assets/img/placeholder.png" data-src="assets/img/play.svg" alt="" />
+                            </a>
+                        </div>
+                        <div class="discover__item">
+                            <div class="discover__item-main">
+                                <div class="discover__item-content">
+                                    <h3 class="discover__item-title">Находите секреты:</h3>
+                                    <div class="discover__item-text">
+                                        <p><b>Quezzle&nbsp;&mdash; это детально прорисованная иллюстрацияс сотнями сюжетов и&nbsp;персонажей.</b> <br>На&nbsp;насыщенной сюжетами картинке вам нужно будет найти зашифрованные послания в&nbsp;виде деталей, предметов и&nbsp;слов.</p>
+                                    </div>
+                                </div>
+                                <div class="discover__item-bg">
+                                    <picture>
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/item-2-bg.webp 1x, assets/img/discover/item-2-bg@2x.webp 2x" type="image/webp" />
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/item-2-bg.png 1x, assets/img/discover/item-2-bg@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/discover/item-2-bg.png 1x, assets/img/discover/item-2-bg@2x.png 2x" width="413" height="420" alt="" />
+                                    </picture>
+                                </div>
+                                <div class="discover__item-visual">
+                                    <picture>
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/item-2-visual.webp 1x, assets/img/discover/item-2-visual@2x.webp 2x" type="image/webp" />
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/item-2-visual.png 1x, assets/img/discover/item-2-visual@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/discover/item-2-visual.png 1x, assets/img/discover/item-2-visual@2x.png 2x" width="413" height="409" alt="" />
+                                    </picture>
+                                </div>
+                            </div><a class="btn-video js-popup-video btn-video--small discover__btn-video" href="https://vimeo.com/609268605">
+                                <div class="btn-video__cover">
+                                    <picture>
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/video-cover.webp" type="image/webp" />
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/video-cover.png" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/video-cover.png" alt="" />
+                                    </picture>
+                                </div>
+                                <div class="btn-video__poster">
+                                    <picture>
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/video-poster-2.webp" type="image/webp" />
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/video-poster-2.jpg" type="image/jpeg" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/discover/video-poster-2.jpg" alt="" />
+                                    </picture>
+                                </div><img class="btn-video__play lazy" src="assets/img/placeholder.png" data-src="assets/img/play.svg" alt="" />
+                            </a>
+                        </div>
+                        <div class="discover__item">
+                            <div class="discover__item-main">
+                                <div class="discover__item-content">
+                                    <h3 class="discover__item-title">Проходите задания:</h3>
+                                    <div class="discover__item-text">
+                                        <p><b>Это квест, в&nbsp;котором вам нужно спасти принцессу от&nbsp;злодея.</b> <br>На&nbsp;помощь придут 3D-фигурки Слона, Пегаса, Орла и&nbsp;Льва&nbsp;&mdash; друзья принца Юнидрагон ждут вас в&nbsp;каждой части.</p>
+                                    </div>
+                                </div>
+                                <div class="discover__item-bg">
+                                    <picture>
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/item-3-bg.webp 1x, assets/img/discover/item-3-bg@2x.webp 2x" type="image/webp" />
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/item-3-bg.png 1x, assets/img/discover/item-3-bg@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/discover/item-3-bg.png 1x, assets/img/discover/item-3-bg@2x.png 2x" width="413" height="468" alt="" />
+                                    </picture>
+                                </div>
+                                <div class="discover__item-visual">
+                                    <picture>
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/item-3-visual.webp 1x, assets/img/discover/item-3-visual@2x.webp 2x" type="image/webp" />
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/item-3-visual.png 1x, assets/img/discover/item-3-visual@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/discover/item-3-visual.png 1x, assets/img/discover/item-3-visual@2x.png 2x" width="413" height="428" alt="" />
+                                    </picture>
+                                </div>
+                            </div><a class="btn-video js-popup-video btn-video--small discover__btn-video" href="https://vimeo.com/609269786">
+                                <div class="btn-video__cover">
+                                    <picture>
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/video-cover.webp" type="image/webp" />
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/video-cover.png" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/video-cover.png" alt="" />
+                                    </picture>
+                                </div>
+                                <div class="btn-video__poster">
+                                    <picture>
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/video-poster-3.webp" type="image/webp" />
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/discover/video-poster-3.jpg" type="image/jpeg" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/discover/video-poster-3.jpg" alt="" />
+                                    </picture>
+                                </div><img class="btn-video__play lazy" src="assets/img/placeholder.png" data-src="assets/img/play.svg" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="assemble lazy-bg page__assemble" id="assemble">
+                <div class="assemble__container">
+                    <h2 class="title assemble__title">Cобирайте пазл. <br>Проходите квест</h2>
+                    <ul class="assemble__items">
+                        <li class="assemble__item assemble__item--1">
+                            <div class="assemble__item-icon">
+                                <picture>
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-1@desktop.webp 1x, assets/img/assemble/assemble-icon-1@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-1@desktop.png 1x, assets/img/assemble/assemble-icon-1@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-1@mob.webp 1x, assets/img/assemble/assemble-icon-1@mob@2x.webp 2x" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-1@mob.png 1x, assets/img/assemble/assemble-icon-1@mob@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/assemble/assemble-icon-1@mob.png 1x, assets/img/assemble/assemble-icon-1@mob@2x.png 2x" alt="" />
+                                </picture>
+                            </div>
+                            <p class="assemble__item-caption"><b>1000 уникальных кусочков.</b> Интереснее обычного пазла!</p>
+                        </li>
+                        <li class="assemble__item assemble__item--2">
+                            <div class="assemble__item-icon">
+                                <picture>
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-2@desktop.webp 1x, assets/img/assemble/assemble-icon-2@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-2@desktop.png 1x, assets/img/assemble/assemble-icon-2@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-2@mob.webp 1x, assets/img/assemble/assemble-icon-2@mob@2x.webp 2x" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-2@mob.png 1x, assets/img/assemble/assemble-icon-2@mob@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/assemble/assemble-icon-2@mob.png 1x, assets/img/assemble/assemble-icon-2@mob@2x.png 2x" alt="" />
+                                </picture>
+                            </div>
+                            <p class="assemble__item-caption"><b>Один большой квест.</b> <br>4&nbsp;части.&nbsp;50&nbsp;заданий</p>
+                        </li>
+                        <li class="assemble__item assemble__item--3">
+                            <div class="assemble__item-icon">
+                                <picture>
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-3@desktop.webp 1x, assets/img/assemble/assemble-icon-3@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-3@desktop.png 1x, assets/img/assemble/assemble-icon-3@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-3@mob.webp 1x, assets/img/assemble/assemble-icon-3@mob@2x.webp 2x" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-3@mob.png 1x, assets/img/assemble/assemble-icon-3@mob@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/assemble/assemble-icon-3@mob.png 1x, assets/img/assemble/assemble-icon-3@mob@2x.png 2x" alt="" />
+                                </picture>
+                            </div>
+                            <p class="assemble__item-caption"><b>Яркое изображение с&nbsp;детальной прорисовкой</b></p>
+                        </li>
+                        <li class="assemble__item assemble__item--4">
+                            <div class="assemble__item-icon">
+                                <picture>
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-4@desktop.webp 1x, assets/img/assemble/assemble-icon-4@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-4@desktop.png 1x, assets/img/assemble/assemble-icon-4@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-4@mob.webp 1x, assets/img/assemble/assemble-icon-4@mob@2x.webp 2x" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-4@mob.png 1x, assets/img/assemble/assemble-icon-4@mob@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/assemble/assemble-icon-4@mob.png 1x, assets/img/assemble/assemble-icon-4@mob@2x.png 2x" alt="" />
+                                </picture>
+                            </div>
+                            <p class="assemble__item-caption"><b>6&nbsp;секретных пазлов и&nbsp;4&nbsp;мини-фигурки</b></p>
+                        </li>
+                        <li class="assemble__item assemble__item--5">
+                            <div class="assemble__item-icon">
+                                <picture>
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-5@desktop.webp 1x, assets/img/assemble/assemble-icon-5@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-5@desktop.png 1x, assets/img/assemble/assemble-icon-5@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-5@mob.webp 1x, assets/img/assemble/assemble-icon-5@mob@2x.webp 2x" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-5@mob.png 1x, assets/img/assemble/assemble-icon-5@mob@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/assemble/assemble-icon-5@mob.png 1x, assets/img/assemble/assemble-icon-5@mob@2x.png 2x" alt="" />
+                                </picture>
+                            </div>
+                            <p class="assemble__item-caption"><b>От&nbsp;8&nbsp;часов игрового времени</b></p>
+                        </li>
+                        <li class="assemble__item assemble__item--6">
+                            <div class="assemble__item-icon">
+                                <picture>
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-6@desktop.webp 1x, assets/img/assemble/assemble-icon-6@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-6@desktop.png 1x, assets/img/assemble/assemble-icon-6@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-6@mob.webp 1x, assets/img/assemble/assemble-icon-6@mob@2x.webp 2x" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/assemble/assemble-icon-6@mob.png 1x, assets/img/assemble/assemble-icon-6@mob@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/assemble/assemble-icon-6@mob.png 1x, assets/img/assemble/assemble-icon-6@mob@2x.png 2x" alt="" />
+                                </picture>
+                            </div>
+                            <p class="assemble__item-caption"><b>Коллекционная упаковка из&nbsp;дерева</b></p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="show page__show" id="show">
+                <div class="show__clouds">
+                    <picture>
+                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/show-clouds@desktop.webp" media="(min-width: 1000px)" type="image/webp" />
+                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/show-clouds@desktop.png" media="(min-width: 1000px)" type="image/png" />
+                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/show-clouds@mob.webp" type="image/webp" />
+                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/show-clouds@mob.png" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/show/show-clouds@mob.png" alt="" />
+                    </picture>
+                </div>
+                <div class="show__container">
+                    <h2 class="title title--white show__title">Пазл способен показать историю <br>Quezzle покажет сотни</h2>
+                    <div class="show__scene">
+                        <div class="show__map">
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/show-map@desktop.webp 1x, assets/img/show/show-map@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/show-map@desktop.png 1x, assets/img/show/show-map@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/show-map@mob.webp 1x, assets/img/show/show-map@mob@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/show-map@mob.png 1x, assets/img/show/show-map@mob@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/show/show-map@mob.png 1x, assets/img/show/show-map@mob@2x.png 2x" alt="" />
+                            </picture>
+                        </div>
+                        <div class="show__story show__story--4">
+                            <div class="show__story-dot"></div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-4.webp 1x, assets/img/show/story-4@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-4.png 1x, assets/img/show/story-4@2x.png 2x" type="image/png" /><img class="show__story-image lazy" src="assets/img/placeholder.png" data-src="assets/img/show/story-4.png 1x, assets/img/show/story-4@2x.png 2x" width="153" height="153" alt="" />
+                            </picture>
+                        </div>
+                        <div class="show__story show__story--3">
+                            <div class="show__story-dot"></div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-3.webp 1x, assets/img/show/story-3@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-3.png 1x, assets/img/show/story-3@2x.png 2x" type="image/png" /><img class="show__story-image lazy" src="assets/img/placeholder.png" data-src="assets/img/show/story-3.png 1x, assets/img/show/story-3@2x.png 2x" width="176" height="176" alt="" />
+                            </picture>
+                        </div>
+                        <div class="show__story show__story--11">
+                            <div class="show__story-dot"></div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-11.webp 1x, assets/img/show/story-11@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-11.png 1x, assets/img/show/story-11@2x.png 2x" type="image/png" /><img class="show__story-image lazy" src="assets/img/placeholder.png" data-src="assets/img/show/story-11.png 1x, assets/img/show/story-11@2x.png 2x" width="138" height="138" alt="" />
+                            </picture>
+                        </div>
+                        <div class="show__story show__story--1">
+                            <div class="show__story-dot"></div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-1.webp 1x, assets/img/show/story-1@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-1.png 1x, assets/img/show/story-1@2x.png 2x" type="image/png" /><img class="show__story-image lazy" src="assets/img/placeholder.png" data-src="assets/img/show/story-1.png 1x, assets/img/show/story-1@2x.png 2x" width="220" height="220" alt="" />
+                            </picture>
+                        </div>
+                        <div class="show__story show__story--5">
+                            <div class="show__story-dot"></div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-5.webp 1x, assets/img/show/story-5@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-5.png 1x, assets/img/show/story-5@2x.png 2x" type="image/png" /><img class="show__story-image lazy" src="assets/img/placeholder.png" data-src="assets/img/show/story-5.png 1x, assets/img/show/story-5@2x.png 2x" width="138" height="138" alt="" />
+                            </picture>
+                        </div>
+                        <div class="show__story show__story--10">
+                            <div class="show__story-dot"></div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-10.webp 1x, assets/img/show/story-10@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-10.png 1x, assets/img/show/story-10@2x.png 2x" type="image/png" /><img class="show__story-image lazy" src="assets/img/placeholder.png" data-src="assets/img/show/story-10.png 1x, assets/img/show/story-10@2x.png 2x" width="176" height="176" alt="" />
+                            </picture>
+                        </div>
+                        <div class="show__story show__story--13">
+                            <div class="show__story-dot"></div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-13.webp 1x, assets/img/show/story-13@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-13.png 1x, assets/img/show/story-13@2x.png 2x" type="image/png" /><img class="show__story-image lazy" src="assets/img/placeholder.png" data-src="assets/img/show/story-13.png 1x, assets/img/show/story-13@2x.png 2x" width="220" height="220" alt="" />
+                            </picture>
+                        </div>
+                        <div class="show__story show__story--6">
+                            <div class="show__story-dot"></div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-6.webp 1x, assets/img/show/story-6@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-6.png 1x, assets/img/show/story-6@2x.png 2x" type="image/png" /><img class="show__story-image lazy" src="assets/img/placeholder.png" data-src="assets/img/show/story-6.png 1x, assets/img/show/story-6@2x.png 2x" width="138" height="138" alt="" />
+                            </picture>
+                        </div>
+                        <div class="show__story show__story--8">
+                            <div class="show__story-dot"></div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-8.webp 1x, assets/img/show/story-8@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-8.png 1x, assets/img/show/story-8@2x.png 2x" type="image/png" /><img class="show__story-image lazy" src="assets/img/placeholder.png" data-src="assets/img/show/story-8.png 1x, assets/img/show/story-8@2x.png 2x" width="138" height="138" alt="" />
+                            </picture>
+                        </div>
+                        <div class="show__story show__story--2">
+                            <div class="show__story-dot"></div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-2.webp 1x, assets/img/show/story-2@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-2.png 1x, assets/img/show/story-2@2x.png 2x" type="image/png" /><img class="show__story-image lazy" src="assets/img/placeholder.png" data-src="assets/img/show/story-2.png 1x, assets/img/show/story-2@2x.png 2x" width="176" height="176" alt="" />
+                            </picture>
+                        </div>
+                        <div class="show__story show__story--9">
+                            <div class="show__story-dot"></div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-9.webp 1x, assets/img/show/story-9@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-9.png 1x, assets/img/show/story-9@2x.png 2x" type="image/png" /><img class="show__story-image lazy" src="assets/img/placeholder.png" data-src="assets/img/show/story-9.png 1x, assets/img/show/story-9@2x.png 2x" width="138" height="138" alt="" />
+                            </picture>
+                        </div>
+                        <div class="show__story show__story--7">
+                            <div class="show__story-dot"></div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-7.webp 1x, assets/img/show/story-7@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-7.png 1x, assets/img/show/story-7@2x.png 2x" type="image/png" /><img class="show__story-image lazy" src="assets/img/placeholder.png" data-src="assets/img/show/story-7.png 1x, assets/img/show/story-7@2x.png 2x" width="138" height="138" alt="" />
+                            </picture>
+                        </div>
+                        <div class="show__story show__story--14">
+                            <div class="show__story-dot"></div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-14.webp 1x, assets/img/show/story-14@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-14.png 1x, assets/img/show/story-14@2x.png 2x" type="image/png" /><img class="show__story-image lazy" src="assets/img/placeholder.png" data-src="assets/img/show/story-14.png 1x, assets/img/show/story-14@2x.png 2x" width="138" height="138" alt="" />
+                            </picture>
+                        </div>
+                        <div class="show__story show__story--12">
+                            <div class="show__story-dot"></div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-12.webp 1x, assets/img/show/story-12@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/story-12.png 1x, assets/img/show/story-12@2x.png 2x" type="image/png" /><img class="show__story-image lazy" src="assets/img/placeholder.png" data-src="assets/img/show/story-12.png 1x, assets/img/show/story-12@2x.png 2x" width="138" height="138" alt="" />
+                            </picture>
+                        </div>
+                        <div class="show__note">
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/spyglass.webp 1x, assets/img/show/spyglass@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/show/spyglass.png 1x, assets/img/show/spyglass@2x.png 2x" type="image/png" /><img class="show__spyglass lazy" src="assets/img/placeholder.png" data-src="assets/img/show/spyglass.png 1x, assets/img/show/spyglass@2x.png 2x" width="162" height="170" alt="" />
+                            </picture>
+                            <div class="show__note-caption">Возьмите подзорную трубу и наведите на яркие точки</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="team lazy-bg page__team" id="team">
+                <div class="team__container">
+                    <div class="team__content">
+                        <h2 class="title team__title">5&nbsp;СТРАН. <br>Команда из&nbsp;50&nbsp;человек. <br>270 дней разработки</h2>
+                        <div class="team__row">
+                            <div class="team__left"><a class="btn-video btn-video--mid js-popup-video team__btn-video" href="https://www.youtube.com/watch?v=PS5yvoto41E">
+                                    <div class="btn-video__cover">
+                                        <picture>
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/video-cover.webp" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/video-cover.png" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/video-cover.png" alt="" />
+                                        </picture>
+                                    </div>
+                                    <div class="btn-video__poster">
+                                        <picture>
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/team/video-poster.webp 1x, assets/img/team/video-poster@2x.webp 2x" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/team/video-poster.jpg 1x, assets/img/team/video-poster@2x.jpg 2x" type="image/jpeg" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/team/video-poster.jpg 1x, assets/img/team/video-poster@2x.jpg 2x" alt="" />
+                                        </picture>
+                                    </div><img class="btn-video__play lazy" src="assets/img/placeholder.png" data-src="assets/img/play.svg" alt="" />
+                                </a>
+                                <div class="team__clouds team__clouds--1"></div>
+                                <div class="team__clouds team__clouds--2"></div>
+                                <div class="team__clouds team__clouds--3"></div>
+                                <div class="team__clouds team__clouds--4"></div>
+                            </div>
+                            <div class="team__right">
+                                <p class="team__text">Яркие деревянные пазлы и&nbsp;увлекательные квесты объединились в&nbsp;коллаборации от&nbsp;Unidragon и&nbsp;студии IC4Design.</p>
+                                <div class="team__cards">
+                                    <div class="team__card">
+                                        <picture>
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/team/ic4design.webp" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/team/ic4design.png" type="image/png" /><img class="team__card-icon lazy" src="assets/img/placeholder.png" data-src="assets/img/team/ic4design.png" alt="IC4Design" />
+                                        </picture>
+                                        <div class="team__cart-text">
+                                            <p><b>IC4Design</b> &mdash;&nbsp;Японская студия, входящая в&nbsp;список 200 Best Illustrators Worldwide. Среди клиентов&nbsp;&mdash; компании Adobe, Google и&nbsp;The New York Times Magazine.</p>
+                                        </div>
+                                    </div>
+                                    <div class="team__card">
+                                        <picture>
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/team/unidragon.webp" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/team/unidragon.png" type="image/png" /><img class="team__card-icon lazy" src="assets/img/placeholder.png" data-src="assets/img/team/unidragon.png" alt="Unidragon" />
+                                        </picture>
+                                        <div class="team__cart-text">
+                                            <p><b>Unidragon</b> &mdash;&nbsp;&#8470;&nbsp;1&nbsp;в мире в&nbsp;индустрии деревянных пазлов: более 300&nbsp;000 довольных клиентов в&nbsp;100&nbsp;странах.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team__scene">
+                    <div class="team__icon team__icon--1">
+                        <picture>
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/team/ic4design.webp" type="image/webp" />
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/team/ic4design.png" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/team/ic4design.png" alt="IC4Design" />
+                        </picture>
+                    </div>
+                    <div class="team__icon team__icon--2">
+                        <picture>
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/team/unidragon.webp" type="image/webp" />
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/team/unidragon.png" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/team/unidragon.png" alt="Unidragon" />
+                        </picture>
+                    </div><img class="team__flash1" src="assets/img/team/flash1.svg" width="170" height="130" alt="" /><img class="team__flash2" src="assets/img/team/flash2.svg" width="390" height="340" alt="" /><img class="team__flash3" src="assets/img/team/flash3.svg" width="125" height="110" alt="" />
+                </div>
+            </section>
+            <section class="how lazy-bg page__how" id="how">
+                <div class="how__container">
+                    <h2 class="title how__title">Как это работает?</h2>
+                    <div class="how__row">
+                        <div class="how__left">
+                            <div class="steps how__steps">
+                                <div class="steps__items">
+                                    <div class="steps__item steps__item--1">
+                                        <picture>
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-1@desktop.webp 1x, assets/img/steps/item-1@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-1@desktop.png 1x, assets/img/steps/item-1@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-1@mob.webp 1x, assets/img/steps/item-1@mob@2x.webp 2x" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-1@mob.png 1x, assets/img/steps/item-1@mob@2x.png 2x" type="image/png" /><img class="steps__item-image lazy" src="assets/img/placeholder.png" data-src="assets/img/steps/item-1@mob.png 1x, assets/img/steps/item-1@mob@2x.png 2x" alt="" />
+                                        </picture>
+                                        <h3 class="steps__item-title">Откройте яркую коробку Quezzle.</h3>
+                                        <div class="steps__item-bottom"><img class="steps__item-number lazy" src="assets/img/placeholder.png" data-src="assets/img/how/1.svg" width="40" height="152" alt="1" />
+                                            <p class="steps__item-text">На&nbsp;иллюстрацию легко засмотреться, но&nbsp;пора собирать пазл!</p>
+                                        </div>
+                                    </div>
+                                    <div class="steps__item steps__item--2">
+                                        <picture>
+                                            <source srcset="assets/img/steps/item-2@desktop.webp 1x, assets/img/steps/item-2@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                            <source srcset="assets/img/steps/item-2@desktop.png 1x, assets/img/steps/item-2@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                            <source srcset="assets/img/steps/item-2@mob.webp 1x, assets/img/steps/item-2@mob@2x.webp 2x" type="image/webp" />
+                                            <source srcset="assets/img/steps/item-2@mob.png 1x, assets/img/steps/item-2@mob@2x.png 2x" type="image/png" /><img class="steps__item-image" src="assets/img/steps/item-2@mob.png" data-src="assets/img/steps/item-2@mob.png 1x, assets/img/steps/item-2@mob@2x.png 2x" alt="" />
+                                        </picture>
+                                        <h3 class="steps__item-title">Соберите <br>3D&nbsp;фигурки.</h3>
+                                        <div class="steps__item-bottom"><img class="steps__item-number lazy" src="assets/img/placeholder.png" data-src="assets/img/how/2.svg" width="86" height="152" alt="2" />
+                                            <p class="steps__item-text">Остались лишние детали? <br>Это друзья Unidragon.</p>
+                                        </div>
+                                    </div>
+                                    <div class="steps__item steps__item--3">
+                                        <picture>
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-3@desktop.webp 1x, assets/img/steps/item-3@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-3@desktop.png 1x, assets/img/steps/item-3@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-3@mob.webp 1x, assets/img/steps/item-3@mob@2x.webp 2x" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-3@mob.png 1x, assets/img/steps/item-3@mob@2x.png 2x" type="image/png" /><img class="steps__item-image lazy" src="assets/img/placeholder.png" data-src="assets/img/steps/item-3@mob.png 1x, assets/img/steps/item-3@mob@2x.png 2x" alt="" />
+                                        </picture>
+                                        <h3 class="steps__item-title">Сложите все районы Каппадокии из&nbsp;тысячи деталей.</h3>
+                                        <div class="steps__item-bottom"><img class="steps__item-number lazy" src="assets/img/placeholder.png" data-src="assets/img/how/3.svg" width="100" height="152" alt="3" />
+                                            <p class="steps__item-text">Не&nbsp;заблудитесь в&nbsp;сюжетах Quezzle!</p>
+                                        </div>
+                                    </div>
+                                    <div class="steps__item steps__item--4">
+                                        <picture>
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-4@desktop.webp 1x, assets/img/steps/item-4@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-4@desktop.png 1x, assets/img/steps/item-4@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-4@mob.webp 1x, assets/img/steps/item-4@mob@2x.webp 2x" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-4@mob.png 1x, assets/img/steps/item-4@mob@2x.png 2x" type="image/png" /><img class="steps__item-image lazy" src="assets/img/placeholder.png" data-src="assets/img/steps/item-4@mob.png 1x, assets/img/steps/item-4@mob@2x.png 2x" alt="" />
+                                        </picture>
+                                        <h3 class="steps__item-title">Исследуйте мир Каппадокии.</h3>
+                                        <div class="steps__item-bottom"><img class="steps__item-number lazy" src="assets/img/placeholder.png" data-src="assets/img/how/4.svg" width="90" height="152" alt="4" />
+                                            <p class="steps__item-text">Совершите воображаемую прогулку по&nbsp;переулкам и&nbsp;полетайте под облаками на&nbsp;воздушных шарах.</p>
+                                        </div>
+                                    </div>
+                                    <div class="steps__item steps__item--5">
+                                        <picture>
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-5@desktop.webp 1x, assets/img/steps/item-5@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-5@desktop.png 1x, assets/img/steps/item-5@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-5@mob.webp 1x, assets/img/steps/item-5@mob@2x.webp 2x" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-5@mob.png 1x, assets/img/steps/item-5@mob@2x.png 2x" type="image/png" /><img class="steps__item-image lazy" src="assets/img/placeholder.png" data-src="assets/img/steps/item-5@mob.png 1x, assets/img/steps/item-5@mob@2x.png 2x" alt="" />
+                                        </picture>
+                                        <h3 class="steps__item-title">Погрузитесь в&nbsp;прохождение основного квеста.</h3>
+                                        <div class="steps__item-bottom"><img class="steps__item-number lazy" src="assets/img/placeholder.png" data-src="assets/img/how/5.svg" width="85" height="152" alt="5" />
+                                            <p class="steps__item-text">Пройдите лабиринты и&nbsp;выполните дополнительные задания.</p>
+                                        </div>
+                                    </div>
+                                    <div class="steps__item steps__item--6">
+                                        <picture>
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-6@desktop.webp 1x, assets/img/steps/item-6@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-6@desktop.png 1x, assets/img/steps/item-6@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-6@mob.webp 1x, assets/img/steps/item-6@mob@2x.webp 2x" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/steps/item-6@mob.png 1x, assets/img/steps/item-6@mob@2x.png 2x" type="image/png" /><img class="steps__item-image lazy" src="assets/img/placeholder.png" data-src="assets/img/steps/item-6@mob.png 1x, assets/img/steps/item-6@mob@2x.png 2x" alt="" />
+                                        </picture>
+                                        <h3 class="steps__item-title">Дополненная реальность</h3>
+                                        <div class="steps__item-bottom"><img class="steps__item-number lazy" src="assets/img/placeholder.png" data-src="assets/img/how/6.svg" width="87" height="152" alt="6" />
+                                            <p class="steps__item-text">Приключение продолжится в&nbsp;дополненной реальности!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="steps__nav"><button class="btn-arrow btn-arrow--prev steps__prev" type="button" title="Назад"><svg class="svg-icon svg-icon--arrow">
+                                            <use xlink:href="assets/img/sprite.svg#arrow"></use>
+                                        </svg></button><button class="btn-arrow btn-arrow--next steps__next" type="button" title="Далее"><svg class="svg-icon svg-icon--arrow">
+                                            <use xlink:href="assets/img/sprite.svg#arrow"></use>
+                                        </svg></button></div>
+                            </div>
+                        </div>
+                        <div class="how__right">
+                            <div class="how__box">
+                                <picture>
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/how/box.webp 1x, assets/img/how/box@2x.webp 2x" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/how/box.png 1x, assets/img/how/box@2x.png 2x" type="image/png" /><img class="how__box-closed lazy" src="assets/img/placeholder.png" data-src="assets/img/how/box.png 1x, assets/img/how/box@2x.png 2x" alt="" />
+                                </picture>
+                                <picture>
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/how/box-opened@desktop.webp 1x, assets/img/how/box-opened@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/how/box-opened@desktop.png 1x, assets/img/how/box-opened@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/how/box-opened@mob.webp 1x, assets/img/how/box-opened@mob@2x.webp 2x" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/how/box-opened@mob.png 1x, assets/img/how/box-opened@mob@2x.png 2x" type="image/png" /><img class="how__box-opened lazy" src="assets/img/placeholder.png" data-src="assets/img/how/box-opened@mob.png 1x, assets/img/how/box-opened@mob@2x.png 2x" alt="" />
+                                </picture><button class="how__btn-open" type="button"><span class="how__btn-open-caption">Кликни на меня</span><img class="how__btn-open-arrow lazy" src="assets/img/placeholder.png" data-src="assets/img/arrow-open.svg" width="58" height="68" alt="" /></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="gift page__gift" id="gift">
+                <div class="gift__container">
+                    <div class="gift__row">
+                        <div class="gift__left">
+                            <h2 class="title gift__title">Quezzle&nbsp;&mdash; яркий запоминающийся подарок</h2>
+                            <div class="gift__text">
+                                <p>Один продукт три развлечения</p>
+                                <ul>
+                                    <li>Собирайте яркий пазл из&nbsp;тысячи кусочков</li>
+                                    <li>Разглядывайте детали и&nbsp;находите секреты</li>
+                                    <li>Проходите квест и&nbsp;лабиринты</li>
+                                </ul>
+                            </div><a class="button gift__button-buy" href="#order" role="button"><span class="button__caption">Купить</span></a>
+                        </div>
+                        <div class="gift__right">
+                            <div class="gift__items-wrapper">
+                                <div class="gift__items">
+                                    <div class="gift__item">
+                                        <picture>
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/gift/gift-1.webp 1x, assets/img/gift/gift-1@2x.webp 2x" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/gift/gift-1.png 1x, assets/img/gift/gift-1@2x.png 2x" type="image/png" /><img class="gift__item-image lazy" src="assets/img/placeholder.png" data-src="assets/img/gift/gift-1.png 1x, assets/img/gift/gift-1@2x.png 2x" width="480" height="300" alt="" />
+                                        </picture>
+                                        <p class="gift__item-caption">Удиви и&nbsp;собери всех вокруг себя на&nbsp;вечеринке</p>
+                                    </div>
+                                    <div class="gift__item">
+                                        <picture>
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/gift/gift-2.webp 1x, assets/img/gift/gift-2@2x.webp 2x" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/gift/gift-2.png 1x, assets/img/gift/gift-2@2x.png 2x" type="image/png" /><img class="gift__item-image lazy" src="assets/img/placeholder.png" data-src="assets/img/gift/gift-2.png 1x, assets/img/gift/gift-2@2x.png 2x" width="480" height="300" alt="" />
+                                        </picture>
+                                        <p class="gift__item-caption">Незабываемый подарок на&nbsp;Новый год и&nbsp;Рождество</p>
+                                    </div>
+                                    <div class="gift__item">
+                                        <picture>
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/gift/gift-3.webp 1x, assets/img/gift/gift-3@2x.webp 2x" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/gift/gift-3.png 1x, assets/img/gift/gift-3@2x.png 2x" type="image/png" /><img class="gift__item-image lazy" src="assets/img/placeholder.png" data-src="assets/img/gift/gift-3.png 1x, assets/img/gift/gift-3@2x.png 2x" width="480" height="300" alt="" />
+                                        </picture>
+                                        <p class="gift__item-caption">Отлично подходит для игры с&nbsp;детьми</p>
+                                    </div>
+                                    <div class="gift__item">
+                                        <picture>
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/gift/gift-4.webp 1x, assets/img/gift/gift-4@2x.webp 2x" type="image/webp" />
+                                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/gift/gift-4.png 1x, assets/img/gift/gift-4@2x.png 2x" type="image/png" /><img class="gift__item-image lazy" src="assets/img/placeholder.png" data-src="assets/img/gift/gift-4.png 1x, assets/img/gift/gift-4@2x.png 2x" width="480" height="300" alt="" />
+                                        </picture>
+                                        <p class="gift__item-caption">Повод собраться всей семьёй</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gift__nav"><button class="btn-arrow btn-arrow--prev gift__prev" type="button" title="Назад"><svg class="svg-icon svg-icon--arrow">
+                                        <use xlink:href="assets/img/sprite.svg#arrow"></use>
+                                    </svg></button>
+                                <div class="gift__counter"><span class="gift__current-item">1</span>/<span class="gift__items-quantity">4</span></div><button class="btn-arrow btn-arrow--next gift__next" type="button" title="Далее"><svg class="svg-icon svg-icon--arrow">
+                                        <use xlink:href="assets/img/sprite.svg#arrow"></use>
+                                    </svg></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="comparision lazy-bg page__comparision" id="comparision">
+                <div class="comparision__container">
+                    <h2 class="title comparision__title">Чем Quezzle отличается от&nbsp;пазла?</h2>
+                    <div class="comparision__table-wrapper">
+                        <table class="table comparision__table">
+                            <thead class="table__header">
+                                <tr class="table__row">
+                                    <th class="table__col"></th>
+                                    <th class="table__col">Обычный пазл</th>
+                                    <th class="table__col"><img class="table__logo" src="assets/img/logo.svg" width="196" height="50" alt="QUEZZLE" /></th>
+                                </tr>
+                            </thead>
+                            <tbody class="table__main">
+                                <tr class="table__row">
+                                    <td class="table__col">Не&nbsp;только сборка: вас ждет множество заданий</td>
+                                    <td class="table__col"><img src="assets/img/no.svg" width="30" height="26" alt="Нет" /></td>
+                                    <td class="table__col"><img src="assets/img/yes.svg" width="30" height="20" alt="Да" /></td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__col">Содержит в&nbsp;себе множество сюжетов и&nbsp;персонажей</td>
+                                    <td class="table__col"><img src="assets/img/no.svg" width="30" height="26" alt="Нет" /></td>
+                                    <td class="table__col"><img src="assets/img/yes.svg" width="30" height="20" alt="Да" /></td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__col">Увлечет вас надолго: можно рассматривать часами</td>
+                                    <td class="table__col"><img src="assets/img/no.svg" width="30" height="26" alt="Нет" /></td>
+                                    <td class="table__col"><img src="assets/img/yes.svg" width="30" height="20" alt="Да" /></td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__col">Хочется собирать снова и&nbsp;снова</td>
+                                    <td class="table__col"><img src="assets/img/no.svg" width="30" height="26" alt="Нет" /></td>
+                                    <td class="table__col"><img src="assets/img/yes.svg" width="30" height="20" alt="Да" /></td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__col">Коробка расположится на&nbsp;книжной полке и&nbsp;дополнит интерьер</td>
+                                    <td class="table__col"><img src="assets/img/no.svg" width="30" height="26" alt="Нет" /></td>
+                                    <td class="table__col"><img src="assets/img/yes.svg" width="30" height="20" alt="Да" /></td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__col">Оригинальный подарок: приносит эмоции и&nbsp;настроение</td>
+                                    <td class="table__col"><img src="assets/img/no.svg" width="30" height="26" alt="Нет" /></td>
+                                    <td class="table__col"><img src="assets/img/yes.svg" width="30" height="20" alt="Да" /></td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td class="table__col">Есть у&nbsp;всех</td>
+                                    <td class="table__col"><img src="assets/img/yes.svg" width="30" height="20" alt="Да" /></td>
+                                    <td class="table__col"><img src="assets/img/no.svg" width="30" height="26" alt="Нет" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="comparision__button-wrapper"><a class="button comparision__button-buy" href="#order" role="button"><span class="button__caption">Купить</span></a></div>
+                </div>
+            </section>
+            <section class="cappadocia page__cappadocia" id="cappadocia">
+                <div class="cappadocia__container">
+                    <h2 class="title cappadocia__title">Мир Каппадокии</h2>
+                    <div class="cappadocia__scene">
+                        <div class="cappadocia__scene-scaler"></div>
+                        <div class="cappadocia__intro">
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/visual@desktop.webp 1x, assets/img/cappadocia/visual@desktop@2x.webp 2x" media="(min-width: 480px)" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/visual@desktop.png 1x, assets/img/cappadocia/visual@desktop@2x.png 2x" media="(min-width: 480px)" type="image/png" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/visual@mob.webp 1x, assets/img/cappadocia/visual@mob@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/visual@mob.png 1x, assets/img/cappadocia/visual@mob@2x.png 2x" type="image/png" /><img class="cappadocia__visual lazy" src="assets/img/placeholder.png" data-src="assets/img/cappadocia/visual@mob.png 1x, assets/img/cappadocia/visual@mob@2x.png 2x" alt="" />
+                            </picture><button class="button cappadocia__button-assemble" type="button"><span class="button__caption">Собрать пазл</span></button>
+                        </div>
+                        <picture>
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/part-1@desktop.webp 1x, assets/img/cappadocia/part-1@desktop@2x.webp 2x" media="(min-width: 480px)" type="image/webp" />
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/part-1@desktop.png 1x, assets/img/cappadocia/part-1@desktop@2x.png 2x" media="(min-width: 480px)" type="image/png" />
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/part-1@mob.webp 1x, assets/img/cappadocia/part-1@mob@2x.webp 2x" type="image/webp" />
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/part-1@mob.png 1x, assets/img/cappadocia/part-1@mob@2x.png 2x" type="image/png" /><img class="cappadocia__part cappadocia__part--1 lazy" src="assets/img/placeholder.png" data-src="assets/img/cappadocia/part-1@mob.png 1x, assets/img/cappadocia/part-1@mob@2x.png 2x" alt="" />
+                        </picture>
+                        <picture>
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/part-2@desktop.webp 1x, assets/img/cappadocia/part-2@desktop@2x.webp 2x" media="(min-width: 480px)" type="image/webp" />
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/part-2@desktop.png 1x, assets/img/cappadocia/part-2@desktop@2x.png 2x" media="(min-width: 480px)" type="image/png" />
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/part-2@mob.webp 1x, assets/img/cappadocia/part-2@mob@2x.webp 2x" type="image/webp" />
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/part-2@mob.png 1x, assets/img/cappadocia/part-2@mob@2x.png 2x" type="image/png" /><img class="cappadocia__part cappadocia__part--2 lazy" src="assets/img/placeholder.png" data-src="assets/img/cappadocia/part-2@mob.png 1x, assets/img/cappadocia/part-2@mob@2x.png 2x" alt="" />
+                        </picture>
+                        <picture>
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/part-3@desktop.webp 1x, assets/img/cappadocia/part-3@desktop@2x.webp 2x" media="(min-width: 480px)" type="image/webp" />
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/part-3@desktop.png 1x, assets/img/cappadocia/part-3@desktop@2x.png 2x" media="(min-width: 480px)" type="image/png" />
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/part-3@mob.webp 1x, assets/img/cappadocia/part-3@mob@2x.webp 2x" type="image/webp" />
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/part-3@mob.png 1x, assets/img/cappadocia/part-3@mob@2x.png 2x" type="image/png" /><img class="cappadocia__part cappadocia__part--3 lazy" src="assets/img/placeholder.png" data-src="assets/img/cappadocia/part-3@mob.png 1x, assets/img/cappadocia/part-3@mob@2x.png 2x" alt="" />
+                        </picture>
+                        <picture>
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/part-4@desktop.webp 1x, assets/img/cappadocia/part-4@desktop@2x.webp 2x" media="(min-width: 480px)" type="image/webp" />
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/part-4@desktop.png 1x, assets/img/cappadocia/part-4@desktop@2x.png 2x" media="(min-width: 480px)" type="image/png" />
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/part-4@mob.webp 1x, assets/img/cappadocia/part-4@mob@2x.webp 2x" type="image/webp" />
+                            <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/part-4@mob.png 1x, assets/img/cappadocia/part-4@mob@2x.png 2x" type="image/png" /><img class="cappadocia__part cappadocia__part--4 lazy" src="assets/img/placeholder.png" data-src="assets/img/cappadocia/part-4@mob.png 1x, assets/img/cappadocia/part-4@mob@2x.png 2x" alt="" />
+                        </picture>
+                        <div class="cappadocia__label cappadocia__label--1">
+                            <div class="cappadocia__label-part">1 часть <span>из 4</span></div>
+                            <div class="cappadocia__label-title">Район Небесного дракона</div>
+                        </div>
+                        <div class="cappadocia__label cappadocia__label--2">
+                            <div class="cappadocia__label-part">2 часть <span>из 4</span></div>
+                            <div class="cappadocia__label-title">Западные переулки</div>
+                        </div>
+                        <div class="cappadocia__label cappadocia__label--3">
+                            <div class="cappadocia__label-part">3 часть <span>из 4</span></div>
+                            <div class="cappadocia__label-title">Облачный закат</div>
+                        </div>
+                        <div class="cappadocia__label cappadocia__label--4">
+                            <div class="cappadocia__label-part">4 часть <span>из 4</span></div>
+                            <div class="cappadocia__label-title">Восточная площадь</div>
+                        </div>
+                        <div class="cappadocia__app">
+                            <div class="cappadocia__app-title">Погрузитесь в&nbsp;мир виртуальной реальности</div>
+                            <div class="cappadocia__app-visual">
+                                <picture>
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/app-visual.webp 1x, assets/img/cappadocia/app-visual@2x.webp 2x" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/app-visual.png 1x, assets/img/cappadocia/app-visual@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/cappadocia/app-visual.png 1x, assets/img/cappadocia/app-visual@2x.png 2x" alt="" />
+                                </picture>
+                            </div>
+                            <div class="cappadocia__app-buttons"><a class="btn-app cappadocia__app-btn" href="https://apps.apple.com/ca/app/quezzle/id1589389500" target="_blank" rel="nofollow noopener"><img class="btn-app__icon lazy" src="assets/img/placeholder.png" data-src="assets/img/app-store.svg?v=2" width="152" height="48" alt="App Store" /></a><a class="btn-app cappadocia__app-btn" href="https://play.google.com/store/apps/details?id=com.Unidragon.Quezzle" target="_blank" rel="nofollow noopener"><img class="btn-app__icon lazy" src="assets/img/placeholder.png" data-src="assets/img/google-play.svg?v=2" width="152" height="48" alt="Google Play" /></a></div>
+                        </div>
+                        <div class="cappadocia__balloons">
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/balloons@desktop.webp" media="(min-width: 480px)" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/balloons@desktop.png" media="(min-width: 480px)" type="image/png" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/balloons@mob.webp" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/cappadocia/balloons@mob.png" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/cappadocia/balloons@mob.png" alt="" />
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="kits lazy-bg page__kits" id="kits">
+                <div class="kits__container">
+                    <h2 class="visually-hidden">Варианты наборов</h2>
+                    <div class="kits__items">
+                        <div class="kit kit--1 kits__item">
+                            <div class="kit__visual">
+                                <picture>
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/kits/kit-1@desktop.webp 1x, assets/img/kits/kit-1@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/kits/kit-1@desktop.png 1x, assets/img/kits/kit-1@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/kits/kit-1@mob.webp 1x, assets/img/kits/kit-1@mob@2x.webp 2x" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/kits/kit-1@mob.png 1x, assets/img/kits/kit-1@mob@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/kits/kit-1@mob.png 1x, assets/img/kits/kit-1@mob@2x.png 2x" alt="Часть 1 из 4" />
+                                </picture>
+                            </div>
+                            <div class="kit__pretitle">Ознакомьтесь с&nbsp;базовыми механиками Quezzle</div>
+                            <h3 class="kit__title">Часть 1 из 4</h3>
+                            <div class="kit__main">
+                                <div class="kit__left">
+                                    <ul class="kit__items">
+                                        <li class="kit__item">36&nbsp;см х&nbsp;25&nbsp;см&nbsp;&mdash; собранный пазл</li>
+                                        <li class="kit__item"><b>250 уникальных деталей</b></li>
+                                        <li class="kit__item">Инструкция с&nbsp;заданиями квеста</li>
+                                        <li class="kit__item">3D-фигурка</li>
+                                        <li class="kit__item"><b>10 дополнительных заданий</b></li>
+                                        <li class="kit__item"><b>1 лабиринт</b></li>
+                                    </ul>
+                                </div>
+                                <div class="kit__right">
+                                    <h4 class="kit__price-label">Цена по предзаказу</h4>
+                                    <p class="kit__price-old">3 490 ₽</p>
+                                    <p class="kit__price">2 490 ₽</p><button class="button kit__button-buy js-buy button--blue" type="button" data-product-id="1"><span class="button__caption">Купить</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kit kit--2 kits__item">
+                            <div class="kit__visual">
+                                <picture>
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/kits/kit-2@desktop.webp 1x, assets/img/kits/kit-2@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/kits/kit-2@desktop.png 1x, assets/img/kits/kit-2@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/kits/kit-2@mob.webp 1x, assets/img/kits/kit-2@mob@2x.webp 2x" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/kits/kit-2@mob.png 1x, assets/img/kits/kit-2@mob@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/kits/kit-2@mob.png 1x, assets/img/kits/kit-2@mob@2x.png 2x" alt="Часть 2, 3 и 4" />
+                                </picture>
+                            </div>
+                            <div class="kit__pretitle">Докупите до&nbsp;полного набора и&nbsp;начинайте основной квест</div>
+                            <h3 class="kit__title">Часть 2, 3 и 4</h3>
+                            <div class="kit__main">
+                                <div class="kit__left">
+                                    <ul class="kit__items">
+                                        <li class="kit__item">36&nbsp;см х&nbsp;25&nbsp;см&nbsp;&mdash; собранный пазл</li>
+                                        <li class="kit__item"><b>750 уникальных деталей</b></li>
+                                        <li class="kit__item">Инструкция с&nbsp;заданиями квеста</li>
+                                        <li class="kit__item">3D-фигурка&nbsp;&mdash; 3шт.</li>
+                                        <li class="kit__item"><b>30 дополнительных заданий</b></li>
+                                        <li class="kit__item"><b>5 лабиринтов</b></li>
+                                    </ul>
+                                </div>
+                                <div class="kit__right">
+                                    <h4 class="kit__price-label">Цена по предзаказу</h4>
+                                    <p class="kit__price-old">8 990 ₽</p>
+                                    <p class="kit__price">6 990 ₽</p><button class="button kit__button-buy js-buy button--blue" type="button" data-product-id="2"><span class="button__caption">Купить</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kit kit--3 kits__item">
+                            <div class="kit__visual">
+                                <picture>
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/kits/kit-3@desktop.webp 1x, assets/img/kits/kit-3@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/kits/kit-3@desktop.png 1x, assets/img/kits/kit-3@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/kits/kit-3@mob.webp 1x, assets/img/kits/kit-3@mob@2x.webp 2x" type="image/webp" />
+                                    <source srcset="assets/img/placeholder.png" data-srcset="assets/img/kits/kit-3@mob.png 1x, assets/img/kits/kit-3@mob@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/kits/kit-3@mob.png 1x, assets/img/kits/kit-3@mob@2x.png 2x" alt="Полный набор" />
+                                </picture>
+                            </div>
+                            <div class="kit__pretitle">Все 4&nbsp;части откроют сюжетную линию&nbsp;&mdash; Квест из&nbsp;12&nbsp;шагов</div>
+                            <h3 class="kit__title">Полный набор</h3>
+                            <div class="kit__main">
+                                <div class="kit__left">
+                                    <ul class="kit__items">
+                                        <li class="kit__item">36&nbsp;см х&nbsp;25&nbsp;см&nbsp;&mdash; собранный пазл</li>
+                                        <li class="kit__item"><b>1000 уникальных деталей</b></li>
+                                        <li class="kit__item">Инструкция с&nbsp;заданиями квеста</li>
+                                        <li class="kit__item">3D-фигурка&nbsp;&mdash; 4шт.</li>
+                                        <li class="kit__item"><b>40 дополнительных заданий</b></li>
+                                        <li class="kit__item"><b>6 лабиринтов</b></li>
+                                        <li class="kit__item"><b>6 мини-пазлов</b></li>
+                                        <li class="kit__item"><b>4 сюжетных лабиринта</b></li>
+                                    </ul>
+                                </div>
+                                <div class="kit__right">
+                                    <h4 class="kit__price-label">Цена по предзаказу</h4>
+                                    <p class="kit__price-old">9 990 ₽</p>
+                                    <p class="kit__price">7 990 ₽</p><button class="button kit__button-buy js-buy" type="button" data-product-id="3"><span class="button__caption">Купить</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="reviews page__reviews" id="reviews">
+                <div class="reviews__container">
+                    <h2 class="title reviews__title">Отзывы наших довольных клиентов</h2>
+                    <div class="reviews__items">
+                        <div class="review reviews__item">
+                            <blockquote class="review__quote">
+                                <p>История прекрасная, а&nbsp;квесты очень веселые, в&nbsp;одиночку, но&nbsp;особенно с&nbsp;2-4&nbsp;игроками. Отлично подходит для отдыха всей семьёй!</p>
+                            </blockquote>
+                            <div class="review__author">
+                                <div class="review__avatar">
+                                    <picture>
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/reviews/inthebox_boardgames.webp" type="image/webp" />
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/reviews/inthebox_boardgames.jpg" type="image/jpeg" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/reviews/inthebox_boardgames.jpg" alt="" />
+                                    </picture>
+                                </div><a class="review__contact" href="https://www.instagram.com/inthebox_boardgames/" target="_blank"><span class="review__contact-icon"><svg class="svg-icon svg-icon--instagram2">
+                                            <use xlink:href="assets/img/sprite.svg#instagram2"></use>
+                                        </svg></span><span class="review__contact-caption">@inthebox_boardgames</span></a>
+                            </div>
+                            <div class="review__number">01</div>
+                        </div>
+                        <div class="review reviews__item">
+                            <blockquote class="review__quote">
+                                <p> Я&nbsp;не&nbsp;помню, когда в&nbsp;последний раз я&nbsp;собирал пазлы в&nbsp;течение нескольких часов. Это было веселое и&nbsp;семейное время.</p>
+                            </blockquote>
+                            <div class="review__author">
+                                <div class="review__avatar">
+                                    <picture>
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/reviews/trybsolo.webp" type="image/webp" />
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/reviews/trybsolo.jpg" type="image/jpeg" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/reviews/trybsolo.jpg" alt="" />
+                                    </picture>
+                                </div><a class="review__contact" href="https://www.instagram.com/trybsolo/" target="_blank"><span class="review__contact-icon"><svg class="svg-icon svg-icon--instagram2">
+                                            <use xlink:href="assets/img/sprite.svg#instagram2"></use>
+                                        </svg></span><span class="review__contact-caption">@trybsolo</span></a>
+                            </div>
+                            <div class="review__number">02</div>
+                        </div>
+                        <div class="review reviews__item">
+                            <blockquote class="review__quote">
+                                <p>Это что, пазл? это квест? Нет, это Странно, и&nbsp;Это... Потрясающе!!! Не&nbsp;пропустите, это фантастика!</p>
+                            </blockquote>
+                            <div class="review__author">
+                                <div class="review__avatar">
+                                    <picture>
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/reviews/meeple_v_people.webp" type="image/webp" />
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/reviews/meeple_v_people.jpg" type="image/jpeg" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/reviews/meeple_v_people.jpg" alt="" />
+                                    </picture>
+                                </div><a class="review__contact" href="https://www.instagram.com/meeple_v_people/" target="_blank"><span class="review__contact-icon"><svg class="svg-icon svg-icon--instagram2">
+                                            <use xlink:href="assets/img/sprite.svg#instagram2"></use>
+                                        </svg></span><span class="review__contact-caption">@meeple_v_people</span></a>
+                            </div>
+                            <div class="review__number">03</div>
+                        </div>
+                        <div class="review reviews__item">
+                            <blockquote class="review__quote">
+                                <p>Это отличная возможность всем вместе отвлечься от&nbsp;смартфонов и&nbsp;здорово провести время! И&nbsp;подходит такая вещица абсолютно для всех! Amazing! </p>
+                            </blockquote>
+                            <div class="review__author">
+                                <div class="review__avatar">
+                                    <picture>
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/reviews/vasiliev_books.webp" type="image/webp" />
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/reviews/vasiliev_books.jpg" type="image/jpeg" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/reviews/vasiliev_books.jpg" alt="" />
+                                    </picture>
+                                </div><a class="review__contact" href="https://www.instagram.com/vasiliev_books/" target="_blank"><span class="review__contact-icon"><svg class="svg-icon svg-icon--instagram2">
+                                            <use xlink:href="assets/img/sprite.svg#instagram2"></use>
+                                        </svg></span><span class="review__contact-caption">@vasiliev_books</span></a>
+                            </div>
+                            <div class="review__number">04</div>
+                        </div>
+                        <div class="review reviews__item">
+                            <blockquote class="review__quote">
+                                <p>Quezzle будет отличным подарком любителям настольных игр!</p>
+                            </blockquote>
+                            <div class="review__author">
+                                <div class="review__avatar">
+                                    <picture>
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/reviews/fasolya.olya.webp" type="image/webp" />
+                                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/reviews/fasolya.olya.jpg" type="image/jpeg" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/reviews/fasolya.olya.jpg" alt="" />
+                                    </picture>
+                                </div><a class="review__contact" href="https://www.instagram.com/fasolya.olya/" target="_blank"><span class="review__contact-icon"><svg class="svg-icon svg-icon--instagram2">
+                                            <use xlink:href="assets/img/sprite.svg#instagram2"></use>
+                                        </svg></span><span class="review__contact-caption">@fasolya.olya</span></a>
+                            </div>
+                            <div class="review__number">05</div>
+                        </div>
+                    </div>
+                    <div class="reviews__arrows"><button class="btn-arrow btn-arrow--prev reviews__prev" type="button" title="Назад"><svg class="svg-icon svg-icon--arrow">
+                                <use xlink:href="assets/img/sprite.svg#arrow"></use>
+                            </svg></button><button class="btn-arrow btn-arrow--next reviews__next" type="button" title="Далее"><svg class="svg-icon svg-icon--arrow">
+                                <use xlink:href="assets/img/sprite.svg#arrow"></use>
+                            </svg></button></div>
+                </div>
+            </section>
+            <section class="answers lazy-bg page__answers" id="answers">
+                <div class="answers__container">
+                    <h2 class="title title--white answers__title">7&nbsp;ответов на&nbsp;ваши вопросы</h2>
+                    <div class="answers__row">
+                        <div class="answers__left">
+                            <div class="faq answers__faq">
+                                <ul class="faq__items">
+                                    <li class="faq__item">
+                                        <h3 class="faq__question"><button type="button">Сколько стоит доставка и&nbsp;как осуществляется оплата?<svg class="svg-icon svg-icon--arrow-faq">
+                                                    <use xlink:href="assets/img/sprite.svg#arrow-faq"></use>
+                                                </svg></button></h3>
+                                        <div class="faq__answer">
+                                            <p>Доставка осуществляется транспортными компаниями СДЭК, DPD и&nbsp;Почтой России. Стоимость курьерской доставки в&nbsp;крупные города начинается от&nbsp;350&nbsp;рублей, до&nbsp;пункта выдачи заказов также от&nbsp;350&nbsp;рублей. Более подробную информацию вы&nbsp;получите после оформления заявки. И, конечно, у&nbsp;вас всегда есть возможность отказаться от&nbsp;оставленной заявки, если стоимость доставки вас не&nbsp;устроит.</p>
+                                        </div>
+                                    </li>
+                                    <li class="faq__item">
+                                        <h3 class="faq__question"><button type="button">Подойдет&nbsp;ли эта игра для всей семьи?<svg class="svg-icon svg-icon--arrow-faq">
+                                                    <use xlink:href="assets/img/sprite.svg#arrow-faq"></use>
+                                                </svg></button></h3>
+                                        <div class="faq__answer">
+                                            <p>Quezzle подойдет людям любого возраста. Quezzle&nbsp;&mdash; это яркая и&nbsp;детализированная иллюстрация из&nbsp;тысячи уникальных кусочков. Сотни историй, которые можно разглядывать часами. Загадки и&nbsp;задания, которые можно проходить вместе. Каждый найдет в&nbsp;нашем новом продукте интересные детали. Вы&nbsp;сможете провести время с&nbsp;удовольствием всей семьей. Собирать, разглядывать и&nbsp;искать предметы. Играть с&nbsp;персонажами и&nbsp;проходить квест. Дополнительные 3D-фигурки и&nbsp;мини-пазлы дополнят историю.</p>
+                                        </div>
+                                    </li>
+                                    <li class="faq__item">
+                                        <h3 class="faq__question"><button type="button">Чем отличаются части Quezzle?<svg class="svg-icon svg-icon--arrow-faq">
+                                                    <use xlink:href="assets/img/sprite.svg#arrow-faq"></use>
+                                                </svg></button></h3>
+                                        <div class="faq__answer">
+                                            <p>Quezzle состоит из&nbsp;четырех частей, каждая из&nbsp;которых отличается иллюстрацией и&nbsp;персонажами. Вместе они складываются в&nbsp;единый мир. В&nbsp;каждой части можно найти уникальную 3D-фигурку специального персонажа, а&nbsp;также пройти по&nbsp;десять отдельных заданий. Всю историю вы&nbsp;сможете пройти, когда соберете мир Каппадокии целиком.</p>
+                                        </div>
+                                    </li>
+                                    <li class="faq__item">
+                                        <h3 class="faq__question"><button type="button">Из&nbsp;каких материалов изготавливается Quezzle?<svg class="svg-icon svg-icon--arrow-faq">
+                                                    <use xlink:href="assets/img/sprite.svg#arrow-faq"></use>
+                                                </svg></button></h3>
+                                        <div class="faq__answer">
+                                            <p>Quezzle изготавливается из&nbsp;натуральных материалов, спрессованных под давлением волокон древесины. Поэтому наши пазлы долговечны. При открытии коробки вы&nbsp;сможете почувствовать приятный запах дерева. Мы&nbsp;используем сертифицированную краску, которая фиксируется с&nbsp;помощью ультрафиолета, что позволяет нашим иллюстрациям долго оставаться яркими, не&nbsp;повреждаться и&nbsp;не&nbsp;стираться.</p>
+                                        </div>
+                                    </li>
+                                    <li class="faq__item">
+                                        <h3 class="faq__question"><button type="button">Подойдет&nbsp;ли Quezzle в&nbsp;качестве подарка?<svg class="svg-icon svg-icon--arrow-faq">
+                                                    <use xlink:href="assets/img/sprite.svg#arrow-faq"></use>
+                                                </svg></button></h3>
+                                        <div class="faq__answer">
+                                            <p>Quezzle отлично подойдет для подарка близкому, друзьям и&nbsp;коллегам, а&nbsp;может и&nbsp;самому себе. В&nbsp;Quezzle каждый найдет развлечение по&nbsp;душе. Quezzle&nbsp;&mdash; это 3&nbsp;разных активности в&nbsp;одном: яркий и&nbsp;детализированный пазл из&nbsp;1000&nbsp;кусочков, красивая и&nbsp;захватывающая иллюстрация, которую можно разглядывать часами, множество заданий и&nbsp;секретов. А&nbsp;еще вас ждет дополненная реальность. Все это в&nbsp;четырех оригинальных коробках, с&nbsp;индивидуальным оформлением, которые сами уже как подарок.</p>
+                                        </div>
+                                    </li>
+                                    <li class="faq__item">
+                                        <h3 class="faq__question"><button type="button">Реализуете&nbsp;ли вы&nbsp;оптовую продажу вашей продукции?<svg class="svg-icon svg-icon--arrow-faq">
+                                                    <use xlink:href="assets/img/sprite.svg#arrow-faq"></use>
+                                                </svg></button></h3>
+                                        <div class="faq__answer">
+                                            <p>Оставьте заявку в&nbsp;специальном разделе и&nbsp;мы&nbsp;свяжемся с&nbsp;вами, чтобы обсудить условия. <br>Мы&nbsp;работаем с&nbsp;юридическими лицами. Наши пазлы вы&nbsp;можете оплатить по&nbsp;безналичному расчету с&nbsp;юридического лица без НДС.</p>
+                                        </div>
+                                    </li>
+                                    <li class="faq__item">
+                                        <h3 class="faq__question"><button type="button">Есть еще вопросы?<svg class="svg-icon svg-icon--arrow-faq">
+                                                    <use xlink:href="assets/img/sprite.svg#arrow-faq"></use>
+                                                </svg></button></h3>
+                                        <div class="faq__answer">
+                                            <p>Остались вопросы? Вы&nbsp;можете узнать более подробную информацию отправив письмо на&nbsp;почту care@unidragon.com или по&nbsp;телефону&nbsp;<a href="tel:+74951093075">+7 (495) 109 3075.</a></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="answers__right">
+                            <form class="form-feedback js-validate answers__form-feedback" action="#" method="POST" id="form-feedback">
+                                <h3 class="form-feedback__title">Форма обратной связи</h3>
+                                <div class="field field--type-text field--blue-light form-feedback__field"><label class="field__label" for="form-feedback-name">Имя</label>
+                                    <div class="field__field"><input type="text" name="name" id="form-feedback-name" required="required" data-validator-required-message="Обязательное поле" /></div>
+                                </div>
+                                <div class="field field--type-tel field--blue-light form-feedback__field"><label class="field__label" for="form-feedback-phone">Телефон</label>
+                                    <div class="field__field"><input type="tel" name="phone" id="form-feedback-phone" required="required" data-validator-required-message="Обязательное поле" /></div>
+                                </div>
+                                <div class="field field--type-textarea field--blue-light form-feedback__field"><label class="field__label" for="form-feedback-message">Вопрос или предложение*</label>
+                                    <div class="field__field"><textarea name="message" id="form-feedback-message" data-validator-required-message="Обязательное поле"></textarea></div>
+                                </div>
+                                <p class="form-feedback__note">*необязательное поле</p>
+                                <div class="form-feedback__button-wrapper"><button class="button form-feedback__submit" type="submit"><span class="button__caption">Отправить</span></button></div>
+                            </form>
+                            <div class="answers__contacts">
+                                <h3 class="answers__contacts-title">Остались вопросы? </h3>
+                                <p class="answers__contacts-label">Свяжитесь с нами:</p><a class="answers__contact" href="tel:+74951093075" target="_blank" rel="nofollow noopener"><span class="answers__contact-icon"><svg class="svg-icon svg-icon--phone">
+                                            <use xlink:href="assets/img/sprite.svg#phone"></use>
+                                        </svg></span><span class="answers__contact-caption">+7 (495) 109 30 75</span></a><a class="answers__contact" href="mailto:care@unidragon.com" target="_blank" rel="nofollow noopener"><span class="answers__contact-icon"><svg class="svg-icon svg-icon--email">
+                                            <use xlink:href="assets/img/sprite.svg#email"></use>
+                                        </svg></span><span class="answers__contact-caption">care@unidragon.com</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="benefits page__benefits" id="benefits">
+                <div class="benefits__container">
+                    <h2 class="visually-hidden">Приимущества</h2>
+                    <ul class="benefits__items">
+                        <li class="benefits__item benefits__item--1">
+                            <div class="benefits__item-content">
+                                <h3 class="benefits__item-title">Отвлекитесь от&nbsp;экранов гаджетов</h3>
+                                <p class="benefits__item-text">Дайте глазам отдохнуть. <br>Ваш смартфон подождет.</p>
+                            </div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-1@desktop.webp 1x, assets/img/benefits/benefit-1@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-1@desktop.png 1x, assets/img/benefits/benefit-1@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-1@mob.webp 1x, assets/img/benefits/benefit-1@mob@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-1@mob.png 1x, assets/img/benefits/benefit-1@mob@2x.png 2x" type="image/png" /><img class="benefits__item-visual lazy" src="assets/img/placeholder.png" data-src="assets/img/benefits/benefit-1@mob.png 1x, assets/img/benefits/benefit-1@mob@2x.png 2x" alt="Test" />
+                            </picture>
+                        </li>
+                        <li class="benefits__item benefits__item--2">
+                            <div class="benefits__item-content">
+                                <h3 class="benefits__item-title">Испытайте себя</h3>
+                                <p class="benefits__item-text">Чтобы собрать Quezzle и&nbsp;пройти квест, нужно постараться: справится не&nbsp;каждый!</p>
+                            </div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-2@desktop.webp 1x, assets/img/benefits/benefit-2@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-2@desktop.png 1x, assets/img/benefits/benefit-2@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-2@mob.webp 1x, assets/img/benefits/benefit-2@mob@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-2@mob.png 1x, assets/img/benefits/benefit-2@mob@2x.png 2x" type="image/png" /><img class="benefits__item-visual lazy" src="assets/img/placeholder.png" data-src="assets/img/benefits/benefit-2@mob.png 1x, assets/img/benefits/benefit-2@mob@2x.png 2x" alt="Test" />
+                            </picture>
+                        </li>
+                        <li class="benefits__item benefits__item--3">
+                            <div class="benefits__item-content">
+                                <h3 class="benefits__item-title">Снимите стресс и&nbsp;расслабьтесь</h3>
+                                <p class="benefits__item-text">Quezzle отвлечет вас от&nbsp;повседневных забот.</p>
+                            </div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-3@desktop.webp 1x, assets/img/benefits/benefit-3@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-3@desktop.png 1x, assets/img/benefits/benefit-3@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-3@mob.webp 1x, assets/img/benefits/benefit-3@mob@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-3@mob.png 1x, assets/img/benefits/benefit-3@mob@2x.png 2x" type="image/png" /><img class="benefits__item-visual lazy" src="assets/img/placeholder.png" data-src="assets/img/benefits/benefit-3@mob.png 1x, assets/img/benefits/benefit-3@mob@2x.png 2x" alt="Test" />
+                            </picture>
+                        </li>
+                        <li class="benefits__item benefits__item--4">
+                            <div class="benefits__item-content">
+                                <h3 class="benefits__item-title">Проведите время с&nbsp;близкими</h3>
+                                <p class="benefits__item-text">Quezzle способен увлечь всю семью или компанию друзей! Собирайте пазл и&nbsp;проходите квест вместе.</p>
+                            </div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-4@desktop.webp 1x, assets/img/benefits/benefit-4@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-4@desktop.png 1x, assets/img/benefits/benefit-4@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-4@mob.webp 1x, assets/img/benefits/benefit-4@mob@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-4@mob.png 1x, assets/img/benefits/benefit-4@mob@2x.png 2x" type="image/png" /><img class="benefits__item-visual lazy" src="assets/img/placeholder.png" data-src="assets/img/benefits/benefit-4@mob.png 1x, assets/img/benefits/benefit-4@mob@2x.png 2x" alt="Test" />
+                            </picture>
+                        </li>
+                        <li class="benefits__item benefits__item--5">
+                            <div class="benefits__item-content">
+                                <h3 class="benefits__item-title">Весело проведите время</h3>
+                                <p class="benefits__item-text">Получите новые впечатления и&nbsp;заряд положительных эмоций.</p>
+                            </div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-5@desktop.webp 1x, assets/img/benefits/benefit-5@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-5@desktop.png 1x, assets/img/benefits/benefit-5@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-5@mob.webp 1x, assets/img/benefits/benefit-5@mob@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-5@mob.png 1x, assets/img/benefits/benefit-5@mob@2x.png 2x" type="image/png" /><img class="benefits__item-visual lazy" src="assets/img/placeholder.png" data-src="assets/img/benefits/benefit-5@mob.png 1x, assets/img/benefits/benefit-5@mob@2x.png 2x" alt="Test" />
+                            </picture>
+                        </li>
+                        <li class="benefits__item benefits__item--6">
+                            <div class="benefits__item-content">
+                                <h3 class="benefits__item-title">Развивайте мелкую моторику</h3>
+                                <p class="benefits__item-text">И&nbsp;не&nbsp;только&nbsp;ее: неврологи называют пазлы отличным способом заставить ваш мозг работать лучше.</p>
+                            </div>
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-6@desktop.webp 1x, assets/img/benefits/benefit-6@desktop@2x.webp 2x" media="(min-width: 1000px)" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-6@desktop.png 1x, assets/img/benefits/benefit-6@desktop@2x.png 2x" media="(min-width: 1000px)" type="image/png" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-6@mob.webp 1x, assets/img/benefits/benefit-6@mob@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/benefits/benefit-6@mob.png 1x, assets/img/benefits/benefit-6@mob@2x.png 2x" type="image/png" /><img class="benefits__item-visual lazy" src="assets/img/placeholder.png" data-src="assets/img/benefits/benefit-6@mob.png 1x, assets/img/benefits/benefit-6@mob@2x.png 2x" alt="Test" />
+                            </picture>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="last-step lazy-bg page__last-step" id="last-step">
+                <div class="last-step__container">
+                    <h2 class="title last-step__title">Остался последний шаг</h2>
+                    <p class="last-step__text"><b>Начни познавать мир Каппадокии вместе с Quezzle уже сейчас!</b> Осталось только выбрать свой набор пазлов и увлекательное путешествие ждет тебя </p>
+                    <picture>
+                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/last-step/last-step@desktop.webp 1x, assets/img/last-step/last-step@desktop@2x.webp 2x" media="(min-width: 480px)" type="image/webp" />
+                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/last-step/last-step@desktop.png 1x, assets/img/last-step/last-step@desktop@2x.png 2x" media="(min-width: 480px)" type="image/png" />
+                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/last-step/last-step@mob.webp 1x, assets/img/last-step/last-step@mob@2x.webp 2x" type="image/webp" />
+                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/last-step/last-step@mob.png 1x, assets/img/last-step/last-step@mob@2x.png 2x" type="image/png" /><img class="last-step__visual lazy" src="assets/img/placeholder.png" data-src="assets/img/last-step/last-step@mob.png 1x, assets/img/last-step/last-step@mob@2x.png 2x" alt="Test" />
+                    </picture><a class="button last-step__button" href="#" role="button"><span class="button__caption">Купить сейчас</span></a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer page__footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__top-col">
+                    <div class="logo footer__logo"><a href="#intro"> <img src="assets/img/logo.svg" width="196" height="50" alt="QUEZZLE - Puzzle and Quest" /></a></div>
+                </div>
+                <div class="footer__top-col">
+                    <div class="footer__title">Меню</div>
+                    <nav class="menu-footer footer__menu">
+                        <ul class="menu-footer__items">
+                            <li class="menu-footer__item"><a class="menu-footer__link" href="#about">Что такое Quezzle? </a></li>
+                            <li class="menu-footer__item"><a class="menu-footer__link" href="#team">Unidragon &amp;&nbsp;IC4Design</a></li>
+                            <li class="menu-footer__item"><a class="menu-footer__link" href="#answers"> FAQ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer__top-col">
+                    <div class="footer__title">Социальные сети</div><a class="footer__contact" href="https://www.youtube.com/channel/UCBqZL-EiSfLxGQfAzb4FwwA" target="_blank" rel="nofollow noopener"><span class="footer__contact-icon"><svg class="svg-icon svg-icon--youtube">
+                                <use xlink:href="assets/img/sprite.svg#youtube"></use>
+                            </svg></span><span class="footer__contact-caption">QUEZZLE</span></a><a class="footer__contact" href="https://www.instagram.com/quezzle_com" target="_blank" rel="nofollow noopener"><span class="footer__contact-icon"><svg class="svg-icon svg-icon--instagram">
+                                <use xlink:href="assets/img/sprite.svg#instagram"></use>
+                            </svg></span><span class="footer__contact-caption">@quezzle_com</span></a>
+                </div>
+                <div class="footer__top-col">
+                    <div class="footer__title">Контакты</div><a class="footer__contact" href="tel:+74951093075" target="_blank" rel="nofollow noopener"><span class="footer__contact-icon"><svg class="svg-icon svg-icon--phone">
+                                <use xlink:href="assets/img/sprite.svg#phone"></use>
+                            </svg></span><span class="footer__contact-caption">+7 (495) 109 30 75</span></a><a class="footer__contact" href="mailto:care@unidragon.com" target="_blank" rel="nofollow noopener"><span class="footer__contact-icon"><svg class="svg-icon svg-icon--email">
+                                <use xlink:href="assets/img/sprite.svg#email"></use>
+                            </svg></span><span class="footer__contact-caption">care@unidragon.com</span></a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__bottom-col">
+                    <p>Все права защищены &copy;&nbsp;2021</p>
+                    <p>Юридическое лицо</p>
+                </div>
+                <div class="footer__bottom-col">
+                    <p><a href="#">Политика конфиденциальности</a></p>
+                    <p><a href="#">Cотрудничество</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="popup popup--menu mfp-hide" id="popup-menu">
+        <div class="mmenu lazy-bg popup__mmenu">
+            <div class="mmenu__top"><a class="mmenu__btn-cart js-popup" href="#popup-cart"><svg class="svg-icon svg-icon--cart">
+                        <use xlink:href="assets/img/sprite.svg#cart"></use>
+                    </svg></a><img class="mmenu__logo" src="assets/img/logo.svg" width="126" height="33" alt="QUEZZLE - Puzzle and Quest" /><button class="mmenu__btn-close js-popup-close" type="button" title="Закрыть"></button></div>
+            <nav class="menu-mob mmenu__menu-mob">
+                <ul class="menu-mob__items">
+                    <li class="menu-mob__item"><a class="menu-mob__link js-popup-close" href="#about">
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/menu-mob/icon-1.webp 1x, assets/img/menu-mob/icon-1@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/menu-mob/icon-1.png 1x, assets/img/menu-mob/icon-1@2x.png 2x" type="image/png" /><img class="menu-mob__icon lazy" src="assets/img/placeholder.png" data-src="assets/img/menu-mob/icon-1.png 1x, assets/img/menu-mob/icon-1@2x.png 2x" width="42" height="26" alt="" />
+                            </picture><span class="menu-mob__caption">Что такое Quezzle?</span>
+                        </a></li>
+                    <li class="menu-mob__item"><a class="menu-mob__link js-popup-close" href="#team">
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/menu-mob/icon-2.webp 1x, assets/img/menu-mob/icon-2@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/menu-mob/icon-2.png 1x, assets/img/menu-mob/icon-2@2x.png 2x" type="image/png" /><img class="menu-mob__icon lazy" src="assets/img/placeholder.png" data-src="assets/img/menu-mob/icon-2.png 1x, assets/img/menu-mob/icon-2@2x.png 2x" width="42" height="30" alt="" />
+                            </picture><span class="menu-mob__caption">Unidragon &amp;&nbsp;IC4Design</span>
+                        </a></li>
+                    <li class="menu-mob__item"><a class="menu-mob__link js-popup-close" href="#answers">
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/menu-mob/icon-3.webp 1x, assets/img/menu-mob/icon-3@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/menu-mob/icon-3.png 1x, assets/img/menu-mob/icon-3@2x.png 2x" type="image/png" /><img class="menu-mob__icon lazy" src="assets/img/placeholder.png" data-src="assets/img/menu-mob/icon-3.png 1x, assets/img/menu-mob/icon-3@2x.png 2x" width="53" height="20" alt="" />
+                            </picture><span class="menu-mob__caption">FAQ</span>
+                        </a></li>
+                </ul>
+            </nav>
+            <div class="mmenu__lang"><a class="mmenu__lang-item js-popup-close current" href="#"><img class="mmenu__lang-icon" src="assets/img/russian.svg" width="20" height="20" alt="Русский" /><span class="mmenu__lang-caption">Рус</span></a><a class="mmenu__lang-item js-popup-close" href="#"><img class="mmenu__lang-icon" src="assets/img/english.svg" width="20" height="20" alt="English" /><span class="mmenu__lang-caption">Eng</span></a></div>
+            <div class="mmenu__button-wrapper"><a class="button mmenu__button-buy js-popup-close button--blue" href="#order" role="button"><span class="button__caption">Купить</span></a></div>
+        </div>
+    </div>
+    <div class="popup popup--added mfp-hide lazy-bg" id="popup-added">
+        <div class="popup__icon-ok"><svg class="svg-icon svg-icon--ok">
+                <use xlink:href="assets/img/sprite.svg#ok"></use>
+            </svg></div>
+        <div class="popup__box">
+            <p class="popup__message">Товар добавлен в&nbsp;корзину</p>
+            <div class="popup__buttons-wrapper"><button class="button popup__button js-popup-close button--white" type="button"><span class="button__caption">Назад</span></button><a class="button popup__button js-popup button--blue" href="#popup-cart" role="button"><span class="button__caption">В корзину</span></a></div>
+        </div>
+    </div>
+    <div class="popup popup--cart mfp-hide" id="popup-cart"><button class="popup__btn-close js-popup-close" type="button" title="Закрыть"></button>
+        <div class="cart lazy-bg">
+            <div class="cart__top">
+                <h2 class="cart__title">Корзина</h2>
+                <div class="cart__items">
+                    <div class="cart__item hidden" data-product-id="1" data-price="2490"><button class="cart__item-remove" type="button" aria-label="Удалить из корзины"><svg class="svg-icon svg-icon--close">
+                                <use xlink:href="assets/img/sprite.svg#close"></use>
+                            </svg></button>
+                        <div class="cart__item-image">
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/products/product-1.webp 1x, assets/img/products/product-1@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/products/product-1.png 1x, assets/img/products/product-1@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/products/product-1.png 1x, assets/img/products/product-1@2x.png 2x" width="413" height="268" alt="Часть 1 из 4" />
+                            </picture>
+                        </div>
+                        <div class="cart__item-captions">
+                            <div class="cart__item-title">Часть 1&nbsp;из&nbsp;4</div>
+                            <div class="cart__item-subtitle">Ознакомьтесь с&nbsp;базовыми механиками Quezzle</div>
+                        </div>
+                        <div class="field field--type-quantity cart__item-quantity">
+                            <div class="field__field"><button class="field__minus" type="button"></button><input type="number" name="quantity" value="1" min="1" step="1" /><button class="field__plus" type="button"></button></div>
+                        </div>
+                        <div class="cart__item-total"><span class="cart__item-total-value">2 490</span> ₽</div>
+                    </div>
+                    <div class="cart__item hidden" data-product-id="2" data-price="6990"><button class="cart__item-remove" type="button" aria-label="Удалить из корзины"><svg class="svg-icon svg-icon--close">
+                                <use xlink:href="assets/img/sprite.svg#close"></use>
+                            </svg></button>
+                        <div class="cart__item-image">
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/products/product-2.webp 1x, assets/img/products/product-2@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/products/product-2.png 1x, assets/img/products/product-2@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/products/product-2.png 1x, assets/img/products/product-2@2x.png 2x" width="413" height="268" alt="Часть 2, 3 и 4" />
+                            </picture>
+                        </div>
+                        <div class="cart__item-captions">
+                            <div class="cart__item-title">Часть&nbsp;2, 3&nbsp;и&nbsp;4</div>
+                            <div class="cart__item-subtitle">Докупите до&nbsp;полного набора и&nbsp;начинайте основной квест</div>
+                        </div>
+                        <div class="field field--type-quantity cart__item-quantity">
+                            <div class="field__field"><button class="field__minus" type="button"></button><input type="number" name="quantity" value="1" min="1" step="1" /><button class="field__plus" type="button"></button></div>
+                        </div>
+                        <div class="cart__item-total"><span class="cart__item-total-value">6 990</span> ₽</div>
+                    </div>
+                    <div class="cart__item hidden" data-product-id="3" data-price="7990"><button class="cart__item-remove" type="button" aria-label="Удалить из корзины"><svg class="svg-icon svg-icon--close">
+                                <use xlink:href="assets/img/sprite.svg#close"></use>
+                            </svg></button>
+                        <div class="cart__item-image">
+                            <picture>
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/products/product-3.webp 1x, assets/img/products/product-3@2x.webp 2x" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/products/product-3.png 1x, assets/img/products/product-3@2x.png 2x" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/products/product-3.png 1x, assets/img/products/product-3@2x.png 2x" width="413" height="268" alt="Полный набор" />
+                            </picture>
+                        </div>
+                        <div class="cart__item-captions">
+                            <div class="cart__item-title">Полный набор</div>
+                            <div class="cart__item-subtitle">Все 4&nbsp;части откроют сюжетную линию&nbsp;&mdash; квест из&nbsp;12&nbsp;шагов</div>
+                        </div>
+                        <div class="field field--type-quantity cart__item-quantity">
+                            <div class="field__field"><button class="field__minus" type="button"></button><input type="number" name="quantity" value="1" min="1" step="1" /><button class="field__plus" type="button"></button></div>
+                        </div>
+                        <div class="cart__item-total"><span class="cart__item-total-value">7 990</span> ₽</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart__bottom">
+                <div class="cart__summary"><span class="cart__summary-label">Сумма заказа</span><span class="cart__summary-total"><span class="cart__summary-total-value">0</span> ₽</span></div><button class="button cart__button disabled button--blue" type="button" data-popup="#popup-order"><span class="button__caption">Оформить заказ</span></button>
+            </div>
+        </div>
+    </div>
+    <div class="popup popup--order mfp-hide" id="popup-order"><button class="popup__btn-close js-popup-close" type="button" title="Закрыть"></button>
+        <form class="form-order lazy-bg js-validate" action="#" method="POST"><input type="hidden" name="product-1" value="0" /><input type="hidden" name="product-2" value="0" /><input type="hidden" name="product-3" value="0" />
+            <div class="form-order__box">
+                <h2 class="form-order__title">Оформление заказа</h2>
+                <div class="field field--type-text form-order__field"><label class="field__label" for="form-order-name">Имя</label>
+                    <div class="field__field"><input type="text" name="name" id="form-order-name" required="required" data-validator-required-message="Обязательное поле" /></div>
+                </div>
+                <div class="field field--type-tel form-order__field"><label class="field__label" for="form-order-phone">Телефон</label>
+                    <div class="field__field"><input type="tel" name="phone" id="form-order-phone" required="required" data-validator-required-message="Обязательное поле" /></div>
+                </div>
+                <div class="field field--type-email form-order__field"><label class="field__label" for="form-order-email">E-mail</label>
+                    <div class="field__field"><input type="email" name="email" id="form-order-email" required="required" data-validator-required-message="Обязательное поле" data-validator-email-message="Неправильный формат Email" /></div>
+                </div>
+                <div class="field field--type-text form-order__field"><label class="field__label" for="form-order-city">Город</label>
+                    <div class="field__field"><input type="text" name="city" id="form-order-city" required="required" data-validator-required-message="Обязательное поле" /></div>
+                </div>
+                <div class="form-order__bottom"><button class="button form-order__submit button--blue" type="submit"><span class="button__caption">Оформить заказ</span></button></div>
+            </div>
+        </form>
+    </div>
+    <div class="popup popup--success mfp-hide lazy-bg" id="popup-order-success">
+        <div class="popup__icon-ok"><svg class="svg-icon svg-icon--ok">
+                <use xlink:href="assets/img/sprite.svg#ok"></use>
+            </svg></div>
+        <div class="popup__box">
+            <p class="popup__message">Ваш заказ успешно принят</p>
+            <div class="popup__button-wrapper"><button class="button popup__button js-popup-close button--white" type="button"><span class="button__caption">Назад</span></button></div>
+        </div>
+    </div>
+    <div class="popup popup--success mfp-hide lazy-bg" id="popup-success">
+        <div class="popup__icon-ok"><svg class="svg-icon svg-icon--ok">
+                <use xlink:href="assets/img/sprite.svg#ok"></use>
+            </svg></div>
+        <div class="popup__box">
+            <p class="popup__message">Ваше сообщение принято</p>
+            <div class="popup__button-wrapper"><button class="button popup__button js-popup-close button--white" type="button"><span class="button__caption">Назад</span></button></div>
+        </div>
+    </div>
+</div>
