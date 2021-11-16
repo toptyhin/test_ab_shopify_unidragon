@@ -133,8 +133,8 @@
                         </div>
                         <div class="btn-video__poster">
                             <picture>
-                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/about/video-poster.webp" type="image/webp" />
-                                <source srcset="assets/img/placeholder.png" data-srcset="assets/img/about/video-poster.png" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="assets/img/about/video-poster.png" alt="" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="{{'../video-poster.webp' | asset_url }}" type="image/webp" />
+                                <source srcset="assets/img/placeholder.png" data-srcset="{{'../video-poster.png' | asset_url }}" type="image/png" /><img class="lazy" src="assets/img/placeholder.png" data-src="{{'../video-poster.png' | asset_url }}" alt="" />
                             </picture>
                         </div><img class="btn-video__play lazy" src="assets/img/placeholder.png" data-src="assets/img/play.svg" alt="" />
                     </a>
@@ -142,12 +142,12 @@
                         <div class="about__arrow"><svg class="svg-icon svg-icon--arrow">
                                 <use xlink:href="assets/img/sprite.svg#arrow"></use>
                             </svg></div>
-                    </div><img class="about__cell lazy" src="assets/img/placeholder.png" data-src="assets/img/about/cell.svg" alt="" />
+                    </div><img class="about__cell lazy" src="assets/img/placeholder.png" data-src="{{'../cell.svg' | asset_url }}" alt="" />
                     <picture>
-                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/about/hand@desktop.webp 1x, assets/img/about/hand@desktop@2x.webp 2x" media="(min-width: 480px)" type="image/webp" />
-                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/about/hand@desktop.png 1x, assets/img/about/hand@desktop@2x.png 2x" media="(min-width: 480px)" type="image/png" />
-                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/about/hand@mob.webp 1x, assets/img/about/hand@mob@2x.webp 2x" type="image/webp" />
-                        <source srcset="assets/img/placeholder.png" data-srcset="assets/img/about/hand@mob.png 1x, assets/img/about/hand@mob@2x.png 2x" type="image/png" /><img class="about__hand lazy" src="assets/img/placeholder.png" data-src="assets/img/about/hand@mob.png 1x, assets/img/about/hand@mob@2x.png 2x" alt="" />
+                        <source srcset="assets/img/placeholder.png" data-srcset="{{'../hand@desktop.webp' | asset_url }} 1x, {{'../hand@desktop@2x.webp' | asset_url }} 2x" media="(min-width: 480px)" type="image/webp" />
+                        <source srcset="assets/img/placeholder.png" data-srcset="{{'../hand@desktop.png' | asset_url }} 1x, {{'../hand@desktop@2x.png' | asset_url }} 2x" media="(min-width: 480px)" type="image/png" />
+                        <source srcset="assets/img/placeholder.png" data-srcset="{{'../hand@mob.webp' | asset_url }} 1x, {{'../hand@mob@2x.webp' | asset_url }} 2x" type="image/webp" />
+                        <source srcset="assets/img/placeholder.png" data-srcset="{{'../hand@mob.png' | asset_url }} 1x, {{'../hand@mob@2x.png' | asset_url }} 2x" type="image/png" /><img class="about__hand lazy" src="assets/img/placeholder.png" data-src="{{'../hand@mob.png' | asset_url }} 1x, {{'../hand@mob@2x.png' | asset_url }} 2x" alt="" />
                     </picture>
                 </div>
             </section>
