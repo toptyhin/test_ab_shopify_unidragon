@@ -1,3 +1,17 @@
+{%- liquid
+    assign product = all_products[section.settings.landing_product]
+    for variant in product.variants
+        case forloop.index
+            when 1
+                assign variant_1 = variant
+            when 2
+                assign variant_234 = variant
+            when 3
+                assign variant_set = variant
+        endcase
+    endfor 
+-%}
+
 <div class="page__wrapper">
     <header class="header page__header">
         <div class="header__container">
@@ -10,7 +24,7 @@
                 </ul>
             </nav><a class="btn-cart js-popup header__btn-cart" href="#popup-cart" aria-label="Cart"><span class="btn-cart__icon"><svg class="svg-icon svg-icon--cart">
                         <use xlink:href="#cart"></use>
-                    </svg></span><span class="btn-cart__total"><span class="btn-cart__total-value">0.00</span> ₽</span></a><a class="button header__button-buy button--small" href="#order" role="button"><span class="button__caption">Buy</span></a>
+                    </svg></span><span class="btn-cart__total btn-cart__total-value">0.00</span></a><a class="button header__button-buy button--small" href="#order" role="button"><span class="button__caption">Buy</span></a>
             <a class="btn-menu js-popup header__btn-menu" href="#popup-menu" aria-label="Меню"><span class="btn-menu__icon"><svg class="svg-icon svg-icon--menu">
                         <use xlink:href="#menu"></use>
                     </svg></span></a>
@@ -174,8 +188,9 @@
                             </div>
                             <div class="product__order">
                                 <p class="product__price-label">Price at pre-order</p>
-                                <p class="product__price-old">3 490 ₽</p>
-                                <p class="product__price">2 490 ₽</p><button class="button product__button-buy js-buy button--blue" type="button" data-product-id="1"><span class="button__caption">Buy</span></button>
+                                <p class="product__price-old">{{variant_1.compare_at_price | money}}</p>
+                                <p class="product__price">{{variant_1.price | money}}</p>
+                                <button class="button product__button-buy js-buy button--blue" type="button" data-product-id="1" onclick="addToCart({{variant_1.id}})"><span class="button__caption">Buy</span></button>
                             </div>
                         </div>
                         <div class="product product--2 order__item">
@@ -208,8 +223,8 @@
                             </div>
                             <div class="product__order">
                                 <p class="product__price-label">Price at pre-order</p>
-                                <p class="product__price-old">8 990 ₽</p>
-                                <p class="product__price">6 990 ₽</p><button class="button product__button-buy js-buy button--blue" type="button" data-product-id="2"><span class="button__caption">Buy</span></button>
+                                <p class="product__price-old">{{variant_234.compare_at_price | money}}</p>
+                                <p class="product__price">{{variant_234.price | money}}</p><button class="button product__button-buy js-buy button--blue" type="button" data-product-id="2"><span class="button__caption">Buy</span></button>
                             </div>
                         </div>
                         <div class="product product--3 order__item">
@@ -242,8 +257,8 @@
                             </div>
                             <div class="product__order">
                                 <p class="product__price-label">Price at pre-order</p>
-                                <p class="product__price-old">9 990 ₽</p>
-                                <p class="product__price">7 990 ₽</p><button class="button product__button-buy js-buy" type="button" data-product-id="3"><span class="button__caption">Buy</span></button>
+                                <p class="product__price-old">{{variant_set.compare_at_price | money}}</p>
+                                <p class="product__price">{{variant_set.price | money}}</p><button class="button product__button-buy js-buy" type="button" data-product-id="3"><span class="button__caption">Buy</span></button>
                             </div>
                         </div>
                     </div>
@@ -251,7 +266,7 @@
             </section>
             <section class="discover lazy-bg page__discover" id="discover">
                 <div class="discover__container">
-                    <h2 class="title title--white discover__title">Part 1 of 4Discover the entire Cappadocia world</h2>
+                    <h2 class="title title--white discover__title">Part 1 of 4 Discover the entire Cappadocia world</h2>
                     <div class="discover__items">
                         <div class="discover__item">
                             <div class="discover__item-main">
@@ -945,8 +960,8 @@
                                 </div>
                                 <div class="kit__right">
                                     <h4 class="kit__price-label">Price at pre-order</h4>
-                                    <p class="kit__price-old">3 490 ₽</p>
-                                    <p class="kit__price">2 490 ₽</p><button class="button kit__button-buy js-buy button--blue" type="button" data-product-id="1"><span class="button__caption">Buy</span></button>
+                                    <p class="kit__price-old">{{variant_1.compare_at_price | money}}</p>
+                                    <p class="kit__price">{{variant_1.price | money}}</p><button class="button kit__button-buy js-buy button--blue" type="button" data-product-id="1"><span class="button__caption">Buy</span></button>
                                 </div>
                             </div>
                         </div>
@@ -974,8 +989,8 @@
                                 </div>
                                 <div class="kit__right">
                                     <h4 class="kit__price-label">Price at pre-order</h4>
-                                    <p class="kit__price-old">8 990 ₽</p>
-                                    <p class="kit__price">6 990 ₽</p><button class="button kit__button-buy js-buy button--blue" type="button" data-product-id="2"><span class="button__caption">Buy</span></button>
+                                    <p class="kit__price-old">{{variant_234.compare_at_price | money}}</p>
+                                    <p class="kit__price">{{variant_234.price | money}}</p><button class="button kit__button-buy js-buy button--blue" type="button" data-product-id="2"><span class="button__caption">Buy</span></button>
                                 </div>
                             </div>
                         </div>
@@ -1005,8 +1020,8 @@
                                 </div>
                                 <div class="kit__right">
                                     <h4 class="kit__price-label">Price at pre-order</h4>
-                                    <p class="kit__price-old">9 990 ₽</p>
-                                    <p class="kit__price">7 990 ₽</p><button class="button kit__button-buy js-buy" type="button" data-product-id="3"><span class="button__caption">Buy</span></button>
+                                    <p class="kit__price-old">{{variant_set.compare_at_price | money}}</p>
+                                    <p class="kit__price">{{variant_set.price | money}}</p><button class="button kit__button-buy js-buy" type="button" data-product-id="3"><span class="button__caption">Buy</span></button>
                                 </div>
                             </div>
                         </div>
@@ -1369,7 +1384,38 @@
     </div>
 </div>
 {% include 'img-sprite.svg' %}
-
+<script>
+  
+    function addToCart(variat_id){    
+      e.preventDefault();
+      let formData = {
+       'items': [{
+         'id': variat_id,
+        'quantity': 1
+        }]
+      };
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => {
+        //$(".success-feedback").fadeIn("fast").delay(4e3).fadeOut("slow");
+           $.ajax({
+              type: 'GET',
+              url: '/cart.json',
+              dataType: "json",
+             success: function (data) { $("#CartCost .money").text('$ '+data.total_price*0.01);}
+            });
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    
+   }
+  </script>
 {% schema %}
 {
   "name": "Landing product",
