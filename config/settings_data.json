@@ -1819,6 +1819,12 @@
           "on_mobile_title_set": "mobile_title_set_line_trim",
           "mobile_text_limit": 30
         }
+      },
+      "page-quezzle": {
+        "type": "page-quezzle",
+        "settings": {
+          "landing_product": "quezzle"
+        }
       }
     },
     "content_for_index": [
