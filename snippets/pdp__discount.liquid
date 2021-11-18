@@ -1,35 +1,42 @@
-<div class="pdp_discount">
-  {% if section.settings.pdp_image != blank %}
-  <div class="pdp_img">
-    <img src="{{section.settings.pdp_image | img_url:'master'}}">
-  </div>
-  {% endif %}
-
-  <div class="discount_content">
-    {% if section.settings.pdp_title != blank %}
-    <div class="pdp_title">
-      <p>{{section.settings.pdp_title}}</p>
+{%- if pdp_enable_banner -%}
+  <div class="new-banner-10">
+    <style>
+          .new-banner-10 {
+            display: none;
+            align-items: center;
+            width: 100%;
+            border: 1px solid #e6e6e6;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding-bottom: 0;
+          }
+    </style>
+    {%- if section.settings.pdp_image_banner != blank -%}
+      <img src="{{ section.settings.pdp_image_banner | img_url:'master'}}">
+    {%- else -%}
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+  </div> 
+{%- else -%}
+  <div class="pdp_discount">
+    {% if section.settings.pdp_image != blank %}
+    <div class="pdp_img">
+      <img src="{{section.settings.pdp_image | img_url:'master'}}">
     </div>
     {% endif %}
 
-    {% if section.settings.pdp_sub_title != blank %}
-    <div class="pdp_subtitle">
-      <p>{{section.settings.pdp_sub_title}}</p>
+    <div class="discount_content">
+      {% if section.settings.pdp_title != blank %}
+      <div class="pdp_title">
+        <p>{{section.settings.pdp_title}}</p>
+      </div>
+      {% endif %}
+
+      {% if section.settings.pdp_sub_title != blank %}
+      <div class="pdp_subtitle">
+        <p>{{section.settings.pdp_sub_title}}</p>
+      </div>
+      {% endif %}
     </div>
-    {% endif %}
   </div>
-</div>
-<div class="new-banner-10">
-  <style>
-        .new-banner-10 {
-          display: none;
-          align-items: center;
-          width: 100%;
-          border: 1px solid #e6e6e6;
-          margin-top: 30px;
-          margin-bottom: 30px;
-          padding-bottom: 0;
-        }
-  </style>
-  <img src="{{'new_banner_10.jpg' | asset_url }}">
-</div>
+{%- endif -%}
