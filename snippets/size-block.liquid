@@ -1,4 +1,8 @@
 {%comment%}Size Block{%endcomment%}
+<style>
+  .label-test-old {display:initial;}
+  .label-test-new {display:none;display: flex;flex-direction: column;justify-content: center;}
+</style>
 
 <div class="page-width rich-text size-block">
     <div class="grid">
@@ -12,6 +16,7 @@
       <div class="grid__item large-up--one-quarter medium-down--one-whole">
         <div class="size one-whole">
           <div class="size-label">S</div>
+          <div class="bigger-text label-test-new">simple</div>
         </div>
         <div class="one-whole">
           <div class="puzzle-size">≈A5</div>
@@ -30,7 +35,8 @@
       <div class="grid__item large-up--one-quarter medium-down--one-whole">
           <div class="size one-whole">
             <div class="size-label">M</div>
-            <div class="bigger-text">2x {{ 'custome_block.sizechart.bigger' | t }}</div>
+            <div class="bigger-text label-test-old">2x {{ 'custome_block.sizechart.bigger' | t }}</div>
+            <div class="bigger-text label-test-new">medium</div>
           </div>
           <div class="one-whole">
             <div class="puzzle-size">≈A4</div>
@@ -49,7 +55,8 @@
       <div class="grid__item large-up--one-quarter medium-down--one-whole">
         <div class="size one-whole">
           <div class="size-label">{{ 'custome_block.sizechart.king_size' | t }}</div>
-          <div class="bigger-text">3x {{ 'custome_block.sizechart.bigger' | t }}</div>
+          <div class="bigger-text label-test-old">3x {{ 'custome_block.sizechart.bigger' | t }}</div>
+          <div class="bigger-text label-test-new">hard</div>
         </div>
         <div class="one-whole">
           <div class="puzzle-size">≈A3</div>
@@ -68,7 +75,8 @@
       <div class="grid__item large-up--one-quarter medium-down--one-whole">
         <div class="size one-whole">
           <div class="size-label">{{ 'custome_block.sizechart.royal_size' | t }}</div>
-          <div class="bigger-text">7x {{ 'custome_block.sizechart.bigger' | t }}</div>
+          <div class="bigger-text label-test-old">7x {{ 'custome_block.sizechart.bigger' | t }}</div>
+          <div class="bigger-text label-test-new">super hard</div>
         </div>
         <div class="one-whole">
           <div class="puzzle-size">≈A2</div>
