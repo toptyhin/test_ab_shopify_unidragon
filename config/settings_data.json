@@ -1931,6 +1931,26 @@
           "pdp_cta_text1": "",
           "pdp_cta_link1": ""
         }
+      },
+      "collection-dino-template": {
+        "type": "collection-dino-template",
+        "settings": {
+          "grid": 3,
+          "rows": 2,
+          "show_collection_image": true,
+          "enable_parallax": false,
+          "enable_video": false,
+          "enable_external_video": false,
+          "external_video": "",
+          "video_bg": "",
+          "show_vendor": false,
+          "sort_enable": true,
+          "tags_enable": true,
+          "on_desktop_title_set": "title_set_line_trim",
+          "desktop_text_limit": 30,
+          "on_mobile_title_set": "mobile_title_set_line_trim",
+          "mobile_text_limit": 30
+        }
       }
     },
     "content_for_index": [
