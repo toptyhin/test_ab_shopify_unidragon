@@ -111,40 +111,6 @@
             font-weight: 600;
           }
           .product-single__meta {font-family: 'Poppins';}
-          .banner-inspirational-gift {
-            background-color: black;
-            background-image: url({{'banner-inspirational-diplodoc_bg.png' | asset_url}});
-            background-size: cover;
-            height: 400px;
-            color: #ffffff;
-            margin-top: 40px;
-          }
-          .banner-inspirational-gift_header {
-            font-size: 18px;
-            font-weight: 600;
-            text-transform: uppercase;
-            padding-top: 130px;
-            padding-left: 120px;
-          }
-          .banner-inspirational-gift_text {
-            font-size: 12px;
-            padding-top: 10px;
-            padding-left: 120px;
-            padding-right: 15px;
-          }
-          .banner-inspirational-gift_link {
-            padding-left: 130px;
-            padding-top: 15px;
-          }
-          .banner-inspirational-gift_link a{
-            text-decoration: underline;
-            font-size: 21px;
-            letter-spacing: .08em;
-            color: white;
-            font-size: 1em;
-            font-weight: 500;
-            line-height: 1;
-          }
           .banner-decorate-walls {
             margin-top: 40px;
             background-image: url({{'banner-decorate-walls-diplo_mob_bg.png' | asset_url}});
@@ -220,24 +186,6 @@
             padding: 0 20px;
             font-size: 14px;
           }
-            .banner-inspirational-gift {
-              height: 450px;
-            }
-              .banner-inspirational-gift_header {
-              font-size: 28px;
-              padding-top: 30%;
-              padding-left: 140px;
-              padding-right: 35px;
-            }
-            .banner-inspirational-gift_text {
-              font-size: 16px;
-              padding-top: 10px;
-              padding-left: 140px;
-              padding-right: 85px;
-            }
-            .banner-inspirational-gift_link {
-              padding-left: 140px;
-            }
             .banner-decorate-walls {
               height: 420px;
               background-image: url({{'banner-decorate-walls_diplodocus_bg.png' | asset_url}});
@@ -841,13 +789,71 @@
                 {% if section.settings.pdp_enable %}
                     {% render 'pdp__discount' %}
                 {%- endif -%}
-    
-              <div class="banner-inspirational-gift">
-                <div class="banner-inspirational-gift_header">A surprise in every set</div>
-                <div class="banner-inspirational-gift_text">Get an extra gift and assemble your 3D dinosaur model</div>
-                {%-comment-%}<div class="banner-inspirational-gift_link"><a href="/products/giftcard" class="banner-inspirational-gift_a">{{ 'custome_text.banner.buy_gift_card' | t }} -></a></div>{%-endcomment-%}
-              </div>
-
+            {%- if section.settings.gift_image_banner_enable -%}
+                <style>
+                    .banner-inspirational-gift {
+                        background-color: black;
+                        background-image: url("{{ section.settings.gift_image_banner_bg | img_url: 'master'}}");
+                        background-size: cover;
+                        height: 400px;
+                        color: #ffffff;
+                        margin-top: 40px;
+                    }
+                    .banner-inspirational-gift_header {
+                        font-size: 18px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        padding-top: 130px;
+                        padding-left: 120px;
+                    }
+                    .banner-inspirational-gift_text {
+                        font-size: 12px;
+                        padding-top: 10px;
+                        padding-left: 120px;
+                        padding-right: 15px;
+                    }
+                    .banner-inspirational-gift_link {
+                        padding-left: 130px;
+                        padding-top: 15px;
+                    }
+                    .banner-inspirational-gift_link a{
+                        text-decoration: underline;
+                        font-size: 21px;
+                        letter-spacing: .08em;
+                        color: white;
+                        font-size: 1em;
+                        font-weight: 500;
+                        line-height: 1;
+                    }
+                    @media only screen and (min-width: 749px) {
+                        .banner-inspirational-gift {
+                        height: 450px;
+                        }
+                        .banner-inspirational-gift_header {
+                        font-size: 28px;
+                        padding-top: 30%;
+                        padding-left: 140px;
+                        padding-right: 35px;
+                        }
+                        .banner-inspirational-gift_text {
+                        font-size: 16px;
+                        padding-top: 10px;
+                        padding-left: 140px;
+                        padding-right: 85px;
+                        }
+                        .banner-inspirational-gift_link {
+                        padding-left: 140px;
+                        }
+                    }
+                </style>
+                <div class="banner-inspirational-gift">
+                    <div class="banner-inspirational-gift_header">{{ section.settings.gift_image_banner_title }}</div>
+                    <div class="banner-inspirational-gift_text">{{ section.settings.gift_image_banner_text }}</div>
+                    {%-if gift_image_banner_link_enable -%}
+                        <div class="banner-inspirational-gift_link"><a href="{{ section.settings.gift_image_banner_link_url }}" class="banner-inspirational-gift_a">{{ section.settings.gift_image_banner_title }} -></a></div>
+                    {%- endif -%}
+                </div>
+            {%- endif -%}
               <div class="advantage">
                 <div class="advantage-item">
                   <div class="advantage-block">
@@ -1399,6 +1405,57 @@
               "type":"textarea",
               "id":"pdp_sub_title",
               "label":"Sub-title"
+            },
+            {
+              "type":"header",
+              "content":"Gift Image Banner"
+            },
+            {
+              "type": "checkbox",
+              "id": "gift_image_banner_enable",
+              "label": "Enable Gift Image Banner",
+              "default": false
+            },
+            {
+              "type":"image_picker",
+              "id":"gift_image_banner_bg",
+              "label":"Gift Image Banner background"
+            },
+            {
+              "type":"text",
+              "id":"gift_image_banner_title",
+              "label":"Gift Image Banner Title"
+            },
+            {
+              "type":"textarea",
+              "id":"gift_image_banner_text",
+              "label":"Gift Image Banner Text"
+            },
+            {
+              "type": "checkbox",
+              "id": "gift_image_banner_link_enable",
+              "label": "Enable link on Gift Image Banner",
+              "default": false
+            },
+            {
+              "type":"text",
+              "id":"gift_image_banner_link_url",
+              "label":"link URL"
+            },
+            {
+              "type":"text",
+              "id":"gift_image_banner_link_title",
+              "label":"Link Title"
+            },
+            {
+              "type":"header",
+              "content":"Image with text Bullets"
+            },
+            {
+              "type": "checkbox",
+              "id": "image_bullets_enable",
+              "label": "Enable image with text Bullets",
+              "default": false
             },
             {
               "type":"header",
