@@ -1414,8 +1414,8 @@
 </div>
 {% include 'img-sprite.svg' %}
 <script>
-  $('.product__button-buy').on('click', ddToCart(e));
-  $('.kit__button-buy').on('click', ddToCart(e));
+  $('.product__button-buy').on('click', addToCart(e));
+  $('.kit__button-buy').on('click', addToCart(e));
   function addToCart(e){    
     e.preventDefault();
     let formData = {
