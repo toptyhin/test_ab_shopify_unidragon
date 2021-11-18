@@ -838,9 +838,9 @@
               </div>
               
               <div class="reputon-trustpilot-reviews-widget" id="a83b7e60-bc57-11eb-a355-a9194acb8438" style="display: flex; justify-content: center;"></div>
-              {%- unless product.title contains "balancing" -%}
+              {% if section.settings.pdp_enable %}
                 {% render 'pdp__discount' %}
-              {%- endunless -%}
+              {%- endif -%}
     
               <div class="banner-inspirational-gift">
                 <div class="banner-inspirational-gift_header">A surprise in every set</div>
@@ -1387,6 +1387,16 @@
               "type": "image_picker",
               "id": "enable_trust_badges_image",
               "label": "Payment icons"
+            },
+            {
+              "type":"header",
+              "content":"Discount Image Banner"
+            },
+            {
+              "type": "checkbox",
+              "id": "pdp_enable",
+              "label": "Enable PDP banner",
+              "default": false
             },
             {
               "type": "checkbox",
