@@ -1416,16 +1416,16 @@
             </svg></div>
         <div class="popup__box">
             <p class="popup__message">Product added to cart</p>
-            <div class="popup__buttons-wrapper"><button class="button popup__button js-popup-close button--white" type="button"><span class="button__caption">Back</span></button><a class="button popup__button js-popup button--blue" href="#popup-cart" role="button"><span class="button__caption">Go to cart</span></a></div>
+            <div class="popup__buttons-wrapper"><button class="button popup__button js-popup-close button--white" type="button"><span class="button__caption">Back</span></button><a class="button popup__button button--blue" href="/cart" role="button"><span class="button__caption">Go to cart</span></a></div>
         </div>
     </div>
-    <div class="popup popup--cart mfp-hide" id="popup-cart"><button class="popup__btn-close js-popup-close" type="button" title="Закрыть"></button>
+    <div class="popup popup--cart mfp-hide" id="popup-cart"><button class="popup__btn-close js-popup-close" type="button" title="Close"></button>
         <div class="cart lazy-bg">
             <div class="cart__top">
-                <h2 class="cart__title">Корзина</h2>
+                <h2 class="cart__title">Cart</h2>
                 <div class="cart__items">
                     <div class="cart__item hidden" data-product-id="1" data-price="2490"><button class="cart__item-remove" type="button" aria-label="Удалить из корзины"><svg class="svg-icon svg-icon--close">
-                                <use xlink:href="assets/img/sprite.svg#close"></use>
+                                <use xlink:href="#close"></use>
                             </svg></button>
                         <div class="cart__item-image">
                             <picture>
@@ -1443,7 +1443,7 @@
                         <div class="cart__item-total"><span class="cart__item-total-value">2 490</span> ₽</div>
                     </div>
                     <div class="cart__item hidden" data-product-id="2" data-price="6990"><button class="cart__item-remove" type="button" aria-label="Удалить из корзины"><svg class="svg-icon svg-icon--close">
-                                <use xlink:href="assets/img/sprite.svg#close"></use>
+                                <use xlink:href="#close"></use>
                             </svg></button>
                         <div class="cart__item-image">
                             <picture>
@@ -1481,7 +1481,7 @@
                 </div>
             </div>
             <div class="cart__bottom">
-                <div class="cart__summary"><span class="cart__summary-label">Сумма заказа</span><span class="cart__summary-total"><span class="cart__summary-total-value">0</span> ₽</span></div><button class="button cart__button disabled button--blue" type="button" data-popup="#popup-order"><span class="button__caption">Оформить заказ</span></button>
+                <div class="cart__summary"><span class="cart__summary-label">Total price:</span><span class="cart__summary-total"><span class="cart__summary-total-value">0</span> ₽</span></div><button class="button cart__button disabled button--blue" type="button" data-popup="#popup-order"><span class="button__caption">Оформить заказ</span></button>
             </div>
         </div>
     </div>
