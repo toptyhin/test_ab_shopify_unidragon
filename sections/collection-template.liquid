@@ -50,7 +50,7 @@
 <div data-section-id="{{ section.id }}" data-section-type="collection-template">
   <header class="collection-header">
     {% if section.settings.show_collection_image and collection.image %}
-    <div class="collection-hero">
+    <div class="collection-hero hero--medium">
       {%- if collection.handle contains 'balancing-puzzles'  -%}
         <div class="collection-hero__image ratio-container lazyload js"
               data-bgset="{% include 'bgset', image: collection.image %}"
