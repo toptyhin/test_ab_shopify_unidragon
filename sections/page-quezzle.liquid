@@ -36,7 +36,6 @@
     endfor
   -%}
 
-  <span class="commom_colord" id="CartCost" data-discount="{{discount_calc}}">{{ cart_total_price | money }}</span>
 <div class="page__wrapper">
     <header class="header page__header">
         <div class="header__container">
@@ -49,7 +48,7 @@
                 </ul>
             </nav><a class="btn-cart js-popup header__btn-cart" href="#popup-cart" aria-label="Cart"><span class="btn-cart__icon"><svg class="svg-icon svg-icon--cart">
                         <use xlink:href="#cart"></use>
-                    </svg></span><span class="btn-cart__total btn-cart__total-value">0.00</span></a><a class="button header__button-buy button--small" href="#order" role="button"><span class="button__caption">Buy</span></a>
+                    </svg></span><span class="btn-cart__total btn-cart__total-value" id="CartCost" data-discount="{{discount_calc}}">{{ cart_total_price | money }}</span></a><a class="button header__button-buy button--small" href="#order" role="button"><span class="button__caption">Buy</span></a>
             <a class="btn-menu js-popup header__btn-menu" href="#popup-menu" aria-label="Меню"><span class="btn-menu__icon"><svg class="svg-icon svg-icon--menu">
                         <use xlink:href="#menu"></use>
                     </svg></span></a>
