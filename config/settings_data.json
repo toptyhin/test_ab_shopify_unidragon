@@ -1630,12 +1630,12 @@
             "disabled": true,
             "settings": {
               "collection_item": "dino-collection",
-              "collection_title": "",
+              "collection_title": "Dino Collection",
               "collection_item_text": "Bring your children joy",
               "collection_description": "<ul>\n              <li>An impressive gift for a child<\/li>\n              <li>Learn about animal diversity throughout history<\/li>\n            <\/ul>",
-              "collection_image": "shopify:\/\/shop_images\/unidragon-wooden-puzzle-jigsaw-puzzle-for-kids-woosaic-dinosaurs-diplodocus-01_360x_b45a1bc2-80aa-430b-8720-cc7e9ff371ff.jpg",
-              "collection_hover_image": "shopify:\/\/shop_images\/image-hover-dino-puzzle.png",
-              "button_text": "Go to directory"
+              "collection_image": "shopify:\/\/shop_images\/IMG_1920_feab9dae-66cb-4413-aa16-72f5aa81a8e2.jpg",
+              "collection_hover_image": "shopify:\/\/shop_images\/IMG_18111_e373c232-ad53-4837-981d-cc97a555cd29.jpg",
+              "button_text": "SHOP THE COLLECTION"
             }
           },
           "524039b1-fc1d-423b-8c8b-377b03cd1e46": {
@@ -1699,6 +1699,16 @@
               "product_hover_image": "shopify:\/\/shop_images\/image-hover-gift-card.png",
               "button_text": "Go to directory"
             }
+          },
+          "9a769db5-7435-41df-9a7d-375518466653": {
+            "type": "collection",
+            "settings": {
+              "collection_item": "",
+              "collection_title": "",
+              "collection_item_text": "",
+              "collection_description": "",
+              "button_text": "Go to directory"
+            }
           }
         },
         "block_order": [
@@ -1713,7 +1723,8 @@
           "8050d109-e461-4f01-8b14-a74c4d729537",
           "5861f35d-b156-405e-a244-7f7dba7c8ed0",
           "39c553b7-493a-455d-9915-6a8f30a738cd",
-          "95ef7eb0-eef8-4105-b904-06848450108d"
+          "95ef7eb0-eef8-4105-b904-06848450108d",
+          "9a769db5-7435-41df-9a7d-375518466653"
         ],
         "settings": {
           "display_type": "all",
@@ -1844,12 +1855,9 @@
           "shake_effect_enable": true,
           "readmore_enable": false,
           "enable_progressbar_text": false,
-          "enable_timer_top_message": false,
-          "enable_progressbartimer_text": false,
           "enable_shipping": false,
           "show_tags": false,
           "show_social": false,
-          "enable_timer_stg_on": "enable_timer_stg_off",
           "enable_payment_button": true,
           "variant_swacth": "two",
           "swatch_option": "without_background",
@@ -1891,12 +1899,9 @@
           "shake_effect_enable": true,
           "readmore_enable": false,
           "enable_progressbar_text": false,
-          "enable_timer_top_message": false,
-          "enable_progressbartimer_text": false,
           "enable_shipping": false,
           "show_tags": false,
           "show_social": false,
-          "enable_timer_stg_on": "enable_timer_stg_off",
           "enable_payment_button": true,
           "variant_swacth": "two",
           "swatch_option": "without_background",
