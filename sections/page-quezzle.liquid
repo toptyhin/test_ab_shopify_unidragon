@@ -55,7 +55,7 @@
             </nav><a class="btn-cart header__btn-cart go-cart__trigger js-go-cart-trigger" href="/cart" aria-label="Cart"><span class="btn-cart__icon"><svg class="svg-icon svg-icon--cart">
                         <use xlink:href="#cart"></use>
                     </svg></span><span class="btn-cart__total btn-cart__total-value" id="CartCost" data-discount="{{discount_calc}}">{{ cart_total_price | money }}</span></a>
-                    <a class="button header__button-buy button--small" href="#order" role="button"><span class="button__caption">Buy</span></a>
+                    <a class="button header__button-buy js-buy button--small" href="#order" role="button"><span class="button__caption">Buy</span></a>
             <a class="btn-menu js-popup header__btn-menu" href="#popup-menu" aria-label="Меню"><span class="btn-menu__icon"><svg class="svg-icon svg-icon--menu">
                         <use xlink:href="#menu"></use>
                     </svg></span></a>
@@ -221,7 +221,7 @@
                                 <p class="product__price-label">Price at pre-order</p>
                                 <p class="product__price-old">{{variant_1.compare_at_price | money}}</p>
                                 <p class="product__price">{{variant_1.price | money}}</p>
-                                <button class="button product__button-buy button--blue AddToCart" type="button" data-variant-id="{{variant_1.id}}"><span class="button__caption">Buy</span></button>
+                                <button class="button product__button-buy js-buy button--blue AddToCart" type="button" data-variant-id="{{variant_1.id}}"><span class="button__caption">Buy</span></button>
                             </div>
                         </div>
                         <div class="product product--2 order__item">
@@ -256,7 +256,7 @@
                                 <p class="product__price-label">Price at pre-order</p>
                                 <p class="product__price-old">{{variant_234.compare_at_price | money}}</p>
                                 <p class="product__price">{{variant_234.price | money}}</p>
-                                <button class="button product__button-buy button--blue AddToCart" type="button" data-variant-id="{{variant_234.id}}"><span class="button__caption">Buy</span></button>
+                                <button class="button product__button-buy js-buy button--blue AddToCart" type="button" data-variant-id="{{variant_234.id}}"><span class="button__caption">Buy</span></button>
                             </div>
                         </div>
                         <div class="product product--3 order__item">
@@ -290,7 +290,7 @@
                             <div class="product__order">
                                 <p class="product__price-label">Price at pre-order</p>
                                 <p class="product__price-old">{{variant_set.compare_at_price | money}}</p>
-                                <p class="product__price">{{variant_set.price | money}}</p><button class="button product__button-buy AddToCart" type="button" data-variant-id="{{variant_set.id}}"><span class="button__caption">Buy</span></button>
+                                <p class="product__price">{{variant_set.price | money}}</p><button class="button product__button-buy js-buy AddToCart" type="button" data-variant-id="{{variant_set.id}}"><span class="button__caption">Buy</span></button>
                             </div>
                         </div>
                     </div>
@@ -790,7 +790,7 @@
                                     <li>Look at pieces and find out secrets</li>
                                     <li>Go through quests and mazes</li>
                                 </ul>
-                            </div><a class="button gift__button-buy" href="#order" role="button"><span class="button__caption">Buy</span></a>
+                            </div><a class="button gift__button-buy js-buy" href="#order" role="button"><span class="button__caption">Buy</span></a>
                         </div>
                         <div class="gift__right">
                             <div class="gift__items-wrapper">
@@ -887,7 +887,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="comparision__button-wrapper"><a class="button comparision__button-buy" href="#order" role="button"><span class="button__caption">Buy</span></a></div>
+                    <div class="comparision__button-wrapper"><a class="button comparision__button-buy js-buy" href="#order" role="button"><span class="button__caption">Buy</span></a></div>
                 </div>
             </section>
             <section class="cappadocia page__cappadocia" id="cappadocia">
@@ -993,7 +993,7 @@
                                 <div class="kit__right">
                                     <h4 class="kit__price-label">Price at pre-order</h4>
                                     <p class="kit__price-old">{{variant_1.compare_at_price | money}}</p>
-                                    <p class="kit__price">{{variant_1.price | money}}</p><button class="button kit__button-buy button--blue AddToCart" type="button" data-variant-id="{{variant_1.id}}"><span class="button__caption">Buy</span></button>
+                                    <p class="kit__price">{{variant_1.price | money}}</p><button class="button kit__button-buy js-buy button--blue AddToCart" type="button" data-variant-id="{{variant_1.id}}"><span class="button__caption">Buy</span></button>
                                 </div>
                             </div>
                         </div>
@@ -1022,7 +1022,7 @@
                                 <div class="kit__right">
                                     <h4 class="kit__price-label">Price at pre-order</h4>
                                     <p class="kit__price-old">{{variant_234.compare_at_price | money}}</p>
-                                    <p class="kit__price">{{variant_234.price | money}}</p><button class="button kit__button-buy button--blue AddToCart" type="button" data-variant-id="{{variant_234.id}}"><span class="button__caption">Buy</span></button>
+                                    <p class="kit__price">{{variant_234.price | money}}</p><button class="button kit__button-buy js-buy button--blue AddToCart" type="button" data-variant-id="{{variant_234.id}}"><span class="button__caption">Buy</span></button>
                                 </div>
                             </div>
                         </div>
@@ -1053,7 +1053,7 @@
                                 <div class="kit__right">
                                     <h4 class="kit__price-label">Price at pre-order</h4>
                                     <p class="kit__price-old">{{variant_set.compare_at_price | money}}</p>
-                                    <p class="kit__price">{{variant_set.price | money}}</p><button class="button kit__button-buy AddToCart" type="button" data-variant-id="{{variant_set.id}}"><span class="button__caption">Buy</span></button>
+                                    <p class="kit__price">{{variant_set.price | money}}</p><button class="button kit__button-buy js-buy AddToCart" type="button" data-variant-id="{{variant_set.id}}"><span class="button__caption">Buy</span></button>
                                 </div>
                             </div>
                         </div>
@@ -1407,7 +1407,16 @@
                         </a></li>
                 </ul>
             </nav>
-            <div class="mmenu__button-wrapper"><a class="button mmenu__button-buy js-popup-close button--blue" href="#order" role="button"><span class="button__caption">Buy</span></a></div>
+            <div class="mmenu__button-wrapper"><a class="button mmenu__button-buy js-buy js-popup-close button--blue" href="#order" role="button"><span class="button__caption">Buy</span></a></div>
+        </div>
+    </div>
+    <div class="popup popup--added mfp-hide lazy-bg" id="popup-added">
+        <div class="popup__icon-ok"><svg class="svg-icon svg-icon--ok">
+                <use xlink:href="assets/img/sprite.svg#ok"></use>
+            </svg></div>
+        <div class="popup__box">
+            <p class="popup__message">Product added to cart</p>
+            <div class="popup__buttons-wrapper"><button class="button popup__button js-popup-close button--white" type="button"><span class="button__caption">Back</span></button><a class="button popup__button js-popup button--blue" href="/cart" role="button"><span class="button__caption">Go to cart</span></a></div>
         </div>
     </div>
 </div>
