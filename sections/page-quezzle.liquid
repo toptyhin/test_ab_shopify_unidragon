@@ -1401,7 +1401,7 @@
       body: JSON.stringify(formData)
     })
     .then(response => {
-      //$(".success-feedback").fadeIn("fast").delay(4e3).fadeOut("slow");
+        goCart.fetchAndOpenCart();
          $.ajax({
             type: 'GET',
             url: '/cart.json',
