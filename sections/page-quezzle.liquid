@@ -1219,7 +1219,7 @@
                             </div>
                         </div>
                         <div class="answers__right">
-                            {% form 'contact' %}
+                            {% form 'contact', class: "form-feedback" %}
                                 {{ form_errors | default_errors }}
                                 <h3 class="form-feedback__title">Feedback form</h3>
                                 <div class="field field--type-text field--blue-light form-feedback__field"><label class="field__label" for="form-feedback-name">Name</label>
