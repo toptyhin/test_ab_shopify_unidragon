@@ -1618,6 +1618,7 @@
           },
           "296dfcc3-67ca-4c51-b1f5-94443532230f": {
             "type": "product-item",
+            "disabled": true,
             "settings": {
               "product_item": "diplodocus",
               "product_title": "Dino Collection",
@@ -1630,7 +1631,6 @@
           },
           "b32d7969-a1ad-49e8-830c-c12cef4c3044": {
             "type": "collection",
-            "disabled": true,
             "settings": {
               "collection_item": "dino-collection",
               "collection_title": "",
