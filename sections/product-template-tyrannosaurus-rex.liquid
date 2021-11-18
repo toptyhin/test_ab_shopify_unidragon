@@ -838,9 +838,9 @@
               </div>
               
               <div class="reputon-trustpilot-reviews-widget" id="a83b7e60-bc57-11eb-a355-a9194acb8438" style="display: flex; justify-content: center;"></div>
-              {% if section.settings.pdp_enable %}
-                {% render 'pdp__discount' %}
-              {%- endif -%}
+                {% if section.settings.pdp_enable %}
+                    {% render 'pdp__discount' %}
+                {%- endif -%}
     
               <div class="banner-inspirational-gift">
                 <div class="banner-inspirational-gift_header">A surprise in every set</div>
@@ -1139,18 +1139,6 @@
               "label": "Enable Progress Bar",
               "default": true
             },
-            {
-              "type": "checkbox",
-              "id": "enable_timer_top_message",
-              "label": "Enable Stock Left Message",
-              "default": true
-            },
-            {
-              "type": "checkbox",
-              "id": "enable_progressbartimer_text",
-              "label": "Enable Sale end message",
-              "default": true
-            },
               {
               "type": "checkbox",
               "id": "enable_shipping",
@@ -1169,22 +1157,6 @@
               "label": "Show social buttons",
               "default": false
               },
-            {
-              "type": "radio",
-              "id": "enable_timer_stg_on",
-              "default": "enable_timer_stg_on",
-              "options": [
-                {
-                  "value": "enable_timer_stg_on",
-                  "label": "ON timer"
-                },
-                {
-                  "value": "enable_timer_stg_off",
-                  "label": "OFF timer"
-                }
-              ],
-              "label": "Timer Setting ON\/OFF"
-            },
             {
               "type": "header",
               "content": "Dynamic Checkout Button"
