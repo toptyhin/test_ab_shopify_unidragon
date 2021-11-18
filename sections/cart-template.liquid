@@ -356,6 +356,46 @@
             {% if section.settings.pdp_enable %}
               {% render 'pdp__discount' %}
             {%- endif -%}
+            {% comment %}
+            <!--slider-section-block-->
+            {% if puzzle_count == 1 or puzzle_count == 2 or puzzle_count == 3 %}
+            {% if section.settings.pdp_image != blank or section.settings.pdp_title != blank or pdp_sub_title != blank %}
+            <div class="pdp_discount">
+              <div class="image_with-text">
+                {% if section.settings.pdp_title != blank %}
+                <div class="pdp_title">
+                  <p>{{section.settings.pdp_title}}<b> <span class="other_infos">{% if puzzle_count == 1 %} 10% discount {%- endif -%}{% if puzzle_count == 2 %} 20% discount {%- endif -%}{% if puzzle_count == 3 %} 25% discount {%- endif -%} </span></b></p>
+                </div>
+                {%- endif -%}
+                {% if section.settings.pdp_image != blank %}
+                <div class="pdp_img block_2">
+                  <img class="on_deski" src="{{section.settings.pdp_image | img_url:'master'}}">
+                  <img class="on_mobii" style="display: none;" src="{{section.settings.pdp_image_mob | img_url:'master'}}">
+                </div>
+                {%- endif -%}
+              </div>
+              <div class="discount_content">
+  
+                <ul class="slider_sections">
+                  <li><div class="content_border1 text_center {% if puzzle_count == 1 or puzzle_count < 1 %}bg_coloradd{% else %}bg_coloradd{%- endif -%}"><span class="border-content">0%</span></div>
+                    <p class="numbers">1</p>
+                    <p class="type">puzzle</p>
+                  </li>
+                  {% if puzzle_count == 1 %}<p class="tooltips"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/tooli.png?v=1606307714"/></p>{%- endif -%}
+                  <p class="dots">....</p>
+                  <li><div class="content_border content_border2 text_center {% if puzzle_count == 1 or puzzle_count < 2 %}{% else %}bg_coloradd{%- endif -%}"><span class="border-content">10%</span></div>
+                    <p class="numbers">2</p>
+                    <p class="type">puzzles</p>
+                  </li>
+                  {% if puzzle_count == 2 %}<p class="tooltips"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/tooltip.png?v=1605185077"/></p>{%- endif -%}
+  
+                  <p class="dots">....</p>
+                  <li><div class="content_border content_border3 text_center {% if puzzle_count == 1 or puzzle_count == 2 or puzzle_count < 3 %}{% else %}bg_coloradd{%- endif -%}"><span class="border-content">15%</span></div>
+                    <p class="numbers">3</p>
+                    <p class="type">puzzles</p>
+                  </li>
+                  {% if puzzle_count == 3 %}<p class="tooltips"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/tooltip.png?v=1605185077"/></p>{%- endif -%}
+                  {% comment %}{% if puzzle_count == 4 %}<p class="tooltips"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/tooltip.png?v=1605185077"/></p>{%- endif -%}{% endcomment %}
                   <p class="dots">....</p>
                   <li><div class="content_border content_border4 text_center {% if puzzle_count == 1 or puzzle_count == 2 or puzzle_count == 3 or puzzle_count < 4 %}{% else %}bg_coloradd{%- endif -%}"><span class="border-content">20%</span></div>
                     <p class="numbers">4</p>
@@ -377,6 +417,7 @@
             </div>
             {%- endif -%}
             {%- endif -%}
+            {% endcomment %}
             <div class="cart-note small--hide spoiler__block spoiler__close">
               <div class="spoiler__title">
                 <label for="CartSpecialInstructions" class="cart-note__label small--text-center"><span class="spoiler__title-line">{{ 'cart.general.note' | t }}</span></label>
@@ -586,14 +627,14 @@
   "info": "Maximum logo dimensions are 500px wide by 100px high. The uploaded file will be resized to fit within those constraints."
   },
   {
-    "type": "checkbox",
-    "id": "pdp_enable",
-    "label": "Show PDP banner",
-    "default": false
-  },
-  {
     "type":"header",
     "content":"Discount Image Banner"
+  },
+  {
+    "type": "checkbox",
+    "id": "pdp_enable",
+    "label": "Enable PDP banner",
+    "default": false
   },
   {
     "type": "checkbox",
