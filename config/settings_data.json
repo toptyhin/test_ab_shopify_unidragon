@@ -395,6 +395,8 @@
           "enable_mobile_atc_button": true,
           "move_badges_under_cart": false,
           "enable_trust_badges": false,
+          "pdp_enable_banner": true,
+          "pdp_image_banner": "shopify:\/\/shop_images\/new_banner_10.jpg",
           "pdp_image": "shopify:\/\/shop_images\/new_img_a79e2b7e-362a-4eb1-85d0-a79a3dbc6454.jpg",
           "pdp_title": "<b>Buy any 3 Jigsaw Puzzles and<\/b> <br><span class=\"other_infos\">Get 10% Discount<\/span>",
           "pdp_sub_title": "The discount will be applied automatically in the cart.",
