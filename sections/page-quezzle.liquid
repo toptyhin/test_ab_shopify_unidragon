@@ -10,8 +10,33 @@
                 assign variant_set = variant
         endcase
     endfor 
--%}
 
+    assign cart_total_price = 0
+    for item in cart.items
+      if item.product.type == 'Puzzle'
+        assign puzle_discount = puzle_discount | plus: item.quantity
+      endif
+
+      if customer
+        for tag in customer.tags
+          if tag == 'Subscription membership' 
+            assign member_discount = true
+          endif
+        endfor
+      endif
+      if member_discount == true
+        assign item_line_price = item.line_price | times: 0.8
+        assign discount_calc = 0.8
+      elsif puzle_discount > 2
+        assign item_line_price = item.line_price | times: 0.9
+      else
+        assign item_line_price = item.line_price
+      endif
+      assign cart_total_price = cart_total_price | plus: item_line_price
+    endfor
+  -%}
+
+  <span class="commom_colord" id="CartCost" data-discount="{{discount_calc}}">{{ cart_total_price | money }}</span>
 <div class="page__wrapper">
     <header class="header page__header">
         <div class="header__container">
@@ -1401,11 +1426,10 @@
       body: JSON.stringify(formData)
     })
     .then(response => {
-        var goCart = new GoCart();
         goCart.fetchAndOpenCart();
          $.ajax({
             type: 'GET',
-            url: '/cart.json',
+            url: '../cart.json',
             dataType: "json",
            success: function (data) { $("#CartCost .money").text('$ '+data.total_price*0.01);}
           });
