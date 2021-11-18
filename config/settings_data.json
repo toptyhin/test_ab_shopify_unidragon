@@ -480,6 +480,7 @@
           "cart_timer_minute": 5000,
           "cart_timer_color": "#f30909",
           "shopping_payment": true,
+          "pdp_enable": true,
           "pdp_enable_banner": true,
           "pdp_image_banner": "shopify:\/\/shop_images\/new_banner_10.jpg",
           "pdp_image": "shopify:\/\/shop_images\/cart.jpg",
