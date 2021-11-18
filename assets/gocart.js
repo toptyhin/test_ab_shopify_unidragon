@@ -553,7 +553,7 @@
                 key: "fetchCart",
                 value: function(t) {
                     var e = this;
-                    window.fetch("/cart.js", {
+                    window.fetch("../cart.js", {
                         credentials: "same-origin",
                         method: "GET"
                     }).then((function(t) {
