@@ -1414,7 +1414,9 @@
 </div>
 {% include 'img-sprite.svg' %}
 <script>
-  $('.product__button-buy').on('click',function(e){    
+  $('.product__button-buy').on('click', ddToCart(e));
+  $('.kit__button-buy').on('click', ddToCart(e));
+  function addToCart(e){    
     e.preventDefault();
     let formData = {
      'items': [{
@@ -1430,7 +1432,6 @@
       body: JSON.stringify(formData)
     })
     .then(response => {
-        goCart.fetchAndOpenCart();
          $.ajax({
             type: 'GET',
             url: '../cart.json',
@@ -1442,7 +1443,7 @@
       console.error('Error:', error);
     });
   
- });
+ }
   </script>
 {% schema %}
 {
