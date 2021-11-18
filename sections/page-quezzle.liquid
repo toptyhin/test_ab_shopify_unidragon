@@ -1401,6 +1401,7 @@
       body: JSON.stringify(formData)
     })
     .then(response => {
+        var goCart = new GoCart();
         goCart.fetchAndOpenCart();
          $.ajax({
             type: 'GET',
