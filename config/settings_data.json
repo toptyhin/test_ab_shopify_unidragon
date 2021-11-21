@@ -626,7 +626,7 @@
         "type": "hero",
         "settings": {
           "enable_video": true,
-          "video_bg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0291\/1322\/1168\/files\/fon_1.mp4?v=1631176999",
+          "video_bg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0291\/1322\/1168\/files\/1980v23_c.mp4?v=1637501455",
           "enable_external_video": false,
           "external_video": "https:\/\/youtu.be\/iH4yWWTm8MU",
           "image": "shopify:\/\/shop_images\/unidragon-wooden-jigsaw-puzzle-1.jpg",
@@ -1964,7 +1964,7 @@
           "external_video": "",
           "video_bg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0291\/1322\/1168\/files\/1980v23_c.mp4?v=1637501455",
           "show_vendor": false,
-          "sort_enable": true,
+          "sort_enable": false,
           "tags_enable": true,
           "on_desktop_title_set": "title_set_line_trim",
           "desktop_text_limit": 30,
