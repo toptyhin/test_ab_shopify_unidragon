@@ -1,0 +1,11 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% comment %}
+  The contents of the collection.liquid template can be found in /sections/collection-template.liquid
+{% endcomment %}
+
+{%- liquid
+    section 'collection-animals-template'
+    unless collection.handle == 'nature-puzzles' or collection.handle == 'world_map_puzzles' or collection.handle == 'balancing-puzzles'
+      render 'size-block'
+    endunless
+  -%}
