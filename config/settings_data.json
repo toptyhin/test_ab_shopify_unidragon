@@ -450,7 +450,7 @@
           "rows": 8,
           "show_collection_image": true,
           "enable_parallax": true,
-          "enable_video": true,
+          "enable_video": false,
           "enable_external_video": false,
           "external_video": "",
           "video_bg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0291\/1322\/1168\/files\/fon_1.mp4?v=1631176999",
