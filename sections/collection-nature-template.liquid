@@ -51,16 +51,6 @@
     <header class="collection-header">
       {% if section.settings.show_collection_image and collection.image %}
       <div class="collection-hero">
-        {%- if collection.handle contains 'balancing-puzzles'  -%}
-          <div class="collection-hero__image ratio-container lazyload js"
-                data-bgset="{% include 'bgset', image: collection.image %}"
-                data-sizes="auto"
-                data-parent-fit="cover"
-                style="background-image: url('{{ collection.image | img_url: '1600x' }});"></div>
-          <noscript>
-            <div class="collection-hero__image" style="background-image: url({{ collection.image | img_url: '2048x600', crop: 'top' }});"></div>
-          </noscript>
-        {%- else -%}
           {%- if section.settings.enable_video -%}
           <style>
               .collection-hero {max-height: 375px!important;}
@@ -88,7 +78,6 @@
             <div class="collection-hero__image" style="background-image: url({{ collection.image | img_url: '2048x600', crop: 'top' }});"></div>
           </noscript>
           {% endif %}
-        {% endif %}
         <div class="collection-hero__title-wrapper">
           <div class="over_image_content page-width medium-up--text-left">
             <h1 class="imgsldover--large">
