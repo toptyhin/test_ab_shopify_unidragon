@@ -1971,6 +1971,26 @@
           "on_mobile_title_set": "mobile_title_set_line_trim",
           "mobile_text_limit": 30
         }
+      },
+      "collection-nature-template": {
+        "type": "collection-nature-template",
+        "settings": {
+          "grid": 4,
+          "rows": 2,
+          "show_collection_image": true,
+          "enable_parallax": false,
+          "enable_video": false,
+          "enable_external_video": true,
+          "external_video": "https:\/\/www.youtube.com\/watch?v=mzG65WGcKJE",
+          "video_bg": "",
+          "show_vendor": false,
+          "sort_enable": true,
+          "tags_enable": true,
+          "on_desktop_title_set": "title_set_line_trim",
+          "desktop_text_limit": 30,
+          "on_mobile_title_set": "mobile_title_set_line_trim",
+          "mobile_text_limit": 30
+        }
       }
     },
     "content_for_index": [
