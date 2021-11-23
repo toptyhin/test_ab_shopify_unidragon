@@ -705,14 +705,14 @@
               {% endif %}
             {% endif %} 
           {% endif %} 
-         
+          <div id="ct_pe_disco_holder"></div>
           <!-- END PRODUCT SWATCH CODE IF ENABLE -->
             {% include 'product-page-features' %}
 
             <input required type="hidden" id="upsellcheckquantity" name="properties[upsellcheckquantity]">
             
             {% endform %}
-            <div id="ct_pe_disco_holder"></div>
+            
             {%- render 'back-in-stock-form', product_id: product.id, product_variants_id: current_variant.id -%}
 
             {% if section.settings.enable_sticky %}
