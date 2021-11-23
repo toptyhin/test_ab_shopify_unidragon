@@ -108,13 +108,14 @@
   <!--  bootstrap js & css  -->
   <script src="{{ 'bootstrap.min.js' | asset_url }}"></script>
   <script>var mainShopDomain='{{shop.permanent_domain}}';</script>
- 
+ {%comment%}
   <!-- starapps_scripts_start -->
 <!-- This code is automatically managed by StarApps Studio -->
 <!-- Please contact support@starapps.studio for any help -->
 {% render "starapps-product-json", product: product, starapps_app: "VIA", starapps_attribute: "sa-product-json" %}
 <script type="text/javascript" src="https://bcdn.starapps.studio/apps/via/unidragon/script-1630500651.js?shop={{shop.permanent_domain}}" async></script>
 <!-- starapps_scripts_end -->
+{%endcomment%}
 {{ content_for_header }}
   
   <link href="https://fonts.googleapis.com/css?family=Anton|Arimo|Arvo|Baloo+Bhai|Baloo+Bhaina|Bitter|Bree+Serif|Cabin|Catamaran|David+Libre|Dosis|Droid+Sans|Droid+Serif|Ek+Mukta|Fjalla+One|Hind|Inconsolata|Indie+Flower|Lato|Libre+Baskerville|Lobster|Lora|Merriweather|Modak|Montserrat|Muli|Noto+Sans|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Narrow|PT+Serif|Pavanam|Playfair+Display|Poppins|Raleway|Roboto|Roboto+Condensed|Roboto+Slab|Slabo+27px|Source+Sans+Pro|Teko|Titillium+Web|Ubuntu|Yanone+Kaffeesatz|Yatra+One&display=swap" rel="stylesheet">
@@ -422,8 +423,6 @@ twq('track','PageView');
   
 
 {% include 'pe-disco-countdown-timer' %}
-
-{% include 'swymSnippet' %}
 
 {% include 'sg-fbp' %}{% include 'sg-button' %}{% include 'sg-cart' %}{% include 'sg-hiw' %}<!-- langify-v2-scripts-begin -->{% comment %}ly_liquid_scripts_begin{% endcomment %}{% endcapture %}{% render 'ly-liquid-scripts' content: ly_liquid_content %}{% comment %}ly_liquid_scripts_end{% endcomment %}{% comment %}ly_core_scripts_begin{% endcomment %}{% render 'ly-core-scripts' %}{% comment %}ly_core_scripts_end{% endcomment %}{% comment %}ly_switcher_factory_begin{% endcomment %}{% render 'ly-switcher-factory' %}{% comment %}ly_switcher_factory_end{% endcomment %}<!-- langify-v2-scripts-end --></body>
 </html>
