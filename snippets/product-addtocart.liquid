@@ -24,6 +24,7 @@
   {% else %}
   <input type="hidden" id="Quantity" name="quantity" value="1" class="product-form__input prod_qty_desktop">
   {% endif %}
+  <div id="ct_pe_disco_holder"></div>
     <div class="{{quantitygrid}}{% if section.settings.enable_sticky %} qty_stickyfor{% endif %}{% unless section.settings.enable_payment_button %} cst-small-crtbtn{% else %} more_payment_btn{% endunless %}">
     {% if price_var == 0 %}          
     {% if section.settings.enable_shipping %}
