@@ -8,10 +8,10 @@
       .section--fullwidth-banner {
         align-items: center;
         display: flex;
+        max-width: {{section.settings.img_width}};
       }
       .section--fullwidth-banner img {
           margin: 0 auto;
-          max-width: {{section.settings.img_width}};
       }
       @media only screen and (max-width:456px) {
         .section--fullwidth-banner img {max-width: 100%}
