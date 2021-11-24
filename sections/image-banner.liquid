@@ -1,0 +1,77 @@
+{% if section.settings.enable_full_banner %}
+ 
+    <div class="section--fullwidth-banner" id="section--fullwidth-banner" style="background-image: url('{{section.settings.img | img_url: 'master' }}')">
+      <h2 class="title"><span> {{page_title}}</span></h2>
+    </div>
+ 
+  <style>
+    .section--fullwidth-banner{
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: {{section.settings.img_height}}px;
+      overflow: visible;
+      text-align: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+    .section--fullwidth-banner .title{
+ 
+      z-index: 1;
+      width: 100%;
+      font-weight: 900;
+      font-size: 170%;
+ 
+    }
+    .section--fullwidth-banner .title span{
+      display: inline-block;
+      padding: 10px 20px;
+      background: rgba(255,255,255,0.8);
+      color: #000;
+    }
+    {% comment %} .section--fullwidth-banner img{
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+    } {% endcomment %}
+ 
+  </style>
+ 
+ 
+{% endif %}
+ 
+{% schema %}
+  {
+    "name": "Full-width Banner",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_full_banner",
+        "label": "Enable Fullwidth Banner",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "img",
+        "label": "Default image"
+      },
+      {
+        "type": "number",
+        "id": "img_height",
+        "label": "Image height in px",
+            "default": 200
+      }
+    ],
+    "presets": [
+      {
+        "name": "Full-width Banner",
+        "category": "Image"
+      }
+    ]
+  }
+ 
+{% endschema %}
