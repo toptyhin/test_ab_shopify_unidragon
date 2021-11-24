@@ -1955,8 +1955,8 @@
       "collection-animals-template": {
         "type": "collection-animals-template",
         "settings": {
-          "grid": 4,
-          "rows": 2,
+          "grid": 3,
+          "rows": 8,
           "show_collection_image": true,
           "enable_parallax": false,
           "enable_video": true,
