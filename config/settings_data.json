@@ -1991,6 +1991,14 @@
           "on_mobile_title_set": "mobile_title_set_line_trim",
           "mobile_text_limit": 30
         }
+      },
+      "1637763556bc7ccf4c": {
+        "type": "image-banner",
+        "settings": {
+          "enable_full_banner": true,
+          "img": "shopify:\/\/shop_images\/211122_-_black_friday__1.jpg",
+          "img_height": 200
+        }
       }
     },
     "content_for_index": [
@@ -2005,7 +2013,8 @@
       "16039015597eb3b5ec",
       "1603965658ea939929",
       "1619615291e2b75557",
-      "1634880766341f5eed"
+      "1634880766341f5eed",
+      "1637763556bc7ccf4c"
     ]
   },
   "presets": {
