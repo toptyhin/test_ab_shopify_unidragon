@@ -1,20 +1,17 @@
 {% if section.settings.enable_full_banner %}
  
-    <div class="section--fullwidth-banner" id="section--fullwidth-banner">
-      <img src="{{section.settings.img | img_url: 'master' }}" alt="" title="">
+    <div class="section--fullwidth-banner" id="section--fullwidth-banner" style="max-width: {{section.settings.img_width}}">
+        <img src="{{section.settings.img | img_url: 'master' }}" alt="" title="">
     </div>
- 
-  <style>
-      .section--fullwidth-banner {
-        align-items: center;
-        display: flex;
-        max-width: {{section.settings.img_width}};
-        margin: 0 auto;
-      }
 
-  </style>
- 
- 
+    <style>
+        .section--fullwidth-banner {
+            align-items: center;
+            display: flex;
+            margin: 0 auto;
+        }
+    </style>
+  
 {% endif %}
  
 {% schema %}
@@ -25,7 +22,7 @@
         "type": "checkbox",
         "id": "enable_full_banner",
         "label": "Enable Fullwidth Banner",
-        "default": true
+        "default": false
       },
       {
         "type": "image_picker",
