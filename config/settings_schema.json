@@ -6924,5 +6924,20 @@
         "info": "https:\/\/vimeo.com\/shopify"
       }
     ]
+  },
+  {
+    "name": "Discount 10% display for 3 puzzles",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Displaying a 10% discount on the card page and in the cart drawer"
+      },
+      {
+        "type": "checkbox",
+        "id": "display_3pazl_discount",
+        "label": "Display 10% discount for 3 puzzles",
+        "default": false
+      }
+    ]
   }
 ]
