@@ -655,8 +655,9 @@
           {% endif %}
         </div>
         <div class="reputon-trustpilot-reviews-widget" id="a83b7e60-bc57-11eb-a355-a9194acb8438" style="display: flex; justify-content: center;"></div>
-        {%- unless product.title contains "balancing" -%}
+          {% if section.settings.pdp_enable %}
           {% render 'pdp__discount' %}
+        {%- endif -%}
           <style>
             .custom-faq .line {
               font-size: 20px;
@@ -696,7 +697,6 @@
             }
           </style>
           <script>$('.pr-info').first().append($('#custom-faq'))</script>
-        {%- endunless -%}
 
         <div class="medium-up--hide storyblock-mob">{%- render 'fw-storyblock', channel: current_channel -%}</div>
         
@@ -1357,6 +1357,27 @@ var enable_defaul_variant = false;
         "type": "image_picker",
         "id": "enable_trust_badges_image",
         "label": "Payment icons"
+      },
+      {
+        "type":"header",
+        "content":"Discount Image Banner"
+      },
+      {
+        "type": "checkbox",
+        "id": "pdp_enable",
+        "label": "Enable PDP banner",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "pdp_enable_banner",
+        "label": "Enable image banner",
+        "default": false
+      },
+      {
+        "type":"image_picker",
+        "id":"pdp_image_banner",
+        "label":"Banner Image"
       },
       {
         "type":"header",
