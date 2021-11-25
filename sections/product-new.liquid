@@ -737,7 +737,9 @@
           </div>
           <div class="reputon-trustpilot-reviews-widget" id="a83b7e60-bc57-11eb-a355-a9194acb8438" style="display: flex; justify-content: center;"></div>
           {%- unless product.title contains "balancing" -%}
+          {% if section.settings.pdp_enable %}
             {% render 'pdp__discount' %}
+          {%- endif -%}
           {%- endunless -%}
 
           <div class="text-center storyblock medium-up--hide"><span class="heading">Inspiring Stories</span></div>
@@ -1305,6 +1307,12 @@
         {
           "type":"header",
           "content":"Discount Image Banner"
+        },
+        {
+          "type": "checkbox",
+          "id": "pdp_enable",
+          "label": "Enable PDP banner",
+          "default": false
         },
         {
           "type": "checkbox",
