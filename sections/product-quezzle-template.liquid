@@ -388,6 +388,12 @@
   
   </style>
       
+<style>
+  .quezzle-grid-price strike, .single-quezzle-price strike {
+      display: none;
+  }
+</style>
+
     <script>
       {% if section.settings.buy_it_now_action == 'direct_to_cart' %}var buyitnowaction = true;{% else %}var buyitnowaction = false;{% endif %}{% if section.settings.enable_related_upsell %}var relatedupsellenable = true;{% else %}var relatedupsellenable = false;{% endif %}{% if section.settings.buy_it_now_action == 'thank_you_message' %}var thankmsg = true;{% else %}var thankmsg = false;{% endif %}{% if section.settings.buy_it_now_action == 'direct_to_checkout' %}var drchkout = true;{% else %}var drchkout = false;{% endif %}
       {% if section.settings.enable_sticky %}var eblstcky = true;{% else %}var eblstcky = false;{% endif %}{% if section.settings.enable_payment_button %}var ebl_pay_but = true;var addToCartBtnLabel_1 = "{{ 'products.dynamic_checkout_buttons.add_to_cart_text_when_dynamic_checkout_buttons_enable' | t }}";{% else %}var ebl_pay_but = false;var addToCartBtnLabel_1 = "{{ 'products.product.add_to_cart' | t }}";{% endif %}{% if section.settings.visitor_counter_enable %}var visitorcountr = true;{% else %}var visitorcountr = false;{% endif %}
