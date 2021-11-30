@@ -50,7 +50,14 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
     <div class="swatch_container">
       {%- assign values = '' -%}
       {%- assign size_count = 0 -%}
-      {%- for variant in product.variants -%}
+
+      {%- if product.collections[0].handle == nature-puzzles -%}
+        {%- assign limit_size = 3 -%}
+      {%- else -%}
+        {%- assign limit_size = product.variants.size -%}
+      {%- endif -%}
+
+      {%- for variant in product.variants limit: limit_size -%}
 
       {%- assign value = variant.options[option_index] -%}
       {%- unless values contains value -%}
