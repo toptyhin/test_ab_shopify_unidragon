@@ -1,0 +1,3438 @@
+<style>
+
+    @media only screen and (min-width: 750px) {
+      .grid__item.product-single__photos.medium-up--one-half {
+        position: sticky;
+        top: 0;
+      }
+      .page-container {
+        overflow: inherit;
+      }
+    }
+    
+        .bis-reset.bis-edge-left.bis-edge-top.bis-rotate-90 {
+          display: none;
+        }
+        {% if product.type == 'Puzzle' %}
+        .selector-wrapper {
+          display:none;
+        }
+        
+        {% endif %} 
+        
+        {% if section.settings.variant_swacth == 'two'  %} 
+        .selector-wrapper {
+          display:none;
+        }
+        {% endif %}
+        .product-description {
+          margin-bottom: 12px;
+        }
+      
+        .videoframe div {
+            position: relative;
+            width: 100%;
+            height: 530px;
+        }
+        .videoframe iframe {
+            margin-top: calc(50% - 145px);
+            left: 0;
+            width: 100%;
+            height: 290px;
+        }
+        .video-media iframe {
+            width: 100%;
+            height: 100%;          
+        }
+    
+         .slick-slider .slick-dots {
+            overflow: scroll;
+            white-space: nowrap; 
+            bottom: -55px;
+            height: 60px;
+          }
+          .slick-slider .slick-dots li {
+            width:50px;
+            height:50px;
+          }
+          .slick-slider .slick-dots li a {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+          }
+          @media only screen and (max-width: 749px) {
+            .thumbnails-wrapper.thumbnails-slider--active .slick-track {
+              display: block;
+          }
+            .shipping-banner {min-height: 95px !important;}
+            .thumbnails-wrapper {
+                padding-bottom: 60px;
+            }
+            span.advantage-item-text {font-size: 12px;}
+            span.advantage-item-title {font-size: 14px;}
+            span.advantage-item-num {
+              float: none !important;
+              font-size: 18px !important;
+            }
+            .advantage-item_left {padding-left: 0 !important; padding-top: 0 !important;}
+            span.advantage-item-text {padding-top: 0 !important;}
+          }
+          /**/
+          .pr-advants, .pr-benefit, .pr-info-item, ul.tabs {display: none;}
+          div#tab-1 {padding-top: 25px;}
+          .description_spoiler {padding-top: 40px;}
+          .description_spoiler p {
+              color: #808080;
+          }
+          .description_spoiler strong {
+              color: #000000;
+          }
+          .shipping-banner {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-image: url( "{{ 'shipping-bg.png' | asset_url }}" );
+            background-position: right;
+            min-height: 80px;
+          }
+          .shipping-banner-icon {
+            margin-left: 40px;
+          }
+          .shipping-banner-text {
+            margin-left: 20px;
+            width: 50%;
+          }
+          .shipping-banner-text-bold {
+            font-weight: 600;
+          }
+          .product-single__meta {font-family: 'Poppins';}
+          .banner-inspirational-gift {
+            display: inline-block;
+            background-color: black;
+            background-image: url({{'banner-inspirational-gift_bg.png' | asset_url }});
+            background-size: cover;
+            height: 400px;
+            color: #ffffff;
+          }
+          .banner-inspirational-gift_header {
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding-top: 130px;
+            padding-left: 130px;
+          }
+          .banner-inspirational-gift_text {
+            font-size: 12px;
+            padding-top: 10px;
+            padding-left: 130px;
+            padding-right: 15px;
+          }
+          .banner-inspirational-gift_link {
+            padding-left: 130px;
+            padding-top: 15px;
+          }
+          .banner-inspirational-gift_link a{
+            text-decoration: underline;
+            font-size: 21px;
+            letter-spacing: .08em;
+            color: white;
+            font-size: 1em;
+            font-weight: 500;
+            line-height: 1;
+          }
+          .banner-decorate-walls {
+            margin-top: 40px;
+            background-image: url({{'banner-decorate-walls_mob_bg.png' | asset_url }});
+            background-size: cover;
+            background-position: left;
+            height: 350px;
+            color: #000000;
+          }
+          .banner-decorate-walls_header {
+            width: 100%;
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 20px;
+            padding-bottom: 0;
+          }
+          .banner-decorate-walls_text {
+            padding: 0 20px;
+            font-size: 14px;
+          }
+          .banner-decorate-walls_howitworks {
+              padding-left: 20px;
+              padding-top: 10px;
+            }
+          .advantage {
+            margin-top: 40px;
+          }
+          .advantage-item {
+            -webkit-box-shadow: 0 0 0 1px #e6e6e6;
+             box-shadow: 0 0 0 1px #e6e6e6;
+             margin-bottom: 20px;
+             min-height: 125px;
+             display: flex;
+             align-items: center;
+             justify-content: space-between;
+          }
+          .advantage-block {
+            margin-left: 30px;
+            width: 60%;
+          }
+          span.advantage-item-num {
+              font-size: 24px;
+              font-weight: 600;
+              float: left;
+          }
+          span.advantage-item-title {
+              font-weight: 500;
+              font-size: 14px;
+          }
+          span.advantage-item-text {
+            color: #808080;
+            padding-top: 10px;
+            font-size: 12px;
+          }
+          .advantage-item-img {
+            min-height: 125px;
+            width: 190px;
+          }
+          .advantage-item_left {
+            display: flex;
+            flex-direction: column;
+            padding-left: 14px;
+            padding-top: 5px;
+          }
+          .delivery_time_new {
+            display: flex;
+            align-items: center;
+          }
+          .delivery_time_new img {margin-right: 15px;}
+          div#see-more {
+              cursor: pointer;
+              font-weight: 600;
+          }
+          @media only screen and (min-width: 749px) {
+            .banner-inspirational-gift {
+              height: 450px;
+            }
+              .banner-inspirational-gift_header {
+              font-size: 28px;
+              padding-top: 30%;
+              padding-left: 175px;
+              padding-right: 70px;
+            }
+            .banner-inspirational-gift_text {
+              font-size: 16px;
+              padding-top: 10px;
+              padding-left: 175px;
+              padding-right: 85px;
+            }
+            .banner-inspirational-gift_link {
+              padding-left: 175px;
+            }
+            .banner-decorate-walls {
+              height: 420px;
+              background-image: url({{'banner-decorate-walls_bg.png' | asset_url }});
+            }
+            .banner-decorate-walls_header {
+              width: 395px;
+              font-size: 22px;
+              letter-spacing: 0.7px;
+              font-weight: 600;
+              text-transform: uppercase;
+              padding-top: 30px;
+              padding-left: 40px;
+            }
+            .banner-decorate-walls_text {
+              width: 40%;
+              letter-spacing: 0.7px;
+              padding-top: 10px;
+              padding-left: 40px;
+            }
+            .banner-decorate-walls_howitworks {
+              padding-left: 40px;
+              padding-top: 0;
+            }
+          }
+    
+    
+                  .custom-faq .line, .custom-tax-new .line {
+                    font-size: 14px;
+                  }
+                  .custom-faq, .custom-tax-new {
+                    width:100%;
+                    float:left;
+                    margin-top: 30px;
+                  }
+                  .custom-faq .accordion-tax, .custom-tax-new .accordion-tax {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 10px;
+                    color:#000;
+                    cursor:pointer;
+                    width:100%;
+                    font-weight:600;
+                    text-align:left;
+                    border:none;
+                    outline:0;
+                    transition:.4s
+                  }
+                  .custom-faq .panel p, .custom-tax-new .panel p {color: #808080;}
+                  .custom-faq .panel, .custom-tax-new .panel {
+                    background-color:#fff;
+                    width: 90%;
+                    display:none;
+                    text-align:justify;
+                    overflow:hidden
+                  }
+                  .custom-faq .accordion-tax:after, .custom-tax-new .accordion-tax:after {content:'\002B';
+                    font-size:18px;
+                    color:#000;
+                    float:right;
+                    margin-left:5px
+                  }
+                  .custom-faq .active:after, .custom-tax-new .active:after {
+                    content:"\2716"
+                  }
+                  p.line {margin-bottom: 20px;}
+                .storyblock__heading {
+                  padding-bottom: 10px;
+                  width: 40%;
+                }
+                .storyblock__video {
+                  padding-top: 24px;
+                }
+                .storyblock__heading-inner {
+                  display: grid;
+                  margin-left: 50px;
+                }
+                .storyblock__heading-icon {
+                  padding-bottom: 22px;
+                }
+                .storyblock-text-left {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  margin: 0px auto;
+                  padding-top: 20px;
+                  -webkit-box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
+                  -moz-box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
+                  box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
+                }
+        .product.in-stock {
+          color: green;
+          padding-left: 10px;
+        }
+        .product.out-of-stock {
+          color: red;
+          padding-left: 10px;
+        }
+        /* description spoiler*/
+        .description_spoiler {
+          padding-top: 25px;
+        }
+    
+        .description_spoiler strong {
+          color: #000000;
+        }
+    
+        .description_spoiler p {
+          color: #808080;
+        }
+    
+        .read-more {
+          overflow: hidden;
+          position: relative;
+          max-height: 240px;
+          min-height: 240px;
+        }
+    
+        .read-more::after {
+          opacity: 1;
+          content: "";
+          left: 0;
+          right: 0;
+          bottom: 0;
+          position: absolute;
+          transition: opacity 200ms ease-in;
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgb(255, 255, 255));
+          pointer-events: none;
+          height: 50%;
+          width: 100%;
+        }
+    
+        .read-more.active {
+          overflow: auto;
+          max-height: fit-content;
+        }
+    
+        .read-more.active::after {
+          opacity: 0;
+        }
+    
+        #see-more {
+          cursor: pointer;
+          font-weight: 600;
+        }
+        .getsocial {
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+        .getsocial.gs-inline-group.gs-big-counter {
+            margin-bottom: 5px !important;
+        }
+    
+    </style>
+        
+      <script>
+        {% if section.settings.buy_it_now_action == 'direct_to_cart' %}var buyitnowaction = true;{% else %}var buyitnowaction = false;{% endif %}{% if section.settings.enable_related_upsell %}var relatedupsellenable = true;{% else %}var relatedupsellenable = false;{% endif %}{% if section.settings.buy_it_now_action == 'thank_you_message' %}var thankmsg = true;{% else %}var thankmsg = false;{% endif %}{% if section.settings.buy_it_now_action == 'direct_to_checkout' %}var drchkout = true;{% else %}var drchkout = false;{% endif %}
+        {% if section.settings.enable_sticky %}var eblstcky = true;{% else %}var eblstcky = false;{% endif %}{% if section.settings.enable_payment_button %}var ebl_pay_but = true;var addToCartBtnLabel_1 = "{{ 'products.dynamic_checkout_buttons.add_to_cart_text_when_dynamic_checkout_buttons_enable' | t }}";{% else %}var ebl_pay_but = false;var addToCartBtnLabel_1 = "{{ 'products.product.add_to_cart' | t }}";{% endif %}{% if section.settings.visitor_counter_enable %}var visitorcountr = true;{% else %}var visitorcountr = false;{% endif %}
+      </script>
+      
+        <script type="text/javascript">
+          jQuery(document).ready(function($) {
+            $(".quezzle-btn").click(function() {
+                $('html, body').animate({
+                    scrollTop: $("#swatchQuezzle").offset().top
+                }, 2000);
+                return false;
+            });
+            $("#swatchTrigger1").click(function() {
+              $('#swatch-0-part-1-product-template + label').trigger('click');
+            });
+            $("#swatchTrigger2").click(function() {
+              $('#swatch-0-extention-pack-part-2-4-product-template + label').trigger('click');
+            });
+            $("#swatchTrigger3").click(function() {
+              $('#swatch-0-full-pack-part-1-4-product-template + label').trigger('click');
+            });
+          });
+        </script>
+        <style type="text/css">
+  
+          .product-video-sec{
+            background: #FFFFFF;
+            border: 1px solid #EBEBEB;
+            padding: 21px 35px;
+            text-align: left;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+          .product-video-sec.d-flex{
+            display: flex;
+            flex-direction: row;
+          }
+          .product-video-sec.d-flex .product-video-info{
+            max-width: 175px;
+          }
+          .product-video-info h4{
+            font-size: 16px;
+            color: #333;
+            line-height: 1.5;
+            padding-bottom: 13px;
+            /* margin-right: 30px; */
+            margin-bottom: 20px;
+            font-weight: 700;
+            border-bottom: 1px solid #EBEBEB;
+            min-height: 90px;
+          }
+          .product-video-info p{
+            font-weight: 300;
+            font-size: 12px;
+            color: #333;
+            margin-bottom: 0;
+          }
+          .product-video-fig{
+            text-align: center;
+          }
+          .product-video-grid.grid{
+            display: flex;
+            flex-wrap: wrap;
+            clear: both;
+          }
+          .product-video-grid{
+            margin: 0 -8px;
+          }
+          .product-video-grid .grid__item{
+            float: none;
+            padding: 0 8px;
+          }
+          .product-video-sec.d-flex .product-video-fig{
+            margin-bottom: -21px;
+          }
+          .product-video-bg-sec{
+            background: #4D30FF;
+            padding: 18px 17px 15px;
+          }
+    
+          .product-video-bg-sec h3{
+            font-weight: bold;
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 18px;
+            text-align: center;
+          }
+          .product-video-bg-sec img {
+            width: 100%;
+          }
+          /*my style start */
+          .quezzle-grid-info ul.light-list{
+            padding: 0 10px;
+          }
+          .puzzle-quest-sec h3,
+          .order-quezzel-sec h3{
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 18px;
+            color: #333333;
+            font-weight: bold;       
+          }
+          .puzzle-quest-featured{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+          
+          }
+          .puzzle-featured-box.puzzle-featured-right-box{
+            margin-bottom: -37px;
+          }
+          .puzzle-featured-banner{
+            margin-top: -65px;
+          }
+          .puzzle-featured-box{
+            flex: 0 0 49%;
+            padding: 0;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 5;
+          }
+          .puzzle-featured-box-1 .puzzle-featured-img{
+            max-width: 104px;
+          }
+          .puzzle-featured-box-2 .puzzle-featured-img{
+            max-width: 68px;
+          }
+          .puzzle-featured-box-3 .puzzle-featured-img{
+            max-width: 99px;
+          }
+          .puzzle-featured-box-4 .puzzle-featured-img{
+            max-width: 70px;
+          }
+          .puzzle-featured-box-5 .puzzle-featured-img{
+            max-width: 83px;
+          }
+          .puzzle-featured-box-6 .puzzle-featured-img{
+            max-width: 95px;
+          }
+          .puzzle-featured-info{
+            background: white;
+            padding: 12px 17px 9px 18px;
+            min-height: 160px;
+            margin-bottom: 15px;
+            border: 12px solid #EBEBEB
+          }
+          /*.mr-bottom{
+            margin-bottom: -70px;
+          }*/
+          .puzzle-featured-info p{
+            color: #333333;
+            font-size: 14px;
+            font-weight: 400;
+          }
+          .puzzle-featured-img{
+             margin-bottom: 15px;
+             margin-top: 0;
+          }
+          .puzzle-featured-img img{
+            width: 100%;
+            height: 100%;
+          }
+          .order-quezzel-sec h3{
+            margin-bottom: 0;
+          }
+          .puzzle-featured-img{
+            margin-bottom: 15px;
+          }
+          .quzzel-mechnices-img{
+            margin-top: -22px;
+            margin-right: -21px;
+          }
+          .quzzel-mechnices-featured{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 18px;
+          }
+          .quzzel-featured-box{
+            padding: 30px 9px 9px;
+            background: #FF7607;
+            margin-bottom: 11px;
+            flex: 0 0 49%;
+            min-height: 225px;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+          }
+          .quzzel-featured-box h1{
+            position: absolute;
+            font-size: 60px;
+            color: rgb(255, 255, 255);
+            opacity: 0.2;
+            top: 37px;
+            left: 28px;
+          }
+          .quzzel-featured-box h4{ 
+            font-size:  18px;
+            font-weight: 700;
+            color: white;
+            position: relative;
+            z-index:55 ;     
+            width: 176px;   
+            margin: 0 auto 15px;
+          } 
+          .quzzel-featured-box p{ 
+            font-weight: 400;
+            font-size: 14px;
+            margin-bottom: 0;
+            padding: 18px 15px 18px 24px;
+            background: white;
+            color: #333333;
+            position: relative;
+            z-index:5 ;        
+          }
+          .quzzel-featured-box{
+            position: relative;
+          }
+          .quzzel-featured-box .quzzel-featured-img{
+            position: absolute;
+          }
+          .quzzel-featured-box-1 .quzzel-featured-img{
+            width: 110px;
+            top: -50px;
+            right: 0;
+          }
+          .quzzel-featured-box-2 .quzzel-featured-img{
+            width: 165px;
+            top: 19px;
+            right: -26px;
+            z-index: 8;
+          }
+          .quzzel-featured-box-3 .quzzel-featured-img{
+            width: 193px;
+            top: 0;
+            right: 0;
+        }
+          .quzzel-featured-box-4 .quzzel-featured-img{
+            width: 100%;
+            bottom: -6px;
+            right: 0;
+          }
+          .quzzel-featured-box-5 .quzzel-featured-img{
+            width: 234px;
+            right: 0;
+            top: 45px;
+          }
+          .quzzel-featured-box-6 .quzzel-featured-img{
+            width: 115px;
+            top: 0;
+            right: 0;
+          }
+          .catchy-gift-wrap{
+            padding-bottom: 20px;
+          }
+          .catchy-gift-featured{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background: #FFFFFF;
+            border: 1px solid #EBEBEB;
+            padding: 34px 15px;
+            margin-bottom: 70px;
+        }
+        .catchy-gift-left{
+            flex: 0 0 40%;
+            max-width: 177px;
+            margin: 0 auto;
+        }
+        .catchy-gift-left h3{
+            color: #FD7B12;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 28px;
+        }
+        .catchy-gift-left p{
+            color: #333333;
+            font-weight: normal;
+            font-size: 12px;
+          }
+        .catchy-gift-right{
+            background: #F0F0F0;
+            padding: 10px;
+            flex: 0 0 56%;
+            margin-bottom: -80px;
+        }
+        .catchy-gift-right-inner{
+            background: white;
+            padding: 0 0 25px;
+        }
+        .catchy-gift-right-inner img{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .catchy-gift-right-inner h3{
+            font-weight: bold;
+            font-size: 14px;
+            color: #333333;
+            max-width: 210px;
+            padding-left: 24px;
+            margin-bottom: 9px;
+        }
+        .gadgets-screens-featured{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+        .gadgets-featured-box{
+            flex: 0 0 49%;
+            margin-bottom: 28px;
+        }
+        .gadgets-featured-box7 .gadgets-featured-img img{
+            max-width: 183px;
+            margin-top: 0;
+        }
+        .gadgets-featured-box5 .gadgets-featured-img img{
+            margin-top: 0;
+        }
+        .gadgets-featured-box2 .gadgets-featured-img img{
+            margin-top: 0;
+        }
+        .gadgets-featured-box7 .gadgets-featured-img{
+            margin-top: 0;
+        }
+    
+        .gadgets-featured-box.gadgets-featured-box6{
+            box-shadow: none;
+            border: 0;   
+            max-width: 209px;
+        }
+        .gadgets-featured-box5 .gadgets-featured-info{
+            background: rgba(255, 255, 255, 0.85);
+            margin-top: -94px;
+            position: relative;
+            z-index: 5;
+        }
+        .gadgets-featured-box2 .gadgets-featured-info{
+            background: rgba(255, 255, 255, 0.85);
+            margin-top: -50px;
+            position: relative;
+            z-index: 5;
+            border-top: 0;
+        }
+        .gadgets-featured-info{
+            padding: 18px 0 13px;
+            box-shadow: 0px 3.61433px 36.1433px rgba(219, 219, 219, 0.5);   
+            border: 5px solid #F0F0F0;
+            border-bottom: 0;
+        }
+        .gadgets-featured-box.gadgets-featured-box5 .gadgets-featured-info{
+            border-bottom: 5px solid #F0F0F0;
+        }
+        .gadgets-featured-info h3{
+            margin: 0 auto 12px;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 0 18px;
+        }
+        .gadgets-featured-info p{
+            margin: 0 auto;
+            margin-bottom: 0;
+            font-weight: normal;
+            font-size: 14px;
+            padding: 0 18px;
+        }
+        .gadgets-featured-img img{
+            margin-top: -10px;
+        }
+        .gadgets-featured-img{
+            box-shadow: 0px 3.61433px 36.1433px rgba(219, 219, 219, 0.5);
+            border: 5px solid #F0F0F0;
+            border-top: 0;
+        }
+        .gadgets-screens-right{
+            flex: 0 0 48%;
+        }
+        .number-img{
+            width: 18px;
+            position: absolute;
+            top: 44px;
+            left: 28px;
+        }
+        .quzzel-featured-box-2 .number-img {
+            width: 41px;
+            top: 37px;
+        }
+        .quzzel-featured-box-3 .number-img {
+            width: 47px;
+            top: 60px;
+        }
+        .quzzel-featured-box-4 .number-img {
+            width: 41px;
+            top: 33px;
+            left: 27px;
+        }
+        .quzzel-featured-box-5 .number-img {
+            width: 40px;
+            top: 18px;
+        }
+        .quzzel-featured-box-6 .number-img {
+            width: 40px;
+            top: 53px;
+            left: 20px;
+        }
+        .catchy-gift-featured.row-reverse{
+            flex-direction: row-reverse;
+        }
+        .single-quezzle-list.lg-block{
+            display: none;
+        }
+        .destop-hide{
+            display: none;
+        }
+        .basic-quiz-2 .quezzle-grid-fig, .basic-quiz .quezzle-grid-fig{
+            max-width: 200px;
+        }
+        .single-quezzle-sec .mobile-hide{
+          display: block;
+        }
+        .single-quezzle-sec .destop-hide{
+          display: none;
+        }
+        .gadgets-screens-featured-1{
+            flex: 0 0 49%;        
+        }
+        .gadgets-featured-right.gadgets-right-box1{
+            max-width: 300px;
+            margin: 0;
+            margin-left: auto;
+        }
+        .gadgets-screens-featured-2{
+            flex: 0 0 49%;
+            margin-top: -150px;
+        }
+        .gadgets-featured-box.gadgets-featured-box6{
+            margin-top: -140px;
+        }
+    
+        @media (max-width: 1199px){
+          .basic-quiz .quezzle-grid-fig{
+            min-height: 140px;
+          }
+        }
+        @media (max-width: 1023px){
+            .gadgets-screens-featured-2{
+                margin-top: 0;
+            }
+            .gadgets-featured-box.gadgets-featured-box6{
+                margin-top: 0;
+            }
+            .quzzel-mechnices-img{
+                margin-top: -16px;
+            }
+            .basic-quiz .quezzle-grid-fig img{ 
+                width: 100%;
+            }
+            .basic-quiz .quezzle-grid-fig{
+                max-width: 200px;
+                margin: -70px  auto 0;
+            }
+            .basic-quiz-2 .quezzle-grid-fig{
+                max-width: 200px;
+            }
+            .puzzle-featured-banner{
+                margin-top: 0;
+            }
+            .quezzle-grid-fig{
+                margin-top: 0;
+            }
+            .puzzle-featured-box.puzzle-featured-right-box{
+                margin-bottom: 0;
+            }
+            .quzzel-mechnices-img{
+                margin: 0;
+            }
+            .puzzle-quest-featured{
+                display: block;
+            }
+            .mr-bottom{
+                margin-bottom: 11px;
+            }
+            .quzzel-mechnices-featured{
+                display: block;
+            }
+            .quzzel-featured-box h4{
+                width: 100%;
+            }
+            .quzzel-featured-box-4 .quzzel-featured-img{
+                top: 0;
+                text-align: right;
+                bottom: 0;
+                height: 100%;
+                text-align: right;
+            }
+            .quzzel-featured-box-4 .quzzel-featured-img img{
+                height: 100%;
+            }
+            .catchy-gift-featured{
+                display: block;
+            }
+            .catchy-gift-right{
+                margin-bottom: 0;
+            }
+            .catchy-gift-left{
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+            .catchy-gift-featured{
+                margin-bottom: 20px;
+                padding: 20px 15px;
+            }
+            .gadgets-screens-featured{
+                display: block;
+            }
+            .gadgets-featured-info h3{
+                max-width: 100%;
+                padding: 0 15px;
+            }
+            .gadgets-featured-info p{
+                max-width: 100%;
+                padding: 0 15px;
+            }
+            .gadgets-right-box1{
+                margin: 0;
+            }
+            .gadgets-featured-box.gadgets-featured-box2 .gadgets-featured-img{
+                border-top: 5px solid #F0F0F0;
+                border-bottom: 0;
+            }
+            .gadgets-featured-box.gadgets-featured-box2 .gadgets-featured-info{
+                border-bottom: 0px solid #F0F0F0;   
+            }
+            .gadgets-featured-box2 .gadgets-featured-info{
+                margin: 0;
+            }
+            .gadgets-featured-box.gadgets-featured-box3.mr-top{
+                margin-top: 0;
+            }
+            .gadgets-featured-box.gadgets-featured-box5{
+                margin-top: 0;
+            }
+            .gadgets-featured-box.gadgets-featured-box7{
+                margin-top: 0;
+            }
+            .gadgets-featured-box.gadgets-featured-box6{
+                margin: 27px 0  0;
+            }
+            .gadgets-featured-box7 .gadgets-featured-img img{
+                display: block;
+                margin: 0;
+            }
+            .gadgets-featured-box.gadgets-featured-box2 {
+                margin-bottom: 20px;
+            }
+            .gadgets-featured-box.gadgets-featured-box4{
+                margin-bottom: 20px;
+            }
+            .product-video-info h4{
+              min-height: inherit;
+            }
+            .product-video-grid .grid__item{
+                width: 100% !important;
+            }
+            .product-video-fig{
+                max-width: 400px;
+                margin: 0 auto;
+                width: 100%;
+            }
+            .product-video-fig img{
+                width: 100%;
+            }
+            .product-video-grid .grid__item{
+                margin-bottom: 18px;
+            }
+            .product-video-info h4{
+                font-size: 18px;
+            }
+            .product-video-sec{
+                padding: 20px 20px;
+            }
+            .product-video-info{
+                padding: 0 12px;
+                min-height: auto;
+            }
+            .puzzle-featured-img{
+                margin-bottom: 10px;
+            }
+            .quezzle-grid-info .bg-txt{
+              min-height: inherit;
+            }
+            .puzzle-featured-img{
+              margin-top: 0;
+            }
+            .single-quezzle-grid.grid{
+              display: block;
+            }
+            .quezzle-grid-info .bg-txt{
+                font-size: 12px;
+            }
+            .single-quezzle-grid .grid__item{
+                width: 100% !important;
+            }
+            .single-quezzle-bg-sec{
+                padding: 14px 16px;
+            }
+            .single-quezzle-bg-right h3{
+                text-align: center;
+            }
+            .single-quezzle-list{
+                max-width: 212px;
+                margin: 0 auto;
+            }
+            .single-quezzle-bg-right p{
+                max-width: 197px;
+                margin: 0 auto 11px;
+                text-align: center;
+            }
+            .quzzel-mechnices-img{
+                margin-bottom: 54px;
+            }
+            .quzzel-featured-box h4{
+                max-width: 208px;
+                margin: 0 auto 10px;
+            }
+            .catchy-gift-left h3{
+                max-width: 170px;
+            }
+    
+            .catchy-gift-featured{
+                padding: 0;
+            }
+            .catchy-gift-left{
+                padding: 34px 32px 0;
+                margin: 0 0 25px; ;
+            }
+            .number-img{
+                left: 31px;
+                top: 41px;
+            }
+            .quzzel-featured-box-2 .number-img{
+                top: 61px;
+                left: 35px;
+            }
+            .quzzel-featured-box-3 .number-img{
+                top: 62px;
+                left: 26px;
+            }
+            .quzzel-featured-box-4 .number-img{
+                top: 40px;
+                left: 27px;
+            }
+            .quzzel-featured-box-5 .number-img{
+                top: 60px;
+            }
+            .quzzel-featured-box-6 .number-img{
+                left: 25px;
+                top: 78px;
+            }
+            .quzzel-featured-box{
+                max-width: 283px;
+                margin: 0 auto 13px;
+            }
+            .puzzle-featured-box{
+                max-width: 324px;
+                margin: 0 auto 12px;
+            }
+            .single-quezzle-list.md-none{
+                display: none;
+            }
+            .single-quezzle-bg-right .single-quezzle-list.lg-block li{
+                font-weight: 500;
+            }
+            .single-quezzle-list.lg-block{
+               display: block;
+               margin-bottom: 17px;
+            }
+            .single-quezzle-bg-right .single-quezzle-list.lg-block ul{
+                column-count: 1;
+                margin-bottom: 0;
+            }
+            .single-quezzle-sec p{
+                font-size: 18px;
+            }
+            .puzzle-featured-img{
+                margin-top: 0;
+            }
+    
+            @media (max-width: 767px){
+                .destop-hide{
+                    display: block;
+                }
+                .mobile-hide{
+                    display: none;
+                }
+                .catchy-gift-left{
+                    max-width: 270px;
+                }
+                .complete-set .single-quezzle-price{
+                    font-size:18px; 
+                    position: absolute;
+                    bottom: 34px;
+                    right: 20px;
+                    text-align: right;
+                }
+                .complete-set .single-quezzle-price strong{
+                    font-size: 28px;
+                }
+                .single-quezzle-bg-sec{
+                    position: relative;
+                }
+                .single-quezzle-bg-right ul{
+                    column-count: 1 !important;   
+                    max-width: 206px;
+                    margin: 0 auto 23px;
+                }
+                .quezzle-grid-info ul.light-list{
+                    padding: 0 17px;    
+                }
+            }
+            @media (max-width: 575px){
+                .single-quezzle-sec .mobile-hide{
+                   display: none;
+                }
+                .single-quezzle-sec .destop-hide{
+                  display: block;
+                }
+            }
+            @media (max-width: 320px) {
+              .complete-set .single-quezzle-price {
+                right: 5px;
+              }
+            }
+    
+        }
+          
+          
+          /*my style ends*/
+    
+          .single-quezzle-sec{
+            padding-top: 30px;
+          }
+          .single-quezzle-sec h3{
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 32px;
+          }
+          .single-quezzle-sec p{
+            max-width: 310px;
+            font-size: 18px;
+          }
+          .single-quezzle-sec p:not(:last-of-type){
+            margin-bottom: 30px;
+          }
+    
+          .quezzle-grid-info .quezzle-btn,
+          .single-quezzle-bg-btn .quezzle-btn,
+          .quezzle-grid-info button,
+          .single-quezzle-bg-btn button,
+          .single-quezzle-sec button,
+          .single-quezzle-sec a{
+            display: block;
+            height: 51.14px;
+            line-height: 51.14px;
+            background: #FF7607;
+            font-weight: bold;
+            font-size: 18px;
+            color: #FFF;
+            width: 100%;
+            border: none;
+            text-align: center;
+          }
+          .single-quezzle-sec > img{
+            display: block;
+            margin-bottom: -38px;
+            margin-top: -58px;
+            pointer-events: none;
+          }
+          .single-quezzle-bg-wrap{
+            margin-top: 20px;
+          }
+          .single-quezzle-bg-sec{
+            background: #4D30FF;
+            border: 1px solid #EBEBEB;
+            display: flex;
+            padding: 25px 22px;
+            margin-bottom: 8px;
+          }
+          .single-quezzle-bg-left{
+            width: 100%;
+            max-width: 218.33px;
+          }
+          .single-quezzle-bg-left > img{
+            display: block;
+            margin: -13px -13px -70px -12px;
+            width: 116%;
+            max-width: none;
+          }
+          .single-quezzle-list{
+            background: #fff;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 175%;
+            padding: 80px 10px 12px;
+          }
+          .single-quezzle-list ul{
+            margin: 0;
+          }
+          .single-quezzle-list li{
+            color: #333;
+            padding-left: 17px;
+            position: relative;
+          }
+          .single-quezzle-list li::before{
+            content: '';
+            background: #FF7607;
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 6.09px;
+            height: 6.09px;
+            border-radius: 100%;
+            border: 1px solid #EBEBEB;
+          }
+          .single-quezzle-bg-right{
+            padding-left: 30px;
+            color: #fff;
+          }
+          .single-quezzle-bg-right li{
+            font-weight: 300;
+            font-size: 14px;
+          }
+          .single-quezzle-bg-right ul{
+            columns: 2;
+          }
+          .single-quezzle-bg-right h3{
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 24px;
+          }
+          .single-quezzle-bg-right h3 span{
+            display: inline-flex;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 10px;
+          }
+          .single-quezzle-bg-right p{
+            color: #fff;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 17px;
+          }
+          .single-quezzle-bg-right ul{
+            margin-bottom: 23px;
+          }
+          .quezzle-grid-price,
+          .single-quezzle-price{
+            font-weight: bold;
+            font-size: 18px;
+          }
+          .quezzle-grid-price > span,
+          .single-quezzle-price > span{
+            display: block;
+            color: rgba(255, 255, 255, 0.5);
+          }
+          .quezzle-grid-price > span{
+            color: #BDBDBD;
+          }
+          .quezzle-grid-price strong,
+          .single-quezzle-price strong{
+            font-weight: bold;
+            font-size: 28px;
+            color: #FFFFFF;
+          }
+          .quezzle-grid-price strong{
+            color: #FF7607;
+          }
+          .single-quezzle-grid{
+            margin: 100px -8px 0;
+          }
+          .single-quezzle-grid.grid{
+            display: flex;
+            flex-wrap: wrap;
+          }
+          .single-quezzle-grid .grid__item{
+            float: none;
+            padding: 0 8px;
+          }
+          .quezzle-grid-sec{
+            padding: 0 16px 18px;
+            background: #FFFFFF;
+            border: 1px solid #EBEBEB;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+          .quezzle-grid-fig{
+            margin-top: -70px;
+          }
+          .quezzle-grid-info .complete-buy .quezzle-grid-price {
+            text-align: right;
+          }
+          .quezzle-grid-info h4{
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+            padding-left: 10px;
+          }
+          .quezzle-grid-info p:not(.bg-txt){
+            font-weight: 500;
+            font-size: 12px;
+            color: #333;
+            margin-bottom: 0;
+          }
+          .info-box{
+            min-height: 85px;
+            margin: 0 16px 10px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #EBEBEB;
+          }
+          .quezzle-grid-info .bg-txt{
+            background: #4D30FF;
+            padding: 6px 10px 7px;
+            font-weight: bold;
+            font-size: 11px;
+            color: #FFF;
+            margin-bottom: 13px;
+            min-height: 46px;
+          }
+          .quezzle-grid-info hr{
+            width: 80%;
+            margin: 12px 0 8px;
+          }
+          .quezzle-grid-info ul.type-list li{
+            position: relative;
+            padding-left: 10px;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 130%;
+          }
+          .quezzle-grid-info ul.type-list li::before{
+            content: '';
+            width: 6px;
+            height: 6px;
+            position: absolute;
+            left: 0;
+            border-radius: 100%;
+            background: #FF7607;
+            top: 5px;
+            border: 1px solid #EBEBEB;
+          }
+          .quezzle-grid-info ul.type-list li.light-txt::before {
+            background: transparent;
+          }
+          .quezzle-grid-info ul.type-list li.light-txt{
+            color: #BDBDBD;
+          }
+          .quezzle-grid-info ul.light-list{
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 130%;
+            min-height: 69px;
+            color: #333;
+            max-width: 60%;
+            min-height: 95px;
+            padding: 0 10px;
+          }
+          @media (max-width: 1199px){
+            .info-box{
+              min-height: 95px;
+              margin: 0 7px 10px;
+            }
+            .quezzle-grid-info ul.light-list{
+              min-height: 100px;
+            }
+            .quzzel-featured-box-5 .quzzel-featured-img{
+              width: auto;
+            }
+            .quzzel-featured-box h4{
+              width: auto;
+              margin: 0 0 10px 10px;
+            }
+            .quzzel-featured-box-5 h4{
+              max-width: 125px;
+            }
+            .quzzel-featured-box p{
+              padding: 10px;
+            }
+            .gadgets-featured-box.gadgets-featured-box6{
+              margin-top: -170px;
+            }
+            .catchy-gift-right-inner h3{
+              padding: 0 10px 0 20px;
+            }
+            .quezzle-grid-info h4{
+              font-size: 15px;
+            }
+          }
+          @media (max-width: 1023px){
+            .info-box,
+            .quezzle-grid-info .bg-txt,
+            .quezzle-grid-info ul.light-list{
+              min-height: inherit;
+            }
+            .quzzel-featured-box-5 h4{
+              max-width: 150px;
+            }
+            .gadgets-featured-box.gadgets-featured-box6{
+              margin-top: 0;
+            }
+            .single-quezzle-sec > img{
+              margin-top: 0;
+            }
+          }
+          @media (max-width:  767px){
+            .quezzle-grid-info .quezzle-btn{
+                height: 54px;
+                width: auto;
+                margin: 0 17px;
+                font-size: 20px;
+            }
+            .info-box{
+              margin: 0 17px 10px;
+            }
+            .quezzle-grid-info ul.light-list{
+              padding: 0 17px;
+            }
+            .quezzle-grid-info hr{
+                width: auto;
+                margin: 12px 17px 8px;
+            }
+            .quzzel-featured-box h4{
+              max-width: 150px;
+              font-size: 20px;
+              margin-left: 35px;
+            }
+            .quzzel-featured-box h4 br{
+              display: none
+            }
+            .quzzel-featured-box p{
+              padding: 20px 20px 20px 30px;
+            }
+            .gadgets-featured-info p{
+              font-size: 16px;
+            }
+            .product-video-info p,
+            .single-quezzle-bg-right li{
+              font-size: 14px;
+            }
+            .puzzle-featured-info p{
+              font-size: 16px;
+            }
+            .quezzle-grid-info h4{
+              font-size: 18px;
+              text-align: center;
+            }
+            .quezzle-grid-info p:not(.bg-txt),
+            .quezzle-grid-info ul.type-list li{
+              font-size: 13px;
+            }
+            .number-img{
+              width: 25px;
+              top: 15px;
+            }
+            .quzzel-featured-box-2 .number-img {
+              top: 28px;
+              left: 25px;
+            }
+            .quzzel-featured-box-3 .number-img {
+              top: 50px;
+            }
+            .quzzel-featured-box-4 .number-img {
+              top: 20px;
+              width: 50px;
+            }
+            .quzzel-featured-box-5 .number-img {
+              top: 20px;
+              width: 50px;
+              left: 20px;
+            }
+            .quzzel-featured-box-5 .number-img {
+              top: 40px;
+              width: 50px;
+              left: 20px;
+            }
+            .quzzel-featured-box{
+              display: block;
+              min-height: inherit;
+              margin: 0 auto 13px;
+              max-width: 100%;
+            }
+            .quzzel-featured-box-2{
+              padding-top: 70px;
+              margin: 0 auto 13px;
+              max-width: 100%;
+            }
+            .quzzel-featured-box-3{
+              padding-top: 60px;
+              max-width: 100%;
+              margin: 0 auto 13px;
+            }
+          }
+        </style>
+    
+      <div class="product-template__container product-{{ product.id }} page-width" itemscope itemtype="http://schema.org/Product" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true"> 
+      
+        <meta itemprop="name" content="{{ product.title }}">
+        <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+        <meta itemprop="image" content="{{ product.featured_image.src | img_url: '800x' }}">
+        <meta itemprop="productID" content="{{product.id }}">
+        {%- liquid
+      
+          assign current_variant = product.selected_or_first_available_variant
+      
+            for item in cart.items
+              if item.product.type == 'Puzzle'
+                assign puzle_discount = puzle_discount | plus: item.quantity
+              endif
+            endfor
+      
+            if customer
+              for tag in customer.tags
+                if tag == 'Subscription membership' 
+                  assign member_discount = true
+                endif
+              endfor
+            endif
+            
+            assign discount_amount = 1
+      
+            if member_discount == true
+              assign discount_amount =  0.8
+            endif
+      
+          assign product_image_zoom_size = '1024x1024'
+          assign product_image_scale = '2'
+          assign enable_zoom = section.settings.enable_zoom 
+        -%}
+      
+        <div class="grid product-single">
+          <div class="grid__item product-single__photos medium-up--one-half">
+            {%- render 'label-product-tag', products: product -%}
+            {%- if section.settings.enable_default_variant -%}
+            {%- assign featured_image = product.featured_image -%}
+            {%- else -%}
+            {%- assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image -%}
+            {%- endif -%}
+            {%- assign videos = product.media | where: "media_type", "external_video" -%}
+            {%- if videos.size > 0 -%}
+              {%- for video in videos -%}
+                <div id="{{ img_wrapper_id }}" class="product-single__photo-wrapper small--hide js videoframe">
+                  <div id="{{ zoom_img_id }}" style="padding-top:{{ 1 | divided_by: media.aspect_ratio | times: 100}}%; position: relative;overflow: hidden;" class="product-single__photo-{{ section.id }}{% if product.images.size > 1 %} product-single__photo--has-thumbnails{% endif %} hide" data-image-id="{{ video.id }}">                
+                      {{ video | external_video_tag }}
+                  </div>
+                </div>
+              {%- endfor -%}
+            {%- endif -%}
+              {% for media in product.media %}
+                  {% case media.media_type %}
+                  {% when 'image' %}
+                      {% capture img_id %}FeaturedImage-{{ section.id }}-{{ media.id }}{% endcapture %}
+                      {% capture img_class %}product-featured-img{% endcapture %}
+                      {% capture zoom_img_id %}FeaturedImageZoom-{{ section.id }}-{{ media.id }}{% endcapture %}
+                      {% capture img_wrapper_id %}{{ zoom_img_id }}-wrapper{% endcapture %}
+                      {%- assign img_url = media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                      {% include 'image-style' with small_style: true, width: 530, height: 530, wrapper_id: img_wrapper_id, img_id: img_id %}
+                      <div id="{{ img_wrapper_id }}" class="product-single__photo-wrapper small--hide js">
+                          <div id="{{ zoom_img_id }}" style="padding-top:{{ 1 | divided_by: media.aspect_ratio | times: 100}}%;position: relative;overflow: hidden;" class="product-single__photo-{{ section.id }}{% if enable_zoom %} js-zoom-enabled{% endif %}{% if product.images.size > 1 %} product-single__photo--has-thumbnails{% endif %}{% unless featured_image == media %} hide{% endunless %}" data-image-id="{{ media.id }}"{% if enable_zoom %} data-zoom="{{ media | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
+                          <img id="{{ img_id }}" 
+                              loading="lazy" 
+                              class="feature-row__image {{ img_class }} lazyload{% unless featured_image == media %} lazypreload{% endunless %}"
+                              src="{{ media | img_url: '300x300' }}"
+                              data-src="{{ img_url }}"
+                              data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                              data-aspectratio="{{ media.aspect_ratio }}"
+                              data-sizes="auto"
+                              alt="{{ media.alt | escape }}">
+                          </div>
+                      </div>            
+                  {% endcase %}
+              {% endfor %}
+      
+            <noscript>
+              {% capture product_image_size %}530x{% endcapture %}
+              <img src="{{ featured_image | img_url: product_image_size, scale: product_image_scale }}" loading="lazy" alt="{{ featured_image.alt }}" id="FeaturedImage-{{ section.id }}" class="product-featured-img" style="max-width: 530px;">
+            </noscript>
+      
+            {%- liquid
+              if product.images.size > 1
+                assign enable_thumbnail_slides = true
+              endif 
+            -%}
+      
+            <div class="thumbnails-wrapper {% if product.images.size == 1 %}medium-up--hide{% endif %}{% if enable_thumbnail_slides == true %} thumbnails-slider--active{% endif %}">
+              {% if enable_thumbnail_slides == true %}
+              <button type="button" class="btn btn--link small--hide thumbnails-slider__btn thumbnails-slider__prev thumbnails-slider__prev--{{ section.id }}">
+                {% include 'icon-chevron-left' %}
+                <span class="icon__fallback-text">{{ 'sections.slideshow.prev_slide' | t }}</span>
+              </button>
+              {% endif %}
+              {%- if videos.size > 0 -%}
+              <script>$(document).on('ready', function() {$('.thumbnails-slider--active .responsive').slick('slickGoTo', {{videos.size}})});</script>
+              {%- endif -%}
+                  <ul class="grid responsive slider grid--uniform product-single__thumbnails product-single__thumbnails-{{ section.id }}">
+                    {%- if videos.size > 0 -%}
+                      {%- for video in videos -%}
+                        <li class="grid__item {% unless enable_thumbnail_slides == true %}{{ product_thumbnail_width }} {% endunless %}{% if product.images.size > 1 %}product-single__thumbnails-item{% endif %} js">
+                        {%comment%}{{ media | external_video_tag }}{%endcomment%}
+                          <a href="#" class="text-link product-single__thumbnail product-single__thumbnail--{{ section.id }} product-video" data-thumbnail-id="{{ video.id }}" {% if enable_zoom %}data-zoom="{{ video.src | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
+                            <div class="product-single__thumbnail-image medium-up--hide video-media" style="height:230px;display: flex;align-items: center;justify-content: center;">{{ video | external_video_tag }}</div>
+                            <img src="{{ 'play-button.png' | asset_img_url: '50x' }}" style="position: fixed; margin: 0 auto; top: 25%; left: 55px;" />
+                            <img loading="lazy" class="product-single__thumbnail-image small--hide" src="{{ video.preview_image | img_url: 'compact' }}" alt="{{ video.alt | escape }}">                            
+                          </a>
+                        </li>
+                      {%- endfor -%}
+                    {%- endif -%}
+                          {% for media in product.media %}
+                              {% case media.media_type %}
+                              {% when 'image' %}
+                                  <li class="grid__item {% unless enable_thumbnail_slides == true %}{{ product_thumbnail_width }} {% endunless %}{% if product.images.size > 1 %}product-single__thumbnails-item{% endif %} js">
+                                  <a href="{{ media.src | img_url: product_image_zoom_size, scale: product_image_scale }}"
+                                          class="text-link product-single__thumbnail product-single__thumbnail--{{ section.id }}"
+                                          data-thumbnail-id="{{ media.id }}"
+                                          {% if enable_zoom %}data-zoom="{{ media.src | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
+                                          <img class="product-single__thumbnail-image medium-up--hide" loading="lazy" src="{{ media.src | img_url: '480x480', scale: 2 }}" alt="{{ media.alt | escape }}">
+                                          <img class="product-single__thumbnail-image small--hide" loading="lazy" src="{{ media.src | img_url: 'compact' }}" alt="{{ media.alt | escape }}">
+                                          </a>
+                                      </li>                            
+                              {% endcase %}            
+                          {% endfor %}
+                  </ul>        
+              {% if enable_thumbnail_slides == true %}
+                <button type="button" class="btn btn--link small--hide thumbnails-slider__btn thumbnails-slider__next thumbnails-slider__next--{{ section.id }}">
+                  {% include 'icon-chevron-right' %}
+                  <span class="icon__fallback-text">{{ 'sections.slideshow.next_slide' | t }}</span>
+                </button>
+              {% endif %}
+            </div>
+        </div>
+          <div class="grid__item medium-up--one-half quezzle-right">
+            <div class="product-single__meta">
+              <h1 itemprop="name" class="product-single__title heading">
+                {%- if product.metafields.text.product-h1 -%}
+                  {{ product.metafields.text.product-h1 }}
+                {%- else -%}
+                  {{ product.title }}
+                {%- endif -%}
+              </h1>
+      
+              {% if section.settings.show_vendor %}
+                <p itemprop="brand" class="product-single__vendor">{{ product.vendor }}</p>
+              {% endif %}
+      
+              <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                <meta itemprop="priceCurrency" content="USD">
+                <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition" />
+                <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+      
+      {%- if  member_discount == true and product.type == 'Puzzle' -%}
+                  <p class="product-single__price product-single__price-{{ section.id }}{% unless current_variant.available %} product-price--sold-out{% endunless %}" data-discount="{{discount_amount}}">
+                    <s id="ComparePrice-{{ section.id }}" style="color: #ff8e00;">{{ current_variant.price | money }}</s>
+                    <span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single">
+                      <span id="ProductPrice-{{ section.id }}" itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
+                        {{ current_variant.price | times: discount_amount | money    }}
+                      </span>
+                      <span class="save_discount_pro">
+                        <span class="per_discount">
+                          20{{ 'products.product.on_save' | t }}
+                        </span>
+                    </span>
+                  </p>
+      {%- else -%}
+                 <p class="product-single__price product-single__price-{{ section.id }}{% unless current_variant.available %} product-price--sold-out{% endunless %}">
+                  {% if current_variant.compare_at_price > current_variant.price %}
+                    <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+                    <s id="ComparePrice-{{ section.id }}">{{ current_variant.compare_at_price | money }}</s>
+                    <span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single">
+                      <span id="ProductPrice-{{ section.id }}"
+                            itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
+                        {{ current_variant.price | times: discount_amount | money    }}
+                      </span>
+                      {% if section.settings.show_saved_amount %}
+                      <!-- Dscount price in percentage  -->
+                      <span class="save_discount_pro">
+                      {% if current_variant.compare_at_price > current_variant.price %}
+                        {% if settings.show_discount_amount == 'percent_save' %}
+                        <span class="per_discount">
+                          {% assign money_pro_format = shop.money_format | strip_html | json %}
+                    
+                          {% if money_pro_format contains "{{amount_no_decimals}}" or money_pro_format contains "{{amount_no_decimals_with_comma_separator}}" %}
+                            {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price | times: 100 | money_without_currency | replace:",","." | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
+                          {% elsif money_pro_format contains "{{amount_with_comma_separator}}" %}
+                            {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price | money_without_currency | replace:",","."  | times: 100 | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
+                          {% else %}                  
+                            {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price  | money_without_currency | times: 100 | replace: '.0', ''}}{{ 'products.product.on_save' | t }}
+                          {% endif %}
+                        </span>
+                        <!-- Dscount price in percentage  -->
+                        {% else %}
+                          <span class="sale-tag salePrice large"> 
+                            {% assign sale = current_variant.compare_at_price | minus:  current_variant.price | times: discount_amount |  money %}
+                            {{ 'products.product.on_save_like_price' | t }} {{sale}}
+                          </span>
+                        {% endif %}
+                      {% endif %}
+                      </span>
+                      {% endif %}
+                    </span>
+                  {% else %}
+                    <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+                    <s id="ComparePrice-{{ section.id }}" class="hide">{{ current_variant.compare_at_price | money }}</s>
+                    <span class="product-price__price product-price__price-{{ section.id }}">
+                      <span id="ProductPrice-{{ section.id }}" itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
+                        {{ current_variant.price | times: discount_amount | money }}
+                      </span>
+                      {% if section.settings.show_saved_amount %}
+                      <span class="save_discount_pro hide">
+                      </span>
+                      {% endif %}
+                      
+                    </span>
+                  {% endif %}
+                  {%- if current_variant.available -%}
+                    <span class="product in-stock">In stock</span>
+                  {%- else -%}
+                    <span class="product out-of-stock">Out of stock</span>
+                  {%- endif -%}
+                </p>
+      {%- endif -%}
+                {% if section.settings.product_review  %}
+                  <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+                {% endif %}
+                <style>
+                  html .gs-buttons.gs-big-counter.gs-small>.gs-big-counter {
+                    font-size: 32px !important;
+                  }
+                </style>
+                           
+                {%- capture "form_classes" -%}
+                product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %}{% if section.settings.enable_payment_button and product.has_only_default_variant%} product-form--payment-button-no-variants{% endif %}
+                {%- endcapture %}
+      
+                {% form 'product', product, data-productid: product.id, id: "AddToCartForm", class:form_classes, data-product-id: "{{ product.id }}", data-section: "{{ section.id }}", data-product: "{{ product | json | escape }}" %}
+      
+                {% if section.settings.show_quantity_selector %}
+                <div class="product-form__item one-whole medium-up--hide product-form__item--quantity_1 prod_qty_mobile">
+                  <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
+                  <div class="qty_selector">
+                    <span class='qtyminus' field='quantity'>{% include 'icon-minus' %}</span>
+                    <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-form__input qty" pattern="[0-9]*">
+                    <span class='qtyplus' field='quantity'>{% include 'icon-plus' %}</span>
+                  </div>            
+                </div>
+                {% else %}
+                  <input type="hidden" id="Quantity" name="quantity" value="1" class="product-form__input prod_qty_mobile">
+                {% endif %}
+                {% unless product.has_only_default_variant %}
+                  {% if section.settings.show_tags %}
+                    <div class="prod_tags">
+                      <h5>{{ 'products.product.tags' | t }} : </h5>
+                      {% for tag in product.tags %}
+                      <span>{{ tag }}</span>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                  {% for option in product.options_with_values %}
+        
+                    <div class="selector-wrapper small--one-whole js product-form__item">
+                      <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
+                        {{ option.name }}
+                      </label> 
+                      <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
+                        {% for value in option.values %}
+                        <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+                        {% endfor %}
+                      </select>
+    
+                    </div>
+                  {% endfor %}
+                {% endunless %}
+        
+                <select name="id" data-productid="{{ product.id }}" id="ProductSelect-{{ section.id }}" data-section="{{ section.id }}" class="product-form__variants no-js">
+                  {% for variant in product.variants %}
+                    {% if variant.available %}
+                      <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+                        {{ variant.title }}
+                      </option>
+                    {% else %}
+                      <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+                    {% endif %}
+                  {% endfor %}
+                </select>
+      
+              <!-- PRODUCT SWATCH CODE IF ENABLE -->
+              {% if product.type == 'Puzzle' %}
+                {% if product.variants.size > 1 %}
+                  <div class="swatch_options">
+                    {% for option in product.options %}
+                      {% include 'swatch-quezzle' with option %}
+                    {% endfor %} 
+                  </div>
+                {% endif %}
+              {% else %}
+                {% if section.settings.variant_swacth == 'two'  %}  
+                  {% if product.variants.size > 1 %}
+                      <div class="swatch_options">
+                        {% for option in product.options %}
+                          {% include 'swatch-quezzle' with option %}
+                        {% endfor %} 
+                      </div>
+                  {% endif %}
+                {% endif %} 
+              {% endif %} 
+              <div id="ct_pe_disco_holder"></div><!-- END PRODUCT SWATCH CODE IF ENABLE -->
+                {% include 'product-page-features' %}
+    
+                <input required type="hidden" id="upsellcheckquantity" name="properties[upsellcheckquantity]">
+                
+                {% endform %}
+    
+                {%- render 'back-in-stock-form', product_id: product.id, product_variants_id: current_variant.id -%}
+    
+                {% if section.settings.enable_sticky %}
+                <style>
+      
+                  @media(max-width:749px) {
+                    /*               .counter_box.show{display:none !important;} */
+                    /*
+                    div#progressBar{ 
+                    display:none !important;
+                  }
+                    .counter_box.show {
+                    display: none !important;
+                  } */
+      
+                    .product-form__item.product-form__item--quantity,  
+                    .product-form__item.product-form__item--quantity + div {
+                      display : none !important;
+                    }
+                    .only_desktop{
+                      display:none !important;
+                    }
+                    #AddToCartForm .cst-small-crtbtn button#AddToCart,
+                    #AddToCartForm .qty_stickyfor button#AddToCart,
+                    #AddToCartForm .qty_stickyfor button#AddToCartZero {
+                      display:none;
+                    }
+                    #AddToCartForm .qty_stickyfor .ajaxified-cart-feedback{
+                      display:none!important;
+                    }
+                    .stiky_form div#mst-stiky-box {
+                      left: 0 !important;
+                      width: 100%;
+                      right:0;
+                    }
+                    .price-lable {
+                      font-size: 16px !important;
+                      font-weight: 500 !important;
+                      text-align: center;
+                      margin-bottom: 12px;
+                    }
+                    .mst-stiky-div.fix-search {
+                      position: fixed;
+                      top: 8px;
+                      z-index: 999;
+                      width: 310px;
+                      right: 0;
+                      display: block!important;
+                    }
+                    {% if section.settings.enable_payment_button %}
+                    .stiky_form div#mst-stiky-box {
+                      padding-bottom: 70px;
+                    }
+                    .shopify-payment-button {
+                      position: fixed;
+                      bottom: -20px;
+                      width: 100%;
+                      z-index: 1000;
+                      left: auto;
+                      right: 0;
+                      padding-left: 10px;
+                      padding-right: 10px;
+                    }
+                    {% endif %}
+                  }
+      
+                  @media(min-width:750px){
+                    button#AddToCart {
+                      visibility: visible !important;
+                    }
+                  }
+                </style>
+      
+                {% if section.settings.enable_buy_it_stiky_qty %}
+                  <style> 
+                    @media screen and (max-width:749px) {
+                      #mst-stiky-box div#sticky_btnn.product-form__item--quantity{ display:none !important; } 
+                      #AddToCartForm1.stiky_form button#AddToCart{ width:100% !important; } 
+                      #progress_bar1,#progressBar{ display: none !important; } 
+                    }
+                  </style>
+                {% else %}
+      
+                <style> 
+                  @media screen and (max-width:749px) {
+                    #mst-stiky-box div#sticky_btnn.product-form__item--quantity{ display:block !important;float: left;width: 25% !important;padding-right: 0 !important; } 
+                  }
+                </style>
+      
+                {% endif  %}
+                {% assign price_var1=current_variant.price | times: discount_amount | withoutmoney %}  
+                <div id="AddToCartForm1" class="product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %} stiky_form{% if price_var1 == 0 %} zerocost_from_box {% endif %}" data-section="{{ section.id }}" >
+                  <div id="mst-stiky-box" class="mst-stiky-div">
+                    {% if price_var1 == 0 %}          
+                      <button type="button" name="add" id="AddToCartZero" class="btn_sp btn stiky_button{% if section.settings.enable_payment_button %} dynamic_paybtn {% endif %}{% if section.settings.shake_effect_enable %} js-cartButtonPro-addToCartButton hvr-wobble-horizontal{% endif %}">
+                        <span id="AddToCartText">{{ 'products.product.free_add_to_cart' | t }}</span>
+                      </button>
+                    {% else %}          
+                      {% assign zeroCost='' %}
+                      <button type="button" name="add" id="AddToCart" class="btn_sp addtocart_btn stiky_button{% if section.settings.enable_payment_button %} dynamic_paybtn {% endif %}{% if section.settings.shake_effect_enable %} js-cartButtonPro-addToCartButton hvr-wobble-horizontal{% endif %} ">
+                        <span class="AddToCartText addtocarttext">
+                          {% unless current_variant.available %}
+                            {{ 'products.product.sold_out' | t }}
+                          {% else %}
+                            {% if section.settings.enable_payment_button %}
+                              {{ 'products.dynamic_checkout_buttons.add_to_cart_text_when_dynamic_checkout_buttons_enable' | t }}
+                            {% else %}
+                              {{ 'products.product.add_to_cart' | t }}
+                            {% endif %}
+                          {% endunless %}
+                        </span>
+                      </button>
+                    {% endif %} 
+                  </div> 
+                </div>
+      
+                {% endif %}
+              </div>
+    
+                <div class="grid product-video-grid">
+                  <div class="grid__item one-whole"><br></div>
+                  <div class="grid__item medium-up--one-half">
+                    <div class="product-video-sec">
+                      <div class="product-video-info">
+                        <h4>{{ section.settings.video_first_title }}</h4>
+                        <p>{{ section.settings.video_first_text }}</p>
+                      </div>
+                      <div class="product-video-fig">
+                        <a data-fancybox href="https://player.vimeo.com/video/609269615">
+                          <img src="{{ section.settings.video_first_image | img_url: '200x' }}" alt="IMG"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid__item medium-up--one-half">
+                    <div class="product-video-sec">
+                      <div class="product-video-info">
+                        <h4>{{ section.settings.video_second_title }}</h4>
+                        <p>{{ section.settings.video_second_text }}</p>
+                      </div>
+                      <div class="product-video-fig">
+                        <a data-fancybox href="https://player.vimeo.com/video/609268605">
+                          <img src="{{ section.settings.video_second_image | img_url: '200x' }}" alt="IMG"></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid__item one-whole"><br></div>
+    
+                  <div class="grid__item">
+  <style>
+    .queezle-advantages__wrapper{display:flex;justify-content:space-between;flex-wrap:wrap}.queezle-advantages__item{display:flex;flex-direction:column;margin-bottom:20px;padding:20px 25px;border:1px solid #ebebeb;flex-basis:49%}.queezle-advantages__item2{display:flex;padding:20px 25px 0;border:1px solid #ebebeb}.queezle-advantages__title{font-size:16px;font-weight:700;line-height:150%;display:inline-block;padding-bottom:12px;border-bottom:1px solid #ebebeb}.queezle-advantages__title--small{font-size:12px;font-weight:500;line-height:130%;height:100%;max-height:85px;margin-bottom:20px;padding-left:15px}.queezle-advantages__specifications{display:flex;margin-bottom:10px;padding:0 15px;justify-content:space-between;align-items:flex-start}.queezle-dimensions__inner{margin-right:20px}.queezle-dimensions__item2{max-width:115px}.queezle-advantages__inner{flex-basis:75%}.queezle-advantages__img-block{display:flex;margin-top:-20px;margin-bottom:-32px;align-items:center}.queezle-advantages__img-block img{max-width:164px}.queezle-advantages__text{font-size:12px;font-weight:300;margin-top:20px;margin-bottom:0;}.queezle-advantages__images-block{position:relative;display:flex;flex-direction:column;margin-top:auto;padding-bottom:123px}.queezle-advantages__img{align-self:center}.queezle-advantages__img--full{margin:0 -25px 0 0}.queezle-advantages__video-block{position:absolute;bottom:0}.queezle-advantages__item2 .queezle-advantages__video-block{position:relative;margin-top:15px;margin-right:-10px}.queezle-advantages__tablet{position:relative;z-index:2;min-width:100%;min-height:118px}.queezle-advantages__video{cursor:pointer}
+    @media (max-width: 1023px){
+      .queezle-advantages__img-block img {max-width:285px}
+      .queezle-advantages__wrapper{flex-direction:column;flex-wrap:nowrap}.queezle-advantages__title--small,.queezle-order__ul{width:100%}.queezle-advantages__specifications{flex-direction:column;justify-content:flex-start}.queezle-advantages__specifications .queezle-sets__old-price{font-size:20px}.queezle-advantages__specifications .queezle-sets__new-price{font-size:30px}.queezle-advantages__specifications--full{display:flex;justify-content:space-between;align-items:flex-start}.queezle-advantages__specifications--full .queezle-order__price-block{margin-left:20px;white-space:nowrap;align-self:flex-end;margin-bottom:15px}.queezle-advantages__specifications--full .queezle-order__price-block .queezle-sets__old-price{font-size:18px}.queezle-advantages__specifications--full .queezle-order__price-block .queezle-sets__new-price{font-size:28px}.queezle-dimensions__inner{margin-right:0}.queezle-advantages__img-block{margin-bottom:0;flex-direction:column;margin-top:5px}.queezle-advantages__images-block{display:flex;flex-direction:column;align-items:center}.queezle-advantages__img--full{margin:0 -5px -61px 0}
+      .queezle-advantages__item2{flex-direction:column;padding-bottom:20px;justify-content:flex-start}.queezle__sets{flex-direction:column;margin-bottom:20px;flex-wrap:nowrap}.queezle-sets__price,.queezle__sets .queezle-sets__dimensions{padding-left:15px}.queezle-sets__item{padding:15px}.queezle-sets__warning{font-size:17px;padding-left:15px}.queezle-sets__warning--blue{padding:8px 0;text-align:center}.queezle-sets__dimensions{font-size:19.5115px;padding:0}.queezle-sets__old-price{font-size:29px}.queezle-sets__new-price{font-size:45px}.queezle-start__item--clean{display:none}.queezle__start{flex-direction:column;margin-top:30px;justify-content:flex-start}.queezle-section__title{max-width:220px;margin:0 auto}.product.popup__product.popup__product__quezzle{max-width:320px}.queezle-advantages__video--meet:nth-child(1){display:none}.meet-video-m{display:block}.queezle__sets .queezle-sets__title{font-size:26px;padding:0 15px}.queezle-advantages__title,.queezle-dimensions__item{font-size:13px}.queezle-advantages__text{font-size:14px}
+      }
+  </style>
+                    <div class="queezle-advantages__item2">
+                      <div class="queezle-advantages__inner">
+                          <div class="queezle-advantages__title">{{ section.settings.video_third_title }}</div>
+                          <p class="queezle-advantages__text">{{ section.settings.video_third_text }}</p>
+                      </div>
+              
+                      <div style="margin:0;" class="queezle-advantages__img-block">
+                        <img class="queezle-advantages__img queezle-advantages__img--full" src="{{ section.settings.video_third_image | img_url: '200x' }}" alt="">
+                        <div class="queezle-advantages__video-block">
+                          <img src="{{ section.settings.video_third_image2 | img_url: '200x' }}" alt="video" class="queezle-advantages__video">
+                        </div>
+                      </div>
+                    </div>
+  
+                  </div>
+                  <div class="grid__item one-whole"><br></div>
+                  <div class="grid__item one-whole">
+                    <div class="product-video-bg-sec">
+                      <h3>{{ section.settings.video_meet }}</h3>
+                      <a data-fancybox href="https://www.youtube.com/watch?v=9YaK6reb5vc"><img src="{{ section.settings.video_meet_img | img_url: '408x293' }}" alt="IMG"></a>
+                    </div>
+                  </div>
+                  <div class="grid__item one-whole"><br></div>
+                </div>
+  
+              <div class="puzzle-quest-sec">
+                <h3>{{ section.settings.quest_title }}</h3>
+                <div class="puzzle-quest-featured">
+                    <div class="puzzle-featured-box">
+                        <div class="puzzle-featured-info puzzle-featured-box-1">
+                            <div class="puzzle-featured-img">
+                                <img src="{{ section.settings.quest_first_image | img_url: '100x' }}" alt="">
+                            </div>
+                            <p>{{ section.settings.quest_first_title }}</p>
+                        </div>
+                        <div class="puzzle-featured-info puzzle-featured-box-3">
+                            <div class="puzzle-featured-img">
+                              <img src="{{ section.settings.quest_second_image | img_url: '100x' }}" alt="">
+                            </div>
+                            <p>{{ section.settings.quest_second_title }}</p>
+                        </div>
+                        <div class="puzzle-featured-box puzzle-featured-box-5">
+                            <div class="puzzle-featured-info">
+                                <div class="puzzle-featured-img">
+                                  <img src="{{ section.settings.quest_third_image | img_url: '100x' }}" alt="">
+                                </div>
+                                <p>{{ section.settings.quest_third_title }}</p>
+                            </div>
+                        </div>                    
+                    </div> 
+                    <div class="puzzle-featured-box puzzle-featured-right-box">
+                        <div class="puzzle-featured-info puzzle-featured-box-2">
+                            <div class="puzzle-featured-img">
+                              <img src="{{ section.settings.quest_fourth_image | img_url: '100x' }}" alt="">
+                            </div>
+                            <p>{{ section.settings.quest_fourth_title }}</p>
+                        </div>
+                        <div class="puzzle-featured-box puzzle-featured-box-4 mr-bottom">
+                            <div class="puzzle-featured-info">
+                                <div class="puzzle-featured-img">
+                                  <img src="{{ section.settings.quest_fifth_image | img_url: '100x' }}" alt="">
+                                </div>
+                                <p>{{ section.settings.quest_fifth_title }}</p>
+                            </div>
+                        </div>
+                        <div class="puzzle-featured-box puzzle-featured-box-6 mr-bottom">
+                            <div class="puzzle-featured-info">
+                                <div class="puzzle-featured-img">
+                                  <img src="{{ section.settings.quest_sixth_image | img_url: '100x' }}" alt="">
+                                </div>
+                                <p>{{ section.settings.quest_sixth_title }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="order-quezzel-sec">
+                   <div class="puzzle-featured-banner">
+                        <img src="{{'order-quezzle-image.png' | asset_url }}" alt="">
+                    </div>
+                    <h3>{{ section.settings.order_title }}</h3>
+              </div>
+  
+                <div class="grid single-quezzle-grid">
+                  <div class="grid__item medium-up--one-half">
+                    <div class="quezzle-grid-sec basic-quiz">
+                      <div class="quezzle-grid-fig">
+                        <img src="{{ section.settings.order_first_img | img_url: '200x' }}" alt="IMG">
+                      </div>
+                      <div class="quezzle-grid-info complete-buy">
+                        <h4>{{ section.settings.order_part_first }}</h4>
+                        <p class="bg-txt">Please check basic Quezzle mechanics</p>
+                        <div class="info-box">
+                          <p>250 colorful pieces bright jigsaw puzzle, 3D-constructor, several mini-missions and Quezzle basic mechanics. </p>
+                        </div>                    
+                        <ul class="light-list">
+                          <li>250 pieces</li>
+                          <li>36 x 25 cm — 1 pcs</li>
+                          <li>3D-figurine — 1 pcs</li>
+                          <li>10 additional tasks</li>
+                          <li>1 mazes</li>
+                        </ul>
+                        <div class="quezzle-grid-price">
+                          {%- assign size_count = 0 -%}
+                          {%- for variant in product.variants -%}
+                          {%- assign size_count = size_count | plus: 1 -%}
+                            {%- case size_count -%}
+                              {%- when 1 -%}
+                                <span><strike>{{variant.compare_at_price | money }}</strike></span>
+                                <strong>{{variant.price | money }}</strong>
+                            {%- endcase -%}
+                          {%- endfor -%}
+                        </div>
+                        <a class="quezzle-btn" id="swatchTrigger1" href="#">{{ section.settings.order_buy }}</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid__item medium-up--one-half">
+                    <div class="quezzle-grid-sec basic-quiz basic-quiz-2">
+                      <div class="quezzle-grid-fig">
+                        <img src="{{ section.settings.order_second_img | img_url: '200x' }}" alt="IMG">
+                      </div>
+                      <div class="quezzle-grid-info complete-buy">
+                        <h4>{{ section.settings.order_part_second }}</h4>
+                        <p class="bg-txt">Buy up to a complete set and start the main quest</p>
+                        <div class="info-box">
+                          <ul class="type-list">
+                            <li class="light-txt">Heavenly Dragon district</li>
+                            <li>Western side-streets district</li>
+                            <li>Cloudy sunset district</li>
+                            <li>Eastern square district</li>
+                          </ul>
+                        </div>
+                        <ul class="light-list">
+                          <li>750 pieces </li>
+                          <li>36 x 25 cm — 3 pcs</li>
+                          <li>3D-figurine — 3 pcs</li>
+                          <li>30 additional tasks</li>
+                          <li>5 mazes</li>
+                        </ul>
+                        <div class="quezzle-grid-price">
+                          {%- assign size_count = 0 -%}
+                          {%- for variant in product.variants -%}
+                          {%- assign size_count = size_count | plus: 1 -%}
+                            {%- case size_count -%}
+                              {%- when 1 -%}
+                              {%- when 2 -%}
+                                <span><strike>{{variant.compare_at_price | money }}</strike></span>
+                                <strong>{{variant.price | money }}</strong>
+                            {%- endcase -%}
+                          {%- endfor -%}
+                        </div>
+                        <a class="quezzle-btn" id="swatchTrigger2" href="#">{{ section.settings.order_buy }}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="single-quezzle-bg-wrap">
+                  <div class="single-quezzle-bg-sec">
+                    <div class="single-quezzle-bg-left">
+                      <img src="{{ section.settings.order_set_img | img_url: '200x' }}" alt="IMG">
+                      <div class="single-quezzle-list md-none">
+                        <ul>
+                          <li>Heavenly Dragon district</li>
+                          <li>Western side-streets district</li>
+                          <li>Cloudy sunset district</li>
+                          <li>Eastern square district</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="single-quezzle-bg-right complete-set">
+                      <h3><span>{{ section.settings.order_set_title }}</span></h3>
+                      <p>{{ section.settings.order_set_text }}</p>
+                      <div class="single-quezzle-list lg-block">
+                        <ul>
+                          <li>Heavenly Dragon district</li>
+                          <li>Western side-streets district</li>
+                          <li>Cloudy sunset district</li>
+                          <li>Eastern square district</li>
+                        </ul>
+                      </div>
+                      <ul>
+                        <li>1000 pieces</li>
+                        <li>36 x 25 cm — 4 pcs</li>
+                        <li>3D-figurine — 4 pcs</li>
+                        <li>40 additional tasks</li>
+                        <li>6 mazes</li>
+                        <li>6 mini-puzzles</li>
+                        <li>4 storyline mazes</li>
+                      </ul>
+                      <div class="single-quezzle-price">
+                        {%- assign size_count = 0 -%}
+                        {%- for variant in product.variants -%}
+                        {%- assign size_count = size_count | plus: 1 -%}
+                          {%- case size_count -%}
+                            {%- when 1 -%}
+                            {%- when 2 -%}
+                            {%- when 3 -%}
+                              <span><strike>{{variant.compare_at_price | money }}</strike></span>
+                              <strong>{{variant.price | money }}</strong>
+                          {%- endcase -%}
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="single-quezzle-bg-btn">
+                    <a class="quezzle-btn" id="swatchTrigger3" href="#">{{ section.settings.order_buy }}</a>
+                  </div>
+                </div>
+                <div class="quzzel-mechnices">
+                    <div class="quzzel-mechnices-img">
+                        <img src="{{'quzzel-mechnices-img.png' | asset_url }}" alt="IMG">      
+                    </div>
+                    <div class="quzzel-mechnices-featured">
+                        <div class="quzzel-featured-box quzzel-featured-box-1">
+                            <img class="number-img" src="{{'number-img1.png' | asset_url }}" alt="IMG">
+                            <div class="quzzel-featured-img">
+                                <img src="{{ section.settings.feature_first_img | img_url: 'medium' }}" alt="IMG">
+                            </div>
+                            <h4>{{ section.settings.feature_first_title }}</h4>
+                            <p>{{ section.settings.feature_first_text }}</p>
+                        </div>
+                        <div class="quzzel-featured-box quzzel-featured-box-2">
+                            <img class="number-img" src="{{'number-img2.png' | asset_url }}" alt="IMG">
+                            <div class="quzzel-featured-img">
+                              <img src="{{ section.settings.feature_second_img | img_url: 'medium' }}" alt="IMG">
+                            </div>
+                            <h4>{{ section.settings.feature_second_title }}</h4>
+                            <p>{{ section.settings.feature_second_text }}</p>
+                        </div>
+                        <div class="quzzel-featured-box quzzel-featured-box-3">
+                            <img class="number-img" src="{{'number-img3.png' | asset_url }}" alt="IMG">
+                            <div class="quzzel-featured-img">
+                              <img src="{{ section.settings.feature_third_img | img_url: 'medium' }}" alt="IMG">
+                            </div>
+                            <h4>{{ section.settings.feature_third_title }}</h4>
+                            <p>{{ section.settings.feature_third_text }}</p>
+                        </div>
+                        <div class="quzzel-featured-box quzzel-featured-box-4">
+                            <img class="number-img" src="{{'number-img4.png' | asset_url }}" alt="IMG">
+                            <div class="quzzel-featured-img">
+                                <img src="{{'explore-img.png' | asset_url }}" alt="IMG">
+                            </div>
+                            <h4>{{ section.settings.feature_fourth_title }}</h4>
+                            <p>{{ section.settings.feature_fourth_text }}</p>
+                        </div>
+                        <div class="quzzel-featured-box quzzel-featured-box-5">
+                            <img class="number-img" src="{{'number-img5.png' | asset_url }}" alt="IMG">
+                            <div class="quzzel-featured-img">
+                                <img src="{{'loseyouleff-img.png' | asset_url }}" alt="IMG">
+                            </div>
+                            <h4>{{ section.settings.feature_fifth_title }}</h4>
+                            <p>{{ section.settings.feature_fifth_text }}</p>
+                        </div>
+                        {%-comment-%}
+                        <div class="quzzel-featured-box quzzel-featured-box-6">
+                            <img class="number-img" src="{{'number-img6.png' | asset_url }}" alt="IMG">
+                            <div class="quzzel-featured-img">
+                                <img src="{{'adventurr.png' | asset_url }}" alt="IMG">
+                            </div>
+                            <h4>The adventure will go on in augmented reality!</h4>
+                            <p>Quezzle is a bright catchy gift </p>
+                        </div>
+                        {%-endcomment-%}
+                    </div>
+                </div>
+                <div class="catchy-gift-wrap">    
+                    <div class="catchy-gift-featured ">
+                        <div class="catchy-gift-left">
+                            <h3>{{ section.settings.catchy_first_title }}</h3>
+                            <p>{{ section.settings.catchy_first_text }}</p>
+                        </div>
+                        <div class="catchy-gift-right">
+                            <div class="catchy-gift-right-inner">
+                                <img src="{{ section.settings.catchy_first_img | img_url: 'medium' }}" alt="IMG">
+                                <h3>{{ section.settings.catchy_first_img_desc }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catchy-gift-featured row-reverse">
+                        <div class="catchy-gift-left">
+                          <h3>{{ section.settings.catchy_second_title }}</h3>
+                          <p>{{ section.settings.catchy_second_text }}</p>
+                        </div>
+                        <div class="catchy-gift-right">
+                            <div class="catchy-gift-right-inner">
+                              <img src="{{ section.settings.catchy_second_img | img_url: 'medium' }}" alt="IMG">
+                              <h3>{{ section.settings.catchy_second_img_desc }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catchy-gift-featured  ">
+                        <div class="catchy-gift-left">
+                          <h3>{{ section.settings.catchy_third_title }}</h3>
+                          <p>{{ section.settings.catchy_third_text }}</p>
+                        </div>
+                        <div class="catchy-gift-right">
+                            <div class="catchy-gift-right-inner">
+                              <img src="{{ section.settings.catchy_third_img | img_url: 'medium' }}" alt="IMG">
+                              <h3>{{ section.settings.catchy_third_img_desc }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catchy-gift-featured row-reverse">
+                        <div class="catchy-gift-left">
+                          <h3>{{ section.settings.catchy_fourth_title }}</h3>
+                          <p>{{ section.settings.catchy_fourth_text }}</p>
+                        </div>
+                        <div class="catchy-gift-right">
+                            <div class="catchy-gift-right-inner">
+                              <img src="{{ section.settings.catchy_fourth_img | img_url: 'medium' }}" alt="IMG">
+                              <h3>{{ section.settings.catchy_fourth_img_desc }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gadgets-screens-wrap">
+                    <div class="gadgets-featured-right gadgets-right-box1"> 
+                        <img src="{{'mine-gaget-right.png' | asset_url }}" alt="IMG">
+                    </div>
+                    <div class="gadgets-screens-featured">   
+                        <div class="gadgets-screens-featured-2">    
+                            <div class="gadgets-featured-box gadgets-featured-box1">
+                                <div class="gadgets-featured-info">
+                                    <h3>{{ section.settings.gadgets_first_title }}</h3>
+                                    <p>{{ section.settings.gadgets_first_text }}</p> 
+                                </div>
+                                <div class="gadgets-featured-img">
+                                  <img src="{{ section.settings.gadgets_first_img | img_url: 'medium' }}" alt="IMG">
+                                </div>
+                            </div>
+                            <div class="gadgets-featured-box gadgets-featured-box2 ">
+                                <div class="gadgets-featured-img">
+                                  <img src="{{ section.settings.gadgets_second_img | img_url: 'medium' }}" alt="IMG">
+                                </div>
+                                <div class="gadgets-featured-info">
+                                  <h3>{{ section.settings.gadgets_second_title }}</h3>
+                                  <p>{{ section.settings.gadgets_second_text }}</p> 
+                                </div>
+                            </div>
+                            <div class="gadgets-featured-box gadgets-featured-box4 ">
+                                <div class="gadgets-featured-info">
+                                  <h3>{{ section.settings.gadgets_third_title }}</h3>
+                                  <p>{{ section.settings.gadgets_third_text }}</p> 
+                                </div>
+                                <div class="gadgets-featured-img">
+                                  <img src="{{ section.settings.gadgets_third_img | img_url: 'medium' }}" alt="IMG">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gadgets-screens-featured-1">                
+                            <div class="gadgets-featured-box gadgets-featured-box3 mr-top">
+                                <div class="gadgets-featured-info">
+                                  <h3>{{ section.settings.gadgets_fourth_title }}</h3>
+                                  <p>{{ section.settings.gadgets_fourth_text }}</p> 
+                                </div>
+                                <div class="gadgets-featured-img">
+                                  <img src="{{ section.settings.gadgets_fourth_img | img_url: 'medium' }}" alt="IMG">
+                                </div>
+                            </div>
+                            <div class="gadgets-featured-box gadgets-featured-box5 mr-top">
+                                <div class="gadgets-featured-img">
+                                  <img src="{{ section.settings.gadgets_fifth_img | img_url: 'medium' }}" alt="IMG">
+                                </div>
+                                <div class="gadgets-featured-info">
+                                  <h3>{{ section.settings.gadgets_fifth_title }}</h3>
+                                  <p>{{ section.settings.gadgets_fifth_text }}</p> 
+                                </div>
+                            </div>
+                            <div class="gadgets-featured-box gadgets-featured-box7 mr-top">
+                                <div class="gadgets-featured-info">
+                                  <h3>{{ section.settings.gadgets_sixth_title }}</h3>
+                                  <p>{{ section.settings.gadgets_sixth_text }}</p> 
+                                </div>
+                                <div class="gadgets-featured-img">
+                                  <img src="{{ section.settings.gadgets_sixth_img | img_url: 'medium' }}" alt="IMG">
+                                </div>
+                            </div>      
+                        </div>
+                    </div>
+                    <div class="gadgets-featured-box gadgets-featured-box6">
+                        <img src="{{'change-2.png' | asset_url }}" alt="IMG">
+                    </div>
+                </div>
+                <div class="single-quezzle-sec">
+                  <h3>{{ section.settings.last_title }}</h3>
+                  <p><strong>{{ section.settings.last_text }}</strong></p>
+                  <p>{{ section.settings.last_desc }}</p>
+                  <img class="mobile-hide" src="{{'single-last-quezzle.png' | asset_url }}" alt="IMG">
+                  <img class="destop-hide" src="{{'single-last-quezzle-mobile.png' | asset_url }}" alt="IMG">
+                  <a href="#scroll-top">Buy now</a>
+                </div>
+  
+                <div class="product-single__description rte" itemprop="description">
+                  {% for block in section.blocks %}
+                    {% if block.type == 'icons-set-with-text' %}
+                      {%- render 'ud-product-description-icons-with-text' -%}
+                    {% endif %}
+                  {% endfor %}
+        
+                  {% assign product_desc = 'products.product_tab.product_tab_1' | t %}
+                  {% if product_desc != blank and product.description != blank %}
+                  <ul class="tabs">
+                    <li><a href="#tab-1">{{ 'products.product_tab.product_tab_1' | t }}</a></li>
+                  </ul>
+                  {% endif %}
+        
+                  <div id="tab-1">
+                    <div class="product-description">
+                      {% assign video = product.media | where: "media_type", "external_video" | first %}
+                      {% if video != blank %}
+                        {{ video | external_video_tag }}
+                      {% else %}
+                        {% assign video = product.media | where: "media_type", "video" | first %}
+                        {{ video |  video_tag }}
+                      {% endif %}
+                      {{ product.description | split: '<!-- additional video-->' | first }}
+                      {%- if product.description contains 'description_spoiler' -%}
+                      <div id="see-more">{{ 'custome_text.button.see_more' | t }} &#709;</div>
+                      <script>$(document).ready(function () {
+                              $('.description_spoiler').addClass('read-more');
+                              $('#see-more').click(function () {
+                                if ($("#see-more")[0].innerHTML == "{{ 'custome_text.button.see_more' | t }} ˅") {$("#see-more")[0].innerHTML = "{{ 'custome_text.button.read_less' | t }} &#708;"} else {$("#see-more")[0].innerHTML = "{{ 'custome_text.button.see_more' | t }} &#709;"}
+                                $('.read-more').toggleClass('active');
+                              })
+                            })
+                      </script>
+                      {%- endif -%}
+                      {%- assign additional_video = product.description | split: '<!-- additional video-->' | last -%}
+                      {%- if product.description contains '<!-- additional video-->' -%}
+                        <style>div#see-more {padding-bottom: 15px;}</style>
+                        {{ additional_video }}
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </div>
+  
+              {% if section.settings.visitor_counter_enable %}
+             
+              <input type="hidden" value="{{section.settings.visitor_counter_number}}" id="min_max_number">
+              <p class="fake_counter_p {{tg1}}">
+                <i class="fas fa-eye"></i>
+                <span class="fake_counter_b {{ section.settings.visitor_counter_style }}"> 
+                  <span id="dynamic_counter1"> </span> 
+                </span>
+                <span class="fake_counter fake-cntr" > {{ 'products.product.visitor_counter_text' | t}}</span>      
+              </p>
+                {% endif %}
+              {% if section.settings.product_review  %}
+                <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div> 
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {% unless product == empty %}
+      <script type="application/json" id="ProductJson-{{ section.id }}">
+          {{ product | json }}
+      </script>
+      {% endunless %}
+      <!-- enable random number-->
+    
+      
+      <!-- READ MORE BUTTON SCRIPT AND STYLE -->
+      {% if section.settings.readmore_enable %}
+        {{ 'readmore.min.js' | asset_url | script_tag }}
+        <script>
+          var read_mor = true;
+        </script>
+      {% else %}
+        <script>
+          var read_mor = false;
+        </script>
+      {% endif %}
+      <!-- END READ MORE BUTTON SCRIPT AND STYLE -->
+      
+    
+      {%- if section.settings.enable_mobile_atc_button -%}
+        {% include 'mobile-etc-button' %}
+      {%- endif -%}
+    
+      <!-- Pick an option code -->
+      {% if section.settings.enable_default_variant %}
+        {% unless product.selected_variant %}
+          {% if product.variants.size > 1 %}
+            <script>
+              var enable_defaul_variant = true;
+              var picka_text = "{{"products.product.pick_a_text" | t}}";
+              var productOptions = [];
+              {% for option in product.options %}
+                var optionObj = {};
+                optionObj[ {{ forloop.index0 }} ] = "{{ product.options[forloop.index0] }}";
+                productOptions.push(optionObj);
+              {% endfor %}
+            </script>
+          {% endif %}
+        {% endunless %}
+      {% else %}
+        <script>
+          var enable_defaul_variant = false;
+        </script>
+      {% endif %}
+      <!-- End Pick an option code -->
+      <script>
+        if ($('.getsocial').get(0)) {
+          let targetNode = $('.getsocial').get(0);
+          let config = { childList: true };
+          let counter = '<div class="gs-big-counter ab-test"><strong class="gs-value">'+ Math.floor( Math.random() * (5 - 1) + 1) +'.'+ Math.floor(Math.random() * (9 - 0)) +'k</strong><span><span>Shares</span></span></div>'
+          const callback = function(mutationsList, observer) {
+              for(const mutation of mutationsList) {
+                  if (mutation.type === 'childList') {
+                    $('.gs-bar').addClass('gs-big-counter');
+                    $('.gs-bar').prepend(counter);
+                    observer.disconnect();
+                  }
+              }
+          };
+          let observer = new MutationObserver(callback);
+          observer.observe(targetNode, config);
+          }
+      </script>
+      {% schema %}
+        {
+          "name": "Product page",
+          "settings": [
+            {
+              "type": "header",
+              "content": "Product page [NEED HELP?](https:\/\/help.boostertheme.com\/hc\/en-us\/articles\/360003047493-How-to-setup-the-product-page-)"
+            },
+              {
+              "type": "select",
+              "id": "buy_it_now_action",
+              "label": "Buy it Now Action",
+              "default": "direct_to_cart",
+                "options": [
+                {
+                  "value": "thank_you_message",
+                  "label": "Added To Cart Message"
+                },
+                {   
+                  "value": "direct_to_checkout",
+                  "label": "Direct to Checkout"
+                },
+                {   
+                  "value": "direct_to_cart",
+                  "label": "Direct to Cart"
+                }
+              ] 
+            },
+            {
+              "type": "text",
+              "id": "video_first_title",
+              "label": "Video first title"
+            },
+            {
+              "type": "text",
+              "id": "video_first_text",
+              "label": "Video first text"
+            },
+            {
+              "type": "image_picker",
+              "id": "video_first_image",
+              "label": "Video first image"
+            },
+            {
+              "type": "text",
+              "id": "video_second_title",
+              "label": "Video second title"
+            },
+            {
+              "type": "text",
+              "id": "video_second_text",
+              "label": "Video second text"
+            },
+            {
+              "type": "image_picker",
+              "id": "video_second_image",
+              "label": "Video second image"
+            },
+            {
+              "type": "text",
+              "id": "video_third_title",
+              "label": "Video third title"
+            },
+            {
+              "type": "text",
+              "id": "video_third_text",
+              "label": "Video third text"
+            },
+            {
+              "type": "image_picker",
+              "id": "video_third_image",
+              "label": "Video third image"
+            },
+            {
+              "type": "image_picker",
+              "id": "video_third_image2",
+              "label": "Video third image second"
+            },
+            {
+              "type": "header",
+              "content": "Video meet quezzle"
+            },
+            {
+              "type": "text",
+              "id": "video_meet",
+              "label": "Video meet quezzle title"
+            },
+            {
+              "type": "image_picker",
+              "id": "video_meet_img",
+              "label": "Video meet image"
+            },
+            {
+              "type": "header",
+              "content": "Puzzle quest blocks"
+            },
+            {
+              "type": "text",
+              "id": "quest_title",
+              "label": "Puzzle quest title"
+            },
+            {
+              "type": "image_picker",
+              "id": "quest_first_image",
+              "label": "Quest first image"
+            },
+            {
+              "type": "text",
+              "id": "quest_first_title",
+              "label": "Quest first title"
+            },
+            {
+              "type": "image_picker",
+              "id": "quest_second_image",
+              "label": "Quest second image"
+            },
+            {
+              "type": "text",
+              "id": "quest_second_title",
+              "label": "Quest second title"
+            },
+            {
+              "type": "image_picker",
+              "id": "quest_third_image",
+              "label": "Quest third image"
+            },
+            {
+              "type": "text",
+              "id": "quest_third_title",
+              "label": "Quest third title"
+            },
+            {
+              "type": "image_picker",
+              "id": "quest_fourth_image",
+              "label": "Quest fourth image"
+            },
+            {
+              "type": "text",
+              "id": "quest_fourth_title",
+              "label": "Quest fourth title"
+            },
+            {
+              "type": "image_picker",
+              "id": "quest_fifth_image",
+              "label": "Quest fifth image"
+            },
+            {
+              "type": "text",
+              "id": "quest_fifth_title",
+              "label": "Quest fifth title"
+            },
+            {
+              "type": "image_picker",
+              "id": "quest_sixth_image",
+              "label": "Quest sixth image"
+            },
+            {
+              "type": "text",
+              "id": "quest_sixth_title",
+              "label": "Quest sixth title"
+            },
+            {
+              "type": "header",
+              "content": "Order quezzle"
+            },
+            {
+              "type": "text",
+              "id": "order_title",
+              "label": "Order title"
+            },
+            {
+              "type": "image_picker",
+              "id": "order_first_img",
+              "label": "Order first image"
+            },
+            {
+              "type": "text",
+              "id": "order_part_first",
+              "label": "Order first part"
+            },
+            {
+              "type": "image_picker",
+              "id": "order_second_img",
+              "label": "Order second image"
+            },
+            {
+              "type": "text",
+              "id": "order_part_second",
+              "label": "Order second part"
+            },
+            {
+              "type": "text",
+              "id": "order_buy",
+              "label": "Order button buy"
+            },
+            {
+              "type": "image_picker",
+              "id": "order_set_img",
+              "label": "Order set image"
+            },
+            {
+              "type": "text",
+              "id": "order_set_title",
+              "label": "Order set title"
+            },
+            {
+              "type": "text",
+              "id": "order_set_text",
+              "label": "Order set text"
+            },
+            {
+              "type": "header",
+              "content": "Feature blocks"
+            },
+            {
+              "type": "image_picker",
+              "id": "feature_first_img",
+              "label": "Feature first image"
+            },
+            {
+              "type": "text",
+              "id": "feature_first_title",
+              "label": "Feature first title"
+            },
+            {
+              "type": "text",
+              "id": "feature_first_text",
+              "label": "Feature first text"
+            },
+            {
+              "type": "image_picker",
+              "id": "feature_second_img",
+              "label": "Feature second image"
+            },
+            {
+              "type": "text",
+              "id": "feature_second_title",
+              "label": "Feature second title"
+            },
+            {
+              "type": "text",
+              "id": "feature_second_text",
+              "label": "Feature second text"
+            },
+            {
+              "type": "image_picker",
+              "id": "feature_third_img",
+              "label": "Feature third image"
+            },
+            {
+              "type": "text",
+              "id": "feature_third_title",
+              "label": "Feature third title"
+            },
+            {
+              "type": "text",
+              "id": "feature_third_text",
+              "label": "Feature third text"
+            },
+            {
+              "type": "text",
+              "id": "feature_fourth_title",
+              "label": "Feature fourth title"
+            },
+            {
+              "type": "text",
+              "id": "feature_fourth_text",
+              "label": "Feature fourth text"
+            },
+            {
+              "type": "text",
+              "id": "feature_fifth_title",
+              "label": "Feature fifth title"
+            },
+            {
+              "type": "text",
+              "id": "feature_fifth_text",
+              "label": "Feature fifth text"
+            },
+            {
+              "type": "header",
+              "content": "Catchy blocks"
+            },
+            {
+              "type": "text",
+              "id": "catchy_first_title",
+              "label": "Catchy first title"
+            },
+            {
+              "type": "text",
+              "id": "catchy_first_text",
+              "label": "Catchy first text"
+            },
+            {
+              "type": "image_picker",
+              "id": "catchy_first_img",
+              "label": "Catchy first image"
+            },
+            {
+              "type": "text",
+              "id": "catchy_first_img_desc",
+              "label": "Catchy first image description"
+            },
+            {
+              "type": "text",
+              "id": "catchy_second_title",
+              "label": "Catchy second title"
+            },
+            {
+              "type": "text",
+              "id": "catchy_second_text",
+              "label": "Catchy second text"
+            },
+            {
+              "type": "image_picker",
+              "id": "catchy_second_img",
+              "label": "Catchy second image"
+            },
+            {
+              "type": "text",
+              "id": "catchy_second_img_desc",
+              "label": "Catchy second image description"
+            },
+            {
+              "type": "text",
+              "id": "catchy_third_title",
+              "label": "Catchy third title"
+            },
+            {
+              "type": "text",
+              "id": "catchy_third_text",
+              "label": "Catchy third text"
+            },
+            {
+              "type": "image_picker",
+              "id": "catchy_third_img",
+              "label": "Catchy third image"
+            },
+            {
+              "type": "text",
+              "id": "catchy_third_img_desc",
+              "label": "Catchy third image description"
+            },
+            {
+              "type": "text",
+              "id": "catchy_fourth_title",
+              "label": "Catchy fourth title"
+            },
+            {
+              "type": "text",
+              "id": "catchy_fourth_text",
+              "label": "Catchy fourth text"
+            },
+            {
+              "type": "image_picker",
+              "id": "catchy_fourth_img",
+              "label": "Catchy fourth image"
+            },
+            {
+              "type": "text",
+              "id": "catchy_fourth_img_desc",
+              "label": "Catchy fourth image description"
+            },
+            {
+              "type": "header",
+              "content": "Gadgets blocks"
+            },
+            {
+              "type": "text",
+              "id": "gadgets_first_title",
+              "label": "Gadgets first title"
+            },
+            {
+              "type": "text",
+              "id": "gadgets_first_text",
+              "label": "Gadgets first text"
+            },
+            {
+              "type": "image_picker",
+              "id": "gadgets_first_img",
+              "label": "Gadgets first image"
+            },
+            {
+              "type": "text",
+              "id": "gadgets_second_title",
+              "label": "Gadgets second title"
+            },
+            {
+              "type": "text",
+              "id": "gadgets_second_text",
+              "label": "Gadgets second text"
+            },
+            {
+              "type": "image_picker",
+              "id": "gadgets_second_img",
+              "label": "Gadgets second image"
+            },
+            {
+              "type": "text",
+              "id": "gadgets_third_title",
+              "label": "Gadgets third title"
+            },
+            {
+              "type": "text",
+              "id": "gadgets_third_text",
+              "label": "Gadgets third text"
+            },
+            {
+              "type": "image_picker",
+              "id": "gadgets_third_img",
+              "label": "Gadgets third image"
+            },
+            {
+              "type": "text",
+              "id": "gadgets_fourth_title",
+              "label": "Gadgets fourth title"
+            },
+            {
+              "type": "text",
+              "id": "gadgets_fourth_text",
+              "label": "Gadgets fourth text"
+            },
+            {
+              "type": "image_picker",
+              "id": "gadgets_fourth_img",
+              "label": "Gadgets fourth image"
+            },
+            {
+              "type": "text",
+              "id": "gadgets_fifth_title",
+              "label": "Gadgets fifth title"
+            },
+            {
+              "type": "text",
+              "id": "gadgets_fifth_text",
+              "label": "Gadgets fifth text"
+            },
+            {
+              "type": "image_picker",
+              "id": "gadgets_fifth_img",
+              "label": "Gadgets fifth image"
+            },
+            {
+              "type": "text",
+              "id": "gadgets_sixth_title",
+              "label": "Gadgets sixth title"
+            },
+            {
+              "type": "text",
+              "id": "gadgets_sixth_text",
+              "label": "Gadgets sixth text"
+            },
+            {
+              "type": "image_picker",
+              "id": "gadgets_sixth_img",
+              "label": "Gadgets sixth image"
+            },
+            {
+              "type": "header",
+              "content": "Last step"
+            },
+            {
+              "type": "text",
+              "id": "last_title",
+              "label": "Last title"
+            },
+            {
+              "type": "text",
+              "id": "last_text",
+              "label": "Last text"
+            },
+            {
+              "type": "text",
+              "id": "last_desc",
+              "label": "Last description"
+            },
+            { 
+              "type": "checkbox",
+                "id": "show_cart_drawer",
+                "label": "Show Cart Drawer",
+                "default": false
+            },
+            { 
+              "type": "checkbox",
+                "id": "show_saved_amount",
+                "label": "Show Saved %",
+                "default": true
+            },
+            {
+              "type": "checkbox",
+              "id": "enable_default_variant",
+              "label": "Enable Make a Selection Option"
+            },
+            {
+              "type": "checkbox",
+              "id": "show_quantity_selector",
+              "label": "Show Quantity",
+              "default": false
+            },
+            {
+              "type": "checkbox",
+              "id": "show_vendor",
+              "label": "Show Vendor",
+              "default": false
+            },
+            {
+              "type": "checkbox",
+              "id": "enable_zoom",
+              "label": "Enable image zoom",
+              "default": true
+            },
+            {
+              "type": "checkbox",
+              "id": "shake_effect_enable",
+              "label": "Enable the shaking add to cart button",
+              "default": true
+            },
+            {
+              "type": "checkbox",
+              "id": "readmore_enable",
+              "label": "Enable Read more button",
+              "default": false
+            },
+            {
+              "type": "checkbox",
+              "id": "enable_progressbar_text",
+              "label": "Enable Progress Bar",
+              "default": true
+            },
+            {
+              "type": "checkbox",
+              "id": "enable_timer_top_message",
+              "label": "Enable Stock Left Message",
+              "default": true
+            },
+            {
+              "type": "checkbox",
+              "id": "enable_progressbartimer_text",
+              "label": "Enable Sale end message",
+              "default": true
+            },
+              {
+              "type": "checkbox",
+              "id": "enable_shipping",
+              "label": "Enable Free + Shipping",
+              "default": false
+            },
+            {
+              "type": "checkbox",
+              "id": "show_tags",
+              "label": "Show tags",
+              "default": false
+              },
+            {
+              "type": "checkbox",
+              "id": "show_social",
+              "label": "Show social buttons",
+              "default": false
+              },
+            {
+              "type": "radio",
+              "id": "enable_timer_stg_on",
+              "default": "enable_timer_stg_on",
+              "options": [
+                {
+                  "value": "enable_timer_stg_on",
+                  "label": "ON timer"
+                },
+                {
+                  "value": "enable_timer_stg_off",
+                  "label": "OFF timer"
+                }
+              ],
+              "label": "Timer Setting ON\/OFF"
+            },
+            {
+              "type": "header",
+              "content": "Dynamic Checkout Button"
+            },
+            {
+              "type": "checkbox",
+              "id": "enable_payment_button",
+              "label": "Show dynamic checkout button",
+              "info": "Lets customers check out directly using a familiar payment method. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+              "default": false
+            },
+            {
+              "type": "header",
+              "content": "Variant Option [NEED HELP?](https:\/\/help.boostertheme.com\/hc\/en-us\/articles\/360002471493-How-to-Upload-Your-Color-Swatches-in-Booster-2-0-)"
+            },
+            {
+              "type": "radio",
+              "id": "variant_swacth",
+              "label":"Variant type",
+              "info": "Choose between color swatch or drop down menu for the variant",
+              "options": [
+                {
+                  "value": "one",
+                    "label": "Drop down menu"
+                },
+                {
+                  "value": "two",
+                  "label": "Color swatch"
+                }
+              ],
+                "default": "two"
+            },
+            {
+              "type":"header",
+              "content":"Swatch Option"
+            },
+            {
+              "type": "radio",
+              "id": "swatch_option",
+              "label":"Color Swatch style",
+              "options": [
+                {
+                  "value": "with_background",
+                    "label": "Background Color or image"
+                },
+                {
+                  "value": "without_background",
+                  "label": "Show color title like other swatches"
+                }
+              ],
+                "default": "without_background"
+            },
+            {
+              "type":"paragraph",
+              "content":"When you choose 'background Color or image' option, you can change colors shape by using below option"
+            },
+            {
+              "type": "radio",
+              "id": "color_style",
+              "label":"Shape of Color Swatch",        
+              "options": [
+                {
+                  "value": "square_box",
+                    "label": "Square"
+                },
+                {
+                  "value": "round_shape",
+                  "label": "Round"
+                }
+              ],
+                "default": "round_shape"
+            },
+            {
+              "type":"header",
+              "content":"Product Review"
+            },
+            {
+              "type":"checkbox",
+              "label":"Enable rating and review",
+              "id":"product_review",
+              "info":"make sure your shopify review app must be install",
+              "default": true
+            },
+            {
+              "type":"header",
+              "content":"Visitor Counter"
+            },
+            {
+              "type": "checkbox",
+              "id": "visitor_counter_enable",
+              "label": "Visitor Counter Enable"
+            },
+            {
+             "type": "select",
+             "id": "visitor_counter_number",
+             "label": "Visitor counter",
+             "default": "1-15",
+               "options": [
+               {
+                 "value": "1-5",
+                 "label": "1 to 5"
+               },
+               {
+                 "value": "1-10",
+                 "label": "1 to 10"
+               },
+                {
+                 "value": "1-15",
+                 "label": "1 to 15"
+               },
+                {
+                 "value": "15-30",
+                 "label": "15 to 30"
+               },
+                {
+                 "value": "30-50",
+                 "label": "30 to 50"
+               },
+                {
+                 "value": "50-100",
+                 "label": "50 to 100"
+               },
+                {
+                 "value": "100-300",
+                 "label": "100 to 300"
+               },
+                {
+                 "value": "300-500",
+                 "label": "300 to 500"
+               }  
+             ]
+           },
+            {
+              "type":"header",
+              "content":"Delivery Time"
+            },
+            {
+              "type": "text",
+              "id": "delivery_time_number",
+              "label": "Delivery time",
+              "default": "1-3" 
+            },    
+            {
+              "type": "header",
+              "content": "Desktop"
+            },
+            {
+              "type": "select",
+              "id": "product_description",
+              "label": "Product Description",
+              "default": "under_the_price",
+                "options": [
+                {
+                  "value": "under_the_price",
+                  "label": "Under the price"
+                },
+                {   
+                  "value": "under_the_timer",
+                  "label": "Under the timer"
+                } 
+              ] 
+            },
+            {
+              "type": "header",
+              "content": "Mobile"
+            },
+            {
+              "type": "checkbox",
+              "id": "enable_sticky",
+              "label": "Enable Sticky button",
+              "default": true
+            },
+            {
+              "type": "header",
+              "content": "Upsell"
+            },
+            {
+              "type": "checkbox",
+              "id": "enable_combo_upsell",
+              "label": "Enable COMBO Upsell Block",
+              "default": true
+            },
+            {
+              "type": "product",
+              "id": "combo_upsell_product",
+              "label": "Select product for upsell"
+            },
+            {
+              "type": "header",
+              "content": "Mobile Sticky ADD TO CART Button"
+            },
+            {
+              "type": "checkbox",
+              "id": "enable_mobile_atc_button",
+              "label": "Enable Mobile Sticky ADD TO CART Button",
+              "default": false
+            },
+            {
+              "type": "header",
+              "content": "Badges"
+            },
+            {
+              "type": "checkbox",
+              "id": "move_badges_under_cart",
+              "label": "Move Badges below the Add-to-cart button",
+              "default": false
+            },
+            {
+              "type": "checkbox",
+              "id": "enable_trust_badges",
+              "label": "Enable Badges",
+              "default": false
+            },
+            {
+              "type": "image_picker",
+              "id": "enable_trust_badges_image",
+              "label": "Payment icons"
+            },
+            {
+              "type":"header",
+              "content":"Discount Info"
+            },
+            {
+              "type":"image_picker",
+              "id":"pdp_image",
+              "label":"Image"
+            },
+            {
+              "type":"textarea",
+              "id":"pdp_title",
+              "label":"Title"
+            },
+            {
+              "type":"textarea",
+              "id":"pdp_sub_title",
+              "label":"Sub-title"
+            },
+            {
+              "type":"header",
+              "content":"Custom Tax"
+            },
+            {
+              "type":"text",
+              "id":"heading-tax",
+              "label":"Heading"
+            },
+            {
+              "type":"text",
+              "id":"tax_title",
+              "label":"Title"
+            },
+            {
+              "type":"textarea",
+              "id":"tax_sub_content",
+              "label":"Sub-Content"
+            },
+            {
+            "type":"header",
+            "content":"Discount PopUp"
+            },
+      
+            {
+            "type": "textarea",
+            "id": "title",
+            "label": "Heading"
+            },
+            {
+            "type": "image_picker",
+            "id": "imagecart",
+            "label": "Cart_Icon"
+            },
+            {
+            "type": "textarea",
+            "id": "sub_title",
+            "label": "SubHeading"
+            },
+            {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Background-Image"
+            },
+            {
+            "type":"text",
+            "id":"pdp_cta_text",
+            "label":"CTA text"
+            },
+            {
+            "type":"url",
+            "id":"pdp_cta_link",
+            "label":"CTA link"
+            },
+            {
+            "type":"text",
+            "id":"pdp_cta_text1",
+            "label":"CTA text"
+            },
+            {
+            "type":"url",
+            "id":"pdp_cta_link1",
+            "label":"CTA link"
+            }
+          ],
+          "blocks": [
+            {
+              "type": "icons-set-with-text",
+              "name": "Icons set with Text"
+            },
+            {
+              "type": "faq",
+              "name": "Faq-Item",
+              "settings":[
+                {
+                  "type": "text",
+                  "id": "faq_title",
+                  "default": "Put your question here !",
+                  "label": "Title"
+                },
+                {
+                  "type": "richtext",
+                  "id": "faq_text",
+                  "default": "<p>Put the answer here !</p>",
+                  "label": "Text"
+                }
+              ]
+            },
+            {
+              "type": "image-with-text",
+              "name": "Image with text",
+              "settings": [
+                {
+                  "type": "image_picker",
+                  "id": "image",
+                  "label": "Image"
+                },
+                {
+                  "type": "select",
+                  "id": "image_alignment",
+                  "label": "Image alignment",
+                  "options": [
+                    {
+                      "value": "align_left",
+                      "label": "Align Left"
+                    },
+                    {
+                      "value": "align_right",
+                      "label": "Align Right"
+                    }
+                  ],
+                  "default": "align_left"
+                },
+                {
+                  "type":"text",
+                  "id": "title",
+                  "label": "Title",
+                  "default": "Great as a gift"
+                },
+                {
+                  "type":"text",
+                  "id": "text",
+                  "label": "Text",
+                  "default": "A gift that will surprise them and stay in their memory. Each puzzle is packed in a premium wooden gift box."
+                }
+              ]
+            }
+          ]
+        }
+      {% endschema %} 
