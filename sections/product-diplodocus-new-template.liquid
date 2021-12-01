@@ -1,0 +1,2642 @@
+<style>
+
+    @media only screen and (min-width: 750px) {
+      .grid__item.product-single__photos.medium-up--one-half {
+        position: sticky;
+        top: 0;
+      }
+      .page-container {
+        overflow: inherit;
+      }
+    }
+    
+        .bis-reset.bis-edge-left.bis-edge-top.bis-rotate-90 {
+          display: none;
+        }
+        {% if product.type == 'Puzzle' %}
+        .selector-wrapper {
+          display:none;
+        }
+        
+        {% endif %} 
+        
+        {% if section.settings.variant_swacth == 'two'  %} 
+        .selector-wrapper {
+          display:none;
+        }
+        {% endif %}
+        .product-description {
+          margin-bottom: 12px;
+        }
+      
+        .videoframe div {
+            position: relative;
+            width: 100%;
+            height: 530px;
+        }
+        .videoframe iframe {
+            margin-top: calc(50% - 145px);
+            left: 0;
+            width: 100%;
+            height: 290px;
+        }
+        .video-media iframe {
+            width: 100%;
+            height: 100%;          
+        }
+          
+         .slick-slider .slick-dots {
+            overflow: scroll;
+            white-space: nowrap; 
+            bottom: -55px;
+            height: 60px;
+          }
+          .slick-slider .slick-dots li {
+            width:50px;
+            height:50px;
+          }
+          .slick-slider .slick-dots li a {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+          }
+          @media only screen and (max-width: 749px) {
+            .banner-decorate-walls_text {
+            padding: 0 105px 0 20px;
+          }
+            .thumbnails-wrapper.thumbnails-slider--active .slick-track {
+              display: block;
+          }
+            .shipping-banner {min-height: 95px !important;}
+            .thumbnails-wrapper {
+                padding-bottom: 60px;
+            }
+            span.advantage-item-text {font-size: 12px;}
+            span.advantage-item-title {font-size: 14px;}
+            span.advantage-item-num {
+              float: none !important;
+              font-size: 18px !important;
+            }
+            .advantage-item_left {padding-left: 0 !important; padding-top: 0 !important;}
+            span.advantage-item-text {padding-top: 0 !important;}
+          }
+          /**/
+          .pr-advants, .pr-benefit, .pr-info-item, ul.tabs {display: none;}
+          div#tab-1 {padding-top: 25px;}
+          .description_spoiler {padding-top: 40px;}
+          .description_spoiler p {
+              color: #808080;
+          }
+          .description_spoiler strong {
+              color: #000000;
+          }
+          .shipping-banner {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-image: url( "{{ 'shipping-bg.png' | asset_url }}" );
+            background-position: right;
+            min-height: 80px;
+          }
+          .shipping-banner-icon {
+            margin-left: 40px;
+          }
+          .shipping-banner-text {
+            margin-left: 20px;
+            width: 50%;
+          }
+          .shipping-banner-text-bold {
+            font-weight: 600;
+          }
+          .product-single__meta {font-family: 'Poppins';}
+          .banner-inspirational-gift {
+            background-color: black;
+            background-image: url({{'banner-inspirational-diplodoc_bg.png' | asset_url}});
+            background-size: cover;
+            height: 400px;
+            color: #ffffff;
+            margin-top: 40px;
+          }
+          .banner-inspirational-gift_header {
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding-top: 130px;
+            padding-left: 120px;
+          }
+          .banner-inspirational-gift_text {
+            font-size: 12px;
+            padding-top: 10px;
+            padding-left: 120px;
+            padding-right: 15px;
+          }
+          .banner-inspirational-gift_link {
+            padding-left: 130px;
+            padding-top: 15px;
+          }
+          .banner-inspirational-gift_link a{
+            text-decoration: underline;
+            font-size: 21px;
+            letter-spacing: .08em;
+            color: white;
+            font-size: 1em;
+            font-weight: 500;
+            line-height: 1;
+          }
+          .banner-decorate-walls {
+            margin-top: 40px;
+            background-image: url({{'banner-decorate-walls-diplo_mob_bg.png' | asset_url}});
+            background-size: cover;
+            background-position: left;
+            height: 350px;
+            color: #000000;
+          }
+          .banner-decorate-walls_header {
+            width: 100%;
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 20px;
+            padding-bottom: 0;
+          }
+          .banner-decorate-walls_howitworks {
+              padding-left: 20px;
+              padding-top: 10px;
+            }
+          .advantage {
+            margin-top: 40px;
+          }
+          .advantage-item {
+            -webkit-box-shadow: 0 0 0 1px #e6e6e6;
+             box-shadow: 0 0 0 1px #e6e6e6;
+             margin-bottom: 20px;
+             min-height: 125px;
+             display: flex;
+             align-items: center;
+             justify-content: space-between;
+          }
+          .advantage-block {
+            margin-left: 30px;
+            width: 60%;
+          }
+          span.advantage-item-num {
+              font-size: 24px;
+              font-weight: 600;
+              float: left;
+          }
+          span.advantage-item-title {
+              font-weight: 500;
+              font-size: 16px;
+              text-align: center;
+          }
+          span.advantage-item-text {
+            color: #808080;
+            padding-top: 10px;
+            font-size: 12px;
+          }
+          .advantage-item-img {
+            min-height: 125px;
+            width: 190px;
+          }
+          .advantage-item_left {
+            display: flex;
+            flex-direction: column;
+            padding-left: 14px;
+            padding-top: 5px;
+          }
+          .delivery_time_new {
+            display: flex;
+            align-items: center;
+          }
+          .delivery_time_new img {margin-right: 15px;}
+          div#see-more {
+              cursor: pointer;
+              font-weight: 600;
+          }
+          @media only screen and (min-width: 749px) {
+            .banner-decorate-walls_text {
+            padding: 0 20px;
+            font-size: 14px;
+          }
+            .banner-inspirational-gift {
+              height: 450px;
+            }
+              .banner-inspirational-gift_header {
+              font-size: 28px;
+              padding-top: 30%;
+              padding-left: 140px;
+              padding-right: 35px;
+            }
+            .banner-inspirational-gift_text {
+              font-size: 16px;
+              padding-top: 10px;
+              padding-left: 140px;
+              padding-right: 85px;
+            }
+            .banner-inspirational-gift_link {
+              padding-left: 140px;
+            }
+            .banner-decorate-walls {
+              height: 420px;
+              background-image: url({{'banner-decorate-walls_diplodocus_bg.png' | asset_url}});
+            }
+            .banner-decorate-walls_header {
+              width: 395px;
+              font-size: 22px;
+              letter-spacing: 0.7px;
+              font-weight: 600;
+              text-transform: uppercase;
+              padding-top: 30px;
+              padding-left: 40px;
+            }
+            .banner-decorate-walls_text {
+              width: 40%;
+              letter-spacing: 0.7px;
+              padding-top: 10px;
+              padding-left: 40px;
+            }
+            .banner-decorate-walls_howitworks {
+              padding-left: 40px;
+              padding-top: 0;
+            }
+          }
+    
+    
+                  .custom-faq .line, .custom-tax-new .line {
+                    font-size: 14px;
+                  }
+                  .custom-faq, .custom-tax-new {
+                    width:100%;
+                    float:left;
+                    margin-top: 30px;
+                  }
+                  .custom-faq .accordion-tax, .custom-tax-new .accordion-tax {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 10px;
+                    color:#000;
+                    cursor:pointer;
+                    width:100%;
+                    font-weight:600;
+                    text-align:left;
+                    border:none;
+                    outline:0;
+                    transition:.4s
+                  }
+                  .custom-faq .panel p, .custom-tax-new .panel p {color: #808080;}
+                  .custom-faq .panel, .custom-tax-new .panel {
+                    background-color:#fff;
+                    width: 90%;
+                    display:none;
+                    text-align:justify;
+                    overflow:hidden
+                  }
+                  .custom-faq .accordion-tax:after, .custom-tax-new .accordion-tax:after {content:'\002B';
+                    font-size:18px;
+                    color:#000;
+                    float:right;
+                    margin-left:5px
+                  }
+                  .custom-faq .active:after, .custom-tax-new .active:after {
+                    content:"\2716"
+                  }
+                  p.line {margin-bottom: 20px;}
+                .storyblock__heading {
+                  padding-bottom: 10px;
+                  width: 40%;
+                }
+                .storyblock__video {
+                  padding-top: 24px;
+                }
+                .storyblock__heading-inner {
+                  display: grid;
+                  margin-left: 50px;
+                }
+                .storyblock__heading-icon {
+                  padding-bottom: 22px;
+                }
+                .storyblock-text-left {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  margin: 0px auto;
+                  padding-top: 20px;
+                  -webkit-box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
+                  -moz-box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
+                  box-shadow: -10px 0px 5px -5px rgba(34, 60, 80, 0.07);
+                }
+        .product.in-stock {
+          color: green;
+          padding-left: 10px;
+        }
+        .product.out-of-stock {
+          color: red;
+          padding-left: 10px;
+        }
+        /* description spoiler*/
+        .description_spoiler {
+          padding-top: 25px;
+        }
+    
+        .description_spoiler strong {
+          color: #000000;
+        }
+    
+        .description_spoiler p {
+          color: #808080;
+        }
+    
+        .read-more {
+          overflow: hidden;
+          position: relative;
+          max-height: 240px;
+          min-height: 240px;
+        }
+    
+        .read-more::after {
+          opacity: 1;
+          content: "";
+          left: 0;
+          right: 0;
+          bottom: 0;
+          position: absolute;
+          transition: opacity 200ms ease-in;
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgb(255, 255, 255));
+          pointer-events: none;
+          height: 50%;
+          width: 100%;
+        }
+    
+        .read-more.active {
+          overflow: auto;
+          max-height: fit-content;
+        }
+    
+        .read-more.active::after {
+          opacity: 0;
+        }
+    
+        #see-more {
+          cursor: pointer;
+          font-weight: 600;
+        }
+        .getsocial {
+          padding-top: 15px;
+        }
+        .getsocial.gs-inline-group.gs-big-counter {
+            margin-bottom: 5px !important;
+        }
+  
+  .sidebar-banner {
+  background-image: url({{ section.settings.banner_first_bg | img_url: 'master' }});
+  background-size: cover;
+  background-position: center;
+  min-height: 450px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  }
+  .sidebar-banner-second {
+    background-image: url({{ section.settings.banner_second_bg | img_url: 'master' }});
+  background-size: cover;
+  background-position: center;
+  min-height: 450px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  }
+  .sidebar-banner__age {
+  background: #FF8E00;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: auto;
+  }
+  .sidebar-banner__block {
+  max-width: 334px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 10px solid rgba(27, 178, 111, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+  color: #292929;
+  padding: 14px;
+  }
+  .sidebar-banner-second .sidebar-banner__block {
+  padding: 14px 50px 14px 14px;
+  }
+  .sidebar-banner__block span {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+  color: #292929;
+  max-width: 170px;
+  margin-right: auto;
+  }
+  .sidebar-banner__block p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #292929;
+  max-width: 170px;
+  margin-right: auto;
+  }
+  
+  .sidebar-banner-second {
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 40px;
+  }
+  
+  
+  /* Block numbers */
+  
+  
+  .sidebar-numbers__item {
+  background-size: contain!important; 
+  min-height: 265px;
+  position: relative;
+  margin-top: 40px;
+  }
+  .numbers-item__first {
+  background: url({{ section.settings.number_first_bg | img_url: 'master' }}) no-repeat;
+  }
+  .numbers-item__second {
+  background: url({{ section.settings.number_second_bg | img_url: 'master' }}) no-repeat;
+  background-position: right!important;
+  }
+  .numbers-item__third {
+    background: url({{ section.settings.number_third_bg | img_url: 'master' }}) no-repeat;
+  }
+  .numbers-item__fourth {
+    background: url({{ section.settings.number_fourth_bg | img_url: 'master' }}) no-repeat;
+  background-position: right!important;
+  }
+  .numbers-item__first .sidebar-numbers__block {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #EBEBEB;
+  padding: 10px 20px 20px 10px;
+  max-width: 260px;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  }
+  .numbers-item__second .sidebar-numbers__block {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #EBEBEB;
+  padding: 10px 20px 20px 10px;
+  max-width: 260px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  }
+  .numbers-item__third .sidebar-numbers__block {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #EBEBEB;
+  padding: 10px 20px 20px 10px;
+  max-width: 260px;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  }
+  .numbers-item__third .sidebar-numbers__block img {
+  position: absolute;
+  left: 67px;
+  top: -67px;
+  }
+  .numbers-item__fourth .sidebar-numbers__block {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #EBEBEB;
+  padding: 10px 20px 20px 10px;
+  max-width: 260px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  }
+  .numbers-item__fourth .sidebar-numbers__block p {
+  max-width: 16;
+  }
+  .numbers-item__fourth .sidebar-numbers__block img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  }
+  .sidebar-numbers__block span {
+  background: #1BB36F;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  }
+  .sidebar-numbers__block p {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  color: #292929;
+  padding-left: 10px;
+  }
+  
+  
+  /* Mounting blocks */
+  
+  .sidebar-mounting {
+    background: url({{ section.settings.mounting_bg | img_url: 'master' }}) no-repeat;
+  background-position: right;
+  min-height: 265px;
+  position: relative;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  }
+  .sidebar-mounting__block {
+  background: #1BB36F;
+  padding: 20px;
+  max-width: 258px;
+  max-height: 185px;
+  margin-bottom: 20px;
+  position: relative;
+  }
+  .sidebar-mounting__block img {
+  position: absolute;
+  right: 40px;
+  bottom: -12px;
+  }
+  .sidebar-mounting__block span {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  color: #FFFFFF;
+  }
+  .sidebar-mounting__block p {
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  color: #FFFFFF;
+  }
+  
+  .sidebar-dinoframe {
+    background: url({{ section.settings.dinoframe_bg | img_url: 'master' }}) no-repeat;
+  min-height: 375px;
+  position: relative;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-size: cover;
+  background-position: center;
+  }
+  .sidebar-dinoframe__block {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #EBEBEB;
+  position: relative;
+  max-width: 235px;
+  max-height: 150px;
+  margin: 20px;
+  padding: 20px;
+  }
+  .sidebar-dinoframe__block img {
+  position: absolute;
+  top: -55px;
+  right: -50px;
+  }
+  .sidebar-dinoframe__block p {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+  color: #292929;
+  }
+  .sidebar-dinoframe__block span {
+  font-weight: bold;
+  }
+  
+  
+  /* Habitat */
+  
+  
+  .sidebar-habitat__title {
+  text-align: center;
+  margin-bottom: 20px;
+  }
+  .sidebar-habitat__title span {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+  color: #292929;
+  }
+  .sidebar-habitat {
+  margin-top: 40px;
+  }
+  .habitat__item {
+  position: relative;
+  margin-top: 40px;
+  }
+  .habitat__item-first .habitat__item-bg {
+    background: url({{ section.settings.habitat_bg_first | img_url: 'master' }}) no-repeat;
+  min-height: 265px;
+  background-size: contain;
+  background-position: right;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  }
+  .habitat__item-first .habitat__item-bg img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  }
+  .habitat__item-first .habitat__item-bg span {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  background: #FF8855;
+  margin: 20px 20px 0 auto;
+  z-index: 2;
+  }
+  .habitat__item-first .habitat__item-text {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #EBEBEB;
+  padding: 20px 100px 20px 40px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  color: #292929;
+  max-width: 260px;
+  margin-top: -90px;
+  position: absolute;
+  bottom: 20px;
+  }
+  
+  
+  .habitat__item-second .habitat__item-bg {
+    background: url({{ section.settings.habitat_bg_second | img_url: 'master' }}) no-repeat;
+  min-height: 265px;
+  background-size: contain;
+  background-position: left;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  }
+  .habitat__item-second .habitat__item-bg img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  }
+  .habitat__item-second .habitat__item-bg span {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  background: #FF8855;
+  margin: 20px auto 0 20px;
+  z-index: 2;
+  }
+  .habitat__item-second .habitat__item-text {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #EBEBEB;
+  padding: 20px 40px 20px 100px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  color: #292929;
+  max-width: 260px;
+  margin-top: -90px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  }
+  
+  
+  
+  .habitat__item-third .habitat__item-bg {
+    background: url({{ section.settings.habitat_bg_third | img_url: 'master' }}) no-repeat;
+  min-height: 265px;
+  background-size: contain;
+  background-position: right;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  }
+  .habitat__item-third .habitat__item-bg img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  }
+  .habitat__item-third .habitat__item-bg span {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  background: #FF8855;
+  margin: 20px 20px 0 auto;
+  z-index: 2;
+  }
+  .habitat__item-third .habitat__item-text {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #EBEBEB;
+  padding: 20px 100px 20px 40px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  color: #292929;
+  max-width: 260px;
+  margin-top: -90px;
+  position: absolute;
+  bottom: 20px;
+  }
+  
+  
+  .habitat__item-fourth .habitat__item-bg {
+    background: url({{ section.settings.habitat_bg_fourth | img_url: 'master' }}) no-repeat;
+  min-height: 265px;
+  background-size: contain;
+  background-position: left;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  }
+  .habitat__item-fourth .habitat__item-bg img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-70%, -50%);
+  z-index: 1;
+  }
+  .habitat__item-fourth .habitat__item-bg span {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  background: #FF8855;
+  margin: 20px auto 0 20px;
+  z-index: 2;
+  }
+  .habitat__item-fourth .habitat__item-text {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #EBEBEB;
+  padding: 20px 40px 20px 100px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  color: #292929;
+  max-width: 260px;
+  margin-top: -90px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  }
+  
+  
+  .habitat__item-fifth .habitat__item-bg {
+    background: url({{ section.settings.habitat_bg_fifth | img_url: 'master' }}) no-repeat;
+  min-height: 265px;
+  background-size: contain;
+  background-position: right;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  }
+  .habitat__item-fifth .habitat__item-bg img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  }
+  .habitat__item-fifth .habitat__item-bg span {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  background: #FF8855;
+  margin: 20px 20px 0 auto;
+  z-index: 2;
+  }
+  .habitat__item-fifth .habitat__item-text {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #EBEBEB;
+  padding: 20px 100px 20px 40px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  color: #292929;
+  max-width: 260px;
+  margin-top: -90px;
+  position: absolute;
+  bottom: 20px;
+  }
+  
+  .habitat__item-fifth .habitat__item-text img {
+  position: absolute;
+  top: -65px;
+  left: 10px;
+  }
+  
+  
+  
+  .habibat__social {
+  margin-top: 30px;
+  background-color: #1BB26F;
+  min-height: 220px;
+  }
+  .habibat__social-bg {
+  background: url({{'sidebar-collection-bg.png' | asset_url }}) no-repeat;
+  background-size: cover;
+  min-height: 220px;
+  background-position: center;
+  display: flex;
+  }
+  .habibat__social-block {
+  width: 100%;
+  margin: 20px;
+  padding: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  }
+  .social-title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+  color: #292929;
+  margin-bottom: 10px;
+  display: block;
+  }
+  .social-text {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #292929;
+  }
+  .habibat__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  }
+  .social-link {
+  padding: 12px 20px;
+  margin-right: 10px;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  .social-link:last-child {
+  margin-right: 0;
+  }
+  .social-link img {
+  margin-right: 10px;
+  }
+  .social-telegram {
+  background: #4DB0E6;
+  }
+  .social-viber {
+  background: #966DAD;
+  }
+  .social-vk {
+  background: #3D6488;
+  }
+  
+  
+  /* Dinopazzle */
+  
+  
+  
+  .sidebar-dinopazzle {
+    background: url({{ section.settings.dinopazzle_bg | img_url: 'master' }}) no-repeat;
+  min-height: 235px;
+  position: relative;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-size: 100% 100%;
+  background-color: #1BB26F;
+  }
+  .sidebar-dinopazzle__block {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #EBEBEB;
+  position: relative;
+  max-width: 235px;
+  max-height: 150px;
+  margin: 20px;
+  padding: 10px;
+  margin-left: auto;
+  }
+  .sidebar-dinopazzle__block img {
+  position: absolute;
+  right: 20px;
+  top: -80px;
+  }
+  .sidebar-dinopazzle__block p {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  color: #292929;
+  }
+  .sidebar-dinopazzle__block span {
+  font-weight: normal;
+  }
+  
+  
+  
+  /* Media */
+  
+  
+  @media (max-width: 1075px) {
+  .habitat__item-fifth .habitat__item-bg img {
+    transform: translate(-80%, -70%);
+  }
+  }
+  @media (max-width: 920px) {
+  .habitat__item-first .habitat__item-bg img {
+    transform: translate(-20%, -50%);
+  }
+  .habitat__item-second .habitat__item-bg img {
+    transform: translate(-60%, -50%);
+  }
+  .habitat__item-third .habitat__item-bg img {
+    transform: translate(-10%, -30%);
+    z-index: 1;
+    width: 110px;
+    height: 162px;
+  }
+  .habitat__item-fourth .habitat__item-bg img {
+    transform: translate(-90%, -40%);
+    width: 180px;
+  }
+  .habitat__item-third .habitat__item-bg span {
+    margin: 50px 20px 0 auto;
+  }
+  .habibat__social-link {
+    justify-content: flex-start;
+  }
+  .social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  .social-link img {
+    max-width: max-content;
+    margin-right: 0px;
+  }
+  .social-link span {
+    display: none;
+  }
+  }
+  
+  @media (max-width: 749px) {
+  .sidebar-banner {
+    min-height: 240px;
+  }
+  .sidebar-banner__block {
+    font-size: 18px;
+    line-height: 27px;
+    max-width: 225px;
+    padding: 8px;
+  }
+  .sidebar-banner__age {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+  
+  .sidebar-numbers__item {
+    min-height: 150px;
+    background-position: center;
+    margin-top: 0;
+  }
+  .numbers-item__first {
+    margin-top: 40px;
+  }
+  .numbers-item__first .sidebar-numbers__block {
+    padding: 10px;
+    bottom: -30px;
+  }
+  .numbers-item__second {
+    margin-top: 60px;
+  }
+  .numbers-item__second .sidebar-numbers__block {
+    bottom: -30px;
+  }
+  .numbers-item__third {
+    margin-top: 60px;
+  }
+  .numbers-item__third .sidebar-numbers__block {
+    bottom: -30px;
+  }
+  .numbers-item__fourth {
+    margin-top: 60px;
+    background-position: center!important;
+  }
+  .numbers-item__fourth .sidebar-numbers__block {
+    bottom: -30px;
+  }
+  .sidebar-numbers__block span {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+  .sidebar-numbers__block p {
+    font-size: 14px;
+    padding-top: 5px;
+    padding-left: 0;
+    line-height: 21px;
+  }
+  .sidebar-banner-second {
+    min-height: 227px;
+    position: relative;
+    margin-top: 70px;
+  }
+  .sidebar-banner-second .sidebar-banner__block {
+    padding: 10px;
+    max-width: inherit;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -105px;
+  }
+  .sidebar-banner__block span {
+    font-size: 18px;
+    line-height: 27px;
+    max-width: inherit;
+  }
+  .sidebar-banner__block p {
+    font-size: 14px;
+    line-height: 21px;
+    max-width: inherit;
+  }
+  .sidebar-mounting {
+    margin-top: 145px;
+    background-size: contain;
+    background-position: center;
+    min-height: 140px;
+  }
+  .sidebar-mounting__block {
+    padding: 10px;
+    max-width: 200px;
+    position: absolute;
+    top: 90px;
+  }
+  .sidebar-mounting__block span {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .sidebar-mounting__block p {
+    font-size: 14px;
+    line-height: 21px;
+    max-width: 180px;
+  }
+  .sidebar-mounting__block img {
+    right: -32px;
+    bottom: 10px;
+  }
+  .sidebar-dinoframe {
+    margin-top: 140px;
+  }
+  .sidebar-dinoframe__block {
+    max-width: inherit;
+    padding: 10px;
+    margin: 10px;
+  }
+  .sidebar-dinoframe__block img {
+    left: 0;
+    max-width: 92px;
+    max-height: 63px;
+  }
+  .sidebar-dinoframe__block p {
+    font-size: 14px;
+    line-height: 21px;
+    margin: 0;
+  }
+  .sidebar-numbers__item .numbers-item__third {
+    background-position: left;
+  }
+  .numbers-item__third .sidebar-numbers__block {
+    bottom: -50px;
+  }
+  .numbers-item__third .sidebar-numbers__block img {
+    left: 145px;
+    top: -47px;
+    width: 91px;
+    height: 48px;
+  }
+  .sidebar-habitat__title span {
+    font-size: 18px;
+    line-height: 27px;
+  }
+  
+  .habitat__item-first .habitat__item-bg span {
+    font-size: 12px;
+    padding: 5px;
+    margin: 10px 10px 0 auto;
+  }
+  .habitat__item-first .habitat__item-text {
+    font-size: 14px;
+    padding: 10px 53px 10px 10px;
+  }
+  .habitat__item-second .habitat__item-bg span {
+    font-size: 12px;
+    padding: 5px;
+    margin: 10px auto 0 10px;
+  }
+  .habitat__item-second .habitat__item-text {
+    font-size: 14px;
+    padding: 10px 10px 10px 53px;
+  }
+  .habitat__item-third .habitat__item-bg span {
+    font-size: 12px;
+    padding: 5px;
+    margin: 10px 10px 0 auto;
+  }
+  .habitat__item-third .habitat__item-text {
+    font-size: 14px;
+    padding: 10px 53px 10px 10px;
+  }
+  .habitat__item-fourth .habitat__item-bg span {
+    font-size: 12px;
+    padding: 5px;
+    margin: 10px auto 0 10px;
+  }
+  .habitat__item-fourth .habitat__item-text {
+    font-size: 14px;
+    padding: 10px 10px 10px 53px;
+  }
+  .habitat__item-fifth .habitat__item-bg span {
+    font-size: 12px;
+    padding: 5px;
+    margin: 10px 10px 0 auto;
+  }
+  .habitat__item-fifth .habitat__item-text {
+    font-size: 14px;
+    padding: 10px 53px 10px 10px;
+  }
+  .social-title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .social-text {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  
+  .sidebar-dinopazzle {
+    margin-bottom: 105px;
+  }
+  .sidebar-dinopazzle__block {
+    position: absolute;
+    bottom: -104px;
+    max-width: max-content;
+    width: 100%;
+  }
+  .sidebar-dinopazzle__block p {
+    font-size: 16px;
+  }
+  }
+  
+  @media (max-width: 425px) {
+  .numbers-item__fourth {
+    background-position: right!important;
+  }
+  .sidebar-mounting {
+    background-position: right;
+  }
+  .sidebar-dinoframe {
+    min-height: 200px;
+    background-size: 100% 100%;
+  }
+  .sidebar-numbers__item {
+    background-position: inherit;
+  }
+  .habitat__item-first .habitat__item-bg {
+    min-height: 160px;
+  }
+  .habitat__item-first .habitat__item-bg img {
+    max-width: 111px;
+    max-height: 118px;
+    transform: translate(-35%, -35%);
+  }
+  .habitat__item-second .habitat__item-bg {
+    min-height: 160px;
+  }
+  .habitat__item-second .habitat__item-bg img {
+    width: 163px;
+    height: 158px;
+    transform: translate(-60%, -50%);
+  }
+  .habitat__item-third .habitat__item-bg {
+    min-height: 160px;
+  }
+  .habitat__item-third .habitat__item-bg img {
+    width: 110px;
+    height: 162px;
+    transform: translate(-35%, -35%);
+  }
+  .habitat__item-fourth .habitat__item-bg {
+    min-height: 160px;
+  }
+  .habitat__item-fourth .habitat__item-bg img {
+    width: 163px;
+    height: 158px;
+  }
+  .habitat__item-fifth .habitat__item-bg {
+    min-height: 160px;
+  }
+  .habitat__item-fifth .habitat__item-bg img {
+    max-width: 111px;
+    max-height: 118px;
+    transform: translate(-35%, -35%);
+  }
+  .sidebar-dinopazzle__block img {
+    width: 114px;
+    height: 66px;
+    right: 50px;
+    top: -50px;
+  }
+  .habitat__item-fifth .habitat__item-text img {
+    width: 57px;
+    height: 30px;
+    top: -30px;
+  }
+  }
+    
+    </style> 
+        <script>
+          {% if section.settings.buy_it_now_action == 'direct_to_cart' %}var buyitnowaction = true;{% else %}var buyitnowaction = false;{% endif %}{% if section.settings.enable_related_upsell %}var relatedupsellenable = true;{% else %}var relatedupsellenable = false;{% endif %}{% if section.settings.buy_it_now_action == 'thank_you_message' %}var thankmsg = true;{% else %}var thankmsg = false;{% endif %}{% if section.settings.buy_it_now_action == 'direct_to_checkout' %}var drchkout = true;{% else %}var drchkout = false;{% endif %}
+          {% if section.settings.enable_sticky %}var eblstcky = true;{% else %}var eblstcky = false;{% endif %}{% if section.settings.enable_payment_button %}var ebl_pay_but = true;var addToCartBtnLabel_1 = "{{ 'products.dynamic_checkout_buttons.add_to_cart_text_when_dynamic_checkout_buttons_enable' | t }}";{% else %}var ebl_pay_but = false;var addToCartBtnLabel_1 = "{{ 'products.product.add_to_cart' | t }}";{% endif %}{% if section.settings.visitor_counter_enable %}var visitorcountr = true;{% else %}var visitorcountr = false;{% endif %}
+        </script>
+        
+        <div class="product-template__container product-{{ product.id }} page-width" itemscope itemtype="http://schema.org/Product" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true"> 
+        
+          <meta itemprop="name" content="{{ product.title }}">
+          <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+          <meta itemprop="image" content="{{ product.featured_image.src | img_url: '800x' }}">
+          <meta itemprop="productID" content="{{product.id }}">
+          {%- liquid
+        
+            assign current_variant = product.selected_or_first_available_variant
+        
+              for item in cart.items
+                if item.product.type == 'Puzzle'
+                  assign puzle_discount = puzle_discount | plus: item.quantity
+                endif
+              endfor
+        
+              if customer
+                for tag in customer.tags
+                  if tag == 'Subscription membership' 
+                    assign member_discount = true
+                  endif
+                endfor
+              endif
+              
+              assign discount_amount = 1
+        
+              if member_discount == true
+                assign discount_amount =  0.8
+              endif
+        
+            assign product_image_zoom_size = '1024x1024'
+            assign product_image_scale = '2'
+            assign enable_zoom = section.settings.enable_zoom 
+          -%}
+        
+          <div class="grid product-single">
+            <div class="grid__item product-single__photos medium-up--one-half">
+              {%- render 'label-product-tag', products: product -%}
+              {%- if section.settings.enable_default_variant -%}
+              {%- assign featured_image = product.featured_image -%}
+              {%- else -%}
+              {%- assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image -%}
+              {%- endif -%}
+              {%- assign videos = product.media | where: "media_type", "external_video" -%}
+              {%- if videos.size > 0 -%}
+                {%- for video in videos -%}
+                  <div id="{{ img_wrapper_id }}" class="product-single__photo-wrapper small--hide js videoframe">
+                    <div id="{{ zoom_img_id }}" style="padding-top:{{ 1 | divided_by: media.aspect_ratio | times: 100}}%; position: relative;overflow: hidden;" class="product-single__photo-{{ section.id }}{% if product.images.size > 1 %} product-single__photo--has-thumbnails{% endif %} hide" data-image-id="{{ video.id }}">                
+                        {{ video | external_video_tag }}
+                    </div>
+                  </div>
+                {%- endfor -%}
+              {%- endif -%}
+                {% for media in product.media %}
+                    {% case media.media_type %}
+                    {% when 'image' %}
+                        {% capture img_id %}FeaturedImage-{{ section.id }}-{{ media.id }}{% endcapture %}
+                        {% capture img_class %}product-featured-img{% endcapture %}
+                        {% capture zoom_img_id %}FeaturedImageZoom-{{ section.id }}-{{ media.id }}{% endcapture %}
+                        {% capture img_wrapper_id %}{{ zoom_img_id }}-wrapper{% endcapture %}
+                        {%- assign img_url = media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                        {% include 'image-style' with small_style: true, width: 530, height: 530, wrapper_id: img_wrapper_id, img_id: img_id %}
+                        <div id="{{ img_wrapper_id }}" class="product-single__photo-wrapper small--hide js">
+                            <div id="{{ zoom_img_id }}" style="padding-top:{{ 1 | divided_by: media.aspect_ratio | times: 100}}%;position: relative;overflow: hidden;" class="product-single__photo-{{ section.id }}{% if enable_zoom %} js-zoom-enabled{% endif %}{% if product.images.size > 1 %} product-single__photo--has-thumbnails{% endif %}{% unless featured_image == media %} hide{% endunless %}" data-image-id="{{ media.id }}"{% if enable_zoom %} data-zoom="{{ media | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
+                            <img id="{{ img_id }}" 
+                                loading="lazy" 
+                                class="feature-row__image {{ img_class }} lazyload{% unless featured_image == media %} lazypreload{% endunless %}"
+                                src="{{ media | img_url: '300x300' }}"
+                                data-src="{{ img_url }}"
+                                data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                                data-aspectratio="{{ media.aspect_ratio }}"
+                                data-sizes="auto"
+                                alt="{{ media.alt | escape }}">
+                            </div>
+                        </div>            
+                    {% endcase %}
+                {% endfor %}
+        
+              <noscript>
+                {% capture product_image_size %}530x{% endcapture %}
+                <img src="{{ featured_image | img_url: product_image_size, scale: product_image_scale }}" loading="lazy" alt="{{ featured_image.alt }}" id="FeaturedImage-{{ section.id }}" class="product-featured-img" style="max-width: 530px;">
+              </noscript>
+        
+              {%- liquid
+                if product.images.size > 1
+                  assign enable_thumbnail_slides = true
+                endif 
+              -%}
+        
+              <div class="thumbnails-wrapper {% if product.images.size == 1 %}medium-up--hide{% endif %}{% if enable_thumbnail_slides == true %} thumbnails-slider--active{% endif %}">
+                {% if enable_thumbnail_slides == true %}
+                <button type="button" class="btn btn--link small--hide thumbnails-slider__btn thumbnails-slider__prev thumbnails-slider__prev--{{ section.id }}">
+                  {% include 'icon-chevron-left' %}
+                  <span class="icon__fallback-text">{{ 'sections.slideshow.prev_slide' | t }}</span>
+                </button>
+                {% endif %}
+                {%- if videos.size > 0 -%}
+                <script>$(document).on('ready', function() {$('.thumbnails-slider--active .responsive').slick('slickGoTo', {{videos.size}})});</script>
+                {%- endif -%}
+                    <ul class="grid responsive slider grid--uniform product-single__thumbnails product-single__thumbnails-{{ section.id }}">
+                      {%- if videos.size > 0 -%}
+                        {%- for video in videos -%}
+                          <li class="grid__item {% unless enable_thumbnail_slides == true %}{{ product_thumbnail_width }} {% endunless %}{% if product.images.size > 1 %}product-single__thumbnails-item{% endif %} js">
+                          {%comment%}{{ media | external_video_tag }}{%endcomment%}
+                            <a href="#" class="text-link product-single__thumbnail product-single__thumbnail--{{ section.id }} product-video" data-thumbnail-id="{{ video.id }}" {% if enable_zoom %}data-zoom="{{ video.src | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
+                              <div class="product-single__thumbnail-image medium-up--hide video-media" style="height:230px;display: flex;align-items: center;justify-content: center;">{{ video | external_video_tag }}</div>
+                              <img src="{{ 'play-button.png' | asset_img_url: '50x' }}" style="position: fixed; margin: 0 auto; top: 25%; left: 55px;" />
+                              <img loading="lazy" class="product-single__thumbnail-image small--hide" src="{{ video.preview_image | img_url: 'compact' }}" alt="{{ video.alt | escape }}">                            
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                      {%- endif -%}
+                            {% for media in product.media %}
+                                {% case media.media_type %}
+                                {% when 'image' %}
+                                    <li class="grid__item {% unless enable_thumbnail_slides == true %}{{ product_thumbnail_width }} {% endunless %}{% if product.images.size > 1 %}product-single__thumbnails-item{% endif %} js">
+                                    <a href="{{ media.src | img_url: product_image_zoom_size, scale: product_image_scale }}"
+                                            class="text-link product-single__thumbnail product-single__thumbnail--{{ section.id }}"
+                                            data-thumbnail-id="{{ media.id }}"
+                                            {% if enable_zoom %}data-zoom="{{ media.src | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
+                                            <img class="product-single__thumbnail-image medium-up--hide" loading="lazy" src="{{ media.src | img_url: '480x480', scale: 2 }}" alt="{{ media.alt | escape }}">
+                                            <img class="product-single__thumbnail-image small--hide" loading="lazy" src="{{ media.src | img_url: 'compact' }}" alt="{{ media.alt | escape }}">
+                                            </a>
+                                        </li>                            
+                                {% endcase %}            
+                            {% endfor %}
+                    </ul>        
+                {% if enable_thumbnail_slides == true %}
+                  <button type="button" class="btn btn--link small--hide thumbnails-slider__btn thumbnails-slider__next thumbnails-slider__next--{{ section.id }}">
+                    {% include 'icon-chevron-right' %}
+                    <span class="icon__fallback-text">{{ 'sections.slideshow.next_slide' | t }}</span>
+                  </button>
+                {% endif %}
+              </div>
+                {%- if product.metafields.link.customer-review-photo -%}
+                  {%- render 'customer-review-photo' with product -%}
+                {%- endif -%}
+                    {%- include 'getsocial-inline-bar' -%}
+                <!-- Swym button on product pages -->
+          </div>
+            <div class="grid__item medium-up--one-half">
+              <div class="product-single__meta">
+                <h1 itemprop="name" class="product-single__title heading">
+                  {%- if product.metafields.text.product-h1 -%}
+                    {{ product.metafields.text.product-h1 }}
+                  {%- else -%}
+                    {{ product.title }}
+                  {%- endif -%}
+                </h1>
+        
+                {% if section.settings.show_vendor %}
+                  <p itemprop="brand" class="product-single__vendor">{{ product.vendor }}</p>
+                {% endif %}
+        
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="USD">
+                  <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition" />
+                  <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+        
+        {%- if  member_discount == true and product.type == 'Puzzle' -%}
+                    <p class="product-single__price product-single__price-{{ section.id }}{% unless current_variant.available %} product-price--sold-out{% endunless %}" data-discount="{{discount_amount}}">
+                      <s id="ComparePrice-{{ section.id }}" style="color: #ff8e00;">{{ current_variant.price | money }}</s>
+                      <span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single">
+                        <span id="ProductPrice-{{ section.id }}" itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
+                          {{ current_variant.price | times: discount_amount | money	 }}
+                        </span>
+                        <span class="save_discount_pro">
+                          <span class="per_discount">
+                            20{{ 'products.product.on_save' | t }}
+                          </span>
+                      </span>
+                    </p>
+        {%- else -%}
+                   <p class="product-single__price product-single__price-{{ section.id }}{% unless current_variant.available %} product-price--sold-out{% endunless %}">
+                    {% if current_variant.compare_at_price > current_variant.price %}
+                      <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+                      <s id="ComparePrice-{{ section.id }}">{{ current_variant.compare_at_price | money }}</s>
+                      <span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single">
+                        <span id="ProductPrice-{{ section.id }}"
+                              itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
+                          {{ current_variant.price | times: discount_amount | money	 }}
+                        </span>
+                        {% if section.settings.show_saved_amount %}
+                        <!-- Dscount price in percentage  -->
+                        <span class="save_discount_pro">
+                        {% if current_variant.compare_at_price > current_variant.price %}
+                          {% if settings.show_discount_amount == 'percent_save' %}
+                          <span class="per_discount">
+                            {% assign money_pro_format = shop.money_format | strip_html | json %}
+                      
+                            {% if money_pro_format contains "{{amount_no_decimals}}" or money_pro_format contains "{{amount_no_decimals_with_comma_separator}}" %}
+                              {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price | times: 100 | money_without_currency | replace:",","." | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
+                            {% elsif money_pro_format contains "{{amount_with_comma_separator}}" %}
+                              {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price | money_without_currency | replace:",","."  | times: 100 | replace: '.0', '' }}{{ 'products.product.on_save' | t }}
+                            {% else %}                  
+                              {{ current_variant.compare_at_price  | minus: current_variant.price | times: discount_amount  | times: 100.0 | divided_by: current_variant.compare_at_price  | money_without_currency | times: 100 | replace: '.0', ''}}{{ 'products.product.on_save' | t }}
+                            {% endif %}
+                          </span>
+                          <!-- Dscount price in percentage  -->
+                          {% else %}
+                            <span class="sale-tag salePrice large"> 
+                              {% assign sale = current_variant.compare_at_price | minus:  current_variant.price | times: discount_amount |  money %}
+                              {{ 'products.product.on_save_like_price' | t }} {{sale}}
+                            </span>
+                          {% endif %}
+                        {% endif %}
+                        </span>
+                        {% endif %}
+                      </span>
+                    {% else %}
+                      <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+                      <s id="ComparePrice-{{ section.id }}" class="hide">{{ current_variant.compare_at_price | money }}</s>
+                      <span class="product-price__price product-price__price-{{ section.id }}">
+                        <span id="ProductPrice-{{ section.id }}" itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
+                          {{ current_variant.price | times: discount_amount | money }}
+                        </span>
+                        {% if section.settings.show_saved_amount %}
+                        <span class="save_discount_pro hide">
+                        </span>
+                        {% endif %}
+                        
+                      </span>
+                    {% endif %}
+                    {%- if current_variant.available -%}
+                      <span class="product in-stock">In stock</span>
+                    {%- else -%}
+                      <span class="product out-of-stock">Out of stock</span>
+                    {%- endif -%}
+                  </p>
+        {%- endif -%}
+                  {% if section.settings.product_review  %}
+                    <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+                  {% endif %}
+                  <style>
+                    html .gs-buttons.gs-big-counter.gs-small>.gs-big-counter {
+                      font-size: 32px !important;
+                    }
+                  </style>
+                             
+                  {%- capture "form_classes" -%}
+                  product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %}{% if section.settings.enable_payment_button and product.has_only_default_variant%} product-form--payment-button-no-variants{% endif %}
+                  {%- endcapture %}
+        
+                  {% form 'product', product, data-productid: product.id, id: "AddToCartForm", class:form_classes, data-product-id: "{{ product.id }}", data-section: "{{ section.id }}", data-product: "{{ product | json | escape }}" %}
+        
+                  {% if section.settings.show_quantity_selector %}
+                  <div class="product-form__item one-whole medium-up--hide product-form__item--quantity_1 prod_qty_mobile">
+                    <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
+                    <div class="qty_selector">
+                      <span class='qtyminus' field='quantity'>{% include 'icon-minus' %}</span>
+                      <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product-form__input qty" pattern="[0-9]*">
+                      <span class='qtyplus' field='quantity'>{% include 'icon-plus' %}</span>
+                    </div>            
+                  </div>
+                  {% else %}
+                    <input type="hidden" id="Quantity" name="quantity" value="1" class="product-form__input prod_qty_mobile">
+                  {% endif %}
+                  {% unless product.has_only_default_variant %}
+                    {% if section.settings.show_tags %}
+                      <div class="prod_tags">
+                        <h5>{{ 'products.product.tags' | t }} : </h5>
+                        {% for tag in product.tags %}
+                        <span>{{ tag }}</span>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+                    {% for option in product.options_with_values %}
+          
+                      <div class="selector-wrapper small--one-whole js product-form__item">
+                        <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
+                          {{ option.name }}
+                        </label>
+                        <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
+                          {% for value in option.values %}
+                          <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                    {% endfor %}
+                  {% endunless %}
+        
+                  <select name="id" data-productid="{{ product.id }}" id="ProductSelect-{{ section.id }}" data-section="{{ section.id }}" class="product-form__variants no-js">
+                    {% for variant in product.variants %}
+                      {% if variant.available %}
+                        <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+                          {{ variant.title }}
+                        </option>
+                      {% else %}
+                        <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+                      {% endif %}
+                    {% endfor %}
+                  </select>
+        
+                <!-- PRODUCT SWATCH CODE IF ENABLE -->
+                {% if product.type == 'Puzzle' %}
+                  {% if product.variants.size > 1 %}
+                    <div class="swatch_options">
+                      {% for option in product.options %}
+                        {% include 'swatch' with option %}
+                      {% endfor %} 
+                    </div>
+                  {% endif %}
+                {% else %}
+                  {% if section.settings.variant_swacth == 'two'  %}  
+                    {% if product.variants.size > 1 %}
+                        <div class="swatch_options">
+                          {% for option in product.options %}
+                            {% include 'swatch' with option %}
+                          {% endfor %} 
+                        </div>
+                    {% endif %}
+                  {% endif %} 
+                {% endif %} 
+                <!-- END PRODUCT SWATCH CODE IF ENABLE -->
+                  {% include 'product-page-features' %}
+      
+                  <input required type="hidden" id="upsellcheckquantity" name="properties[upsellcheckquantity]">
+                  
+                  {% endform %}
+      
+                  {%- render 'back-in-stock-form', product_id: product.id, product_variants_id: current_variant.id -%}
+      
+                  {% if section.settings.enable_sticky %}
+                  <style>
+        
+                    @media(max-width:749px) {
+                      /*               .counter_box.show{display:none !important;} */
+                      /*
+                      div#progressBar{ 
+                      display:none !important;
+                    }
+                      .counter_box.show {
+                      display: none !important;
+                    } */
+        
+                      .product-form__item.product-form__item--quantity,  
+                      .product-form__item.product-form__item--quantity + div {
+                        display : none !important;
+                      }
+                      .only_desktop{
+                        display:none !important;
+                      }
+                      #AddToCartForm .cst-small-crtbtn button#AddToCart,
+                      #AddToCartForm .qty_stickyfor button#AddToCart,
+                      #AddToCartForm .qty_stickyfor button#AddToCartZero {
+                        display:none;
+                      }
+                      #AddToCartForm .qty_stickyfor .ajaxified-cart-feedback{
+                        display:none!important;
+                      }
+                      .stiky_form div#mst-stiky-box {
+                        left: 0 !important;
+                        width: 100%;
+                        right:0;
+                      }
+                      .price-lable {
+                        font-size: 16px !important;
+                        font-weight: 500 !important;
+                        text-align: center;
+                        margin-bottom: 12px;
+                      }
+                      .mst-stiky-div.fix-search {
+                        position: fixed;
+                        top: 8px;
+                        z-index: 999;
+                        width: 310px;
+                        right: 0;
+                        display: block!important;
+                      }
+                      {% if section.settings.enable_payment_button %}
+                      .stiky_form div#mst-stiky-box {
+                        padding-bottom: 70px;
+                      }
+                      .shopify-payment-button {
+                        position: fixed;
+                        bottom: -20px;
+                        width: 100%;
+                        z-index: 1000;
+                        left: auto;
+                        right: 0;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                      }
+                      {% endif %}
+                    }
+        
+                    @media(min-width:750px){
+                      button#AddToCart {
+                        visibility: visible !important;
+                      }
+                    }
+                  </style>
+        
+                  {% if section.settings.enable_buy_it_stiky_qty %}
+                    <style> 
+                      @media screen and (max-width:749px) {
+                        #mst-stiky-box div#sticky_btnn.product-form__item--quantity{ display:none !important; } 
+                        #AddToCartForm1.stiky_form button#AddToCart{ width:100% !important; } 
+                        #progress_bar1,#progressBar{ display: none !important; } 
+                      }
+                    </style>
+                  {% else %}
+        
+                  <style> 
+                    @media screen and (max-width:749px) {
+                      #mst-stiky-box div#sticky_btnn.product-form__item--quantity{ display:block !important;float: left;width: 25% !important;padding-right: 0 !important; } 
+                    }
+                  </style>
+        
+                  {% endif  %}
+                  {% assign price_var1=current_variant.price | times: discount_amount | withoutmoney %}  
+                  <div id="AddToCartForm1" class="product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %} stiky_form{% if price_var1 == 0 %} zerocost_from_box {% endif %}" data-section="{{ section.id }}" >
+                    <div id="mst-stiky-box" class="mst-stiky-div">
+                      {% if price_var1 == 0 %}          
+                        <button type="button" name="add" id="AddToCartZero" class="btn_sp btn stiky_button{% if section.settings.enable_payment_button %} dynamic_paybtn {% endif %}{% if section.settings.shake_effect_enable %} js-cartButtonPro-addToCartButton hvr-wobble-horizontal{% endif %}">
+                          <span id="AddToCartText">{{ 'products.product.free_add_to_cart' | t }}</span>
+                        </button>
+                      {% else %}          
+                        {% assign zeroCost='' %}
+                        <button type="button" name="add" id="AddToCart" class="btn_sp addtocart_btn stiky_button{% if section.settings.enable_payment_button %} dynamic_paybtn {% endif %}{% if section.settings.shake_effect_enable %} js-cartButtonPro-addToCartButton hvr-wobble-horizontal{% endif %} ">
+                          <span class="AddToCartText addtocarttext">
+                            {% unless current_variant.available %}
+                              {{ 'products.product.sold_out' | t }}
+                            {% else %}
+                              {% if section.settings.enable_payment_button %}
+                                {{ 'products.dynamic_checkout_buttons.add_to_cart_text_when_dynamic_checkout_buttons_enable' | t }}
+                              {% else %}
+                                {{ 'products.product.add_to_cart' | t }}
+                              {% endif %}
+                            {% endunless %}
+                          </span>
+                        </button>
+                      {% endif %} 
+                    </div> 
+                  </div>
+        
+                  {% endif %}
+                </div>
+                
+                {% if section.settings.pdp_enable %}
+                    {% render 'pdp__discount' %}
+                {%- endif -%}
+                <div class="sidebar-banner">
+                  <div class="sidebar-banner__age">
+                    <span>{{ section.settings.gift_age }}</span>
+                  </div>
+                  <div class="sidebar-banner__block">
+                    {{ section.settings.gift_text }}
+                  </div>
+                </div>
+  
+                <div class="sidebar-numbers">
+                  {{  }}
+                  <div class="sidebar-numbers__item numbers-item__first">
+                    <div class="sidebar-numbers__block">
+                      <span>{{ section.settings.number_first_date }}</span>
+                      <p>{{ section.settings.number_first_text }}</p>
+                    </div>
+                  </div>
+                  <div class="sidebar-numbers__item numbers-item__second">
+                    <div class="sidebar-numbers__block">
+                      <span>{{ section.settings.number_second_date }}</span>
+                      <p>{{ section.settings.number_second_text }}</p>
+                    </div>
+                  </div>
+                  <div class="sidebar-numbers__item numbers-item__third">
+                    <div class="sidebar-numbers__block">
+                      <img src="{{ 'sidebar-numbers-3-icon.png' | asset_url }}" alt="">
+                      <span>{{ section.settings.number_third_date }}</span>
+                      <p>{{ section.settings.number_third_text }}</p>
+                    </div>
+                  </div>
+                  <div class="sidebar-numbers__item numbers-item__fourth">
+                    <div class="sidebar-numbers__block">
+                      <span>{{ section.settings.number_fourth_date }}</span>
+                      <p>{{ section.settings.number_fourth_text }}</p>
+                      <img src="{{ 'sidebar-numbers-4-icon.png' | asset_url }}" alt="">
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="sidebar-banner-second">
+                  <div class="sidebar-banner__block">
+                    <span>{{ section.settings.surprise_title }}</span>
+                    <p>{{ section.settings.surprise_desc }}</p>
+                  </div>
+                </div>
+  
+                <div class="sidebar-mounting">
+                  <div class="sidebar-mounting__block">
+                    <span>{{ section.settings.mounting_title }}</span>
+                    <p>{{ section.settings.mounting_desc }}</p>
+                    <img src="{{ 'mounting-icon.png' | asset_url }}" alt="">
+                  </div>
+                </div>
+  
+                <div class="sidebar-dinoframe">
+                  <div class="sidebar-dinoframe__block">
+                    <p>{{ section.settings.dinoframe_title }}
+                      <span>{{ section.settings.dinoframe_text }}</span>
+                    </p>
+                    <img src="{{ 'dino-frame-icon.png' | asset_url }}" alt="">
+                  </div>
+                </div>
+  
+                <div class="sidebar-habitat habitat">
+                  <div class="sidebar-habitat__title">
+                    <span>{{ section.settings.habitat_title }}</span>
+                  </div>
+                  <div class="sidebar-habitat__wrapper">
+                    <div class="habitat__item habitat__item-first">
+                      <div class="habitat__item-bg">
+                        <span>{{ section.settings.habitat_label_first }}</span>
+                        <img src="{{ 'habitat-img1.png' | asset_url }}" alt="">
+                      </div>
+                      <div class="habitat__item-text">
+                        {{ section.settings.habitat_name_first }}
+                      </div>
+                    </div>
+                    <div class="habitat__item habitat__item-second">
+                      <div class="habitat__item-bg">
+                        <span>{{ section.settings.habitat_label_second }}</span>
+                        <img src="{{ 'habitat-img2.png' | asset_url }}" alt="">
+                      </div>
+                      <div class="habitat__item-text">
+                        {{ section.settings.habitat_name_second }}
+                      </div>
+                    </div>
+                    <div class="habitat__item habitat__item-third">
+                      <div class="habitat__item-bg">
+                        <span>{{ section.settings.habitat_label_third }}</span>
+                        <img src="{{ 'habitat-img3.png' | asset_url }}" alt="">
+                      </div>
+                      <div class="habitat__item-text">
+                        {{ section.settings.habitat_name_third }}
+                      </div>
+                    </div>
+  
+                    <div class="habitat__item habitat__item-fourth">
+                      <div class="habitat__item-bg">
+                        <span>{{ section.settings.habitat_label_fourth }}</span>
+                        <img src="{{ 'habitat-img4.png' | asset_url }}" alt="">
+                      </div>
+                      <div class="habitat__item-text">
+                        {{ section.settings.habitat_name_fourth }}
+                      </div>
+                    </div>
+  
+                    <div class="habitat__item habitat__item-fifth">
+                      <div class="habitat__item-bg">
+                        <span>{{ section.settings.habitat_label_fifth }}</span>
+                        <img src="{{ 'habitat-img5.png' | asset_url }}" alt="">
+                      </div>
+                      <div class="habitat__item-text">
+                        <img src="{{ 'sidebar-numbers-3-icon.png' | asset_url }}" alt="">
+                        {{ section.settings.habitat_name_fifth }}
+                      </div>
+                    </div>
+  
+                  </div>
+                </div>
+  
+                <div class="sidebar-dinopazzle">
+                  <div class="sidebar-dinopazzle__block">
+                    <p>{{ section.settings.dinopazzle_title }}
+                      <span>{{ section.settings.dinopazzle_text }}</span>
+                    </p>
+                    <img src="{{ 'dino-pazzle-icon.png' | asset_url }}" alt="">
+                  </div>
+                </div>
+  
+                <div class="product-single__description rte" itemprop="description">
+                  {% for block in section.blocks %}
+                    {% if block.type == 'icons-set-with-text' %}
+                      {%- render 'ud-product-description-icons-with-text' -%}
+                    {% endif %}
+                  {% endfor %}
+        
+                  {% assign product_desc = 'products.product_tab.product_tab_1' | t %}
+                  {% if product_desc != blank and product.description != blank %}
+                  <ul class="tabs">
+                    <li><a href="#tab-1">{{ 'products.product_tab.product_tab_1' | t }}</a></li>
+                  </ul>
+                  {% endif %}
+        
+                  <div id="tab-1">
+                    <div class="product-description">
+                      {% assign video = product.media | where: "media_type", "external_video" | first %}
+                      {% if video != blank %}
+                        {{ video | external_video_tag }}
+                      {% else %}
+                        {% assign video = product.media | where: "media_type", "video" | first %}
+                        {{ video |  video_tag }}
+                      {% endif %}
+                      {{ product.description | split: '<!-- additional video-->' | first }}
+                      <div id="see-more">{{ 'custome_text.button.see_more' | t }} &#709;</div>
+                      {%- assign additional_video = product.description | split: '<!-- additional video-->' | last -%}
+                      {%- if product.description contains '<!-- additional video-->' -%}
+                        <style>div#see-more {padding-bottom: 15px;}</style>
+                        {{ additional_video }}
+                      {%- endif -%}
+                    </div>
+                    
+                    <script>$(document).ready(function () {
+                            $('.description_spoiler').addClass('read-more');
+                            $('#see-more').click(function () {
+                              if ($("#see-more")[0].innerHTML == "{{ 'custome_text.button.see_more' | t }} ˅") {$("#see-more")[0].innerHTML = "{{ 'custome_text.button.read_less' | t }} &#708;"} else {$("#see-more")[0].innerHTML = "{{ 'custome_text.button.see_more' | t }} &#709;"}
+                              $('.read-more').toggleClass('active');
+                            })
+                          })
+                    </script>
+                  </div>
+                </div>
+      
+                {%- assign faq_blocks = section.blocks | where: "type", "faq" -%}
+                {%- for block in faq_blocks -%}
+                  {% if forloop.first == true %}
+                  <!--FAQ block-->
+                    <div class="custom-faq" id="custom-faq">
+                      <p class="line">frequently asked questions</p>
+                  {%- endif -%}
+                    <div class="accordion-tax">
+                      <span class="accordion-taxes">{{block.settings.faq_title}}</span>
+                    </div>
+                    <div class="panel" style="display: none;">
+                          <p>{{block.settings.faq_text}}</p>
+                    </div>
+                  {% if forloop.last == true %}
+                    </div>
+                    <!--FAQ block and-->
+                  {%- endif -%}
+                {%- endfor -%}
+      
+                <!----------custom-Tax-------------->
+                {% if section.settings.heading-tax != blank %}
+                  <div class="custom-tax-new">
+                    {% if section.settings.heading-tax != blank %}
+                      <p class="line">
+                        {{ section.settings.heading-tax }}
+                      </p>
+                    {% endif %}
+                    {% if section.settings.tax_title != blank %}<div class="accordion-tax"><span class="accordion-taxes">{{ section.settings.tax_title }}</span></div>{% endif %}
+                    {% if section.settings.tax_sub_content != blank %}
+                      <div class="panel">
+                        <p>{{ section.settings.tax_sub_content }}</p>
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+                <!-------------end------------------>
+      
+                {% if section.settings.visitor_counter_enable %}
+               
+                <input type="hidden" value="{{section.settings.visitor_counter_number}}" id="min_max_number">
+                <p class="fake_counter_p {{tg1}}">
+                  <i class="fas fa-eye"></i>
+                  <span class="fake_counter_b {{ section.settings.visitor_counter_style }}"> 
+                    <span id="dynamic_counter1"> </span> 
+                  </span>
+                  <span class="fake_counter fake-cntr" > {{ 'products.product.visitor_counter_text' | t}}</span>      
+                </p>
+                  {% endif %}
+                {% if section.settings.product_review  %}
+                  <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div> 
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {% unless product == empty %}
+        <script type="application/json" id="ProductJson-{{ section.id }}">
+            {{ product | json }}
+        </script>
+        {% endunless %}
+        <!-- enable random number-->
+      
+        
+        <!-- READ MORE BUTTON SCRIPT AND STYLE -->
+        {% if section.settings.readmore_enable %}
+          {{ 'readmore.min.js' | asset_url | script_tag }}
+          <script>
+            var read_mor = true;
+          </script>
+        {% else %}
+          <script>
+            var read_mor = false;
+          </script>
+        {% endif %}
+        <!-- END READ MORE BUTTON SCRIPT AND STYLE -->
+        
+      
+        {%- if section.settings.enable_mobile_atc_button -%}
+          {% include 'mobile-etc-button' %}
+        {%- endif -%}
+      
+        <!-- Pick an option code -->
+        {% if section.settings.enable_default_variant %}
+          {% unless product.selected_variant %}
+            {% if product.variants.size > 1 %}
+              <script>
+                var enable_defaul_variant = true;
+                var picka_text = "{{"products.product.pick_a_text" | t}}";
+                var productOptions = [];
+                {% for option in product.options %}
+                  var optionObj = {};
+                  optionObj[ {{ forloop.index0 }} ] = "{{ product.options[forloop.index0] }}";
+                  productOptions.push(optionObj);
+                {% endfor %}
+              </script>
+            {% endif %}
+          {% endunless %}
+        {% else %}
+          <script>
+            var enable_defaul_variant = false;
+          </script>
+        {% endif %}
+        <!-- End Pick an option code -->
+        <script>
+          if ($('.getsocial').get(0)) {
+            let targetNode = $('.getsocial').get(0);
+            let config = { childList: true };
+            let counter = '<div class="gs-big-counter ab-test"><strong class="gs-value">'+ Math.floor( Math.random() * (5 - 1) + 1) +'.'+ Math.floor(Math.random() * (9 - 0)) +'k</strong><span><span>Shares</span></span></div>'
+            const callback = function(mutationsList, observer) {
+                for(const mutation of mutationsList) {
+                    if (mutation.type === 'childList') {
+                      $('.gs-bar').addClass('gs-big-counter');
+                      $('.gs-bar').prepend(counter);
+                      observer.disconnect();
+                    }
+                }
+            };
+            let observer = new MutationObserver(callback);
+            observer.observe(targetNode, config);
+            }
+        </script>
+        {% schema %}
+          {
+            "name": "Product page",
+            "settings": [
+              {
+                "type": "header",
+                "content": "Product page [NEED HELP?](https:\/\/help.boostertheme.com\/hc\/en-us\/articles\/360003047493-How-to-setup-the-product-page-)"
+              },
+                {
+                "type": "select",
+                "id": "buy_it_now_action",
+                "label": "Buy it Now Action",
+                "default": "direct_to_cart",
+                  "options": [
+                  {
+                    "value": "thank_you_message",
+                    "label": "Added To Cart Message"
+                  },
+                  {	
+                    "value": "direct_to_checkout",
+                    "label": "Direct to Checkout"
+                  },
+                  {	
+                    "value": "direct_to_cart",
+                    "label": "Direct to Cart"
+                  }
+                ] 
+              },
+              {
+                "type": "header",
+                "content": "Banner Gift"
+              },
+              {
+                "type": "text",
+                "id": "gift_age",
+                "label": "Banner age"
+              },
+              {
+                "type": "text",
+                "id": "gift_text",
+                "label": "Banner gift text",
+                "default": "A great gift for a child!"
+              },
+              {
+                "type": "image_picker",
+                "id": "banner_first_bg",
+                "label": "Banner first background"
+              },
+              {
+                "type": "header",
+                "content": "Step numbers blocks"
+              },
+              {
+                "type": "image_picker",
+                "id": "number_first_bg",
+                "label": "Numbers first background"
+              },
+              {
+                "type": "text",
+                "id": "number_first_date",
+                "label": "Numbers first date"
+              },
+              {
+                "type": "text",
+                "id": "number_first_text",
+                "label": "Numbers first text",
+                "default": "Get the whole family together and have a fun time"
+              },
+              {
+                "type": "image_picker",
+                "id": "number_second_bg",
+                "label": "Numbers second background"
+              },
+              {
+                "type": "text",
+                "id": "number_second_date",
+                "label": "Numbers second date"
+              },
+              {
+                "type": "text",
+                "id": "number_second_text",
+                "label": "Numbers second text",
+                "default": "Develop fine motor skills of hands, logic and thinking"
+              },
+              {
+                "type": "image_picker",
+                "id": "number_third_bg",
+                "label": "Numbers third background"
+              },
+              {
+                "type": "text",
+                "id": "number_third_date",
+                "label": "Numbers third date"
+              },
+              {
+                "type": "text",
+                "id": "number_third_text",
+                "label": "Numbers third text",
+                "default": "Clean your mind puting together fanciful shapes"
+              },
+              {
+                "type": "image_picker",
+                "id": "number_fourth_bg",
+                "label": "Numbers fourth background"
+              },
+              {
+                "type": "text",
+                "id": "number_fourth_date",
+                "label": "Numbers fourth date"
+              },
+              {
+                "type": "text",
+                "id": "number_fourth_text",
+                "label": "Numbers fourth text",
+                "default": "Learn about animal diversity throughout history"
+              },
+              {
+                "type": "header",
+                "content": "Surprise Dino"
+              },
+              {
+                "type": "image_picker",
+                "id": "banner_second_bg",
+                "label": "Surprise dino background"
+              },
+              {
+                "type": "text",
+                "id": "surprise_title",
+                "label": "Surprise dino title"
+              },
+              {
+                "type": "text",
+                "id": "surprise_desc",
+                "label": "Surprise dino description"
+              },
+              {
+                "type": "header",
+                "content": "Mounting Dino"
+              },
+              {
+                "type": "image_picker",
+                "id": "mounting_bg",
+                "label": "Mounting dino background"
+              },
+              {
+                "type": "text",
+                "id": "mounting_title",
+                "label": "Mounting dino title"
+              },
+              {
+                "type": "text",
+                "id": "mounting_desc",
+                "label": "Mounting dino description"
+              },
+              {
+                "type": "header",
+                "content": "Dinoframe"
+              },
+              {
+                "type": "image_picker",
+                "id": "dinoframe_bg",
+                "label": "Dinoframe dino background"
+              },
+              {
+                "type": "text",
+                "id": "dinoframe_title",
+                "label": "Dinoframe dino title"
+              },
+              {
+                "type": "text",
+                "id": "dinoframe_text",
+                "label": "Dinoframe dino title bold"
+              },
+              {
+                "type": "header",
+                "content": "Habitat dinosaur"
+              },
+              {
+                "type": "text",
+                "id": "habitat_title",
+                "label": "Habitat title",
+                "default": "Every dinosaur is in its own habitat."
+              },
+              {
+                "type": "image_picker",
+                "id": "habitat_bg_first",
+                "label": "Habitat dino background"
+              },
+              {
+                "type": "text",
+                "id": "habitat_label_first",
+                "label": "Habitat dino label"
+              },
+              {
+                "type": "text",
+                "id": "habitat_name_first",
+                "label": "Habitat dino name"
+              },
+              {
+                "type": "image_picker",
+                "id": "habitat_bg_second",
+                "label": "Habitat dino background"
+              },
+              {
+                "type": "text",
+                "id": "habitat_label_second",
+                "label": "Habitat dino label"
+              },
+              {
+                "type": "text",
+                "id": "habitat_name_second",
+                "label": "Habitat dino name"
+              },
+              {
+                "type": "image_picker",
+                "id": "habitat_bg_third",
+                "label": "Habitat dino background"
+              },
+              {
+                "type": "text",
+                "id": "habitat_label_third",
+                "label": "Habitat dino label"
+              },
+              {
+                "type": "text",
+                "id": "habitat_name_third",
+                "label": "Habitat dino name"
+              },
+              {
+                "type": "image_picker",
+                "id": "habitat_bg_fourth",
+                "label": "Habitat dino background"
+              },
+              {
+                "type": "text",
+                "id": "habitat_label_fourth",
+                "label": "Habitat dino label"
+              },
+              {
+                "type": "text",
+                "id": "habitat_name_fourth",
+                "label": "Habitat dino name"
+              },
+              {
+                "type": "image_picker",
+                "id": "habitat_bg_fifth",
+                "label": "Habitat dino background"
+              },
+              {
+                "type": "text",
+                "id": "habitat_label_fifth",
+                "label": "Habitat dino label"
+              },
+              {
+                "type": "text",
+                "id": "habitat_name_fifth",
+                "label": "Habitat dino name"
+              },
+              {
+                "type": "header",
+                "content": "Dino Puzzles"
+              },
+              {
+                "type": "image_picker",
+                "id": "dinopazzle_bg",
+                "label": "Dino Puzzles background"
+              },
+              {
+                "type": "text",
+                "id": "dinopazzle_title",
+                "label": "Dino Puzzles title bold"
+              },
+              {
+                "type": "text",
+                "id": "dinopazzle_text",
+                "label": "Dino Puzzles title"
+              },
+              { 
+                "type": "checkbox",
+                  "id": "show_cart_drawer",
+                  "label": "Show Cart Drawer",
+                  "default": false
+              },
+              { 
+                "type": "checkbox",
+                  "id": "show_saved_amount",
+                  "label": "Show Saved %",
+                  "default": true
+              },
+              {
+                "type": "checkbox",
+                "id": "enable_default_variant",
+                "label": "Enable Make a Selection Option"
+              },
+              {
+                "type": "checkbox",
+                "id": "show_quantity_selector",
+                "label": "Show Quantity",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "id": "show_vendor",
+                "label": "Show Vendor",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "id": "enable_zoom",
+                "label": "Enable image zoom",
+                "default": true
+              },
+              {
+                "type": "checkbox",
+                "id": "shake_effect_enable",
+                "label": "Enable the shaking add to cart button",
+                "default": true
+              },
+              {
+                "type": "checkbox",
+                "id": "readmore_enable",
+                "label": "Enable Read more button",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "id": "enable_progressbar_text",
+                "label": "Enable Progress Bar",
+                "default": true
+              },
+                {
+                "type": "checkbox",
+                "id": "enable_shipping",
+                "label": "Enable Free + Shipping",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "id": "show_tags",
+                "label": "Show tags",
+                "default": false
+                },
+              {
+                "type": "checkbox",
+                "id": "show_social",
+                "label": "Show social buttons",
+                "default": false
+              },
+              {
+                "type": "header",
+                "content": "Dynamic Checkout Button"
+              },
+              {
+                "type": "checkbox",
+                "id": "enable_payment_button",
+                "label": "Show dynamic checkout button",
+                "info": "Lets customers check out directly using a familiar payment method. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+                "default": false
+              },
+              {
+                "type":"paragraph",
+                "content":"When you choose 'background Color or image' option, you can change colors shape by using below option"
+              },
+              {
+                "type":"header",
+                "content":"Product Review"
+              },
+              {
+                "type":"checkbox",
+                "label":"Enable rating and review",
+                "id":"product_review",
+                "info":"make sure your shopify review app must be install",
+                "default": true
+              },
+              {
+                "type":"header",
+                "content":"Visitor Counter"
+              },
+              {
+                "type": "checkbox",
+                "id": "visitor_counter_enable",
+                "label": "Visitor Counter Enable"
+              },
+              {
+               "type": "select",
+               "id": "visitor_counter_number",
+               "label": "Visitor counter",
+               "default": "1-15",
+                 "options": [
+                 {
+                   "value": "1-5",
+                   "label": "1 to 5"
+                 },
+                 {
+                   "value": "1-10",
+                   "label": "1 to 10"
+                 },
+                  {
+                   "value": "1-15",
+                   "label": "1 to 15"
+                 },
+                  {
+                   "value": "15-30",
+                   "label": "15 to 30"
+                 },
+                  {
+                   "value": "30-50",
+                   "label": "30 to 50"
+                 },
+                  {
+                   "value": "50-100",
+                   "label": "50 to 100"
+                 },
+                  {
+                   "value": "100-300",
+                   "label": "100 to 300"
+                 },
+                  {
+                   "value": "300-500",
+                   "label": "300 to 500"
+                 }  
+               ]
+             },
+              {
+                "type":"header",
+                "content":"Delivery Time"
+              },
+              {
+                "type": "text",
+                "id": "delivery_time_number",
+                "label": "Delivery time",
+                "default": "1-3" 
+              },	  
+              {
+                "type": "header",
+                "content": "Desktop"
+              },
+              {
+                "type": "select",
+                "id": "product_description",
+                "label": "Product Description",
+                "default": "under_the_price",
+                  "options": [
+                  {
+                    "value": "under_the_price",
+                    "label": "Under the price"
+                  },
+                  {	
+                    "value": "under_the_timer",
+                    "label": "Under the timer"
+                  } 
+                ] 
+              },
+              {
+                "type": "header",
+                "content": "Mobile"
+              },
+              {
+                "type": "checkbox",
+                "id": "enable_sticky",
+                "label": "Enable Sticky button",
+                "default": true
+              },
+              {
+                "type": "header",
+                "content": "Mobile Sticky ADD TO CART Button"
+              },
+              {
+                "type": "checkbox",
+                "id": "enable_mobile_atc_button",
+                "label": "Enable Mobile Sticky ADD TO CART Button",
+                "default": false
+              },
+              {
+                "type": "header",
+                "content": "Badges"
+              },
+              {
+                "type": "checkbox",
+                "id": "move_badges_under_cart",
+                "label": "Move Badges below the Add-to-cart button",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "id": "enable_trust_badges",
+                "label": "Enable Badges",
+                "default": false
+              },
+              {
+                "type": "image_picker",
+                "id": "enable_trust_badges_image",
+                "label": "Payment icons"
+              },
+              {
+                "type":"header",
+                "content":"Discount Image Banner"
+              },
+              {
+                "type": "checkbox",
+                "id": "pdp_enable",
+                "label": "Enable PDP banner",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "id": "pdp_enable_banner",
+                "label": "Enable image banner",
+                "default": false
+              },
+              {
+                "type":"image_picker",
+                "id":"pdp_image_banner",
+                "label":"Banner Image"
+              },
+              {
+                "type":"header",
+                "content":"Discount Info"
+              },
+              {
+                "type":"image_picker",
+                "id":"pdp_image",
+                "label":"Image"
+              },
+              {
+                "type":"textarea",
+                "id":"pdp_title",
+                "label":"Title"
+              },
+              {
+                "type":"textarea",
+                "id":"pdp_sub_title",
+                "label":"Sub-title"
+              }
+            ],
+            "blocks": [
+              {
+                "type": "icons-set-with-text",
+                "name": "Icons set with Text"
+              },
+              {
+                "type": "faq",
+                "name": "Faq-Item",
+                "settings":[
+                  {
+                    "type": "text",
+                    "id": "faq_title",
+                    "default": "Put your question here !",
+                    "label": "Title"
+                  },
+                  {
+                    "type": "richtext",
+                    "id": "faq_text",
+                    "default": "<p>Put the answer here !</p>",
+                    "label": "Text"
+                  }
+                ]
+              },
+              {
+                "type": "image-with-text",
+                "name": "Image with text",
+                "settings": [
+                  {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                  },
+                  {
+                    "type": "select",
+                    "id": "image_alignment",
+                    "label": "Image alignment",
+                    "options": [
+                      {
+                        "value": "align_left",
+                        "label": "Align Left"
+                      },
+                      {
+                        "value": "align_right",
+                        "label": "Align Right"
+                      }
+                    ],
+                    "default": "align_left"
+                  },
+                  {
+                    "type":"text",
+                    "id": "title",
+                    "label": "Title",
+                    "default": "Great as a gift"
+                  },
+                  {
+                    "type":"text",
+                    "id": "text",
+                    "label": "Text",
+                    "default": "A gift that will surprise them and stay in their memory. Each puzzle is packed in a premium wooden gift box."
+                  }
+                ]
+              }
+            ]
+          }
+        {% endschema %} 
+  
+  
