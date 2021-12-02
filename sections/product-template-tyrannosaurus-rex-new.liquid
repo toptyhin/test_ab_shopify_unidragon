@@ -1769,7 +1769,7 @@
                   </div>
                   <div class="sidebar-numbers__item numbers-item__third">
                     <div class="sidebar-numbers__block">
-                      <img src="{{ 'sidebar-numbers-3-icon.png' | asset_url }}" alt="">
+                      <img src="{{ section.settings.number_third_icon | img_url: 'master' }}" alt="">
                       <span>{{ section.settings.number_third_date }}</span>
                       <p>{{ section.settings.number_third_text }}</p>
                     </div>
@@ -1778,7 +1778,7 @@
                     <div class="sidebar-numbers__block">
                       <span>{{ section.settings.number_fourth_date }}</span>
                       <p>{{ section.settings.number_fourth_text }}</p>
-                      <img src="{{ 'sidebar-numbers-4-icon.png' | asset_url }}" alt="">
+                      <img src="{{section.settings.number_fourth_icon | img_url: 'master'}}" alt="">
                     </div>
                   </div>
                 </div>
@@ -2140,6 +2140,11 @@
               },
               {
                 "type": "image_picker",
+                "id": "number_third_icon",
+                "label": "Numbers third icon"
+              },
+              {
+                "type": "image_picker",
                 "id": "number_fourth_bg",
                 "label": "Numbers fourth background"
               },
@@ -2153,6 +2158,11 @@
                 "id": "number_fourth_text",
                 "label": "Numbers fourth text",
                 "default": "Learn about animal diversity throughout history"
+              },
+              {
+                "type": "image_picker",
+                "id": "number_fourth_icon",
+                "label": "Numbers forth icon"
               },
               {
                 "type": "header",
