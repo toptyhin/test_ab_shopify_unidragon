@@ -245,6 +245,8 @@
         "type": "header",
         "settings": {
           "remove_space": true,
+          "enable_top_announcement": true,
+          "top_announcement_text": "<span style=\"font-size: 20px;text-transform: uppercase;\">Hurry up!<\/span> <span style=\"font-size: 20px;\">Special Christmas sale.<\/span> <span style=\"color: white;font-size: 24px;\">UP TO 50% OFF DEALS<\/span>",
           "align_logo": "left",
           "logo": "shopify:\/\/shop_images\/Logo-unidragon.png",
           "desktop_logo_size": "90%",
@@ -628,6 +630,7 @@
         "settings": {
           "enable_video": true,
           "video_bg": "https:\/\/cdn.shopify.com\/s\/files\/1\/0291\/1322\/1168\/files\/1980v23_c.mp4?v=1637501455",
+          "mob_video_bg": "\/\/cdn.shopify.com\/s\/files\/1\/0291\/1322\/1168\/files\/480v3.mp4?v=1637501838",
           "enable_external_video": false,
           "external_video": "https:\/\/youtu.be\/iH4yWWTm8MU",
           "image": "shopify:\/\/shop_images\/unidragon-wooden-jigsaw-puzzle-1.jpg",
@@ -2111,21 +2114,13 @@
           "enable_zoom": true,
           "shake_effect_enable": true,
           "readmore_enable": false,
-          "enable_progressbar_text": false,
-          "enable_timer_top_message": false,
-          "enable_progressbartimer_text": false,
           "enable_shipping": false,
           "show_tags": false,
           "show_social": false,
-          "enable_timer_stg_on": "enable_timer_stg_off",
           "enable_payment_button": true,
-          "variant_swacth": "two",
-          "swatch_option": "without_background",
-          "color_style": "round_shape",
           "product_review": true,
           "visitor_counter_enable": false,
           "visitor_counter_number": "1-15",
-          "delivery_time_number": "1-3",
           "product_description": "under_the_price",
           "enable_sticky": false,
           "enable_combo_upsell": false,
@@ -2139,13 +2134,7 @@
           "pdp_sub_title": "",
           "heading-tax": "",
           "tax_title": "",
-          "tax_sub_content": "",
-          "title": "",
-          "sub_title": "",
-          "pdp_cta_text": "",
-          "pdp_cta_link": "",
-          "pdp_cta_text1": "",
-          "pdp_cta_link1": ""
+          "tax_sub_content": ""
         }
       },
       "product-quezzle-new-template": {
