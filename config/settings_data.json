@@ -397,7 +397,7 @@
           "enable_mobile_atc_button": true,
           "move_badges_under_cart": false,
           "enable_trust_badges": false,
-          "pdp_enable": false,
+          "pdp_enable": true,
           "pdp_enable_banner": true,
           "pdp_image_banner": "shopify:\/\/shop_images\/211201_-_christmas_gift_1.jpg",
           "pdp_image": "shopify:\/\/shop_images\/new_img_a79e2b7e-362a-4eb1-85d0-a79a3dbc6454.jpg",
