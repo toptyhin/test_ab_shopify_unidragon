@@ -1203,7 +1203,7 @@
               <div class="mandala__figure-items">
                 <div class="mandala__figure-item figure-item__first">
                   <div class="figure-item__block">
-                    <img src="{{ 'mandala-picture-1-icon.png' | asset_url }}" alt="">
+                    <img src="{{ section.settings.mandala_figure_first_icon | img_url: 'master' }}" alt="">
                     <p>{{ section.settings.mandala_figure_first_title }}</p>
                   </div>
                 </div>
@@ -1219,7 +1219,7 @@
               <div class="mandala__bottom-block">
                 <img class="mandala__bottom-img" src="{{ section.settings.mandala_bottom_image | img_url: '220x' }}" alt="">
                 <p>{{ section.settings.mandala_bottom_title }}</p>
-                <img class="mandala__bottom-icon" src="{{ 'mandala-bottom-icon.png' | asset_url }}" alt="">
+                <img class="mandala__bottom-icon" src="{{ section.settings.mandala_bottom_icon | img_url: '220x' }}" alt="">
               </div>
             </div>
 
@@ -1499,6 +1499,11 @@
             "label": "Mandala Figure background"
           },
           {
+            "type": "image_picker",
+            "id": "mandala_figure_first_icon",
+            "label": "Mandala Figure Icon"
+          },
+          {
             "type": "text",
             "id": "mandala_figure_first_title",
             "label": "Mandala Figure title"
@@ -1526,6 +1531,11 @@
             "type": "image_picker",
             "id": "mandala_bottom_image",
             "label": "Mandala bottom image"
+          },
+          {
+            "type": "image_picker",
+            "id": "mandala_bottom_icon",
+            "label": "Mandala Bottom ICON"
           },
           {
             "type": "text",
