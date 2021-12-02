@@ -2,10 +2,6 @@
 {% comment %}
 Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
 {% endcomment %}
-<style>
-  .label-test-old {display:initial;}
-  .label-test-new {display:none;}
-</style>
 {%- assign file_extension = 'jpg' -%}
 
 {%- if swatch == blank -%}
@@ -102,13 +98,13 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
               <div class="sw_image_outer">
                   {%- case size_count -%}
                     {%- when 1 -%}
-                    <span class="sw_badge label-test-new">simple</span>
+                    <span class="sw_badge">simple</span>
                     {%- when 2 -%}
-                    <span class="sw_badge label-test-old">2x bigger</span><span class="sw_badge label-test-new">medium</span>
+                    <span class="sw_badge">medium</span>
                     {%- when 3 -%}
-                    <span class="sw_badge label-test-old">3x bigger</span><span class="sw_badge label-test-new">hard</span>
+                    <span class="sw_badge">hard</span>
                     {%- when 4 -%}
-                    <span class="sw_badge label-test-old">7x bigger</span><span class="sw_badge label-test-new">super hard</span>
+                    <span class="sw_badge">super hard</span>
                   {%- endcase -%}
               </div>
               <div class="sw_var_price">
