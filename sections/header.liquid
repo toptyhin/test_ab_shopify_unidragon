@@ -248,7 +248,65 @@
       text-transform: {{ settings.logo_font_trans }};
     }
   </style>
+  {%- if section.settings.enable_top_announcement -%}
+    <div class="announcement-bar-new">
+      <div class="announcement-bar-new__wrapper">
+        <div class="new__year-first"></div>
+        <div class="new__year-text">{{section.settings.top_announcement_text}}</div>
+        <div class="new__year-second"></div>
+      </div>
+    </div>
 
+    <style>
+      @font-face {
+          font-family: 'Chewy';
+          font-style: normal;
+          font-weight: 400;
+          src: url('https://fonts.gstatic.com/s/chewy/v12/uK_94ruUb-k-wn52KjI.woff2') format('woff2');
+      }
+        .announcement-bar-new {
+          background: rgb(212,0,0);
+          background: linear-gradient(90deg, rgba(135,0,0,1) 0%, rgba(212,0,40,1) 50%, rgba(135,0,0,1) 100%);
+          padding: 0 10px;
+        }
+        .announcement-bar-new__wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .new__year-first, .new__year-second {
+          width: 100%;
+          min-height: 60px;
+        }
+        .new__year-first {
+          background: url({{ 'snowflake2_inverse.png' | asset_url }});
+          background-position: right;
+          background-size: contain;
+        }
+        .new__year-second {
+          background: url({{ 'snowflake2.png' | asset_url }});
+          background-size: contain;
+        }
+        .new__year-text {
+          min-width: 540px;
+          text-align: center;
+          font-weight: bold;
+          font-family: 'Chewy';
+          color: rgb(242, 211, 47);
+        }
+
+        @media (max-width: 768px) {
+          .new__year-first, .new__year-second {min-height: 120px;}
+          .new__year-text {
+              display: flex;
+              flex-direction: column;
+              min-width: 250px;
+              text-align: center;
+          }
+        }
+
+    </style>
+  {%- endif -%}
   {% unless section.settings.disable_header_strip %}
   <div class="announcement-bar grid grid--no-gutters grid--table small--hide">
 
@@ -638,6 +696,23 @@
       "label":"Remove space below the header",
       "info": "Applied on home page only",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Enable top announcement block"
+    },
+    {
+      "type":"checkbox",
+      "id":"enable_top_announcement",
+      "label":"Enable announcement",
+      "info": "Applied on home page only",
+      "default": false
+    },
+    {
+      "type": "html",
+      "id": "top_announcement_text",
+      "label": "Top Announcement Text",
+      "default": "<span style='font-size: 20px;text-transform: uppercase;'>Hurry up!</span> <span style='font-size: 20px;'>Special Christmas sale.</span> <span style='color: white;font-size: 24px;'>UP TO 50% OFF DEALS</span>"
     },
     {
       "type": "radio",
