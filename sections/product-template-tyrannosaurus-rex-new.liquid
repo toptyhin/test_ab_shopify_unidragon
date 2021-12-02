@@ -1794,7 +1794,7 @@
                   <div class="sidebar-mounting__block">
                     <span>{{ section.settings.mounting_title }}</span>
                     <p>{{ section.settings.mounting_desc }}</p>
-                    <img src="{{ 'mounting-icon.png' | asset_url }}" alt="">
+                    <img src="{{ section.settings.mounting_icon | img_url: 'master' }}" alt="">
                   </div>
                 </div>
   
@@ -1803,7 +1803,7 @@
                     <p>{{ section.settings.dinoframe_title }}
                       <span>{{ section.settings.dinoframe_text }}</span>
                     </p>
-                    <img src="{{ 'dino-frame-icon.png' | asset_url }}" alt="">
+                    <img src="{{ section.settings.dinoframe_icon | img_url: 'master' }}" alt="">
                   </div>
                 </div>
   
@@ -1815,7 +1815,7 @@
                     <div class="habitat__item habitat__item-first">
                       <div class="habitat__item-bg">
                         <span>{{ section.settings.habitat_label_first }}</span>
-                        <img src="{{ 'habitat-img1.png' | asset_url }}" alt="">
+                        <img src="{{ section.settings.habitat_icon_first | img_url: 'master' }}" alt="">
                       </div>
                       <div class="habitat__item-text">
                         {{ section.settings.habitat_name_first }}
@@ -1824,7 +1824,7 @@
                     <div class="habitat__item habitat__item-second">
                       <div class="habitat__item-bg">
                         <span>{{ section.settings.habitat_label_second }}</span>
-                        <img src="{{ 'habitat-img2.png' | asset_url }}" alt="">
+                        <img src="{{ section.settings.habitat_icon_second | img_url: 'master' }}" alt="">
                       </div>
                       <div class="habitat__item-text">
                         {{ section.settings.habitat_name_second }}
@@ -1833,7 +1833,7 @@
                     <div class="habitat__item habitat__item-third">
                       <div class="habitat__item-bg">
                         <span>{{ section.settings.habitat_label_third }}</span>
-                        <img src="{{ 'habitat-img3.png' | asset_url }}" alt="">
+                        <img src="{{ section.settings.habitat_icon_third | img_url: 'master' }}" alt="">
                       </div>
                       <div class="habitat__item-text">
                         {{ section.settings.habitat_name_third }}
@@ -1843,7 +1843,7 @@
                     <div class="habitat__item habitat__item-fourth">
                       <div class="habitat__item-bg">
                         <span>{{ section.settings.habitat_label_fourth }}</span>
-                        <img src="{{ 'habitat-img4.png' | asset_url }}" alt="">
+                        <img src="{{ section.settings.habitat_icon_fourth | img_url: 'master' }}" alt="">
                       </div>
                       <div class="habitat__item-text">
                         {{ section.settings.habitat_name_fourth }}
@@ -1853,10 +1853,10 @@
                     <div class="habitat__item habitat__item-fifth">
                       <div class="habitat__item-bg">
                         <span>{{ section.settings.habitat_label_fifth }}</span>
-                        <img src="{{ 'habitat-img5.png' | asset_url }}" alt="">
+                        <img src="{{ section.settings.habitat_icon_fifth | img_url: 'master' }}" alt="">
                       </div>
                       <div class="habitat__item-text">
-                        <img src="{{ 'sidebar-numbers-3-icon.png' | asset_url }}" alt="">
+                        <img src="{{ section.settings.habitat_icon_sidebar | img_url: 'master' }}" alt="">
                         {{ section.settings.habitat_name_fifth }}
                       </div>
                     </div>
@@ -1869,7 +1869,7 @@
                     <p>{{ section.settings.dinopazzle_title }}
                       <span>{{ section.settings.dinopazzle_text }}</span>
                     </p>
-                    <img src="{{ 'dino-pazzle-icon.png' | asset_url }}" alt="">
+                    <img src="{{ section.settings.dinopazzle_icon | img_url: 'master' }}" alt="">
                   </div>
                 </div>
   
@@ -2193,6 +2193,11 @@
                 "label": "Mounting dino background"
               },
               {
+                "type": "image_picker",
+                "id": "mounting_icon",
+                "label": "Mounting dino Icon"
+              },
+              {
                 "type": "text",
                 "id": "mounting_title",
                 "label": "Mounting dino title"
@@ -2210,6 +2215,11 @@
                 "type": "image_picker",
                 "id": "dinoframe_bg",
                 "label": "Dinoframe dino background"
+              },
+              {
+                "type": "image_picker",
+                "id": "dinoframe_icon",
+                "label": "Dinoframe dino icon"
               },
               {
                 "type": "text",
@@ -2237,6 +2247,11 @@
                 "label": "Habitat dino background"
               },
               {
+                "type": "image_picker",
+                "id": "habitat_icon_first",
+                "label": "Habitat dino icon"
+              },
+              {
                 "type": "text",
                 "id": "habitat_label_first",
                 "label": "Habitat dino label"
@@ -2250,6 +2265,11 @@
                 "type": "image_picker",
                 "id": "habitat_bg_second",
                 "label": "Habitat dino background"
+              },
+              {
+                "type": "image_picker",
+                "id": "habitat_icon_second",
+                "label": "Habitat dino icon"
               },
               {
                 "type": "text",
@@ -2267,6 +2287,11 @@
                 "label": "Habitat dino background"
               },
               {
+                "type": "image_picker",
+                "id": "habitat_icon_third",
+                "label": "Habitat dino icon"
+              },
+              {
                 "type": "text",
                 "id": "habitat_label_third",
                 "label": "Habitat dino label"
@@ -2282,6 +2307,11 @@
                 "label": "Habitat dino background"
               },
               {
+                "type": "image_picker",
+                "id": "habitat_icon_fourth",
+                "label": "Habitat dino icon"
+              },
+              {
                 "type": "text",
                 "id": "habitat_label_fourth",
                 "label": "Habitat dino label"
@@ -2295,6 +2325,16 @@
                 "type": "image_picker",
                 "id": "habitat_bg_fifth",
                 "label": "Habitat dino background"
+              },
+              {
+                "type": "image_picker",
+                "id": "habitat_icon_fifth",
+                "label": "Habitat dino icon"
+              },
+              {
+                "type": "image_picker",
+                "id": "habitat_icon_sidebar",
+                "label": "Habitat dino Side Bar"
               },
               {
                 "type": "text",
@@ -2314,6 +2354,11 @@
                 "type": "image_picker",
                 "id": "dinopazzle_bg",
                 "label": "Dino Puzzles background"
+              },
+              {
+                "type": "image_picker",
+                "id": "dinopazzle_icon",
+                "label": "Dino Puzzles icon"
               },
               {
                 "type": "text",
