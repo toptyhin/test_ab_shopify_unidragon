@@ -1223,62 +1223,6 @@
                 </div>
               </div>
 
- {%comment%}
-              <div class="banner-inspirational-gift">
-                <div class="banner-inspirational-gift_header">Inspirational Gift</div>
-                <div class="banner-inspirational-gift_text">Bring more happiness into the life of your loved ones by choosing a gift that is unforgettable experience.</div>
-                <div class="banner-inspirational-gift_link"><a href="/products/giftcard" class="banner-inspirational-gift_a">{{ 'custome_text.banner.buy_gift_card' | t }} -></a></div>
-              </div>
-   
-              <div class="advantage">
-                <div class="advantage-item">
-                  <div class="advantage-block">
-                    <span class="advantage-item-num">01</span>
-                    <div class="advantage-item_left">
-                      <span class="advantage-item-title">Spend your time with your loved ones</span>
-                      <span class="advantage-item-text">Our puzzle is a good occasion to bring all the family and friends together</span>
-                    </div>
-                  </div>
-                  <div class="advantage-item-img" style="background-image: url({{'dvantage-item-1.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
-                </div>
-                <div class="advantage-item">
-                  <div class="advantage-block">
-                    <span class="advantage-item-num">02</span>
-                    <div class="advantage-item_left">
-                      <span class="advantage-item-title">It is time to forget the daily routine!</span>
-                      <span class="advantage-item-text">Psychologists recommend puzzles for meditation and stress relief</span>
-                    </div>
-                  </div>
-                  <div class="advantage-item-img" style="background-image: url({{'dvantage-item-2.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
-                </div>
-                <div class="advantage-item">
-                  <div class="advantage-block">
-                    <span class="advantage-item-num">03</span>
-                    <div class="advantage-item_left">
-                      <span class="advantage-item-title">Try something new</span>
-                      <span class="advantage-item-text">Unidragon puzzles have the most unique shape and design</span>
-                    </div>
-                  </div>
-                  <div class="advantage-item-img" style="background-image: url({{'dvantage-item-3.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
-                </div>
-                <div class="advantage-item">
-                  <div class="advantage-block">
-                    <span class="advantage-item-num">04</span>
-                    <div class="advantage-item_left">
-                      <span class="advantage-item-title">Challenge yourself</span>
-                      <span class="advantage-item-text">Puzzles work out your brain and strengthen your mind</span>
-                    </div>
-                  </div>
-                  <div class="advantage-item-img" style="background-image: url({{'dvantage-item-4.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
-                </div>
-              </div>
-    
-              <div class="banner-decorate-walls">
-                <div class="banner-decorate-walls_header">DECORATE THE WALLS OF YOUR HOME</div>
-                <div class="banner-decorate-walls_text">You can decorate the interior with puzzles and our special mounting system</div>
-                <div class="banner-decorate-walls_howitworks"><a id="annoncment-banner-link" href="#upsell-anoncment-popup" style="text-decoration: underline;font-weight: 600;font-size: 14px;color: #292929;" class="upsell-anoncment-popup">{{ 'custome_text.banner.see_how_it_works' | t }} -></a></div>
-              </div>
-    {%endcomment%}
               <div class="product-single__description rte" itemprop="description">
                 {% for block in section.blocks %}
                   {% if block.type == 'icons-set-with-text' %}
@@ -1627,24 +1571,6 @@
             },
             {
               "type": "checkbox",
-              "id": "enable_progressbar_text",
-              "label": "Enable Progress Bar",
-              "default": true
-            },
-            {
-              "type": "checkbox",
-              "id": "enable_timer_top_message",
-              "label": "Enable Stock Left Message",
-              "default": true
-            },
-            {
-              "type": "checkbox",
-              "id": "enable_progressbartimer_text",
-              "label": "Enable Sale end message",
-              "default": true
-            },
-              {
-              "type": "checkbox",
               "id": "enable_shipping",
               "label": "Enable Free + Shipping",
               "default": false
@@ -1660,22 +1586,6 @@
               "id": "show_social",
               "label": "Show social buttons",
               "default": false
-              },
-            {
-              "type": "radio",
-              "id": "enable_timer_stg_on",
-              "default": "enable_timer_stg_on",
-              "options": [
-                {
-                  "value": "enable_timer_stg_on",
-                  "label": "ON timer"
-                },
-                {
-                  "value": "enable_timer_stg_off",
-                  "label": "OFF timer"
-                }
-              ],
-              "label": "Timer Setting ON\/OFF"
             },
             {
               "type": "header",
@@ -1686,68 +1596,7 @@
               "id": "enable_payment_button",
               "label": "Show dynamic checkout button",
               "info": "Lets customers check out directly using a familiar payment method. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-              "default": false
-            },
-            {
-              "type": "header",
-              "content": "Variant Option [NEED HELP?](https:\/\/help.boostertheme.com\/hc\/en-us\/articles\/360002471493-How-to-Upload-Your-Color-Swatches-in-Booster-2-0-)"
-            },
-            {
-              "type": "radio",
-              "id": "variant_swacth",
-              "label":"Variant type",
-              "info": "Choose between color swatch or drop down menu for the variant",
-              "options": [
-                {
-                  "value": "one",
-                    "label": "Drop down menu"
-                },
-                {
-                  "value": "two",
-                  "label": "Color swatch"
-                }
-              ],
-                "default": "two"
-            },
-            {
-              "type":"header",
-              "content":"Swatch Option"
-            },
-            {
-              "type": "radio",
-              "id": "swatch_option",
-              "label":"Color Swatch style",
-              "options": [
-                {
-                  "value": "with_background",
-                    "label": "Background Color or image"
-                },
-                {
-                  "value": "without_background",
-                  "label": "Show color title like other swatches"
-                }
-              ],
-                "default": "without_background"
-            },
-            {
-              "type":"paragraph",
-              "content":"When you choose 'background Color or image' option, you can change colors shape by using below option"
-            },
-            {
-              "type": "radio",
-              "id": "color_style",
-              "label":"Shape of Color Swatch",        
-              "options": [
-                {
-                  "value": "square_box",
-                    "label": "Square"
-                },
-                {
-                  "value": "round_shape",
-                  "label": "Round"
-                }
-              ],
-                "default": "round_shape"
+              "default": true
             },
             {
               "type":"header",
@@ -1808,17 +1657,7 @@
                  "label": "300 to 500"
                }  
              ]
-           },
-            {
-              "type":"header",
-              "content":"Delivery Time"
-            },
-            {
-              "type": "text",
-              "id": "delivery_time_number",
-              "label": "Delivery time",
-              "default": "1-3" 
-            },	  
+           },	  
             {
               "type": "header",
               "content": "Desktop"
@@ -1953,51 +1792,6 @@
               "type":"textarea",
               "id":"tax_sub_content",
               "label":"Sub-Content"
-            },
-            {
-            "type":"header",
-            "content":"Discount PopUp"
-            },
-      
-            {
-            "type": "textarea",
-            "id": "title",
-            "label": "Heading"
-            },
-            {
-            "type": "image_picker",
-            "id": "imagecart",
-            "label": "Cart_Icon"
-            },
-            {
-            "type": "textarea",
-            "id": "sub_title",
-            "label": "SubHeading"
-            },
-            {
-            "type": "image_picker",
-            "id": "bg_image",
-            "label": "Background-Image"
-            },
-            {
-            "type":"text",
-            "id":"pdp_cta_text",
-            "label":"CTA text"
-            },
-            {
-            "type":"url",
-            "id":"pdp_cta_link",
-            "label":"CTA link"
-            },
-            {
-            "type":"text",
-            "id":"pdp_cta_text1",
-            "label":"CTA text"
-            },
-            {
-            "type":"url",
-            "id":"pdp_cta_link1",
-            "label":"CTA link"
             }
           ],
           "blocks": [
