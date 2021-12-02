@@ -62,19 +62,19 @@
           </noscript>
         {%- else -%}
           {%- if section.settings.enable_video -%}
-            <style>
+              <style>
                 .collection-hero {max-height: 375px!important;}
-                #myVide-mob {display:none;}
-                @media (max-width: 768px) {
-                  #myVide-mob {display:inherit}
-                  #myVideo {display: none;}
-                }
-            </style>
+                  #myVide-mob {display:none;}
+                  @media (max-width: 768px) {
+                    #myVide-mob {display:inherit}
+                    #myVideo {display: none;}
+                  }
+              </style>
             <video autoplay muted loop playsinline id="myVideo" style="object-fit: cover;width: 100vw;">
               <source src="{{ section.settings.video_bg }}" type="video/mp4">
             </video>
             <video autoplay muted loop playsinline id="myVide-mob" style="object-fit: cover;width: 100vw;">
-              <source src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/480v3.mp4?v=1637501838" type="video/mp4">
+              <source src="{{ section.settings.mob_video_bg }}" type="video/mp4">
             </video>
           {%- else -%}
           <div class="collection-hero__image ratio-container lazyload js"
@@ -751,9 +751,15 @@
            "label": "Link to extarnal Video"
          },
          {
-            "type":"text",
-            "id":"video_bg",
-            "label":"Video"
+           "type": "text",
+           "id": "video_bg",
+           "label": "Video"
+         },
+         {
+           "type": "text",
+           "id": "mob_video_bg",
+           "label": "Video Mob version",
+           "default": "//cdn.shopify.com/s/files/1/0291/1322/1168/files/480v3.mp4?v=1637501838"
          },
          {
             "type":"checkbox",
