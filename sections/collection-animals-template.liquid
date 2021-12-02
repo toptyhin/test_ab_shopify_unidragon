@@ -62,23 +62,20 @@
           </noscript>
         {%- else -%}
           {%- if section.settings.enable_video -%}
-          <style>
-              .collection-hero {max-height: 375px!important;}
-              #myVide-mob {display:none;}
-              @media (max-width: 768px) {
-                #myVide-mob {display:inherit}
-                #myVideo {display: none;}
-              }
-          </style>
-          <video autoplay muted loop playsinline id="myVideo" style="object-fit: cover;width: 100vw;">
-            <source src="{{ section.settings.video_bg }}" type="video/mp4">
-          </video>
-          <video autoplay muted loop playsinline id="myVide-mob" style="object-fit: cover;width: 100vw;">
-            <source src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/480v3.mp4?v=1637501838" type="video/mp4">
-          </video>
-          <video autoplay muted loop playsinline id="myVideo-test" style="object-fit: cover;width: 100vw; display: none; max-height: 600px;">
-            <source src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/11111.mp4?v=1635436999" type="video/mp4">
-          </video>
+            <style>
+                .collection-hero {max-height: 375px!important;}
+                #myVide-mob {display:none;}
+                @media (max-width: 768px) {
+                  #myVide-mob {display:inherit}
+                  #myVideo {display: none;}
+                }
+            </style>
+            <video autoplay muted loop playsinline id="myVideo" style="object-fit: cover;width: 100vw;">
+              <source src="{{ section.settings.video_bg }}" type="video/mp4">
+            </video>
+            <video autoplay muted loop playsinline id="myVide-mob" style="object-fit: cover;width: 100vw;">
+              <source src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/480v3.mp4?v=1637501838" type="video/mp4">
+            </video>
           {%- else -%}
           <div class="collection-hero__image ratio-container lazyload js"
                 data-bgset="{% include 'bgset', image: collection.image %}"
