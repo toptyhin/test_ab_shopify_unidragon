@@ -862,7 +862,7 @@
         }
         .mandala__set-block span {
           font-weight: bold;
-          font-size: 24px;
+          font-size: {{section.settings.mandala_set_title_fontsize}};
           line-height: 29px;
           color: #000000;
           display: inline-block;
@@ -1044,7 +1044,7 @@
   
         @media (max-width: 749px) {
           .mandala__set-block span {
-            font-size: 18px;
+            font-size: {{section.settings.mandala_set_title_fontsize_mob}};
             line-height: 22px;
           }
           .mandala__set-block p {
@@ -1462,6 +1462,18 @@
               "type": "text",
               "id": "mandala_set_title",
               "label": "Mandala Set title"
+            },
+            {
+              "type": "text",
+              "id": "mandala_set_title_fontsize",
+              "label": "Mandala title Font Size",
+              "default": "24px"
+            },
+            {
+              "type": "text",
+              "id": "mandala_set_title_fontsize_mob",
+              "label": "Mandala title Font Size on Mobile",
+              "default": "18px"
             },
             {
               "type": "text",
