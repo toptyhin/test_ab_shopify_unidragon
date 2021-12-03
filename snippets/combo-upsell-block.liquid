@@ -1,3 +1,4 @@
+{%- if section.settings.combo_upsell_product.available -%}
 <div class="combo-block">
     <div class="combo-block__title">
       <p class="combo-title__main">COMBO OFFER: <span>SAVE $10</span></p>
@@ -46,7 +47,7 @@
     </div>
   
   </div>
-  
+{%- endif -%}
   <style>
     .combo-size {
       display: flex;

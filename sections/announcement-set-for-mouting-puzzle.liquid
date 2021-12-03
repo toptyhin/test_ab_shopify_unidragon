@@ -41,7 +41,7 @@
             </span>
           </span>
         </p>
-           <button id="SetForMounting" class="btn_sp addtocart_btn product-form__cart-submit--small">
+           <button id="SetForMounting" class="btn_sp addtocart_btn product-form__cart-submit--small" onclick="location.href = '{{ all_products[ section.settings.feature_product ].url }}'">
                <span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>
           </button>
         <p class="success-feedback" style="display: none;"><i class="fa fa-check"></i>Added to cart <a href="/cart">View cart</a> or <a href="/collections/all">continue shopping</a>.</p>

@@ -693,7 +693,7 @@
                 {%- assign upsell_in_cart = true -%}
                 {%- endif -%}
             {%- endfor -%}
-          {%- if settings.need_upsell and upsell_in_cart != true -%}
+          {%- if settings.upsell_product.available and settings.need_upsell and upsell_in_cart != true -%}
             {%- if settings.upsell_product -%}
             <div class="upsell-info go-cart-item__title">After solving the puzzle decorate your walls!</div>
             <div class="go-cart-drawer-upsell">
