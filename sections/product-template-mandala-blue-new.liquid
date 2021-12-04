@@ -840,7 +840,7 @@
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        font-size: 24px;
+        font-size: {{section.settings.mandala_title_fontsize}};
         line-height: 29px;
         color: #000;
         padding: 10px;
@@ -862,7 +862,7 @@
       }
       .mandala__set-block span {
         font-weight: bold;
-        font-size: 24px;
+        font-size: {{section.settings.mandala_set_title_fontsize}};
         line-height: 29px;
         color: #000000;
         display: inline-block;
@@ -909,7 +909,7 @@
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        font-size: 18px;
+        font-size: {{section.settings.mandala_box_title_fontsize}};
         line-height: 21px;
         color: #000;
         padding: 10px;
@@ -933,7 +933,7 @@
       }
       .mandala__feature-block span {
         font-weight: bold;
-        font-size: 24px;
+        font-size: {{section.settings.mandala_feature_title_fontsize}};
         line-height: 29px;
         color: #000000;
         display: inline-block;
@@ -988,7 +988,7 @@
       }
       .figure-item__block p {
         font-weight: 500;
-        font-size: 18px;
+        font-size: {{section.settings.mandala_figure_first_title_fontsize}};
         line-height: 22px;
         color: #000000;
       }
@@ -1016,7 +1016,7 @@
       }
       .mandala__bottom-block p {
         font-weight: 500;
-        font-size: 18px;
+        font-size: {{section.settings.mandala_bottom_title_fontsize_mob}};
         line-height: 22px;
         color: #000000;
         background: rgba(255, 255, 255, 0.9);
@@ -1044,7 +1044,7 @@
 
       @media (max-width: 749px) {
         .mandala__set-block span {
-          font-size: 18px;
+          font-size: {{section.settings.mandala_set_title_fontsize_mob}};
           line-height: 22px;
         }
         .mandala__set-block p {
@@ -1070,7 +1070,7 @@
           margin-bottom: 50px;
         }
         .mandala__universe-block {
-          font-size: 18px;
+          font-size: {{section.settings.mandala_title_fontsize_mob}};
           line-height: 21px;
           position: absolute;
           max-width: inherit;
@@ -1093,7 +1093,7 @@
           margin-bottom: 80px;
         }
         .mandala__box-block {
-          font-size: 16px;
+          font-size: {{section.settings.mandala_box_title_fontsize_mob}};
           line-height: 20px;
           position: absolute;
           max-width: inherit;
@@ -1110,7 +1110,7 @@
           padding: 0px;
         }
         .mandala__feature-block span {
-          font-size: 18px;
+          font-size: {{section.settings.mandala_feature_title_fontsize_mob}};
           line-height: 22px;
           max-width: 135px;
         }
@@ -1122,7 +1122,7 @@
           padding: 5px;
         }
         .figure-item__block p {
-          font-size: 14px;
+          font-size: {{section.settings.mandala_figure_first_title_fontsize_mob}};
           line-height: 17px;
         }
         .mandala__figure-item {
@@ -1135,7 +1135,7 @@
           width: 70px;
         }
         .mandala__bottom-block p {
-          font-size: 14px;
+          font-size:{{section.settings.mandala_bottom_title_fontsize_mob}};
           line-height: 17px;
           max-width: 110px;
         }
@@ -1428,6 +1428,18 @@
             "label": "Mandala title"
           },
           {
+            "type": "text",
+            "id": "mandala_title_fontsize",
+            "label": "Title Font Size",
+            "default": "24px"
+          },
+          {
+            "type": "text",
+            "id": "mandala_title_fontsize_mob",
+            "label": "Title Font Size on Mobile",
+            "default": "18px"
+          },
+          {
             "type": "image_picker",
             "id": "mandala_icon",
             "label": "Mandala banner icon"
@@ -1453,6 +1465,18 @@
           },
           {
             "type": "text",
+            "id": "mandala_set_title_fontsize",
+            "label": "Title Font Size",
+            "default": "24px"
+          },
+          {
+            "type": "text",
+            "id": "mandala_set_title_fontsize_mob",
+            "label": "Title Font Size on Mobile",
+            "default": "18px"
+          },
+          {
+            "type": "text",
             "id": "mandala_set_text",
             "label": "Mandala Set text"
           },
@@ -1471,6 +1495,18 @@
             "label": "Mandala Box title"
           },
           {
+            "type": "text",
+            "id": "mandala_box_title_fontsize",
+            "label": "Title Font Size",
+            "default": "18px"
+          },
+          {
+            "type": "text",
+            "id": "mandala_box_title_fontsize_mob",
+            "label": "Title Font Size on Mobile",
+            "default": "16px"
+          },
+          {
             "type": "header",
             "content": "Mandala Feature"
           },
@@ -1483,6 +1519,18 @@
             "type": "text",
             "id": "mandala_feature_title",
             "label": "Mandala Feature title"
+          },
+          {
+            "type": "text",
+            "id": "mandala_feature_title_fontsize",
+            "label": "Title Font Size",
+            "default": "24px"
+          },
+          {
+            "type": "text",
+            "id": "mandala_feature_title_fontsize_mob",
+            "label": "Title Font Size on Mobile",
+            "default": "18px"
           },
           {
             "type": "text",
@@ -1507,6 +1555,18 @@
             "type": "text",
             "id": "mandala_figure_first_title",
             "label": "Mandala Figure title"
+          },
+          {
+            "type": "text",
+            "id": "mandala_figure_first_title_fontsize",
+            "label": "Title Font Size",
+            "default": "18px"
+          },
+          {
+            "type": "text",
+            "id": "mandala_figure_first_title_fontsize_mob",
+            "label": "Title Font Size on Mobile",
+            "default": "14px"
           },
           {
             "type": "image_picker",
@@ -1541,6 +1601,18 @@
             "type": "text",
             "id": "mandala_bottom_title",
             "label": "Mandala bottom title"
+          },
+          {
+            "type": "text",
+            "id": "mandala_bottom_title_fontsize",
+            "label": "Title Font Size",
+            "default": "18px"
+          },
+          {
+            "type": "text",
+            "id": "mandala_bottom_title_fontsize_mob",
+            "label": "Title Font Size on Mobile",
+            "default": "14px"
           },
           { 
             "type": "checkbox",
