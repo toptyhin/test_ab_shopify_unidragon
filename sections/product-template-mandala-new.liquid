@@ -688,6 +688,15 @@
       
               <!-- PRODUCT SWATCH CODE IF ENABLE -->
 
+              {% if product.type == 'Puzzle' %}
+                {% if product.variants.size > 1 %}
+                  <div class="swatch_options">
+                    {% for option in product.options %}
+                      {% include 'swatch-mandala' with option %}
+                    {% endfor %} 
+                  </div>
+                {% endif %}
+              {% else %}
                 {% if section.settings.variant_swacth == 'two'  %}  
                   {% if product.variants.size > 1 %}
                       <div class="swatch_options">
@@ -697,6 +706,7 @@
                       </div>
                   {% endif %}
                 {% endif %}
+              {% endif %}
 
               <div id="ct_pe_disco_holder"></div><!-- END PRODUCT SWATCH CODE IF ENABLE -->
                 {% include 'product-page-features' %}
