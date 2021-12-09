@@ -2437,7 +2437,7 @@
         "type": "product-template-triceratops-new",
         "settings": {
           "buy_it_now_action": "direct_to_cart",
-          "gift_age": "",
+          "gift_age": "3+",
           "gift_text": "A great gift for a child!",
           "banner_first_bg": "shopify:\/\/shop_images\/triceratops-01.jpg",
           "number_first_date": "",
