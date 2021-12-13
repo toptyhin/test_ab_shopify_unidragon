@@ -249,8 +249,7 @@
 {%endcomment%}
     <div class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
       {% for product in collection.products %}
-
-      {%- if forloop.index == 8 -%}
+      {%- if forloop.index == 8  or collection.products.size == 7 and forloop.index == 7 -%}
       <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
         {% comment %}<style>
         .quiz-item {
