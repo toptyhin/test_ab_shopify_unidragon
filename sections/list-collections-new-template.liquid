@@ -306,6 +306,7 @@
           <style>
             .banner-send_gift {
               margin-bottom: 30px;
+              position: relative;
             }
             .banner-send_gift .button {
               font-size: 13px;
@@ -320,8 +321,21 @@
               align-items: center;
               justify-content: center;
               cursor: pointer;
-              display: none;
+              position: absolute;
+              bottom: 6%;
+              left: 10%;
             }
+            @media (max-width: 767px) {
+              .banner-send_gift .button {
+                font-size: 10px;
+                width: 100px;
+                height: auto;
+                line-height: inherit;
+                padding: 2px;
+                bottom: 5%;
+                border-radius: 50px;
+              }
+            } 
           </style>
             <div class="banner-send_gift">
               <img src="{{ '211210gift_2.png' | asset_url }}">
@@ -488,4 +502,5 @@
       ]
     }
   {% endschema %}
+  
   
