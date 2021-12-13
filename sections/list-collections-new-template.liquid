@@ -301,6 +301,34 @@
               </div>
             </a>
         {%- endcase -%}
+        {%- if forloop.index == 4 -%}
+          </div>
+          <style>
+            .banner-send_gift {
+              margin-bottom: 30px;
+            }
+            .banner-send_gift .button {
+              font-size: 13px;
+              color: rgb(255, 255, 255);
+              font-weight: bold;
+              text-transform: uppercase;
+              line-height: 5.231;
+              background-color: rgb(255, 142, 0);
+              width: 219px;
+              height: 54px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              display: none;
+            }
+          </style>
+            <div class="banner-send_gift">
+              <img src="{{ '211210gift_2.png' | asset_url }}">
+              <a href="https://unidragon.gogiftmagic.com/pages/giftlanding?section=firstpromo&banner=unidragon-amazing-gifts&utm_source=category_page_banner&utm_medium=gift_banner&utm_campaign=gift" class="button">Send a Gift</a>
+            </div>
+          <div class="collections__items">
+        {%- endif -%}
       {%- endfor -%}
     </div>
   </div>
