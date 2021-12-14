@@ -264,11 +264,11 @@
   
   
   {% endif %}
-      <div class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
+      <div class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}" style="display: flex;flex-wrap: wrap;">
         {% for product in collection.products %}
   
         {%- if forloop.index == 8 -%}
-          <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}} banner-div-send_gift">
+          <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} small--one-whole banner-div-send_gift">
           {% comment %}<style>
           .quiz-item {
             height: 335px;
@@ -349,20 +349,7 @@
                 top: 50%;
                 transform: translate(-50%, -50%);
               }
-              @media (max-width: 767px) {
-                .banner-send_gift .button {
-                  font-size: 10px;
-                  height: auto;
-                  line-height: inherit;
-                  padding: 6px;
-                  border-radius: 50px;
-                }
-              } 
-              @media (max-width: 425px) {
-                .banner-send_gift .button {
-                  padding: 0px;
-                }
-              }
+
             </style>
               <div class="banner-send_gift">
                 <img src="{{ '211210gift_3.png' | asset_url }}">
