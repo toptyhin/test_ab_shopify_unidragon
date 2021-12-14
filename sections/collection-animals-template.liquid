@@ -267,7 +267,7 @@
       <div class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}" style="display: flex;flex-wrap: wrap;">
         {% for product in collection.products %}
   
-        {%- if forloop.index == 9  or collection.products.size <= 8 and forloop.last == true -%}
+        {%- if forloop.index == 5  or collection.products.size <= 5 and forloop.last == true -%}
           <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} small--one-whole banner-div-send_gift">
           {% comment %}<style>
           .quiz-item {
