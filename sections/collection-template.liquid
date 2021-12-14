@@ -247,9 +247,9 @@
 {%comment%}
     <div id="auto-popup" data-timeout="20" data-quiz-id="BZHY5Y" style="display: none;"></div>
 {%endcomment%}
-    <div class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
+    <div class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}" style="display: flex;flex-wrap: wrap;">
       {% for product in collection.products %}
-      {%- if forloop.index == 8  or collection.products.size == 7 and forloop.index == 7 -%}
+      {%- if forloop.index == 9  or collection.products.size <= 8 and forloop.last == true -%}
       <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} small--one-whole banner-div-send_gift">
         {% comment %}<style>
         .quiz-item {
