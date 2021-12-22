@@ -1692,6 +1692,7 @@
           },
           "39c553b7-493a-455d-9915-6a8f30a738cd": {
             "type": "collection",
+            "disabled": true,
             "settings": {
               "collection_item": "balancing-puzzles",
               "collection_title": "Balancing Puzzles",
