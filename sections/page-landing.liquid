@@ -23,130 +23,87 @@
                         <div class="advantages__item-text">You can find the most complete r&nbsp;ange of&nbsp;<b>new products only on&nbsp;our website</b></div>
                     </div>
                 </div>
-                <div class="advantages__button-wrapper"><a class="button advantages__button" href="https://unidragon.com/collections/wooden-puzzles/?utm_source=instagram_tap" role="button">Order on our website</a></div>
+                <div class="advantages__button-wrapper"><a class="button advantages__button" href="{{ section.settings.order_on_website }}" role="button">Order on our website</a></div>
             </div><img class="advantages__figure" src="{{ 'landing-figure-5.png' | asset_url }}" srcset="{{ 'landing-figure-5.png' | asset_url }} 1x, {{ 'landing-figure-5@2x.png' | asset_url }} 2x" width="88" height="181" alt="" />
         </section>
         <section class="ordering ordering--en" id="ordering">
             <div class="ordering__container">
                 <h2 class="title ordering__title">You can also order our puzzles</h2><img class="ordering__visual" src="{{ 'landing-ordering-visual.png' | asset_url }}" srcset="{{ 'landing-ordering-visual.png' | asset_url }} 1x, {{ 'landing-ordering-visual@2x.png' | asset_url }} 2x" width="370" height="370" alt="" />
                 <div class="ordering__items">
-                    <div class="ordering__item"><img class="ordering__item-img" src="{{ 'landing-ordering-amazon.png' | asset_url }}" srcset="{{ 'landing-ordering-amazon.png' | asset_url }} 1x, {{ 'landing-ordering-amazon@2x.png' | asset_url }} 2x" width="360" height="157" alt="Amazon" /><a class="button ordering__item-button button--ordering" href="https://www.amazon.com/stores/Uniquewoodenpuzzles/page/B2976332-EDE0-4EA3-B4FE-B15714AA41E2?maas=maas_adg_89E0DE2BE316CB1F7D5FED806C85E10F_afap_abs&ref_=aa_maas&tag=maas&ref_=ast_bln" role="button"><span class="button__caption">Order on</span><img class="button__img" src="{{ 'landing-amazon.png' | asset_url }}" srcset="{{ 'landing-amazon.png' | asset_url }} 1x, {{ 'landing-amazon@2x.png' | asset_url }} 2x" alt="amazon" /></a></div>
-                    <div class="ordering__item"><img class="ordering__item-img" src="{{ 'landing-ordering-etsy.png' | asset_url }}" srcset="{{ 'landing-ordering-etsy.png' | asset_url }} 1x, {{ 'landing-ordering-etsy@2x.png' | asset_url }} 2x" width="360" height="157" alt="Etsy" /><a class="button ordering__item-button button--ordering" href="https://www.etsy.com/shop/unidragonpuzzle?ref=simple-shop-header-name&listing_id=726260576" role="button"><span class="button__caption">Order on</span><img class="button__img" src="{{ 'landing-etsy.png' | asset_url }}" srcset="{{ 'landing-etsy.png' | asset_url }} 1x, {{ 'landing-etsy@2x.png' | asset_url }} 2x" alt="etsy" /></a></div>
-                    <div class="ordering__item"><img class="ordering__item-img" src="{{ 'landing-ordering-walmart.png' | asset_url }}" srcset="{{ 'landing-ordering-walmart.png' | asset_url }} 1x, {{ 'landing-ordering-walmart@2x.png' | asset_url }} 2x" width="360" height="157" alt="Walmart" /><a class="button ordering__item-button button--ordering" href="https://www.walmart.com.mx/" role="button"><span class="button__caption">Order on</span><img class="button__img" src="{{ 'landing-walmart.png' | asset_url }}" srcset="{{ 'landing-walmart.png' | asset_url }} 1x, {{ 'landing-walmart@2x.png' | asset_url }} 2x" alt="walmart" /></a></div>
+                    <div class="ordering__item">
+                        <img class="ordering__item-img" src="{{ 'landing-ordering-amazon.png' | asset_url }}" srcset="{{ 'landing-ordering-amazon.png' | asset_url }} 1x, {{ 'landing-ordering-amazon@2x.png' | asset_url }} 2x" width="360" height="157" alt="Amazon" />
+                        <a class="button ordering__item-button button--ordering" href="{{ section.settings.order_on_amazon }}" role="button"><span class="button__caption">Order on</span><img class="button__img" src="{{ 'landing-amazon.png' | asset_url }}" srcset="{{ 'landing-amazon.png' | asset_url }} 1x, {{ 'landing-amazon@2x.png' | asset_url }} 2x" alt="amazon" /></a></div>
+                    <div class="ordering__item">
+                        <img class="ordering__item-img" src="{{ 'landing-ordering-etsy.png' | asset_url }}" srcset="{{ 'landing-ordering-etsy.png' | asset_url }} 1x, {{ 'landing-ordering-etsy@2x.png' | asset_url }} 2x" width="360" height="157" alt="Etsy" />
+                        <a class="button ordering__item-button button--ordering" href="{{ section.settings.order_on_etsy }}" role="button"><span class="button__caption">Order on</span><img class="button__img" src="{{ 'landing-etsy.png' | asset_url }}" srcset="{{ 'landing-etsy.png' | asset_url }} 1x, {{ 'landing-etsy@2x.png' | asset_url }} 2x" alt="etsy" /></a></div>
+                    <div class="ordering__item">
+                        <img class="ordering__item-img" src="{{ 'landing-ordering-walmart.png' | asset_url }}" srcset="{{ 'landing-ordering-walmart.png' | asset_url }} 1x, {{ 'landing-ordering-walmart@2x.png' | asset_url }} 2x" width="360" height="157" alt="Walmart" />
+                        <a class="button ordering__item-button button--ordering" href="{{ section.settings.order_on_walmart }}" role="button"><span class="button__caption">Order on</span><img class="button__img" src="{{ 'landing-walmart.png' | asset_url }}" srcset="{{ 'landing-walmart.png' | asset_url }} 1x, {{ 'landing-walmart@2x.png' | asset_url }} 2x" alt="walmart" /></a></div>
                 </div>
             </div>
         </section>
         <section class="collection" id="new">
             <div class="collection__container">
                 <div class="collection__headline">
-                    <h2 class="title collection__title">New</h2><a class="collection__view-all" href="https://unidragon.com/">View all new items</a>
+                    <h2 class="title collection__title">New</h2><a class="collection__view-all" href="{{ section.settings.vew_all_new_items }}">View all new items</a>
                 </div>
                 <div class="collection__items">
-                    <div class="c-product collection__item">
-                        <div class="c-product__main">
-                            <div class="c-product__image"><img src="{{ 'landing-product-1.jpg' | asset_url }}" width="360" height="360" alt="Fiery Fox" /></div>
-                            <div class="c-product__info">
-                                <div class="stars c-product__stars" title="5"><span class="stars__rating" style="width:100%"></span></div><span class="c-product__rating">5.0</span><span class="c-product__reviews">(30 reviews)</span>
+                    {%- assign ProductsNew = section.blocks | where: "type", "ProductsNew" -%}
+                    {%- for block in ProductsNew -%}
+                        <div class="c-product collection__item">
+                            <div class="c-product__main">
+                                <div class="c-product__image"><img src="{{ block.settings.landing_new_product.featured_image | img_url: 'master' }}" width="360" height="360" alt="Fiery Fox" /></div>
+                                <div class="c-product__info">
+                                    <div class="stars c-product__stars" title="5"><span class="stars__rating" style="width:100%"></span></div><span class="c-product__rating">5.0</span><span class="c-product__reviews">(30 reviews)</span>
+                                </div>
+                                <div class="c-product__title">{{ block.settings.landing_new_product.title }}</div>
                             </div>
-                            <div class="c-product__title">Fiery Fox</div>
-                        </div>
-                        <div class="c-product__bottom">
-                            <div class="c-product__price"><span class="c-product__from">from</span> $29.95</div><a class="button c-product__button" href="#" role="button">Shop now</a>
-                        </div>
-                    </div>
-                    <div class="c-product collection__item">
-                        <div class="c-product__main">
-                            <div class="c-product__image"><img src="{{ 'landing-product-2.jpg' | asset_url }}" width="360" height="360" alt="Lovely Tiger" /></div>
-                            <div class="c-product__info">
-                                <div class="stars c-product__stars" title="5"><span class="stars__rating" style="width:100%"></span></div><span class="c-product__rating">5.0</span><span class="c-product__reviews">(100 reviews)</span>
+                            <div class="c-product__bottom">
+                                <div class="c-product__price"><span class="c-product__from">from</span> {{ block.settings.landing_new_product.price | money }}</div><a class="button c-product__button" href="{{ block.settings.landing_new_product.url }}" role="button">Shop now</a>
                             </div>
-                            <div class="c-product__title">Lovely Tiger</div>
                         </div>
-                        <div class="c-product__bottom">
-                            <div class="c-product__price"><span class="c-product__from">from</span> $29.95</div><a class="button c-product__button" href="#" role="button">Shop now</a>
-                        </div>
-                    </div>
-                    <div class="c-product collection__item">
-                        <div class="c-product__main">
-                            <div class="c-product__image"><img src="{{ 'landing-product-3.jpg' | asset_url }}" width="360" height="360" alt="Fairy Bird" /></div>
-                            <div class="c-product__info">
-                                <div class="stars c-product__stars" title="5"><span class="stars__rating" style="width:100%"></span></div><span class="c-product__rating">5.0</span><span class="c-product__reviews">(130 reviews)</span>
-                            </div>
-                            <div class="c-product__title">Fairy Bird</div>
-                        </div>
-                        <div class="c-product__bottom">
-                            <div class="c-product__price"><span class="c-product__from">from</span> $29.95</div><a class="button c-product__button" href="#" role="button">Shop now</a>
-                        </div>
-                    </div>
+                    {%- endfor -%}
                 </div>
             </div><img class="collection__leaves-1" src="{{ 'landing-leaves-1.svg' | asset_url }}" width="272" height="380" alt="" /><img class="collection__figure-1" src="{{ 'landing-figure-1.png' | asset_url }}" srcset="{{ 'landing-figure-1.png' | asset_url }} 1x, {{ 'landing-figure-1@2x.png' | asset_url }} 2x" width="253" height="296" alt="" /><img class="collection__leaves-2" src="{{ 'landing-leaves-2.svg' | asset_url }}" width="260" height="246" alt="" /><img class="collection__figure-2" src="{{ 'landing-figure-2.png' | asset_url }}" srcset="{{ 'landing-figure-2.png' | asset_url }} 1x, {{ 'landing-figure-2@2x.png' | asset_url }} 2x" width="73" height="211" alt="" /><img class="collection__leaves-5" src="{{ 'landing-leaves-5.svg' | asset_url }}" width="65" height="117" alt="" />
         </section>
         <div class="collection" id="hits">
             <div class="collection__container">
                 <div class="collection__headline">
-                    <h2 class="title collection__title">Bestsellers</h2><a class="collection__view-all" href="https://unidragon.com/">View all bestsellers</a>
+                    <h2 class="title collection__title">Bestsellers</h2><a class="collection__view-all" href="{{ section.settings.vew_all_best_items }}">View all bestsellers</a>
                 </div>
                 <div class="collection__items">
-                    <div class="c-product collection__item">
-                        <div class="c-product__main">
-                            <div class="c-product__image"><img src="{{ 'landing-product-1.jpg' | asset_url }}" width="360" height="360" alt="Fiery Fox" /></div>
-                            <div class="c-product__info">
-                                <div class="stars c-product__stars" title="5"><span class="stars__rating" style="width:100%"></span></div><span class="c-product__rating">5.0</span><span class="c-product__reviews">(30 reviews)</span>
+                    {%- assign ProductsBest = section.blocks | where: "type", "ProductsBest" -%}
+                    {%- for block in ProductsBest -%}
+                        <div class="c-product collection__item">
+                            <div class="c-product__main">
+                                <div class="c-product__image"><img src="{{ block.settings.landing_best_product.featured_image | img_url: 'master' }}" width="360" height="360" alt="Fiery Fox" /></div>
+                                <div class="c-product__info">
+                                    <div class="stars c-product__stars" title="5"><span class="stars__rating" style="width:100%"></span></div><span class="c-product__rating">5.0</span><span class="c-product__reviews">(30 reviews)</span>
+                                </div>
+                                <div class="c-product__title">{{ block.settings.landing_best_product.title }}</div>
                             </div>
-                            <div class="c-product__title">Fiery Fox</div>
-                        </div>
-                        <div class="c-product__bottom">
-                            <div class="c-product__price"><span class="c-product__from">from</span> $29.95</div><a class="button c-product__button" href="#" role="button">Shop now</a>
-                        </div>
-                    </div>
-                    <div class="c-product collection__item">
-                        <div class="c-product__main">
-                            <div class="c-product__image"><img src="{{ 'landing-product-2.jpg' | asset_url }}" width="360" height="360" alt="Lovely Tiger" /></div>
-                            <div class="c-product__info">
-                                <div class="stars c-product__stars" title="5"><span class="stars__rating" style="width:100%"></span></div><span class="c-product__rating">5.0</span><span class="c-product__reviews">(100 reviews)</span>
+                            <div class="c-product__bottom">
+                                <div class="c-product__price"><span class="c-product__from">from</span> {{ block.settings.landing_best_product.price | money }}</div><a class="button c-product__button" href="{{ block.settings.landing_best_product.url }}" role="button">Shop now</a>
                             </div>
-                            <div class="c-product__title">Lovely Tiger</div>
                         </div>
-                        <div class="c-product__bottom">
-                            <div class="c-product__price"><span class="c-product__from">from</span> $29.95</div><a class="button c-product__button" href="#" role="button">Shop now</a>
-                        </div>
-                    </div>
-                    <div class="c-product collection__item">
-                        <div class="c-product__main">
-                            <div class="c-product__image"><img src="{{ 'landing-product-3.jpg' | asset_url }}" width="360" height="360" alt="Fairy Bird" /></div>
-                            <div class="c-product__info">
-                                <div class="stars c-product__stars" title="5"><span class="stars__rating" style="width:100%"></span></div><span class="c-product__rating">5.0</span><span class="c-product__reviews">(130 reviews)</span>
-                            </div>
-                            <div class="c-product__title">Fairy Bird</div>
-                        </div>
-                        <div class="c-product__bottom">
-                            <div class="c-product__price"><span class="c-product__from">from</span> $29.95</div><a class="button c-product__button" href="#" role="button">Shop now</a>
-                        </div>
-                    </div>
+                    {%- endfor -%}
                 </div>
             </div>
         </div>
         <div class="collection collection--padding-bottom" id="popular">
             <div class="collection__container">
                 <div class="collection__headline">
-                    <h2 class="title collection__title">Popular collections</h2><a class="collection__view-all" href="https://unidragon.com/collections">View all collections</a>
+                    <h2 class="title collection__title">Popular collections</h2><a class="collection__view-all" href="{{ section.settings.view_all_collections }}">View all collections</a>
                 </div>
                 <div class="collection__categories">
-                    <div class="c-category collection__category">
-                        <figure class="c-category__figure"><a href="#"> <img src="{{ 'landing-category-1.jpg' | asset_url }}" srcset="{{ 'landing-category-1.jpg' | asset_url }} 1x, {{ 'landing-category-1@2x.jpg' | asset_url }} 2x" width="360" height="287" alt="" /></a>
-                            <figcaption class="c-category__category">Quezzle</figcaption>
-                        </figure><a class="button c-category__button" href="#" role="button">Go to collection</a>
-                    </div>
-                    <div class="c-category collection__category">
-                        <figure class="c-category__figure"><a href="#"> <img src="{{ 'landing-category-2.jpg' | asset_url }}" srcset="{{ 'landing-category-2.jpg' | asset_url }} 1x, {{ 'landing-category-2@2x.jpg' | asset_url }} 2x" width="360" height="287" alt="" /></a>
-                            <figcaption class="c-category__category">Wooden jigsaw puzzles animals</figcaption>
-                        </figure><a class="button c-category__button" href="#" role="button">Go to collection</a>
-                    </div>
-                    <div class="c-category collection__category">
-                        <figure class="c-category__figure"><a href="#"> <img src="{{ 'landing-category-3.jpg' | asset_url }}" srcset="{{ 'landing-category-3.jpg' | asset_url }} 1x, {{ 'landing-category-3@2x.jpg' | asset_url }} 2x" width="360" height="287" alt="" /></a>
-                            <figcaption class="c-category__category">Mandala puzzles</figcaption>
-                        </figure><a class="button c-category__button" href="#" role="button">Go to collection</a>
-                    </div>
+                    {%- assign Collection = section.blocks | where: "type", "Collection" -%}
+                    {%- for block in Collection -%}
+                        <div class="c-category collection__category">
+                            <figure class="c-category__figure"><a href="#"> <img src="{{ block.settings.image_collection | img_url: 'master' }}" width="360" height="287" alt="" /></a>
+                                <figcaption class="c-category__category">{{ block.settings.landing_collection.title }}</figcaption>
+                            </figure><a class="button c-category__button" href="{{ block.settings.landing_collection.url }}" role="button">Go to collection</a>
+                        </div>
+                    {%- endfor -%}
                 </div>
             </div><img class="collection__leaves-3" src="{{ 'landing-leaves-3.svg' | asset_url }}" width="272" height="380" alt="" /><img class="collection__figure-3" src="{{ 'landing-figure-3.png' | asset_url }}" srcset="{{ 'landing-figure-3.png' | asset_url }} 1x, {{ 'landing-figure-3@2x.png' | asset_url }} 2x" width="128" height="135" alt="" /><img class="collection__leaves-4" src="{{ 'landing-leaves-4.svg' | asset_url }}" width="320" height="320" alt="" />
         </div>
@@ -155,7 +112,7 @@
         <div class="footer__container">
             <div class="footer__section">
                 <div class="footer__title">Cooperation</div>
-                <div class="footer__links"><a class="footer__link" href="https://www.instagram.com/unidragon.marketing/">PR in USA</a><a class="footer__link" href="https://www.instagram.com/unidragon.marketing.eu/">PR in EU</a></div>
+                <div class="footer__links"><a class="footer__link" href="{{ section.settings.pr_in_usa }}">PR in USA</a><a class="footer__link" href="{{ section.settings.eu }}">PR in EU</a></div>
             </div>
             <div class="footer__section">
                 <div class="footer__title">Contacts</div><a class="footer__contact" href="mailto:care@unidragon.com"><span class="footer__contact-icon"><svg class="svg-icon svg-icon--mail">
@@ -166,3 +123,109 @@
         <div style="display: none;">{% include 'landing-sprite.svg' %}</div>
     </footer>
 </div>
+
+{% schema %}
+{
+  "name": "Landing page",
+  "settings": [
+    {
+        "type": "header",
+        "content": "SetUp links url"
+    },
+    {
+        "type": "text",
+        "id": "order_on_website",
+        "label": "Order on our website",
+        "default": "https://unidragon.com/collections/wooden-puzzles/?utm_source=instagram_tap"
+    },
+    {
+        "type": "text",
+        "id": "order_on_amazon",
+        "label": "Order on our Amazon",
+        "default": "https://www.amazon.com/stores/Uniquewoodenpuzzles/page/B2976332-EDE0-4EA3-B4FE-B15714AA41E2?maas=maas_adg_89E0DE2BE316CB1F7D5FED806C85E10F_afap_abs&ref_=aa_maas&tag=maas&ref_=ast_bln"
+    },
+    {
+        "type": "text",
+        "id": "order_on_etsy",
+        "label": "Order on our Etsy",
+        "default": "https://www.etsy.com/shop/unidragonpuzzle?ref=simple-shop-header-name&listing_id=726260576"
+    },
+    {
+        "type": "text",
+        "id": "order_on_walmart",
+        "label": "Order on our Walmart",
+        "default": "https://www.walmart.com.mx/"
+    },
+    {
+        "type": "text",
+        "id": "vew_all_new_items",
+        "label": "View all new items",
+        "default": "https://unidragon.com/"
+    },
+    {
+        "type": "text",
+        "id": "vew_all_best_items",
+        "label": "View all bestsellers",
+        "default": "https://unidragon.com/"
+    },
+    {
+        "type": "text",
+        "id": "view_all_collections",
+        "label": "View all collections",
+        "default": "https://unidragon.com/collections"
+    },
+    {
+        "type": "text",
+        "id": "pr_in_usa",
+        "label": "PR in USA",
+        "default": "https://www.instagram.com/unidragon.marketing/"
+    },
+    {
+        "type": "text",
+        "id": "pr_in_eu",
+        "label": "PR in EU",
+        "default": "https://www.instagram.com/unidragon.marketing.eu/"
+    }
+  ],
+  "blocks": [
+    {
+        "name": "Product NEW",
+        "type": "ProductsNew",
+        "settings": [
+            {
+                "type": "product",
+                "id": "landing_new_product",
+                "label": "Product for section"
+            }
+        ]
+    },
+    {
+        "name": "Product Bestsellers",
+        "type": "ProductsBest",
+        "settings": [
+            {
+                "type": "product",
+                "id": "landing_best_product",
+                "label": "Product for section"
+            }
+        ]
+    },
+    {
+        "name": "Popular collections",
+        "type": "Collection",
+        "settings": [
+            {
+                "type": "collection",
+                "id": "landing_collection",
+                "label": "Collection for section"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_collection",
+                "label": "Collection Image"
+            }
+        ]
+    }
+  ]
+}
+{% endschema %}
