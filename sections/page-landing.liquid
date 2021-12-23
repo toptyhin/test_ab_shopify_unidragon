@@ -101,7 +101,12 @@
                         <div class="c-category collection__category">
                             <figure class="c-category__figure"><a href="#"> <img src="{{ block.settings.image_collection | img_url: 'master' }}" width="360" height="287" alt="" /></a>
                                 <figcaption class="c-category__category">{{ block.settings.landing_collection.title }}</figcaption>
-                            </figure><a class="button c-category__button" href="{{ block.settings.landing_collection.url }}" role="button">Go to collection</a>
+                                {%- if block.settings.landing_product != blank -%}
+                                    {%- assign go_to_collection = block.settings.landing_product.url-%}  
+                                {%- else -%}
+                                    {%- assign go_to_collection = block.settings.landing_collection.url-%}
+                                {%- endif -%}
+                            </figure><a class="button c-category__button" href="{{ go_to_collection }}" role="button">Go to collection</a>
                         </div>
                     {%- endfor -%}
                 </div>
@@ -244,20 +249,9 @@
                 "label": "Collection for section"
             },
             {
-                "type": "image_picker",
-                "id": "image_collection",
-                "label": "Collection Image"
-            }
-        ]
-    },
-    {
-        "name": "Popular collections",
-        "type": "Collection",
-        "settings": [
-            {
                 "type": "product",
-                "id": "landing_collection",
-                "label": "Collection for section"
+                "id": "landing_product",
+                "label": "Product for section Collection"
             },
             {
                 "type": "image_picker",
