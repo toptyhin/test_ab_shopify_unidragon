@@ -253,7 +253,7 @@
               </div>
               <div class="collections-item__bottom">
                   <span class="collections-item__num">{{block.settings.collection_item.products_count}} ITEMS</span>
-                  {% assign collectionMinPrice = block.settings.collection_item.products | sort: 'price' %}
+                  {% assign collectionMinPrice = block.settings.collection_item.products | where: 'type', 'Puzzle' | sort: 'price' %}
                   <span class="collections-item__price">FROM {{ collectionMinPrice[0].price_min | money }}</span>
               </div>
               <div class="item-button__mobile">
