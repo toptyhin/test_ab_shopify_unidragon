@@ -2525,6 +2525,7 @@
         "blocks": {
           "7bbd658b-ae5f-4667-9c8d-377b00f8c90f": {
             "type": "ProductsNew",
+            "disabled": true,
             "settings": {
               "landing_new_product": "fiery-fox",
               "rating": "5.0",
@@ -2533,6 +2534,7 @@
           },
           "3ffe9149-0d62-467c-a986-52f284ad1b16": {
             "type": "ProductsNew",
+            "disabled": true,
             "settings": {
               "landing_new_product": "lovely-tiger",
               "rating": "5.0",
@@ -2541,18 +2543,11 @@
           },
           "fd3d20b2-15cc-431d-986c-37858bbf6b5c": {
             "type": "ProductsNew",
+            "disabled": true,
             "settings": {
               "landing_new_product": "fairy-bird",
               "rating": "5.0",
               "reviews": "34 reviews"
-            }
-          },
-          "0489dc8e-bf6a-469e-aff0-2dc1720bf8a5": {
-            "type": "ProductsBest",
-            "settings": {
-              "landing_best_product": "fiery-fox",
-              "rating": "5.0",
-              "reviews": "32 reviews"
             }
           },
           "cff6855b-5251-4eef-addb-17e748856eb5": {
@@ -2563,8 +2558,17 @@
               "reviews": "40 reviews"
             }
           },
+          "0489dc8e-bf6a-469e-aff0-2dc1720bf8a5": {
+            "type": "ProductsBest",
+            "settings": {
+              "landing_best_product": "fiery-fox",
+              "rating": "5.0",
+              "reviews": "32 reviews"
+            }
+          },
           "8732be4e-47a0-4359-abcc-f8c087148553": {
             "type": "ProductsBest",
+            "disabled": true,
             "settings": {
               "landing_best_product": "fairy-bird",
               "rating": "5.0",
@@ -2594,18 +2598,54 @@
               "landing_product": "",
               "image_collection": "shopify:\/\/shop_images\/landing-category-3_2x_a9d18cb8-ff0e-4de3-97ab-69711d9c594c.jpg"
             }
+          },
+          "b7c8520f-4e8b-4e95-a26a-649247b70bcf": {
+            "type": "ProductsNew",
+            "settings": {
+              "landing_new_product": "quezzle",
+              "rating": "5.0",
+              "reviews": "4 reviews"
+            }
+          },
+          "c32a6fe9-4449-43a3-8a87-5581ba8b2ef1": {
+            "type": "ProductsNew",
+            "settings": {
+              "landing_new_product": "mandala-overarching-opposites",
+              "rating": "5.0",
+              "reviews": "5 reviews"
+            }
+          },
+          "32d7f79c-79b1-4b4c-b2f5-8df8a5fad68f": {
+            "type": "ProductsNew",
+            "settings": {
+              "landing_new_product": "mandala-inexhaustible-abundance",
+              "rating": "5.0",
+              "reviews": "6 reviews"
+            }
+          },
+          "855d2547-4e8c-48d6-8d4a-5c948709f20f": {
+            "type": "ProductsBest",
+            "settings": {
+              "landing_best_product": "playful-parrots",
+              "rating": "5.0",
+              "reviews": "15 reviews"
+            }
           }
         },
         "block_order": [
           "7bbd658b-ae5f-4667-9c8d-377b00f8c90f",
           "3ffe9149-0d62-467c-a986-52f284ad1b16",
           "fd3d20b2-15cc-431d-986c-37858bbf6b5c",
-          "0489dc8e-bf6a-469e-aff0-2dc1720bf8a5",
           "cff6855b-5251-4eef-addb-17e748856eb5",
+          "0489dc8e-bf6a-469e-aff0-2dc1720bf8a5",
           "8732be4e-47a0-4359-abcc-f8c087148553",
           "666608e0-acdc-417f-80fa-111cf88a5d12",
           "09bfdfe4-d494-4acb-9187-9df3d77c82ce",
-          "4ae3ca50-1365-4aeb-bda0-17bcb041227a"
+          "4ae3ca50-1365-4aeb-bda0-17bcb041227a",
+          "b7c8520f-4e8b-4e95-a26a-649247b70bcf",
+          "c32a6fe9-4449-43a3-8a87-5581ba8b2ef1",
+          "32d7f79c-79b1-4b4c-b2f5-8df8a5fad68f",
+          "855d2547-4e8c-48d6-8d4a-5c948709f20f"
         ],
         "settings": {
           "order_on_website": "https:\/\/unidragon.com\/collections\/wooden-puzzles\/?utm_source=instagram_tap",
