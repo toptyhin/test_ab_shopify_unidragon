@@ -2575,6 +2575,7 @@
             "type": "Collection",
             "settings": {
               "landing_collection": "quezzle",
+              "landing_product": "quezzle",
               "image_collection": "shopify:\/\/shop_images\/landing-category-1_2x_0df61572-7deb-44d1-9d39-4216169fa159.jpg"
             }
           },
@@ -2582,6 +2583,7 @@
             "type": "Collection",
             "settings": {
               "landing_collection": "wooden-puzzles",
+              "landing_product": "",
               "image_collection": "shopify:\/\/shop_images\/landing-category-2_2x_3488609b-4efd-487a-a7e8-d17b24cb51f7.jpg"
             }
           },
@@ -2589,6 +2591,7 @@
             "type": "Collection",
             "settings": {
               "landing_collection": "mandala-puzzles",
+              "landing_product": "",
               "image_collection": "shopify:\/\/shop_images\/landing-category-3_2x_a9d18cb8-ff0e-4de3-97ab-69711d9c594c.jpg"
             }
           }

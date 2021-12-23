@@ -98,14 +98,14 @@
                 <div class="collection__categories">
                     {%- assign Collection = section.blocks | where: "type", "Collection" -%}
                     {%- for block in Collection -%}
+                        {%- if block.settings.landing_product != blank -%}
+                            {%- assign go_to_collection = block.settings.landing_product.url-%}
+                        {%- else -%}
+                            {%- assign go_to_collection = block.settings.landing_collection.url-%}
+                        {%- endif -%}
                         <div class="c-category collection__category">
-                            <figure class="c-category__figure"><a href="#"> <img src="{{ block.settings.image_collection | img_url: 'master' }}" width="360" height="287" alt="" /></a>
+                            <figure class="c-category__figure"><a href="{{ go_to_collection }}"> <img src="{{ block.settings.image_collection | img_url: 'master' }}" width="360" height="287" alt="" /></a>
                                 <figcaption class="c-category__category">{{ block.settings.landing_collection.title }}</figcaption>
-                                {%- if block.settings.landing_product != blank -%}
-                                    {%- assign go_to_collection = block.settings.landing_product.url-%}  
-                                {%- else -%}
-                                    {%- assign go_to_collection = block.settings.landing_collection.url-%}
-                                {%- endif -%}
                             </figure><a class="button c-category__button" href="{{ go_to_collection }}" role="button">Go to collection</a>
                         </div>
                     {%- endfor -%}
