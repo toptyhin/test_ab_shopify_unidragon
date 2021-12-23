@@ -2519,6 +2519,90 @@
           "pdp_title": "",
           "pdp_sub_title": ""
         }
+      },
+      "page-landing": {
+        "type": "page-landing",
+        "blocks": {
+          "7bbd658b-ae5f-4667-9c8d-377b00f8c90f": {
+            "type": "ProductsNew",
+            "settings": {
+              "landing_new_product": "fiery-fox"
+            }
+          },
+          "3ffe9149-0d62-467c-a986-52f284ad1b16": {
+            "type": "ProductsNew",
+            "settings": {
+              "landing_new_product": "lovely-tiger"
+            }
+          },
+          "fd3d20b2-15cc-431d-986c-37858bbf6b5c": {
+            "type": "ProductsNew",
+            "settings": {
+              "landing_new_product": "fairy-bird"
+            }
+          },
+          "0489dc8e-bf6a-469e-aff0-2dc1720bf8a5": {
+            "type": "ProductsBest",
+            "settings": {
+              "landing_best_product": "fiery-fox"
+            }
+          },
+          "cff6855b-5251-4eef-addb-17e748856eb5": {
+            "type": "ProductsBest",
+            "settings": {
+              "landing_best_product": "lovely-tiger"
+            }
+          },
+          "8732be4e-47a0-4359-abcc-f8c087148553": {
+            "type": "ProductsBest",
+            "settings": {
+              "landing_best_product": "fairy-bird"
+            }
+          },
+          "666608e0-acdc-417f-80fa-111cf88a5d12": {
+            "type": "Collection",
+            "settings": {
+              "landing_collection": "quezzle",
+              "image_collection": "shopify:\/\/shop_images\/landing-category-1_2x_0df61572-7deb-44d1-9d39-4216169fa159.jpg"
+            }
+          },
+          "09bfdfe4-d494-4acb-9187-9df3d77c82ce": {
+            "type": "Collection",
+            "settings": {
+              "landing_collection": "wooden-puzzles",
+              "image_collection": "shopify:\/\/shop_images\/landing-category-2_2x_3488609b-4efd-487a-a7e8-d17b24cb51f7.jpg"
+            }
+          },
+          "4ae3ca50-1365-4aeb-bda0-17bcb041227a": {
+            "type": "Collection",
+            "settings": {
+              "landing_collection": "mandala-puzzles",
+              "image_collection": "shopify:\/\/shop_images\/landing-category-3_2x_a9d18cb8-ff0e-4de3-97ab-69711d9c594c.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "7bbd658b-ae5f-4667-9c8d-377b00f8c90f",
+          "3ffe9149-0d62-467c-a986-52f284ad1b16",
+          "fd3d20b2-15cc-431d-986c-37858bbf6b5c",
+          "0489dc8e-bf6a-469e-aff0-2dc1720bf8a5",
+          "cff6855b-5251-4eef-addb-17e748856eb5",
+          "8732be4e-47a0-4359-abcc-f8c087148553",
+          "666608e0-acdc-417f-80fa-111cf88a5d12",
+          "09bfdfe4-d494-4acb-9187-9df3d77c82ce",
+          "4ae3ca50-1365-4aeb-bda0-17bcb041227a"
+        ],
+        "settings": {
+          "order_on_website": "https:\/\/unidragon.com\/collections\/wooden-puzzles\/?utm_source=instagram_tap",
+          "order_on_amazon": "https:\/\/www.amazon.com\/stores\/Uniquewoodenpuzzles\/page\/B2976332-EDE0-4EA3-B4FE-B15714AA41E2?maas=maas_adg_89E0DE2BE316CB1F7D5FED806C85E10F_afap_abs&ref_=aa_maas&tag=maas&ref_=ast_bln",
+          "order_on_etsy": "https:\/\/www.etsy.com\/shop\/unidragonpuzzle?ref=simple-shop-header-name&listing_id=726260576",
+          "order_on_walmart": "https:\/\/www.walmart.com.mx\/",
+          "vew_all_new_items": "https:\/\/unidragon.com\/",
+          "vew_all_best_items": "https:\/\/unidragon.com\/",
+          "view_all_collections": "https:\/\/unidragon.com\/collections",
+          "pr_in_usa": "https:\/\/www.instagram.com\/unidragon.marketing\/",
+          "pr_in_eu": "https:\/\/www.instagram.com\/unidragon.marketing.eu\/"
+        }
       }
     },
     "content_for_index": [
