@@ -247,7 +247,7 @@
         "settings": {
           "remove_space": true,
           "enable_top_announcement": true,
-          "top_announcement_text": "<span style=\"font-size: 18px;text-transform: uppercase;\">Hurry up!<\/span> <span style=\"font-size: 18px;\">Special Christmas sale.<\/span> <span style=\"color: white;font-size: 20px;\">UP TO 50% OFF DEALS<\/span>",
+          "top_announcement_text": "<span style=\"font-size: 18px;text-transform: uppercase;\">Hurry up!<\/span> <span style=\"font-size: 18px;\">Special Christmas and and New Year sale.<\/span> <span style=\"color: white;font-size: 20px;\"><\/span>",
           "align_logo": "left",
           "logo": "shopify:\/\/shop_images\/Logo-unidragon.png",
           "desktop_logo_size": "90%",
