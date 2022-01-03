@@ -246,7 +246,7 @@
         "type": "header",
         "settings": {
           "remove_space": true,
-          "enable_top_announcement": true,
+          "enable_top_announcement": false,
           "top_announcement_text": "<span style=\"font-size: 18px;text-transform: uppercase;\">Hurry up!<\/span> <span style=\"font-size: 18px;\">Special New Year sale.<\/span> <span style=\"color: white;font-size: 20px;\"><\/span>",
           "align_logo": "left",
           "logo": "shopify:\/\/shop_images\/Logo-unidragon.png",
