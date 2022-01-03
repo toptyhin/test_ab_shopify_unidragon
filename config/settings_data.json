@@ -1972,7 +1972,7 @@
           "rows": 8,
           "show_collection_image": true,
           "enable_parallax": false,
-          "enable_full_banner": true,
+          "enable_full_banner": false,
           "img": "shopify:\/\/shop_images\/4_1__-4.png",
           "img_width": "715px",
           "enable_video": true,
