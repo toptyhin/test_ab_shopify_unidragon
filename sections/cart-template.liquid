@@ -150,6 +150,7 @@
   a.no-active {
         color: #ebebeb;
   }
+  .indent_down .comparet-at-price{text-decoration: line-through;color: #a6a6a6;padding-right: 3px;margin-right: 10px;}
   </style>
   {%- assign free_shipping = 10000.0 -%}
   {%- assign per_progressbar = cart_total_price | divided_by: free_shipping | times: 100 -%}
@@ -328,7 +329,7 @@
             <td class="small--hide text-bold">
               <div style="display: flex;">
               {% if item_original_line_price != item_line_price %}
-              <div style="text-decoration: line-through;color: #a6a6a6;padding-right: 3px;margin-right: 10px;"><s>{{ item_original_line_price | money }}</s></div>
+              <div class="comparet-at-price"><s>{{ item_original_line_price | money }}</s></div>
               {%- endif -%}
   
               <div {% if item_original_line_price != item_line_price %}style="color: red"{%- endif -%}>

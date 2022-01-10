@@ -704,7 +704,7 @@
                                 <a href="{{ settings.upsell_product.url }}" class="go-cart-item__title">{{settings.upsell_product.title}}</a>
                                 <div class="go-cart-upsell-item__price">
                                     <a href="#upsell-anoncment-popup" class="upsell-anoncment-popup">See how it works</a>
-                                    <span style="text-decoration: line-through; color:#a6a6a6; padding-right: 3px;position: relative; top: -30px;">{{ settings.upsell_product.compare_at_price | money }}</span>
+                                    <span class="comparet-at-price">{{ settings.upsell_product.compare_at_price | money }}</span>
                                     <span style="position: relative; top: -30px;">{{ settings.upsell_product.price | money }}</span>
                                 </div>
                             </div>
@@ -872,6 +872,7 @@
     {{ 'magnific-popup.css' | asset_url | stylesheet_tag }}
     {{ 'jquery.magnific-popup.min.js' | asset_url | script_tag }}
  <style>
+     .go-cart-drawer-upsell .comparet-at-price {text-decoration: line-through; color:#a6a6a6; padding-right: 3px;position: relative; top: -30px;}
      .go-cart__button.checkout {
          display: block;
      }
