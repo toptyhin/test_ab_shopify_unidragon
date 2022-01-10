@@ -206,7 +206,6 @@ if (match && match.length > 0) window.localStorage.setItem('sid', match[0]);
 {% include 'flashify-common' %}{% comment %}ly_dir_styles_begin{% endcomment %}{%- assign language_code = '_' | append: request.locale.iso_code -%}{%- if '_ar_he_fa_ur' contains language_code -%}{{- 'ly-rtl.css' | asset_url | stylesheet_tag -}}{%- endif -%}{% comment %}ly_dir_styles_end{% endcomment %}</head> 
 
 <body class="template-{{ template | split: '.' | first }}">
-  <span class="ly-custom-1920"></span>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKLBHMZ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
