@@ -1,7 +1,7 @@
 <div class="page__wrapper">
     <header class="header page__header">
         <div class="header__container"><img class="header__logo" src="{{ 'landing-logo.png' | asset_url }}" srcset="{{ 'landing-logo@2x.png' | asset_url }} 2x" width="165" height="54" alt="Unidragon" />
-            <h1 class="header__title">Fascinating <br>wooden puzzles</h1><img class="header__visual-1" src="{{ 'landing-header-visual-1.png' | asset_url }}" srcset="{{ 'landing-header-visual-1.png' | asset_url }} 1x'  | asset_url }}, {{ 'landing-header-visual-1@2x.png' | asset_url }} 2x" width="286" height="355" alt="" /><img class="header__visual-2" src="{{ 'landing-header-visual-2.png' | asset_url }}" srcset="{{ 'landing-header-visual-2.png' | asset_url }} 1x, {{ 'landing-header-visual-2@2x.png' | asset_url }} 2x" width="266" height="348" alt="" /><img class="header__visual-3" src="{{ 'landing-header-visual-3.png' | asset_url }}" srcset="{{ 'landing-header-visual-3.png' | asset_url }} 1x, {{ 'landing-header-visual-3@2x.png' | asset_url }} 2x" width="297" height="195" alt="" /><img class="header__visual-4" src="{{ 'landing-header-visual-4.png' | asset_url }}" srcset="{{ 'landing-header-visual-4.png' | asset_url }} 1x, {{ 'landing-header-visual-4@2x.png' | asset_url }} 2x" width="101" height="124" alt="" />
+            <h1 class="header__title">{{section.settings.header}}</h1><img class="header__visual-1" src="{{ 'landing-header-visual-1.png' | asset_url }}" srcset="{{ 'landing-header-visual-1.png' | asset_url }} 1x'  | asset_url }}, {{ 'landing-header-visual-1@2x.png' | asset_url }} 2x" width="286" height="355" alt="" /><img class="header__visual-2" src="{{ 'landing-header-visual-2.png' | asset_url }}" srcset="{{ 'landing-header-visual-2.png' | asset_url }} 1x, {{ 'landing-header-visual-2@2x.png' | asset_url }} 2x" width="266" height="348" alt="" /><img class="header__visual-3" src="{{ 'landing-header-visual-3.png' | asset_url }}" srcset="{{ 'landing-header-visual-3.png' | asset_url }} 1x, {{ 'landing-header-visual-3@2x.png' | asset_url }} 2x" width="297" height="195" alt="" /><img class="header__visual-4" src="{{ 'landing-header-visual-4.png' | asset_url }}" srcset="{{ 'landing-header-visual-4.png' | asset_url }} 1x, {{ 'landing-header-visual-4@2x.png' | asset_url }} 2x" width="101" height="124" alt="" />
         </div>
     </header>
     <main class="page__content">
@@ -9,18 +9,18 @@
             <div class="advantages__container">
                 <div class="advantages__row">
                     <div class="advantages__item advantages__item--1">
-                        <h2 class="title advantages__title"><span class="color-orange">Advantages</span> of&nbsp;ordering puzzles on&nbsp;our website</h2>
+                        <h2 class="title advantages__title"><span class="color-orange">Advantages</span> of ordering puzzles on our website</h2>
                     </div>
                     <div class="advantages__item advantages__item--2"><img class="advantages__img-discount" src="{{ 'landing-advantages-discount.svg' | asset_url }}" width="128" height="52" alt="10%" /><img class="advantages__img" src="{{ 'landing-advantages-1.png' | asset_url }}" srcset="{{ 'landing-advantages-1.png' | asset_url }} 1x, {{ 'landing-advantages-1@2x.png' | asset_url }} 2x" width="220" height="120" alt="" />
-                        <div class="advantages__item-text">You will receive <b>10% bonus points</b> that you can spend on&nbsp;your next purchases</div>
+                        <div class="advantages__item-text">{{section.settings.advantages_block_1}}</div>
                     </div>
                     <div class="advantages__item advantages__item--3">
                         <div class="advantages__label advantages__label--discount">-40%</div><img class="advantages__img" src="{{ 'landing-advantages-2.png' | asset_url }}" srcset="{{ 'landing-advantages-2.png' | asset_url }} 1x, {{ 'landing-advantages-2@2x.png' | asset_url }} 2x" width="220" height="120" alt="" />
-                        <div class="advantages__item-text"><b>Special offers</b> and big discounts are only on&nbsp;our website</div>
+                        <div class="advantages__item-text">{{section.settings.advantages_block_2}}</div>
                     </div>
                     <div class="advantages__item advantages__item--4">
                         <div class="advantages__label advantages__label--new">NEW</div><img class="advantages__img" src="{{ 'landing-advantages-3.png' | asset_url }}" srcset="{{ 'landing-advantages-3.png' | asset_url }} 1x, {{ 'landing-advantages-3@2x.png' | asset_url }} 2x" width="220" height="120" alt="" />
-                        <div class="advantages__item-text">You can find the most complete r&nbsp;ange of&nbsp;<b>new products only on&nbsp;our website</b></div>
+                        <div class="advantages__item-text">{{section.settings.advantages_block_3}}</div>
                     </div>
                 </div>
                 <div class="advantages__button-wrapper"><a class="button advantages__button" href="{{ section.settings.order_on_website }}" role="button">Order on our website</a></div>
@@ -131,8 +131,40 @@
 
 {% schema %}
 {
-  "name": "Landing page",
-  "settings": [
+    "name": "Landing page",
+    "settings": [
+    {
+        "type": "header",
+        "content": "Header"
+    },
+    {
+        "type": "html",
+        "id": "header",
+        "label": "Header text",
+        "default": "Fascinating <br>wooden puzzles"
+    },
+    {
+        "type": "header",
+        "content": "Advantages block"
+    },
+    {
+        "type": "html",
+        "id": "advantages_block_1",
+        "label": "Header text",
+        "default": "You will receive <b>10% bonus points</b> that you can spend on your next purchases"
+    },
+    {
+        "type": "html",
+        "id": "advantages_block_2",
+        "label": "Advantages block text",
+        "default": "<b>Special offers</b> and big discounts are only on our website"
+    },
+    {
+        "type": "html",
+        "id": "advantages_block_3",
+        "label": "Advantages block text",
+        "default": "You can find the most complete range of <b>new products only on our website</b>"
+    },
     {
         "type": "header",
         "content": "SetUp links url"
