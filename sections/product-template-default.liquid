@@ -836,7 +836,7 @@
                 {% if section.settings.pdp_enable %}
                   {% render 'pdp__discount' %}
                 {%- endif -%}
-    
+              {%- if section.settings.enable_inspiring_story -%}
                 <div class="text-center storyblock medium-up--hide"><span class="heading">Inspiring Stories</span></div>
                 <div class="storyblock-text-left">
                   {% case product.title %}
@@ -853,77 +853,60 @@
                   {% endcase %}
                   {%- render 'fw-storyblock-text-left', channel: current_channel -%}
                 </div>
-    
+              {%- endif -%}
+
+              {%- if section.settings.enable_shipping_banner -%}
                 <div class="shipping-banner">
                   <div class="shipping-banner-icon"><img src="{{'shipping-icon.png' | asset_url}}" width="45" height="45"></div>
                   <div class='geotargetlygeocontent1626874543940 shipping-banner-text'>
                   <!-- Content will render here -->
                   </div>
                 </div>
+              {%- endif -%}
 
+              {%- if section.settings.enable_gift_banner -%}
                 <style>
-                @media only screen and (min-width: 749px) {
-                   .banner-inspirational-gift_header, .banner-inspirational-gift_link, .banner-inspirational-gift_text {
-                      padding-left: 145px;
-                      padding-right: 15px;
-                    }
+                  @media only screen and (min-width: 749px) {
+                    .banner-inspirational-gift_header, .banner-inspirational-gift_link, .banner-inspirational-gift_text {
+                        padding-left: 145px;
+                        padding-right: 15px;
+                      }
                     }
                 </style>
                 <div class="banner-inspirational-gift">
-                  <div class="banner-inspirational-gift_header">Send a gift to a friend!<br /> It is so easy!</div>
-                  <div class="banner-inspirational-gift_text"> Share a piece of your heart to your loved ones, wherever they are. Make them happy with an unforgettable gift for any occasion.<br />
-                    Take just a few sipmle steps!</div>
-                  <div class="banner-inspirational-gift_link"><a href="https://unidragon.gogiftmagic.com/pages/giftlanding?section=firstpromo&banner=unidragon-amazing-gifts&utm_source=product_banner&utm_medium=gift_banner&utm_campaign=gift" class="banner-inspirational-gift_a gift-banner-link"> Send a Gift</a></div>
+                  <div class="banner-inspirational-gift_header">{{section.settings.gift_banner_header}}</div>
+                  <div class="banner-inspirational-gift_text">{{section.settings.gift_banner_text}}</div>
+                  {%- if section.settings.gift_banner_button_text -%}
+                    <div class="banner-inspirational-gift_link"><a href="{{section.settings.gift_banner_button_url}}" class="banner-inspirational-gift_a gift-banner-link">{{section.settings.gift_banner_button_text}}</a></div>
+                  {%- endif -%}
                 </div>
+              {%- endif -%}
+
+              {%- if enable_bullit_block -%}
                 <div class="advantage">
-                  <div class="advantage-item">
-                    <div class="advantage-block">
-                      <span class="advantage-item-num">01</span>
-                      <div class="advantage-item_left">
-                        <span class="advantage-item-title">Spend your time with your loved ones</span>
-                        <span class="advantage-item-text">Our puzzle is a good occasion to bring all the family and friends together</span>
+                  {%- assign advantage_block = section.blocks | where: "type", "advantage"-%}
+                  {%- for block in advantage_block -%}
+                    <div class="advantage-item">
+                      <div class="advantage-block">
+                        <span class="advantage-item-num">{{block.settings.advantage_num}}</span>
+                        <div class="advantage-item_left">
+                          <span class="advantage-item-title">{{block.settings.header}}</span>
+                          <span class="advantage-item-text">{{block.settings.text}}</span>
+                        </div>
                       </div>
+                      <div class="advantage-item-img" style="background-image: url({{ block.settings.image | img_url: 'master' }});background-position: left;background-repeat: no-repeat;"></div>
                     </div>
-                    <div class="advantage-item-img" style="background-image: url({{'dvantage-item-1.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
-                  </div>
-                  <div class="advantage-item">
-                    <div class="advantage-block">
-                      <span class="advantage-item-num">02</span>
-                      <div class="advantage-item_left">
-                        <span class="advantage-item-title">It is time to forget the daily routine!</span>
-                        <span class="advantage-item-text">Psychologists recommend puzzles for meditation and stress relief</span>
-                      </div>
-                    </div>
-                    <div class="advantage-item-img" style="background-image: url({{'dvantage-item-2.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
-                  </div>
-                  <div class="advantage-item">
-                    <div class="advantage-block">
-                      <span class="advantage-item-num">03</span>
-                      <div class="advantage-item_left">
-                        <span class="advantage-item-title">Try something new</span>
-                        <span class="advantage-item-text">Unidragon puzzles have the most unique shape and design</span>
-                      </div>
-                    </div>
-                    <div class="advantage-item-img" style="background-image: url({{'dvantage-item-3.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
-                  </div>
-                  <div class="advantage-item">
-                    <div class="advantage-block">
-                      <span class="advantage-item-num">04</span>
-                      <div class="advantage-item_left">
-                        <span class="advantage-item-title">Challenge yourself</span>
-                        <span class="advantage-item-text">Puzzles work out your brain and strengthen your mind</span>
-                      </div>
-                    </div>
-                    <div class="advantage-item-img" style="background-image: url({{'dvantage-item-4.png' | asset_url}});background-position: left;background-repeat: no-repeat;"></div>
-                  </div>
+                  {%- endfor -%}
                 </div>
-    
+              {%- endif -%}
+
+              {%- if section.settings.enable_decorate_banner -%}
                 <div class="banner-decorate-walls">
-                  <div class="banner-decorate-walls_header">DECORATE THE WALLS OF YOUR HOME</div>
-                  <div class="banner-decorate-walls_text">You can decorate the interior with puzzles and our special mounting system</div>
+                  <div class="banner-decorate-walls_header">{{section.settings.decorate_banner_header}}</div>
+                  <div class="banner-decorate-walls_text">{{section.settings.decorate_banner_text}}</div>
                   <div class="banner-decorate-walls_howitworks"><a id="annoncment-banner-link" href="#upsell-anoncment-popup" style="text-decoration: underline;font-weight: 600;font-size: 14px;color: #292929;" class="upsell-anoncment-popup">{{ 'custome_text.banner.see_how_it_works' | t }} -></a></div>
                 </div>
-    
+              {%- endif -%}
                 <div class="product-single__description rte" itemprop="description">
                   {% for block in section.blocks %}
                     {% if block.type == 'icons-set-with-text' %}
@@ -1086,536 +1069,670 @@
         </script>
       {% endif %}
       <!-- End Pick an option code -->
-      <script>
-        if ($('.getsocial').get(0)) {
-          let targetNode = $('.getsocial').get(0);
-          let config = { childList: true };
-          let counter = '<div class="gs-big-counter ab-test"><strong class="gs-value">'+ Math.floor( Math.random() * (5 - 1) + 1) +'.'+ Math.floor(Math.random() * (9 - 0)) +'k</strong><span><span>Shares</span></span></div>'
-          const callback = function(mutationsList, observer) {
-              for(const mutation of mutationsList) {
-                  if (mutation.type === 'childList') {
-                    $('.gs-bar').addClass('gs-big-counter');
-                    $('.gs-bar').prepend(counter);
-                    observer.disconnect();
-                  }
-              }
-          };
-          let observer = new MutationObserver(callback);
-          observer.observe(targetNode, config);
-          }
-      </script>
-      {% schema %}
-        {
-          "name": "Product page",
-          "settings": [
-            {
-              "type": "header",
-              "content": "Product page [NEED HELP?](https:\/\/help.boostertheme.com\/hc\/en-us\/articles\/360003047493-How-to-setup-the-product-page-)"
-            },
-              {
-              "type": "select",
-              "id": "buy_it_now_action",
-              "label": "Buy it Now Action",
-              "default": "direct_to_cart",
-                "options": [
-                {
-                  "value": "thank_you_message",
-                  "label": "Added To Cart Message"
-                },
-                {   
-                  "value": "direct_to_checkout",
-                  "label": "Direct to Checkout"
-                },
-                {   
-                  "value": "direct_to_cart",
-                  "label": "Direct to Cart"
-                }
-              ] 
-            },
-            { 
-              "type": "checkbox",
-                "id": "show_cart_drawer",
-                "label": "Show Cart Drawer",
-                "default": false
-            },
-            { 
-              "type": "checkbox",
-                "id": "show_saved_amount",
-                "label": "Show Saved %",
-                "default": true
-            },
-            {
-              "type": "checkbox",
-              "id": "enable_default_variant",
-              "label": "Enable Make a Selection Option"
-            },
-            {
-              "type": "checkbox",
-              "id": "show_quantity_selector",
-              "label": "Show Quantity",
-              "default": false
-            },
-            {
-              "type": "checkbox",
-              "id": "show_vendor",
-              "label": "Show Vendor",
-              "default": false
-            },
-            {
-              "type": "checkbox",
-              "id": "enable_zoom",
-              "label": "Enable image zoom",
-              "default": true
-            },
-            {
-              "type": "checkbox",
-              "id": "shake_effect_enable",
-              "label": "Enable the shaking add to cart button",
-              "default": true
-            },
-            {
-              "type": "checkbox",
-              "id": "readmore_enable",
-              "label": "Enable Read more button",
-              "default": false
-            },
-            {
-              "type": "checkbox",
-              "id": "enable_progressbar_text",
-              "label": "Enable Progress Bar",
-              "default": true
-            },
-            {
-              "type": "checkbox",
-              "id": "enable_timer_top_message",
-              "label": "Enable Stock Left Message",
-              "default": true
-            },
-            {
-              "type": "checkbox",
-              "id": "enable_progressbartimer_text",
-              "label": "Enable Sale end message",
-              "default": true
-            },
-              {
-              "type": "checkbox",
-              "id": "enable_shipping",
-              "label": "Enable Free + Shipping",
-              "default": false
-            },
-            {
-              "type": "checkbox",
-              "id": "show_tags",
-              "label": "Show tags",
-              "default": false
-              },
-            {
-              "type": "checkbox",
-              "id": "show_social",
-              "label": "Show social buttons",
-              "default": false
-              },
-            {
-              "type": "radio",
-              "id": "enable_timer_stg_on",
-              "default": "enable_timer_stg_on",
-              "options": [
-                {
-                  "value": "enable_timer_stg_on",
-                  "label": "ON timer"
-                },
-                {
-                  "value": "enable_timer_stg_off",
-                  "label": "OFF timer"
-                }
-              ],
-              "label": "Timer Setting ON\/OFF"
-            },
-            {
-              "type": "header",
-              "content": "Dynamic Checkout Button"
-            },
-            {
-              "type": "checkbox",
-              "id": "enable_payment_button",
-              "label": "Show dynamic checkout button",
-              "info": "Lets customers check out directly using a familiar payment method. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
-              "default": false
-            },
-            {
-              "type": "header",
-              "content": "Variant Option [NEED HELP?](https:\/\/help.boostertheme.com\/hc\/en-us\/articles\/360002471493-How-to-Upload-Your-Color-Swatches-in-Booster-2-0-)"
-            },
-            {
-              "type": "radio",
-              "id": "variant_swacth",
-              "label":"Variant type",
-              "info": "Choose between color swatch or drop down menu for the variant",
-              "options": [
-                {
-                  "value": "one",
-                    "label": "Drop down menu"
-                },
-                {
-                  "value": "two",
-                  "label": "Color swatch"
-                }
-              ],
-                "default": "two"
-            },
-            {
-              "type":"header",
-              "content":"Swatch Option"
-            },
-            {
-              "type": "radio",
-              "id": "swatch_option",
-              "label":"Color Swatch style",
-              "options": [
-                {
-                  "value": "with_background",
-                    "label": "Background Color or image"
-                },
-                {
-                  "value": "without_background",
-                  "label": "Show color title like other swatches"
-                }
-              ],
-                "default": "without_background"
-            },
-            {
-              "type":"paragraph",
-              "content":"When you choose 'background Color or image' option, you can change colors shape by using below option"
-            },
-            {
-              "type": "radio",
-              "id": "color_style",
-              "label":"Shape of Color Swatch",        
-              "options": [
-                {
-                  "value": "square_box",
-                    "label": "Square"
-                },
-                {
-                  "value": "round_shape",
-                  "label": "Round"
-                }
-              ],
-                "default": "round_shape"
-            },
-            {
-              "type":"header",
-              "content":"Product Review"
-            },
-            {
-              "type":"checkbox",
-              "label":"Enable rating and review",
-              "id":"product_review",
-              "info":"make sure your shopify review app must be install",
-              "default": true
-            },
-            {
-              "type":"header",
-              "content":"Visitor Counter"
-            },
-            {
-              "type": "checkbox",
-              "id": "visitor_counter_enable",
-              "label": "Visitor Counter Enable"
-            },
-            {
-             "type": "select",
-             "id": "visitor_counter_number",
-             "label": "Visitor counter",
-             "default": "1-15",
-               "options": [
-               {
-                 "value": "1-5",
-                 "label": "1 to 5"
-               },
-               {
-                 "value": "1-10",
-                 "label": "1 to 10"
-               },
-                {
-                 "value": "1-15",
-                 "label": "1 to 15"
-               },
-                {
-                 "value": "15-30",
-                 "label": "15 to 30"
-               },
-                {
-                 "value": "30-50",
-                 "label": "30 to 50"
-               },
-                {
-                 "value": "50-100",
-                 "label": "50 to 100"
-               },
-                {
-                 "value": "100-300",
-                 "label": "100 to 300"
-               },
-                {
-                 "value": "300-500",
-                 "label": "300 to 500"
-               }  
-             ]
-           },
-            {
-              "type":"header",
-              "content":"Delivery Time"
-            },
-            {
-              "type": "text",
-              "id": "delivery_time_number",
-              "label": "Delivery time",
-              "default": "1-3" 
-            },    
-            {
-              "type": "header",
-              "content": "Desktop"
-            },
-            {
-              "type": "select",
-              "id": "product_description",
-              "label": "Product Description",
-              "default": "under_the_price",
-                "options": [
-                {
-                  "value": "under_the_price",
-                  "label": "Under the price"
-                },
-                {   
-                  "value": "under_the_timer",
-                  "label": "Under the timer"
-                } 
-              ] 
-            },
-            {
-              "type": "header",
-              "content": "Mobile"
-            },
-            {
-              "type": "checkbox",
-              "id": "enable_sticky",
-              "label": "Enable Sticky button",
-              "default": true
-            },
-            {
-              "type": "header",
-              "content": "Upsell"
-            },
-            {
-              "type": "checkbox",
-              "id": "enable_combo_upsell",
-              "label": "Enable COMBO Upsell Block",
-              "default": true
-            },
-            {
-              "type": "product",
-              "id": "combo_upsell_product",
-              "label": "Select product for upsell"
-            },
-            {
-              "type": "header",
-              "content": "Mobile Sticky ADD TO CART Button"
-            },
-            {
-              "type": "checkbox",
-              "id": "enable_mobile_atc_button",
-              "label": "Enable Mobile Sticky ADD TO CART Button",
-              "default": false
-            },
-            {
-              "type": "header",
-              "content": "Badges"
-            },
-            {
-              "type": "checkbox",
-              "id": "move_badges_under_cart",
-              "label": "Move Badges below the Add-to-cart button",
-              "default": false
-            },
-            {
-              "type": "checkbox",
-              "id": "enable_trust_badges",
-              "label": "Enable Badges",
-              "default": false
-            },
-            {
-              "type": "image_picker",
-              "id": "enable_trust_badges_image",
-              "label": "Payment icons"
-            },
-            {
-              "type":"header",
-              "content":"Discount Image Banner"
-            },
-            {
-              "type": "checkbox",
-              "id": "pdp_enable",
-              "label": "Enable PDP banner",
-              "default": false
-            },
-            {
-              "type": "checkbox",
-              "id": "pdp_enable_banner",
-              "label": "Enable image banner",
-              "default": false
-            },
-            {
-              "type":"image_picker",
-              "id":"pdp_image_banner",
-              "label":"Banner Image"
-            },
-            {
-              "type":"header",
-              "content":"Discount Info"
-            },
-            {
-              "type":"image_picker",
-              "id":"pdp_image",
-              "label":"Image"
-            },
-            {
-              "type":"textarea",
-              "id":"pdp_title",
-              "label":"Title"
-            },
-            {
-              "type":"textarea",
-              "id":"pdp_sub_title",
-              "label":"Sub-title"
-            },
-            {
-              "type":"header",
-              "content":"Custom Tax"
-            },
-            {
-              "type":"text",
-              "id":"heading-tax",
-              "label":"Heading"
-            },
-            {
-              "type":"text",
-              "id":"tax_title",
-              "label":"Title"
-            },
-            {
-              "type":"textarea",
-              "id":"tax_sub_content",
-              "label":"Sub-Content"
-            },
-            {
-            "type":"header",
-            "content":"Discount PopUp"
-            },
-      
-            {
-            "type": "textarea",
-            "id": "title",
-            "label": "Heading"
-            },
-            {
-            "type": "image_picker",
-            "id": "imagecart",
-            "label": "Cart_Icon"
-            },
-            {
-            "type": "textarea",
-            "id": "sub_title",
-            "label": "SubHeading"
-            },
-            {
-            "type": "image_picker",
-            "id": "bg_image",
-            "label": "Background-Image"
-            },
-            {
-            "type":"text",
-            "id":"pdp_cta_text",
-            "label":"CTA text"
-            },
-            {
-            "type":"url",
-            "id":"pdp_cta_link",
-            "label":"CTA link"
-            },
-            {
-            "type":"text",
-            "id":"pdp_cta_text1",
-            "label":"CTA text"
-            },
-            {
-            "type":"url",
-            "id":"pdp_cta_link1",
-            "label":"CTA link"
+<script>
+  if ($('.getsocial').get(0)) {
+    let targetNode = $('.getsocial').get(0);
+    let config = { childList: true };
+    let counter = '<div class="gs-big-counter ab-test"><strong class="gs-value">'+ Math.floor( Math.random() * (5 - 1) + 1) +'.'+ Math.floor(Math.random() * (9 - 0)) +'k</strong><span><span>Shares</span></span></div>'
+    const callback = function(mutationsList, observer) {
+        for(const mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+              $('.gs-bar').addClass('gs-big-counter');
+              $('.gs-bar').prepend(counter);
+              observer.disconnect();
             }
-          ],
-          "blocks": [
-            {
-              "type": "icons-set-with-text",
-              "name": "Icons set with Text"
-            },
-            {
-              "type": "faq",
-              "name": "Faq-Item",
-              "settings":[
-                {
-                  "type": "text",
-                  "id": "faq_title",
-                  "default": "Put your question here !",
-                  "label": "Title"
-                },
-                {
-                  "type": "richtext",
-                  "id": "faq_text",
-                  "default": "<p>Put the answer here !</p>",
-                  "label": "Text"
-                }
-              ]
-            },
-            {
-              "type": "image-with-text",
-              "name": "Image with text",
-              "settings": [
-                {
-                  "type": "image_picker",
-                  "id": "image",
-                  "label": "Image"
-                },
-                {
-                  "type": "select",
-                  "id": "image_alignment",
-                  "label": "Image alignment",
-                  "options": [
-                    {
-                      "value": "align_left",
-                      "label": "Align Left"
-                    },
-                    {
-                      "value": "align_right",
-                      "label": "Align Right"
-                    }
-                  ],
-                  "default": "align_left"
-                },
-                {
-                  "type":"text",
-                  "id": "title",
-                  "label": "Title",
-                  "default": "Great as a gift"
-                },
-                {
-                  "type":"text",
-                  "id": "text",
-                  "label": "Text",
-                  "default": "A gift that will surprise them and stay in their memory. Each puzzle is packed in a premium wooden gift box."
-                }
-              ]
-            }
-          ]
         }
-      {% endschema %} 
+    };
+    let observer = new MutationObserver(callback);
+    observer.observe(targetNode, config);
+    }
+</script>
+{% schema %}
+  {
+    "name": "Product page",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Product page [NEED HELP?](https:\/\/help.boostertheme.com\/hc\/en-us\/articles\/360003047493-How-to-setup-the-product-page-)"
+      },
+        {
+        "type": "select",
+        "id": "buy_it_now_action",
+        "label": "Buy it Now Action",
+        "default": "direct_to_cart",
+          "options": [
+          {
+            "value": "thank_you_message",
+            "label": "Added To Cart Message"
+          },
+          {   
+            "value": "direct_to_checkout",
+            "label": "Direct to Checkout"
+          },
+          {   
+            "value": "direct_to_cart",
+            "label": "Direct to Cart"
+          }
+        ] 
+      },
+      { 
+        "type": "checkbox",
+          "id": "show_cart_drawer",
+          "label": "Show Cart Drawer",
+          "default": false
+      },
+      { 
+        "type": "checkbox",
+          "id": "show_saved_amount",
+          "label": "Show Saved %",
+          "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_default_variant",
+        "label": "Enable Make a Selection Option"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_quantity_selector",
+        "label": "Show Quantity",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_vendor",
+        "label": "Show Vendor",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_zoom",
+        "label": "Enable image zoom",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "shake_effect_enable",
+        "label": "Enable the shaking add to cart button",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "readmore_enable",
+        "label": "Enable Read more button",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_progressbar_text",
+        "label": "Enable Progress Bar",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_timer_top_message",
+        "label": "Enable Stock Left Message",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_progressbartimer_text",
+        "label": "Enable Sale end message",
+        "default": true
+      },
+        {
+        "type": "checkbox",
+        "id": "enable_shipping",
+        "label": "Enable Free + Shipping",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_tags",
+        "label": "Show tags",
+        "default": false
+        },
+      {
+        "type": "checkbox",
+        "id": "show_social",
+        "label": "Show social buttons",
+        "default": false
+        },
+      {
+        "type": "radio",
+        "id": "enable_timer_stg_on",
+        "default": "enable_timer_stg_on",
+        "options": [
+          {
+            "value": "enable_timer_stg_on",
+            "label": "ON timer"
+          },
+          {
+            "value": "enable_timer_stg_off",
+            "label": "OFF timer"
+          }
+        ],
+        "label": "Timer Setting ON\/OFF"
+      },
+      {
+        "type": "header",
+        "content": "Dynamic Checkout Button"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_payment_button",
+        "label": "Show dynamic checkout button",
+        "info": "Lets customers check out directly using a familiar payment method. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Variant Option [NEED HELP?](https:\/\/help.boostertheme.com\/hc\/en-us\/articles\/360002471493-How-to-Upload-Your-Color-Swatches-in-Booster-2-0-)"
+      },
+      {
+        "type": "radio",
+        "id": "variant_swacth",
+        "label":"Variant type",
+        "info": "Choose between color swatch or drop down menu for the variant",
+        "options": [
+          {
+            "value": "one",
+              "label": "Drop down menu"
+          },
+          {
+            "value": "two",
+            "label": "Color swatch"
+          }
+        ],
+          "default": "two"
+      },
+      {
+        "type":"header",
+        "content":"Swatch Option"
+      },
+      {
+        "type": "radio",
+        "id": "swatch_option",
+        "label":"Color Swatch style",
+        "options": [
+          {
+            "value": "with_background",
+              "label": "Background Color or image"
+          },
+          {
+            "value": "without_background",
+            "label": "Show color title like other swatches"
+          }
+        ],
+          "default": "without_background"
+      },
+      {
+        "type":"paragraph",
+        "content":"When you choose 'background Color or image' option, you can change colors shape by using below option"
+      },
+      {
+        "type": "radio",
+        "id": "color_style",
+        "label":"Shape of Color Swatch",        
+        "options": [
+          {
+            "value": "square_box",
+              "label": "Square"
+          },
+          {
+            "value": "round_shape",
+            "label": "Round"
+          }
+        ],
+          "default": "round_shape"
+      },
+      {
+        "type":"header",
+        "content":"Product Review"
+      },
+      {
+        "type":"checkbox",
+        "label":"Enable rating and review",
+        "id":"product_review",
+        "info":"make sure your shopify review app must be install",
+        "default": true
+      },
+      {
+        "type":"header",
+        "content":"Visitor Counter"
+      },
+      {
+        "type": "checkbox",
+        "id": "visitor_counter_enable",
+        "label": "Visitor Counter Enable"
+      },
+      {
+        "type": "select",
+        "id": "visitor_counter_number",
+        "label": "Visitor counter",
+        "default": "1-15",
+          "options": [
+          {
+            "value": "1-5",
+            "label": "1 to 5"
+          },
+          {
+            "value": "1-10",
+            "label": "1 to 10"
+          },
+          {
+            "value": "1-15",
+            "label": "1 to 15"
+          },
+          {
+            "value": "15-30",
+            "label": "15 to 30"
+          },
+          {
+            "value": "30-50",
+            "label": "30 to 50"
+          },
+          {
+            "value": "50-100",
+            "label": "50 to 100"
+          },
+          {
+            "value": "100-300",
+            "label": "100 to 300"
+          },
+          {
+            "value": "300-500",
+            "label": "300 to 500"
+          }  
+        ]
+      },
+      {
+        "type":"header",
+        "content":"Delivery Time"
+      },
+      {
+        "type": "text",
+        "id": "delivery_time_number",
+        "label": "Delivery time",
+        "default": "1-3" 
+      },
+      {
+        "type":"header",
+        "content":"Inspiring Stories"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_inspiring_story",
+        "label": "Enable Inspiring Stories",
+        "default": true
+      },
+      {
+        "type":"header",
+        "content":"Shipping Banner"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_shipping_banner",
+        "label": "Enable Shipping Banner",
+        "default": true
+      },
+      {
+        "type":"header",
+        "content":"Send a gift banner"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_gift_banner",
+        "label": "Enable Send a Gift Banner",
+        "default": true
+      },
+      {
+        "type": "richtext",
+        "id": "gift_banner_header",
+        "label": "Send a Gift Banner Header",
+        "default": "Send a gift to a friend!<br /> It is so easy!"
+      },
+      {
+        "type": "richtext",
+        "id": "gift_banner_text",
+        "label": "Send a Gift Banner Text",
+        "default": " Share a piece of your heart to your loved ones, wherever they are. Make them happy with an unforgettable gift for any occasion.<br /> Take just a few sipmle steps!"
+      },
+      {
+        "type": "text",
+        "id": "gift_banner_button_text",
+        "label": "Send a Gift Banner Button text",
+        "default": " Send a Gift"
+      },
+      {
+        "type": "text",
+        "id": "gift_banner_button_url",
+        "label": "Send a Gift Banner Button Link",
+        "default": "https://unidragon.gogiftmagic.com/pages/giftlanding?section=firstpromo&banner=unidragon-amazing-gifts&utm_source=product_banner&utm_medium=gift_banner&utm_campaign=gift"
+      },
+      {
+        "type":"header",
+        "content":"Bullit block"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_bullit_block",
+        "label": "Enable Bullit Block",
+        "default": true
+      },
+      {
+        "type":"header",
+        "content":"Decorate the walls banner"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_decorate_banner",
+        "label": "Enable Decorate the Walls Banner",
+        "default": true
+      },
+      {
+        "type": "richtext",
+        "id": "decorate_banner_header",
+        "label": "Send a Gift Banner Header",
+        "default": "DECORATE THE WALLS OF YOUR HOME"
+      },
+      {
+        "type": "richtext",
+        "id": "decorate_banner_text",
+        "label": "Decorate the Walls Banner Text",
+        "default": "You can decorate the interior with puzzles and our special mounting system"
+      },    
+      {
+        "type": "header",
+        "content": "Desktop"
+      },
+      {
+        "type": "select",
+        "id": "product_description",
+        "label": "Product Description",
+        "default": "under_the_price",
+          "options": [
+          {
+            "value": "under_the_price",
+            "label": "Under the price"
+          },
+          {   
+            "value": "under_the_timer",
+            "label": "Under the timer"
+          } 
+        ] 
+      },
+      {
+        "type": "header",
+        "content": "Mobile"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_sticky",
+        "label": "Enable Sticky button",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Upsell"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_combo_upsell",
+        "label": "Enable COMBO Upsell Block",
+        "default": true
+      },
+      {
+        "type": "product",
+        "id": "combo_upsell_product",
+        "label": "Select product for upsell"
+      },
+      {
+        "type": "header",
+        "content": "Mobile Sticky ADD TO CART Button"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_mobile_atc_button",
+        "label": "Enable Mobile Sticky ADD TO CART Button",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Badges"
+      },
+      {
+        "type": "checkbox",
+        "id": "move_badges_under_cart",
+        "label": "Move Badges below the Add-to-cart button",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_trust_badges",
+        "label": "Enable Badges",
+        "default": false
+      },
+      {
+        "type": "image_picker",
+        "id": "enable_trust_badges_image",
+        "label": "Payment icons"
+      },
+      {
+        "type":"header",
+        "content":"Discount Image Banner"
+      },
+      {
+        "type": "checkbox",
+        "id": "pdp_enable",
+        "label": "Enable PDP banner",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "pdp_enable_banner",
+        "label": "Enable image banner",
+        "default": false
+      },
+      {
+        "type":"image_picker",
+        "id":"pdp_image_banner",
+        "label":"Banner Image"
+      },
+      {
+        "type":"header",
+        "content":"Discount Info"
+      },
+      {
+        "type":"image_picker",
+        "id":"pdp_image",
+        "label":"Image"
+      },
+      {
+        "type":"textarea",
+        "id":"pdp_title",
+        "label":"Title"
+      },
+      {
+        "type":"textarea",
+        "id":"pdp_sub_title",
+        "label":"Sub-title"
+      },
+      {
+        "type":"header",
+        "content":"Custom Tax"
+      },
+      {
+        "type":"text",
+        "id":"heading-tax",
+        "label":"Heading"
+      },
+      {
+        "type":"text",
+        "id":"tax_title",
+        "label":"Title"
+      },
+      {
+        "type":"textarea",
+        "id":"tax_sub_content",
+        "label":"Sub-Content"
+      },
+      {
+      "type":"header",
+      "content":"Discount PopUp"
+      },
+
+      {
+      "type": "textarea",
+      "id": "title",
+      "label": "Heading"
+      },
+      {
+      "type": "image_picker",
+      "id": "imagecart",
+      "label": "Cart_Icon"
+      },
+      {
+      "type": "textarea",
+      "id": "sub_title",
+      "label": "SubHeading"
+      },
+      {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background-Image"
+      },
+      {
+      "type":"text",
+      "id":"pdp_cta_text",
+      "label":"CTA text"
+      },
+      {
+      "type":"url",
+      "id":"pdp_cta_link",
+      "label":"CTA link"
+      },
+      {
+      "type":"text",
+      "id":"pdp_cta_text1",
+      "label":"CTA text"
+      },
+      {
+      "type":"url",
+      "id":"pdp_cta_link1",
+      "label":"CTA link"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "bullit",
+        "name": "Advantage Bullit Block",
+        "settings":[
+          {
+            "type": "text",
+            "id": "advantage_num",
+            "label": "Bullit Number",
+            "default": "00"
+          },
+          {
+            "type": "text",
+            "id": "advantage_header",
+            "label": "Bullit Header",
+            "default": "Bullit header text"
+          },
+          {
+            "type": "text",
+            "id": "advantage_text",
+            "label": "Bullit Text",
+            "default": "Bullit text"
+          },
+          {
+            "type": "image_picker",
+            "id": "advantage_image",
+            "label": "Bullit Image"
+          }
+        ]
+      },
+      {
+        "type": "icons-set-with-text",
+        "name": "Icons set with Text"
+      },
+      {
+        "type": "faq",
+        "name": "Faq-Item",
+        "settings":[
+          {
+            "type": "text",
+            "id": "faq_title",
+            "default": "Put your question here !",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "faq_text",
+            "default": "<p>Put the answer here !</p>",
+            "label": "Text"
+          }
+        ]
+      },
+      {
+        "type": "image-with-text",
+        "name": "Image with text",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "image_alignment",
+            "label": "Image alignment",
+            "options": [
+              {
+                "value": "align_left",
+                "label": "Align Left"
+              },
+              {
+                "value": "align_right",
+                "label": "Align Right"
+              }
+            ],
+            "default": "align_left"
+          },
+          {
+            "type":"text",
+            "id": "title",
+            "label": "Title",
+            "default": "Great as a gift"
+          },
+          {
+            "type":"text",
+            "id": "text",
+            "label": "Text",
+            "default": "A gift that will surprise them and stay in their memory. Each puzzle is packed in a premium wooden gift box."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product page",
+        "blocks": [
+          {
+            "type": "bullit"
+          },
+          {
+            "type": "bullit"
+          },
+          {
+            "type": "bullit"
+          },
+          {
+            "type": "bullit"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %} 
