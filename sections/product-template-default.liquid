@@ -890,11 +890,11 @@
                       <div class="advantage-block">
                         <span class="advantage-item-num">{{block.settings.advantage_num}}</span>
                         <div class="advantage-item_left">
-                          <span class="advantage-item-title">{{block.settings.header}}</span>
-                          <span class="advantage-item-text">{{block.settings.text}}</span>
+                          <span class="advantage-item-title">{{block.settings.advantage_header}}</span>
+                          <span class="advantage-item-text">{{block.settings.advantage_text}}</span>
                         </div>
                       </div>
-                      <div class="advantage-item-img" style="background-image: url({{ block.settings.image | img_url: 'master' }});background-position: left;background-repeat: no-repeat;"></div>
+                      <div class="advantage-item-img" style="background-image: url({{ block.settings.advantage_image | img_url: 'master' }});background-position: left;background-repeat: no-repeat;"></div>
                     </div>
                   {%- endfor -%}
                 </div>
