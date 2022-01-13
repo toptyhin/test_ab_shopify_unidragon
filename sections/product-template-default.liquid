@@ -884,7 +884,7 @@
 
               {%- if enable_bullit_block -%}
                 <div class="advantage">
-                  {%- assign advantage_block = section.blocks | where: "type", "advantage"-%}
+                  {%- assign advantage_block = section.blocks | where: "type", "bullit" -%}
                   {%- for block in advantage_block -%}
                     <div class="advantage-item">
                       <div class="advantage-block">
@@ -1711,6 +1711,25 @@
             "id": "text",
             "label": "Text",
             "default": "A gift that will surprise them and stay in their memory. Each puzzle is packed in a premium wooden gift box."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product page",
+        "blocks": [
+          {
+            "type": "bullit"
+          },
+          {
+            "type": "bullit"
+          },
+          {
+            "type": "bullit"
+          },
+          {
+            "type": "bullit"
           }
         ]
       }
