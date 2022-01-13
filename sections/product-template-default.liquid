@@ -109,7 +109,7 @@
           .product-single__meta {font-family: 'Poppins';}
           .banner-inspirational-gift {
             background-color: black;
-            background-image: url({{'banner-inspirational-gift_bg.png' | asset_url}});
+            background-image: url({{ section.settings.gift_banner_bg_image | img_url: "master" }});
             background-size: cover;
             height: 400px;
             color: #ffffff;
@@ -143,7 +143,7 @@
           }
           .banner-decorate-walls {
             margin-top: 40px;
-            background-image: url({{'banner-decorate-walls_mob_bg.png' | asset_url}});
+            background-image: url({{ section.settings.decorate_banner_bg_mob_image | img_url: "master" }});
             background-size: cover;
             background-position: left;
             height: 350px;
@@ -235,7 +235,7 @@
             }
             .banner-decorate-walls {
               height: 420px;
-              background-image: url({{'banner-decorate-walls_bg.png' | asset_url}});
+              background-image: url({{ section.settings.decorate_banner_bg_image | img_url: "master" }});
             }
             .banner-decorate-walls_header {
               width: 395px;
@@ -882,9 +882,9 @@
                 </div>
               {%- endif -%}
 
-              {%- if enable_bullit_block -%}
+              {%- if section.settings.enable_bullit_block -%}
                 <div class="advantage">
-                  {%- assign advantage_block = section.blocks | where: "type", "advantage"-%}
+                  {%- assign advantage_block = section.blocks | where: "type", "bullit" -%}
                   {%- for block in advantage_block -%}
                     <div class="advantage-item">
                       <div class="advantage-block">
@@ -1387,13 +1387,13 @@
         "default": true
       },
       {
-        "type": "richtext",
+        "type": "textarea",
         "id": "gift_banner_header",
         "label": "Send a Gift Banner Header",
         "default": "Send a gift to a friend!<br /> It is so easy!"
       },
       {
-        "type": "richtext",
+        "type": "textarea",
         "id": "gift_banner_text",
         "label": "Send a Gift Banner Text",
         "default": " Share a piece of your heart to your loved ones, wherever they are. Make them happy with an unforgettable gift for any occasion.<br /> Take just a few sipmle steps!"
@@ -1409,6 +1409,11 @@
         "id": "gift_banner_button_url",
         "label": "Send a Gift Banner Button Link",
         "default": "https://unidragon.gogiftmagic.com/pages/giftlanding?section=firstpromo&banner=unidragon-amazing-gifts&utm_source=product_banner&utm_medium=gift_banner&utm_campaign=gift"
+      },
+      {
+        "type": "image_picker",
+        "id": "gift_banner_bg_image",
+        "label": "Send a Gift Banner Background"
       },
       {
         "type":"header",
@@ -1431,16 +1436,26 @@
         "default": true
       },
       {
-        "type": "richtext",
+        "type": "textarea",
         "id": "decorate_banner_header",
         "label": "Send a Gift Banner Header",
         "default": "DECORATE THE WALLS OF YOUR HOME"
       },
       {
-        "type": "richtext",
+        "type": "textarea",
         "id": "decorate_banner_text",
         "label": "Decorate the Walls Banner Text",
         "default": "You can decorate the interior with puzzles and our special mounting system"
+      },
+      {
+        "type": "image_picker",
+        "id": "decorate_banner_bg_image",
+        "label": "Decorate the Walls Banner Background"
+      },
+      {
+        "type": "image_picker",
+        "id": "decorate_banner_bg_mob_image",
+        "label": "Decorate the Walls Banner Mobile Background"
       },    
       {
         "type": "header",
