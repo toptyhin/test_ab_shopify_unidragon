@@ -882,7 +882,7 @@
                 </div>
               {%- endif -%}
 
-              {%- if enable_bullit_block -%}
+              {%- if section.settings.enable_bullit_block -%}
                 <div class="advantage">
                   {%- assign advantage_block = section.blocks | where: "type", "bullit" -%}
                   {%- for block in advantage_block -%}
