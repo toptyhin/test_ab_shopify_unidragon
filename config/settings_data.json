@@ -251,7 +251,7 @@
           "align_logo": "left",
           "logo": "shopify:\/\/shop_images\/Logo-unidragon.png",
           "desktop_logo_size": "90%",
-          "logo_mobile": "shopify:\/\/shop_images\/unidragon-logo-shopify-2.png",
+          "logo_mobile": "shopify:\/\/shop_images\/unidragon-logo-shopify-2_transporant.png",
           "mobile_logo_size": "35%",
           "main_linklist": "main-menu",
           "disable_header_strip": false,
@@ -2663,48 +2663,51 @@
       "product-template-default": {
         "type": "product-template-default",
         "blocks": {
-          "b18b24a5-61b0-45b2-a363-606be5b96602": {
+          "fc740eee-931a-4a59-8c7e-b0db9db27473": {
             "type": "bullit",
             "settings": {
-              "advantage_num": "00",
-              "advantage_header": "Bullit header text",
-              "advantage_text": "Bullit text"
+              "advantage_num": "01",
+              "advantage_header": "Spend your time with your loved ones",
+              "advantage_text": "Our puzzle is a good occasion to bring all the family and friends together",
+              "advantage_image": "shopify:\/\/shop_images\/DSC000911.jpg"
             }
           },
-          "fe6dfc63-4597-434e-88e1-b87c82928108": {
+          "897e366b-29a1-44b1-808d-999a7735670c": {
             "type": "bullit",
             "settings": {
-              "advantage_num": "00",
-              "advantage_header": "Bullit header text",
-              "advantage_text": "Bullit text"
+              "advantage_num": "02",
+              "advantage_header": "It is time to forget the daily routine!",
+              "advantage_text": "Psychologists recommend puzzles for meditation and stress relief",
+              "advantage_image": "shopify:\/\/shop_images\/DSC098721.jpg"
             }
           },
-          "aa476e24-c148-45a4-a8a6-e7025352c75e": {
+          "09a7098b-ab0e-41de-8e71-d302fade58c7": {
             "type": "bullit",
             "settings": {
-              "advantage_num": "00",
-              "advantage_header": "Bullit header text",
-              "advantage_text": "Bullit text"
+              "advantage_num": "03",
+              "advantage_header": "Try something new",
+              "advantage_text": "Unidragon puzzles have the most unique shape and design",
+              "advantage_image": "shopify:\/\/shop_images\/DSC099131.jpg"
             }
           },
-          "f6a75463-c3af-4d80-82db-92b82d225b94": {
+          "bb4bf31a-9866-4037-b276-6d95620674ab": {
             "type": "bullit",
             "settings": {
-              "advantage_num": "00",
-              "advantage_header": "Bullit header text",
-              "advantage_text": "Bullit text"
+              "advantage_num": "04",
+              "advantage_header": "Challenge yourself",
+              "advantage_text": "Puzzles work out your brain and strengthen your mind",
+              "advantage_image": "shopify:\/\/shop_images\/DSC001451.jpg"
             }
           }
         },
         "block_order": [
-          "b18b24a5-61b0-45b2-a363-606be5b96602",
-          "fe6dfc63-4597-434e-88e1-b87c82928108",
-          "aa476e24-c148-45a4-a8a6-e7025352c75e",
-          "f6a75463-c3af-4d80-82db-92b82d225b94"
+          "fc740eee-931a-4a59-8c7e-b0db9db27473",
+          "897e366b-29a1-44b1-808d-999a7735670c",
+          "09a7098b-ab0e-41de-8e71-d302fade58c7",
+          "bb4bf31a-9866-4037-b276-6d95620674ab"
         ],
         "settings": {
           "buy_it_now_action": "direct_to_cart",
-          "show_cart_drawer": false,
           "show_saved_amount": true,
           "enable_default_variant": false,
           "show_quantity_selector": false,
@@ -2712,13 +2715,7 @@
           "enable_zoom": true,
           "shake_effect_enable": true,
           "readmore_enable": false,
-          "enable_progressbar_text": true,
-          "enable_timer_top_message": true,
-          "enable_progressbartimer_text": true,
-          "enable_shipping": false,
           "show_tags": false,
-          "show_social": false,
-          "enable_timer_stg_on": "enable_timer_stg_on",
           "enable_payment_button": false,
           "variant_swacth": "two",
           "swatch_option": "without_background",
@@ -2734,10 +2731,12 @@
           "gift_banner_text": "Share a piece of your heart to your loved ones, wherever they are. Make them happy with an unforgettable gift for any occasion.<br> Take just a few sipmle steps!",
           "gift_banner_button_text": "Send a Gift",
           "gift_banner_button_url": "https:\/\/unidragon.gogiftmagic.com\/pages\/giftlanding?section=firstpromo&banner=unidragon-amazing-gifts&utm_source=product_banner&utm_medium=gift_banner&utm_campaign=gift",
+          "gift_banner_bg_image": "shopify:\/\/shop_images\/banner-inspirational-gift_bg.png",
           "enable_bullit_block": true,
           "enable_decorate_banner": true,
           "decorate_banner_header": "DECORATE THE WALLS OF YOUR HOME",
           "decorate_banner_text": "You can decorate the interior with puzzles and our special mounting system",
+          "decorate_banner_bg_image": "shopify:\/\/shop_images\/banner-decorate-walls_bg.png",
           "product_description": "under_the_price",
           "enable_sticky": true,
           "enable_combo_upsell": true,
@@ -2745,8 +2744,9 @@
           "enable_mobile_atc_button": false,
           "move_badges_under_cart": false,
           "enable_trust_badges": false,
-          "pdp_enable": false,
-          "pdp_enable_banner": false,
+          "pdp_enable": true,
+          "pdp_enable_banner": true,
+          "pdp_image_banner": "shopify:\/\/shop_images\/new_banner_10.jpg",
           "pdp_title": "",
           "pdp_sub_title": "",
           "heading-tax": "",
