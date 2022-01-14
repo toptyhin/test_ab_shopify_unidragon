@@ -2807,8 +2807,13 @@
           "532c864b-7bae-4d57-9074-e40d4e647a33"
         ],
         "settings": {
+          "header": "How to get a gift?",
+          "subheader": "Three simple steps",
+          "step_1_image": "shopify:\/\/shop_images\/step_1.png",
           "step_1_text": "Share your impressions on social media",
+          "step_2_image": "shopify:\/\/shop_images\/step_2.png",
           "step_2_text": "Tag the official Unidragon account",
+          "step_3_image": "shopify:\/\/shop_images\/step_3.png",
           "step_3_text": "Fill out the form and indicate the link to the publication",
           "step_3_button_text": "Fill",
           "step_3_button_url": "https:\/\/docs.google.com\/forms\/d\/e\/1FAIpQLSeJgrqKV0Y0RS4Mvzo_KJdVDfoyBY489UETNGIicRO9pGx2fQ\/viewform?usp=sf_link"
