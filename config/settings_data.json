@@ -2759,6 +2759,60 @@
           "pdp_cta_text1": "",
           "pdp_cta_link1": ""
         }
+      },
+      "gift-for-review": {
+        "type": "gift-for-review",
+        "blocks": {
+          "6a6def97-17a1-4300-a1fb-3d492091b083": {
+            "type": "Instagram",
+            "settings": {
+              "button_text": "unidragon_com",
+              "button_url": "https:\/\/www.instagram.com\/unidragon_com\/"
+            }
+          },
+          "8e422723-3818-4bbb-916e-7eb894b4db25": {
+            "type": "Youtube",
+            "settings": {
+              "button_text": "Unidragon",
+              "button_url": "https:\/\/www.youtube.com\/channel\/UCdss4w1ORKXjrYAwEf5stcA"
+            }
+          },
+          "3c6cbf89-4bf7-49cc-9283-15708f283d9b": {
+            "type": "Pinterest",
+            "settings": {
+              "button_text": "unidragonpuzzles",
+              "button_url": "https:\/\/www.pinterest.com\/unidragonpuzzles"
+            }
+          },
+          "de43e187-61fd-49ae-9167-773e9728d481": {
+            "type": "Facebook",
+            "settings": {
+              "button_text": "UNIDRAGONFANS",
+              "button_url": "https:\/\/www.facebook.com\/groups\/unidragonfans"
+            }
+          },
+          "532c864b-7bae-4d57-9074-e40d4e647a33": {
+            "type": "Twiter",
+            "settings": {
+              "button_text": "unidragon_com",
+              "button_url": "https:\/\/twitter.com\/unidragon_com"
+            }
+          }
+        },
+        "block_order": [
+          "6a6def97-17a1-4300-a1fb-3d492091b083",
+          "8e422723-3818-4bbb-916e-7eb894b4db25",
+          "3c6cbf89-4bf7-49cc-9283-15708f283d9b",
+          "de43e187-61fd-49ae-9167-773e9728d481",
+          "532c864b-7bae-4d57-9074-e40d4e647a33"
+        ],
+        "settings": {
+          "step_1_text": "Share your impressions on social media",
+          "step_2_text": "Tag the official Unidragon account",
+          "step_3_text": "Fill out the form and indicate the link to the publication",
+          "step_3_button_text": "Fill",
+          "step_3_button_url": "https:\/\/docs.google.com\/forms\/d\/e\/1FAIpQLSeJgrqKV0Y0RS4Mvzo_KJdVDfoyBY489UETNGIicRO9pGx2fQ\/viewform?usp=sf_link"
+        }
       }
     },
     "content_for_index": [
