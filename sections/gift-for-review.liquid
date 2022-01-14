@@ -1,0 +1,191 @@
+
+
+{{section.settings.step_1_image}}
+{{section.settings.step_1_text}}
+
+{{section.settings.step_2_image}}
+{{section.settings.step_2_text}}
+{%- for block in section.blocks -%}
+    {{block.settings.button_text}}
+    {{block.settings.button_url}}
+{%- endfor -%}
+
+{{section.settings.step_3_image}}
+{{section.settings.step_3_text}}
+{{section.settings.step_3_button_text}}
+{{section.settings.step_3_button_url}}
+{% schema %}
+{
+  "name": "Gift for review",
+  "tag": "section",
+  "class": "gift-for-review-section",
+  "settings": [
+    {
+        "type": "header",
+        "content": "Spep 1"
+    },
+    {
+        "type": "image_picker",
+        "id": "step_1_image",
+        "label": "Step 1 Image"
+    },
+    {
+        "type": "html",
+        "id": "step_1_text",
+        "label": "Step 1 Text",
+        "default": "Share your impressions on social media"
+    },
+    {
+        "type": "header",
+        "content": "Spep 2"
+    },
+    {
+        "type": "image_picker",
+        "id": "step_2_image",
+        "label": "Step 2 Image"
+    },
+    {
+        "type": "html",
+        "id": "step_2_text",
+        "label": "Step 2 Text",
+        "default": "Tag the official Unidragon account"
+    },
+    {
+        "type": "header",
+        "content": "Spep 3"
+    },
+    {
+        "type": "image_picker",
+        "id": "step_3_image",
+        "label": "Step 3 Image"
+    },
+    {
+        "type": "html",
+        "id": "step_3_text",
+        "label": "Step 3 Text",
+        "default": "Fill out the form and indicate the link to the publication"
+    },
+    {
+        "type": "text",
+        "id": "step_3_button_text",
+        "label": "Step 3 Button Text",
+        "default": "Fill"
+    },
+    {
+        "type": "text",
+        "id": "step_3_button_url",
+        "label": "Step 3 Button URL",
+        "default": "https://docs.google.com/forms/d/e/1FAIpQLSeJgrqKV0Y0RS4Mvzo_KJdVDfoyBY489UETNGIicRO9pGx2fQ/viewform?usp=sf_link"
+    }
+  ],
+  "blocks": [
+    {
+        "type": "Instagram",
+        "settings": [
+            {
+                "type": "text",
+                "id": "button_text",
+                "label": "Instagram Button Text",
+                "default": "unidragon_com"
+            },
+            {
+                "type": "text",
+                "id": "button_url",
+                "label": "Instagram Button URL",
+                "default": "https://www.instagram.com/unidragon_com/"
+            }
+        ]
+    },
+    {
+        "type": "Youtube",
+        "settings": [
+            {
+                "type": "text",
+                "id": "button_text",
+                "label": "Youtube Button Text",
+                "default": "Unidragon"
+            },
+            {
+                "type": "text",
+                "id": "button_url",
+                "label": "Youtube Button URL",
+                "default": "https://www.youtube.com/channel/UCdss4w1ORKXjrYAwEf5stcA"
+            }
+        ]
+    },
+    {
+        "type": "Pinterest",
+        "settings": [
+            {
+                "type": "text",
+                "id": "button_text",
+                "label": "Pinterest Button Text",
+                "default": "unidragonpuzzles"
+            },
+            {
+                "type": "text",
+                "id": "button_url",
+                "label": "Pinterest Button URL",
+                "default": "https://www.pinterest.com/unidragonpuzzles"
+            }
+        ]
+    },
+    {
+        "type": "Facebook",
+        "settings": [
+            {
+                "type": "text",
+                "id": "button_text",
+                "label": "Facebook Button Text",
+                "default": "UNIDRAGONFANS"
+            },
+            {
+                "type": "text",
+                "id": "button_url",
+                "label": "Facebook Button URL",
+                "default": "https://www.facebook.com/groups/unidragonfans"
+            }
+        ]
+    },
+    {
+        "type": "Twiter",
+        "settings": [
+            {
+                "type": "text",
+                "id": "button_text",
+                "label": "Twiter Button Text",
+                "default": "unidragon_com"
+            },
+            {
+                "type": "text",
+                "id": "button_url",
+                "label": "Twiter Button URL",
+                "default": "https://twitter.com/unidragon_com"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gift for review",
+      "blocks": [
+        {
+            "type": "Instagram"
+        },
+        {
+            "type": "Youtube"
+        },
+        {
+            "type": "Pinterest"
+        },
+        {
+            "type": "Facebook"
+        },
+        {
+            "type": "Twiter"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
