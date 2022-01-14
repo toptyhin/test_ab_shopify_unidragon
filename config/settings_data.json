@@ -2662,6 +2662,30 @@
       },
       "product-template-default": {
         "type": "product-template-default",
+        "blocks": {
+          "fc740eee-931a-4a59-8c7e-b0db9db27473": {
+            "type": "bullit",
+            "settings": {
+              "advantage_num": "01",
+              "advantage_header": "Spend your time with your loved ones",
+              "advantage_text": "Our puzzle is a good occasion to bring all the family and friends together",
+              "advantage_image": "shopify:\/\/shop_images\/DSC000911.jpg"
+            }
+          },
+          "897e366b-29a1-44b1-808d-999a7735670c": {
+            "type": "bullit",
+            "settings": {
+              "advantage_num": "02",
+              "advantage_header": "It is time to forget the daily routine!",
+              "advantage_text": "Psychologists recommend puzzles for meditation and stress relief",
+              "advantage_image": "shopify:\/\/shop_images\/DSC098721.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "fc740eee-931a-4a59-8c7e-b0db9db27473",
+          "897e366b-29a1-44b1-808d-999a7735670c"
+        ],
         "settings": {
           "buy_it_now_action": "direct_to_cart",
           "show_saved_amount": true,
