@@ -6,6 +6,7 @@
 {{section.settings.step_2_image}}
 {{section.settings.step_2_text}}
 {%- for block in section.blocks -%}
+    {{block.type}}
     {{block.settings.button_text}}
     {{block.settings.button_url}}
 {%- endfor -%}
