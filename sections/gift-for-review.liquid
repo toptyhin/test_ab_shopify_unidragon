@@ -1,6 +1,7 @@
 <div class="page-width">
     <div class="section-header text-center">
-        <h1>{{ page.title }}</h1>
+        <h1>{{ section.settings.header }}</h1>
+        <p>{{ section.settings.subheader }}</p>
     </div>
     <div class="rte">
         <div class="simple_steps">
@@ -164,6 +165,18 @@
   "tag": "section",
   "class": "gift-for-review-section",
   "settings": [
+    {
+        "type": "text",
+        "id": "header",
+        "label": "Header",
+        "default": "How to get a gift?"
+    },
+    {
+        "type": "text",
+        "id": "subheader",
+        "label": "SubHeader",
+        "default": "Three simple steps"
+    },
     {
         "type": "header",
         "content": "Spep 1"
