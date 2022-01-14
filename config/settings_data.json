@@ -2680,11 +2680,31 @@
               "advantage_text": "Psychologists recommend puzzles for meditation and stress relief",
               "advantage_image": "shopify:\/\/shop_images\/DSC098721.jpg"
             }
+          },
+          "09a7098b-ab0e-41de-8e71-d302fade58c7": {
+            "type": "bullit",
+            "settings": {
+              "advantage_num": "03",
+              "advantage_header": "Try something new",
+              "advantage_text": "Unidragon puzzles have the most unique shape and design",
+              "advantage_image": "shopify:\/\/shop_images\/DSC099131.jpg"
+            }
+          },
+          "bb4bf31a-9866-4037-b276-6d95620674ab": {
+            "type": "bullit",
+            "settings": {
+              "advantage_num": "04",
+              "advantage_header": "Challenge yourself",
+              "advantage_text": "Puzzles work out your brain and strengthen your mind",
+              "advantage_image": "shopify:\/\/shop_images\/DSC001451.jpg"
+            }
           }
         },
         "block_order": [
           "fc740eee-931a-4a59-8c7e-b0db9db27473",
-          "897e366b-29a1-44b1-808d-999a7735670c"
+          "897e366b-29a1-44b1-808d-999a7735670c",
+          "09a7098b-ab0e-41de-8e71-d302fade58c7",
+          "bb4bf31a-9866-4037-b276-6d95620674ab"
         ],
         "settings": {
           "buy_it_now_action": "direct_to_cart",
