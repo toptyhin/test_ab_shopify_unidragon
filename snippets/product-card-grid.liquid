@@ -136,9 +136,9 @@
     </div>
     
     {%- endunless -%}
-    
-	<div class="subheading grid-view-item__title medium-up--hide ">
     <div product-id="{{ product.id }}" class="arv-collection arv-collection--{{ product.id }}"></div>
+
+	<div class="subheading grid-view-item__title medium-up--hide ">
       {%- if section.settings.on_mobile_title_set == "mobile_title_set_line_trim" -%}
       {%- assign setHlimit = section.settings.mobile_text_limit -%}
       {%- comment -%}ly_code_replace_for_[ product.title | truncate:setHlimit ]_begin{%- endcomment -%}{%- include 'ly-title' with product -%}{{ ly_translation | truncate:setHlimit }}{%- comment -%}ly_code_replace_end{%- endcomment -%}
