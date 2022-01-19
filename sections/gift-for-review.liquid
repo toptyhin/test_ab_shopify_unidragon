@@ -39,7 +39,7 @@
                     </div>
                     <div class="simple_item-content">
                         <p>{{ section.settings.step_3_text }}</p>
-                        <a class="simple_item-button" href="{{ section.settings.step_3_button_url }}">{{ section.settings.step_3_button_text }}</a>
+                        <a id="gift-for-review" class="simple_item-button" href="{{ section.settings.step_3_button_url }}">{{ section.settings.step_3_button_text }}</a>
                     </div>
                 </div>
             </div>
@@ -142,10 +142,6 @@
     }
 
     @media (max-width: 1020px) {
-        .simple_item-img img {
-            min-height: 150px;
-            max-height: 150px;
-        }
         .simple_item-list ul {
             display: flex;
             flex-wrap: wrap;
@@ -165,6 +161,7 @@
             font-size: 18px;
         }
         .simple_item {
+          	width: 90%;
             justify-content: flex-start;
             margin-bottom: 24px;
         }

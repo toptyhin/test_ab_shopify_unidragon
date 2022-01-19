@@ -43,7 +43,7 @@ window.addEventListener("load", loadCSS(), false);
   const EL_IFRAME_AR = 'iframe[widget-id][class=aliReviewsFrame]:not([src])';
   function renderIframe(iframes){
     iframes.length && iframes.forEach((iframe, index) => {
-      let iframeSrc = iframe.getAttribute('data-ar-src');
+      let iframeSrc = iframe.getAttribute('data-ar-src') || iframe.getAttribute('data-src');
       iframe.setAttribute('src', iframeSrc || '');
     });
   };
