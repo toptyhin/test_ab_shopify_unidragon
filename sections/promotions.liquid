@@ -1,0 +1,170 @@
+<div class="prom">
+    <div class="prom_wrapper">
+      <div class="prom_title">
+        <span>{{ section.settings.prom_title }}</span>
+      </div>
+      <div class="prom_content">
+        <div class="prom_img">
+          <img src="{{ section.settings.prom_image | img_url: 'master' }}" alt="">
+        </div>
+        <div class="prom_info">
+          <span>{{ section.settings.prom_action }}</span>
+          <h4>{{ section.settings.prom_second_title }}</h4>
+          <p>{{ section.settings.prom_description }}</p>
+          <a href="{{ section.settings.prom_link_url }}">{{ section.settings.prom_link }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <style>
+  
+  
+  .prom_wrapper {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  .prom_content {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+  }
+  .prom_img {
+    width: 45%;
+  }
+  .prom_info {
+    width: 50%;
+    padding: 20px 30px 20px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .prom_info span {
+    padding-left: 20px;
+    background: url({{ 'icon_clock.png' | asset_url }}) no-repeat 0 2px;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #111;
+  }
+  .prom_info h4 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 20px 0 10px 0;
+  }
+  .prom_info p {
+    font-size: 16px;
+    line-height: 1.2;
+    color: #111;
+  }
+  .prom_info a {
+    text-align: right;
+    text-decoration: underline;
+    color: #ff7607;
+  }
+  .prom_img img {
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .prom_title {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .prom_title span {
+    position: relative;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1.25;
+    padding-bottom: 20px;
+    color: #000;
+  }
+  .prom_title span::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: block;
+    width: 40px;
+    height: 3px;
+    margin-left: -20px;
+    content: '';
+    background-color: #ff7607;
+  }
+  
+  @media (max-width: 1020px) {
+    .prom_title {
+      display: none;
+    }
+    .prom_content {
+      flex-direction: column;
+    }
+    .prom_wrapper {
+      max-width: 90%;
+    }
+    .prom_img {
+      width: 100%;
+    }
+    .prom_img img {
+      width: 100%;
+    }
+    .prom_info {
+      width: 100%;
+      padding: 20px;
+    }
+  }
+  
+  </style>
+  
+  
+  
+  {% schema %}
+    {
+      "name": "Promotions",
+      "settings": [
+        {
+          "type": "text",
+          "id": "prom_title",
+          "label": "Promotions title"
+        },
+        {
+          "type": "image_picker",
+          "id": "prom_image",
+          "label": "Promotions image"
+        },
+        {
+          "type": "text",
+          "id": "prom_action",
+          "label": "Promotions action date"
+        },
+        {
+          "type": "text",
+          "id": "prom_second_title",
+          "label": "Promotions secont title"
+        },
+        {
+          "type": "text",
+          "id": "prom_description",
+          "label": "Promotions description"
+        },
+        {
+          "type": "text",
+          "id": "prom_link",
+          "label": "Promotions link"
+        },
+        {
+          "type": "url",
+          "id": "prom_link_url",
+          "label": "Promotions link url"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Promotions"
+        }
+      ]
+    }
+  {% endschema %}
+  
+  

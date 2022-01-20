@@ -1,5 +1,5 @@
 {% assign template_support = "product" %}
-{% if template_support contains request.page_type %}
+{% if request.page_type contains 'product' or request.page_type contains 'collection'%}
  
  
         <script>
