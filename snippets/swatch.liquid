@@ -65,7 +65,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
           <div class="tooltip">{{ value }}</div>
         {%- endif -%}
 
-        {%- if product.type == 'Puzzle' -%}
+        {%- if product.type -%}
         {%- assign size_count = size_count | plus: 1 -%}
         <input id="swatch-{{ option_index }}-{{ value | handle }}-{{ section.id }}" type="radio" ga-data="{{size_count}}" name="option-{{ option_index }}" value="{{ value | escape }}"{% if variant.id == product.selected_or_first_available_variant.id %} checked{% endif %} {% unless variant.available %}disabled{% endunless %} />
         {% if is_color and section.settings.swatch_option == 'with_background' %}

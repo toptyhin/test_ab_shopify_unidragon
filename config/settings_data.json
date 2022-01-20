@@ -2716,7 +2716,7 @@
           "shake_effect_enable": true,
           "readmore_enable": false,
           "show_tags": false,
-          "enable_payment_button": false,
+          "enable_payment_button": true,
           "variant_swacth": "two",
           "swatch_option": "without_background",
           "color_style": "round_shape",
@@ -2827,8 +2827,8 @@
           "prom_action": "The promotion is valid from 12\/27\/2021 to 12\/31\/2022",
           "prom_second_title": "Leave a review and get a gift",
           "prom_description": "Share your feedback or repost our post on social media. Your review will be followed by a gift!",
-          "prom_link": "Learn more",
-          "prom_link_url": ""
+          "prom_link": "Learn more >>",
+          "prom_link_url": "shopify:\/\/pages\/gift-for-review"
         }
       }
     },
