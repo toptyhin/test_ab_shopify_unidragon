@@ -1,4 +1,7 @@
-
+{% assign template_support = "product" %}
+{% if request.page_type contains 'product' or request.page_type contains 'collection'%}
+ 
+ 
         <script>
             var alireviews_page_type = "{{ template }}";
             var alireviews_collection_id = "{{ collection.id }}";
@@ -49,3 +52,6 @@ window.addEventListener("load", loadCSS(), false);
     renderIframe(iframes);
   });
 </script>
+
+
+{% endif %}
