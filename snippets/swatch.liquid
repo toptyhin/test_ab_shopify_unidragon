@@ -41,7 +41,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
     <p><strong><ly-as-16902715>This is case-sensitive!</ly-as-16902715></strong> <ly-as-16902716>Do not put in</ly-as-16902716> <code><ly-as-16902717>'color'</ly-as-16902717></code> <ly-as-16902718>if your product option name is</ly-as-16902718> <code><ly-as-16902719>'Color'</ly-as-16902719></code>.</p>
   </div>
 {% else %}
-  <div id="swatchQuezzle" class="swatch {% if product.type == 'Puzzle' %}sw-size{% endif %} clearfix" data-option-index="{{ option_index }}">
+  <div id="swatchQuezzle" class="swatch sw-size clearfix" data-option-index="{{ option_index }}">
     <div class="header">Choose {{ swatch }}:</div>
     <div class="swatch_container">
       {%- assign values = '' -%}
