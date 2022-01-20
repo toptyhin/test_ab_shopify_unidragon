@@ -2818,6 +2818,18 @@
           "step_3_button_text": "Fill",
           "step_3_button_url": "https:\/\/docs.google.com\/forms\/d\/e\/1FAIpQLSeJgrqKV0Y0RS4Mvzo_KJdVDfoyBY489UETNGIicRO9pGx2fQ\/viewform?usp=sf_link"
         }
+      },
+      "promotions": {
+        "type": "promotions",
+        "settings": {
+          "prom_title": "Special offers and promotions",
+          "prom_image": "shopify:\/\/shop_images\/promotions-banner-1_60fcefa8-e88d-42c7-882a-b605f64f579f.png",
+          "prom_action": "The promotion is valid from 12\/27\/2021 to 12\/31\/2022",
+          "prom_second_title": "Leave a review and get a gift",
+          "prom_description": "Share your feedback or repost our post on social media. Your review will be followed by a gift!",
+          "prom_link": "Learn more",
+          "prom_link_url": ""
+        }
       }
     },
     "content_for_index": [
