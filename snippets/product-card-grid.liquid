@@ -154,6 +154,7 @@
       {%- comment -%}ly_code_replace_for_[ product.title ]_begin{%- endcomment -%}{%- include 'ly-title' with product -%}{{ ly_translation }}{%- comment -%}ly_code_replace_end{%- endcomment -%}
       {%- endif -%}    
     </div>
+    {{ product.title }}
     <div product-id="{{ product.id }}" class="arv-collection arv-collection--{{ product.id }}"></div>
     {%- if section.settings.show_vendor -%} 
       <div class="grid-view-item__vendor">{%- comment -%}ly_code_replace_for_[ product.vendor ]_begin{%- endcomment -%}{%- include 'ly-vendor' with product -%}{{ ly_translation }}{%- comment -%}ly_code_replace_end{%- endcomment -%}</div>
