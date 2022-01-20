@@ -2716,7 +2716,7 @@
           "shake_effect_enable": true,
           "readmore_enable": false,
           "show_tags": false,
-          "enable_payment_button": false,
+          "enable_payment_button": true,
           "variant_swacth": "two",
           "swatch_option": "without_background",
           "color_style": "round_shape",
