@@ -1824,7 +1824,7 @@
       "collection-mandala-template": {
         "type": "collection-mandala-template",
         "settings": {
-          "grid": 3,
+          "grid": 2,
           "rows": 3,
           "show_collection_image": true,
           "enable_parallax": false,
