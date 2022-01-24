@@ -450,6 +450,9 @@
           {% include 'collection-grid-item' %}          
         </div>
         {% endfor %}
+        <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
+          {% include 'product-card-grid', product:all_products['set-for-mounting-puzzles'], max_height: max_height %}
+        </div>
       </div>
     </div>
 
