@@ -402,7 +402,7 @@
         {%- unless collection.handle == 'world_map_puzzles' or collection.handle == 'balancing-puzzles'-%}
           <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
             {% for product in all_products['set-for-mounting-puzzles'] %}
-            {{product.title}}
+            {{all_products['set-for-mounting-puzzles'].title}}
               {% include 'product-card-grid', max_height: max_height %}
             {% endfor %}
           </div>
