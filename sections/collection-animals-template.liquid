@@ -401,11 +401,6 @@
         {% endfor %}
         {%- unless collection.handle == 'world_map_puzzles' or collection.handle == 'balancing-puzzles'-%}
           <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
-            {% render 'product-card-grid', product:all_product['set-for-mounting-puzzles'], max_height: max_height %}
-          </div>
-        {%- endunless -%}        
-        {%- unless collection.handle == 'world_map_puzzles' or collection.handle == 'balancing-puzzles'-%}
-          <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
             <style>
               .storyblock {margin: 20px 0 10px;}
             </style>
