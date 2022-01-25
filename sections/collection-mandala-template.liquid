@@ -24,26 +24,6 @@
   }
 
   {% endif %}
-  @media only screen and (min-width:749px) {
-    .grid__item.grid__item--collection-mandala-template.medium-up--one-half.small--one-half img,
-    .grid__item.grid__item--collection-mandala-template .reveal .hidden,
-    .grid__item.grid__item--collection-mandala-template.medium-up--one-half.small--one-half {
-            margin: 0 auto;
-            align-items: center;
-            display: flex;
-        }
-    }
-    .grid__item.grid__item--collection-mandala-template .shop-now {
-    position: absolute;
-    margin: 0 auto;
-    bottom: 2px;
-    right: 0;
-    background-color: #ff862d;
-    color: #fff;
-    padding: 18px;
-    left: 0;
-    width: 120px;
-    }
 </style>
 
 {% case section.settings.grid %}
@@ -346,12 +326,18 @@
             </div>
           </div>
           {% endfor %}
+          <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
+            {% include 'product-card-grid', product:all_products['set-for-mounting-puzzles'], max_height: max_height %}
+          </div>
         </div>
       </div>
       {% else %}
       {%- assign is_empty_collection = true -%}
       {% endif %}
       {% endfor %}
+      <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
+        {% include 'product-card-grid', product:all_products['set-for-mounting-puzzles'], max_height: max_height %}
+      </div>
     </div>
     {% comment %}
     {% if section.settings.layout == 'grid' %}
@@ -398,6 +384,9 @@
         {%- assign is_empty_collection = true -%}
         {% endif %}
         {% endfor %}
+        <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
+          {% include 'product-card-grid', product:all_products['set-for-mounting-puzzles'], max_height: max_height %}
+        </div>
         </div>
       {% endif %}
       {% endcomment %}
@@ -444,6 +433,9 @@
           {% include 'collection-grid-item' %}          
         </div>
         {% endfor %}
+        <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
+          {% include 'product-card-grid', product:all_products['set-for-mounting-puzzles'], max_height: max_height %}
+        </div>
       </div>
     </div>
 
@@ -580,6 +572,9 @@
       {%- assign is_empty_collection = true -%}
       {% endif %}
       {% endfor %}
+      <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
+        {% include 'product-card-grid', product:all_products['set-for-mounting-puzzles'], max_height: max_height %}
+      </div>
     </div>
     {% comment %}
     {% if section.settings.layout == 'grid' %}
@@ -627,6 +622,9 @@
         {%- assign is_empty_collection = true -%}
         {% endif %}
         {% endfor %}
+        <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {{grid_mobile}}">
+          {% include 'product-card-grid', product:all_products['set-for-mounting-puzzles'], max_height: max_height %}
+      </div>
         </div>
       {% endif %}
       {% endcomment %}
