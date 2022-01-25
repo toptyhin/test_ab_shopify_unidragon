@@ -161,7 +161,7 @@ kv 02/02/21
 
            <p class="product-single__price product-single__price-{{ section.id }}{% unless current_variant.available %} product-price--sold-out{% endunless %}">
             {% if current_variant.compare_at_price > current_variant.price %}
-            <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span> <span class="from-ab-test" style="display:none;">from </span><span class="from-ab-test" style="display:none;">from </span>
+            <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span> <span class="from-ab-test" style="display:none;">from </span>
             <s id="ComparePrice-{{ section.id }}">{{ current_variant.compare_at_price | money }}</s>
             <span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single">
               <span id="ProductPrice-{{ section.id }}"

@@ -601,11 +601,7 @@
                   {% endif %}
                 </span>
               {% else %}
-<<<<<<< HEAD
-                <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span> <span class="from-ab-test" style="display:none;">from </span><span class="from-ab-test" style="display:none;">from </span><span>from </span>
-=======
                 <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span><span>from </span>
->>>>>>> 934a9cb5fac625fdbf29beb64431c3a25c0df823
                 <s id="ComparePrice-{{ section.id }}" class="hide">{{ current_variant.compare_at_price | money }}</s>
                 <span class="product-price__price product-price__price-{{ section.id }}">
                   <span id="ProductPrice-{{ section.id }}" itemprop="price" content="{{ current_variant.price | times: discount_amount | divided_by: 100.00 }}">
