@@ -1824,7 +1824,7 @@
       "collection-mandala-template": {
         "type": "collection-mandala-template",
         "settings": {
-          "grid": 2,
+          "grid": 3,
           "rows": 2,
           "show_collection_image": true,
           "enable_parallax": false,
@@ -1833,8 +1833,8 @@
           "external_video": "",
           "video_bg": "",
           "show_vendor": false,
-          "sort_enable": true,
-          "tags_enable": true,
+          "sort_enable": false,
+          "tags_enable": false,
           "on_desktop_title_set": "title_set_line_trim",
           "desktop_text_limit": 30,
           "on_mobile_title_set": "mobile_title_set_line_trim",
