@@ -2,7 +2,150 @@
 {% comment %}
   The contents of the collection.liquid template can be found in /sections/collection-template.liquid
 {% endcomment %}
+<style>
+  @media only screen and (max-width: 1024px) {
+    .reveal .hidden.addtocard  {
+      display: block;
+  }
+  .add-to-card .hyphen {
+    display: none;
+  }
+}
+  .fadeInUp.animated {
+            bottom: 0;
+            position: inherit;
+            width: 100%;
+        }
+    .custom-checkbox {
+        position: absolute;
+        opacity: 0;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+    }
+    .add-to-card {
+        bottom: 0;
+        width: 100%;
+        z-index: 100;
+        background: white;
+    }
+    .add-to-card button {
+        font-size: 15px;
+        color: rgb(255, 255, 255);
+        text-transform: uppercase;
+        background-color: rgb(255, 142, 0);
+        width: 100%;
+        border: none;
+        letter-spacing: inherit;
+        padding: 12px;
+    }
+    .add-to-card-size__item label {
+        font-size: 10px;
+        width: 25px;
+        height: 25px;
+    }
+    .add-to-card-size {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+    .add-to-card-size__item {
+        margin-right: 5px;
+        display: flex;
+    }
+    .add-to-card-size__item label {
+        border-radius: 50%;
+        background-color: rgb(247, 247, 247);
+        width: 33px;
+        height: 33px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: rgb(153, 153, 153);
+        font-weight: bold;
+        transition: all .3s;
+    }
+    .add-to-card-size__item input:checked+label, .add-to-card-size__item label:hover {
+        border: 1px solid rgb(26, 26, 26);
+        color: rgb(26, 26, 26);
+    }
+    .shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    }
+    .add-to-card-size__item.shake label {
+        border: 1px solid red;
+    }
+    @keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+    }
+    @media only screen and (max-width: 1024px) {
+      .add-to-card button {
+        font-size: 12px;
+      }
+    }
+</style>
 
 {%- liquid
     section 'collection-mandala-template'
   -%}
+
+    
+  {%- section  'go-cart' -%}
+
+  <script>
+
+    $('.add-to-card-size__item').on('click',function(e){
+      let price = ' - '; 
+      $(this).closest('div[addtocart]').find('.button-price').html( price + $('.add-to-card-size__item > input:checked').attr('price') );
+      $('.add-to-card-size__item').removeClass('shake');
+    });
+
+    $('.add-to-card .btn_sp').on('click',function(e){
+      e.preventDefault();
+        if ($(this).closest('div').find('.add-to-card-size__item > input:checked').val())  { 
+        let formData = {
+            'items': [
+                {
+                    'id': $(this).closest('div').find('.add-to-card-size__item > input:checked').val(),
+                    'quantity': 1
+                }
+            ]
+        };
+        fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+        })
+        .then(response => {
+        goCart.fetchAndOpenCart();
+        })
+        .catch((error) => {
+        console.error('Error:', error);
+        });
+      } else {
+        $(this).closest('div').find('.add-to-card-size__item').addClass('shake');
+      }
+    });
+  </script>

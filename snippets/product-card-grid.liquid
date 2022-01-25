@@ -130,9 +130,13 @@
       {%- if product.images.size > 1 -%}
       <img loading="lazy" class="hidden" src="{{ product.images[1] | img_url: image_pro }}" alt="{{ product.images.last.alt | escape }}" />
       {%- endif -%}
-      <div class="hidden">          
-      <div class="shop-now fadeInUp animated"> {%- comment -%}ly_i18n_replace_for_[ 'collections.general.shop_now' | t ]_begin{%- endcomment -%}{%- capture ly_template -%}{{ 'collections.general.shop_now' | t }}{%- endcapture -%}{%- capture ly_translation -%}{%- render 'ly-static-string' with '16902645' render:true -%}{%- endcapture -%}{%- if ly_translation != '' and ly_translation != nil  -%}{%- assign escape_content = true -%}{%- assign ly_template = ly_translation -%}{%- else -%}{%- assign escape_content = false -%}{%- endif -%}{%- if escape_content -%}{{ ly_template | escape}}{%- else -%}{{ ly_template }}{%- endif -%}{%- comment -%}ly_i18n_replace_end{%- endcomment -%} ></div>     
-    </div>
+      <div class="hidden addtocard">
+        <div class="fadeInUp animated">
+        {%- if template contains 'collection' and product.variants.size > 1 -%}
+          {%- render 'add-to-card', product: product -%}
+        {%- endif -%}  
+        </div>
+      </div>
     </div>
     
     {%- endunless -%}

@@ -1,30 +1,30 @@
 <style>
-    {% if section.settings.enable_parallax%}
-    .collection-hero__image {  
-      position: relative;
-      height: 40vh;
-      /*background-attachment: fixed;*/
-      background-position: center;
-      /*background-size: cover;*/
-      background-color: #241c42;
+  {% if section.settings.enable_parallax%}
+  .collection-hero__image {  
+    position: relative;
+    height: 40vh;
+    /*background-attachment: fixed;*/
+    background-position: center;
+    /*background-size: cover;*/
+    background-color: #241c42;
+  }
+  @media only screen and (max-width:749px) { 
+    .collection-hero__image {
+      height: 50vh;
+    }  
+    .collection-hero__image {
+      background-attachment: scroll; 
     }
-    @media only screen and (max-width:749px) { 
-      .collection-hero__image {
-        height: 50vh;
-      }  
-      .collection-hero__image {
-        background-attachment: scroll; 
-      }
+  }
+  @media only screen and (min-width:749px) and (max-width:1024px) {
+    .collection-hero__image {
+      background-attachment: scroll;     
     }
-    @media only screen and (min-width:749px) and (max-width:1024px) {
-      .collection-hero__image {
-        background-attachment: scroll;     
-      }
-    }
-  
-    {% endif %}
-  </style>
-  
+  }
+
+  {% endif %}
+</style>
+
   {% case section.settings.grid %}
   {% when 2 %}
   {%- assign max_height = 530 -%}

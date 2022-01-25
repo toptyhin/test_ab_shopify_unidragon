@@ -7190,11 +7190,16 @@ a.btn.hero__btn.large, a.btn.hero__btn.medium {
 // =============================================== */
 /* .reveal .hidden { display: block !important; visibility: visible !important;} */
 .reveal {
+  display: flex;
   position: relative;
   line-height: 0;
   margin-bottom: 12px;
 }
+.reveal img { margin: 0 auto;}
 @media only screen and (max-width: 1024px) {
+  .reveal {
+    display: block;
+  }
   .reveal .hidden { 
     display:none;
   }
