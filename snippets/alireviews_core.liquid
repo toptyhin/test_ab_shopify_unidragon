@@ -1,9 +1,12 @@
+<script>
+var alireviews_request_page_type = "{{ request.page_type }}";
+</script>
 {% assign template_support = "product" %}
 {% if request.page_type contains 'product' or request.page_type contains 'collection'%}
  
  
         <script>
-var alireviews_request_page_type = "{{ request.page_type }}";
+
             var alireviews_page_type = "{{ template }}";
             var alireviews_collection_id = "{{ collection.id }}";
             var alireviews_theme_id = "{{ theme.id }}";
