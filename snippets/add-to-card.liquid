@@ -5,8 +5,8 @@
           {% if variant.available %}
               <div class="add-to-card-size__item">
                   <input type="radio" class="custom-checkbox" id="atc-button-{{size_selector[forloop.index]}}" name="atc-size-selector" price="{{variant.price | money}}" value="{{variant.id}}">
-                  {%- assign label = variant.title | split: ' ' -%}
-                  <label for="{{variant.id}}">{{ label[1] }}</label>
+                  {%- assign label = variant.sku | split: ' ' | last -%}
+                  <label for="{{variant.id}}">{{ label }}</label>
               </div>
           {%- endif -%}
       {%- endfor -%}
