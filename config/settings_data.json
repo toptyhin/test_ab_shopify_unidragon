@@ -2524,56 +2524,23 @@
       "page-landing": {
         "type": "page-landing",
         "blocks": {
-          "7bbd658b-ae5f-4667-9c8d-377b00f8c90f": {
-            "type": "ProductsNew",
-            "disabled": true,
-            "settings": {
-              "landing_new_product": "fiery-fox",
-              "rating": "5.0",
-              "reviews": "32 reviews"
-            }
-          },
-          "3ffe9149-0d62-467c-a986-52f284ad1b16": {
-            "type": "ProductsNew",
-            "disabled": true,
-            "settings": {
-              "landing_new_product": "lovely-tiger",
-              "rating": "5.0",
-              "reviews": "40 reviews"
-            }
-          },
-          "fd3d20b2-15cc-431d-986c-37858bbf6b5c": {
-            "type": "ProductsNew",
-            "disabled": true,
-            "settings": {
-              "landing_new_product": "fairy-bird",
-              "rating": "5.0",
-              "reviews": "34 reviews"
-            }
-          },
           "cff6855b-5251-4eef-addb-17e748856eb5": {
             "type": "ProductsBest",
             "settings": {
-              "landing_best_product": "lovely-tiger",
-              "rating": "5.0",
-              "reviews": "40 reviews"
+              "landing_best_product": "lovely-tiger"
             }
           },
           "0489dc8e-bf6a-469e-aff0-2dc1720bf8a5": {
             "type": "ProductsBest",
             "settings": {
-              "landing_best_product": "fiery-fox",
-              "rating": "5.0",
-              "reviews": "32 reviews"
+              "landing_best_product": "fiery-fox"
             }
           },
           "8732be4e-47a0-4359-abcc-f8c087148553": {
             "type": "ProductsBest",
             "disabled": true,
             "settings": {
-              "landing_best_product": "fairy-bird",
-              "rating": "5.0",
-              "reviews": "34 reviews"
+              "landing_best_product": "fairy-bird"
             }
           },
           "666608e0-acdc-417f-80fa-111cf88a5d12": {
@@ -2602,50 +2569,40 @@
           },
           "a5ebcdb3-7bb8-447b-a016-6b81741a21a9": {
             "type": "ProductsNew",
+            "disabled": true,
             "settings": {
-              "landing_new_product": "wandering-jellyfish",
-              "rating": "5.0",
-              "reviews": "0 reviews"
+              "landing_new_product": "wandering-jellyfish"
             }
           },
           "b7c8520f-4e8b-4e95-a26a-649247b70bcf": {
             "type": "ProductsNew",
+            "disabled": true,
             "settings": {
-              "landing_new_product": "quezzle",
-              "rating": "5.0",
-              "reviews": "4 reviews"
+              "landing_new_product": "quezzle"
             }
           },
           "c32a6fe9-4449-43a3-8a87-5581ba8b2ef1": {
             "type": "ProductsNew",
+            "disabled": true,
             "settings": {
-              "landing_new_product": "mandala-overarching-opposites",
-              "rating": "5.0",
-              "reviews": "5 reviews"
+              "landing_new_product": "mandala-overarching-opposites"
             }
           },
           "32d7f79c-79b1-4b4c-b2f5-8df8a5fad68f": {
             "type": "ProductsNew",
             "disabled": true,
             "settings": {
-              "landing_new_product": "mandala-inexhaustible-abundance",
-              "rating": "5.0",
-              "reviews": "6 reviews"
+              "landing_new_product": "mandala-inexhaustible-abundance"
             }
           },
           "855d2547-4e8c-48d6-8d4a-5c948709f20f": {
             "type": "ProductsBest",
             "settings": {
-              "landing_best_product": "playful-parrots",
-              "rating": "5.0",
-              "reviews": "15 reviews"
+              "landing_best_product": "playful-parrots"
             }
           }
         },
         "block_order": [
-          "7bbd658b-ae5f-4667-9c8d-377b00f8c90f",
-          "3ffe9149-0d62-467c-a986-52f284ad1b16",
-          "fd3d20b2-15cc-431d-986c-37858bbf6b5c",
           "cff6855b-5251-4eef-addb-17e748856eb5",
           "0489dc8e-bf6a-469e-aff0-2dc1720bf8a5",
           "8732be4e-47a0-4359-abcc-f8c087148553",
