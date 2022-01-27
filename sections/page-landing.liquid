@@ -17,7 +17,8 @@
                             <div class="c-product__main">
                                 <div class="c-product__image"><img src="{{ block.settings.landing_new_product.featured_image | img_url: 'master' }}" width="360" height="360" alt="Fiery Fox" /></div>
                                 <div class="c-product__info">
-                                    <div class="stars c-product__stars" title="5"><span class="stars__rating" style="width:100%"></span></div><span class="c-product__rating">{{ block.settings.rating }}</span><span class="c-product__reviews">({{ block.settings.reviews }})</span>
+                                    <div product-id="{{ block.settings.landing_new_product.id }}" class="arv-collection arv-collection--{{ block.settings.landing_new_product.id }}"></div>
+                                    <div class="alrv-prod-rating"><span class="alr-wrapper-rating"></span></div>
                                 </div>
                                 <div class="c-product__title">{{ block.settings.landing_new_product.title }}</div>
                             </div>
