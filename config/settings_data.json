@@ -2777,6 +2777,7 @@
           "decorate_banner_header": "DECORATE THE WALLS OF YOUR HOME",
           "decorate_banner_text": "You can decorate the interior with puzzles and our special mounting system",
           "decorate_banner_bg_image": "shopify:\/\/shop_images\/banner-decorate-walls_bg.png",
+          "decorate_banner_bg_mob_image": "shopify:\/\/shop_images\/banner-decorate-walls_bg.png",
           "product_description": "under_the_price",
           "enable_sticky": true,
           "enable_combo_upsell": true,
