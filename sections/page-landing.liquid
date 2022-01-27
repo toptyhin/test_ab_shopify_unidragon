@@ -10,13 +10,6 @@
                 <div class="collection__headline">
                     <h2 class="title collection__title">New</h2><a class="collection__view-all" href="{{ section.settings.vew_all_new_items }}">View all new items</a>
                 </div>
-
-<style>
-    .arv-collection .alr-icon-star:before, #alireview-review-widget-badge .alr-icon-star:before {font-size: 17px;}
-    .arv-collection .alr-wrapper-rating .alr-rating-symbol:not(:last-child) {margin-right: 3px!important;}
-    span.alrv-prod-rating__text {padding-left: 10px;font-size: 16px;}
-</style>
-
                 <div class="collection__items">
                     {%- assign ProductsNew = section.blocks | where: "type", "ProductsNew" -%}
                     {%- if ProductsNew.size > 0 -%}
@@ -163,6 +156,50 @@
     "settings": [
     {
         "type": "header",
+        "content": "Rating Settings"
+    },
+    {
+        "type": "range",
+        "id": "star_size",
+        "min": 10,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "label": "Star Size",
+        "default": 17
+    },
+    {
+        "type": "range",
+        "id": "star_text_font_size",
+        "min": 10,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "label": "Star Text Font Size",
+        "default": 16
+    },
+    {
+        "type": "range",
+        "id": "star_padding",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "label": "Star paddings",
+        "default": 3
+    },
+    {
+        "type": "range",
+        "id": "star_text_padding",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "unit": "px",
+        "label": "Star paddings",
+        "default": 10
+    },
+    {
+        "type": "header",
         "content": "Header"
     },
     {
@@ -299,3 +336,16 @@
   ]
 }
 {% endschema %}
+
+<style>
+    .arv-collection .alr-icon-star:before, #alireview-review-widget-badge .alr-icon-star:before {
+        font-size: {{ section.settings.star_size }}px;
+    }
+    .arv-collection .alr-wrapper-rating .alr-rating-symbol:not(:last-child) {
+        margin-right: {{section.settings.star_padding}}px!important;
+    }
+    span.alrv-prod-rating__text {
+        padding-left: {{section.settings.star_text_padding}}px;
+        font-size: {{ section.settings.star_text_font_size }}px;
+    }
+</style>
