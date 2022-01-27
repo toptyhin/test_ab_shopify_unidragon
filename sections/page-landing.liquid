@@ -10,7 +10,6 @@
                 <div class="collection__headline">
                     <h2 class="title collection__title">New</h2><a class="collection__view-all" href="{{ section.settings.vew_all_new_items }}">View all new items</a>
                 </div>
-                <style>.arv-collection .alr-wrapper-rating .alr-rating-symbol:not(:last-child) {margin-right: 6px!important;}</style>
                 <div class="collection__items">
                     {%- assign ProductsNew = section.blocks | where: "type", "ProductsNew" -%}
                     {%- if ProductsNew.size > 0 -%}
