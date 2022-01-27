@@ -2600,6 +2600,14 @@
               "image_collection": "shopify:\/\/shop_images\/landing-category-3_2x_a9d18cb8-ff0e-4de3-97ab-69711d9c594c.jpg"
             }
           },
+          "a5ebcdb3-7bb8-447b-a016-6b81741a21a9": {
+            "type": "ProductsNew",
+            "settings": {
+              "landing_new_product": "wandering-jellyfish",
+              "rating": "5.0",
+              "reviews": "0 reviews"
+            }
+          },
           "b7c8520f-4e8b-4e95-a26a-649247b70bcf": {
             "type": "ProductsNew",
             "settings": {
@@ -2618,6 +2626,7 @@
           },
           "32d7f79c-79b1-4b4c-b2f5-8df8a5fad68f": {
             "type": "ProductsNew",
+            "disabled": true,
             "settings": {
               "landing_new_product": "mandala-inexhaustible-abundance",
               "rating": "5.0",
@@ -2643,12 +2652,17 @@
           "666608e0-acdc-417f-80fa-111cf88a5d12",
           "09bfdfe4-d494-4acb-9187-9df3d77c82ce",
           "4ae3ca50-1365-4aeb-bda0-17bcb041227a",
+          "a5ebcdb3-7bb8-447b-a016-6b81741a21a9",
           "b7c8520f-4e8b-4e95-a26a-649247b70bcf",
           "c32a6fe9-4449-43a3-8a87-5581ba8b2ef1",
           "32d7f79c-79b1-4b4c-b2f5-8df8a5fad68f",
           "855d2547-4e8c-48d6-8d4a-5c948709f20f"
         ],
         "settings": {
+          "header": "Fascinating <br>wooden puzzles",
+          "advantages_block_1": "You will receive <b>10% bonus points<\/b> that you can spend on your next purchases",
+          "advantages_block_2": "<b>Special offers<\/b> and big discounts are only on our website",
+          "advantages_block_3": "You can find the most complete range of <b>new products only on our website<\/b>",
           "order_on_website": "https:\/\/unidragon.com\/collections\/wooden-puzzles\/?utm_source=instagram_tap",
           "order_on_amazon": "https:\/\/www.amazon.com\/stores\/Uniquewoodenpuzzles\/page\/B2976332-EDE0-4EA3-B4FE-B15714AA41E2?maas=maas_adg_89E0DE2BE316CB1F7D5FED806C85E10F_afap_abs&ref_=aa_maas&tag=maas&ref_=ast_bln",
           "order_on_etsy": "https:\/\/www.etsy.com\/shop\/unidragonpuzzle?ref=simple-shop-header-name&listing_id=726260576",
@@ -2698,34 +2712,74 @@
               "advantage_text": "Puzzles work out your brain and strengthen your mind",
               "advantage_image": "shopify:\/\/shop_images\/DSC001451.jpg"
             }
+          },
+          "0b868a7d-e485-494f-8a58-541be30760a2": {
+            "type": "faq",
+            "settings": {
+              "faq_title": "How does the size of the pieces differ for the puzzle sizes – S, M, KS, RS?",
+              "faq_text": "<p>Our sizes change with the number of pieces, so the size of the pieces is the same in every puzzle.<\/p>"
+            }
+          },
+          "577cc055-74aa-4e1b-b5ca-d6c5446f9755": {
+            "type": "faq",
+            "settings": {
+              "faq_title": "What is a wooden puzzle?",
+              "faq_text": "<p>Our puzzles are made from a pressured HDF that is 3mm thick. This material is eco-friendly, high-quality and durable. It doesn’t deform and doesn’t give splinters (like with plywood).<\/p>"
+            }
+          },
+          "7a2f3d93-637a-4acc-9a93-3a4157cb809a": {
+            "type": "faq",
+            "settings": {
+              "faq_title": "How long does each size puzzle take to assemble?",
+              "faq_text": "<p>Check our illustration (link\/popup of with an illustration of the sizes and photo of a girl). As well as the size pay attention to the assembly times:<br\/><br\/>                          S -&gt; from 2 hours<br\/>                          M-&gt; from 4 hours<br\/>                          L-&gt; from 6 hours<br\/>                         RS-&gt; from 8 hours<br\/>                        <\/p><p>The large puzzle will most probably take a couple of evenings to assemble so it is best to complete it on a separate table. <\/p>"
+            }
+          },
+          "7f77634d-c9e9-4704-82e2-3109f43aaebd": {
+            "type": "faq",
+            "settings": {
+              "faq_title": "Who are the puzzles suitable for?",
+              "faq_text": "<p>Wooden puzzles are a great gift for practically anyone.<\/p><p>You can assemble them by yourself, getting away from your routine, it is a pleasant and useful exercise as it develops the brain and fine motor skills.                      <\/p><p>You can spend an evening assembling the puzzle with your family, children, loved ones. <\/p><p>As well as puzzle lovers, our jigsaws are bought by creative people, board game lovers, people who like to do simple tasks with their hands<\/p>"
+            }
+          },
+          "d787d624-2163-4ada-b25c-00b53a05536d": {
+            "type": "faq",
+            "settings": {
+              "faq_title": "What do I do with completed puzzles?",
+              "faq_text": "<p>Many customers use their puzzle as an alternative to board games: they visit friends or family and complete the puzzle together. <\/p><p>Some families even do timed assemblies. You can also make the assembly more difficult by completing it from the other side (it also has a picture on it)!                      <\/p><p>When you’ve completed the assembly process, don’t put the puzzle back in the cupboard. Use it as interior decoration! We have developed a special gluing system for this which fixes the puzzle together and sticks it to the wall. <\/p><p>This is suitable for all sizes, with the help of one set you can fix and hang 6 small puzzles, 3 medium puzzles, or 3 large puzzles.<\/p>"
+            }
           }
         },
         "block_order": [
           "fc740eee-931a-4a59-8c7e-b0db9db27473",
           "897e366b-29a1-44b1-808d-999a7735670c",
           "09a7098b-ab0e-41de-8e71-d302fade58c7",
-          "bb4bf31a-9866-4037-b276-6d95620674ab"
+          "bb4bf31a-9866-4037-b276-6d95620674ab",
+          "0b868a7d-e485-494f-8a58-541be30760a2",
+          "577cc055-74aa-4e1b-b5ca-d6c5446f9755",
+          "7a2f3d93-637a-4acc-9a93-3a4157cb809a",
+          "7f77634d-c9e9-4704-82e2-3109f43aaebd",
+          "d787d624-2163-4ada-b25c-00b53a05536d"
         ],
         "settings": {
           "buy_it_now_action": "direct_to_cart",
           "show_saved_amount": true,
           "enable_default_variant": false,
-          "show_quantity_selector": false,
+          "show_quantity_selector": true,
           "show_vendor": false,
           "enable_zoom": true,
           "shake_effect_enable": true,
           "readmore_enable": false,
           "show_tags": false,
           "enable_payment_button": true,
-          "variant_swacth": "two",
-          "swatch_option": "without_background",
-          "color_style": "round_shape",
+          "variant_swacth": "one",
+          "swatch_option": "with_background",
+          "color_style": "square_box",
           "product_review": true,
           "visitor_counter_enable": false,
           "visitor_counter_number": "1-15",
           "delivery_time_number": "1-3",
           "enable_inspiring_story": true,
-          "enable_shipping_banner": true,
+          "enable_shipping_banner": false,
           "enable_gift_banner": true,
           "gift_banner_header": "Send a gift to a friend!<br> It is so easy!",
           "gift_banner_text": "Share a piece of your heart to your loved ones, wherever they are. Make them happy with an unforgettable gift for any occasion.<br> Take just a few sipmle steps!",
@@ -2737,11 +2791,12 @@
           "decorate_banner_header": "DECORATE THE WALLS OF YOUR HOME",
           "decorate_banner_text": "You can decorate the interior with puzzles and our special mounting system",
           "decorate_banner_bg_image": "shopify:\/\/shop_images\/banner-decorate-walls_bg.png",
+          "decorate_banner_bg_mob_image": "shopify:\/\/shop_images\/banner-decorate-walls_bg.png",
           "product_description": "under_the_price",
-          "enable_sticky": true,
+          "enable_sticky": false,
           "enable_combo_upsell": true,
-          "combo_upsell_product": "",
-          "enable_mobile_atc_button": false,
+          "combo_upsell_product": "set-for-mounting-puzzles",
+          "enable_mobile_atc_button": true,
           "move_badges_under_cart": false,
           "enable_trust_badges": false,
           "pdp_enable": true,
@@ -2749,11 +2804,11 @@
           "pdp_image_banner": "shopify:\/\/shop_images\/new_banner_10.jpg",
           "pdp_title": "",
           "pdp_sub_title": "",
-          "heading-tax": "",
-          "tax_title": "",
-          "tax_sub_content": "",
-          "title": "",
-          "sub_title": "",
+          "heading-tax": "Custom Taxes",
+          "tax_title": "WILL I HAVE TO PAY INTERNATIONAL TAXES & DUTIES?",
+          "tax_sub_content": "<p>Your order may be subject to import duties and taxes, which are levied once a shipment reaches your country. The general amount for the duties and taxes fee is about 15 % of the dollar amount of the merchandise. However, this is just a general guideline and may vary depending on the country to which the order was shipped. You should contact your customs office for specific amounts and percentages.<\/p>\n<p><\/p>\n<p>Unidragon cannot control and is not responsible for any duties\/taxes applied to your package. You will be responsible for paying additional charges for customs clearance. Customs policies vary widely from country to country; please contact your local customs office for further information. Note, in rare occasions custom agents may delay delivery of some packages.<\/p>\n<p><\/p>\n<p>PLEASE PAY ATTENTION: Due to big dimensions of the package you will pay customs and import taxes. The amount of taxes depends on your country's laws. We are not responsible for them.<\/p>",
+          "title": "Item has been added<br> to your cart!",
+          "sub_title": "Add 1 more Puzzle and get <span>10% Discount<\/span>",
           "pdp_cta_text": "",
           "pdp_cta_link": "",
           "pdp_cta_text1": "",
