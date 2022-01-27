@@ -11,7 +11,10 @@
                     <h2 class="title collection__title">New</h2><a class="collection__view-all" href="{{ section.settings.vew_all_new_items }}">View all new items</a>
                 </div>
 
-<style>.arv-collection .alr-icon-star:before, #alireview-review-widget-badge .alr-icon-star:before {font-size: 18px;}</style>
+<style>
+    .arv-collection .alr-icon-star:before, #alireview-review-widget-badge .alr-icon-star:before {font-size: 18px;}
+    span.alrv-prod-rating__text {padding-left: 10px;}
+</style>
 
                 <div class="collection__items">
                     {%- assign ProductsNew = section.blocks | where: "type", "ProductsNew" -%}
