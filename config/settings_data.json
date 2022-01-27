@@ -2698,13 +2698,53 @@
               "advantage_text": "Puzzles work out your brain and strengthen your mind",
               "advantage_image": "shopify:\/\/shop_images\/DSC001451.jpg"
             }
+          },
+          "0b868a7d-e485-494f-8a58-541be30760a2": {
+            "type": "faq",
+            "settings": {
+              "faq_title": "How does the size of the pieces differ for the puzzle sizes – S, M, KS, RS?",
+              "faq_text": "<p>Our sizes change with the number of pieces, so the size of the pieces is the same in every puzzle.<\/p>"
+            }
+          },
+          "577cc055-74aa-4e1b-b5ca-d6c5446f9755": {
+            "type": "faq",
+            "settings": {
+              "faq_title": "What is a wooden puzzle?",
+              "faq_text": "<p>Our puzzles are made from a pressured HDF that is 3mm thick. This material is eco-friendly, high-quality and durable. It doesn’t deform and doesn’t give splinters (like with plywood).<\/p>"
+            }
+          },
+          "7a2f3d93-637a-4acc-9a93-3a4157cb809a": {
+            "type": "faq",
+            "settings": {
+              "faq_title": "How long does each size puzzle take to assemble?",
+              "faq_text": "<p>Check our illustration (link\/popup of with an illustration of the sizes and photo of a girl). As well as the size pay attention to the assembly times:<br\/><br\/>                          S -&gt; from 2 hours<br\/>                          M-&gt; from 4 hours<br\/>                          L-&gt; from 6 hours<br\/>                         RS-&gt; from 8 hours<br\/>                        <\/p><p>The large puzzle will most probably take a couple of evenings to assemble so it is best to complete it on a separate table. <\/p>"
+            }
+          },
+          "7f77634d-c9e9-4704-82e2-3109f43aaebd": {
+            "type": "faq",
+            "settings": {
+              "faq_title": "Who are the puzzles suitable for?",
+              "faq_text": "<p>Wooden puzzles are a great gift for practically anyone.<\/p><p>You can assemble them by yourself, getting away from your routine, it is a pleasant and useful exercise as it develops the brain and fine motor skills.                      <\/p><p>You can spend an evening assembling the puzzle with your family, children, loved ones. <\/p><p>As well as puzzle lovers, our jigsaws are bought by creative people, board game lovers, people who like to do simple tasks with their hands<\/p>"
+            }
+          },
+          "d787d624-2163-4ada-b25c-00b53a05536d": {
+            "type": "faq",
+            "settings": {
+              "faq_title": "What do I do with completed puzzles?",
+              "faq_text": "<p>Many customers use their puzzle as an alternative to board games: they visit friends or family and complete the puzzle together. <\/p><p>Some families even do timed assemblies. You can also make the assembly more difficult by completing it from the other side (it also has a picture on it)!                      <\/p><p>When you’ve completed the assembly process, don’t put the puzzle back in the cupboard. Use it as interior decoration! We have developed a special gluing system for this which fixes the puzzle together and sticks it to the wall. <\/p><p>This is suitable for all sizes, with the help of one set you can fix and hang 6 small puzzles, 3 medium puzzles, or 3 large puzzles.<\/p>"
+            }
           }
         },
         "block_order": [
           "fc740eee-931a-4a59-8c7e-b0db9db27473",
           "897e366b-29a1-44b1-808d-999a7735670c",
           "09a7098b-ab0e-41de-8e71-d302fade58c7",
-          "bb4bf31a-9866-4037-b276-6d95620674ab"
+          "bb4bf31a-9866-4037-b276-6d95620674ab",
+          "0b868a7d-e485-494f-8a58-541be30760a2",
+          "577cc055-74aa-4e1b-b5ca-d6c5446f9755",
+          "7a2f3d93-637a-4acc-9a93-3a4157cb809a",
+          "7f77634d-c9e9-4704-82e2-3109f43aaebd",
+          "d787d624-2163-4ada-b25c-00b53a05536d"
         ],
         "settings": {
           "buy_it_now_action": "direct_to_cart",
