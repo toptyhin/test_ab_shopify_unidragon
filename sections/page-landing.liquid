@@ -13,21 +13,40 @@
                 <style>.arv-collection .alr-wrapper-rating .alr-rating-symbol:not(:last-child) {margin-right: 6px!important;}</style>
                 <div class="collection__items">
                     {%- assign ProductsNew = section.blocks | where: "type", "ProductsNew" -%}
-                    {%- for block in ProductsNew -%}
-                        <div class="c-product collection__item">
-                            <div class="c-product__main">
-                                <div class="c-product__image"><img src="{{ block.settings.landing_new_product.featured_image | img_url: 'master' }}" width="360" height="360" alt="Fiery Fox" /></div>
-                                <div class="c-product__info">
-                                    <div product-id="{{ block.settings.landing_new_product.id }}" class="arv-collection arv-collection--{{ block.settings.landing_new_product.id }}"></div>
-                                    <div class="alrv-prod-rating"><span class="alr-wrapper-rating"></span></div>
+                    {%- if ProductsNew.size > 0 -%}
+                        {%- for block in ProductsNew -%}
+                            <div class="c-product collection__item">
+                                <div class="c-product__main">
+                                    <div class="c-product__image"><img src="{{block.settings.landing_new_product.featured_image | img_url: 'master' }}" width="360" height="360" alt="Fiery Fox" /></div>
+                                    <div class="c-product__info">
+                                        <div product-id="{{block.settings.landing_new_product.id }}" class="arv-collection arv-collection--{{ block.settings.landing_new_product.id }}"></div>
+                                        <div class="alrv-prod-rating"><span class="alr-wrapper-rating"></span></div>
+                                    </div>
+                                    <div class="c-product__title">{{ block.settings.landing_new_product.title }}</div>
                                 </div>
-                                <div class="c-product__title">{{ block.settings.landing_new_product.title }}</div>
+                                <div class="c-product__bottom">
+                                    <div class="c-product__price"><span class="c-product__from">from</span> {{ block.settings.landing_new_product.price | money }}</div><a class="button c-product__button" href="{{ block.settings.landing_new_product.url }}" role="button">Shop now</a>
+                                </div>
                             </div>
-                            <div class="c-product__bottom">
-                                <div class="c-product__price"><span class="c-product__from">from</span> {{ block.settings.landing_new_product.price | money }}</div><a class="button c-product__button" href="{{ block.settings.landing_new_product.url }}" role="button">Shop now</a>
+                        {%- endfor -%}
+                    {%- else -%}
+                        {%- assign new_products = collections.all.products | sort: 'published_at' | reverse -%}
+                        {%- for product in new_products limit:3 -%}
+                            <div class="c-product collection__item">
+                                <div class="c-product__main">
+                                    <div class="c-product__image"><img src="{{ product.featured_image | img_url: 'master' }}" width="360" height="360" alt="Fiery Fox" /></div>
+                                    <div class="c-product__info">
+                                        <div product-id="{{ product.id }}" class="arv-collection arv-collection--{{ product.id }}"></div>
+                                        <div class="alrv-prod-rating"><span class="alr-wrapper-rating"></span></div>
+                                    </div>
+                                    <div class="c-product__title">{{ product.title }}</div>
+                                </div>
+                                <div class="c-product__bottom">
+                                    <div class="c-product__price"><span class="c-product__from">from</span> {{ product.price | money }}</div><a class="button c-product__button" href="{{ product.url }}" role="button">Shop now</a>
+                                </div>
                             </div>
-                        </div>
-                    {%- endfor -%}
+                        {%- endfor -%}
+                    {%- endif -%}
                 </div>
             </div><img class="collection__leaves-1" src="{{ 'landing-leaves-1.svg' | asset_url }}" width="272" height="380" alt="" /><img class="collection__figure-1" src="{{ 'landing-figure-1.png' | asset_url }}" srcset="{{ 'landing-figure-1.png' | asset_url }} 1x, {{ 'landing-figure-1@2x.png' | asset_url }} 2x" width="253" height="296" alt="" /><img class="collection__leaves-2" src="{{ 'landing-leaves-2.svg' | asset_url }}" width="260" height="246" alt="" /><img class="collection__figure-2" src="{{ 'landing-figure-2.png' | asset_url }}" srcset="{{ 'landing-figure-2.png' | asset_url }} 1x, {{ 'landing-figure-2@2x.png' | asset_url }} 2x" width="73" height="211" alt="" /><img class="collection__leaves-5" src="{{ 'landing-leaves-5.svg' | asset_url }}" width="65" height="117" alt="" />
         </section>
