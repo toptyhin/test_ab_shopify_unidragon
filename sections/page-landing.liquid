@@ -5,6 +5,30 @@
         </div>
     </header>
     <main class="page__content">
+        <section class="collection" id="new">
+            <div class="collection__container">
+                <div class="collection__headline">
+                    <h2 class="title collection__title">New</h2><a class="collection__view-all" href="{{ section.settings.vew_all_new_items }}">View all new items</a>
+                </div>
+                <div class="collection__items">
+                    {%- assign ProductsNew = section.blocks | where: "type", "ProductsNew" -%}
+                    {%- for block in ProductsNew -%}
+                        <div class="c-product collection__item">
+                            <div class="c-product__main">
+                                <div class="c-product__image"><img src="{{ block.settings.landing_new_product.featured_image | img_url: 'master' }}" width="360" height="360" alt="Fiery Fox" /></div>
+                                <div class="c-product__info">
+                                    <div class="stars c-product__stars" title="5"><span class="stars__rating" style="width:100%"></span></div><span class="c-product__rating">{{ block.settings.rating }}</span><span class="c-product__reviews">({{ block.settings.reviews }})</span>
+                                </div>
+                                <div class="c-product__title">{{ block.settings.landing_new_product.title }}</div>
+                            </div>
+                            <div class="c-product__bottom">
+                                <div class="c-product__price"><span class="c-product__from">from</span> {{ block.settings.landing_new_product.price | money }}</div><a class="button c-product__button" href="{{ block.settings.landing_new_product.url }}" role="button">Shop now</a>
+                            </div>
+                        </div>
+                    {%- endfor -%}
+                </div>
+            </div><img class="collection__leaves-1" src="{{ 'landing-leaves-1.svg' | asset_url }}" width="272" height="380" alt="" /><img class="collection__figure-1" src="{{ 'landing-figure-1.png' | asset_url }}" srcset="{{ 'landing-figure-1.png' | asset_url }} 1x, {{ 'landing-figure-1@2x.png' | asset_url }} 2x" width="253" height="296" alt="" /><img class="collection__leaves-2" src="{{ 'landing-leaves-2.svg' | asset_url }}" width="260" height="246" alt="" /><img class="collection__figure-2" src="{{ 'landing-figure-2.png' | asset_url }}" srcset="{{ 'landing-figure-2.png' | asset_url }} 1x, {{ 'landing-figure-2@2x.png' | asset_url }} 2x" width="73" height="211" alt="" /><img class="collection__leaves-5" src="{{ 'landing-leaves-5.svg' | asset_url }}" width="65" height="117" alt="" />
+        </section>
         <section class="advantages" id="advantages">
             <div class="advantages__container">
                 <div class="advantages__row">
@@ -41,30 +65,6 @@
                         <a class="button ordering__item-button button--ordering" href="{{ section.settings.order_on_walmart }}" role="button"><span class="button__caption">Order on</span><img class="button__img" src="{{ 'landing-walmart.png' | asset_url }}" srcset="{{ 'landing-walmart.png' | asset_url }} 1x, {{ 'landing-walmart@2x.png' | asset_url }} 2x" alt="walmart" /></a></div>
                 </div>
             </div>
-        </section>
-        <section class="collection" id="new">
-            <div class="collection__container">
-                <div class="collection__headline">
-                    <h2 class="title collection__title">New</h2><a class="collection__view-all" href="{{ section.settings.vew_all_new_items }}">View all new items</a>
-                </div>
-                <div class="collection__items">
-                    {%- assign ProductsNew = section.blocks | where: "type", "ProductsNew" -%}
-                    {%- for block in ProductsNew -%}
-                        <div class="c-product collection__item">
-                            <div class="c-product__main">
-                                <div class="c-product__image"><img src="{{ block.settings.landing_new_product.featured_image | img_url: 'master' }}" width="360" height="360" alt="Fiery Fox" /></div>
-                                <div class="c-product__info">
-                                    <div class="stars c-product__stars" title="5"><span class="stars__rating" style="width:100%"></span></div><span class="c-product__rating">{{ block.settings.rating }}</span><span class="c-product__reviews">({{ block.settings.reviews }})</span>
-                                </div>
-                                <div class="c-product__title">{{ block.settings.landing_new_product.title }}</div>
-                            </div>
-                            <div class="c-product__bottom">
-                                <div class="c-product__price"><span class="c-product__from">from</span> {{ block.settings.landing_new_product.price | money }}</div><a class="button c-product__button" href="{{ block.settings.landing_new_product.url }}" role="button">Shop now</a>
-                            </div>
-                        </div>
-                    {%- endfor -%}
-                </div>
-            </div><img class="collection__leaves-1" src="{{ 'landing-leaves-1.svg' | asset_url }}" width="272" height="380" alt="" /><img class="collection__figure-1" src="{{ 'landing-figure-1.png' | asset_url }}" srcset="{{ 'landing-figure-1.png' | asset_url }} 1x, {{ 'landing-figure-1@2x.png' | asset_url }} 2x" width="253" height="296" alt="" /><img class="collection__leaves-2" src="{{ 'landing-leaves-2.svg' | asset_url }}" width="260" height="246" alt="" /><img class="collection__figure-2" src="{{ 'landing-figure-2.png' | asset_url }}" srcset="{{ 'landing-figure-2.png' | asset_url }} 1x, {{ 'landing-figure-2@2x.png' | asset_url }} 2x" width="73" height="211" alt="" /><img class="collection__leaves-5" src="{{ 'landing-leaves-5.svg' | asset_url }}" width="65" height="117" alt="" />
         </section>
         <div class="collection" id="hits">
             <div class="collection__container">
