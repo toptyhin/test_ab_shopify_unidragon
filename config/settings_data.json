@@ -2779,7 +2779,7 @@
           "visitor_counter_number": "1-15",
           "delivery_time_number": "1-3",
           "enable_inspiring_story": true,
-          "enable_shipping_banner": true,
+          "enable_shipping_banner": false,
           "enable_gift_banner": true,
           "gift_banner_header": "Send a gift to a friend!<br> It is so easy!",
           "gift_banner_text": "Share a piece of your heart to your loved ones, wherever they are. Make them happy with an unforgettable gift for any occasion.<br> Take just a few sipmle steps!",
