@@ -2780,7 +2780,7 @@
           "product_description": "under_the_price",
           "enable_sticky": true,
           "enable_combo_upsell": true,
-          "combo_upsell_product": "",
+          "combo_upsell_product": "set-for-mounting-puzzles",
           "enable_mobile_atc_button": false,
           "move_badges_under_cart": false,
           "enable_trust_badges": false,
