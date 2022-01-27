@@ -2600,6 +2600,14 @@
               "image_collection": "shopify:\/\/shop_images\/landing-category-3_2x_a9d18cb8-ff0e-4de3-97ab-69711d9c594c.jpg"
             }
           },
+          "a5ebcdb3-7bb8-447b-a016-6b81741a21a9": {
+            "type": "ProductsNew",
+            "settings": {
+              "landing_new_product": "wandering-jellyfish",
+              "rating": "5.0",
+              "reviews": "0 reviews"
+            }
+          },
           "b7c8520f-4e8b-4e95-a26a-649247b70bcf": {
             "type": "ProductsNew",
             "settings": {
@@ -2618,6 +2626,7 @@
           },
           "32d7f79c-79b1-4b4c-b2f5-8df8a5fad68f": {
             "type": "ProductsNew",
+            "disabled": true,
             "settings": {
               "landing_new_product": "mandala-inexhaustible-abundance",
               "rating": "5.0",
@@ -2643,12 +2652,17 @@
           "666608e0-acdc-417f-80fa-111cf88a5d12",
           "09bfdfe4-d494-4acb-9187-9df3d77c82ce",
           "4ae3ca50-1365-4aeb-bda0-17bcb041227a",
+          "a5ebcdb3-7bb8-447b-a016-6b81741a21a9",
           "b7c8520f-4e8b-4e95-a26a-649247b70bcf",
           "c32a6fe9-4449-43a3-8a87-5581ba8b2ef1",
           "32d7f79c-79b1-4b4c-b2f5-8df8a5fad68f",
           "855d2547-4e8c-48d6-8d4a-5c948709f20f"
         ],
         "settings": {
+          "header": "Fascinating <br>wooden puzzles",
+          "advantages_block_1": "You will receive <b>10% bonus points<\/b> that you can spend on your next purchases",
+          "advantages_block_2": "<b>Special offers<\/b> and big discounts are only on our website",
+          "advantages_block_3": "You can find the most complete range of <b>new products only on our website<\/b>",
           "order_on_website": "https:\/\/unidragon.com\/collections\/wooden-puzzles\/?utm_source=instagram_tap",
           "order_on_amazon": "https:\/\/www.amazon.com\/stores\/Uniquewoodenpuzzles\/page\/B2976332-EDE0-4EA3-B4FE-B15714AA41E2?maas=maas_adg_89E0DE2BE316CB1F7D5FED806C85E10F_afap_abs&ref_=aa_maas&tag=maas&ref_=ast_bln",
           "order_on_etsy": "https:\/\/www.etsy.com\/shop\/unidragonpuzzle?ref=simple-shop-header-name&listing_id=726260576",
