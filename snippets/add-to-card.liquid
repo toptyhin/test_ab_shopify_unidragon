@@ -1,7 +1,14 @@
 <div class="add-to-card" addtocart>
     <div class="add-to-card-size">
         {%- assign size_selector = ',S,M,KS,RS' | split:',' -%}
-      {% for variant in product.variants %}
+        
+        {%- if product.collections[0].handle == 'nature-puzzles' -%}
+            {%- assign limit_size = 3 -%}
+        {%- else -%}
+            {%- assign limit_size = product.variants.size -%}
+        {%- endif -%}
+
+      {%- for variant in product.variants limit: limit_size -%}
           {% if variant.available %}
               <div class="add-to-card-size__item">
                   <input type="radio" class="custom-checkbox" id="atc-button-{{size_selector[forloop.index]}}" name="atc-size-selector" price="{{variant.price | money}}" value="{{variant.id}}">
