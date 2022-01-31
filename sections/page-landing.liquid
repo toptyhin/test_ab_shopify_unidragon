@@ -8,7 +8,7 @@
         <section class="collection" id="new">
             <div class="collection__container">
                 <div class="collection__headline">
-                    <h2 class="title collection__title">New</h2><a class="collection__view-all" href="{{ section.settings.vew_all_new_items }}">View all new items</a>
+                    <h2 class="title collection__title">New</h2><a onclick="gtag('event', 'select_content', { content_type: 'link', item_id: '{{ section.settings.vew_all_new_items }}'});" class="collection__view-all" href="{{ section.settings.vew_all_new_items }}">View all new items</a>
                 </div>
                 <div class="collection__items">
                     {%- assign ProductsNew = section.blocks | where: "type", "ProductsNew" -%}
@@ -24,7 +24,7 @@
                                     <div class="c-product__title">{{ block.settings.landing_new_product.title }}</div>
                                 </div>
                                 <div class="c-product__bottom">
-                                    <div class="c-product__price"><span class="c-product__from">from</span> {{ block.settings.landing_new_product.price | money }}</div><a class="button c-product__button" href="{{ block.settings.landing_new_product.url }}" role="button">Shop now</a>
+                                    <div class="c-product__price"><span class="c-product__from">from</span> {{ block.settings.landing_new_product.price | money }}</div><a onclick="gtag('event', 'select_content', { content_type: 'link', item_id: '{{ block.settings.landing_new_product.url }}'});" class="button c-product__button" href="{{ block.settings.landing_new_product.url }}" role="button">Shop now</a>
                                 </div>
                             </div>
                         {%- endfor -%}
@@ -41,7 +41,7 @@
                                     <div class="c-product__title">{{ product.title }}</div>
                                 </div>
                                 <div class="c-product__bottom">
-                                    <div class="c-product__price"><span class="c-product__from">from</span> {{ product.price | money }}</div><a class="button c-product__button" href="{{ product.url }}" role="button">Shop now</a>
+                                    <div class="c-product__price"><span class="c-product__from">from</span> {{ product.price | money }}</div><a onclick="gtag('event', 'select_content', { content_type: 'link', item_id: '{{ product.url }}'});" class="button c-product__button" href="{{ product.url }}" role="button">Shop now</a>
                                 </div>
                             </div>
                         {%- endfor -%}
@@ -67,7 +67,7 @@
                         <div class="advantages__item-text">{{section.settings.advantages_block_3}}</div>
                     </div>
                 </div>
-                <div class="advantages__button-wrapper"><a class="button advantages__button" href="{{ section.settings.order_on_website }}" role="button">Order on our website</a></div>
+                <div class="advantages__button-wrapper"><a onclick="gtag('event', 'select_content', { content_type: 'link', item_id: '{{ section.settings.order_on_website }}'});" class="button advantages__button" href="{{ section.settings.order_on_website }}" role="button">Order on our website</a></div>
             </div><img class="advantages__figure" src="{{ 'landing-figure-5.png' | asset_url }}" srcset="{{ 'landing-figure-5.png' | asset_url }} 1x, {{ 'landing-figure-5@2x.png' | asset_url }} 2x" width="88" height="181" alt="" />
         </section>
         <section class="ordering ordering--en" id="ordering">
@@ -76,20 +76,20 @@
                 <div class="ordering__items">
                     <div class="ordering__item">
                         <img class="ordering__item-img" src="{{ 'landing-ordering-amazon.png' | asset_url }}" srcset="{{ 'landing-ordering-amazon.png' | asset_url }} 1x, {{ 'landing-ordering-amazon@2x.png' | asset_url }} 2x" width="360" height="157" alt="Amazon" />
-                        <a class="button ordering__item-button button--ordering" href="{{ section.settings.order_on_amazon }}" role="button"><span class="button__caption">Order on</span><img class="button__img" src="{{ 'landing-amazon.png' | asset_url }}" srcset="{{ 'landing-amazon.png' | asset_url }} 1x, {{ 'landing-amazon@2x.png' | asset_url }} 2x" alt="amazon" /></a></div>
+                        <a onclick="gtag('event', 'select_content', { content_type: 'link', item_id: '{{ section.settings.order_on_amazon }}'});" class="button ordering__item-button button--ordering" href="{{ section.settings.order_on_amazon }}" role="button"><span class="button__caption">Order on</span><img class="button__img" src="{{ 'landing-amazon.png' | asset_url }}" srcset="{{ 'landing-amazon.png' | asset_url }} 1x, {{ 'landing-amazon@2x.png' | asset_url }} 2x" alt="amazon" /></a></div>
                     <div class="ordering__item">
                         <img class="ordering__item-img" src="{{ 'landing-ordering-etsy.png' | asset_url }}" srcset="{{ 'landing-ordering-etsy.png' | asset_url }} 1x, {{ 'landing-ordering-etsy@2x.png' | asset_url }} 2x" width="360" height="157" alt="Etsy" />
-                        <a class="button ordering__item-button button--ordering" href="{{ section.settings.order_on_etsy }}" role="button"><span class="button__caption">Order on</span><img class="button__img" src="{{ 'landing-etsy.png' | asset_url }}" srcset="{{ 'landing-etsy.png' | asset_url }} 1x, {{ 'landing-etsy@2x.png' | asset_url }} 2x" alt="etsy" /></a></div>
+                        <a onclick="gtag('event', 'select_content', { content_type: 'link', item_id: '{{ section.settings.order_on_etsy }}'});" class="button ordering__item-button button--ordering" href="{{ section.settings.order_on_etsy }}" role="button"><span class="button__caption">Order on</span><img class="button__img" src="{{ 'landing-etsy.png' | asset_url }}" srcset="{{ 'landing-etsy.png' | asset_url }} 1x, {{ 'landing-etsy@2x.png' | asset_url }} 2x" alt="etsy" /></a></div>
                     <div class="ordering__item">
                         <img class="ordering__item-img" src="{{ 'landing-ordering-walmart.png' | asset_url }}" srcset="{{ 'landing-ordering-walmart.png' | asset_url }} 1x, {{ 'landing-ordering-walmart@2x.png' | asset_url }} 2x" width="360" height="157" alt="Walmart" />
-                        <a class="button ordering__item-button button--ordering" href="{{ section.settings.order_on_walmart }}" role="button"><span class="button__caption">Order on</span><img class="button__img" src="{{ 'landing-walmart.png' | asset_url }}" srcset="{{ 'landing-walmart.png' | asset_url }} 1x, {{ 'landing-walmart@2x.png' | asset_url }} 2x" alt="walmart" /></a></div>
+                        <a onclick="gtag('event', 'select_content', { content_type: 'link', item_id: '{{ section.settings.order_on_walmart }}'});" class="button ordering__item-button button--ordering" href="{{ section.settings.order_on_walmart }}" role="button"><span class="button__caption">Order on</span><img class="button__img" src="{{ 'landing-walmart.png' | asset_url }}" srcset="{{ 'landing-walmart.png' | asset_url }} 1x, {{ 'landing-walmart@2x.png' | asset_url }} 2x" alt="walmart" /></a></div>
                 </div>
             </div>
         </section>
         <div class="collection" id="hits">
             <div class="collection__container">
                 <div class="collection__headline">
-                    <h2 class="title collection__title">Bestsellers</h2><a class="collection__view-all" href="{{ section.settings.vew_all_best_items }}">View all bestsellers</a>
+                    <h2 class="title collection__title">Bestsellers</h2><a onclick="gtag('event', 'select_content', { content_type: 'link', item_id: '{{ section.settings.vew_all_best_items }}'});" class="collection__view-all" href="{{ section.settings.vew_all_best_items }}">View all bestsellers</a>
                 </div>
                 <div class="collection__items">
                     {%- assign ProductsBest = section.blocks | where: "type", "ProductsBest" -%}
@@ -104,7 +104,7 @@
                                 <div class="c-product__title">{{ block.settings.landing_best_product.title }}</div>
                             </div>
                             <div class="c-product__bottom">
-                                <div class="c-product__price"><span class="c-product__from">from</span> {{ block.settings.landing_best_product.price | money }}</div><a class="button c-product__button" href="{{ block.settings.landing_best_product.url }}" role="button">Shop now</a>
+                                <div class="c-product__price"><span class="c-product__from">from</span> {{ block.settings.landing_best_product.price | money }}</div><a onclick="gtag('event', 'select_content', { content_type: 'link', item_id: '{{ block.settings.landing_best_product.url }}'});" class="button c-product__button" href="{{ block.settings.landing_best_product.url }}" role="button">Shop now</a>
                             </div>
                         </div>
                     {%- endfor -%}
@@ -114,7 +114,7 @@
         <div class="collection collection--padding-bottom" id="popular">
             <div class="collection__container">
                 <div class="collection__headline">
-                    <h2 class="title collection__title">Popular collections</h2><a class="collection__view-all" href="{{ section.settings.view_all_collections }}">View all collections</a>
+                    <h2 class="title collection__title">Popular collections</h2><a onclick="gtag('event', 'select_content', { content_type: 'link', item_id: '{{ section.settings.view_all_collections }}'});" class="collection__view-all" href="{{ section.settings.view_all_collections }}">View all collections</a>
                 </div>
                 <div class="collection__categories">
                     {%- assign Collection = section.blocks | where: "type", "Collection" -%}
@@ -125,9 +125,9 @@
                             {%- assign go_to_collection = block.settings.landing_collection.url-%}
                         {%- endif -%}
                         <div class="c-category collection__category">
-                            <figure class="c-category__figure"><a href="{{ go_to_collection }}"> <img src="{{ block.settings.image_collection | img_url: 'master' }}" width="360" height="287" alt="" /></a>
+                            <figure class="c-category__figure"><a onclick="gtag('event', 'select_content', { content_type: 'link', item_id: '{{ go_to_collection }}'});" href="{{ go_to_collection }}"> <img src="{{ block.settings.image_collection | img_url: 'master' }}" width="360" height="287" alt="" /></a>
                                 <figcaption class="c-category__category">{{ block.settings.landing_collection.title }}</figcaption>
-                            </figure><a class="button c-category__button" href="{{ go_to_collection }}" role="button">Go to collection</a>
+                            </figure><a  onclick="gtag('event', 'select_content', { content_type: 'link', item_id: '{{ go_to_collection }}'});" class="button c-category__button" href="{{ go_to_collection }}" role="button">Go to collection</a>
                         </div>
                     {%- endfor -%}
                 </div>
