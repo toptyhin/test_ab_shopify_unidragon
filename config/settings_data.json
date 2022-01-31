@@ -400,7 +400,7 @@
           "enable_trust_badges": false,
           "pdp_enable": true,
           "pdp_enable_banner": true,
-          "pdp_image_banner": "shopify:\/\/shop_images\/new_banner_10.jpg",
+          "pdp_image_banner": "shopify:\/\/shop_images\/ValentinesDay-02.png",
           "pdp_image": "shopify:\/\/shop_images\/new_img_a79e2b7e-362a-4eb1-85d0-a79a3dbc6454.jpg",
           "pdp_title": "<b>Buy any 3 Jigsaw Puzzles and<\/b> <br><span class=\"other_infos\">Get 10% Discount<\/span>",
           "pdp_sub_title": "The discount will be applied automatically in the cart.",
@@ -1972,8 +1972,8 @@
           "rows": 8,
           "show_collection_image": true,
           "enable_parallax": false,
-          "enable_full_banner": false,
-          "img": "shopify:\/\/shop_images\/4_1__-4.png",
+          "enable_full_banner": true,
+          "img": "shopify:\/\/shop_images\/ValentinesDay-02.png",
           "img_width": "715px",
           "enable_video": true,
           "enable_external_video": false,
@@ -2014,10 +2014,9 @@
       },
       "1637763556bc7ccf4c": {
         "type": "image-banner",
-        "disabled": true,
         "settings": {
           "enable_full_banner": true,
-          "img": "shopify:\/\/shop_images\/4_1__-4.png",
+          "img": "shopify:\/\/shop_images\/ValentinesDay-02.png",
           "img_width": "715px"
         }
       },
