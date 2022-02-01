@@ -6961,6 +6961,16 @@
         "info": "Product of the Month"
       },
       {
+          "type": "range",
+          "id": "tag_month_font_size",
+          "min": 12,
+          "max": 60,
+          "step": 2,
+          "unit": "px",
+          "label": "Tag Font Size",
+          "default": 12
+      },
+      {
           "type": "color",
           "id": "tag_month_color",
           "label": "Tag background color",
