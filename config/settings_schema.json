@@ -6954,10 +6954,10 @@
         "default": false
       },
       {
-        "type": "richtext",
+        "type": "textarea",
         "id": "tag_month_text",
         "label": "Tag Text",
-        "default": "<p>Product of the Month</p>",
+        "default": "Product of the Month",
         "info": "Product of the Month"
       },
       {
