@@ -149,7 +149,33 @@
         <div style="display: none;">{% include 'landing-sprite.svg' %}</div>
     </footer>
 </div>
+<script>
+    function setCookie(name, value, options = {}) {
 
+        options = {
+        path: '/pages/landing',
+        ...options
+        };
+
+        if (options.expires instanceof Date) {
+        options.expires = options.expires.toUTCString();
+        }
+
+        let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+        for (let optionKey in options) {
+        updatedCookie += "; " + optionKey;
+        let optionValue = options[optionKey];
+        if (optionValue !== true) {
+            updatedCookie += "=" + optionValue;
+        }
+        }
+
+        document.cookie = updatedCookie;
+        }
+
+        setCookie('landing_page', true, {secure: true, 'max-age': 3600});
+</script>
 {% schema %}
 {
     "name": "Landing page",
