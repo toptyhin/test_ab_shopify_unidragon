@@ -19,7 +19,8 @@
 		featured_image: {{ product_4645306466352.featured_image | json }},
 		featured_media: {{ product_4645306466352.featured_media | json }},
 		images: {{ product_4645306466352.images | json }}
-	};{% unless product.id == null %}window.__pageflyProducts["{{product.id}}"] = {
+	};
+{% unless product.id == null %}window.__pageflyProducts["{{product.id}}"] = {
 		id: {{ product.id | json }},
 		handle: {{ product.handle | json }},
 		title: {{ product.title | json }},
@@ -38,7 +39,8 @@
 		featured_image: {{ product.featured_image | json }},
 		featured_media: {{ product.featured_media | json }},
 		images: {{ product.images | json }}
-	};{% endunless %}window.__pageflyProducts["4745376432176"] = {
+	};{% endunless %}
+window.__pageflyProducts["4745376432176"] = {
 		id: {{ product_4745376432176.id | json }},
 		handle: {{ product_4745376432176.handle | json }},
 		title: {{ product_4745376432176.title | json }},
@@ -57,7 +59,8 @@
 		featured_image: {{ product_4745376432176.featured_image | json }},
 		featured_media: {{ product_4745376432176.featured_media | json }},
 		images: {{ product_4745376432176.images | json }}
-	};window.__pageflyProducts["4745371058224"] = {
+	};
+window.__pageflyProducts["4745371058224"] = {
 		id: {{ product_4745371058224.id | json }},
 		handle: {{ product_4745371058224.handle | json }},
 		title: {{ product_4745371058224.title | json }},

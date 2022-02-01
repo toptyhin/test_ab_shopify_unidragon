@@ -20,7 +20,8 @@
 		featured_image: {{ product_4745371058224.featured_image | json }},
 		featured_media: {{ product_4745371058224.featured_media | json }},
 		images: {{ product_4745371058224.images | json }}
-	};{% unless product.id == null %}window.__pageflyProducts["{{product.id}}"] = {
+	};
+{% unless product.id == null %}window.__pageflyProducts["{{product.id}}"] = {
 		id: {{ product.id | json }},
 		handle: {{ product.handle | json }},
 		title: {{ product.title | json }},
@@ -39,7 +40,8 @@
 		featured_image: {{ product.featured_image | json }},
 		featured_media: {{ product.featured_media | json }},
 		images: {{ product.images | json }}
-	};{% endunless %}window.__pageflyProducts["4645306466352"] = {
+	};{% endunless %}
+window.__pageflyProducts["4645306466352"] = {
 		id: {{ product_4645306466352.id | json }},
 		handle: {{ product_4645306466352.handle | json }},
 		title: {{ product_4645306466352.title | json }},

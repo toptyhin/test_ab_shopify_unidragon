@@ -1,4 +1,5 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% paginate search.results by 60 %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% paginate search.results by 60 %}
  {% if settings.search_result == 'only_product' %} 
       {% assign count_pro = 0 %}
       {% for item in search.results %}

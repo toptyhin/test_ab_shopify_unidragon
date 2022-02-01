@@ -1,4 +1,5 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<ul class="site-nav list--inline {{ nav_alignment }}" id="SiteNav">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<ul class="site-nav list--inline {{ nav_alignment }}" id="SiteNav">
   {% for link in linklists[section.settings.main_linklist].links %}
   {%- assign child_list_handle = link.title | handleize -%}
 
