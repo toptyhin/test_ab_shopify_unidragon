@@ -6939,5 +6939,25 @@
         "default": false
       }
     ]
+  },
+  {
+    "name": "Tag Products of the Month",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Displaying a tag on product page"
+      },
+      {
+        "type": "checkbox",
+        "id": "display_tag_month",
+        "label": "Display tag Product of the Month on product page",
+        "default": false
+      },
+      {
+        "type": "product",
+        "id": "tag_month_product",
+        "label": "Select product for tag of the month"
+      }
+    ]
   }
 ]
