@@ -6971,6 +6971,26 @@
         "default": 12
       },
       {
+        "type": "select",
+        "id": "tag_month_alignment",
+        "label": "Tag Text Alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "left"
+          },
+          {
+            "value": "center",
+            "label": "center"
+          },
+          {
+            "value": "rigth",
+            "label": "right"
+          }
+        ],
+        "default": "left"
+      },
+      {
         "type": "color",
         "id": "tag_month_color",
         "label": "Tag background color",

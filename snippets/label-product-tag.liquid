@@ -1,6 +1,6 @@
 {%- if settings.display_tag_month and products.id == settings.tag_month_product.id -%}
 	<div class="product__labels">
-		<span class="product__label" style="background-color:{{settings.tag_month_color}}; color:{{settings.tag_month_text_color}};font-size:{{settings.tag_month_font_size}}px">{{ settings.tag_month_text }}</span>
+		<span class="product__label" style="background-color:{{settings.tag_month_color}}; color:{{settings.tag_month_text_color}};font-size:{{settings.tag_month_font_size}}px;text-align: {{settings.tag_month_alignment}};">{{ settings.tag_month_text }}</span>
 	</div>
 {%- else -%}
 	{%- if products.tags.size > 0 -%}
