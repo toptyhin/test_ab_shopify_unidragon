@@ -6957,7 +6957,7 @@
         "type": "richtext",
         "id": "tag_month_text",
         "label": "Tag Text",
-        "default": "Product of the Month",
+        "default": "<p>Product of the Month</p>",
         "info": "Product of the Month"
       },
       {
