@@ -6961,26 +6961,26 @@
         "info": "Product of the Month"
       },
       {
-          "type": "range",
-          "id": "tag_month_font_size",
-          "min": 8,
-          "max": 60,
-          "step": 2,
-          "unit": "px",
-          "label": "Tag Font Size",
-          "default": 12
+        "type": "range",
+        "id": "tag_month_font_size",
+        "min": 12,
+        "max": 60,
+        "step": 2,
+        "unit": "px",
+        "label": "Tag Font Size",
+        "default": 12
       },
       {
-          "type": "color",
-          "id": "tag_month_color",
-          "label": "Tag background color",
-          "default": "#ff2d2d"
+        "type": "color",
+        "id": "tag_month_color",
+        "label": "Tag background color",
+        "default": "#ff2d2d"
       },
       {
-          "type": "color",
-          "id": "tag_month_text_color",
-          "label": "Tag Text color",
-          "default": "#fff"
+        "type": "color",
+        "id": "tag_month_text_color",
+        "label": "Tag Text color",
+        "default": "#fff"
       },
       {
         "type": "product",
