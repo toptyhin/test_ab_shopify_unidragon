@@ -6954,7 +6954,7 @@
         "default": false
       },
       {
-        "type": "text",
+        "type": "richtext",
         "id": "tag_month_text",
         "label": "Tag Text",
         "default": "Product of the Month",
