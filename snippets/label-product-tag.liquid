@@ -1,4 +1,4 @@
-{%- if settings.display_tag_month and products == settings.tag_month_product -%}
+{%- if settings.display_tag_month and products.id == settings.tag_month_product.id -%}
 	<div class="product__labels">
 		<span class="product__label" style="background-color:{{settings.tag_month_color}}; color:{{settings.tag_month_text_color}}">{{ settings.tag_month_text }}</span>
 	</div>
