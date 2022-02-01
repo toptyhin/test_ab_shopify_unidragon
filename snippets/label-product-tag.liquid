@@ -1,10 +1,16 @@
-{%- if products.tags.size > 0 -%}
-	{%- for tag in products.tags  -%}
-			{%- if tag == 'New' or tag == 'Bestseller' or tag == 'most-popular' or tag == 'sale' or tag == 'symbol 2022' -%}
-				<div class="product__labels">
-					<span class="product__label product__label--{{ tag | replace: " ", "-"}}">{{ tag }}</span>
-				</div>
-				{% break %}
-			{%- endif -%}
-	{% endfor %}
+{%- if settings.display_tag_month and products == settings.tag_month_product -%}
+	<div class="product__labels">
+		<span class="product__label" style="background-color:{{settings.tag_month_color}}; color:{{settings.tag_month_text_color}}">{{ settings.tag_month_text }}</span>
+	</div>
+{%- else -%}
+	{%- if products.tags.size > 0 -%}
+		{%- for tag in products.tags  -%}
+				{%- if tag == 'New' or tag == 'Bestseller' or tag == 'most-popular' or tag == 'sale' or tag == 'symbol 2022' -%}
+					<div class="product__labels">
+						<span class="product__label product__label--{{ tag | replace: " ", "-"}}">{{ tag }}</span>
+					</div>
+					{% break %}
+				{%- endif -%}
+		{% endfor %}
+	{%- endif -%}
 {%- endif -%}
