@@ -6957,6 +6957,7 @@
         "type": "text",
         "id": "tag_month_text",
         "label": "Tag Text",
+        "default": "Product of the Month",
         "info": "Product of the Month"
       },
       {
