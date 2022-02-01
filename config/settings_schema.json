@@ -6963,9 +6963,9 @@
       {
         "type": "range",
         "id": "tag_month_font_size",
-        "min": 12,
+        "min": 6,
         "max": 60,
-        "step": 2,
+        "step": 1,
         "unit": "px",
         "label": "Tag Font Size",
         "default": 12
