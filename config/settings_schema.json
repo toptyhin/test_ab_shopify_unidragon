@@ -6954,6 +6954,24 @@
         "default": false
       },
       {
+        "type": "text",
+        "id": "tag_month_text",
+        "label": "Tag Text",
+        "info": "Product of the Month"
+      },
+      {
+          "type": "color",
+          "id": "tag_month_color",
+          "label": "Tag background color",
+          "default": "#ff2d2d"
+      },
+      {
+          "type": "color",
+          "id": "tag_month_text_color",
+          "label": "Tag Text color",
+          "default": "#fff"
+      },
+      {
         "type": "product",
         "id": "tag_month_product",
         "label": "Select product for tag of the month"
