@@ -1,4 +1,4 @@
-{%- if section.settings.combo_upsell_product.available -%}
+{%- if section.settings.combo_upsell_product.available and product.id != section.settings.combo_upsell_product.id -%}
 <div class="combo-block">
     <div class="combo-block__title">
       <p class="combo-title__main">COMBO OFFER: <span>SAVE $10</span></p>
