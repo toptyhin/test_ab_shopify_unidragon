@@ -1,4 +1,5 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<!--Timer with progess disable using product tag-->
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<!--Timer with progess disable using product tag-->
 <div class="bar_adjustment  {% unless current_variant.available %} unvble_hide {% endunless%} {% if section.settings.sticky_button == 'show_progress_bar' and section.settings.enable_sticky %}small--hide{% endif %}">
  {% assign tg = 'show' %}
 

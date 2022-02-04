@@ -1,4 +1,5 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if settings.popup_enable %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% if settings.popup_enable %}
 {% comment %} If not selected collection and collection's products is zero {% endcomment %}
 {% if collections[settings.popup_randomly_collection] != blank and  collections[settings.popup_randomly_collection].all_products_count > 0  %} 
 <script>
