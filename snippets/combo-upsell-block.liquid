@@ -38,7 +38,7 @@
     </div>
     <div class="combo-footer">
       <div class="combo-footer__title">
-        <p>ONLY {{ current_variant.price | plus: section.settings.combo_upsell_product.compare_at_price | money }} {{ current_variant.price | plus: section.settings.combo_upsell_product.price | money }}</p>
+        <p>ONLY {{ current_variant.compare_at_price | plus: section.settings.combo_upsell_product.price | money }} {{ current_variant.price | plus: section.settings.combo_upsell_product.price | money }}</p>
       </div>
       <p class="success-feedback" style="display: none;"><i class="fa fa-check"></i>Added to cart!</p>
       <div class="combo-footer__link">
