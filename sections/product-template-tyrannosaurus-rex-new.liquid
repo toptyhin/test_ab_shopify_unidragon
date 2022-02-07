@@ -1812,7 +1812,7 @@
                     <span>{{ section.settings.habitat_title }}</span>
                   </div>
                   <div class="sidebar-habitat__wrapper">
-                    <a href="#">
+                    {%-if section.settings.habitat_url_first-%}<a href="{{section.settings.habitat_rul_first}}">{%-endif-%}
                       <div class="habitat__item habitat__item-first">
                         <div class="habitat__item-bg">
                           <span>{{ section.settings.habitat_label_first }}</span>
@@ -1822,7 +1822,8 @@
                           {{ section.settings.habitat_name_first }}
                         </div>
                       </div>
-                    </a>
+                    {%-if section.settings.habitat_url_first-%}</a>{%-endif-%}
+                    {%-if section.settings.habitat_url_second-%}<a href="{{section.settings.habitat_url_second}}">{%-endif-%}
                     <div class="habitat__item habitat__item-second">
                       <div class="habitat__item-bg">
                         <span>{{ section.settings.habitat_label_second }}</span>
@@ -1832,6 +1833,8 @@
                         {{ section.settings.habitat_name_second }}
                       </div>
                     </div>
+                    {%-if section.settings.habitat_url_second-%}</a>{%-endif-%}
+                    {%-if section.settings.habitat_url_third-%}<a href="{{section.settings.habitat_url_third}}">{%-endif-%}
                     <div class="habitat__item habitat__item-third">
                       <div class="habitat__item-bg">
                         <span>{{ section.settings.habitat_label_third }}</span>
@@ -1841,7 +1844,8 @@
                         {{ section.settings.habitat_name_third }}
                       </div>
                     </div>
-  
+                    {%-if section.settings.habitat_url_third-%}</a>{%-endif-%}
+                    {%-if section.settings.habitat_url_fourth-%}<a href="{{section.settings.habitat_url_fourth}}">{%-endif-%}
                     <div class="habitat__item habitat__item-fourth">
                       <div class="habitat__item-bg">
                         <span>{{ section.settings.habitat_label_fourth }}</span>
@@ -1851,7 +1855,8 @@
                         {{ section.settings.habitat_name_fourth }}
                       </div>
                     </div>
-  
+                    {%-if section.settings.habitat_url_fourth-%}</a>{%-endif-%}
+                    {%-if section.settings.habitat_url_fifth-%}<a href="{{section.settings.habitat_url_fifth}}">{%-endif-%}
                     <div class="habitat__item habitat__item-fifth">
                       <div class="habitat__item-bg">
                         <span>{{ section.settings.habitat_label_fifth }}</span>
@@ -1862,7 +1867,7 @@
                         {{ section.settings.habitat_name_fifth }}
                       </div>
                     </div>
-  
+                    {%-if section.settings.habitat_url_fifth-%}</a>{%-endif-%}
                   </div>
                 </div>
   
@@ -2259,6 +2264,11 @@
                 "label": "Habitat dino label"
               },
               {
+                "type": "url",
+                "id": "habitat_url_first",
+                "label": "Habitat dino URL"
+              },
+              {
                 "type": "text",
                 "id": "habitat_name_first",
                 "label": "Habitat dino name"
@@ -2277,6 +2287,11 @@
                 "type": "text",
                 "id": "habitat_label_second",
                 "label": "Habitat dino label"
+              },
+              {
+                "type": "url",
+                "id": "habitat_url_second",
+                "label": "Habitat dino URL"
               },
               {
                 "type": "text",
@@ -2299,6 +2314,11 @@
                 "label": "Habitat dino label"
               },
               {
+                "type": "url",
+                "id": "habitat_url_third",
+                "label": "Habitat dino URL"
+              },
+              {
                 "type": "text",
                 "id": "habitat_name_third",
                 "label": "Habitat dino name"
@@ -2317,6 +2337,11 @@
                 "type": "text",
                 "id": "habitat_label_fourth",
                 "label": "Habitat dino label"
+              },
+              {
+                "type": "url",
+                "id": "habitat_url_fourth",
+                "label": "Habitat dino URL"
               },
               {
                 "type": "text",
@@ -2342,6 +2367,11 @@
                 "type": "text",
                 "id": "habitat_label_fifth",
                 "label": "Habitat dino label"
+              },
+              {
+                "type": "url",
+                "id": "habitat_url_fifth",
+                "label": "Habitat dino URL"
               },
               {
                 "type": "text",
