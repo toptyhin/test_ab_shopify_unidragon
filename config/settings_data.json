@@ -2850,24 +2850,10 @@
               "prom_link": "Learn more >>",
               "prom_link_url": "\/pages\/gift-for-review"
             }
-          },
-          "b61ed3f2-335b-4c02-802d-2f022be231d4": {
-            "type": "Image",
-            "disabled": true,
-            "settings": {
-              "prom_image": "shopify:\/\/shop_images\/promotions-banner-1_60fcefa8-e88d-42c7-882a-b605f64f579f.png",
-              "image_aligment": "row-reverse",
-              "prom_action": "The promotion is valid from 12\/27\/2021 to 12\/31\/2022",
-              "prom_second_title": "Leave a review and get a gift",
-              "prom_description": "Share your feedback or repost our post on social media. Your review will be followed by a gift!",
-              "prom_link": "",
-              "prom_link_url": ""
-            }
           }
         },
         "block_order": [
-          "e0e99347-bb46-4190-8d90-72eb8bc8f946",
-          "b61ed3f2-335b-4c02-802d-2f022be231d4"
+          "e0e99347-bb46-4190-8d90-72eb8bc8f946"
         ],
         "settings": {
           "prom_title": "Special offers and promotions"
