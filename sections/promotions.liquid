@@ -103,7 +103,12 @@
         <span>{{ section.settings.prom_title }}</span>
       </div>
       {%- for block in section.blocks -%}
-      <style>.prom_conten.block-{{forloop.index}} {flex-direction: {{block.settings.image_aligment}}}</style>
+      <style>
+        .prom_conten.block-{{forloop.index}}
+        {
+          flex-direction: {{block.settings.image_aligment}}
+        }
+       </style>
         <div class="prom_content block-{{forloop.index}}">
           <div class="prom_img">
             <img src="{{ block.settings.prom_image | img_url: 'master' }}" alt="">
