@@ -4,8 +4,7 @@
         <span>{{ section.settings.prom_title }}</span>
       </div>
       {%- for block in section.blocks -%}
-      <style>.prom_conten {flex-direction: {{block.settings.image_aligment}} }</style>
-        <div class="prom_content">
+        <div class="prom_content" style="flex-direction: {{block.settings.image_aligment}}">
           <div class="prom_img">
             <img src="{{ block.settings.prom_image | img_url: 'master' }}" alt="">
           </div>
