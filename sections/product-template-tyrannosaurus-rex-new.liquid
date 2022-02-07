@@ -1783,14 +1783,14 @@
                     </div>
                   </div>
                 </div>
-  
+                {%- if section.settings.surprise_url -%}<a href="{{section.settings.surprise_url}}">{%-endif-%}
                 <div class="sidebar-banner-second">
                   <div class="sidebar-banner__block">
                     <span>{{ section.settings.surprise_title }}</span>
                     <p>{{ section.settings.surprise_desc }}</p>
                   </div>
                 </div>
-  
+                {%- if section.settings.surprise_url -%}</a>{%-endif-%}
                 <div class="sidebar-mounting">
                   <div class="sidebar-mounting__block">
                     <span>{{ section.settings.mounting_title }}</span>
@@ -2183,6 +2183,11 @@
                 "type": "text",
                 "id": "surprise_title",
                 "label": "Surprise dino title"
+              },
+              {
+                "type": "url",
+                "id": "surprise_url",
+                "label": "Surprise dino banner URL"
               },
               {
                 "type": "text",
