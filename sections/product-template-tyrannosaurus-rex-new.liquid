@@ -1744,16 +1744,15 @@
                 {% if section.settings.pdp_enable %}
                     {% render 'pdp__discount' %}
                 {%- endif -%}
-                {%- if section.settings.gift_url -%}<a href="{{section.settings.gift_url}}">{%-endif-%}
-                  <div class="sidebar-banner">
-                    <div class="sidebar-banner__age">
-                      <span>{{ section.settings.gift_age }}</span>
-                    </div>
-                    <div class="sidebar-banner__block">
-                      {{ section.settings.gift_text }}
-                    </div>
+                <div class="sidebar-banner">
+                  <div class="sidebar-banner__age">
+                    <span>{{ section.settings.gift_age }}</span>
                   </div>
-                {%- if section.settings.gift_url -%}</a>{%-endif-%}
+                  <div class="sidebar-banner__block">
+                    {{ section.settings.gift_text }}
+                  </div>
+                </div>
+  
                 <div class="sidebar-numbers">
                   {{  }}
                   <div class="sidebar-numbers__item numbers-item__first">
@@ -1783,14 +1782,14 @@
                     </div>
                   </div>
                 </div>
-                {%- if section.settings.surprise_url -%}<a href="{{section.settings.surprise_url}}">{%-endif-%}
+  
                 <div class="sidebar-banner-second">
                   <div class="sidebar-banner__block">
                     <span>{{ section.settings.surprise_title }}</span>
                     <p>{{ section.settings.surprise_desc }}</p>
                   </div>
                 </div>
-                {%- if section.settings.surprise_url -%}</a>{%-endif-%}
+  
                 <div class="sidebar-mounting">
                   <div class="sidebar-mounting__block">
                     <span>{{ section.settings.mounting_title }}</span>
@@ -2083,11 +2082,6 @@
                 "default": "A great gift for a child!"
               },
               {
-                "type": "url",
-                "id": "gift_url",
-                "label": "Banner URL"
-              },
-              {
                 "type": "image_picker",
                 "id": "banner_first_bg",
                 "label": "Banner first background"
@@ -2183,11 +2177,6 @@
                 "type": "text",
                 "id": "surprise_title",
                 "label": "Surprise dino title"
-              },
-              {
-                "type": "url",
-                "id": "surprise_url",
-                "label": "Surprise dino banner URL"
               },
               {
                 "type": "text",
