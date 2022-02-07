@@ -110,8 +110,9 @@
           {% if block.settings.image_aligment == 'row-reverse' %}padding-left: 30px;{% endif %}
         }
           @media (max-width: 1020px) {
-            .prom_content {
+            .prom_conten-block-{{forloop.index}} {
               flex-direction: column;
+              {% if block.settings.image_aligment == 'row-reverse' %}padding-left: 0;{% endif %}
             }
           }
        </style>
