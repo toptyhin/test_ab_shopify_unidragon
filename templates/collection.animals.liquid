@@ -2,6 +2,7 @@
 {% comment %}
   The contents of the collection.liquid template can be found in /sections/collection-template.liquid
 {% endcomment %}
+{%- comment -%} Experiment with the "add to cart" button on the collections page
 <style>
   @media only screen and (max-width: 1024px) {
     .reveal .hidden.addtocard  {
@@ -104,7 +105,7 @@
       }
     }
 </style>
-
+{% endcomment %}
 {%- liquid
     section 'collection-animals-template'
     unless collection.handle == 'nature-puzzles' or collection.handle == 'world_map_puzzles' or collection.handle == 'balancing-puzzles'
@@ -113,7 +114,7 @@
   -%}
   
   {%- section  'go-cart' -%}
-
+{%- comment -%} Experiment with the "add to cart" button on the collections page
   <script>
 
     $('.add-to-card-size__item').on('click',function(e){
@@ -151,3 +152,4 @@
       }
     });
   </script>
+  {% endcomment %}
