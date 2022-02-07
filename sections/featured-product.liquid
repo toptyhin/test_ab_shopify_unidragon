@@ -130,7 +130,7 @@
  {% unless section_onboarding %}
          <p class="product-single__price product-single__price-{{ section.id }}{% unless current_variant.available %} product-price--sold-out{% endunless %}">
             {% if current_variant.compare_at_price > current_variant.price %}
-            <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span> <span class="from-ab-test" style="display:none;">from </span>
+            <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
             <s id="ComparePrice-{{ section.id }}">{{ current_variant.compare_at_price | money }}</s>
             <span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single">
               <span id="ProductPrice-{{ section.id }}"
@@ -166,7 +166,7 @@
               {% endif %}
             </span>
             {% else %}
-            <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span> <span class="from-ab-test" style="display:none;">from </span>
+            <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
             <s id="ComparePrice-{{ section.id }}" class="hide">{{ current_variant.compare_at_price | money }}</s>
             <span class="product-price__price product-price__price-{{ section.id }}">
               <span id="ProductPrice-{{ section.id }}"
@@ -188,7 +188,7 @@
           {%- assign available = true -%}
            <p class="product-single__price product-single__price-{{ section.id }}{% unless current_variant.available %} product-price--sold-out{% endunless %}">
             {% if compare_at_price > price %}
-                <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span> <span class="from-ab-test" style="display:none;">from </span>
+                <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
                 <s id="ComparePrice-{{ section.id }}">{{ compare_at_price | money }}</s>
                 <span class="product-price__price product-price__price-{{ section.id }} product-price__sale product-price__sale--single">
                   <span id="ProductPrice-{{ section.id }}"
@@ -198,7 +198,7 @@
                   <span class="product-price__sale-label product-price__sale-label-{{ section.id }}">{{ 'products.product.on_sale' | t }}</span>
                 </span>
             {% else %}
-              <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span> <span class="from-ab-test" style="display:none;">from </span>
+              <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
               <s id="ComparePrice-{{ section.id }}" class="hide">{{ compare_at_price | money }}</s>
               <span class="product-price__price product-price__price-{{ section.id }}">
                 <span id="ProductPrice-{{ section.id }}"
