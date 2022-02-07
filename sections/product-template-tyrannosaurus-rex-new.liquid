@@ -1812,15 +1812,17 @@
                     <span>{{ section.settings.habitat_title }}</span>
                   </div>
                   <div class="sidebar-habitat__wrapper">
-                    <div class="habitat__item habitat__item-first">
-                      <div class="habitat__item-bg">
-                        <span>{{ section.settings.habitat_label_first }}</span>
-                        <img src="{{ section.settings.habitat_icon_first | img_url: 'master' }}" alt="">
+                    <a href="#">
+                      <div class="habitat__item habitat__item-first">
+                        <div class="habitat__item-bg">
+                          <span>{{ section.settings.habitat_label_first }}</span>
+                          <img src="{{ section.settings.habitat_icon_first | img_url: 'master' }}" alt="">
+                        </div>
+                        <div class="habitat__item-text">
+                          {{ section.settings.habitat_name_first }}
+                        </div>
                       </div>
-                      <div class="habitat__item-text">
-                        {{ section.settings.habitat_name_first }}
-                      </div>
-                    </div>
+                    </a>
                     <div class="habitat__item habitat__item-second">
                       <div class="habitat__item-bg">
                         <span>{{ section.settings.habitat_label_second }}</span>
