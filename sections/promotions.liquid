@@ -106,9 +106,13 @@
       <style>
         .prom_conten-block-{{forloop.index}}
         {
-          display: flex;
           flex-direction: {{block.settings.image_aligment}}
         }
+          @media (max-width: 1020px) {
+            .prom_content {
+              flex-direction: column;
+            }
+          }
        </style>
         <div class="prom_content prom_conten-block-{{forloop.index}}">
           <div class="prom_img">
