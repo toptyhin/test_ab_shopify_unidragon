@@ -2853,6 +2853,7 @@
           },
           "b61ed3f2-335b-4c02-802d-2f022be231d4": {
             "type": "Image",
+            "disabled": true,
             "settings": {
               "prom_image": "shopify:\/\/shop_images\/promotions-banner-1_60fcefa8-e88d-42c7-882a-b605f64f579f.png",
               "image_aligment": "row-reverse",
