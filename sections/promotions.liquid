@@ -1,26 +1,5 @@
-<div class="prom">
-    <div class="prom_wrapper">
-      <div class="prom_title">
-        <span>{{ section.settings.prom_title }}</span>
-      </div>
-      <div class="prom_content">
-        <div class="prom_img">
-          <img src="{{ section.settings.prom_image | img_url: 'master' }}" alt="">
-        </div>
-        <div class="prom_info">
-          <span>{{ section.settings.prom_action }}</span>
-          <h4>{{ section.settings.prom_second_title }}</h4>
-          <p>{{ section.settings.prom_description }}</p>
-          <a href="{{ section.settings.prom_link_url }}">{{ section.settings.prom_link }}</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  
-  <style>
-  
-  
+<style>
+ 
   .prom_wrapper {
     max-width: 1230px;
     margin: 0 auto;
@@ -115,10 +94,43 @@
     }
   }
   
-  </style>
+</style>
   
   
-  
+<div class="prom">
+    <div class="prom_wrapper">
+      <div class="prom_title">
+        <span>{{ section.settings.prom_title }}</span>
+      </div>
+      {%- for block in section.blocks -%}
+      <style>
+        .prom_conten-block-{{forloop.index}}
+        {
+          flex-direction: {{block.settings.image_aligment}};
+          {% if block.settings.image_aligment == 'row-reverse' %}padding-left: 30px;{% endif %}
+        }
+          @media (max-width: 1020px) {
+            .prom_conten-block-{{forloop.index}} {
+              flex-direction: column;
+              {% if block.settings.image_aligment == 'row-reverse' %}padding-left: 0;{% endif %}
+            }
+          }
+       </style>
+        <div class="prom_content prom_conten-block-{{forloop.index}}">
+          <div class="prom_img">
+            <img src="{{ block.settings.prom_image | img_url: 'master' }}" alt="">
+          </div>
+          <div class="prom_info">
+            <span>{{ block.settings.prom_action }}</span>
+            <h4>{{ block.settings.prom_second_title }}</h4>
+            <p>{{ block.settings.prom_description }}</p>
+            <a href="{{ block.settings.prom_link_url }}">{{ block.settings.prom_link }}</a>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+ 
   {% schema %}
     {
       "name": "Promotions",
@@ -127,36 +139,60 @@
           "type": "text",
           "id": "prom_title",
           "label": "Promotions title"
-        },
+        }
+      ],
+      "blocks": [
         {
-          "type": "image_picker",
-          "id": "prom_image",
-          "label": "Promotions image"
-        },
-        {
-          "type": "text",
-          "id": "prom_action",
-          "label": "Promotions action date"
-        },
-        {
-          "type": "text",
-          "id": "prom_second_title",
-          "label": "Promotions secont title"
-        },
-        {
-          "type": "text",
-          "id": "prom_description",
-          "label": "Promotions description"
-        },
-        {
-          "type": "text",
-          "id": "prom_link",
-          "label": "Promotions link"
-        },
-        {
-          "type": "url",
-          "id": "prom_link_url",
-          "label": "Promotions link url"
+          "type": "Image",
+          "name": "Promotion Item",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "prom_image",
+              "label": "Promotions image"
+            },
+            {
+              "type": "select",
+              "id": "image_aligment",
+              "label": "Image aligment",
+              "options": [
+                {
+                  "value": "row",
+                  "label": "left"
+                },
+                {
+                  "value": "row-reverse",
+                  "label": "Right"
+                }
+              ],
+              "default": "row"
+            },
+            {
+              "type": "text",
+              "id": "prom_action",
+              "label": "Promotions action date"
+            },
+            {
+              "type": "text",
+              "id": "prom_second_title",
+              "label": "Promotions secont title"
+            },
+            {
+              "type": "text",
+              "id": "prom_description",
+              "label": "Promotions description"
+            },
+            {
+              "type": "text",
+              "id": "prom_link",
+              "label": "Promotions link"
+            },
+            {
+              "type": "url",
+              "id": "prom_link_url",
+              "label": "Promotions link url"
+            }
+          ]
         }
       ],
       "presets": [
