@@ -1744,15 +1744,16 @@
                 {% if section.settings.pdp_enable %}
                     {% render 'pdp__discount' %}
                 {%- endif -%}
-                <div class="sidebar-banner">
-                  <div class="sidebar-banner__age">
-                    <span>{{ section.settings.gift_age }}</span>
+                {%- if section.settings.gift_url -%}<a href="{{section.settings.gift_url}}">{%-endif-%}
+                  <div class="sidebar-banner">
+                    <div class="sidebar-banner__age">
+                      <span>{{ section.settings.gift_age }}</span>
+                    </div>
+                    <div class="sidebar-banner__block">
+                      {{ section.settings.gift_text }}
+                    </div>
                   </div>
-                  <div class="sidebar-banner__block">
-                    {{ section.settings.gift_text }}
-                  </div>
-                </div>
-  
+                {%- if section.settings.gift_url -%}</a>{%-endif-%}
                 <div class="sidebar-numbers">
                   {{  }}
                   <div class="sidebar-numbers__item numbers-item__first">
@@ -2080,6 +2081,11 @@
                 "id": "gift_text",
                 "label": "Banner gift text",
                 "default": "A great gift for a child!"
+              },
+              {
+                "type": "url",
+                "id": "gift_url",
+                "label": "Banner URL"
               },
               {
                 "type": "image_picker",
