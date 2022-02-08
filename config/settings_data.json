@@ -2871,10 +2871,23 @@
               "prom_link": "Learn more >>",
               "prom_link_url": "\/pages\/gift-for-review"
             }
+          },
+          "ffe412ea-57b7-483c-a88f-65b8a23dfbb3": {
+            "type": "Image",
+            "settings": {
+              "prom_image": "shopify:\/\/shop_images\/211102_-_banner_na_sait__1_1.jpg",
+              "image_aligment": "row-reverse",
+              "prom_action": "The promotion is valid from 01\/01\/2022 to 12\/31\/2022",
+              "prom_second_title": "Get 10% discount",
+              "prom_description": "Buy any 3 jigsaw puzzles and get 10% discount. The discout will be automatically displayed in the cart.",
+              "prom_link": "",
+              "prom_link_url": ""
+            }
           }
         },
         "block_order": [
-          "e0e99347-bb46-4190-8d90-72eb8bc8f946"
+          "e0e99347-bb46-4190-8d90-72eb8bc8f946",
+          "ffe412ea-57b7-483c-a88f-65b8a23dfbb3"
         ],
         "settings": {
           "prom_title": "Special offers and promotions"
