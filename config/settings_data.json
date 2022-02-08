@@ -2880,7 +2880,7 @@
               "prom_action": "The promotion is valid from 01\/01\/2022 to 12\/31\/2022",
               "prom_second_title": "Get 10% discount",
               "prom_description": "Buy any 3 jigsaw puzzles and get 10% discount. The discout will be automatically displayed in the cart.",
-              "prom_link": "Shop now",
+              "prom_link": "Shop now >>",
               "prom_link_url": "shopify:\/\/collections"
             }
           }
