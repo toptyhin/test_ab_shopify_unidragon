@@ -715,7 +715,11 @@
                 
                 {% endform %}
     
-                {%- render 'back-in-stock-form', product_id: product.id, product_variants_id: current_variant.id -%}
+                            {%-liquid
+              if enable_back_in_stock
+                render 'back-in-stock-form', product_id: product.id, product_variants_id: current_variant.id
+              endif
+            -%}
     
                 {% if section.settings.enable_sticky %}
                 <style>
@@ -1537,6 +1541,13 @@
                 "id": "show_cart_drawer",
                 "label": "Show Cart Drawer",
                 "default": false
+            },
+            {
+              "type":"checkbox",
+              "label":"Enable back in stock service",
+              "id":"enable_back_in_stock",
+              "info":"Enable a pop-up notification in out of stock a RS size with an offer to buy other puzzles in this size",
+              "default": false
             },
             { 
               "type": "checkbox",
