@@ -2892,6 +2892,61 @@
         "settings": {
           "prom_title": "Special offers and promotions"
         }
+      },
+      "redesign-index-page": {
+        "type": "redesign-index-page",
+        "blocks": {
+          "4cdb71ab-57c4-4c77-91d5-a66ef22007d8": {
+            "type": "ProductsBest",
+            "settings": {
+              "landing_best_product": "pre-order-majestic-wolf"
+            }
+          },
+          "c9ca3ddd-22d6-431a-a22f-7b098d874d3d": {
+            "type": "ProductsBest",
+            "settings": {
+              "landing_best_product": "enchanting-owl"
+            }
+          },
+          "fb648d29-2819-42eb-89eb-9f0e54beb0cf": {
+            "type": "ProductsBest",
+            "settings": {
+              "landing_best_product": "mandala-inexhaustible-abundance"
+            }
+          },
+          "c83036e0-345b-46d7-8339-6e7313e215d4": {
+            "type": "ProductsBest",
+            "settings": {
+              "landing_best_product": "lovely-tiger"
+            }
+          },
+          "5f934a7a-f88b-4099-b2b9-2cf1ad723389": {
+            "type": "ProductsBest",
+            "settings": {
+              "landing_best_product": "fiery-fox"
+            }
+          },
+          "fe593aab-7296-445e-a019-b5390af14969": {
+            "type": "ProductsBest",
+            "settings": {
+              "landing_best_product": "wooden-jigsaw-puzzle-eternal-elephant"
+            }
+          }
+        },
+        "block_order": [
+          "4cdb71ab-57c4-4c77-91d5-a66ef22007d8",
+          "c9ca3ddd-22d6-431a-a22f-7b098d874d3d",
+          "fb648d29-2819-42eb-89eb-9f0e54beb0cf",
+          "c83036e0-345b-46d7-8339-6e7313e215d4",
+          "5f934a7a-f88b-4099-b2b9-2cf1ad723389",
+          "fe593aab-7296-445e-a019-b5390af14969"
+        ],
+        "settings": {
+          "star_size": 17,
+          "star_text_font_size": 16,
+          "star_padding": 3,
+          "star_text_padding": 10
+        }
       }
     },
     "content_for_index": [
