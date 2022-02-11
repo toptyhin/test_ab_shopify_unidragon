@@ -380,11 +380,11 @@ qp('track', 'ViewContent');
         <div class="logo header__logo"><a href="/"> <img src="{{'redesign-logo.svg' | asset_url }}" alt="UNIDRAGON" /></a></div>
         {%-liquid
           case shop.locale
-          when contains '/es'
+          when '/es'
           assign ulr_path = '/es'
-          when contains '/ar'
+          when '/ar'
           assign ulr_path = '/ar'
-          when contains '/pt-PT'
+          when '/pt-PT'
           assign ulr_path = '/pt-pt'
           else
           assign ulr_path = '/'
