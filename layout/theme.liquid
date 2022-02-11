@@ -378,23 +378,22 @@ qp('track', 'ViewContent');
     </div>
     <div class="header__main"><button class="btn-menu header__btn-menu" type="button" aria-label="Меню"><span class="btn-menu__line"></span><span class="btn-menu__line"></span><span class="btn-menu__line"></span></button>
         <div class="logo header__logo"><a href="/"> <img src="{{'redesign-logo.svg' | asset_url }}" alt="UNIDRAGON" /></a></div>
-        {%-liquid
+        {%- liquid
           case shop.locale
-          when contains '/es'
+          when 'es'
           assign ulr_path = '/es'
-          when contains '/ar'
+          when 'ar'
           assign ulr_path = '/ar'
-          when contains '/pt-PT'
+          when 'pt-PT'
           assign ulr_path = '/pt-pt'
-          else
+          when 'en'
           assign ulr_path = '/'
           endcase
           -%}
-          {{ulr_path}}
         <div class="lang header__lang"><button class="lang__toggle" type="button"><img class="lang__toggle-icon" src="{{'redesign-flags-english.png' | asset_url }}" width="15" height="15" alt=""><span class="lang__toggle-caption">English</span></button>
             <div class="lang__dropdown">
                 <ul class="lang__items">
-                    <li class="lang__item{% unless request.path contains '/'%} current{%endunless%}"><a class="lang__item-link" href="//unidragon.com/{{ request.path | remove_first: ulr_path }}"><img class="lang__item-icon" src="{{'redesign-flags-english.png' | asset_url }}" width="15" height="15" alt=""><span class="lang__item-caption">English</span></a></li>
+                    <li class="lang__item{% unless request.path contains '/'%} current{%endunless%}"><a class="lang__item-link" href="//unidragon.com{{ request.path | remove_first: ulr_path }}"><img class="lang__item-icon" src="{{'redesign-flags-english.png' | asset_url }}" width="15" height="15" alt=""><span class="lang__item-caption">English</span></a></li>
                     <li class="lang__item{% if request.path contains '/es'%} current{%endif%}"><a class="lang__item-link" href="//unidragon.com/es{{ request.path | remove_first: ulr_path }}"><img class="lang__item-icon" src="{{'redesign-flags-es.png' | asset_url }}" width="15" height="15" alt=""><span class="lang__item-caption">Spanish</span></a></li>
                     <li class="lang__item{% if request.path contains '/ar'%} current{%endif%}"><a class="lang__item-link" href="//unidragon.com/ar{{ request.path | remove_first: ulr_path }}"><img class="lang__item-icon" src="{{'redesign-flags-ar.png' | asset_url }}" width="15" height="15" alt=""><span class="lang__item-caption">Arabic</span></a></li>
                     <li class="lang__item{% if request.path contains '/pt-PT'%} current{%endif%}"><a class="lang__item-link" href="//unidragon.com/pt-pt{{ request.path | remove_first: ulr_path }}"><img class="lang__item-icon" src="{{'redesign-flags-pt.png' | asset_url }}" width="15" height="15" alt=""><span class="lang__item-caption">Portuguese</span></a></li>
