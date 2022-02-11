@@ -15,14 +15,6 @@
   <meta name="version" content="2.3.2">
   <meta name="email" content="{{ shop.email }}">
   <meta name="cmsmagazine" content="bdcdc6de24aabdfc464a9d2d5d6b34ac" /> 
-
-
-  <link rel="stylesheet" href="{{'redesign-style.min.css' | asset_url }}" />
-  <meta name="msapplication-TileColor" content="#1a1a1a" />
-  <meta name="msapplication-config" content="{{'redesign-browserconfig.xml' | asset_url }}" />
-
-{%unless template == 'index'%}  {{ 'theme.scss.css' | asset_url | stylesheet_tag }} {%endunless%}
-
   <!-- KV 15/02 -->
   <meta name="google-site-verification" content="a4TAWTeb_JqFZ6hfN97VJ_UnJcM5d9ONGZ_qf7-S2JY" />
   <!-- DV 27/07 -->
@@ -75,6 +67,7 @@
     {% comment %}<meta name="description" content="{{ page_description | escape }}">{% endcomment %}
   {%- endif -%}
   {%- include 'social-meta-tags' -%}
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
   <script>
     var theme = {
       strings: {
@@ -212,7 +205,7 @@ if (match && match.length > 0) window.localStorage.setItem('sid', match[0]);
   {% include 'qikify-contactform' %}
 {% include 'flashify-common' %}{% comment %}ly_dir_styles_begin{% endcomment %}{%- assign language_code = '_' | append: request.locale.iso_code -%}{%- if '_ar_he_fa_ur' contains language_code -%}{{- 'ly-rtl.css' | asset_url | stylesheet_tag -}}{%- endif -%}{% comment %}ly_dir_styles_end{% endcomment %}</head> 
 
-<body class="page">
+<body class="template-{{ template | split: '.' | first }}">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKLBHMZ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -340,258 +333,43 @@ qp('track', 'ViewContent');
   
   <input type="hidden" id="product_key" value="{{ settings.product_key }}">
   <input type="hidden" id="permanent_domain" value="{{ shop.permanent_domain }}">
-
-
-
-
-  {%- liquid
-    assign cart_total_price = 0
-    for item in cart.items
-      if item.product.type == 'Puzzle'
-        assign puzle_discount = puzle_discount | plus: item.quantity
-      endif
-
-      if customer
-        for tag in customer.tags
-          if tag == 'Subscription membership' 
-            assign member_discount = true
-          endif
-        endfor
-      endif
-      if member_discount == true
-        assign item_line_price = item.line_price | times: 0.8
-        assign discount_calc = 0.8
-      elsif settings.display_3pazl_discount and puzle_discount > 2
-        assign item_line_price = item.line_price | times: 0.9
-      else
-        assign item_line_price = item.line_price
-      endif
-      assign cart_total_price = cart_total_price | plus: item_line_price
-    endfor
-  -%}
-
-
-
-  <header class="header page__header">
-    <div class="header__top">
-        <div class="header__shipping">Domestic u.s shipping – 2-6 Days</div>
+  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+  {% if settings.salepopup_position == 'top'%}
+   {% include 'notification-popup' %}
+  {% endif %}
+  <div id="SearchDrawer" class="search-bar drawer drawer--top">
+    <div class="search-bar__table">
+      <div class="search-bar__table-cell search-bar__form-wrapper">
+        <form class="search search-bar__form" action="/search" method="get" role="search">
+          <button class="search-bar__submit search__submit btn--link" type="submit">
+            {% include 'icon-search' %}
+            <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
+          </button>
+          {% if settings.search_result == 'only_product'%}
+          <input type="hidden" name="type" value="product">
+          {% endif %}
+          <input class="search__input search-bar__input" type="input" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" aria-label="{{ 'general.search.placeholder' | t }}">
+        </form>
+      </div>
+      <div class="search-bar__table-cell text-right">
+        <button type="button" class="btn--link search-bar__close js-drawer-close">
+          {% include 'icon-close' %}
+          <span class="icon__fallback-text">{{ 'general.search.close' | t }}</span>
+        </button>
+      </div>
     </div>
-    <div class="header__main"><button class="btn-menu header__btn-menu" type="button" aria-label="Меню"><span class="btn-menu__line"></span><span class="btn-menu__line"></span><span class="btn-menu__line"></span></button>
-        <div class="logo header__logo"><a href="/"> <img src="{{'redesign-logo.svg' | asset_url }}" alt="UNIDRAGON" /></a></div>
-        {%-liquid
-          case shop.locale
-          when contains '/es'
-          assign ulr_path = '/es'
-          when contains '/ar'
-          assign ulr_path = '/ar'
-          when contains '/pt-PT'
-          assign ulr_path = '/pt-pt'
-          else
-          assign ulr_path = '/'
-          endcase
-          -%}
-        <div class="lang header__lang"><button class="lang__toggle" type="button"><img class="lang__toggle-icon" src="{{'redesign-flags-english.png' | asset_url }}" width="15" height="15" alt=""><span class="lang__toggle-caption">English</span></button>
-            <div class="lang__dropdown">
-                <ul class="lang__items">
-                    <li class="lang__item{% unless request.path contains '/'%} current{%endunless%}"><a class="lang__item-link" href="//unidragon.com/{{ request.path | remove_first: ulr_path }}"><img class="lang__item-icon" src="{{'redesign-flags-english.png' | asset_url }}" width="15" height="15" alt=""><span class="lang__item-caption">English</span></a></li>
-                    <li class="lang__item{% if request.path contains '/es'%} current{%endif%}"><a class="lang__item-link" href="//unidragon.com/{{ request.path | remove_first: ulr_path }}"><img class="lang__item-icon" src="{{'redesign-flags-es.png' | asset_url }}" width="15" height="15" alt=""><span class="lang__item-caption">Spanish</span></a></li>
-                    <li class="lang__item{% if request.path contains '/ar'%} current{%endif%}"><a class="lang__item-link" href="//unidragon.com/{{ request.path | remove_first: ulr_path }}"><img class="lang__item-icon" src="{{'redesign-flags-ar.png' | asset_url }}" width="15" height="15" alt=""><span class="lang__item-caption">Arabic</span></a></li>
-                    <li class="lang__item{% if request.path contains '/pt-PT'%} current{%endif%}"><a class="lang__item-link" href="//unidragon.com/{{ request.path | remove_first: ulr_path }}"><img class="lang__item-icon" src="{{'redesign-flags-pt.png' | asset_url }}" width="15" height="15" alt=""><span class="lang__item-caption">Portuguese</span></a></li>
-                </ul>
-            </div>
-        </div>
-<style>
-    .ly-switcher-wrapper.ly-breakpoint-1.fixed.bottom_right {display: none !important;;}
-</style>
-        
-        <a class="header__mob-cart" href="/cart"><svg class="svg-icon svg-icon--cart header__mob-cart-icon">
-                <use xlink:href="#cart"></use>
-            </svg><span class="header__mob-cart-quantity">0</span></a>
-    </div>
-    <div class="header__nav">
-        <div class="header__nav-container">
-            <div class="search header__search"><button class="search__toggle" type="button"><svg class="svg-icon svg-icon--search">
-                        <use xlink:href="#search"></use>
-                    </svg></button>
-                <div class="search__dropdown">
-                    <form class="search__form" action="#" method="POST" id="form-search">
-                        <div class="field field--type-text field--search search__field"><label class="field__label visually-hidden" for="form-search-q">Search all products...</label>
-                            <div class="field__field"><input type="text" name="q" placeholder="Search all products..." id="form-search-q" /></div>
-                        </div><button class="search__submit" type="submit"><svg class="svg-icon svg-icon--search">
-                                <use xlink:href="#search"></use>
-                            </svg></button>
-                    </form>
-                </div>
-            </div>
-            <nav class="menu header__menu">
-                <ul class="menu__items">
-                    <li class="menu__item menu__item--all"><a class="menu__link" href="/collections">All collections</a></li>
-                    <li class="menu__item menu__item--submenu"><a class="menu__link" href="#">Wooden Puzzles</a>
-                        <div class="menu__submenu">
-                            <div class="menu__submenu-menu"><button class="menu__btn-back" type="button">Back</button>
-                                <ul class="menu__subitems">
-                                    <li class="menu__subitem"><a class="menu__sublink" href="/collections/wooden-puzzles">Animals</a></li>
-                                    <li class="menu__subitem"><a class="menu__sublink" href="/products/quezzle">Quezzle</a></li>
-                                    <li class="menu__subitem"><a class="menu__sublink" href="/collections/mandala-puzzles">Mandala</a></li>
-                                    <li class="menu__subitem"><a class="menu__sublink" href="/collections/nature-puzzles">Nature</a></li>
-                                    <li class="menu__subitem"><a class="menu__sublink" href="/collections/dino-collection">Kids Puzzles</a></li>
-                                    <li class="menu__subitem"><a class="menu__sublink" href="/products/set-for-mounting-puzzles">Mounting System</a></li>
-                                </ul>
-                            </div>
-                            <div class="menu__submenu-main">
-                                <div class="menu__submenu-title">Top Collections</div>
-                                <div class="menu__cards"><a class="menu__card" href="/collections/wooden-puzzles">
-                                        <div class="menu__card-image"><img src="{{'redesign-menu-product-1.jpg' | asset_url }}" width="170" height="170" alt="" /></div>
-                                        <div class="menu__card-caption">Animals</div>
-                                    </a><a class="menu__card" href="/products/quezzle">
-                                        <div class="menu__card-image"><img src="{{'redesign-menu-product-2.jpg' | asset_url }}" width="170" height="170" alt="" /></div>
-                                        <div class="menu__card-caption">Quezzle</div>
-                                    </a><a class="menu__card" href="/collections/mandala-puzzles">
-                                        <div class="menu__card-image"><img src="{{'redesign-menu-product-3.jpg' | asset_url }}" width="170" height="170" alt="" /></div>
-                                        <div class="menu__card-caption">Mandala</div>
-                                    </a></div>
-                                <div class="menu__submenu-title">Bestsellers</div>
-                                <div class="menu__cards"><a class="menu__card" href="/products/lovely-tiger">
-                                        <div class="menu__card-image"><img src="{{'redesign-menu-product-4.jpg' | asset_url }}" width="170" height="170" alt="" /></div>
-                                        <div class="menu__card-caption">Lovely tiger</div>
-                                        <div class="menu__card-label">Bestseller</div>
-                                    </a><a class="menu__card" href="/products/enchanting-owl">
-                                        <div class="menu__card-image"><img src="{{'redesign-menu-product-5.jpg' | asset_url }}" width="170" height="170" alt="" /></div>
-                                        <div class="menu__card-caption">Charming owl</div>
-                                        <div class="menu__card-label">Bestseller</div>
-                                    </a><a class="menu__card" href="/products/pre-order-majestic-wolf">
-                                        <div class="menu__card-image"><img src="{{'redesign-menu-product-6.jpg' | asset_url }}" width="170" height="170" alt="" /></div>
-                                        <div class="menu__card-caption">Majestic wolf</div>
-                                        <div class="menu__card-label">Bestseller</div>
-                                    </a></div>
-                            </div>
-                            <div class="menu__submenu-banners"><a class="menu__banner" href="#">
-                                    <div class="menu__banner-image"><img src="{{'redesign-menu-banner.jpg' | asset_url }}" alt="" /></div>
-                                    <div class="menu__banner-content">
-                                        <div class="menu__banner-text">Buy any 3 Jigsaw puzzles and get</div>
-                                        <div class="menu__banner-offer"><span class="menu__banner-value">10%</span> Discount</div>
-                                    </div>
-                                </a><a class="menu__mob-banner" href="/pages/promotions"><img src="{{'redesign-menu-mob-banner-1.jpg' | asset_url }}" alt="" />
-                                    <div class="menu__mob-banner-caption">10% Discount</div>
-                                </a><a class="menu__mob-banner" href="/products/set-for-mounting-puzzles"><img src="{{'redesign-menu-mob-banner-2.jpg' | asset_url }}" alt="" />
-                                    <div class="menu__mob-banner-caption">Set for mounting puzzles</div>
-                                </a></div>
-                        </div>
-                    </li>
-                    <li class="menu__item"><a class="menu__link" href="/collections/world_map_puzzles">World Map Puzzles</a></li>
-                    <li class="menu__item"><a class="menu__link" href="/products/quezzle">Quezzle</a></li>
-                    <li class="menu__item"><a class="menu__link" href="/collections/mandala-puzzles">MANDALA</a></li>
-                </ul>
-            </nav>
-            <nav class="menu-service header__menu-service">
-                <ul class="menu-service__items">
-                    <li class="menu-service__item"><a class="menu-service__link" href="/pages/shipping">Shipping</a></li>
-                    <li class="menu-service__item"><a class="menu-service__link" href="/pages/about-us">About us</a></li>
-                    <li class="menu-service__item"><a class="menu-service__link" href="/pages/contact-us">Contact us</a></li>
-                    <li class="menu-service__item"><a class="menu-service__link" href="/pages/corporative-gifts">Corporate gifts</a></li>
-                </ul>
-            </nav>
-            <div class="header__nav-bottom"><a class="header__email" href="mailto:care@unidragon.com"><span class="header__email-icon"><svg class="svg-icon svg-icon--mail">
-                            <use xlink:href="#mail"></use>
-                        </svg></span><span class="header__email-caption">care@unidragon.com</span></a>
-                <div class="header__social"><a class="header__btn-social" href="https://www.facebook.com/Unidragon.World" target="_blank" rel="nofollow noopener"><svg class="svg-icon svg-icon--facebook">
-                            <use xlink:href="#facebook"></use>
-                        </svg></a><a class="header__btn-social" href="https://instagram.com/unidragon_com" target="_blank" rel="nofollow noopener"><svg class="svg-icon svg-icon--instagram">
-                            <use xlink:href="#instagram"></use>
-                        </svg></a></div><a class="header__sign-in" href="/account/login"><svg class="svg-icon svg-icon--user header__sign-in-icon">
-                        <use xlink:href="#user"></use>
-                    </svg><span class="header__sign-in-caption">Sign in</span></a>
-            </div><a class="btn-cart header__btn-cart" href="/cart"><svg class="svg-icon svg-icon--cart btn-cart__icon">
-                    <use xlink:href="#cart"></use>
-                </svg>
-                <div class="btn-cart__content">
-                    <div class="btn-cart__items">{{ cart.item_count }} items</div>
-                    <div class="btn-cart__total" id="CartCost" data-discount="{{discount_calc}}">{{cart.total_price | money }}</div>
-                </div>
-            </a>
-        </div>
-    </div>
-</header>
-<div class="page-container" id="PageContainer">
-  <main class="main-content" id="MainContent" role="main">
-{{ content_for_layout }}
+  </div>
 
-</main>
-</div>
-{%comment%}{{ content_for_layout }}{%endcomment%}
+  {% section 'header' %}
+  <div class="page-container" id="PageContainer">
+    <main class="main-content" id="MainContent" role="main">
+      {{ content_for_layout }}
+      {%if template == 'index'%}<div class="reputon-trustpilot-reviews-widget" id="78c456a0-bc54-11eb-910a-479bd9607d41" ></div>{%endif%}
+    </main>
+    {% section 'footer' %}
+  </div>
 
-
-
-
-
-<footer class="footer page__footer">
-    <div class="footer__main">
-        <div class="footer__container">
-            <div class="footer__row">
-                <div class="footer__col">
-                    <div class="footer__logo"><img src="{{'redesign-logo2.svg' | asset_url }}" width="230" height="152" alt="Unidragon" /></div>
-                    <p class="footer__about">Our passion is&nbsp;to&nbsp;create and select unusual interior and home decor items.</p>
-                </div>
-                <div class="footer__col">
-                    <div class="footer__title">Puzzles</div>
-                    <nav class="menu-footer menu-footer--2 footer__menu">
-                        <ul class="menu-footer__items">
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/collections/wooden-puzzles">Animals</a></li>
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/products/quezzle">Quezzle </a></li>
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/collections/mandala-puzzles">Mandala</a></li>
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/collections/nature-puzzles">Nature</a></li>
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/products/set-for-mounting-puzzles">Mounting System</a></li>
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/collections/dino-collection">Kids Puzzles</a></li>
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/collections/world_map_puzzles">World Map Puzzles </a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="footer__col">
-                    <div class="footer__title">Information</div>
-                    <nav class="menu-footer menu-footer--3 footer__menu">
-                        <ul class="menu-footer__items">
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/pages/corporative-gifts">Corporative Gifts</a></li>
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/pages/shipping">Shipping</a></li>
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/pages/payment-methods">Payment Methods</a></li>
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/pages/contact-us">Contact Us</a></li>
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/blogs/news">Our Blog</a></li>
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/pages/affiliate-program">Affiliate Program</a></li>
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/pages/privacy-policy">Privacy Policy</a></li>
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/pages/refund-policy">Refund Policy</a></li>
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/pages/terms-of-service">Terms of Service</a></li>
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/pages/unidragon-fake">Scam and Fakes</a></li>
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/pages/wholesale">Wholesale</a></li>
-                            <li class="menu-footer__item"><a class="menu-footer__link" href="/pages/promotions">Promotions</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="footer__col footer__col--follow">
-                    <div class="footer__title">Follow us</div><a class="footer__social" href="https://www.facebook.com/Unidragon.World" target="_blank" rel="nofollow noopener"><svg class="svg-icon svg-icon--facebook-2 footer__social-icon">
-                            <use xlink:href="#facebook-2"></use>
-                        </svg><span class="footer__social-caption">Unidragon.World</span></a><a class="footer__social" href="https://instagram.com/unidragon_com" target="_blank" rel="nofollow noopener"><svg class="svg-icon svg-icon--instagram-2 footer__social-icon">
-                            <use xlink:href="#instagram-2"></use>
-                        </svg><span class="footer__social-caption">unidragon_com</span></a>
-                </div>
-            </div>
-            <div class="footer__payment"><img class="footer__payment-logo" src="{{'redesign-payment-discover.svg' | asset_url }}" width="52" height="20" alt="Discover" /><img class="footer__payment-logo" src="{{'redesign-payment-dinners-club.svg' | asset_url }}" width="18" height="20" alt="Dinners Club" /><img class="footer__payment-logo" src="{{'redesign-payment-american-express.svg' | asset_url }}" width="20" height="20" alt="American Express" /><img class="footer__payment-logo" src="{{'redesign-payment-paypal.svg' | asset_url }}" width="36" height="20" alt="Paypal" /><img class="footer__payment-logo" src="{{'redesign-payment-mastercard.svg' | asset_url }}" width="23" height="15" alt="Mastercard" /><img class="footer__payment-logo" src="{{'redesign-payment-visa.svg' | asset_url }}" width="27" height="20" alt="VISA" /></div>
-        </div>
-    </div>
-    <div class="footer__bottom">
-        <div class="footer__container">
-            <div class="footer__bottom-row">
-                <p class="footer__bottom-text">&copy;&nbsp;2021 Unidragon</p>
-                <p class="footer__bottom-text">All rights reserved.</p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<script src="{{'redesign-app.js' | asset_url }}"></script>
-<div style="display: none;">{% include 'redesign-sprite.svg' %}</div>
-
-
-
-{{ 'fontawesome.css' | asset_url | stylesheet_tag }}
+    {{ 'fontawesome.css' | asset_url | stylesheet_tag }}
   
 <!-- Start discount popup -->  
   {% include 'discount_popup' %}    
@@ -603,6 +381,10 @@ qp('track', 'ViewContent');
 {%endcomment%}
 {%- liquid
 
+  if settings.salepopup_position == 'bottom'
+      include 'notification-popup'
+    endif
+    include 'promo-popup'
     include 'currencies'
     include 'ajaxify-cart'
     include 'smile-initializer'
@@ -685,3 +467,4 @@ twq('track','PageView');
 <style>.ly-switcher-wrapper.ly-breakpoint-2.absolute.top_left {z-index: 1000000;}</style>
 {% include 'sg-fbp' %}{% include 'sg-button' %}{% include 'sg-cart' %}{% include 'sg-hiw' %}<!-- langify-v2-scripts-begin -->{% comment %}ly_liquid_scripts_begin{% endcomment %}{% endcapture %}{% render 'ly-liquid-scripts' content: ly_liquid_content %}{% comment %}ly_liquid_scripts_end{% endcomment %}{% comment %}ly_core_scripts_begin{% endcomment %}{% render 'ly-core-scripts' %}{% comment %}ly_core_scripts_end{% endcomment %}{% comment %}ly_switcher_factory_begin{% endcomment %}{% render 'ly-switcher-factory' %}{% comment %}ly_switcher_factory_end{% endcomment %}<!-- langify-v2-scripts-end --></body>
 </html>
+
