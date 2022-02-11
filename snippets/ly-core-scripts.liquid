@@ -31,7 +31,7 @@
 {%- assign languageDetectionDefault = switcherSettings.languageDetectionDefault -%}
 
 <script>
-  var ShopifyAPI = ShopifyAPI || {};
+  var lyShopifyAPI = lyShopifyAPI || {};
   var langify = langify || {};
   var defaultSettings = {
     debug: false,               // BOOL : Enable/disable console logs
@@ -55,13 +55,30 @@
 
 
   langify.helper = langify.helper || {
+    ajax: function(params) {
+      var data = params.data;
+      fetch(params.url, {
+        method: params.method,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: (data && params.method === 'POST') ? JSON.stringify(data) : null,
+      })
+      .then(response => response.json())
+      .then(data => {
+        params.success(data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    },
     extractImageObject: function(val) {
       if(!val || val == '') return false;
       var val = val;
 
       // Handle src-sets
-      if(val.search(/([0-9]+w?h?,)/gi) > -1) {
-        val = val.split(/([0-9]+w?h?,)/gi)[0];
+      if(val.search(/([0-9]+w?h?x?,)/gi) > -1) {
+        val = val.split(/([0-9]+w?h?x?,)/gi)[0];
       }
 
       var url = val;
@@ -71,10 +88,10 @@
       url = url.substring(url.lastIndexOf("/") + 1, url.length);
       var hostBegin = val.indexOf('//') ? val.indexOf('//') : 0;
       host = val.substring(hostBegin, val.lastIndexOf('/') + 1);
-      name = url.replace(/(_[0-9]+x[0-9]*|_{width}x)?(_crop_(top|center|bottom|left|right))?(@[0-9]*x)?(\.progressive)?\.(jpe?g|png|gif|webp)/gi, "");
+      name = url.replace(/(_[0-9]+x[0-9]*|_{width}x|_{size})?(_crop_(top|center|bottom|left|right))?(@[0-9]*x)?(\.progressive)?\.(jpe?g|png|gif|webp)/gi, "");
       type = url.substring(url.lastIndexOf('.')+1, url.length);
-      file = url.replace(/(_[0-9]+x[0-9]*|_{width}x)?(_crop_(top|center|bottom|left|right))?(@[0-9]*x)?(\.progressive)?\.(jpe?g|png|gif|webp)/gi, '.'+type);
-
+      file = url.replace(/(_[0-9]+x[0-9]*|_{width}x|_{size})?(_crop_(top|center|bottom|left|right))?(@[0-9]*x)?(\.progressive)?\.(jpe?g|png|gif|webp)/gi, '.'+type);
+      
       return {
         host: host,
         name: name,
@@ -542,25 +559,29 @@
         var attrs = [];
         if(typeof attr === 'string') attrs.push(attr);
         else if(typeof attr === 'object') attrs = attr;
-        attrs.forEach(function(attr) {
-          if(node.hasAttribute(attr)) {
+        var timeStamp = Math.floor(Date.now());
+        if(!node.hasAttribute('data-ly-processed') || timeStamp > parseInt(node.getAttribute('data-ly-processed')) + langify.settings.timeout) {
+          node.setAttribute('data-ly-processed', timeStamp);
+          attrs.forEach(function(attr) {
+            if(node.hasAttribute(attr)) {
+              var imgObject = langify.helper.extractImageObject(node.getAttribute(attr));
+              var imgKey = imgObject ? imgObject.file.toLowerCase() : '';
 
-            var imgObject = langify.helper.extractImageObject(node.getAttribute(attr));
-            var imgKey = imgObject ? imgObject.file.toLowerCase() : '';
+              if(customContents_image[imgKey]) {
 
-            if(customContents_image[imgKey]) {
+                // Replace
+                var oldValue = node.getAttribute(attr);
+                var translation = node.getAttribute(attr);
+                translation = translation.replace(new RegExp(imgObject.host, 'g'), customContents_image[imgKey].host);
+                translation = translation.replace(new RegExp(imgObject.name, 'g'), customContents_image[imgKey].name);
+                translation = translation.replace(new RegExp(imgObject.type, 'g'), customContents_image[imgKey].type);
 
-              // Replace
-              var oldValue = node.getAttribute(attr);
-              var translation = node.getAttribute(attr);
-              translation = translation.replace(new RegExp(imgObject.host, 'g'), customContents_image[imgKey].host);
-              translation = translation.replace(new RegExp(imgObject.name, 'g'), customContents_image[imgKey].name);
-              translation = translation.replace(new RegExp(imgObject.type, 'g'), customContents_image[imgKey].type);
+                // China Hook
+                if(node.getAttribute(attr).indexOf('cdn.shopifycdn.net') >= 0) {
+                  translation = translation.replace(new RegExp('cdn.shopify.com', 'g'), 'cdn.shopifycdn.net'); 
+                }
 
-              if(node.getAttribute(attr) != translation) {
-                var timeStamp = Math.floor(Date.now());
-                if(!node.hasAttribute('data-ly-processed') || timeStamp > parseInt(node.getAttribute('data-ly-processed')) + langify.settings.timeout) {
-                  node.setAttribute('data-ly-processed', timeStamp);
+                if(node.getAttribute(attr) != translation) {
                   node.setAttribute(attr, translation);
 
                   mutationCount = mutationCount + 1;
@@ -584,8 +605,8 @@
                 }
               }
             }
-          }
-        });
+          });
+        }
       }
 
       function translateCssImage(node) {
@@ -607,6 +628,11 @@
             translation = translation.replace(new RegExp(imgObject.host, 'g'), customContents_image[imgKey].host);
             translation = translation.replace(new RegExp(imgObject.name, 'g'), customContents_image[imgKey].name);
             translation = translation.replace(new RegExp(imgObject.type, 'g'), customContents_image[imgKey].type);
+
+            // China Hook
+            if(node.getAttribute(attr).indexOf('cdn.shopifycdn.net') >= 0) {
+              translation = translation.replace(new RegExp('cdn.shopify.com', 'g'), 'cdn.shopifycdn.net'); 
+            }
 
             if(node.getAttribute(attr) != translation) {
               var timeStamp = Math.floor(Date.now());
@@ -798,10 +824,10 @@
       }
 
       // Initial cart.attributes update
-      ShopifyAPI.getCart(function (cart) {
+      lyShopifyAPI.getCart(function (cart) {
         var currentLanguage = langify.locale.iso_code;
         if(!cart.attributes.language || cart.attributes.language != currentLanguage) {
-          ShopifyAPI.updateCartAttributes({'language': currentLanguage}, function(data){});
+          lyShopifyAPI.updateCartAttributes({"language": currentLanguage}, function(data){});
         }
       });
 
@@ -825,30 +851,46 @@
       }
 
       this._currencySwitcherBindings();
+
+
+      var event = new CustomEvent('langify.switcher.initialized', { 
+        bubbles: true,
+        detail: {}
+      });
     },
     _currencySwitcherBindings: function() {
       var currencySwitcherForm = document.getElementById('currency_switcher_form');
-      var countryCodeField = currencySwitcherForm.querySelector('input[name="country_code"]');
+
+      // Switcher-factory backward compability version < 3.2
+      if(currencySwitcherForm && currencySwitcherForm.querySelector('input[name="currency"]')) {
+        currencySwitcherForm.querySelector('input[name="currency"]').setAttribute('name', 'currency_code');
+      }
+
       if(currencySwitcherForm) {
+        var countryCodeField = currencySwitcherForm.querySelector('input[name="country_code"]');
+        var languageCodeField = currencySwitcherForm.querySelector('input[name="languageCodeField"]');
         var currencySelectSwitcher = document.querySelectorAll('select.ly-currency-switcher , select.ly-country-switcher');
         var currencyCustomSwitcher = document.querySelectorAll('div.ly-currency-switcher a, div.ly-country-switcher a');
         currencySwitcherForm.querySelector('input[name="return_to"]').value = window.location.pathname;
         for(var i=0; i<currencyCustomSwitcher.length; i++) {
           currencyCustomSwitcher[i].addEventListener('click', function(e) {
-            var formType = 'currency';
+            var formType = 'currency_code';
             if(this.closest('.ly-custom-dropdown-switcher').getAttribute('class').indexOf('ly-country-switcher') >= 0) formType = 'country_code';
-            if(countryCodeField && this.closest('.ly-currency-switcher')) countryCodeField.remove();
-            currencySwitcherForm.querySelector('input[name="'+formType+'"]').value = this.getAttribute('data-'+ formType.replace('_', '-'));
+            if(countryCodeField && this.closest('.ly-currency-switcher')) {
+              if(countryCodeField) countryCodeField.remove();
+              if(languageCodeField) languageCodeField.remove();
+            }
+            currencySwitcherForm.querySelector('input[name="'+formType+'"]').value = this.getAttribute('data-'+ formType.replace('_code', '').replace('_', '-'));
             currencySwitcherForm.submit();
           });
         }
         for(var a=0; a<currencySelectSwitcher.length; a++) {
           currencySelectSwitcher[a].addEventListener('change', function(){
-            var formType = 'currency';
+            var formType = 'currency_code';
             var theValue = this.value;
             if(this.getAttribute('class').indexOf('ly-country-switcher') >= 0) formType = 'country_code';
             if(countryCodeField && this.getAttribute('class').indexOf('ly-currency-switcher') >= 0) countryCodeField.remove();
-            if(formType === 'currency') theValue = this.value.split(' ')[0];
+            if(formType === 'currency_code') theValue = this.value.split(' ')[0];
             currencySwitcherForm.querySelector('input[name="'+formType+'"]').value = theValue;
             currencySwitcherForm.submit();
           });
@@ -882,11 +924,11 @@
       var _localizationForm = document.getElementById('currency_switcher_form')
       this.el = {
         localizationForm: _localizationForm,
-        currencyField: _localizationForm.querySelector('input[name="currency"]'),
+        currencyCodeField: _localizationForm.querySelector('input[name="currency_code"]'),
         countryCodeField: _localizationForm.querySelector('input[name="country_code"]'),
         languageCodeField: _localizationForm.querySelector('input[name="language_code"]'),
       };
-	  var recommendated = this._findRecommendedLanguage();
+	    var recommendated = this._findRecommendedLanguage();
       this.recommendated = recommendated;
       if(recommendated && recommendated !== langify.locale.iso_code && !langify.helper.getCookie('ly-lang-selected')) {
         this._translateStrings(recommendated);
@@ -952,7 +994,7 @@
         this.el.languageCodeField = document.createElement('input');
         this.el.languageCodeField.type = 'hidden';
         this.el.languageCodeField.name = 'language_code';
-        this.el.localizationForm.appendChild(languageCodeField)
+        this.el.localizationForm.appendChild(this.el.languageCodeField)
       }
       this.el.languageCodeField.value = recommendated;
 
@@ -1008,10 +1050,10 @@
       	//element.value = valueToSelect;  
       }
       if(element.classList.contains('ly-country-switcher') || element.classList.contains('ly-currency-switcher')) {
-        _this.el.currencyField.value = element[this.selectedIndex].getAttribute('data-currency');
+        _this.el.currencyCodeField.value = element[this.selectedIndex].getAttribute('data-currency');
         _this.el.countryCodeField.value = element[this.selectedIndex].getAttribute('data-country-code');
       }
-	},
+	  },
     _selectCustomDropdownEntry: function(element, entry) {
       var _this = langify.recommendation;
       var currentElem = element.querySelector('.ly-custom-dropdown-current');
@@ -1024,12 +1066,12 @@
         valueToSelect = entry.getAttribute('data-ly-code');
       }
       if(element.classList.contains('ly-country-switcher')) {
-        _this.el.currencyField.value = entry.getAttribute('data-currency');
+        _this.el.currencyCodeField.value = entry.getAttribute('data-currency');
         _this.el.countryCodeField.value = entry.getAttribute('data-country-code');
         valueToSelect = entry.getAttribute('data-country-code')+'-'+entry.getAttribute('data-currency');
       }
       if(element.classList.contains('ly-currency-switcher')) {
-        _this.el.currencyField.value = entry.getAttribute('data-currency');
+        _this.el.currencyCodeField.value = entry.getAttribute('data-currency');
         _this.el.countryCodeField.value = '';
         valueToSelect = entry.getAttribute('data-currency');
       }
@@ -1189,12 +1231,55 @@
 
   langify.core = langify.core || {
     onComplete: function() {
+
+
       var root_url = langify.locale.root_url != '/' ? langify.locale.root_url : '';
-      ShopifyAPI.attributeToString = function(attribute) {if((typeof attribute) !== 'string') {attribute += '';if(attribute === 'undefined') {attribute = '';}}return jQuery.trim(attribute);};
-      ShopifyAPI.getCart = function(callback) {jQuery.getJSON(root_url+'/cart.js', function (cart, textStatus) {if((typeof callback) === 'function') {callback(cart);}});};
-      ShopifyAPI.updateCartNote = function(note, callback) {var params = {type: 'POST',url: root_url+'/cart/update.js',data: 'note=' + this.attributeToString(note),dataType: 'json',success: function(cart) {if((typeof callback) === 'function') {callback(cart);}},error: this.onError};jQuery.ajax(params);};
-      ShopifyAPI.updateCartAttributes = function(attributes, callback) {var data = '';var that = this;if(jQuery.isArray(attributes)) {jQuery.each(attributes, function(indexInArray, valueOfElement) {var key = that.attributeToString(valueOfElement.key);if (key !== '') {data += 'attributes[' + key + ']=' + that.attributeToString(valueOfElement.value) + '&';}});} else if ((typeof attributes === 'object') && attributes !== null) {jQuery.each(attributes, function(key, value) {data += 'attributes[' + that.attributeToString(key) + ']=' + that.attributeToString(value) + '&';});}var params = {type: 'POST',url: root_url+'/cart/update.js',data: data,dataType: 'json',success: function(cart) {if((typeof callback) === 'function') {callback(cart);}},error: this.onError};jQuery.ajax(params);};
-      ShopifyAPI.onError = function(XMLHttpRequest, textStatus) {};
+      lyShopifyAPI.attributeToString = function(attribute) {
+        if((typeof attribute) !== 'string') {
+          attribute += '';
+          if(attribute === 'undefined') {attribute = '';}
+        }
+        return attribute.trim();
+      };
+      lyShopifyAPI.getCart = function(callback) {
+        langify.helper.ajax({
+          method: 'GET',
+          url: root_url+'/cart.js',
+          success: function (cart, textStatus) {
+            if((typeof callback) === 'function') {
+              callback(cart);
+            }
+          }
+        });
+      };
+      lyShopifyAPI.updateCartNote = function(note, callback) {
+        var params = {
+          method: 'POST',
+          url: root_url+'/cart/update.js',
+          data: 'note=' + this.attributeToString(note),
+          dataType: 'json',
+          success: function(cart) {if((typeof callback) === 'function') {callback(cart);}},
+          error: this.onError
+        };
+        langify.helper.ajax(params);
+      };
+      lyShopifyAPI.updateCartAttributes = function(attributes, callback) {
+        var params = {
+          method: 'POST',
+          url: root_url+'/cart/update.js',
+          data: {"attributes": attributes},
+          dataType: 'json',
+          success: function(cart) {
+            if((typeof callback) === 'function') {
+              callback(cart);
+            }
+          },
+          error: this.onError
+        };
+        langify.helper.ajax(params);
+      };
+      lyShopifyAPI.onError = function(XMLHttpRequest, textStatus) {};
+
 
       langify.switcher.init();
 
@@ -1216,18 +1301,14 @@
         return false;
       }
 
+      langify.core.onComplete();
 
-      if(typeof jQuery === 'undefined') {
-        langify.loader.loadScript('//cdn.jsdelivr.net/jquery/1.9.1/jquery.min.js', function() {
-          langify.core.onComplete();
-        });
-      } else if(langify.tools.compareJQueryVersion(jQuery.fn.jquery, '1.7.0') <= 0) {
-        langify.loader.loadScript('//cdn.jsdelivr.net/jquery/1.9.1/jquery.min.js', function() {
-          langify.core.onComplete();
-        });
-      } else {
-        langify.core.onComplete();
+      if(langify.settings.theme && ((langify.settings.theme.loadJquery && langify.settings.theme.loadJquery === true) || typeof langify.settings.theme.loadJquery === 'undefined')) {
+        if(typeof jQuery === 'undefined') {
+          langify.loader.loadScript('//cdn.jsdelivr.net/jquery/1.9.1/jquery.min.js', function() {});
+        } 
       }
+      
     }
   };
 
