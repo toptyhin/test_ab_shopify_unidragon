@@ -517,7 +517,7 @@
 
 
 {% form 'localization', id: 'currency_switcher_form' %}
-  <input type="hidden" name="currency_code" value="{{ cart.currency.iso_code }}">
+  <input type="hidden" name="currency" value="{{ cart.currency.iso_code }}">
   <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
   <input type="hidden" name="language_code" value="{{ request.locale.iso_code }}">
 {% endform %}
