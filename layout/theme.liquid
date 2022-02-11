@@ -378,15 +378,15 @@ qp('track', 'ViewContent');
     </div>
     <div class="header__main"><button class="btn-menu header__btn-menu" type="button" aria-label="Меню"><span class="btn-menu__line"></span><span class="btn-menu__line"></span><span class="btn-menu__line"></span></button>
         <div class="logo header__logo"><a href="/"> <img src="{{'redesign-logo.svg' | asset_url }}" alt="UNIDRAGON" /></a></div>
-        {%-liquid
+        {%- liquid
           case shop.locale
-          when '/es'
+          when 'es'
           assign ulr_path = '/es'
-          when '/ar'
+          when 'ar'
           assign ulr_path = '/ar'
-          when '/pt-PT'
+          when 'pt-PT'
           assign ulr_path = '/pt-pt'
-          else
+          when 'en'
           assign ulr_path = '/'
           endcase
           -%}
