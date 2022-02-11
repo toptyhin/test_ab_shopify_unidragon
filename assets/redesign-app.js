@@ -4780,33 +4780,7 @@ document.querySelectorAll(".header__nav").forEach(function (nav) {
     ;
   }, true);
 });
-document.querySelectorAll(".header").forEach(function (header) {
-  function updateMenuServciePosition() {
-    var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-    var menu = header.querySelector(".header__menu-service");
 
-    if (viewportWidth >= 1000) {
-      var socialWidth = header.querySelector(".header__social").offsetWidth;
-      menu.style.right = socialWidth + 47 + "px";
-    } else {
-      menu.style.right = "";
-    }
-
-    ;
-  }
-
-  ;
-  updateMenuServciePosition();
-  var timerResize;
-  window.addEventListener("resize", function (event) {
-    if (timerResize) {
-      window.cancelAnimationFrame(timerResize);
-    }
-
-    ;
-    timerResize = window.requestAnimationFrame(updateMenuServciePosition);
-  }, false);
-});
 document.querySelectorAll(".lang").forEach(function (component) {
   var baseClass = "lang";
   var openClass = "is-open";
