@@ -375,6 +375,7 @@
         "settings": {
           "buy_it_now_action": "thank_you_message",
           "show_cart_drawer": true,
+          "enable_back_in_stock": false,
           "show_saved_amount": true,
           "enable_default_variant": false,
           "show_quantity_selector": true,
@@ -406,7 +407,7 @@
           "enable_trust_badges": false,
           "pdp_enable": true,
           "pdp_enable_banner": true,
-          "pdp_image_banner": "shopify:\/\/shop_images\/ValentinesDay-02.png",
+          "pdp_image_banner": "shopify:\/\/shop_images\/211102_-_banner_na_sait__1_1.jpg",
           "pdp_image": "shopify:\/\/shop_images\/new_img_a79e2b7e-362a-4eb1-85d0-a79a3dbc6454.jpg",
           "pdp_title": "<b>Buy any 3 Jigsaw Puzzles and<\/b> <br><span class=\"other_infos\">Get 10% Discount<\/span>",
           "pdp_sub_title": "The discount will be applied automatically in the cart.",
