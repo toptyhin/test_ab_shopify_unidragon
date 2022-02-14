@@ -416,7 +416,7 @@
 
 
 
-  <header class="site-header border-bottom {% if section.settings.align_logo == 'left' %} logo--left {% else %} logo--center{% endif %}" role="banner">
+  <div class="site-header border-bottom {% if section.settings.align_logo == 'left' %} logo--left {% else %} logo--center{% endif %}" role="banner">
     <div class="grid grid--no-gutters grid--table">
       {% if section.settings.align_logo == 'left' %}
       {% unless linklists[section.settings.main_linklist] == blank %}
@@ -648,7 +648,7 @@
 
           </div>
           </div>
-        </header>
+        </div>
       {% if linklists[section.settings.main_linklist].links.size > 5 %}
       <div class="site-header link_list_bottom border-bottom {% if section.settings.align_logo == 'left' %} logo--left {% else %} logo--center{% endif %}" role="banner">
         <div class="grid grid--no-gutters">
