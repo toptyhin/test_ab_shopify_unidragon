@@ -168,7 +168,7 @@
     "social_youtube_link": "",
     "social_vimeo_link": "",
     "display_3pazl_discount": true,
-    "display_tag_month": false,
+    "display_tag_month": true,
     "tag_month_text": "Product <br>\nof the Month",
     "tag_month_font_size": 12,
     "tag_month_alignment": "center",
