@@ -409,7 +409,7 @@
                 body: JSON.stringify(formData)
               })
               .then(response => {
-                ga('send', { hitType: 'event', eventCategory: 'upsell', eventAction: 'add_cart_upsell', eventLabel: {{section.settings.upsell_product.title}}});
+                ga('send', { hitType: 'event', eventCategory: 'upsell', eventAction: 'add_cart_upsell', eventLabel: 'cart_upsell'});
                 document.location.reload();
               })
               .catch((error) => {
