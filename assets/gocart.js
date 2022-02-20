@@ -686,7 +686,7 @@
                     } else {
                         var w = t.total_price*0.01;
                         var l = 100 - t.total_price*0.01;
-                        var m = '<span><img src="./assets/shiping-icon.png"/>'.concat(l.toFixed(2),'$ until free shipping</span>');
+                        var m = '<span><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/28/assets/shiping-icon.png"/>'.concat(l.toFixed(2),'$ until free shipping</span>');
                     }
                     var p = '<div id="progressbar" class="shiping-progressbar"><div style="width: '.concat(w, '%"></div>').concat(m,'</div>');
                     this.progressBar.innerHTML = p;
