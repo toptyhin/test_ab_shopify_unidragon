@@ -372,7 +372,7 @@
               </div>
 
               <div style="upsell-description">
-                {%-comment-%}<p>You can easily turn your puzzle into a piece of interior decor. It will allow you to hang 6 Small puzzles, 3 Medium puzzles, or 3 King Size puzzles</p>{%-endcomment-%}
+                {{section.settings.upsell_product_text}}
                 
                 <button class="upsell-description upsell-button medium-up--hide">{{ 'products.upsell.add_to_cart_button_text' | t }}</button>
               </div>
@@ -665,6 +665,11 @@
     "type": "product",
     "id": "upsell_product",
     "label": "Chose Upsell Product"
+  },
+  {
+    "type": "richtext",
+    "id": "upsell_product_text",
+    "label": "ATC text on upsell line"
   },
   {
   "type": "header",
