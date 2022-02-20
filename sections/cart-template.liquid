@@ -347,6 +347,78 @@
             </td>
           </tr>
           {% endfor %}
+          
+        {%- liquid 
+          if section.settings.upsell_product
+            for item in cart.items
+              if item.product.id == section.settings.upsell_product.id
+              assign upsell_in_cart = true
+              else
+                assign need_upsell = true
+              endif
+            endfor
+          endif
+         -%}
+        {%- if need_upsell and upsell_in_cart != true -%}
+          <tr class="cart__row border-bottom cart-flex">
+            <td class="cart__image-wrapper cart-flex-item">
+              <a href="{{ section.settings.upsell_product.url }}">
+                <img class="cart__image" src="{{ section.settings.upsell_product.featured_image | img_url }}" alt="{{section.settings.upsell_product.title}}">
+              </a>
+            </td>
+            <td class="cart__meta small--text-left cart-flex-item"  colspan="2">
+              <div class="list-view-item__title">
+                <a href="{{ section.settings.upsell_product.url }}" style="color:#8c8c8c">{{section.settings.upsell_product.title}}</a>
+              </div>
+
+              <div style="upsell-description">
+                {%-comment-%}<p>You can easily turn your puzzle into a piece of interior decor. It will allow you to hang 6 Small puzzles, 3 Medium puzzles, or 3 King Size puzzles</p>{%-endcomment-%}
+                
+                <button class="upsell-description upsell-button medium-up--hide">{{ 'products.upsell.add_to_cart_button_text' | t }}</button>
+              </div>
+
+            </td>
+            <td  class="cart__price-wrapper cart-flex-item text-center medium-up--hide" colspan="2" style="color:#8c8c8c">
+              {{ section.settings.upsell_product.price | money }}
+
+            </td>
+            
+            <td class="cart__price-wrapper cart-flex-item text-center small--hide" style="color:#8c8c8c">
+              {{ section.settings.upsell_product.price | money }}
+
+            </td>
+            <td class="text-right upsell small--hide" width="150px">
+              <button class="upsell-button">{{ 'products.upsell.add_to_cart_button_text' | t }}</button>
+            </td>
+          </tr>
+          <script>
+            $('.upsell-button').on('click',function(e){    
+              e.preventDefault();
+              let formData = {
+               'items': [{
+                 'id': {{usection.settings.upsell_product.selected_or_first_available_variant.id}},
+                'quantity': 1
+                }]
+              };
+          
+              fetch('/cart/add.js', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+              })
+              .then(response => {
+                document.location.reload();
+              })
+              .catch((error) => {
+                console.error('Error:', error);
+              });
+            
+              });
+           
+          </script>
+      {%- endif -%}
         </tbody>
       </table>
         <footer class="cart__footer">
@@ -584,6 +656,15 @@
   "id": "saved_price",
   "label": "Enable Saved Percentage",
   "default": true
+  },
+  {
+  "type": "header",
+  "content": "Upsell cart line product"
+  },
+  {
+    "type": "product",
+    "id": "upsell_product",
+    "label": "Chose Upsell Product"
   },
   {
   "type": "header",
