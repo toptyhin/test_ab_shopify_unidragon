@@ -7006,6 +7006,16 @@
         "type": "product",
         "id": "tag_month_product",
         "label": "Select product for tag of the month"
+      },
+      {
+        "type": "product",
+        "id": "tag_month_product1",
+        "label": "Select ANOTHER product for tag of the month"
+      },
+      {
+        "type": "product",
+        "id": "tag_month_product2",
+        "label": "Select ANOTHER product for tag of the month"
       }
     ]
   }
