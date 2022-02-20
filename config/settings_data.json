@@ -489,7 +489,7 @@
         "settings": {
           "cart_notes_enable": true,
           "saved_price": true,
-          "upsell_product": "diplodocus",
+          "upsell_product": "tyrannosaurus-rex",
           "upsell_product_text": "<p>It's time to look into the distant past and get acquainted with the ancient huge dinosaurs.<\/p>",
           "cart_enable": false,
           "cart_timer_minute": 5000,
