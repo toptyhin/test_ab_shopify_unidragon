@@ -308,11 +308,15 @@
             let formData = {
                 'items': [
                     {
-                        'id': $('.combo-size__item > input:checked').val(),
+                        'id': {{all_products['diplodocus'].selected_or_first_available_variant.id}},
                         'quantity': 1
                     },
                     {
-                        'id': {{section.settings.combo_upsell_product.selected_or_first_available_variant.id}},
+                        'id': {{all_products['triceratops'].selected_or_first_available_variant.id}},
+                        'quantity': 1
+                    },
+                    {
+                        'id': {{all_products['tyrannosaurus-rex'].selected_or_first_available_variant.id}},
                         'quantity': 1
                     }
                 ]
