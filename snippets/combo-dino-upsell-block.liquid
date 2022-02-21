@@ -330,6 +330,7 @@
             })
             .then(response => {
             $(".success-feedback").fadeIn("fast").delay(4e3).fadeOut("slow");
+            ga('send', { hitType: 'event', eventCategory: 'dino_combo_upsell', eventAction: 'add_combo_dino', eventLabel: 'combo_upsell'});
             goCart.fetchAndOpenCart();$('.go-cart-drawer-upsell').hide();$('.upsell-info').hide();
             })
             .catch((error) => {
