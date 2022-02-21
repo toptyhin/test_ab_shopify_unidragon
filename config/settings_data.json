@@ -490,7 +490,7 @@
           "cart_notes_enable": true,
           "saved_price": true,
           "upsell_product": "tyrannosaurus-rex",
-          "upsell_product_text": "<p>It's time to look into the distant past and get acquainted with the ancient huge dinosaurs.<\/p>",
+          "upsell_product_text": "<p>Delight your little ones with an exciting and colorful puzzle! Look into the distant past and get acquainted with the ancient huge dinosaur.<\/p>",
           "cart_enable": false,
           "cart_timer_minute": 5000,
           "cart_timer_color": "#f30909",
@@ -1059,6 +1059,8 @@
       "go-cart": {
         "type": "go-cart",
         "settings": {
+          "enable_progressbar": true,
+          "default_limit": "100"
         }
       },
       "product-new": {
@@ -2089,6 +2091,7 @@
           "dinopazzle_title": "Our puzzles are made of wood.",
           "dinopazzle_text": "We care about your health.",
           "show_cart_drawer": false,
+          "enable_back_in_stock": false,
           "show_saved_amount": true,
           "enable_default_variant": false,
           "show_quantity_selector": false,
