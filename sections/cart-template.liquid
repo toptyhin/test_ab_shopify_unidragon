@@ -33,7 +33,9 @@
       }
       .cart__row p{
         display: none;
-        /*font-size: 12px;*/
+      }
+      .cart__row p:first-of-type {
+        display: block;
       }
     }
     @media screen and (min-width: 750px){
@@ -371,7 +373,7 @@
                 <a href="{{ section.settings.upsell_product.url }}" style="color:#8c8c8c">{{section.settings.upsell_product.title}}</a>
               </div>
 
-              <div style="upsell-description">
+              <div class="upsell-description">
                 {{section.settings.upsell_product_text}}
                 
                 <button class="upsell-description upsell-button medium-up--hide">{{ 'products.upsell.add_to_cart_button_text' | t }}</button>
