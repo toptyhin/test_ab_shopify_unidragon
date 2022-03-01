@@ -226,6 +226,23 @@
 {%comment%}
     <div id="auto-popup" data-timeout="20" data-quiz-id="BZHY5Y" style="display: none;"></div>
 {%endcomment%}
+  {% if section.settings.enable_full_banner %}
+ 
+    <div class="section--fullwidth-banner" id="section--fullwidth-banner" style="max-width: {{section.settings.img_width}}; margin-bottom:30px">
+      <img src="{{section.settings.img | img_url: 'master' }}" alt="" title="">
+    </div>
+ 
+    <style>
+        .section--fullwidth-banner {
+          align-items: center;
+          display: flex;
+          margin: 0 auto;
+        }
+
+    </style>
+  
+  
+  {% endif %}    
     <div class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
       {% for product in collection.products %}
 
@@ -680,6 +697,27 @@
           "id":"enable_parallax",
           "label":"Enable Parallax"
        },
+  		{
+            "type":"header",
+            "content":"Full-width Banner"
+         },
+         {
+          "type": "checkbox",
+          "id": "enable_full_banner",
+          "label": "Enable Fullwidth Banner",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Default image"
+        },
+        {
+          "type": "text",
+          "id": "img_width",
+          "label": "Banner max-width",
+          "default": "100%"
+        },
        {
           "type":"header",
           "content":"Video background setting"
