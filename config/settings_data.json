@@ -383,7 +383,7 @@
           "show_vendor": false,
           "enable_zoom": true,
           "shake_effect_enable": true,
-          "readmore_enable": true,
+          "readmore_enable": false,
           "enable_progressbar_text": false,
           "enable_timer_top_message": false,
           "enable_progressbartimer_text": true,
