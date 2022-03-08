@@ -561,7 +561,8 @@
                     })).then((function(r) {
                         return e.fetchHandler(r, t)
                     })).catch((function(t) {
-                        throw e.ajaxRequestFail(), new Error(t)
+                        // хз не нашел этого скрипта - просто убрал обработку ошибки, аминь
+						//  throw e.ajaxRequestFail(), new Error(t) 
                     }))
                 }
             }, {
