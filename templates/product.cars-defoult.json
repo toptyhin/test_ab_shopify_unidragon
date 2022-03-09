@@ -7,35 +7,35 @@
           "type": "bullit",
           "settings": {
             "advantage_num": "01",
-            "advantage_header": "Spend your time with your loved ones",
-            "advantage_text": "Our puzzle is a good occasion to bring all the family and friends together",
-            "advantage_image": "shopify:\/\/shop_images\/1_1cf8ab5c-d492-4bf6-a8db-89bd0a43262f.jpg"
+            "advantage_header": "It engages both children and parents",
+            "advantage_text": "Assembling the constructor is just the beginning of the game. The model can be painted and customized",
+            "advantage_image": "shopify:\/\/shop_images\/1_454aff96-4a94-4564-bcc8-42ac6f010a0c.jpg"
           }
         },
         "8a3a876f-34fa-4302-b180-005aef78cc5f": {
           "type": "bullit",
           "settings": {
             "advantage_num": "02",
-            "advantage_header": "It is time to forget the daily routine!",
-            "advantage_text": "Psychologists recommend puzzles for meditation and stress relief",
-            "advantage_image": "shopify:\/\/shop_images\/2_c5fe6543-ae90-4baa-a608-d429f78a8edc.jpg"
+            "advantage_header": "Relax and unwind",
+            "advantage_text": "Assembling process is from 1 to 4 hours of independent travel into the world of automotive technology",
+            "advantage_image": "shopify:\/\/shop_images\/2_e4b55db2-33cb-4501-ab34-7f33b4b1030e.jpg"
           }
         },
         "bcebce11-e5e6-49f0-9315-54a24180718d": {
           "type": "bullit",
           "settings": {
             "advantage_num": "03",
-            "advantage_header": "Try something new",
-            "advantage_text": "Unidragon puzzles have the most unique shape and design",
-            "advantage_image": "shopify:\/\/shop_images\/3_37ea3276-f258-44d3-aa05-acaeac6f3099.jpg"
+            "advantage_header": "Easy and simple to assemble",
+            "advantage_text": "Feel like a mechanic set up a car repair shop right on the table",
+            "advantage_image": "shopify:\/\/shop_images\/3_7e8e741e-48bf-4761-ab9c-8451287e4848.jpg"
           }
         },
         "071ed715-cce1-4f7e-b032-44997208d1ae": {
           "type": "bullit",
           "settings": {
             "advantage_num": "04",
-            "advantage_header": "Challenge yourself",
-            "advantage_text": "Puzzles work out your brain and strengthen your mind",
+            "advantage_header": "Eco-friendly materials and no glue",
+            "advantage_text": "Eco-friendly materials and no glue",
             "advantage_image": "shopify:\/\/shop_images\/4_d9441980-f48b-4acf-b65e-176051cb5bb4.jpg"
           }
         },
@@ -98,7 +98,7 @@
         "show_tags": false,
         "enable_payment_button": true,
         "variant_swacth": "two",
-        "swatch_option": "without_background",
+        "swatch_option": "with_background",
         "color_style": "square_box",
         "product_review": true,
         "visitor_counter_enable": false,
