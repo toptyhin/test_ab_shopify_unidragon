@@ -41,6 +41,7 @@
         },
         "493d4bef-d3c5-44b0-ad0e-7b8baa1a8255": {
           "type": "faq",
+          "disabled": true,
           "settings": {
             "faq_title": "How does the size of the pieces differ for the puzzle sizes – S, M, KS, RS?",
             "faq_text": "<p>Our sizes change with the number of pieces, so the size of the pieces is the same in every puzzle.<\/p>"
@@ -48,6 +49,7 @@
         },
         "adb40608-6ffe-4695-bb45-260778e325f6": {
           "type": "faq",
+          "disabled": true,
           "settings": {
             "faq_title": "What is a wooden puzzle?",
             "faq_text": "<p>Our puzzles are made from a pressured HDF that is 3mm thick. This material is eco-friendly, high-quality and durable. It doesn’t deform and doesn’t give splinters (like with plywood)<\/p>"
@@ -55,6 +57,7 @@
         },
         "5eba5f92-21b4-486e-b589-3b446881c160": {
           "type": "faq",
+          "disabled": true,
           "settings": {
             "faq_title": "How long does each size puzzle take to assemble?",
             "faq_text": "<p>Check our illustration (link\/popup of with an illustration of the sizes and photo of a girl). As well as the size pay attention to the assembly times:<br\/><br\/>                          S -&gt; from 2 hours<br\/>                          M-&gt; from 4 hours<br\/>                          L-&gt; from 6 hours<br\/>                         RS -&gt; from 8 hours<br\/>                        <br\/>The large puzzle will most probably take a couple of evenings to assemble so it is best to complete it on a separate table. <\/p>"
@@ -62,6 +65,7 @@
         },
         "d3282f90-fdff-4d2a-9e97-8598580b933d": {
           "type": "faq",
+          "disabled": true,
           "settings": {
             "faq_title": "Who are the puzzles suitable for?",
             "faq_text": "<p>Wooden puzzles are a great gift for practically anyone.<\/p><p>You can spend an evening assembling the puzzle with your family, children, loved ones. <\/p><p>As well as puzzle lovers, our jigsaws are bought by creative people, board game lovers, people who like to do simple tasks with their hands<\/p>"
@@ -69,6 +73,7 @@
         },
         "55c5ad22-f1c6-4a98-bb80-c89633baa022": {
           "type": "faq",
+          "disabled": true,
           "settings": {
             "faq_title": "What do I do with completed puzzles?",
             "faq_text": "<p>Many customers use their puzzle as an alternative to board games: they visit friends or family and complete the puzzle together. <\/p><p>When you’ve completed the assembly process, don’t put the puzzle back in the cupboard. Use it as interior decoration! We have developed a special gluing system for this which fixes the puzzle together and sticks it to the wall. <\/p><p>This is suitable for all sizes, with the help of one set you can fix and hang 8 small puzzles, 4 medium puzzles, or 4 large puzzles.<\/p>"
@@ -117,7 +122,7 @@
         "decorate_banner_header": "What is inside?",
         "decorate_banner_text": "Spinning wheels!\nV8 engine under the hood!\nDoors and trunk open!\nDetailed interior!",
         "decorate_banner_bg_image": "shopify:\/\/shop_images\/car-constructor-mustang-yellow-1x1-10.jpg",
-        "decorate_banner_bg_mob_image": "shopify:\/\/shop_images\/banner-decorate-walls_bg.png",
+        "decorate_banner_bg_mob_image": "shopify:\/\/shop_images\/car-constructor-mustang-yellow-1x1-10.jpg",
         "product_description": "under_the_price",
         "enable_sticky": true,
         "enable_combo_upsell": true,
