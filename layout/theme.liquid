@@ -2,7 +2,7 @@
 <!doctype html>
 <!--[if IE 9]> <html class="ie9 no-js" lang="{{ shop.locale }}"{% comment %}ly_dir_replace_for_[]_begin{% endcomment %}{%- assign language_code = '_' | append: request.locale.iso_code -%}{%- if '_ar_he_fa_ur' contains language_code -%} dir="rtl" {%- endif -%}{% comment %}ly_dir_replace_end{% endcomment %}> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="{{ shop.locale }}"{% comment %}ly_dir_replace_for_[]_begin{% endcomment %}{%- assign language_code = '_' | append: request.locale.iso_code -%}{%- if '_ar_he_fa_ur' contains language_code -%} dir="rtl" {%- endif -%}{% comment %}ly_dir_replace_end{% endcomment %}> <!--<![endif]-->
-<head>
+<head>{% render 'pagefly-head' %}
 {{"https://cozycountryredirect.addons.business/js/eggbox/5107/dtag/script.js?shop=unidragon.myshopify.com" | script_tag }}
 
 <script src="https://www.googleoptimize.com/optimize.js?id=OPT-5RD9DVZ"></script>
