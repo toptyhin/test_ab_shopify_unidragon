@@ -115,7 +115,7 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
                 <span class="sw_m_price">{{variant.price | times: discount_amount | money }}</span>
               </div>
               {%- assign opt_parametr = value | split: '—' -%}
-              <span class="sw_val">{{ opt_parametr[0] }} {{opt_parametr[1]}}</span>
+<!--               <span class="sw_val">{{ opt_parametr[0] }} {{opt_parametr[1]}}</span> -->
               <span class="sw_val">{{ value | split: '—' | last }}</span>
             </div>
           </div>
