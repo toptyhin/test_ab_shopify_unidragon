@@ -33,7 +33,9 @@
                  		
                   		{%- assign counter = 0 -%}
                   
-                  		
+                  		{%- for counter in (0..5) -%}
+                  			{{counter}}
+                  		{% endfor %}
                         {%- for product in new_products limit:3 -%}
                   		 {%- if product.collections.size > 0  -%}
                   			
