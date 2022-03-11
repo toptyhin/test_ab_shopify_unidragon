@@ -73,6 +73,7 @@
         },
         "55c5ad22-f1c6-4a98-bb80-c89633baa022": {
           "type": "faq",
+          "disabled": true,
           "settings": {
             "faq_title": "What do I do with completed puzzles?",
             "faq_text": "<p>Many customers use their puzzle as an alternative to board games: they visit friends or family and complete the puzzle together. <\/p><p>When you’ve completed the assembly process, don’t put the puzzle back in the cupboard. Use it as interior decoration! We have developed a special gluing system for this which fixes the puzzle together and sticks it to the wall. <\/p><p>This is suitable for all sizes, with the help of one set you can fix and hang 8 small puzzles, 4 medium puzzles, or 4 large puzzles.<\/p>"
