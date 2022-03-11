@@ -32,6 +32,7 @@
                         {%- assign new_products = collections.all.products | sort: 'published_at' | reverse -%}
                   
                         {%- for product in new_products limit:6 -%}
+                  	 {%- if product.collections.size > 0  -%}
                             <div class="c-product collection__item">
                                 <div class="c-product__main">
                                     <div class="c-product__image"><img src="{{ product.featured_image | img_url: 'master' }}" width="360" height="360" alt="Fiery Fox" /></div>
@@ -45,6 +46,7 @@
                                     <div class="c-product__price"><span class="c-product__from">from</span> {{ product.price | money }}</div><a onclick="gtag('event', 'select_promotion', {items: [{promotion_name: 'Landing Page'}]}); gtag('event', 'select_content', { content_type: 'link', item_id: '{{ product.url }}'});" class="button c-product__button" href="{{ product.url }}" role="button">Shop now</a>
                                 </div>
                             </div>
+                   {%- endif -%}
                         {%- endfor -%}
                     {%- endif -%}
                 </div>
