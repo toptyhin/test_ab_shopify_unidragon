@@ -30,13 +30,14 @@
                         {%- endfor -%}
                     {%- else -%}
                         {%- assign new_products = collections.all.products | sort: 'published_at' | reverse -%}
+                  {%- assign counter = 0 -%}
                   
                         {%- for product in new_products limit:3 -%}
                   {%-for counter in (0..6)-%}
-                  	{{ counter }}
-                  {%- endfor -%}
-                  	
-                  	 {%- if product.collections.size > 0  -%}
+                  
+                  	{%- if counter < 3  -%}
+                  		
+                  	      	 {%- if product.collections.size > 0  -%}
                             <div class="c-product collection__item">
                                 <div class="c-product__main">
                                     <div class="c-product__image"><img src="{{ product.featured_image | img_url: 'master' }}" width="360" height="360" alt="Fiery Fox" /></div>
@@ -51,6 +52,12 @@
                                 </div>
                             </div>
                    {%- endif -%}
+                  
+                  {%- endif -%}
+                  	{{ counter }}
+                  {%- endfor -%}
+                  	
+            
                         {%- endfor -%}
                     {%- endif -%}
                 </div>
