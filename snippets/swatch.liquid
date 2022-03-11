@@ -59,6 +59,8 @@ Set the extension of your color files below. Use 'png', 'jpeg', 'jpg' or 'gif'.
       {%- assign values = values | join: ',' -%}
       {%- assign values = values | append: ',' | append: value -%}
       {%- assign values = values | split: ',' -%}
+      
+<!--COLOR START-->
       <div data-value="{{ value | escape }}" class="swatch-element {% if is_color and section.settings.swatch_option == 'with_background' %}color color-test with_bg_color {% elsif is_color and section.settings.swatch_option == 'without_background'%}color color_without_bg {% endif %}{% if is_color and section.settings.color_style == 'square_box' %}square_shape {% elsif is_color and section.settings.color_style == 'round_shape'%}round_shape {% endif %}{{ swatch }} {{ value | handle }} {% if variant.available %}available{% else %}soldout{% endif %}">
         {%- if is_color and section.settings.swatch_option == 'with_background' -%}
           <div class="tooltip">{{ value }}</div>
