@@ -12,9 +12,9 @@
                 </div>
                 <div class="collection__items">
                     {%- assign ProductsNew = section.blocks | where: "type", "ProductsNew" -%}
-                    {%- if ProductsNew.size > 0 -%}
+                    {%- if ProductsNew.size > 0  -%}
                         {%- for block in ProductsNew -%}
-                            <div class="c-product collection__item">
+                            <div class="c-product collection__item 12">
                                 <div class="c-product__main">
                                     <div class="c-product__image"><img src="{{block.settings.landing_new_product.featured_image | img_url: 'master' }}" width="360" height="360" alt="Fiery Fox" /></div>
                                     <div class="c-product__info">
