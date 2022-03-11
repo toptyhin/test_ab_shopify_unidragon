@@ -47,7 +47,7 @@
                                     <div class="c-product__price"><span class="c-product__from">from</span> {{ product.price | money }}</div><a onclick="gtag('event', 'select_promotion', {items: [{promotion_name: 'Landing Page'}]}); gtag('event', 'select_content', { content_type: 'link', item_id: '{{ product.url }}'});" class="button c-product__button" href="{{ product.url }}" role="button">Shop now</a>
                                 </div>
                             </div>
-                   {%- endif -%}
+                   			{%- endif -%}
                         {%- endfor -%}
                     {%- endif -%}
                 </div>
