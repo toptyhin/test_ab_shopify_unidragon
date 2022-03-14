@@ -36,9 +36,12 @@
                   		{%- assign index = 0 -%}
                   
                   		{%- for counter in (0..3) -%}
-                  
                   				{% assign count = count | plus: 1 %}
-                  				{{ count }}
+                  				{{ count }}                 
+                  				{%- if filter_products[index].collections.size > 0  -%}
+                  					
+                  					{{filter_products[0].title}}	
+                  				{%- endif -%}
                   		{%- endfor -%}
 						
                   		{{filter_products[0].title}}			
