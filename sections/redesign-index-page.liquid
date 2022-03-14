@@ -264,6 +264,55 @@
             <h2 class="title products__title">New</h2>
             <div class="products__items">
                 {%- assign new_products = collections.all.products | sort: 'published_at' | reverse -%}
+              
+                 {%- assign new_products = collections.all.products | sort: 'published_at' | reverse  -%}
+                    {%- assign filter_products = new_products  -%}
+
+                    {%- assign counter = 0 -%}
+                    {%- assign index = 0 -%}
+
+                    {%- for count in (0..99) -%}
+                            {% if counter > 6 %}
+                              {% break %}
+                            {% else %}
+
+
+
+                            {%- if filter_products[index].collections.size > 0  -%}
+
+
+                                 <div class="c-product products__item">
+                                  <div class="c-product__main">
+                                      <div class="c-product__images">
+                                          {%- for image in filter_products[index].images limit:3 -%}
+                                              <div class="c-product__image">{{ image | image_url: width: 900 | image_tag: loading: 'lazy' }}</div>
+                                          {%- endfor -%}
+                                      </div>
+                                      <div class="c-product__labels">
+                                          <div class="c-product__label c-product__label--new">New</div>
+                                      </div>
+                                      <div class="c-product__info">
+                                          <div product-id="{{ filter_products[index].id }}" class="arv-collection arv-collection--{{ filter_products[index].id }}"></div>
+                                          <div class="alrv-prod-rating"><span class="alr-wrapper-rating"></span></div>
+                                      </div>
+                                      <div class="c-product__title">{{ filter_products[index].title }}</div>
+                                  </div>
+                                  <div class="c-product__bottom">
+                                      <div class="c-product__price"><span class="c-product__from">from </span> {{ filter_products[index].price | money }}</div><a class="button c-product__button button--smaller" href="{{ product.url }}" role="button">Shop now</a>
+                                  </div>
+                              </div>
+
+
+
+                                {% assign counter = counter | plus: 1 %}
+                                {% assign index = index | plus: 1 %}
+                            {%- else  -%}
+                                {% assign index = index | plus: 1 %}
+                            {%- endif -%}
+                    {% endif %}
+                    {%- endfor -%}
+              
+              {%- comment -%}
                 {%- for product in new_products limit:5 -%}
 
                     <div class="c-product products__item">
@@ -288,7 +337,7 @@
                     </div>
 
                 {%- endfor -%}
-
+			{%- endcomment -%}
                 <div class="c-banner products__item"><img loading="lazy" class="c-banner__visual-1" src="{{'redesign-banners-c-banners-visual-1.png' | asset_url }}" width="210" height="210" alt="" /><img loading="lazy" class="c-banner__visual-2" src="{{'redesign-banners-c-banners-visual-2.png' | asset_url }}" width="330" height="188" alt="" /><img loading="lazy" class="c-banner__visual-3" src="{{'redesign-banners-c-banners-visual-3.png' | asset_url }}" width="156" height="120" alt="" /><img loading="lazy" class="c-banner__visual-4" src="{{'redesign-banners-c-banners-visual-4.png' | asset_url }}" width="25" height="54" alt="" />
                     <div class="c-banner__content">
                         <h3 class="c-banner__title">Our puzzles are made of&nbsp;wood</h3>
