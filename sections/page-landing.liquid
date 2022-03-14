@@ -33,9 +33,7 @@
                   		{%- assign filter_products = new_products -%}
                   		
 						
-                  <script>
-                    console.log({{filter_products}})
-                  </script>
+                		{{filter_products}}
                   	
                         {%- for product in filter_products limit:3 -%}
                              {%- if product.collections.size > 0  -%}
