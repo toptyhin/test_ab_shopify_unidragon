@@ -42,10 +42,13 @@
                   					{{filter_products[index].title}}
                   					{% assign count = count | plus: 1 %}
                   					{% assign index = index | plus: 1 %}
+                  				{%- else  -%}
+                  					{% assign index = index | plus: 1 %}
                   				{%- endif -%}
+                  		
                   		{%- endfor -%}
 						
-                  		{{filter_products[0].title}}			
+                  					
                   
                         {%- for product in filter_products limit:3 -%}
                              {%- if product.collections.size > 0  -%}
