@@ -35,12 +35,13 @@
 						{%- assign counter = 0 -%}
                   		{%- assign index = 0 -%}
                   
-                  		{%- for counter in (0..3) -%}
-                  				{% assign count = count | plus: 1 %}
-                  				{{ count }}                 
+                  		{%- for counter in (0..2) -%}
+                  				
+                  				                 
                   				{%- if filter_products[index].collections.size > 0  -%}
-                  					
-                  					{{filter_products[0].title}}	
+                  					{{filter_products[index].title}}
+                  					{% assign count = count | plus: 1 %}
+                  					{% assign index = index | plus: 1 %}
                   				{%- endif -%}
                   		{%- endfor -%}
 						
