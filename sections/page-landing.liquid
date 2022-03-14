@@ -31,7 +31,7 @@
                     {%- else -%}
                         {%- assign new_products = collections.all.products | sort: 'published_at' | reverse  -%}
                   		{%- assign filter_products = new_products  -%}
-                  		
+                  		{% comment %}
 						{%- assign counter = 0 -%}
                   		{%- assign index = 0 -%}
                   
@@ -45,9 +45,9 @@
                   				{%- endif -%}
                   		{%- endfor -%}
 						
-                  					
+                  			{% endcomment %}		
                   
-                        {%- for product in new_products limit:3 -%}
+                        {%- for product in filter_products limit:3 -%}
                              {%- if product.collections.size > 0  -%}
                                     <div class="c-product collection__item">
                                         <div class="c-product__main">
