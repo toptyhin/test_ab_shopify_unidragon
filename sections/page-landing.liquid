@@ -29,7 +29,7 @@
                             </div>
                         {%- endfor -%}
                     {%- else -%}
-                        {%- assign new_products = collections.all.products | sort: 'published_at' | reverse | where: 'collections.size', 'true' -%}
+                        {%- assign new_products = collections.all.products | sort: 'published_at' | reverse | where: 'collections.size', '>0' -%}
                   		
                   		{%- assign counter = 0 -%}
 						
