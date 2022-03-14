@@ -39,6 +39,24 @@
                   				
                   				                 
                   				{%- if filter_products[index].collections.size > 0  -%}
+                  
+                  
+                  					 <div class="c-product collection__item">
+                                        <div class="c-product__main">
+                                            <div class="c-product__image"><img src="{{ filter_products[index].featured_image | img_url: 'master' }}" width="360" height="360" alt="Fiery Fox" /></div>
+                                            <div class="c-product__info">
+                                                <div product-id="{{ filter_products[index].id }}" class="arv-collection arv-collection--{{ filter_products[index].id }}"></div>
+                                                <div class="alrv-prod-rating"><span class="alr-wrapper-rating"></span></div>
+                                            </div>
+                                            <div class="c-product__title">{{ filter_products[index].title }}</div>
+                                        </div>
+                                        <div class="c-product__bottom">
+                                            <div class="c-product__price"><span class="c-product__from">from</span> {{ filter_products[index].price | money }}</div><a onclick="gtag('event', 'select_promotion', {items: [{promotion_name: 'Landing Page'}]}); gtag('event', 'select_content', { content_type: 'link', item_id: '{{ product.url }}'});" class="button c-product__button" href="{{ product.url }}" role="button">Shop now</a>
+                                        </div>
+                                    </div>
+                  
+                  
+                  
                   					{{filter_products[index].title}}
                   					{% assign count = count | plus: 1 %}
                   					{% assign index = index | plus: 1 %}
