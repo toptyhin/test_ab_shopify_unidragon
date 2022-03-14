@@ -30,10 +30,10 @@
                         {%- endfor -%}
                     {%- else -%}
                         {%- assign new_products = collections.all.products | sort: 'published_at' | reverse  -%}
-                  		{%- assign filter_products = new_products -%}
+                  		{%- assign filter_products = new_products | where: 'collections' -%}
                   		
 						
-                		{{filter_products}}
+
                   	
                         {%- for product in filter_products limit:3 -%}
                              {%- if product.collections.size > 0  -%}
