@@ -1019,8 +1019,9 @@
                 {%- if section.settings.enable_combo_upsell -%}
                   {%- include 'combo-upsell-block' -%}
                 {%- endif -%}
-              {%- if product.collections contains 'Dino Collection' -%}
               <h1>Here a combo deal</h1>
+              {%- if product.collections contains 'Dino Collection' -%}
+              
                   {%- include 'combo-upsell-block' -%}
                 {%- endif -%}
     
