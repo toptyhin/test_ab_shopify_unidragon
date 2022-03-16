@@ -968,7 +968,7 @@
                   </ul>
                   {% endif %}
         
-                  <div id="tab-1">
+                  <div id="tab-1" class="test-tab">
                     <div class="product-description">
                       {% assign video = product.media | where: "media_type", "external_video" | first %}
                       {% if video != blank %}
@@ -1015,7 +1015,7 @@
                     <!--FAQ block and-->
                   {%- endif -%}
                 {%- endfor -%}
-              <h1>Test</h1>
+              
                 {%- if section.settings.enable_combo_upsell -%}
                   {%- include 'combo-upsell-block' -%}
                 {%- endif -%}
