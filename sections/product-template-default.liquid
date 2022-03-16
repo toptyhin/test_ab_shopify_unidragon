@@ -1019,6 +1019,9 @@
                 {%- if section.settings.enable_combo_upsell -%}
                   {%- include 'combo-upsell-block' -%}
                 {%- endif -%}
+              {%- if product.collections contains 'Dino Collection' -%}
+                  {%- include 'combo-upsell-block' -%}
+                {%- endif -%}
     
                 <!----------custom-Tax-------------->
                 <style type="text/css">
