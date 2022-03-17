@@ -2824,6 +2824,7 @@
           },
           "3c6cbf89-4bf7-49cc-9283-15708f283d9b": {
             "type": "Pinterest",
+            "disabled": true,
             "settings": {
               "button_text": "unidragonpuzzles",
               "button_url": "https:\/\/www.pinterest.com\/unidragonpuzzles"
