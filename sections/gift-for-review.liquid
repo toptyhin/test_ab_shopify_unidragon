@@ -29,13 +29,16 @@
                                           
                                           	<img src="{{ 'youtube.svg' | asset_url }}" class="svg-icon footer__social-icon">
                                           
-                                          {%- endif -%}
                                           
-                                          {%- if block.type == 'Twiter' -%} 
+                                          
+                                          {%- elsif  block.type == 'Twiter' -%} 
                                           	
                                           <img src="{{ 'twitter.svg' | asset_url }}" class="svg-icon footer__social-icon">
                                           
-                                         
+                                          {%- elsif  block.type == 'Facebook' -%} 
+                                          	
+                                          <svg class="svg-icon svg-icon--facebook-2 footer__social-icon">
+                                            <use xlink:href="#facebook-2"></use> </svg>
                                          
                                           {%- endif -%}
                                           
