@@ -33,6 +33,12 @@
                                           	
                                           <img src="{{ 'twitter.svg' | asset_url }}" class="svg-icon footer__social-icon">
                                           
+                                          
+                                          {%- else if block.type == 'Facebook' -%} 
+                                          	
+                                          <svg class="svg-icon svg-icon--facebook-2 footer__social-icon">
+                            <use xlink:href="#facebook-2"></use>
+                                          
                                           {%- endif -%}
                                           
                                             {{ block.settings.button_text }}</a>
