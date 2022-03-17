@@ -25,16 +25,16 @@
                                     <li>
                                         <a href="{{ block.settings.button_url }}"> 
                                           
-                                          {%- if block.type == 'Youtube' -%} 
+                                          {%- if block.name == 'Youtube' -%} 
                                           
                                           	<img src="{{ 'youtube.svg' | asset_url }}" class="svg-icon footer__social-icon">
                                           
-                                          {%- else if block.type == 'Twiter' -%} 
+                                          {%- else if block.name == 'Twiter' -%} 
                                           	
                                           <img src="{{ 'twitter.svg' | asset_url }}" class="svg-icon footer__social-icon">
                                           
                                           
-                                          {%- else if block.type == 'Facebook' -%} 
+                                          {%- else if block.name == 'Facebook' -%} 
                                           	
                                           <svg class="svg-icon svg-icon--facebook-2 footer__social-icon">
                             					<use xlink:href="#facebook-2"></use>
