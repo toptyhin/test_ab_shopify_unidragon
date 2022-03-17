@@ -17,23 +17,26 @@
         <div class="combo-item">
           <span class="combo-item__plus">+</span>
         </div>
-        <div class="combo-item">
-          <img src="{{all_products['triceratops'].featured_image.src | img_url: '160x' }}">
-          <div class="combo-item__text">
-            <p>{{all_products['triceratops'].title}}</p>
-            <span class="combo-item__old">{{all_products['triceratops'].compare_at_price | money}} </span><span class="combo-item__new">{{all_products['triceratops'].price | money}}</span>
+         <div class="combo-item">
+            <img src="{{ all_products['tyrannosaurus-rex'].featured_image.src | img_url: '160x' }}">
+            <div class="combo-item__text">
+              <p>{{all_products['tyrannosaurus-rex'].title}}</p>
+              <span class="combo-item__new">$19.95</span>
+<!--               <span class="combo-item__old">{{all_products['tyrannosaurus-rex'].compare_at_price | money}} </span><span class="combo-item__new">{{all_products['tyrannosaurus-rex'].price | money}}</span> -->
+            </div>
           </div>
-        </div>
+       
         <div class="combo-item">
             <span class="combo-item__plus">+</span>
           </div>
           <div class="combo-item">
-            <img src="{{ all_products['tyrannosaurus-rex'].featured_image.src | img_url: '160x' }}">
-            <div class="combo-item__text">
-              <p>{{all_products['tyrannosaurus-rex'].title}}</p>
-              <span class="combo-item__old">{{all_products['tyrannosaurus-rex'].compare_at_price | money}} </span><span class="combo-item__new">{{all_products['tyrannosaurus-rex'].price | money}}</span>
-            </div>
+          <img src="{{all_products['triceratops'].featured_image.src | img_url: '160x' }}">
+          <div class="combo-item__text">
+            <p>{{all_products['triceratops'].title}}</p>
+            <span class="combo-item__new">$19.95</span>
+<!--             <span class="combo-item__old">{{all_products['triceratops'].compare_at_price | money}} </span><span class="combo-item__new">{{all_products['triceratops'].price | money}}</span> -->
           </div>
+        </div>
       </div>
     </div>
     <div class="combo-footer">
