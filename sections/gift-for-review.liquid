@@ -26,7 +26,13 @@
                                         <a href="{{ block.settings.button_url }}"> 
                                           
                                           {%- if block.type == 'Youtube' -%} 
+                                          
                                           	<img src="{{ 'youtube.svg' | asset_url }}" class="svg-icon footer__social-icon">
+                                          
+                                          {%- else if block.type == 'Twiter' -%} 
+                                          	
+                                          <img src="{{ 'twitter.svg' | asset_url }}" class="svg-icon footer__social-icon">
+                                          
                                           {%- endif -%}
                                           
                                             {{ block.settings.button_text }}</a>
