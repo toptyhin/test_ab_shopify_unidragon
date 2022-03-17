@@ -25,7 +25,9 @@
                                     <li>
                                         <a href="{{ block.settings.button_url }}"> 
                                           
-                                          {%- if block.type == 'Youtube' -%} <h1>YouTube</h1> {%- endif -%}
+                                          {%- if block.type == 'Youtube' -%} 
+                                          	<img src="{{ 'youtube.svg' | asset_url }}" class="svg-icon footer__social-icon">
+                                          {%- endif -%}
                                           
                                             {{ block.settings.button_text }}</a>
                                     </li>
@@ -46,6 +48,28 @@
             </div>
         </div>
 </div>
+
+
+<div class="footer__col footer__col--follow">
+                    <div class="footer__title">Follow us</div>
+                  <a class="footer__social" href="https://www.facebook.com/unidragonPuzzle" target="_blank" rel="nofollow noopener"><svg class="svg-icon svg-icon--facebook-2 footer__social-icon">
+                            <use xlink:href="#facebook-2"></use>
+                        </svg><span class="footer__social-caption">UnidragonPuzzle</span></a>
+                  <a class="footer__social" href="https://instagram.com/unidragon_com" target="_blank" rel="nofollow noopener"><svg class="svg-icon svg-icon--instagram-2 footer__social-icon">
+                            <use xlink:href="#instagram-2"></use>
+                  </svg><span class="footer__social-caption">unidragon_com</span></a>
+                  <a class="footer__social" href="https://www.youtube.com/channel/UCdss4w1ORKXjrYAwEf5stcA" target="_blank" rel="nofollow noopener"><img src="{{ 'youtube.svg' | asset_url }}" class="svg-icon footer__social-icon">
+                            
+                 <span class="footer__social-caption">Unidragon</span></a>
+                  
+                  <a class="footer__social" href="https://twitter.com/unidragon_com" target="_blank" rel="nofollow noopener"><img src="{{ 'twitter.svg' | asset_url }}" class="svg-icon  footer__social-icon">
+                            
+                  <span class="footer__social-caption">unidragon_com</span>
+                  </a>
+                </div>
+
+
+
 
 
 
