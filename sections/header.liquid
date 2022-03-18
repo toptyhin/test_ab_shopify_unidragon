@@ -613,7 +613,7 @@
                   <span>{{ cart.item_count }}</span>
                 </div>
                 
-                {%- comment -%}
+               
                 {%- liquid
                   assign cart_total_price = 0
                   for item in cart.items
@@ -639,7 +639,7 @@
                     assign cart_total_price = cart_total_price | plus: item_line_price
                   endfor
                 -%}
-{%- endcomment -%}
+
                 <span class="commom_colord" id="CartCost" data-discount="{{discount_calc}}">{{ cart_total_price | money }}</span>
               </a>
               {% endunless %}
