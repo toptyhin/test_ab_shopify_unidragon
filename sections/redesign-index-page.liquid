@@ -266,7 +266,7 @@
     <section class="products page__products">
         <div class="products__container">
             <h2 class="title products__title">New</h2>
-            <div class="products__items">
+            <div class="products__items products__new">
                 {%- assign new_products = collections.all.products | sort: 'published_at' | reverse -%}
               
                  {%- assign new_products = collections.all.products | sort: 'published_at' | reverse  -%}
