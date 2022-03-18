@@ -616,7 +616,7 @@
   <a href="/cart/clear" class="clear-cart my-super-fancy-button-style">Clear All Items From Cart</a>
   {% if cart.item_count > 0 %}
   {% if section.settings.cart_enable %}
-  {{ 'gocart.js' | asset_url | script_tag }}
+
   <script>
    $('.clear-cart').on('click',function(e){
       e.preventDefault();
