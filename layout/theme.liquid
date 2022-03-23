@@ -460,7 +460,49 @@ qp('track', 'ViewContent');
 <script src="{{'redesign-app.js' | asset_url }}"></script>
 <div style="display: none;">{% include 'redesign-sprite.svg' %}</div>
 
+{% if template contains 'product' %}
+  <script>
+  
+  const sizeBtns = document.querySelectorAll('.swatch_container > div')
 
+const containerPopup = document.querySelector('#swatchQuezzle .header')
+
+function printCoins(){
+
+    const earned = document.querySelectorAll('.earned')
+
+    if(earned.length > 0) {
+        earned.forEach(item => {
+            item.parentNode.removeChild(item);
+        })
+    }
+
+    
+
+    let price = document.querySelector('.product-single__price .product-price__sale .money').textContent.replace( /^\D+/g, '');
+
+let uniCoins = Math.floor(price*10)
+
+let discount = `<div class="earned">You earn ${uniCoins} Unidragon Points (100 Points = 1$)</h1>`
+
+
+    containerPopup.insertAdjacentHTML('afterend', discount);
+
+    console.log('Done');
+}
+
+printCoins()
+
+sizeBtns.forEach(item => {
+    item.addEventListener('click', () => {
+        setTimeout(function(){ printCoins() }, 500);
+    })
+})
+
+console.log(price)
+  </script>
+  
+ {% endif %}
 
 {{ 'fontawesome.css' | asset_url | stylesheet_tag }}
   
