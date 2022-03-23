@@ -481,7 +481,7 @@ function printCoins(){
 
     let price = document.querySelector('.product-price__price span.money').textContent.replace( /^\D+/g, '');
 
-let uniCoins = Math.floor(price*10)
+let uniCoins = Math.floor(Number(price)*10)
 
 let discount = `<div class="earned">You earn ${uniCoins} Unidragon Points (100 Points = 1$)</h1>`
 
