@@ -40,7 +40,7 @@
                         <use xlink:href="#search"></use>
                     </svg></button>
                 <div class="search__dropdown">
-                    <form class="search__form" action="#" method="POST" id="form-search">
+                    <form class="search__form" method="get" action="/search" id="form-search">
                         <div class="field field--type-text field--search search__field"><label class="field__label visually-hidden" for="form-search-q">Search all products...</label>
                             <div class="field__field"><input type="text" name="q" placeholder="Search all products..." id="form-search-q" /></div>
                         </div><button class="search__submit" type="submit"><svg class="svg-icon svg-icon--search">
@@ -124,9 +124,25 @@
                             <use xlink:href="#facebook"></use>
                         </svg></a><a class="header__btn-social" href="https://instagram.com/unidragon_com" target="_blank" rel="nofollow noopener"><svg class="svg-icon svg-icon--instagram">
                             <use xlink:href="#instagram"></use>
-                        </svg></a></div><a class="header__sign-in" href="/account/login"><svg class="svg-icon svg-icon--user header__sign-in-icon">
+                        </svg></a></div>
+              {% if shop.customer_accounts_enabled %}
+              {% if customer %}
+                <a class="header__sign-in" href="/account"><svg class="svg-icon svg-icon--user header__sign-in-icon">
+                        <use xlink:href="#user"></use>
+                    </svg><span class="header__sign-in-caption"></span></a>
+              {% else %}
+               <a class="header__sign-in" href="/account/login"><svg class="svg-icon svg-icon--user header__sign-in-icon">
                         <use xlink:href="#user"></use>
                     </svg><span class="header__sign-in-caption">Sign in</span></a>
+              {% endif %}
+              {% endif %}
+              
+<!--               <a class="header__sign-in" href="/account/login"><svg class="svg-icon svg-icon--user header__sign-in-icon">
+                        <use xlink:href="#user"></use>
+                    </svg><span class="header__sign-in-caption">Sign in</span></a> -->
+              
+              
+              
             </div><a class="btn-cart header__btn-cart" href="/cart"><svg class="svg-icon svg-icon--cart btn-cart__icon">
                     <use xlink:href="#cart"></use>
                 </svg>
