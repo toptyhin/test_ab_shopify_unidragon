@@ -119,7 +119,7 @@
         "decorate_banner_bg_image": "shopify:\/\/shop_images\/banner-decorate-walls_bg.png",
         "decorate_banner_bg_mob_image": "shopify:\/\/shop_images\/banner-decorate-walls_bg.png",
         "product_description": "under_the_price",
-        "enable_sticky": true,
+        "enable_sticky": false,
         "enable_combo_upsell": true,
         "combo_upsell_product": "set-for-mounting-puzzles",
         "enable_mobile_atc_button": true,
