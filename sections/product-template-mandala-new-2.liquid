@@ -689,7 +689,9 @@
             <!-- PRODUCT SWATCH CODE IF ENABLE -->
               {% for option in product.options %}
                         {% include 'swatch-mandala' with option %}
-                      {% endfor %} 
+              {% endfor %}
+              
+              {% comment %} 
               {% if section.settings.variant_swacth == 'two'  %}  
                 {% if product.variants.size > 1 %}
                     <div class="swatch_options test-swatch">
@@ -699,7 +701,7 @@
                     </div>
                 {% endif %}
               {% endif %}
-
+			{% endcomment %} 
             <div id="ct_pe_disco_holder"></div><!-- END PRODUCT SWATCH CODE IF ENABLE -->
               {% include 'product-page-features' %}
   
