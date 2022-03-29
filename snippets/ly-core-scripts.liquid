@@ -1353,12 +1353,12 @@
           {%- if lang.last == language.iso_code  -%}
             {%- assign language_id_num = lang.first | replace: "ly", "" | plus: 0 %}
             {%- if current_language_num < language_id_num  -%}
-              {%- assign current_language = lang.first -%}
+              {%- assign each_current_language = lang.first -%}
               {%- assign current_language_num = language_id_num -%}
             {%- endif -%}
           {%- endif -%}
         {% endfor %}
-        language_id: {{ current_language | json }},
+        language_id: {{ each_current_language | json }},
         domain: {{ used_domain | json }},
       },
       {%- endif -%}
@@ -1403,7 +1403,7 @@
     {%- assign src = used_custom | first -%}
     {%- assign dst = used_custom | last -%}
     {%- if dst -%}
-    customContents[{{ src | downcase | json }}.trim().replace(/(\r\n|\n|\r)/gim,"").replace(/\s+/g," ")] = {{ dst | replace: "\", "\\\" |  replace: "'", "\\'" | json }};
+    customContents[{{ src | downcase | json }}.trim().replace(/(\r\n|\n|\r)/gim,"").replace(/\s+/g," ")] = '{{ dst | replace: "\", "\\\" |  replace: "'", "\\'" }}';
     {%- endif -%}
     {% endfor %}
 
