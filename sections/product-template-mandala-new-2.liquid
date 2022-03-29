@@ -687,7 +687,9 @@
               </select>
     
             <!-- PRODUCT SWATCH CODE IF ENABLE -->
-              <h1>test text</h1>
+              {% for option in product.options %}
+                        {% include 'swatch-mandala' with option %}
+                      {% endfor %} 
               {% if section.settings.variant_swacth == 'two'  %}  
                 {% if product.variants.size > 1 %}
                     <div class="swatch_options test-swatch">
