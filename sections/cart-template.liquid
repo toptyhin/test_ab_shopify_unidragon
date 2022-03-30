@@ -219,7 +219,7 @@
                 endif
               endfor
             endif
-            if member_discount == true and item.product.type == 'Puzzle'
+            if member_discount == true and item.product.type == 'Puzzle' and item.product.id != '6750075879472'
               assign item_price = item.price | times: 0.8
               assign item_line_price = item.line_price | times: 0.8
               assign item_original_line_price = item.original_line_price | times: 0.8
