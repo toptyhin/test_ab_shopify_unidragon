@@ -201,7 +201,7 @@
 		{%-comment -%}{%-endcomment -%}
           {%- liquid
             for item in cart.items
-              if item.product.type == 'Puzzle'
+              if item.product.type == 'Puzzle' and item.product.id != 6750075879472 and item.product.id != 6750065328176 and item.product.id != 6713957122096
                 assign puzle_discount = puzle_discount | plus: item.quantity 
               endif
             endfor
