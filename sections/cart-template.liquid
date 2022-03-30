@@ -264,7 +264,7 @@
               <div class="list-view-item__title">
                 <a href="{{ item.url }}">
                   {{ item.product.title }}
-                   {{ item.product.collection.title }}
+                   {{ item.product.collections }}
                   {% if item.quantity > 1 %}
                   <span class="medium-up--hide"><span class="visually-hidden">{{ 'cart.label.quantity' | t }}</span>(x{{ item.quantity }})</span>
                   {%- endif -%}
