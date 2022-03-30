@@ -219,7 +219,7 @@
                 endif
               endfor
             endif
-            if member_discount == true and item.product.type == 'Puzzle' and item.product.id != 6750075879472
+            if member_discount == true and item.product.type == 'Puzzle' and item.product.id != 6750075879472 and item.product.id != 6750065328176 and item.product.id != 6713957122096
               assign item_price = item.price | times: 0.8
               assign item_line_price = item.line_price | times: 0.8
               assign item_original_line_price = item.original_line_price | times: 0.8
@@ -229,7 +229,7 @@
                   assign total_saving = saving | plus: total_saving
                   assign total_saving_was = was | plus: total_saving_was
                 endif
-            elsif settings.display_3pazl_discount and puzle_discount > 2 and item.product.type == 'Puzzle' and item.product.id != 6750075879472
+            elsif settings.display_3pazl_discount and puzle_discount > 2 and item.product.type == 'Puzzle' and item.product.id != 6750075879472 and item.product.id != 6750065328176 and item.product.id != 6713957122096
               assign item_price = item.price
               assign item_line_price = item.line_price | times: 0.9
               assign item_original_line_price = item.original_line_price
@@ -269,7 +269,7 @@
                   <span class="medium-up--hide"><span class="visually-hidden">{{ 'cart.label.quantity' | t }}</span>(x{{ item.quantity }})</span>
                   {%- endif -%}
                 </a>
-                <span>{{ item.product.id }}</span>
+              
               </div>
               {%- if item.product.title contains "balancing" -%}<div class="cart__meta-text" style="font-size: 12px;">This item is a subject to additional duty fees to be paid upon delivery to Canada. These fees may equal up to 25-35% of the value of the delivered goods.</div>{%- endif -%}
               {% unless item.variant.title contains 'Default' %}
