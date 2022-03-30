@@ -264,11 +264,12 @@
               <div class="list-view-item__title">
                 <a href="{{ item.url }}">
                   {{ item.product.title }}
-                   {{ item.product.id }}
+                   
                   {% if item.quantity > 1 %}
                   <span class="medium-up--hide"><span class="visually-hidden">{{ 'cart.label.quantity' | t }}</span>(x{{ item.quantity }})</span>
                   {%- endif -%}
                 </a>
+                <span>{{ item.product.id }}</span>
               </div>
               {%- if item.product.title contains "balancing" -%}<div class="cart__meta-text" style="font-size: 12px;">This item is a subject to additional duty fees to be paid upon delivery to Canada. These fees may equal up to 25-35% of the value of the delivered goods.</div>{%- endif -%}
               {% unless item.variant.title contains 'Default' %}
