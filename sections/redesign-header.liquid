@@ -148,7 +148,7 @@
                 </svg>
                 <div class="btn-cart__content">
                     <div class="btn-cart__items">{{ cart.item_count }} items</div>
-                    <div class="btn-cart__total cart-test" id="CartCost" >{{cart.total_price | money }}</div>
+                    <div class="btn-cart__total cart-test" id="CartCost" data-discount="{{discount_calc}}">{{cart.total_price | money }}</div>
                 </div>
             </a>
         </div>
