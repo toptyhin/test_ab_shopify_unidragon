@@ -198,7 +198,7 @@
           <th>{{ 'cart.label.total' | t }}</th>
         </thead>
         <tbody>
-
+{%-comment -%}
           {%- liquid
             for item in cart.items
               if item.product.type == 'Puzzle'
@@ -206,6 +206,10 @@
               endif
             endfor
           -%}
+          
+          {%-endcomment -%}
+          
+          
           {%- for item in cart.items -%} 
           {%- liquid
             if customer
