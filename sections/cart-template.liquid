@@ -316,7 +316,7 @@
             </td>
             <td class="cart__price-wrapper cart-flex-item small--hide">
               {{ item_price | money }}
-  {{ cart.total_price | money_with_currency }}
+ 
               {% for discount in item.discounts %}
                 <div class="cart-item__discount medium-up--hide">{{ discount.title }}</div>
               {% endfor %}
@@ -536,7 +536,7 @@
                 <span class="cart__subtotal-title">{{ 'cart.general.subtotal' | t }}</span>
               </div>
               <div>
-                <span class="cart__subtotal"><span class="crt_total test-t">{{ cart_total_price | money }}</span></span>
+                <span class="cart__subtotal"><span class="crt_total test-t">{{ cart_total_price | money }}  {{ cart.total_price | money_with_currency }}</span></span>
               </div>
             </div>
   
