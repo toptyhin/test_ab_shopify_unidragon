@@ -342,7 +342,12 @@
               {%- endif -%}
   
               <div {% if item_original_line_price != item_line_price %}style="color: red"{%- endif -%}>
+                
+                {%- comment -%}
                 {{ item_line_price | money }}
+                {%- endcomment -%}
+                
+                {{item.line_price | money}}
               </div>
                 {{item.line_price | money}}
               </div>
