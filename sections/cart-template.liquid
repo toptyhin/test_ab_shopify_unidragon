@@ -344,6 +344,7 @@
               <div {% if item_original_line_price != item_line_price %}style="color: red"{%- endif -%}>
                 {{ item_line_price | money }}
               </div>
+                {{item.original_line_price | money}}
               </div>
               {% for discount in item.discounts %}
               <div class="cart-item__discount">{{ discount.title }}</div>
