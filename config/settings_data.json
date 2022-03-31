@@ -3026,7 +3026,7 @@
           "enable_sticky": false,
           "enable_combo_upsell": false,
           "combo_upsell_product": "",
-          "enable_mobile_atc_button": true,
+          "enable_mobile_atc_button": false,
           "move_badges_under_cart": false,
           "enable_trust_badges": false,
           "pdp_enable": true,
