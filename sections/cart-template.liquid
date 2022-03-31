@@ -536,7 +536,12 @@
                 <span class="cart__subtotal-title">{{ 'cart.general.subtotal' | t }}</span>
               </div>
               <div>
-                <span class="cart__subtotal"><span class="crt_total test-t">{{ cart_total_price | money }}  {{ cart.total_price | money_with_currency }}</span></span>
+                <span class="cart__subtotal"><span class="crt_total test-t">
+                  {%- comment -%}
+                  {{ cart_total_price | money }} 
+                  {%- endcomment -%}
+                  
+                  {{ cart.total_price | money_with_currency }}</span></span>
               </div>
             </div>
   
