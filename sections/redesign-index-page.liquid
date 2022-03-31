@@ -113,7 +113,7 @@
                         </ul>
                     </div>
                     <div class="c-collection__bottom">
-                        <div class="c-collection__quantity"> {{ collections['QUEZZLE'].all_products_count  }} 21 items</div>
+                        <div class="c-collection__quantity"> {{ collections['QUEZZLE'].all_products_count | pluralize:'item','items' }} 21 items</div>
                         <div class="c-collection__price">from $19.95</div>
                     </div>
                     <div class="c-collection__visual"><img class="c-collection__visual-3-1" src="{{'redesign-collections-visual-3-1.png' | asset_url }}" alt="" /></div>
