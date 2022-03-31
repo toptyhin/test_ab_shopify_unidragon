@@ -337,7 +337,7 @@
             </td>
             <td class="small--hide text-bold">
               <div style="display: flex;">
-              {% if item_original_line_price != item_line_price %}
+              {% if item.original_line_price != item.line_price %}
               <div class="comparet-at-price"><s>
                 {%- comment -%}{%- endcomment -%}{{ item_original_line_price | money }}
                 
