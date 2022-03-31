@@ -337,20 +337,20 @@
             </td>
             <td class="small--hide text-bold">
               <div style="display: flex;">
-              {% if item.original_line_price != item.line_price %}
+              {% if item_original_line_price != item_line_price %}
               <div class="comparet-at-price"><s>
                 {%- comment -%}{%- endcomment -%}{{ item_original_line_price | money }}
                 
                 </s></div>
               {%- endif -%}
   
-              <div {% if item.original_line_price != item.line_price %}style="color: red"{%- endif -%}>
+              <div {% if item_original_line_price != item_line_price %}style="color: red"{%- endif -%}>
                 
                 {%- comment -%}
                 {{ item_line_price | money }}
                 {%- endcomment -%}
                 
-                {{item.line_price | money}}
+                {{item_line_price | money}}
               </div>
                 
               </div>
@@ -550,7 +550,7 @@
                   {{ cart_total_price | money }} 
                   {%- endcomment -%}
                   
-                  {{ cart.total_price | money }}</span></span>
+                  {{ cart_total_price | money }}</span></span>
               </div>
             </div>
   
