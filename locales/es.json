@@ -184,6 +184,8 @@
         "shipping_policy_link": "Costos de envío",
         "taxes_label": "Impuestos",
         "estimated_taxes_label": "Impuestos (estimado)",
+        "information_estimated_taxes_label": "Impuestos (estimación)",
+        "estimated_taxes_finalization_tooltip_content": "El importe exacto de los impuestos y el total definitivo se confirmarán por correo electrónico o mensaje de texto después de realizar el pedido.",
         "total_label": "Total",
         "total_outstanding_label": "Monto a pagar",
         "partial_total_label": "Total",
@@ -217,7 +219,14 @@
         "multiple_shipping_lines_label": "Total de envío",
         "recurring_total_label": "Total recurrente",
         "recurring_total_tooltip": "No incluye envío, impuestos, aranceles ni descuentos aplicables.",
-        "confirmation_number_label": "Confirmación N°%{confirmation_number}"
+        "confirmation_number_label": "Confirmación N°%{confirmation_number}",
+        "higher_value_discount_already_applied": "Un mayor valor de descuento ya se ha aplicado.",
+        "percent_off_shipping": "%{percent} % de descuento en el envío",
+        "amount_off_shipping": "%{amount} de descuento en el envío",
+        "deferred_payment_info": {
+          "title": "El pago de %{amount_due} vence el %{due_at}",
+          "description": "Recibirás por correo electrónico un recordatorio cuando llegue la fecha de vencimiento del pago."
+        }
       },
       "shipping": {
         "title": "Envíos",
@@ -239,6 +248,10 @@
           "other": "%{count} días hábiles"
         },
         "estimated_delivery_date_range": "%{minimum} a %{maximum} días hábiles",
+        "estimated_delivery_time": "Fecha de entrega estimada: %{time}",
+        "estimated_delivery_time_range": "Fecha de entrega estimada: %{min_time}–%{max_time}",
+        "arrives_time": "Llega en %{time}",
+        "arrives_time_range": "Llega entre %{min_time}–%{max_time}",
         "shipping_line_phone_label": "Número de teléfono móvil (obligatorio)",
         "shipping_line_phone": "Tu servicio de mensajería puede usar este número para contactarte.",
         "shipping_line_delivery_phone_label": "Número de teléfono",
@@ -317,6 +330,10 @@
         "gift_card_balance_label": "Saldo:",
         "supported_card_brands_more_label": "y más…",
         "detected_card_brand": "Marca de la tarjeta detectada: {brand}",
+        "credit_card_vaulting_sign_in_banner_title": "Guarda tu tarjeta de crédito",
+        "credit_card_vaulting_sign_in_banner_info": "Inicia sesión o crea una cuenta para guardar tu tarjeta de crédito para compras futuras.",
+        "credit_card_vaulting_sign_in_banner_button_label": "Iniciar sesión",
+        "ftd_vault_credit_card_label": "Guardar esta tarjeta de crédito en mi cuenta para pagar más rápido",
         "card_number_label": "Número de tarjeta",
         "card_number_placeholder": "Número de tarjeta",
         "card_pay_with": "Pagar con:",
@@ -325,12 +342,18 @@
         "card_information_notice": "Todas las transacciones son seguras y están encriptadas. Nunca se almacena la información de la tarjeta de crédito.",
         "name_on_card_label": "Nombre del titular como aparece en la tarjeta",
         "name_on_card_placeholder": "Nombre del titular como aparece en la tarjeta",
+        "card_expired": "Vencida",
         "card_expiry_label": "Fecha de vencimiento (MM \/ AA)",
         "card_expiry_placeholder": "Fecha de vencimiento (MM \/ AA)",
         "credit_card_start_month": "Mes de inicio",
         "credit_card_start_year": "Año de inicio",
+        "delete_customer_mandate_modal_title": "¿Quieres eliminar esta tarjeta de pago?",
+        "delete_customer_mandate_modal_body": "Si eliminas esta tarjeta, tendrás que agregarla nuevamente para poder usarla para pagar.",
+        "delete_customer_mandate_modal_confirm": "Eliminar tarjeta",
+        "delete_customer_mandate_modal_cancel": "Cancelar",
         "card_verification_value_label": "Código de seguridad",
         "card_verification_value_placeholder": "Código de seguridad",
+        "card_verification_confirm": "Para fines de verificación, introduce el código de seguridad de tu tarjeta.",
         "card_expiry_date_explanation": "Fecha de vencimiento de la tarjeta en formato: mes, mes, año, año",
         "card_expiration_month_label": "Mes de vencimiento",
         "card_expiration_year_label": "Año de vencimiento",
@@ -342,12 +365,18 @@
         "card_issue_number_label": "Número de expedición",
         "card_issue_number_placeholder": "Número de expedición",
         "card_change_label": "Cambiar",
+        "card_update_label": "Actualizar tarjeta",
         "ends_with_label": "que termina en %{last_digits}",
         "masked_digits_label": "•••• %{last_digits}",
+        "expiry_long": "(Vence el %{month}\/%{year})",
+        "expiry_short": "(Venc.: %{month}\/%{year})",
         "saved_by_payment_method": "Guardado con %{payment_method}",
         "pay_with_payment_method": "Pagar con %{payment_method}",
+        "different_credit_card_label": "Utiliza una tarjeta de crédito diferente",
         "same_billing_address_label": "La misma dirección de envío",
         "different_billing_address_label": "Usar una dirección de facturación distinta",
+        "billing_address_associated_with_mandate": "Usar una dirección asociada con una forma de pago",
+        "billing_address_associated_with_mandate_info": "Si quieres cambiar tu dirección de facturación, elimina y vuelve a introducir los datos de tu tarjeta de crédito",
         "free_order_notice_html": "Tu pedido es <strong>gratuito<\/strong>. No se requiere ningún pago.",
         "express_checkout_free_order": "No se te cobrará por un pedido gratuito",
         "order_covered_by_gift_cards_notice": {
@@ -373,6 +402,7 @@
         "billing_address_not_supported_for_payment_method_error": "Este método de pago no está disponible para tu dirección de facturación y moneda. Prueba con otra forma de pago.",
         "generic_incorrect_card_info": "No se pudo verificar los detalles de tu pago. Verifica los detalles de tu tarjeta e inténtalo de nuevo.",
         "sofort_label": "Sofort",
+        "paypal_label": "PayPal",
         "klarna_pay_later_label": "Paga en 30 días con Klarna",
         "klarna_pay_now_label": "Paga ahora con Klarna",
         "bancontact_label": "Bancontact",
@@ -381,6 +411,8 @@
         "ideal_label": "iDEAL",
         "bank_picker_label": "Banco",
         "subscription_card_update_agreement_label": "Al cambiar la forma de pago se actualizará tu suscripción y los pagos recurrentes en el futuro.",
+        "subscription_agreement_label": "Reconozco que estoy aceptando una suscripción. Se renovará al precio y con la frecuencia indicados hasta que finalice o se %{cancelled}.",
+        "subscription_agreement_cancelled": "cancele",
         "subscription_agreement_label_html": "Soy consciente de que estoy aceptando una suscripción. Se renovará al precio y con la frecuencia indicada hasta que finalice o se\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"Subscription policy\" href=\"%{policy_href}\">cancele<\/a>.\n",
         "change_currency_section_description": "Selecciona una opción de moneda",
         "no_real_orders_dev_store": "Esta tienda no puede aceptar pedidos reales ni pagos reales.",
@@ -388,13 +420,19 @@
         "apple_pay_payment_error": "No se pudo completar tu pago. Inténtalo de nuevo o utiliza otra forma de pago.",
         "taxes_not_included": "Impuestos no incluidos",
         "no_taxes_banner_content": "No se cobrarán impuestos en este pedido. Una vez que hayas cobrado el pago, ya no se podrán agregar impuestos.",
-        "card_update_label": "Actualizar tarjeta",
         "paypal": {
-          "connect": "Haz clic para conectar tu cuenta de Paypal",
-          "account_connected": "Cuenta conectada"
+          "connect": "Haz clic para conectar tu cuenta de Paypal"
         },
-        "subscription_agreement_label": "Reconozco que estoy aceptando una suscripción. Se renovará al precio y con la frecuencia indicados hasta que finalice o se %{cancelled}.",
-        "subscription_agreement_cancelled": "cancele"
+        "apple": {
+          "connect": "Haz clic para conectar tu cuenta de Apple Pay",
+          "not_available": "Apple Pay no está disponible en este navegador. Para conectar tu cuenta de Apple Pay deberás usar Safari en un dispositivo Apple."
+        },
+        "google": {
+          "connect": "Haz clic para conectar con tu cuenta de Google Pay",
+          "error_authorizing": "Error al autorizar el pago"
+        },
+        "account_connected": "Cuenta conectada",
+        "email_connected": "Cuenta conectada: "
       },
       "payment_summary": {
         "gift_card_current_balance_notice": "Saldo actual %{amount}",
@@ -411,18 +449,38 @@
         "email_or_phone_blank": "Introduce un correo electrónico o número de teléfono móvil",
         "email_or_phone_invalid": "Introduce un correo electrónico o número de teléfono móvil válido",
         "address_first_name_blank": "Introduce un nombre",
+        "address_first_name_too_long": "El nombre es demasiado largo (el máximo es de 255 caracteres)",
+        "address_first_name_contains_emojis": "El nombre no puede contener emojis",
+        "address_first_name_contains_html_tags": "El nombre no puede contener etiquetas HTML.",
         "address_last_name_blank": "Introduce un apellido",
+        "address_last_name_too_long": "El apellido es demasiado largo (el máximo es de 255 caracteres)",
+        "address_last_name_contains_emojis": "El apellido no puede contener emojis",
+        "address_last_name_contains_html_tags": "El apellido no puede contener etiquetas HTML.",
         "address_address1_blank": "Introduce una dirección",
+        "address_address1_too_long": "La primera línea de la dirección es demasiado larga (el máximo es de 255 caracteres)",
+        "address_address1_contains_emojis": "La dirección 1 no puede contener emojis",
+        "address_address1_contains_html_tags": "La dirección 1 no puede contener etiquetas HTML.",
         "address_address2_blank": "Introduce un apartamento, suite, etc.",
+        "address_address2_too_long": "La segunda línea de la dirección es demasiado larga (el máximo es de 255 caracteres)",
+        "address_address2_contains_emojis": "La dirección 2 no puede contener emojis",
+        "address_address2_contains_html_tags": "La dirección 2 no puede contener etiquetas HTML.",
         "address_city_blank": "Introduce la ciudad",
+        "address_city_too_long": "El nombre de la ciudad es demasiado largo (el máximo es 255 caracteres)",
+        "address_city_contains_emojis": "La ciudad no puede contener emojis",
+        "address_city_contains_html_tags": "La ciudad no puede contener etiquetas HTML.",
         "address_country_blank": "Selecciona un país\/región",
         "address_country_not_supported": "Actualmente no hacemos envíos a este país\/región. Introduce una nueva dirección de envío e inténtalo de nuevo.",
         "address_province_blank": "Selecciona un estado o provincia",
         "address_company_blank": "Introduce un nombre de empresa",
+        "address_company_too_long": "El nombre de la empresa es demasiado largo (el máximo es de 255 caracteres)",
+        "address_company_contains_emojis": "El nombre de la empresa no puede contener emojis",
+        "address_company_contains_html_tags": "La empresa no puede contener etiquetas HTML.",
         "address_phone_blank": "Introduce un número de teléfono válido",
+        "address_phone_contains_emojis": "El número de teléfono no puede contener emojis",
         "address_zip_blank": "Introduce la zona o código postal",
         "address_zip_invalid_for_country": "Introduce una zona o código postal válido(a) para %{country}",
         "address_zip_invalid_for_country_and_province": "Introduce una zona o código postal válido(a) para %{province}, %{country}",
+        "address_zip_contains_emojis": "El código postal no puede contener emojis",
         "credit_card_name_blank": "Introduce tu nombre exactamente como aparece en tu tarjeta",
         "credit_card_name_invalid": "Introduce tu nombre exactamente como aparece en tu tarjeta",
         "credit_card_number_invalid": "Introduce un número de tarjeta válido",
@@ -452,13 +510,17 @@
         "subscription_agreement_blank": "Para continuar con tu compra, acepta los términos de la suscripción",
         "physical_gift_card_invalid_quantity": "Las líneas de artículos de tarjetas de regalo físicas deben tener una cantidad que coincida con la cantidad de códigos de tarjetas de regalo.",
         "physical_gift_card_duplicate_code": "La línea de artículo de la tarjeta de regalo física contiene un código duplicado.",
-        "physical_gift_card_invalid_code": "El código de la tarjeta de regalo física es inválido.",
-        "sms_marketing_phone_invalid": "Introduce un número de teléfono válido"
+        "physical_gift_card_invalid_code": "El código de la tarjeta de regalo física es inválido."
       },
       "payment_errors": {
         "generic_error": "Se produjo un error al procesar tu pago. Inténtalo de nuevo o utiliza una forma de pago diferente.",
         "rejected_transaction": "Se rechazó tu pago. Inténtalo de nuevo o utiliza una forma de pago diferente.",
         "credit_card_processing": "No se puede procesar tu pago por razones técnicas. Inténtalo de nuevo en unos minutos o utiliza una forma de pago diferente.",
+        "checkout_amount_changed": "No se ha podido procesar el pago porque el monto adeudado ha cambiado. Revisa tu pedido e intenta de nuevo.",
+        "deferred_payment_not_allowed": "Los pagos diferidos no están permitidos. Revisa tu pedido e intenta de nuevo.",
+        "deferred_payment_required": "Este pedido requiere un pago diferido. Revisa tu pedido e intenta de nuevo.",
+        "deferred_amount_changed": "No se ha podido procesar el pago porque el monto del pago diferido ha cambiado. Revisa tu pedido e intenta de nuevo.",
+        "deferred_date_changed": "No se ha podido procesar el pago porque la fecha del pago diferido ha cambiado. Revisa tu pedido e intenta de nuevo.",
         "order_total_changed": "El total de tu pedido ha cambiado. Actualiza tu carrito de compra e inténtalo de nuevo.",
         "payment_processing": "No se puede procesar tu pago por razones técnicas. Inténtalo de nuevo o utiliza una forma de pago diferente.",
         "payment_processing_no_retry": "No se puede procesar tu pago por razones técnicas. Prueba con otra forma de pago.",
@@ -575,6 +637,7 @@
         "tracking_number": "Número de seguimiento:",
         "company_tracking_number": "Número de seguimiento de %{company}:",
         "estimated_arrival": "Fecha de entrega estimada: ",
+        "estimated_delivery": "Entrega estimada ",
         "re-order": "Pedir de nuevo los mismos artículos",
         "confirmed": "Confirmado",
         "gift_card_confirmation_by_text": "Las tarjetas de regalo se envían por mensaje de texto. Si no has recibido la tuya, intenta enviarlos nuevamente o ponte en contacto con nosotros.",
@@ -700,9 +763,18 @@
         "delivery_information_label": "Información de entrega:",
         "gift_card_sent_confirmation": "Tarjetas de regalo enviadas",
         "qr_code": {
+          "send_link_to_phone": "O envía un enlace a tu teléfono",
           "title": "Descargar la aplicación Shop",
-          "subtitle": "Escanea el código con la cámara de tu teléfono.",
-          "send_link_to_phone": "O envía un enlace a tu teléfono"
+          "subtitle": "Escanea el código con la cámara de tu teléfono."
+        },
+        "shop_qr_with_sms_upsell": {
+          "qr_code": {
+            "title": "Escanea con tu teléfono",
+            "description": "Shop te enviará información en tiempo real sobre la entrega cuando se haya enviado tu pedido."
+          },
+          "sms": {
+            "title": "O envía un enlace a tu teléfono"
+          }
         }
       },
       "review": {
@@ -726,18 +798,20 @@
       },
       "marketing": {
         "accept_marketing_checkbox_label": "Quiero recibir noticias y ofertas exclusivas",
-        "unsubscribe": {
-          "title": "Ha cancelado su suscripción",
-          "description": "No recibirá más recordatorios de cestas de compra nuestros."
-        },
-        "accept_email_checkbox_label": "Enviarme novedades y ofertas por correo electrónico",
+        "post_accept_marketing_checkbox_label": "Estas suscrito para recibir noticias y ofertas por correo electrónico",
+        "pending_accept_marketing_checkbox_label": "Revisa tu correo electrónico y confirma tu suscripción a las noticias y ofertas",
         "accept_sms_checkbox_label": "Enviarme novedades y ofertas por SMS",
         "sms": {
           "disclaimer": {
-            "description_html": "Al registrarte por SMS, aceptas recibir mensajes automatizados de marketing recurrentes al número de teléfono proporcionado, incluyendo recordatorios de carritos. El consentimiento no es una condición de compra. Responde STOP para darte de baja. Responde HELP para obtener ayuda. La frecuencia de los mensajes varía. Pueden aplicarse tarifas de mensajes y datos. Ver nuestra %{privacy_policy_link} y nuestros%{terms_of_service_link}.",
             "privacy_policy": "Política de privacidad",
-            "terms_of_service": "Términos del servicio"
+            "terms_of_service": "Términos del servicio",
+            "description_html": "Al registrarte por SMS, aceptas recibir mensajes automatizados de marketing recurrentes al número de teléfono proporcionado, incluyendo recordatorios de carritos. El consentimiento no es una condición de compra. Responde STOP para darte de baja. Responde HELP para obtener ayuda. La frecuencia de los mensajes varía. Pueden aplicarse tarifas de mensajes y datos. Ver nuestra %{privacy_policy_link} y nuestros%{terms_of_service_link}.",
+            "description_transactional_html": "Te enviaremos un recibo de pedido y actualizaciones de envío periódicas por mensaje de texto. Responde STOP para darte de baja. Responde HELP para obtener ayuda. La frecuencia de los mensajes varía. Pueden aplicarse tarifas de mensajes y datos. Consulta nuestra %{privacy_policy_modal_link} y nuestros %{terms_of_service_modal_link}."
           }
+        },
+        "unsubscribe": {
+          "title": "Ha cancelado su suscripción",
+          "description": "No recibirá más recordatorios de cestas de compra nuestros."
         }
       },
       "shop_policies": {
@@ -766,7 +840,10 @@
         "installments": {
           "paid_in_installments": "Pagado en cuotas con Shop Pay.",
           "view_schedule": "Ver cronograma"
-        }
+        },
+        "title_with_logo_html": "Recuérdame con %{shopify_pay}",
+        "label_address_payment_and_faster_checkouts": "Permite que Shop Pay rellene mi información de pago y mi dirección para agilizar los pagos.",
+        "label_faster_checkouts_and_thousand_shops": "Guarda mi información con Shop Pay para agilizar los pagos en más de un millón de tiendas."
       },
       "notifications": {
         "title": "Notificaciones"
@@ -855,7 +932,11 @@
       "customer_payment_methods": {
         "page_title": "Formas de pago",
         "title": "Formas de pago",
-        "update_card_button_label": "Actualizar tarjeta"
+        "update_card_button_label": "Actualizar tarjeta",
+        "delete_customer_mandate": {
+          "generic_error": "Se produjo un error al procesar tu solicitud.",
+          "success_message": "Tu forma de pago se ha eliminado correctamente."
+        }
       }
     },
     "pagination": {
@@ -952,7 +1033,8 @@
       "customer": {
         "password_reset_error": "Error al restablecer la contraseña",
         "no_account_found": "No se encontró ninguna cuenta con esta dirección de correo electrónico.",
-        "invalid_credentials": "Correo electrónico o contraseña incorrectos."
+        "invalid_credentials": "Correo electrónico o contraseña incorrectos.",
+        "denylisted_reset_password": "No se puede acceder a tu cuenta porque la contraseña actual no es segura. Recibirás un correo electrónico para actualizar tu contraseña."
       },
       "address": {
         "updated": "Dirección actualizada con éxito.",
@@ -1013,6 +1095,7 @@
         "product_sold_out": "El artículo '%{name}' ya está agotado.",
         "variant_not_found": "No se encontró la variante",
         "variant_requires_selling_plan": "La variante solo se puede comprar con un plan de ventas.",
+        "selling_plan_not_available_for_company_locations": "Solo se admiten compras únicas para los pedidos de empresas.",
         "selling_plan_not_applicable": "No se puede aplicar el plan de venta a la variante",
         "shipping_address_not_required": "Este carrito no requiere envío",
         "shipping_address_invalid": "Hubo un problema al calcular tus tarifas de envío. Continúa con el pago para seleccionar una tarifa de envío antes de completar tu pedido."
@@ -1066,7 +1149,37 @@
         }
       }
     },
+    "filters": {
+      "availability": {
+        "label": "Disponibilidad",
+        "value": {
+          "in_stock": "En existencia",
+          "out_of_stock": "Agotado"
+        }
+      },
+      "vendor": {
+        "label": "Marca"
+      },
+      "price": {
+        "label": "Precio"
+      },
+      "product_type": {
+        "label": "Tipo de producto"
+      },
+      "boolean": {
+        "true_label": "Sí",
+        "false_label": "No"
+      }
+    },
+    "search": {
+      "sorting": {
+        "relevance": "Relevancia",
+        "price_ascending": "Precio, menor a mayor",
+        "price_descending": "Precio, mayor a menor"
+      }
+    },
     "page_titles": {
+      "blog_or_article_with_error": "Error: %{title}",
       "products": "Productos",
       "shopping_cart": "Tu carrito de compras",
       "account": "Cuenta",
@@ -1082,8 +1195,7 @@
       "collections": "Colecciones",
       "not_found": "404 No encontrado",
       "challenge": "Desafío",
-      "checkpoint": "Punto de control",
-      "blog_or_article_with_error": "Error: %{title}"
+      "checkpoint": "Punto de control"
     },
     "cart": {
       "discounts_with_count": "se han aplicado %{count} descuentos"
@@ -1110,24 +1222,6 @@
         "two_to_four_hours": "Normalmente está listo en 4 horas",
         "immediately": "Listo para ser retirado ahora",
         "next_day": "Listo para retiro al día siguiente"
-      }
-    },
-    "filters": {
-      "availability": {
-        "label": "Disponibilidad",
-        "value": {
-          "in_stock": "En existencia",
-          "out_of_stock": "Agotado"
-        }
-      },
-      "vendor": {
-        "label": "Marca"
-      },
-      "price": {
-        "label": "Precio"
-      },
-      "product_type": {
-        "label": "Tipo de producto"
       }
     }
   },
@@ -1166,9 +1260,6 @@
       "previous": "Anterior",
       "next": "Siguiente",
       "current_page": "Página {{ current }} de {{ total }}"
-    },
-    "copyright_credit": {
-      "designer_credits_html": "Diseñado por el tema Booster"
     },
     "password_page": {
       "opening_soon": "Apertura Próximamente",
@@ -1216,42 +1307,21 @@
       "show_more": "Ver más",
       "show_less": "Mostrar menos"
     },
-    "product_key": {
-      "3cec4e4dd33105f31958e72eae2e3f50a236f8d046d7c84f6bdcd8d5fadad319": "AMXN-EFY2-RMVL-IXS6"
-    },
-    "supported_currencies": {
-      "82affb4bfca54da32b8e9e34e7d842c1de5085d979a88859e96fd56a3bd3fd10": "INR GBP CAD USD AUD EUR JPY"
-    },
-    "discount_popup_title": {
-      "62f2f0cf5f9dce79efacbf2151dbb9b0a99d56065556a8a4ce6aa23b2a63f81b": "20% OFF"
-    },
-    "discount_popup_description1": {
-      "ce15b98adc63f3a6c64d8735c07c725dc814d697c68460092b8790827819f633": "¡Suscríbete a nuestro boletín y recibe un 10 % de descuento adicional en tu primer pedido!"
-    },
-    "discount_popup_link_text": {
-      "0c299b904cbef26872217d1182c5bdcdf546f75754ae115489ad4ef29a6cb9c5": "CERRAR ESTA PÁGINA"
-    },
-    "discount_popup_submit_text": {
-      "c9adb9f77a7ff0dd6c11e9ac0b4adbccf09021e7adea12aadaa093b2b94fd0ae": "<span>¡Gracias!<\/span>"
-    },
-    "buttom_message": {
-      "45c75d4efd7ba84a8a0028a8fa19023fbf4fa20d81e52f282aa9c15652f44f84": "Alguien compró un\/a"
-    },
-    "btn_text": {
-      "abb737eb1f4739339f93f7dc18a75b7c776355003ac67b2ba0165fbd09e386d2": "Ver todos"
-    },
-    "enable_timer_reset_every_day": {
-      "14f8d0ec6b1d20e8f9475846163547c928f950e36869b6c8017aee9f2855ef80": "23:59:59"
-    },
-    "social_title": {
-      "ce83276ebc7f8ff38bb0a19a92335683a98f5ce3733c0d6557047dbdbe262011": "Síguenos"
-    },
-    "social_facebook_link": {
-      "19fc4197d50e8b9ed3523d1f05dfe9fbd3c528b8d55eb35aaa24328305dca083": "https:\/\/www.facebook.com\/Unidragon.World"
-    },
-    "social_instagram_link": {
-      "3594afeadda59f479dd88420d0395da197e5436e90c4c7f22421d2e37e5eb7aa": "https:\/\/instagram.com\/unidragon_com"
-    }
+    "product_key": "AMXN-EFY2-RMVL-IXS6",
+    "supported_currencies": "INR GBP CAD USD AUD EUR JPY",
+    "discount_popup_title": "20% DE DESCUENTO",
+    "discount_popup_description1": "¡Suscríbase a nuestro boletín de noticias para obtener un 10% de descuento adicional en su primer pedido!",
+    "discount_popup_link_text": "CERRAR ESTA PÁGINA",
+    "discount_popup_submit_text": "<span>Gracias !<\/span>",
+    "buttom_message": "Alguien compró un",
+    "btn_text": "Ver todo",
+    "enable_timer_reset_every_day": "23:59:59",
+    "social_title": "Síguenos",
+    "social_twitter_link": "https:\/\/twitter.com\/unidragon_com",
+    "social_facebook_link": "https:\/\/www.facebook.com\/unidragonPuzzle",
+    "social_instagram_link": "https:\/\/instagram.com\/unidragon_com",
+    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCdss4w1ORKXjrYAwEf5stcA",
+    "tag_month_text": "Producto <br>\ndel mes"
   },
   "blogs": {
     "article": {
