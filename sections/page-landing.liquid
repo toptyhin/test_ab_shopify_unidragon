@@ -52,7 +52,7 @@ renderIframe(iframes);
 	   .bannersD {
 	display: flex;
          flex-wrap: wrap;
-         margin-bottom: -40px;
+         margin-bottom: 40px;
 }
 
 .bannersD img {
@@ -79,8 +79,12 @@ renderIframe(iframes);
         <section class="collection" id="new">
             <div class="collection__container">
                             <div class="bannersD">
-              	<img src="https://cdn.shopify.com/s/files/1/0623/3551/6908/files/1920_680_1_1.png?v=1649336917" alt="">
+              	<a href="https://unidragon.com/products/planet-earth">
+                  <img src="https://cdn.shopify.com/s/files/1/0623/3551/6908/files/1920_680_1_1.png?v=1649336917" alt="">
+                </a>
+                              <a href="https://unidragon.com/collections/wooden-puzzles">
                 <img src="https://cdn.shopify.com/s/files/1/0623/3551/6908/files/1920_680_1.png?v=1649336917" alt="">
+                              </a>
               </div>
                 <div class="collection__headline">
                     <h2 class="title collection__title">New</h2><a onclick="gtag('event', 'select_promotion', {items: [{promotion_name: 'Landing Page'}]}); gtag('event', 'select_content', { content_type: 'link', item_id: '{{ section.settings.vew_all_new_items }}'});" class="collection__view-all" href="{{ section.settings.vew_all_new_items }}">View all new items</a>
