@@ -48,6 +48,16 @@ let iframes = document.querySelectorAll(EL_IFRAME_AR);
 renderIframe(iframes);
 });
 </script>
+<style>
+	   .bannersD {
+	display: flex;
+}
+
+.bannersD img {
+	width: 50%;
+  padding: 10px;
+}
+</style>
 <div class="page__wrapper">
     <header class="header page__header">
         <div class="header__container"><img class="header__logo" src="{{ 'landing-logo.png' | asset_url }}" srcset="{{ 'landing-logo@2x.png' | asset_url }} 2x" width="165" height="54" alt="Unidragon" />
