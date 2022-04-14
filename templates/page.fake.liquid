@@ -1,150 +1,151 @@
-<link rel="stylesheet" href="{{ 'style.min.css' | asset_url }}" />
+{% comment %}ly_global_begin{% endcomment %}{% capture ly-global-content %}{% render 'ly-global' render:true %}{% endcapture %}{% assign ly-global-content = ly-global-content | split: '#ly#' %}{% assign langify_title = ly-global-content[0] %}{% assign langify_description = ly-global-content[1] %}{% assign langify_shop_name = ly-global-content[2] %}{% assign langify_shop_description = ly-global-content[3] %}{% assign canonical_langify_url = ly-global-content[4] %}{% assign langify_shop_url = ly-global-content[5] %}{% assign langify_shop_domain = ly-global-content[6] %}{% comment %}ly_global_end{% endcomment %}
+<link rel="stylesheet" href="{% comment %}ly_asset_replace_for_[ 'style.min.css' | asset_url ]_begin{% endcomment %}{% assign ly_asset = 'style.min.css' %}{% capture ly_translation %}{% render 'ly-asset' with ly_asset render:true %}{% endcapture %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}" />
 {% comment %}ly_code_replace_for_[ page.content ]_begin{% include 'ly-content' with page %}{{ ly_translation }}ly_code_replace_end{% endcomment %}
 
 <div class="unidragon-fake">
     <section class="s-intro">
     <div class="s-intro__container">
     <div class="s-intro__content">
-    <p class="s-intro__pretitle">Our jigsaw puzzles have taken over the whole world</p>
-    <h1 class="s-intro__title">Scam and Fakes <br />of Our Puzzles</h1>
-    <p class="s-intro__text">Our product and service quality is premium. It's been distributed to our customers over the years with no fuss, and one of the indicators of our success is that imitators and scammers have come in sight and are trying to copy the product. It rather flatters us but upsets customers</p>
-    <a class="button s-intro__button" href="#report-scam" role="button">Report a scam</a></div>
-    <figure class="s-intro__visual"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/s-intro-visual.jpg" width="640" height="640" alt="" /></figure>
+    <p class="s-intro__pretitle"><ly-as-19935163>Our jigsaw puzzles have taken over the whole world</ly-as-19935163></p>
+    <h1 class="s-intro__title"><ly-as-19935164>Scam and Fakes</ly-as-19935164> <br /><ly-as-19935165>of Our Puzzles</ly-as-19935165></h1>
+    <p class="s-intro__text"><ly-as-19935166>Our product and service quality is premium. It's been distributed to our customers over the years with no fuss, and one of the indicators of our success is that imitators and scammers have come in sight and are trying to copy the product. It rather flatters us but upsets customers</ly-as-19935166></p>
+    <a class="button s-intro__button" href="#report-scam" role="button"><ly-as-19935167>Report a scam</ly-as-19935167></a></div>
+    <figure class="s-intro__visual"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/1_1.png?v=1649931946" width="640" height="640" alt="" /></figure>
     </div>
     </section>
     <section class="s-why">
     <div class="s-why__container">
     <div class="s-why__main">
-    <h2 class="title title--underline title--desktop-left s-why__title">Why are scammers harmful?</h2>
+    <h2 class="title title--underline title--desktop-left s-why__title"><ly-as-19935168>Why are scammers harmful?</ly-as-19935168></h2>
     <div class="s-why__text">
-    <p class="s-why__text-lead">Even though an old saying goes, “Money does not smell,” none wants to lose money and gain negative experience. Legitimate e-commerce strives to get loyal clients by providing them with quality services and goods. However, scammers harm both businesses and customers by stealing information and tricking clients.</p>
-    <p>In many cases, scammers create new sites and use images of goods from legitimate ones. Their aim is not to sell goods but simply steal money from your pocket. When buying online, a client transfers money and never receives the ordered goods. Then, they search for the images and description, find the source site of a legitimate e-business and leave a negative comment. Support or manager will definitely contact the client to get more details like tracking number or confirmation email/number, but that will only become proof of purchasing from a scammer. Unfortunately, both innocent sides suffer because of scammers as both of them lose trust, reputation, and money.</p>
-    <div class="s-why__read-more"><a href="#">Read more</a></div>
+    <p class="s-why__text-lead"><ly-as-19935169>Even though an old saying goes, “Money does not smell,” none wants to lose money and gain negative experience. Legitimate e-commerce strives to get loyal clients by providing them with quality services and goods. However, scammers harm both businesses and customers by stealing information and tricking clients.</ly-as-19935169></p>
+    <p><ly-as-19935170>In many cases, scammers create new sites and use images of goods from legitimate ones. Their aim is not to sell goods but simply steal money from your pocket. When buying online, a client transfers money and never receives the ordered goods. Then, they search for the images and description, find the source site of a legitimate e-business and leave a negative comment. Support or manager will definitely contact the client to get more details like tracking number or confirmation email/number, but that will only become proof of purchasing from a scammer. Unfortunately, both innocent sides suffer because of scammers as both of them lose trust, reputation, and money.</ly-as-19935170></p>
+    <div class="s-why__read-more"><a href="#"><ly-as-19935171>Read more</ly-as-19935171></a></div>
     </div>
-    <figure class="s-why__figure"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/s-why-screenshots.jpg" width="480" height="600" alt="" /></figure>
+    <figure class="s-why__figure"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/IMG_9031_1.jpg?v=1649932004" width="480" height="600" alt="" /></figure>
     <div class="s-why__money"><svg class="svg-icon svg-icon--money" viewbox="0 0 80 80"> <path d="M51.9 20.1h-2c.3-.6.5-1.3.5-2.1v-6.3c0-2.3-1.9-4.2-4.2-4.2h-37C6.9 7.5 5 9.4 5 11.7V18c0 2.3 1.9 4.2 4.2 4.2h2c-.3.6-.5 1.3-.5 2.1v6.3c0 .8.2 1.5.5 2.1h-2c-2.3 0-4.2 1.9-4.2 4.2v6.3c0 1.8 1.2 3.4 2.8 3.9-.4.7-.7 1.5-.7 2.3v6.3c0 .9.3 1.6.7 2.3-1.6.6-2.8 2.2-2.8 4v6.3c0 2.3 1.9 4.2 4.2 4.2h31.9c.6 0 1-.5 1-1.1 0-.6-.5-1.1-1-1.1H9.2c-1.1 0-2.1-.9-2.1-2.1V62c0-1.1.9-2.1 2.1-2.1h20.3c.6 0 1-.5 1-1.1 0-.6-.5-1.1-1-1.1H11.2c-1.1 0-2.1-.9-2.1-2.1v-6.3c0-1.1.9-2.1 2.1-2.1h16.2c.6 0 1-.5 1-1.1s-.5-1.1-1-1.1H9.2c-1.1 0-2.1-.9-2.1-2.1v-6.3c0-1.1.9-2.1 2.1-2.1h24.3c.6 0 1-.5 1-1.1s-.5-1.1-1-1.1H14.7c-1.1 0-2.1-.9-2.1-2.1v-6.3c0-1.1.9-2.1 2.1-2.1h37.2c1.1 0 2.1.9 2.1 2.1V25c0 .6.5 1.1 1 1.1s1-.5 1-1.1v-.8c.1-2.2-1.8-4.1-4.1-4.1zM48.4 18c0 1.1-.9 2.1-2.1 2.1H9.2c-1.1 0-2.1-.9-2.1-2.1v-6.3c0-1.1.9-2.1 2.1-2.1h37.2c1.1 0 2.1.9 2.1 2.1l-.1 6.3z"></path><path d="M64.7 30.4c-.5-.3-1.1-.2-1.4.3-.3.5-.2 1.1.3 1.5 5.9 3.9 9.4 10.4 9.4 17.4 0 11.5-9.3 20.8-20.7 20.8-11.4 0-20.7-9.3-20.7-20.8s9.3-20.8 20.7-20.8c3 0 5.9.6 8.6 1.9.5.2 1.1 0 1.4-.5.2-.5 0-1.2-.5-1.4-3-1.4-6.1-2.1-9.4-2.1-12.5 0-22.8 10.3-22.8 22.9s10.2 22.9 22.8 22.9S75 62.2 75 49.6c0-7.8-3.9-14.9-10.3-19.2z"></path><path d="M63.8 37.9c-3.1-3.1-7.2-4.8-11.6-4.8s-8.5 1.7-11.6 4.8c-4.1 4.2-5.8 10.3-4.2 16 .2.6.7.9 1.3.7.6-.2.9-.7.7-1.3-1.3-5 .1-10.3 3.7-13.9 2.7-2.7 6.3-4.2 10.1-4.2s7.4 1.5 10.1 4.2c5.6 5.6 5.6 14.7 0 20.4-5.6 5.6-14.7 5.6-20.2 0-1-1-1.8-2.2-2.5-3.4-.3-.5-.9-.7-1.4-.4-.5.3-.7.9-.4 1.4.8 1.4 1.7 2.7 2.9 3.9 3.2 3.2 7.4 4.8 11.6 4.8s8.4-1.6 11.6-4.8c6.3-6.5 6.3-16.9-.1-23.4z"></path><path d="M53.3 48.6v-5.8c1.5.4 2.6 1.5 2.6 2.8 0 .6.5 1.1 1 1.1.6 0 1-.5 1-1.1 0-2.5-2-4.5-4.7-4.9v-.6c0-.6-.5-1.1-1-1.1-.6 0-1 .5-1 1.1v.6c-2.7.4-4.7 2.5-4.7 4.9s2 4.5 4.7 4.9v5.8c-1.5-.4-2.6-1.5-2.6-2.8 0-.6-.5-1.1-1-1.1-.6 0-1 .5-1 1.1 0 2.5 2 4.5 4.7 4.9v.6c0 .6.5 1.1 1 1.1.6 0 1-.5 1-1.1v-.6C56 58.1 58 56 58 53.6s-2-4.5-4.7-5zm-2.1-.2c-1.5-.4-2.6-1.5-2.6-2.8s1.1-2.4 2.6-2.8v5.6zm2.1 8v-5.6c1.5.4 2.6 1.5 2.6 2.8 0 1.3-1.1 2.4-2.6 2.8z"></path> </svg>
-    <p class="s-why__money-text">Money spent; goods undelivered</p>
+    <p class="s-why__money-text"><ly-as-19935172>Money spent; goods undelivered</ly-as-19935172></p>
     </div>
     </div>
     <ul class="s-why__items">
     <li class="s-why__item"><svg class="svg-icon svg-icon--online-store s-why__item-icon" viewbox="0 0 80 80"> <path d="M73.5 12H53.6c-.7-.7-1.5-1.3-2.3-1.9-.5-.3-1.2-.2-1.5.3-.3.5-.2 1.2.3 1.5 4.9 3.4 7.7 8.9 7.7 14.8 0 9.9-8.1 18-17.9 18-9.9 0-17.9-8.1-17.9-18s8.1-18 17.9-18c2 0 3.9.3 5.7.9.6.2 1.2-.1 1.4-.7.2-.6-.1-1.2-.7-1.4-2.1-.7-4.2-1.1-6.4-1.1-11.1 0-20.1 9.1-20.1 20.2s9 20.2 20.1 20.2S60 37.8 60 26.7c0-4.6-1.6-9-4.3-12.5h17.8c1 0 1.8.8 1.8 1.8v34.7h-8.7c-.6 0-1.1.5-1.1 1.1s.5 1.1 1.1 1.1h8.7v5.8c0 1-.8 1.8-1.8 1.8h-67c-1 0-1.8-.8-1.8-1.8v-5.8h56.4c.6 0 1.1-.5 1.1-1.1s-.5-1.1-1.1-1.1H4.7V16c0-1 .8-1.8 1.8-1.8h13.1c.6 0 1.1-.5 1.1-1.1 0-.6-.5-1.1-1.1-1.1H6.5c-2.2 0-4 1.8-4 4v42.7c0 2.2 1.8 4 4 4h24.1v8.6h-3.3c-.6 0-1.1.5-1.1 1.1s.5 1.1 1.1 1.1h25.1c.6 0 1.1-.5 1.1-1.1s-.5-1.1-1.1-1.1h-3.3v-8.6h24.4c2.2 0 4-1.8 4-4V16c0-2.2-1.8-4-4-4zM46.9 71.3H32.8v-8.6h14.1v8.6z"></path><path d="M32 17.9c-.2-1.2-1.3-2.1-2.6-2.1h-1.2c-.6 0-1.1.5-1.1 1.1 0 .6.5 1.1 1.1 1.1h1.2c.2 0 .4.1.4.4l3.3 17.3c.1.5.6.9 1.1.9h.8c-.3.4-.5.8-.5 1.4 0 1.1.9 2.1 2.1 2.1s2.1-.9 2.1-2.1c0-.5-.2-1-.5-1.4h4.5c-.3.4-.5.8-.5 1.4 0 1.1.9 2.1 2.1 2.1 1.1 0 2.1-.9 2.1-2.1 0-.5-.2-1-.5-1.4h1c.6 0 1.1-.5 1.1-1.1s-.5-1.1-1.1-1.1H35.1l-.4-2.4H47c.5 0 1-.4 1.1-.9l2-10.3c.1-.4 0-.8-.3-1.1-.3-.3-.6-.5-1-.5H32.3l-.3-1.3zm1.7 8.7h3l.2 3.1h-2.6l-.6-3.1zm7.8 0l-.2 3.1h-2.2l-.2-3.1h2.6zm-2.8-2.2l-.2-3.1h3.4l-.2 3.1h-3zm4.8 5.3l.2-3.1h2.9l-.6 3.1h-2.5zm3.5-5.3h-3.2l.2-3.1h3.5l-.5 3.1zm-10.7-3.1l.2 3.1h-3.3l-.6-3.1h3.7zM9.7 42.8h6.5c.6 0 1.1-.5 1.1-1.1 0-.6-.5-1.1-1.1-1.1H9.7c-.6 0-1.1.5-1.1 1.1 0 .6.4 1.1 1.1 1.1zm0 5h12.1c.6 0 1.1-.5 1.1-1.1 0-.6-.5-1.1-1.1-1.1H9.7c-.6 0-1.1.5-1.1 1.1 0 .6.4 1.1 1.1 1.1zm58-29.5c-.6 0-1.1.5-1.1 1.1v2.8h-2.7c-.6 0-1.1.5-1.1 1.1s.5 1.1 1.1 1.1h2.7v2.8c0 .6.5 1.1 1.1 1.1.6 0 1.1-.5 1.1-1.1v-2.8h2.7c.6 0 1.1-.5 1.1-1.1s-.5-1.1-1.1-1.1h-2.7v-2.8c0-.6-.5-1.1-1.1-1.1z"></path> </svg>
-    <h3 class="s-why__item-title">Real goods on fake sites</h3>
-    <p class="s-why__item-text">The goods and descriptions from legitimate sites are stolen to make the fake one look real</p>
+    <h3 class="s-why__item-title"><ly-as-19935173>Real goods on fake sites</ly-as-19935173></h3>
+    <p class="s-why__item-text"><ly-as-19935174>The goods and descriptions from legitimate sites are stolen to make the fake one look real</ly-as-19935174></p>
     </li>
     <li class="s-why__item"><svg class="svg-icon svg-icon--discounts s-why__item-icon" viewbox="0 0 80 80"> <path d="M16.4 56.6c.2.2.5.3.8.3.3 0 .6-.1.8-.3L31 44c.5-.4.4-1.1 0-1.6-.5-.4-1.2-.4-1.7 0L16.4 55c-.5.5-.5 1.2 0 1.6zm2.9-9.5c.5.2 1 .3 1.4.3.7 0 1.4-.2 2-.5 1.1-.5 1.9-1.4 2.4-2.5 1-2.3-.1-4.9-2.3-5.7-2.2-.9-4.8.3-5.8 2.7-.5 1.1-.5 2.3-.1 3.4.5 1.1 1.3 1.9 2.4 2.3zm-.1-4.9c.4-1 1.3-1.6 2.2-1.6.2 0 .4 0 .6.1 1 .4 1.5 1.7 1 2.9-.3.6-.7 1.1-1.3 1.4-.5.3-1 .3-1.5.1-.5-.2-.8-.5-1-1.1-.2-.6-.2-1.2 0-1.8zm8.5 10c-1.1-.4-2.3-.3-3.5.2-1.1.5-1.9 1.4-2.4 2.5-1 2.3.1 4.9 2.3 5.7.5.2.9.3 1.4.3 1.8 0 3.6-1.2 4.4-3 .5-1.1.5-2.3.1-3.4s-1.2-1.9-2.3-2.3zm.1 4.9c-.5 1.2-1.8 1.9-2.8 1.5-1-.4-1.5-1.7-1-2.9.3-.6.7-1.1 1.3-1.4.3-.2.6-.2.9-.2.2 0 .4 0 .6.1.5.2.8.5 1 1.1.3.5.2 1.2 0 1.8zm31.8-15.7l-3 17.2c-.1.6.3 1.2 1 1.3h.2c.6 0 1.1-.4 1.2-.9l3-17.2c.1-.6-.3-1.2-1-1.3-.7-.1-1.3.3-1.4.9zm-2.3 3.8c-.3-1.2-1-2.2-2-2.8-1-.7-2.2-.9-3.4-.7-2.3.5-3.7 3-3.1 5.4.3 1.2 1 2.2 2 2.8.8.5 1.6.8 2.5.8.3 0 .6 0 .9-.1 1.2-.3 2.1-1 2.7-2.1.6-1 .7-2.2.4-3.3zm-2.5 2.3c-.3.5-.7.8-1.2.9-.5.1-1 0-1.5-.3-.5-.4-.9-.9-1.1-1.5-.3-1.3.3-2.5 1.4-2.7h.4c.4 0 .8.1 1.1.4.5.4.9.9 1.1 1.5.2.6.1 1.2-.2 1.7zm6.3 8.2c.5 2.1 2.4 3.6 4.5 3.6.3 0 .6 0 .9-.1 2.3-.5 3.7-3 3.1-5.4-.6-2.4-3-4-5.4-3.5-1.2.3-2.1 1-2.7 2.1-.6.9-.7 2.1-.4 3.3zm2.4-2.4c.3-.5.7-.8 1.2-.9h.4c1 0 1.9.8 2.2 1.9.3 1.3-.3 2.5-1.4 2.7-1.1.2-2.2-.6-2.6-1.9-.1-.6-.1-1.2.2-1.8z"></path><path d="M79.9 67.4l-11-42.5c-.3-1.1-1.1-2.1-2.2-2.7l-2.3-1.1c-.6-.3-1.3-.1-1.6.5-.3.5-.1 1.2.5 1.5l2.3 1.1c.5.3.9.7 1 1.2l11 42.5c.3 1-.4 2-1.5 2.3l-22.4 5.1c-1.1.2-2.2-.4-2.4-1.4l-11-42.5c-.1-.5 0-1.1.3-1.5l8.9-11.7c.9 1.6 1.5 3.4 1.7 5.4l-.4.1c-.6.1-1 .7-.9 1.3.1.5.6.8 1.1.8h.3l2.6-.6c.6-.1 1-.7.9-1.3-.1-.6-.7-.9-1.3-.8-.2-1.9-.8-3.8-1.7-5.6.1 0 .2.1.3.1l7 3.4c.6.3 1.3.1 1.6-.5.3-.5.1-1.2-.5-1.5l-7-3.4c-.9-.4-1.9-.6-2.8-.4-.8-1.1-1.8-2.2-2.8-3.2-2.1-2-4.3-3.2-5.3-3.8V3.6c0-.6-.5-1.1-1.2-1.1s-1.2.5-1.2 1.1v4.8c-4.4 3-7.5 7.9-9.1 14.3-.2.9-.4 1.7-.5 2.5L21.6 22c-.8-.3-1.8-.3-2.6.1-.8.3-1.5 1-1.8 1.8L.2 64.7c-.7 1.6.2 3.5 1.9 4.1l8.1 3c.1.1.3.1.4.1.5 0 .9-.3 1.1-.7.2-.6-.1-1.2-.7-1.4l-8.1-3c-.5-.2-.8-.8-.6-1.3l17-40.8c.1-.2.3-.4.6-.6.3-.1.6-.1.8 0l9.2 3.4c-.1 1.1-.2 2-.2 2.7-.5 0-1 .2-1.2.7-.2.6.1 1.2.7 1.4l1.2.4 1.3.5c.1.1.3.1.4.1.5 0 .9-.3 1.1-.7.2-.6-.1-1.2-.7-1.4L32 31c0-.6 0-1.5.1-2.7l5.7 2.1c-.1.5-.1 1.1.1 1.6l2.8 10.9-13.1 31.8c-.2.5-.8.8-1.4.6l-10.8-3.9c-.6-.2-1.3.1-1.5.6-.2.6.1 1.2.7 1.4l10.8 3.9c.4.1.8.2 1.2.2 1.4 0 2.7-.8 3.2-2l12-28.9L49 74.4c.5 1.9 2.3 3.1 4.2 3.1.3 0 .7 0 1-.1l22.4-5.1c2.4-.5 3.8-2.7 3.3-4.9zM41.2 10.3c1.3.7 4.6 2.8 7.1 6l-.6.6L39 28.3 32.6 26c.8-4.9 2.9-11.7 8.6-15.7z"></path> </svg>
-    <h3 class="s-why__item-title">Discounts and special offers</h3>
-    <p class="s-why__item-text">Various discounts and special offers are used to stimulate purchases of vulnerable clients</p>
+    <h3 class="s-why__item-title"><ly-as-19935175>Discounts and special offers</ly-as-19935175></h3>
+    <p class="s-why__item-text"><ly-as-19935176>Various discounts and special offers are used to stimulate purchases of vulnerable clients</ly-as-19935176></p>
     </li>
     <li class="s-why__item"><svg class="svg-icon svg-icon--money s-why__item-icon" viewbox="0 0 80 80"> <path d="M51.9 20.1h-2c.3-.6.5-1.3.5-2.1v-6.3c0-2.3-1.9-4.2-4.2-4.2h-37C6.9 7.5 5 9.4 5 11.7V18c0 2.3 1.9 4.2 4.2 4.2h2c-.3.6-.5 1.3-.5 2.1v6.3c0 .8.2 1.5.5 2.1h-2c-2.3 0-4.2 1.9-4.2 4.2v6.3c0 1.8 1.2 3.4 2.8 3.9-.4.7-.7 1.5-.7 2.3v6.3c0 .9.3 1.6.7 2.3-1.6.6-2.8 2.2-2.8 4v6.3c0 2.3 1.9 4.2 4.2 4.2h31.9c.6 0 1-.5 1-1.1 0-.6-.5-1.1-1-1.1H9.2c-1.1 0-2.1-.9-2.1-2.1V62c0-1.1.9-2.1 2.1-2.1h20.3c.6 0 1-.5 1-1.1 0-.6-.5-1.1-1-1.1H11.2c-1.1 0-2.1-.9-2.1-2.1v-6.3c0-1.1.9-2.1 2.1-2.1h16.2c.6 0 1-.5 1-1.1s-.5-1.1-1-1.1H9.2c-1.1 0-2.1-.9-2.1-2.1v-6.3c0-1.1.9-2.1 2.1-2.1h24.3c.6 0 1-.5 1-1.1s-.5-1.1-1-1.1H14.7c-1.1 0-2.1-.9-2.1-2.1v-6.3c0-1.1.9-2.1 2.1-2.1h37.2c1.1 0 2.1.9 2.1 2.1V25c0 .6.5 1.1 1 1.1s1-.5 1-1.1v-.8c.1-2.2-1.8-4.1-4.1-4.1zM48.4 18c0 1.1-.9 2.1-2.1 2.1H9.2c-1.1 0-2.1-.9-2.1-2.1v-6.3c0-1.1.9-2.1 2.1-2.1h37.2c1.1 0 2.1.9 2.1 2.1l-.1 6.3z"></path><path d="M64.7 30.4c-.5-.3-1.1-.2-1.4.3-.3.5-.2 1.1.3 1.5 5.9 3.9 9.4 10.4 9.4 17.4 0 11.5-9.3 20.8-20.7 20.8-11.4 0-20.7-9.3-20.7-20.8s9.3-20.8 20.7-20.8c3 0 5.9.6 8.6 1.9.5.2 1.1 0 1.4-.5.2-.5 0-1.2-.5-1.4-3-1.4-6.1-2.1-9.4-2.1-12.5 0-22.8 10.3-22.8 22.9s10.2 22.9 22.8 22.9S75 62.2 75 49.6c0-7.8-3.9-14.9-10.3-19.2z"></path><path d="M63.8 37.9c-3.1-3.1-7.2-4.8-11.6-4.8s-8.5 1.7-11.6 4.8c-4.1 4.2-5.8 10.3-4.2 16 .2.6.7.9 1.3.7.6-.2.9-.7.7-1.3-1.3-5 .1-10.3 3.7-13.9 2.7-2.7 6.3-4.2 10.1-4.2s7.4 1.5 10.1 4.2c5.6 5.6 5.6 14.7 0 20.4-5.6 5.6-14.7 5.6-20.2 0-1-1-1.8-2.2-2.5-3.4-.3-.5-.9-.7-1.4-.4-.5.3-.7.9-.4 1.4.8 1.4 1.7 2.7 2.9 3.9 3.2 3.2 7.4 4.8 11.6 4.8s8.4-1.6 11.6-4.8c6.3-6.5 6.3-16.9-.1-23.4z"></path><path d="M53.3 48.6v-5.8c1.5.4 2.6 1.5 2.6 2.8 0 .6.5 1.1 1 1.1.6 0 1-.5 1-1.1 0-2.5-2-4.5-4.7-4.9v-.6c0-.6-.5-1.1-1-1.1-.6 0-1 .5-1 1.1v.6c-2.7.4-4.7 2.5-4.7 4.9s2 4.5 4.7 4.9v5.8c-1.5-.4-2.6-1.5-2.6-2.8 0-.6-.5-1.1-1-1.1-.6 0-1 .5-1 1.1 0 2.5 2 4.5 4.7 4.9v.6c0 .6.5 1.1 1 1.1.6 0 1-.5 1-1.1v-.6C56 58.1 58 56 58 53.6s-2-4.5-4.7-5zm-2.1-.2c-1.5-.4-2.6-1.5-2.6-2.8s1.1-2.4 2.6-2.8v5.6zm2.1 8v-5.6c1.5.4 2.6 1.5 2.6 2.8 0 1.3-1.1 2.4-2.6 2.8z"></path> </svg>
     <h3 class="s-why__item-title">Scammed clients &amp; stolen money</h3>
-    <p class="s-why__item-text">Scammers trick clients by getting their money, leaving them with unfulfilled expectations</p>
+    <p class="s-why__item-text"><ly-as-19935178>Scammers trick clients by getting their money, leaving them with unfulfilled expectations</ly-as-19935178></p>
     </li>
     </ul>
     </div>
     </section>
     <section class="s-cheated">
     <div class="s-cheated__container">
-    <h2 class="title s-cheated__title">Cheated Buyers</h2>
+    <h2 class="title s-cheated__title"><ly-as-19935179>Cheated Buyers</ly-as-19935179></h2>
     <div class="s-cheated__items">
     <div class="s-cheated__item">
     <div class="s-cheated__card">
-    <h3 class="s-cheated__author">Jamesw56</h3>
-    <time class="s-cheated__date" datetime="2020-12-17">December 17, 2020</time>
+    <h3 class="s-cheated__author"><ly-as-19935180>Jamesw56</ly-as-19935180></h3>
+    <time class="s-cheated__date" datetime="2020-12-17"><ly-as-19935181>December 17, 2020</ly-as-19935181></time>
     <blockquote class="s-cheated__quote">
-    <p>I have ordered from you before but recently saw your puzzle special for half price. When I ordered and paid I’m afraid it is a scam. I cannot get ant answers from them about my order. The company was supposed to be Trilium. Do you have any suggestions.</p>
+    <p><ly-as-19935182>I have ordered from you before but recently saw your puzzle special for half price. When I ordered and paid I’m afraid it is a scam. I cannot get ant answers from them about my order. The company was supposed to be Trilium. Do you have any suggestions.</ly-as-19935182></p>
     </blockquote>
-    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/Scam_16.png?v=1615278910">See original review</a></div>
+    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/Scam_16.png?v=1615278910"><ly-as-19935183>See original review</ly-as-19935183></a></div>
     </div>
     <div class="s-cheated__item">
     <div class="s-cheated__card">
-    <h3 class="s-cheated__author">Tamara</h3>
-    <time class="s-cheated__date" datetime="2020-12-25">December 25, 2020</time>
+    <h3 class="s-cheated__author"><ly-as-19935184>Tamara</ly-as-19935184></h3>
+    <time class="s-cheated__date" datetime="2020-12-25"><ly-as-19935185>December 25, 2020</ly-as-19935185></time>
     <blockquote class="s-cheated__quote">
     <p style="word-break: break-word;">"Hello. I thought you should know that there is a company using your images https://www.creativecraft.shop/products?handler=wooden-jigsaw&amp;fbclid=IwAR0h5JM1txERYTtuX6lknK6SHj1Fc9PecV-nKW4SbTTgVrAzW6CatTFJ6Hk</p>
-    <p>It popped up while I was playing a game and a few minutes later your site popped up. Theirs caught my eye because of the beauty and reasonableness of the prices. Luckily I kept the information for your site too. Your reviews are excellent. However the other site is probably a Chinese scam.</p>
-    <p>I hate seeing people and businesses being robbed and in this instance I think you are.</p>
-    <p>Good luck with your beautiful puzzles !"</p>
+    <p><ly-as-19935187>It popped up while I was playing a game and a few minutes later your site popped up. Theirs caught my eye because of the beauty and reasonableness of the prices. Luckily I kept the information for your site too. Your reviews are excellent. However the other site is probably a Chinese scam.</ly-as-19935187></p>
+    <p><ly-as-19935188>I hate seeing people and businesses being robbed and in this instance I think you are.</ly-as-19935188></p>
+    <p><ly-as-19935189>Good luck with your beautiful puzzles !"</ly-as-19935189></p>
     </blockquote>
-    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/Scam_15.jpg?v=1615279672">See original review</a>
+    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/Scam_15.jpg?v=1615279672"><ly-as-19935183>See original review</ly-as-19935183></a>
     <div class="overlay js-overlay-modal"></div>
     </div>
     </div>
     <div class="s-cheated__item">
     <div class="s-cheated__card">
-    <h3 class="s-cheated__author">Tamara</h3>
-    <time class="s-cheated__date" datetime="2020-12-25">December 25, 2020</time>
+    <h3 class="s-cheated__author"><ly-as-19935184>Tamara</ly-as-19935184></h3>
+    <time class="s-cheated__date" datetime="2020-12-25"><ly-as-19935185>December 25, 2020</ly-as-19935185></time>
     <blockquote class="s-cheated__quote">
-    <p>I’m attaching you event the receipt from PayPal, but I'm thinking that was a scam, because when I track the package, the website is down.</p>
+    <p><ly-as-19935190>I’m attaching you event the receipt from PayPal, but I'm thinking that was a scam, because when I track the package, the website is down.</ly-as-19935190></p>
     </blockquote>
-    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/Scam_19r_ffc8ed99-3f0d-4b40-957a-9774db72b8b3.jpg?v=1615540037">See original review</a></div>
+    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/Scam_19r_ffc8ed99-3f0d-4b40-957a-9774db72b8b3.jpg?v=1615540037"><ly-as-19935183>See original review</ly-as-19935183></a></div>
     </div>
     <div class="s-cheated__item">
     <div class="s-cheated__card">
-    <h3 class="s-cheated__author">Jamesw56</h3>
-    <time class="s-cheated__date" datetime="2020-12-17">December 17, 2020</time>
+    <h3 class="s-cheated__author"><ly-as-19935180>Jamesw56</ly-as-19935180></h3>
+    <time class="s-cheated__date" datetime="2020-12-17"><ly-as-19935181>December 17, 2020</ly-as-19935181></time>
     <blockquote class="s-cheated__quote">
-    <p>"Hi there, I followed a link on Facebook back on December 2 to order puzzles that I thought would make nice gifts for friends. I used paypal and received the following receipt. The puzzles have not arrived. I’m just confirming that I will still be receiving the puzzles or if there is a way to cancel the order. Thank you<br /> Angela Dragt"</p>
+    <p><ly-as-19935191>"Hi there, I followed a link on Facebook back on December 2 to order puzzles that I thought would make nice gifts for friends. I used paypal and received the following receipt. The puzzles have not arrived. I’m just confirming that I will still be receiving the puzzles or if there is a way to cancel the order. Thank you</ly-as-19935191><br /> <ly-as-19935192>Angela Dragt"</ly-as-19935192></p>
     </blockquote>
-    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/Scam_10.jpg?v=1615376486">See original review</a></div>
+    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/Scam_10.jpg?v=1615376486"><ly-as-19935183>See original review</ly-as-19935183></a></div>
     </div>
     <div class="s-cheated__item">
     <div class="s-cheated__card">
-    <h3 class="s-cheated__author">Tamara</h3>
-    <time class="s-cheated__date" datetime="2020-12-25">December 25, 2020</time>
+    <h3 class="s-cheated__author"><ly-as-19935184>Tamara</ly-as-19935184></h3>
+    <time class="s-cheated__date" datetime="2020-12-25"><ly-as-19935185>December 25, 2020</ly-as-19935185></time>
     <blockquote class="s-cheated__quote">
-    <p>"Hello. I love your puzzles. I recently purchased two new ones from www.creativecraft.shop (instead of Amazon) believing they were Unidragon puzzles because the images were identical. What we received were cheap knockoffs that were no where near the same quality. I thought you should know as I suspect they are stealing your designs. I will be attempting to return these puzzles, and if successful I hope to order the correct ones from you.</p>
-    <p>Kind regards from Canada, and thanks for the beautiful puzzles,</p>
-    <p>Sarah Gregory"</p>
+    <p><ly-as-19935193>"Hello. I love your puzzles. I recently purchased two new ones from www.creativecraft.shop (instead of Amazon) believing they were Unidragon puzzles because the images were identical. What we received were cheap knockoffs that were no where near the same quality. I thought you should know as I suspect they are stealing your designs. I will be attempting to return these puzzles, and if successful I hope to order the correct ones from you.</ly-as-19935193></p>
+    <p><ly-as-19935194>Kind regards from Canada, and thanks for the beautiful puzzles,</ly-as-19935194></p>
+    <p><ly-as-19935195>Sarah Gregory"</ly-as-19935195></p>
     </blockquote>
-    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/Scam_5.png?v=1615376611">See original review</a></div>
+    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/Scam_5.png?v=1615376611"><ly-as-19935183>See original review</ly-as-19935183></a></div>
     </div>
     <div class="s-cheated__item">
     <div class="s-cheated__card">
-    <h3 class="s-cheated__author">Jamesw56</h3>
-    <time class="s-cheated__date" datetime="2020-12-17">December 17, 2020</time>
+    <h3 class="s-cheated__author"><ly-as-19935180>Jamesw56</ly-as-19935180></h3>
+    <time class="s-cheated__date" datetime="2020-12-17"><ly-as-19935181>December 17, 2020</ly-as-19935181></time>
     <blockquote class="s-cheated__quote">
-    <p>"Dear Sir,</p>
-    <p>I hope this email find you well.</p>
-    <p>May I check if Joyily-US is one of your distributors? I placed an order to purchase 2 wooden jigsaw ( 1 fish , 1 fox) on 17 Aug 2020 for delivery to a UK address ( payment of US$ 65.52)</p>
-    <p>I didn’t received any email to confirm this order nor do any email regarding shipping details or date. I have sent 4 emails to the person in charge ( see below) but never heard back. I suspect that Joyily- US is a fake Facebook webpage to sell your products which will lead to collateral damage to your reputation. There are so many weblink on Facebook now selling your jigsaw but they all under different sponsors with similar websites design. Are they ( or some of them) scam ? Would be great if you can help to clarify my doubt?</p>
-    <p>I purchased these jigsaw as birthdays presents to my family and intend to come for repeat order if they are good quality but now am really freaking out and frustrated by this poor shopping experience.</p>
-    <p>Joyily-US claimed to be an US based eCom company but my payment was settled with the following Chinese company which looks strange...</p>
+    <p><ly-as-19935196>"Dear Sir,</ly-as-19935196></p>
+    <p><ly-as-19935197>I hope this email find you well.</ly-as-19935197></p>
+    <p><ly-as-19935198>May I check if Joyily-US is one of your distributors? I placed an order to purchase 2 wooden jigsaw ( 1 fish , 1 fox) on 17 Aug 2020 for delivery to a UK address ( payment of US$ 65.52)</ly-as-19935198></p>
+    <p><ly-as-19935199>I didn’t received any email to confirm this order nor do any email regarding shipping details or date. I have sent 4 emails to the person in charge ( see below) but never heard back. I suspect that Joyily- US is a fake Facebook webpage to sell your products which will lead to collateral damage to your reputation. There are so many weblink on Facebook now selling your jigsaw but they all under different sponsors with similar websites design. Are they ( or some of them) scam ? Would be great if you can help to clarify my doubt?</ly-as-19935199></p>
+    <p><ly-as-19935200>I purchased these jigsaw as birthdays presents to my family and intend to come for repeat order if they are good quality but now am really freaking out and frustrated by this poor shopping experience.</ly-as-19935200></p>
+    <p><ly-as-19935201>Joyily-US claimed to be an US based eCom company but my payment was settled with the following Chinese company which looks strange...</ly-as-19935201></p>
     </blockquote>
-    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/Scam_22_1_r_6a28a5cb-5ba1-4169-bff6-7781a6f8c098.jpg?v=1615540037">See original review</a></div>
+    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/Scam_22_1_r_6a28a5cb-5ba1-4169-bff6-7781a6f8c098.jpg?v=1615540037"><ly-as-19935183>See original review</ly-as-19935183></a></div>
     </div>
     <div class="s-cheated__item">
     <div class="s-cheated__card">
-    <h3 class="s-cheated__author">Jamesw56</h3>
-    <time class="s-cheated__date" datetime="2020-12-17">December 17, 2020</time>
+    <h3 class="s-cheated__author"><ly-as-19935180>Jamesw56</ly-as-19935180></h3>
+    <time class="s-cheated__date" datetime="2020-12-17"><ly-as-19935181>December 17, 2020</ly-as-19935181></time>
     <blockquote class="s-cheated__quote">
-    <p>"Good afternoon,</p>
-    <p>I found your product being sold by J-Jay-S-Shop.com (creative craft) however it's been a few weeks now and I've not had the product. I didnt know of you're websight to start with and wasnt aware that this was actually your product to start with either (obviously if I had known I would of come to you first). I was just wondering if you are affiliated with that website?</p>
-    <p>Kind regards<br /> Dan"</p>
+    <p><ly-as-19935202>"Good afternoon,</ly-as-19935202></p>
+    <p><ly-as-19935203>I found your product being sold by J-Jay-S-Shop.com (creative craft) however it's been a few weeks now and I've not had the product. I didnt know of you're websight to start with and wasnt aware that this was actually your product to start with either (obviously if I had known I would of come to you first). I was just wondering if you are affiliated with that website?</ly-as-19935203></p>
+    <p><ly-as-19935204>Kind regards</ly-as-19935204><br /> <ly-as-19935205>Dan"</ly-as-19935205></p>
     </blockquote>
-    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/Scam_1.jpg?v=1615376953">See original review</a></div>
+    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/Scam_1.jpg?v=1615376953"><ly-as-19935183>See original review</ly-as-19935183></a></div>
     </div>
     </div>
     <div class="s-cheated__bottom">
-    <p class="s-cheated__bottom-text">Be vigilant: buy products from original manufacturers' websites</p>
-    <a class="button s-cheated__button" href="https://unidragon.com/collections/" role="button">Go to catalog</a></div>
+    <p class="s-cheated__bottom-text"><ly-as-19935206>Be vigilant: buy products from original manufacturers' websites</ly-as-19935206></p>
+    <a class="button s-cheated__button" href="https://unidragon.com/collections/" role="button"><ly-as-19935207>Go to catalog</ly-as-19935207></a></div>
     </div>
-    <section class="s-imitators">
+    <section class="s-imitators" style="margin-top: 40px;">
     <div class="s-imitators__container">
-    <h2 class="title title--underline s-imitators__title">Imitators sell their products for less, but chances are you'll only get disappointment</h2>
-    <p class="s-imitators__text">Reputation is not important to imitators, it is only important to sell the product «one time». They are maximally focused on profit and for this they reduce the cost of production, and, accordingly, its quality</p>
+    <h2 class="title title--underline s-imitators__title"><ly-as-19935208>Imitators sell their products for less, but chances are you'll only get disappointment</ly-as-19935208></h2>
+    <p class="s-imitators__text"><ly-as-19935209>Reputation is not important to imitators, it is only important to sell the product «one time». They are maximally focused on profit and for this they reduce the cost of production, and, accordingly, its quality</ly-as-19935209></p>
     <div class="s-imitators__items">
-    <div class="s-imitators__item"><img class="s-imitators__item-img" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/s-imitators-1.jpg" width="437" height="291" alt="" />
+    <div class="s-imitators__item"><img class="s-imitators__item-img" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/1498248316146399017.jpg?v=1649931945" width="437" height="291" alt="" />
     <div class="s-imitators__item-content">
     <div class="s-imitators__item-icon"><svg class="svg-icon svg-icon--question" viewbox="0 0 36 36"> <path d="M18 1C8.6 1 1 8.6 1 18s7.6 17 17 17 17-7.6 17-17S27.4 1 18 1zm0 26.9c-.8 0-1.4-.6-1.4-1.4s.6-1.4 1.4-1.4 1.4.6 1.4 1.4-.6 1.4-1.4 1.4zm2.2-9c-.5.2-.8.7-.8 1.3v.6c0 .8-.6 1.4-1.4 1.4s-1.4-.6-1.4-1.4v-.6c0-1.7 1-3.2 2.5-3.9 1.4-.7 2.5-2.4 2.5-3.3 0-2-1.6-3.5-3.5-3.5s-3.5 1.6-3.5 3.5c0 .8-.6 1.4-1.4 1.4s-1.4-.6-1.4-1.4c0-3.5 2.9-6.4 6.4-6.4s6.4 2.9 6.4 6.4c-.2 2-1.9 4.8-4.4 5.9z"></path> </svg></div>
-    <h3 class="s-imitators__item-title">Imitators don't have their own production</h3>
-    <p class="s-imitators__item-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam</p>
+    <h3 class="s-imitators__item-title"><ly-as-19935210>Imitators don't have their own production</ly-as-19935210></h3>
+<!--     <p class="s-imitators__item-text"><ly-as-19935211>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam</ly-as-19935211></p> -->
     {% comment %} <a class="button s-imitators__item-button button--black" href="#" role="button">See photos</a> {%endcomment%}</div>
     </div>
-    <div class="s-imitators__item"><img class="s-imitators__item-img" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/s-imitators-2.jpg" width="437" height="291" alt="" />
+    <div class="s-imitators__item"><img class="s-imitators__item-img" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/photo_2021-08-19_17-25-56_2.jpg?v=1649931945" width="437" height="291" alt="" />
     <div class="s-imitators__item-content">
-    <div class="s-imitators__item-icon"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/unidragon.png" width="36" height="36" alt="" /></div>
-    <h3 class="s-imitators__item-title">We have our own production with a quality control system</h3>
-    <p class="s-imitators__item-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam</p>
+    <div class="s-imitators__item-icon"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/7_10.png?v=1649934841" width="36" height="36" alt="" /></div>
+    <h3 class="s-imitators__item-title"><ly-as-19935212>We have our own production with a quality control system</ly-as-19935212></h3>
+<!--     <p class="s-imitators__item-text"><ly-as-19935211>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam</ly-as-19935211></p> -->
     {% comment %}<a class="button s-imitators__item-button button--black" href="#" role="button">See photos</a> {%endcomment%}</div>
     </div>
     </div>
@@ -154,79 +155,79 @@
         <div class="b-video__overlay-content">
         <div class="b-video__icon"><svg class="svg-icon svg-icon--play" viewbox="0 0 14 14"> <path d="M12.8 5.8L5.4.8C5 .6 4.7.5 4.4.5c-.6 0-.9.4-.9 1.2v10.7c0 .7.3 1.2.9 1.2.3 0 .6-.1 1-.4l7.4-4.9c.5-.3.7-.7.7-1.2 0-.6-.3-1-.7-1.3z"></path> </svg></div>
         {%endcomment%}
-    <div class="b-video__caption">We check every puzzle</div>
+<!--     <div class="b-video__caption"><ly-as-19935213>We check every puzzle</ly-as-19935213></div> -->
     </div>
     </section>
     </section>
     </div>
     <section class="s-lacks">
     <div class="s-lacks__container">
-    <h2 class="title title--desktop-left s-lacks__title">Lack of quality control on copies results in</h2>
+    <h2 class="title title--desktop-left s-lacks__title"><ly-as-19935214>Lack of quality control on copies results in</ly-as-19935214></h2>
     <ol class="s-lacks__items">
     <li class="s-lacks__item">
     <div class="s-lacks__card">
-    <h3 class="s-lacks__item-title">You may not be given <br />all the parts!</h3>
+    <h3 class="s-lacks__item-title"><ly-as-19935215>You may not be given</ly-as-19935215> <br /><ly-as-19935216>all the parts!</ly-as-19935216></h3>
     <div class="s-lacks__item-text">
-    <h3 class="s-cheated__author">Jamesw56</h3>
-    <time class="s-cheated__date" datetime="2020-12-25">December 25, 2020</time>
+    <h3 class="s-cheated__author"><ly-as-19935180>Jamesw56</ly-as-19935180></h3>
+    <time class="s-cheated__date" datetime="2020-12-25"><ly-as-19935185>December 25, 2020</ly-as-19935185></time>
     <blockquote class="s-cheated__quote">
-    <p>Missing pieces to puzzle and had duplicate pieces.</p>
+    <p><ly-as-19935217>Missing pieces to puzzle and had duplicate pieces.</ly-as-19935217></p>
     </blockquote>
     </div>
-    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/2_255f7d01-c6d5-407a-8ef0-7e36aa43dac7.jpg?v=1615388690">See original review</a></div>
+    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/2_255f7d01-c6d5-407a-8ef0-7e36aa43dac7.jpg?v=1615388690"><ly-as-19935183>See original review</ly-as-19935183></a></div>
     </li>
     <li class="s-lacks__item">
     <div class="s-lacks__card">
-    <h3 class="s-lacks__item-title">Parts may be smaller <br />than stated</h3>
+    <h3 class="s-lacks__item-title"><ly-as-19935218>Parts may be smaller</ly-as-19935218> <br /><ly-as-19935219>than stated</ly-as-19935219></h3>
     <div class="s-lacks__item-text">
-    <h3 class="s-cheated__author">Tamara</h3>
-    <time class="s-cheated__date" datetime="2020-12-17">December 17, 2020</time>
+    <h3 class="s-cheated__author"><ly-as-19935184>Tamara</ly-as-19935184></h3>
+    <time class="s-cheated__date" datetime="2020-12-17"><ly-as-19935181>December 17, 2020</ly-as-19935181></time>
     <blockquote class="s-cheated__quote">
-    <p>Puzzle is only 3x2 inches big! Is not large in size like pictures portray! Not worth the price of a happy meal toy, let alone $25!!!</p>
+    <p><ly-as-19935220>Puzzle is only 3x2 inches big! Is not large in size like pictures portray! Not worth the price of a happy meal toy, let alone $25!!!</ly-as-19935220></p>
     </blockquote>
     </div>
-    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/48898c9c5f838c63dc408a59ab788899.jpg?v=1615389919">See original review</a></div>
+    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/48898c9c5f838c63dc408a59ab788899.jpg?v=1615389919"><ly-as-19935183>See original review</ly-as-19935183></a></div>
     </li>
     <li class="s-lacks__item">
     <div class="s-lacks__card">
-    <h3 class="s-lacks__item-title">Poor paint, surface and print create color distortion</h3>
+    <h3 class="s-lacks__item-title"><ly-as-19935221>Poor paint, surface and print create color distortion</ly-as-19935221></h3>
     <div class="s-lacks__item-text">
-    <h3 class="s-cheated__author">JP</h3>
-    <time class="s-cheated__date" datetime="2020-11-20">November 20, 2020</time>
+    <h3 class="s-cheated__author"><ly-as-19935222>JP</ly-as-19935222></h3>
+    <time class="s-cheated__date" datetime="2020-11-20"><ly-as-19935223>November 20, 2020</ly-as-19935223></time>
     <blockquote class="s-cheated__quote">
-    <p>I don’t usually reviews, but found this puzzle to be so disappointing. Besides brown on the white pieces, which has been referend to as burn marks by previous reviewers, the black paint comes off on the tips of your fingers as you handle the puzzle. I put it back in the box when I realized the black was coming off on my sleeve as I reached over the pieces. Next time I will pay the extra money for a good wooden puzzle.</p>
+    <p><ly-as-19935224>I don’t usually reviews, but found this puzzle to be so disappointing. Besides brown on the white pieces, which has been referend to as burn marks by previous reviewers, the black paint comes off on the tips of your fingers as you handle the puzzle. I put it back in the box when I realized the black was coming off on my sleeve as I reached over the pieces. Next time I will pay the extra money for a good wooden puzzle.</ly-as-19935224></p>
     </blockquote>
     </div>
-    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/6b71a912a276531bfb8ba20e362abddc.jpg?v=1615391343">See original review</a></div>
+    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/6b71a912a276531bfb8ba20e362abddc.jpg?v=1615391343"><ly-as-19935183>See original review</ly-as-19935183></a></div>
     </li>
     <li class="s-lacks__item">
     <div class="s-lacks__card">
-    <h3 class="s-lacks__item-title">Parts can be very delicate <br />and fragile</h3>
+    <h3 class="s-lacks__item-title"><ly-as-19935225>Parts can be very delicate</ly-as-19935225> <br /><ly-as-19935226>and fragile</ly-as-19935226></h3>
     <div class="s-lacks__item-text">
-    <h3 class="s-cheated__author">JP</h3>
-    <time class="s-cheated__date" datetime="2021-01-5">January 5, 2021</time>
+    <h3 class="s-cheated__author"><ly-as-19935222>JP</ly-as-19935222></h3>
+    <time class="s-cheated__date" datetime="2021-01-5"><ly-as-19935227>January 5, 2021</ly-as-19935227></time>
     <blockquote class="s-cheated__quote">
-    <p>Pieces were broken and when you picked up a plece it would break in your hand!!!</p>
+    <p><ly-as-19935228>Pieces were broken and when you picked up a plece it would break in your hand!!!</ly-as-19935228></p>
     </blockquote>
     </div>
-    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/0c3f6d44ffbe076492b6c0aa8449bf2f.jpg?v=1615391397">See original review</a></div>
+    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/0c3f6d44ffbe076492b6c0aa8449bf2f.jpg?v=1615391397"><ly-as-19935183>See original review</ly-as-19935183></a></div>
     </li>
     <li class="s-lacks__item">
     <div class="s-lacks__card">
-    <h3 class="s-lacks__item-title">You can get a puzzle even without a picture for a sample assembly - a «real» puzzle!</h3>
+    <h3 class="s-lacks__item-title"><ly-as-19935229>You can get a puzzle even without a picture for a sample assembly - a «real» puzzle!</ly-as-19935229></h3>
     <div class="s-lacks__item-text">
-    <h3 class="s-cheated__author">Sogol</h3>
-    <time class="s-cheated__date" datetime="2020-12-29">December 29, 2020</time>
+    <h3 class="s-cheated__author"><ly-as-19935230>Sogol</ly-as-19935230></h3>
+    <time class="s-cheated__date" datetime="2020-12-29"><ly-as-19935231>December 29, 2020</ly-as-19935231></time>
     <blockquote class="s-cheated__quote">
-    <p>Absolute garbage! The puzzle pieces came in a plastic bag with no picture. Once you connect the pieces together they don't stay together and keep moving, | can't believe that this puzzle passed the quality control and made it in the market!!!</p>
+    <p><ly-as-19935232>Absolute garbage! The puzzle pieces came in a plastic bag with no picture. Once you connect the pieces together they don't stay together and keep moving, | can't believe that this puzzle passed the quality control and made it in the market!!!</ly-as-19935232></p>
     </blockquote>
     </div>
-    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/cb485a889dc84432e15808525efeee22.jpg?v=1615391802">See original review</a></div>
+    <a class="s-cheated__link" data-fancybox="" href="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/cb485a889dc84432e15808525efeee22.jpg?v=1615391802"><ly-as-19935183>See original review</ly-as-19935183></a></div>
     </li>
     </ol>
     <div class="s-lacks__alert">
     <div class="s-lacks__alert-icon"><svg class="svg-icon svg-icon--exclamation" viewbox="0 0 32 32"> <path d="M16 1C7.7 1 1 7.7 1 16s6.7 15 15 15 15-6.7 15-15S24.3 1 16 1zm0 27.7C9 28.7 3.3 23 3.3 16 3.3 9 9 3.3 16 3.3 23 3.3 28.7 9 28.7 16c0 7-5.7 12.7-12.7 12.7z"></path><path d="M16 8.6c-.6 0-1.2.5-1.2 1.2v7.5c0 .6.5 1.2 1.2 1.2.6 0 1.2-.5 1.2-1.2V9.7c0-.6-.6-1.1-1.2-1.1z"></path><circle cx="16" cy="21.5" r="1.6"></circle> </svg></div>
-    <p class="s-lacks__alert-text">If you don't see any reviews on a product like this one, you will most likely be the first to write about their disappointment. <br />Because these copycat sellers often create new accounts so that buyers do not see negative reviews.</p>
+    <p class="s-lacks__alert-text"><ly-as-19935233>If you don't see any reviews on a product like this one, you will most likely be the first to write about their disappointment.</ly-as-19935233> <br /><ly-as-19935234>Because these copycat sellers often create new accounts so that buyers do not see negative reviews.</ly-as-19935234></p>
     </div>
     </div>
     </section>
@@ -245,21 +246,21 @@
         </section> {%endcomment%}
     <section class="s-imitators">
     <div class="s-imitators__container">
-    <h2 class="title s-imitators__title">Imitators reduce the cost of not only products, but also packaging</h2>
+    <h2 class="title s-imitators__title"><ly-as-19935235>Imitators reduce the cost of not only products, but also packaging</ly-as-19935235></h2>
     <div class="s-imitators__items">
-    <div class="s-imitators__item"><img class="s-imitators__item-img" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/s-imitators-3.jpg" width="437" height="272" alt="" />
+    <div class="s-imitators__item"><img class="s-imitators__item-img" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/c1f403d826056d6c23ae5c6bf6bb1ecf.webp?v=1649931945" width="437" height="272" alt="" />
     <div class="s-imitators__item-content">
     <div class="s-imitators__item-icon"><svg class="svg-icon svg-icon--question" viewbox="0 0 36 36"> <path d="M18 1C8.6 1 1 8.6 1 18s7.6 17 17 17 17-7.6 17-17S27.4 1 18 1zm0 26.9c-.8 0-1.4-.6-1.4-1.4s.6-1.4 1.4-1.4 1.4.6 1.4 1.4-.6 1.4-1.4 1.4zm2.2-9c-.5.2-.8.7-.8 1.3v.6c0 .8-.6 1.4-1.4 1.4s-1.4-.6-1.4-1.4v-.6c0-1.7 1-3.2 2.5-3.9 1.4-.7 2.5-2.4 2.5-3.3 0-2-1.6-3.5-3.5-3.5s-3.5 1.6-3.5 3.5c0 .8-.6 1.4-1.4 1.4s-1.4-.6-1.4-1.4c0-3.5 2.9-6.4 6.4-6.4s6.4 2.9 6.4 6.4c-.2 2-1.9 4.8-4.4 5.9z"></path> </svg></div>
-    <h3 class="s-imitators__item-title">Analogs are supplied in a package</h3>
-    <p class="s-imitators__item-text">Due to lack of packaging and poor quality parts, counterfeits are often damaged during transportation</p>
+    <h3 class="s-imitators__item-title"><ly-as-19935236>Analogs are supplied in a package</ly-as-19935236></h3>
+    <p class="s-imitators__item-text"><ly-as-19935237>Due to lack of packaging and poor quality parts, counterfeits are often damaged during transportation</ly-as-19935237></p>
     </div>
     </div>
-    <div class="s-imitators__item"><img class="s-imitators__item-img" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/s-imitators-4.jpg" width="437" height="272" alt="" />
+    <div class="s-imitators__item"><img class="s-imitators__item-img" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/unidragon-wooden-puzzle-jigsaw-puzzle-for-adult-24_1.png?v=1649931946" width="437" height="272" alt="" />
     <div class="s-imitators__item-content">
-    <div class="s-imitators__item-icon"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/unidragon.png" width="36" height="36" alt="" /></div>
-    <h3 class="s-imitators__item-title">Our puzzles come in a wooden box</h3>
-    <p class="s-imitators__item-text">Guaranteed exchange of goods in case of damage. A wooden box and quality delivery services will ensure the integrity and appearance</p>
-    <a class="button s-imitators__item-button" href="/collections/" role="button">Make a gift</a></div>
+    <div class="s-imitators__item-icon"><img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/7_10.png?v=1649934841" width="36" height="36" alt="" /></div>
+    <h3 class="s-imitators__item-title"><ly-as-19935238>Our puzzles come in a wooden box</ly-as-19935238></h3>
+    <p class="s-imitators__item-text"><ly-as-19935239>Guaranteed exchange of goods in case of damage. A wooden box and quality delivery services will ensure the integrity and appearance</ly-as-19935239></p>
+    <a class="button s-imitators__item-button" href="/collections/" role="button"><ly-as-19935240>Make a gift</ly-as-19935240></a></div>
     </div>
     </div>
     {%comment%}<!--<a class="b-video js-popup-video s-imitators__video" href="https://www.youtube.com/watch?v=kR4u50TVYBs"><img class="b-video__cover" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/b-video-cover.jpg" width="900" height="450" alt="" />
@@ -267,23 +268,23 @@
         <div class="b-video__overlay-content">
         <div class="b-video__icon"><svg class="svg-icon svg-icon--play" viewbox="0 0 14 14"> <path d="M12.8 5.8L5.4.8C5 .6 4.7.5 4.4.5c-.6 0-.9.4-.9 1.2v10.7c0 .7.3 1.2.9 1.2.3 0 .6-.1 1-.4l7.4-4.9c.5-.3.7-.7.7-1.2 0-.6-.3-1-.7-1.3z"></path> </svg></div>
         -->{%endcomment%}
-    <div class="b-video__caption">You are not ashamed to present our Unidragon puzzles to yourself, relatives or friends!</div>
+<!--     <div class="b-video__caption"><ly-as-19935241>You are not ashamed to present our Unidragon puzzles to yourself, relatives or friends!</ly-as-19935241></div> -->
     </div>
     </section>
-    <section class="s-hcs">
+<!--     <section class="s-hcs">
     <div class="s-hcs__container">
-    <h2 class="title title--underline title--desktop-left s-hcs__title">I am responsible for taking care of our clients</h2>
-    <p class="s-hcs__text">My task is to make you satisfied with the service, product, and delivery. We will help you with any questions related to the order, delivery, or product. Kindly text me, and I will be happy to solve any of your questions.</p>
+    <h2 class="title title--underline title--desktop-left s-hcs__title"><ly-as-19935242>I am responsible for taking care of our clients</ly-as-19935242></h2>
+    <p class="s-hcs__text"><ly-as-19935243>My task is to make you satisfied with the service, product, and delivery. We will help you with any questions related to the order, delivery, or product. Kindly text me, and I will be happy to solve any of your questions.</ly-as-19935243></p>
     <img class="s-hcs__photo-mobile" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/s-hcs-photo_mobile.jpg" width="120" height="120" alt="Anastasia Loginova" /><img class="s-hcs__photo-desktop" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/s-hcs-photo_desktop.jpg" width="340" height="620" alt="Anastasia Loginova" /><img class="s-hcs__signature" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/t/13/assets/s-hcs-signature.png" width="128" height="44" alt="" />
-    <p class="s-hcs__name">Anastasia Loginova</p>
-    <p class="s-hcs__about">Head of Customer Service</p>
+    <p class="s-hcs__name"><ly-as-19935244>Anastasia Loginova</ly-as-19935244></p>
+    <p class="s-hcs__about"><ly-as-19935245>Head of Customer Service</ly-as-19935245></p>
     </div>
-    </section>
+    </section> -->
     <section class="s-contact">
     <div class="s-contact__container">
     <div class="s-contact__col">
-    <h2 class="title title--underline title--desktop-left s-contact__title">We'd like to let you know that established customer service is available</h2>
-    <p class="s-contact__text">So if you encounter any problems, don't hesitate to let us know as we will always find a solution</p>
+    <h2 class="title title--underline title--desktop-left s-contact__title"><ly-as-19935246>We'd like to let you know that established customer service is available</ly-as-19935246></h2>
+    <p class="s-contact__text"><ly-as-19935247>So if you encounter any problems, don't hesitate to let us know as we will always find a solution</ly-as-19935247></p>
     </div>
     <div><a name="report-scam"></a></div>
     <div class="s-contact__col">
@@ -295,11 +296,11 @@
     
               <div class="grid grid--half-gutters">
                 <div class="grid__item medium-up--one-half">
-                  <label class="visually-hidden" for="{{ formId }}-name">{{ 'contact.form.name' | t }}</label>
-                  <input placeholder="Name" type="text" id="{{ formId }}-name" name="contact[{{ 'contact.form.name' | t }}]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}" required="required" data-validator-required-message="This field is required" />
+                  <label class="visually-hidden" for="{{ formId }}-name">{% comment %}ly_i18n_replace_for_[ 'contact.form.name' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.name' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19935252' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+                  <input placeholder="Name" type="text" id="{{ formId }}-name" name="contact[{% comment %}ly_i18n_replace_for_[ 'contact.form.name' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.name' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19935252' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}" required="required" data-validator-required-message="This field is required" />
                 </div>
                 <div class="grid__item medium-up--one-half">
-                  <label class="visually-hidden" for="{{ formId }}-email">{{ 'contact.form.email' | t }} <span aria-hidden="true">*</span></label>
+                  <label class="visually-hidden" for="{{ formId }}-email">{% comment %}ly_i18n_replace_for_[ 'contact.form.email' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.email' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19935253' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %} <span aria-hidden="true">*</span></label>
                   <input 
                     placeholder="E-mail" 
                     type="email"
@@ -325,10 +326,10 @@
                 </div>
               </div>
    
-              <label class="visually-hidden" for="{{ formId }}-message">{{ 'contact.form.message' | t }}</label>
-              <textarea rows="10" id="{{ formId }}-message" name="contact[{{ 'contact.form.message' | t }}]" placeholder="Message" required="required" data-validator-required-message="This field is required">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+              <label class="visually-hidden" for="{{ formId }}-message">{% comment %}ly_i18n_replace_for_[ 'contact.form.message' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.message' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19935254' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+              <textarea rows="10" id="{{ formId }}-message" name="contact[{% comment %}ly_i18n_replace_for_[ 'contact.form.message' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.message' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19935254' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}]" placeholder="Message" required="required" data-validator-required-message="This field is required">{% if form.body %}{{ form.body }}{% endif %}</textarea>
     
-              <button type="submit" class="button b-form__submit button--black" value="{{ 'contact.form.submit' | t }}">Send message</button>
+              <button type="submit" class="button b-form__submit button--black" value="{% comment %}ly_i18n_replace_for_[ 'contact.form.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.submit' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19935255' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}"><ly-as-19935248>Send message</ly-as-19935248></button>
     
             {% endform %}
           </div>
@@ -349,9 +350,9 @@
     </section>
     <section class="s-quality">
     <div class="s-quality__container">
-    <h2 class="title title--underline s-quality__title">The $ 10 saved isn't worth your disappointment; <br />Quality product is guaranteed!</h2>
-    <p class="s-quality__text">Buy original Unidragon jigsaw puzzles on our website and get only positive emotions!</p>
-    <a class="button s-quality__button" href="https://unidragon.com/collections/" role="button">Go to catalog</a><img class="s-quality__visual" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/unidragon-wooden-puzzle-jigsaw-puzzle-for-adult-fairy-bird-m-04_2_x650.jpg?v=1621490875" width="650" height="250" alt="" /></div>
+    <h2 class="title title--underline s-quality__title"><ly-as-19935249>The $ 10 saved isn't worth your disappointment;</ly-as-19935249> <br /><ly-as-19935250>Quality product is guaranteed!</ly-as-19935250></h2>
+    <p class="s-quality__text"><ly-as-19935251>Buy original Unidragon jigsaw puzzles on our website and get only positive emotions!</ly-as-19935251></p>
+    <a class="button s-quality__button" href="https://unidragon.com/collections/" role="button"><ly-as-19935207>Go to catalog</ly-as-19935207></a><img class="s-quality__visual" src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/unidragon-wooden-puzzle-jigsaw-puzzle-for-adult-fairy-bird-m-04_2_x650.jpg?v=1621490875" width="650" height="250" alt="" /></div>
     </section>
 
-    <script src="{{ 'app.min.js' | asset_url }}"></script>
+    <script src="{% comment %}ly_asset_replace_for_[ 'app.min.js' | asset_url ]_begin{% endcomment %}{% assign ly_asset = 'app.min.js' %}{% capture ly_translation %}{% render 'ly-asset' with ly_asset render:true %}{% endcapture %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}"></script>
