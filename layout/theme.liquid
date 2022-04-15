@@ -447,6 +447,7 @@ qp('track', 'ViewContent');
     });
 
     const sendInitiateCheckoutEvent = (e) => {
+      console.log('sendInitiateCheckoutEvent');
             const cartObj = {{ cart | json }};  
             const ttCart = {
                     content_type: 'product_group',
@@ -472,7 +473,8 @@ qp('track', 'ViewContent');
     const checkoutHandlerProductPage = document.querySelector('#shopify-section-go-cart .go-cart__button.checkout');
     
     document.querySelector('#shopify-section-go-cart') && document.body.addEventListener('click',function(e) { 
-        if (e.target == checkoutHandlerProductPage) {
+      console.log('go_cart clicked');
+      if (e.target == checkoutHandlerProductPage) {
             sendInitiateCheckoutEvent(e);
         }          
     },false); 
