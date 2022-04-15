@@ -471,6 +471,10 @@ qp('track', 'ViewContent');
     checkoutHandler && checkoutHandler.addEventListener('click', sendInitiateCheckoutEvent);
     
     const checkoutHandlerProductPage = document.querySelector('#shopify-section-go-cart .go-cart__button.checkout');
+  
+  	const checkoutHandlerProductPageDirect = document.querySelector('.shopify-payment-button button'); 
+  
+  	checkoutHandlerProductPageDirect && checkoutHandlerProductPageDirect.addEventListener('click', sendInitiateCheckoutEvent);
     
     document.querySelector('#shopify-section-go-cart') && document.body.addEventListener('click',function(e) { 
       console.log('go_cart clicked');
