@@ -386,7 +386,12 @@
             margin-bottom: 5px !important;
         }
   
-  @media (max-width: 1023px){
+
+    
+    </style>
+
+<style>
+	  @media (max-width: 1023px){
     .quzzel-featured-box-5 {
     	overflow: hidden;
     }
@@ -402,8 +407,7 @@
     }
       
   }
-    
-    </style>
+</style>
         
       <script>
         {% if section.settings.buy_it_now_action == 'direct_to_cart' %}var buyitnowaction = true;{% else %}var buyitnowaction = false;{% endif %}{% if section.settings.enable_related_upsell %}var relatedupsellenable = true;{% else %}var relatedupsellenable = false;{% endif %}{% if section.settings.buy_it_now_action == 'thank_you_message' %}var thankmsg = true;{% else %}var thankmsg = false;{% endif %}{% if section.settings.buy_it_now_action == 'direct_to_checkout' %}var drchkout = true;{% else %}var drchkout = false;{% endif %}
