@@ -477,7 +477,12 @@ qp('track', 'ViewContent');
       if (e.target == checkoutHandlerProductPage) {
             sendInitiateCheckoutEvent(e);
         }          
-    }); 
+    });
+  
+  	window.addEventListener('popstate', function (event) {
+	// Log the state data to the console
+      console.log('POPSTATE: ', event.state);
+	});
 
 </script>
 
