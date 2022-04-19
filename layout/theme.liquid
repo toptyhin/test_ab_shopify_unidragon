@@ -477,11 +477,12 @@ qp('track', 'ViewContent');
   	checkoutHandlerProductPageDirect && checkoutHandlerProductPageDirect.addEventListener('click', sendInitiateCheckoutEvent);
     
     document.querySelector('#shopify-section-go-cart') && document.body.addEventListener('click',function(e) { 
-      console.log('go_cart clicked');
       e.preventDefault();
+      console.log('go_cart clicked');
       if (e.target == checkoutHandlerProductPage) {
             sendInitiateCheckoutEvent(e);
         }          
+      return true;
     });
   
   	window.addEventListener('popstate', function (event) {
