@@ -694,11 +694,11 @@
                     var puzzles = 0;
                     var total_price = 0;
                     this.clearCartDrawer(), t.items.forEach((function(t, r) {
-                        if (t.product_type == 'Puzzle' ) puzzles = Number(puzzles + t.quantity);
+                        if (t.product_type == 'Puzzle' || t.product_type == 'MAP') puzzles = Number(puzzles + t.quantity);
                     })), t.items.forEach((function(t, r) {
                         var discount = 1;
-                        if ( puzzles > 2 && t.product_type == 'Puzzle' ) discount = 0.9;
-                        if ( e.discuont_calc.getAttribute('data-discount') > 0 && t.product_type == 'Puzzle' ) { discount = e.discuont_calc.getAttribute('data-discount') }
+                        if ( puzzles > 2 && t.product_type == 'Puzzle' || t.product_type == 'MAP' ) discount = 0.9;
+                        if ( e.discuont_calc.getAttribute('data-discount') > 0 && t.product_type == 'Puzzle' || t.product_type == 'MAP' ) { discount = e.discuont_calc.getAttribute('data-discount') }
                         var a = t.variant_title;
                         null === a && (a = "");
                         if ( t.quantity < 10 ) {var quan = '0'+t.quantity;} else {var quan = t.quantity;}
