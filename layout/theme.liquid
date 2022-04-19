@@ -414,7 +414,7 @@ qp('track', 'ViewContent');
             content_id: prodObj.id,
             content_name: prodObj.title,
             value: prodObj.price/100,
-            currency: 'EUR',
+            currency: 'USD',
             };            
         }
         
@@ -438,7 +438,7 @@ qp('track', 'ViewContent');
                 content_name: selected_variant.name,
                 value: selected_variant.price/100,
                 quantity: 1,
-                currency: 'EUR',
+                currency: 'USD',
                 };    
                 ttq.instance('C9CFR53C77U9N0P9FIJG').track('AddToCart',ttq_add_cart_params);          
             } catch (err) {
@@ -452,7 +452,7 @@ qp('track', 'ViewContent');
             const ttCart = {
                     content_type: 'product_group',
                     value: cartObj.total_price/100,
-                    currency: 'EUR',
+                    currency: 'USD',
                     contents: [],
             };
             cartObj.items.map(function(item){
