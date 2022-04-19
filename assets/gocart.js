@@ -694,7 +694,7 @@
                     var puzzles = 0;
                     var total_price = 0;
                     this.clearCartDrawer(), t.items.forEach((function(t, r) {
-                        if (t.product_type == 'Puzzle' || t.product_type == 'MAP') puzzles = Number(puzzles + t.quantity);
+                        if (t.product_type == 'Puzzle') puzzles = Number(puzzles + t.quantity);
                     })), t.items.forEach((function(t, r) {
                         var discount = 1;
                         if ( puzzles > 2 && t.product_type == 'Puzzle' ) discount = 0.9;
