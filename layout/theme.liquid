@@ -476,9 +476,9 @@ qp('track', 'ViewContent');
   
   	checkoutHandlerProductPageDirect && checkoutHandlerProductPageDirect.addEventListener('click', sendInitiateCheckoutEvent);
     
-    document.querySelector('#shopify-section-go-cart') && document.body.addEventListener('click',function(e) { 
-      e.preventDefault();
-      console.log('go_cart clicked');
+  	const drawerCart = document.querySelector('.go-cart__drawer.js-go-cart-drawer.go-cart__drawer--right');
+  
+    drawerCart && drawerCart.addEventListener('click',function(e) { 
       if (e.target == checkoutHandlerProductPage) {
             sendInitiateCheckoutEvent(e);
         }          
