@@ -3055,7 +3055,15 @@
       "1603965658ea939929",
       "1619615291e2b75557",
       "1634880766341f5eed"
-    ]
+    ],
+    "blocks": {
+      "13182238052301688732": {
+        "type": "shopify:\/\/apps\/personalized-recommendations\/blocks\/app-embed\/6e79d991-1504-45bb-88e3-1fb55a4f26cd",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   },
   "presets": {
     "Jupiter": {
