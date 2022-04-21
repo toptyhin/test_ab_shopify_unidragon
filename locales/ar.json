@@ -342,6 +342,7 @@
         "card_issue_number_label": "رقم العدد",
         "card_issue_number_placeholder": "رقم العدد",
         "card_change_label": "تغيير",
+        "card_update_label": "تحديث البطاقه",
         "ends_with_label": "ينتهي بـ {{ last_digits }}",
         "masked_digits_label": "•••• %{last_digits}",
         "saved_by_payment_method": "تم الحفظ بواسطة {{ payment_method }}",
@@ -381,6 +382,8 @@
         "ideal_label": "المثالي",
         "bank_picker_label": " بنكية",
         "subscription_card_update_agreement_label": "سيؤدي تغيير طريقة الدفع إلى تحديث اشتراكك والمدفوعات المتكررة المستقبلية.",
+        "subscription_agreement_label": "أفهم أنني أوافق على الاشتراك. سيتم تجديده بالسعر وفترة التكرار المذكورة حتى ينتهي أو يتم٪ {cancelled}.",
+        "subscription_agreement_cancelled": "ألغيت",
         "subscription_agreement_label_html": "أفهم أنني أوافق على الاشتراك. سيتم تجديده بالسعر والتكرار المدرجين حتى ينتهي أو ينتهي\n<a class=\"link--small\" data-modal=\"true\" data-title-text=\"Subscription policy\" href=\"٪{policy_href}\"> ملغى <\/a>.",
         "change_currency_section_description": "حدد خيار العملة",
         "no_real_orders_dev_store": "لا يمكن لهذا المتجر قبول الطلبات الحقيقية أو المدفوعات الحقيقية.",
@@ -388,13 +391,9 @@
         "apple_pay_payment_error": "لا يمكن إتمام الدفع الخاص بك. حاول مرة أخرى أو استخدم طريقة دفع مختلفة.",
         "taxes_not_included": "الضرائب غير مشمولة",
         "no_taxes_banner_content": "لن يتم تحصيل الضرائب على هذا الطلب. بمجرد تحصيل المدفوعات ، لا يمكن إضافة الضرائب.",
-        "card_update_label": "تحديث البطاقه",
         "paypal": {
-          "connect": "انقر لتوصيل حساب باي بال الخاص بك",
-          "account_connected": "الحساب متصل"
-        },
-        "subscription_agreement_label": "أفهم أنني أوافق على الاشتراك. سيتم تجديده بالسعر وفترة التكرار المذكورة حتى ينتهي أو يتم٪ {cancelled}.",
-        "subscription_agreement_cancelled": "ألغيت"
+          "connect": "انقر لتوصيل حساب باي بال الخاص بك"
+        }
       },
       "payment_summary": {
         "gift_card_current_balance_notice": "الرصيد الحالي {{amount}}",
@@ -452,8 +451,7 @@
         "subscription_agreement_blank": "لمتابعة الشراء ، وافق على شروط الاشتراك",
         "physical_gift_card_invalid_quantity": "يجب أن تحتوي عناصر بطاقة الهدايا المادية على كمية تتطابق مع عدد أكواد بطاقات الهدايا.",
         "physical_gift_card_duplicate_code": "يحتوي عنصر بطاقة الهدايا المادية على رمز مكرر.",
-        "physical_gift_card_invalid_code": "رمز بطاقة الهدايا المادية غير صالح.",
-        "sms_marketing_phone_invalid": "أدخل رقم هاتف صالح"
+        "physical_gift_card_invalid_code": "رمز بطاقة الهدايا المادية غير صالح."
       },
       "payment_errors": {
         "generic_error": "كانت هناك مشكلة في معالجة الدفع الخاص بك. حاول مرة أخرى أو استخدم طريقة دفع مختلفة.",
@@ -700,9 +698,9 @@
         "delivery_information_label": "معلومات التوصيل:",
         "gift_card_sent_confirmation": "تم إرسال بطاقات الهدايا",
         "qr_code": {
+          "send_link_to_phone": "أو أرسل رابطًا إلى هاتفك",
           "title": "قم بتنزيل تطبيق Shop",
-          "subtitle": "امسح الرمز بكاميرا هاتفك.",
-          "send_link_to_phone": "أو أرسل رابطًا إلى هاتفك"
+          "subtitle": "امسح الرمز بكاميرا هاتفك."
         }
       },
       "review": {
@@ -726,18 +724,17 @@
       },
       "marketing": {
         "accept_marketing_checkbox_label": "اشترك في العروض والأخبار الحصرية عبر الرسائل النصية و \/ أو البريد الإلكتروني",
-        "unsubscribe": {
-          "title": "لقد ألغيت الاشتراك",
-          "description": "لن تتلقى أي تذكيرات أخرى لعربة التسوق منا."
-        },
-        "accept_email_checkbox_label": "راسلني مع الاخبار والعروض",
         "accept_sms_checkbox_label": "أرسل لي الأخبار والعروض",
         "sms": {
           "disclaimer": {
-            "description_html": "من خلال التسجيل عبر الرسائل النصية ، فإنك توافق على تلقي رسائل تسويقية آلية متكررة ، بما في ذلك تذكيرات عربة التسوق ، على رقم الهاتف المقدم. الموافقة ليست شرط شراء. الرد STOP لإلغاء الاشتراك. الرد على \"مساعدة\" للحصول على المساعدة. يختلف تردد الرسائل. قد يتم تطبيق معدلات الرسائل والبيانات. اعرض٪ {privacy_policy_link} و٪ {terms_of_service_link}.",
             "privacy_policy": "سياسة الخصوصية",
-            "terms_of_service": "شروط الخدمة"
+            "terms_of_service": "شروط الخدمة",
+            "description_html": "من خلال التسجيل عبر الرسائل النصية ، فإنك توافق على تلقي رسائل تسويقية آلية متكررة ، بما في ذلك تذكيرات عربة التسوق ، على رقم الهاتف المقدم. الموافقة ليست شرط شراء. الرد STOP لإلغاء الاشتراك. الرد على \"مساعدة\" للحصول على المساعدة. يختلف تردد الرسائل. قد يتم تطبيق معدلات الرسائل والبيانات. اعرض٪ {privacy_policy_link} و٪ {terms_of_service_link}."
           }
+        },
+        "unsubscribe": {
+          "title": "لقد ألغيت الاشتراك",
+          "description": "لن تتلقى أي تذكيرات أخرى لعربة التسوق منا."
         }
       },
       "shop_policies": {
@@ -1065,7 +1062,33 @@
         }
       }
     },
+    "filters": {
+      "availability": {
+        "label": "التوفر",
+        "value": {
+          "in_stock": "في المخزن",
+          "out_of_stock": "إنتهى من المخزن"
+        }
+      },
+      "vendor": {
+        "label": "ماركة"
+      },
+      "price": {
+        "label": "سعر"
+      },
+      "product_type": {
+        "label": "نوع المنتج"
+      }
+    },
+    "search": {
+      "sorting": {
+        "relevance": "ملاءمة",
+        "price_ascending": "السعر من الارخص للاعلى",
+        "price_descending": "السعر الاعلى الى الادنى"
+      }
+    },
     "page_titles": {
+      "blog_or_article_with_error": "خطأ -٪ {title}",
       "products": "المنتجات",
       "shopping_cart": "سلة التسوق الخاصة بك",
       "account": "الحساب",
@@ -1081,8 +1104,7 @@
       "collections": "المجموعات",
       "not_found": "404 غير موجودة",
       "challenge": "التحدي",
-      "checkpoint": "نقطة تفتيش",
-      "blog_or_article_with_error": "خطأ -٪ {title}"
+      "checkpoint": "نقطة تفتيش"
     },
     "cart": {
       "discounts_with_count": "تم تطبيق٪ {count} خصومات"
@@ -1109,31 +1131,6 @@
         "two_to_four_hours": "عادة ما تكون جاهزة في غضون 4 ساعات",
         "immediately": "جاهز للاستلام الآن",
         "next_day": "جاهز للاستلام في اليوم التالي"
-      }
-    },
-    "filters": {
-      "availability": {
-        "label": "التوفر",
-        "value": {
-          "in_stock": "في المخزن",
-          "out_of_stock": "إنتهى من المخزن"
-        }
-      },
-      "vendor": {
-        "label": "ماركة"
-      },
-      "price": {
-        "label": "سعر"
-      },
-      "product_type": {
-        "label": "نوع المنتج"
-      }
-    },
-    "search": {
-      "sorting": {
-        "relevance": "ملاءمة",
-        "price_ascending": "السعر من الارخص للاعلى",
-        "price_descending": "السعر الاعلى الى الادنى"
       }
     }
   },
@@ -1219,42 +1216,21 @@
       "show_more": "أظهر المزيد",
       "show_less": "عرض أقل"
     },
-    "product_key": {
-      "3cec4e4dd33105f31958e72eae2e3f50a236f8d046d7c84f6bdcd8d5fadad319": "AMXN-EFY2-RMVL-IXS6"
-    },
-    "supported_currencies": {
-      "82affb4bfca54da32b8e9e34e7d842c1de5085d979a88859e96fd56a3bd3fd10": "INR GBP CAD USD AUD EUR JPY"
-    },
-    "discount_popup_title": {
-      "62f2f0cf5f9dce79efacbf2151dbb9b0a99d56065556a8a4ce6aa23b2a63f81b": "20٪ حسم"
-    },
-    "discount_popup_description1": {
-      "ce15b98adc63f3a6c64d8735c07c725dc814d697c68460092b8790827819f633": "اشترك في النشرة الإخبارية لدينا للحصول على حسم إضافي 10٪ على طلبك الأول!"
-    },
-    "discount_popup_link_text": {
-      "0c299b904cbef26872217d1182c5bdcdf546f75754ae115489ad4ef29a6cb9c5": "أغلق هذه الصفحة"
-    },
-    "discount_popup_submit_text": {
-      "c9adb9f77a7ff0dd6c11e9ac0b4adbccf09021e7adea12aadaa093b2b94fd0ae": "<span> شكرًا لك! <\/ span>"
-    },
-    "buttom_message": {
-      "45c75d4efd7ba84a8a0028a8fa19023fbf4fa20d81e52f282aa9c15652f44f84": "شخص ما اشترى"
-    },
-    "btn_text": {
-      "abb737eb1f4739339f93f7dc18a75b7c776355003ac67b2ba0165fbd09e386d2": "عرض الكل"
-    },
-    "enable_timer_reset_every_day": {
-      "14f8d0ec6b1d20e8f9475846163547c928f950e36869b6c8017aee9f2855ef80": "23:59:59"
-    },
-    "social_title": {
-      "ce83276ebc7f8ff38bb0a19a92335683a98f5ce3733c0d6557047dbdbe262011": "تابعنا"
-    },
-    "social_facebook_link": {
-      "19fc4197d50e8b9ed3523d1f05dfe9fbd3c528b8d55eb35aaa24328305dca083": "https:\/\/www.facebook.com\/Unidragon.World"
-    },
-    "social_instagram_link": {
-      "3594afeadda59f479dd88420d0395da197e5436e90c4c7f22421d2e37e5eb7aa": "https:\/\/instagram.com\/unidragon_com"
-    }
+    "product_key": "AMXN-EFY2-RMVL-IXS6",
+    "supported_currencies": "INR GBP CAD USD AUD EUR JPY",
+    "discount_popup_title": "20٪ خصم",
+    "discount_popup_description1": "اشترك في النشرة الإخبارية لدينا للحصول على خصم إضافي 10٪ على طلبك الأول!",
+    "discount_popup_link_text": "أغلق هذه الصفحة",
+    "discount_popup_submit_text": "<span>شكرًا لك !<\/span>",
+    "buttom_message": "اشترى شخص ما ملف",
+    "btn_text": "مشاهدة الكل",
+    "enable_timer_reset_every_day": "23:59:59",
+    "social_title": "تابعنا",
+    "social_twitter_link": "https:\/\/twitter.com\/unidragon_com",
+    "social_facebook_link": "https:\/\/www.facebook.com\/unidragonPuzzle",
+    "social_instagram_link": "https:\/\/instagram.com\/unidragon_com",
+    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCdss4w1ORKXjrYAwEf5stcA",
+    "tag_month_text": "المنتج<br>\nمن الشهر"
   },
   "blogs": {
     "article": {
