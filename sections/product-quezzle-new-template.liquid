@@ -2093,7 +2093,7 @@
                     </div>
                     <h3>{{ section.settings.order_title }}</h3>
               </div>
-  
+  				{% comment %}
                 <div class="grid single-quezzle-grid">
                   <div class="grid__item medium-up--one-half">
                     <div class="quezzle-grid-sec basic-quiz">
@@ -2168,6 +2168,7 @@
                     </div>
                   </div>
                 </div>
+              	{% endcomment %}
                 <div class="single-quezzle-bg-wrap">
                   <div class="single-quezzle-bg-sec">
                     <div class="single-quezzle-bg-left">
@@ -2202,17 +2203,25 @@
                         <li>4 storyline mazes</li>
                       </ul>
                       <div class="single-quezzle-price">
-                        {%- assign size_count = 0 -%}
-                        {%- for variant in product.variants -%}
-                        {%- assign size_count = size_count | plus: 1 -%}
-                          {%- case size_count -%}
-                            {%- when 1 -%}
-                            {%- when 2 -%}
-                            {%- when 3 -%}
+                        {%- if product.variants.size -%}
+                        	{%- assign variant = product.variants | last -%}
                               <span><strike>{{variant.compare_at_price | money }}</strike></span>
-                              <strong>{{variant.price | money }}</strong>
-                          {%- endcase -%}
-                        {%- endfor -%}
+                              <strong>{{variant.price | money }}</strong>                        
+                        {%- endif -%}
+                        
+                        {% comment %}
+                          {%- assign size_count = 0 -%}
+                          {%- for variant in product.variants -%}
+                          {%- assign size_count = size_count | plus: 1 -%}
+                            {%- case size_count -%}
+                              {%- when 1 -%}
+                              {%- when 2 -%}
+                              {%- when 3 -%}
+                                <span><strike>{{variant.compare_at_price | money }}</strike></span>
+                                <strong>{{variant.price | money }}</strong>
+                            {%- endcase -%}
+                          {%- endfor -%}
+                        {% endcomment %}
                       </div>
                     </div>
                   </div>
