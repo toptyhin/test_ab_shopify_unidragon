@@ -572,7 +572,7 @@ qp('track', 'ViewContent');
 <script src="{{'redesign-app.js' | asset_url }}"></script>
 <div style="display: none;">{% include 'redesign-sprite.svg' %}</div>
 
-
+{% if template contains 'product' %}
   <script>
   
   const sizeBtns = document.querySelectorAll('.swatch_container > div')
@@ -613,7 +613,7 @@ sizeBtns.forEach(item => {
 
 //console.log(price)
   </script>
-  {% if template contains 'product' %}
+  
  {% endif %}
 
 {{ 'fontawesome.css' | asset_url | stylesheet_tag }}
