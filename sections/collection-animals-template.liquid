@@ -121,6 +121,50 @@
       </div>
       {% endif %}
   
+       <style>
+  .banner-home {
+    margin-top: 20px;
+      text-align: center;
+  }
+  .banner-home .mobile {
+      display: none;
+  }
+  .banner-home .desktop{
+  	width: auto;
+    display: inline;
+    height: 100%;
+    position: relative;
+  }
+  
+  .banner-home .desktop a {
+    width: 130px;
+    height: 40px;
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: -10px;
+  }
+    @media (max-width: 787px){
+  	.banner-home .mobile {
+      display: block;
+      padding: 0px 20px;
+  }
+    .banner-home .desktop {
+      display: none;
+  }
+  }
+
+</style>
+     <div class="banner-home">
+          <div class="desktop">
+            <img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/puzzles-gif3_1.gif?v=1650994428">
+                 <a href="https://play.unidragon.com/?utm_source=main_page_banner&utm_medium=game_banner&utm_campaign=game" class="">	
+                </a>
+          </div>
+                <a href="https://play.unidragon.com/?utm_source=main_page_banner&utm_medium=game_banner&utm_campaign=game" class="mobile">
+                    <img src="https://cdn.shopify.com/s/files/1/0291/1322/1168/files/puzzles-mob-gif2.gif?v=1650994405">
+                </a>
+        </div> 
       <!-- ====================== Normal Collection Code =========================== -->  
       {% assign collection_1 = '' %}
       {% for block in section.blocks %}
@@ -129,6 +173,9 @@
       {% assign collection_list = collection_1 | replace:' ',',' %}
   
       {% unless collection_list contains collection.handle %}
+
+
+            <h2 class="" style="text-align: center; margin: 30px 0;">CHOOSE YOUR PUZZLE</h2>
       {% if collection.handle == 'wooden-puzzles' and section.settings.tags_enable or section.settings.sort_enable %}
       <div class="filters-toolbar-wrapper">
         <div class="page-width">
@@ -175,7 +222,7 @@
               </ul>
             </div>
             {% endif %}
-  
+
             {% if section.settings.sort_enable %}
             <div class="filters-toolbar__item text-right">
               {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
@@ -221,10 +268,30 @@
               <input id="DefaultSortBy" type="hidden" value="{{ collection.default_sort_by }}">
             </div>
             {% endif %}
+            
+            
+            
           </div>
         </div>
       </div>
       {% endif %}
+        {% if section.settings.enable_full_banner %}
+ 
+    <div class="section--fullwidth-banner" id="section--fullwidth-banner" style="max-width: {{section.settings.img_width}}; margin-bottom:30px; margin-top: 20px;">
+      <img src="{{section.settings.img | img_url: 'master' }}" alt="" title="">
+    </div>
+ 
+    <style>
+        .section--fullwidth-banner {
+          align-items: center;
+          display: flex;
+          margin: 0 auto;
+        }
+
+    </style>
+  
+  
+  {% endif %}
     </header>
  
     <div class="page-width" id="Collection">
